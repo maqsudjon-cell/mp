@@ -126,8 +126,27 @@ html[data-theme="light"] .theme-toggle .icon-moon { display: none; }
   overflow: hidden;
   box-shadow: 0 0 0 1px var(--border-strong), 0 0 0 4px var(--bg), 0 0 0 6px var(--accent-soft);
   background: var(--bg-elev);
+  position: relative;
+}
+/* Fallback initials shown behind the photo — visible if assets/profile.jpg
+   is missing or fails to load, so we never display a broken-image icon. */
+.hero-photo::before {
+  content: attr(data-initials);
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 4.5rem;
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: -0.02em;
+  z-index: 0;
 }
 .hero-photo img {
+  position: relative;
+  z-index: 1;
   width: 100%;
   height: 100%;
   object-fit: cover;

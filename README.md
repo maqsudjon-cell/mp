@@ -1,7 +1,29 @@
 # maqsudjon.com
 
-Personal site of Maqsudjon Polatov — educator, producer, builder.
+Personal site of Maqsudjon Polatov — welder, student, producer.
 Vanilla HTML + CSS + JS. No build step.
+
+## ⚠️ Add your profile photo first
+
+The site looks for the photo at this exact path:
+
+```
+assets/profile.jpg
+```
+
+**Steps:**
+
+1. Take or pick a square photo (at least **360 × 360 px**, JPG format).
+2. Rename it to exactly **`profile.jpg`** (lowercase, no extra extension like `.JPG.jpg`).
+3. Drop it into the **`assets/`** folder, replacing the placeholder file that's already there.
+4. Reload the page.
+
+If the file is missing or the path is wrong, the site will gracefully fall back
+to showing your initials ("MP") inside the circular frame — no broken-image
+icon ever shows. But a real photo is much better.
+
+> **Tip:** the CSS crops the image to a circle and adds a subtle amber ring,
+> so a centered, well-lit headshot works best.
 
 ## Files
 
@@ -60,11 +82,6 @@ server.
 
 Updates are sorted **newest first** automatically, so insertion order in the
 file doesn't matter — but it's still cleaner to keep the newest on top.
-
-## Replacing the profile photo
-
-Save a square photo (≥360×360 px) as `assets/profile.jpg`. The CSS crops it to
-a circle and adds a subtle amber ring. Use a clean, well-lit headshot.
 
 ## Deployment (GitHub Pages + Cloudflare DNS)
 
