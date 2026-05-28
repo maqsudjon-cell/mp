@@ -141,6 +141,12 @@
     </section>
   </main>
 
+  
+    <div class="view-counter">
+      <span class="view-icon">👁</span>
+      <span id="view-count">...</span>
+    </div>
+
   <footer id="contact">
     <p class="contact-lead">Want to talk? Salom yozing.</p>
     <p class="contact-links">
@@ -174,5 +180,39 @@ function copyLink() {
   }
 }
 </script>
+
+<script>
+// View counter - stores count in browser localStorage + tries public API
+(function() {
+  var countEl = document.getElementById('view-count');
+  if (!countEl) return;
+  
+  // Local counter
+  var key = 'mp-site-views';
+  var localViews = parseInt(localStorage.getItem(key) || '0') + 1;
+  localStorage.setItem(key, localViews);
+  
+  // Try global counter from a public API
+  // Fallback: show local views
+  countEl.textContent = localViews;
+  
+  // Try to get global count from GitHub (stored in a gist or raw file)
+  fetch('https://raw.githubusercontent.com/maqsudjon-cell/mp/main/views.json?t=' + Date.now())
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+      var total = (data.count || 0) + 1;
+      countEl.textContent = total;
+      
+      // Increment global counter (try to POST back - might fail silently)
+      // For real persistent count, needs a backend
+    })
+    .catch(function() {
+      // Fallback: just show local count
+      var lv = parseInt(localStorage.getItem(key) || '1');
+      countEl.textContent = lv;
+    });
+})();
+</script>
+
 </body>
 </html>
