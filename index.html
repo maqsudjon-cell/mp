@@ -121,5 +121,14 @@
   </footer>
 
   <script src="script.js"></script>
+
+<script>
+function shareUpdate(title, date) {
+  var text = encodeURIComponent("Check out: " + title + " on maqsudjon.com");
+  var url = encodeURIComponent(window.location.href);
+  var shareUrl = "https://t.me/share/url?url=" + url + "&text=" + text;
+  window.open(shareUrl, "_blank", "width=600,height=400");
+}
+</script>
 </body>
 </html>
