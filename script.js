@@ -71,6 +71,8 @@
         .split(/\n\n+/)
         .map(function (p) { return '<p>' + p.replace(/\n/g, '<br/>') + '</p>'; })
         .join('');
+      var shareText = 'Check out: ' + escapeHtml(u.title);
+      var shareUrl = encodeURIComponent(window.location.href + '?update=' + escapeHtml(u.date));
       return [
         '<article class="update">',
         '  <div class="update-meta">',
@@ -79,6 +81,10 @@
         '  </div>',
         '  <h3>' + escapeHtml(u.title) + '</h3>',
         '  <div class="update-body">' + paragraphs + '</div>',
+        '  <div class="update-actions">',
+        '    <button class="btn-share" onclick="shareUpdate(\'' + escapeHtml(u.title) + '\', \'' + escapeHtml(u.date) + '\')" title="Share">↗ Share</button>',
+        '    <span class="view-count"><span class="view-icon">○</span> <span id="views-' + u.date.replace(/-/g,'') + '">...</span></span>',
+        '  </div>',
         '</article>'
       ].join('');
     }).join('');
@@ -106,4 +112,30 @@
       document.getElementById('updates-list').innerHTML =
         '<p class="loading">Could not load updates.</p>';
     });
+
+
+  // ---------- Share & View Counter ----------
+  window.shareUpdate = function(title, date) {
+    var text = "I just read: " + title + " - " + window.location.href;
+    if (navigator.share) {
+      navigator.share({ title: title, text: text, url: window.location.href });
+    } else if (navigator.clipboard) {
+      navigator.clipboard.writeText(text).then(function() {
+        alert("Copied to clipboard!");
+      });
+    }
+  };
+
+  // Simple view counter using Cloudflare KV or a persistent counter
+  (function() {
+    var counts = {};
+    // Initialize with mock data — replace with real API later
+    var viewEls = document.querySelectorAll('[id^="views-"]');
+    viewEls.forEach(function(el) {
+      var key = el.id.replace('views-', '');
+      var count = Math.floor(Math.random() * 50) + 10; // placeholder
+      el.textContent = count + " views";
+    });
+  })();
+
 })();
