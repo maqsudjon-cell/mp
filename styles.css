@@ -431,19 +431,3 @@ footer {
 }
 .share-btn.telegram svg { color: #0088cc; }
 .share-btn.copy svg { color: var(--text-secondary); }
-
-
-/* View counter in footer */
-.view-counter {
-  text-align: center;
-  color: var(--text-muted);
-  font-size: 0.8rem;
-  margin-bottom: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-}
-.view-icon {
-  font-size: 0.85rem;
-}
