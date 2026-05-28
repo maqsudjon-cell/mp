@@ -385,13 +385,6 @@ footer {
   color: var(--accent);
   background: var(--accent-light);
 }
-.view-count {
-  font-size: 0.75rem;
-  color: var(--text-muted);
-  display: inline-flex;
-  align-items: center;
-  gap: 3px;
-}
 .view-icon {
   opacity: 0.6;
 }
