@@ -127,7 +127,8 @@
 
 <script>
 function shareUpdate(title, date) {
-  var text = encodeURIComponent("Check out: " + title + " on maqsudjon.com");
+  var fullText = "📚 " + title + "\n\nI just added 10 new Diyorbek listening tests (31–40) to the IELTS Hub — 40 questions each with full audio and instant scoring.\n\nTest yourself at: " + window.location.href + "\n\n— from maqsudjon.com";
+  var text = encodeURIComponent(fullText);
   var url = encodeURIComponent(window.location.href);
   var shareUrl = "https://t.me/share/url?url=" + url + "&text=" + text;
   window.open(shareUrl, "_blank", "width=600,height=400");
