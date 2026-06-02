@@ -13,21 +13,23 @@
 
   function applyTheme(theme) {
     root.setAttribute('data-theme', theme);
-    document.querySelector('meta[name="theme-color"]').setAttribute(
-      'content',
-      theme === 'light' ? '#fafafa' : '#0a0a0a'
-    );
+    const meta = document.querySelector('meta[name="theme-color"]');
+    if (meta) {
+      meta.setAttribute('content', theme === 'light' ? '#fafafa' : '#0a0a0a');
+    }
   }
 
   const saved = localStorage.getItem(STORAGE_KEY);
   const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
   applyTheme(saved || (prefersLight ? 'light' : 'dark'));
 
-  toggle.addEventListener('click', function () {
-    const next = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
-    applyTheme(next);
-    localStorage.setItem(STORAGE_KEY, next);
-  });
+  if (toggle) {
+    toggle.addEventListener('click', function () {
+      const next = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+      applyTheme(next);
+      localStorage.setItem(STORAGE_KEY, next);
+    });
+  }
 
   // ---------- Smooth scroll (anchor links) ----------
   document.querySelectorAll('a[href^="#"]').forEach(function (link) {
@@ -43,7 +45,7 @@
 
   // ---------- Updates ----------
   function formatDate(iso) {
-    const d = new Date(iso);
+    var d = new Date(iso);
     if (isNaN(d)) return iso;
     return d.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
   }
@@ -55,19 +57,21 @@
   }
 
   function renderUpdates(updates) {
-    const container = document.getElementById('updates-list');
-    if (!updates.length) {
-      container.innerHTML = '<p class="loading">No updates yet.</p>';
+    var container = document.getElementById('updates-list');
+    if (!container) return;
+
+    if (!updates || !updates.length) {
+      container.innerHTML = '<p class="loading">No updates yet. Check back soon!</p>';
       return;
     }
 
-    const sorted = updates.slice().sort(function (a, b) {
+    var sorted = updates.slice().sort(function (a, b) {
       return new Date(b.date) - new Date(a.date);
     });
 
     container.innerHTML = sorted.map(function (u) {
-      const tag = u.tag ? '<span class="update-tag">' + escapeHtml(u.tag) + '</span>' : '';
-      const paragraphs = escapeHtml(u.body)
+      var tag = u.tag ? '<span class="update-tag">' + escapeHtml(u.tag) + '</span>' : '';
+      var paragraphs = escapeHtml(u.body)
         .split(/\n\n+/)
         .map(function (p) { return '<p>' + p.replace(/\n/g, '<br/>') + '</p>'; })
         .join('');
@@ -85,7 +89,7 @@
 
     // Fade-in on scroll
     if ('IntersectionObserver' in window) {
-      const io = new IntersectionObserver(function (entries) {
+      var io = new IntersectionObserver(function (entries) {
         entries.forEach(function (entry) {
           if (entry.isIntersecting) {
             entry.target.classList.add('visible');
@@ -99,11 +103,66 @@
     }
   }
 
-  fetch('updates.json', { cache: 'no-cache' })
-    .then(function (r) { return r.json(); })
+  // Fetch with 5-second timeout
+  var container = document.getElementById('updates-list');
+
+  function fetchWithTimeout(url, timeoutMs) {
+    return Promise.race([
+      fetch(url, { cache: 'no-cache' }),
+      new Promise(function (_, reject) {
+        setTimeout(function () { reject(new Error('Request timed out')); }, timeoutMs);
+      })
+    ]);
+  }
+
+  fetchWithTimeout('updates.json', 5000)
+    .then(function (r) {
+      if (!r.ok) throw new Error('HTTP ' + r.status);
+      return r.json();
+    })
     .then(renderUpdates)
     .catch(function () {
-      document.getElementById('updates-list').innerHTML =
-        '<p class="loading">Could not load updates.</p>';
+      if (container) {
+        // Fallback: show latest static update so page never feels empty
+        container.innerHTML = [
+          '<article class="update visible">',
+          '  <div class="update-meta">',
+          '    <time datetime="2026-05-29">29 May 2026</time>',
+          '    <span class="update-tag">IELTS</span>',
+          '  </div>',
+          '  <h3>IELTS Hub — 73 listening tests 🚀</h3>',
+          '  <div class="update-body">',
+          '    <p>Big update today! Added 35 new Diyorbek listening tests — Tests 41 through 76.</p>',
+          '    <p>That brings the total to 73 listening tests on the platform. Check them out at <a href="https://pangea8.com" target="_blank" rel="noopener">pangea8.com</a>.</p>',
+          '  </div>',
+          '</article>',
+          '<p class="loading">Could not load live updates. Showing latest saved entry.</p>'
+        ].join('');
+      }
     });
+
 })();
+
+/* =========================================================
+   Share functions (global — used by inline onclick)
+   ========================================================= */
+function sharePage(platform) {
+  var url = encodeURIComponent(window.location.href);
+  var fullText = encodeURIComponent("Maqsudjon Polatov — IELTS Hub with 73 listening tests, music as Matsumi, and more. Check out maqsudjon.com and pangea8.com");
+
+  if (platform === 'telegram') {
+    window.open("https://t.me/share/url?url=" + url + "&text=" + fullText, "_blank", "width=600,height=400");
+  } else if (platform === 'twitter') {
+    window.open("https://twitter.com/intent/tweet?text=" + fullText + "&url=" + url, "_blank", "width=600,height=400");
+  } else if (platform === 'copy') {
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(window.location.href).then(function () {
+        var btn = document.querySelector('.share-btn.copy');
+        if (!btn) return;
+        var orig = btn.innerHTML;
+        btn.textContent = "Copied!";
+        setTimeout(function () { btn.innerHTML = orig; }, 2000);
+      });
+    }
+  }
+}

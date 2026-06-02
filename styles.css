@@ -7,6 +7,9 @@
   --max-width: 680px;
   --accent: #F59E0B;
   --accent-soft: rgba(245, 158, 11, 0.18);
+  --accent-light: rgba(245, 158, 11, 0.08);
+  --radius: 8px;
+  --surface: transparent;
 
   /* dark theme (default) */
   --bg: #0a0a0a;
@@ -14,6 +17,7 @@
   --text: #ededed;
   --text-muted: #a0a0a0;
   --text-faint: #6a6a6a;
+  --text-secondary: #a0a0a0;
   --border: #1f1f1f;
   --border-strong: #2a2a2a;
 
@@ -27,9 +31,11 @@ html[data-theme="light"] {
   --bg-elev: #ffffff;
   --text: #111111;
   --text-muted: #555555;
+  --text-secondary: #555555;
   --text-faint: #888888;
   --border: #ececec;
   --border-strong: #dcdcdc;
+  --accent-light: rgba(245, 158, 11, 0.08);
 }
 
 * { box-sizing: border-box; }
@@ -55,6 +61,23 @@ main {
 }
 
 /* =========================================================
+   Selection
+   ========================================================= */
+::selection {
+  background: var(--accent-soft);
+  color: var(--text);
+}
+
+/* =========================================================
+   Focus styles for keyboard users
+   ========================================================= */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* =========================================================
    Typography
    ========================================================= */
 h1, h2, h3 {
@@ -67,7 +90,7 @@ h1, h2, h3 {
 
 h1 { font-size: 2rem; line-height: 1.2; }
 h2 { font-size: 1.5rem; margin-bottom: 0.5rem; }
-h3 { font-size: 1.05rem; margin: 2rem 0 0.5rem; font-weight: 500; color: var(--text-muted); }
+h3 { font-size: 1.05rem; margin: 0 0 0.5rem; font-weight: 500; color: var(--text-muted); }
 
 p { margin: 0 0 1rem; }
 
@@ -293,10 +316,70 @@ html[data-theme="light"] .theme-toggle .icon-moon { display: none; }
 .loading { color: var(--text-faint); font-family: var(--font-mono); font-size: 0.85rem; }
 
 /* =========================================================
+   Skeleton loader
+   ========================================================= */
+.skeleton {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px 0;
+}
+.skeleton-line {
+  height: 14px;
+  border-radius: 6px;
+  background: var(--border-strong);
+  position: relative;
+  overflow: hidden;
+}
+.skeleton-line::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, var(--accent-soft), transparent);
+  animation: skeleton-shimmer 1.5s infinite ease-in-out;
+}
+.skeleton-line--short { width: 30%; }
+.skeleton-line--medium { width: 55%; }
+.skeleton-line--long { width: 85%; }
+
+@keyframes skeleton-shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+/* =========================================================
    About
    ========================================================= */
 .about { padding: 56px 0; border-top: 1px solid var(--border); }
-.about p { color: var(--text-muted); line-height: 1.7; }
+
+.about-block {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  margin-bottom: 32px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid var(--border);
+}
+.about-block:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.about-icon {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  border-radius: 10px;
+  background: var(--accent-light);
+  margin-top: 2px;
+}
+
+.about p { color: var(--text-muted); line-height: 1.7; margin: 0; }
 
 /* =========================================================
    Footer / Contact
@@ -331,6 +414,48 @@ footer {
 }
 
 /* =========================================================
+   Share section
+   ========================================================= */
+.share-section {
+  padding: 24px 0 48px;
+}
+.share-section h2 {
+  margin-bottom: 8px;
+}
+.share-section .section-lead {
+  margin-bottom: 20px;
+}
+.share-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.share-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: transparent;
+  color: var(--text);
+  font-size: 0.88rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s;
+  text-decoration: none;
+  font-family: inherit;
+}
+.share-btn:hover {
+  border-color: var(--accent);
+  background: var(--accent-light);
+  color: var(--accent);
+}
+.share-btn.telegram:hover svg { color: #0088cc; }
+.share-btn.twitter:hover svg { color: #1da1f2; }
+.share-btn svg { flex-shrink: 0; }
+
+/* =========================================================
    Responsive — desktop layout
    ========================================================= */
 @media (min-width: 720px) {
@@ -355,78 +480,5 @@ footer {
   html { scroll-behavior: auto; }
   * { transition: none !important; animation: none !important; }
   .update { opacity: 1; transform: none; }
+  .skeleton-line::after { animation: none; background: var(--border-strong); }
 }
-
-/* Update actions: share + views */
-.update-actions {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  margin-top: 14px;
-  padding-top: 10px;
-  border-top: 1px solid var(--border);
-}
-.btn-share {
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  padding: 4px 12px;
-  border: 1px solid var(--border);
-  border-radius: 20px;
-  background: var(--surface);
-  color: var(--text-secondary);
-  font-size: 0.78rem;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.15s;
-}
-.btn-share:hover {
-  border-color: var(--accent);
-  color: var(--accent);
-  background: var(--accent-light);
-}
-.view-icon {
-  opacity: 0.6;
-}
-
-
-/* Share section */
-.share-section {
-  margin-bottom: 48px;
-}
-.share-section h2 {
-  margin-bottom: 8px;
-}
-.share-section .section-lead {
-  margin-bottom: 20px;
-}
-.share-buttons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-.share-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 10px 20px;
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  background: var(--surface);
-  color: var(--text-primary);
-  font-size: 0.88rem;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.15s;
-  text-decoration: none;
-  font-family: inherit;
-}
-.share-btn:hover {
-  border-color: var(--accent);
-  background: var(--accent-light);
-  color: var(--accent);
-}
-.share-btn.telegram:hover svg { color: #0088cc; }
-.share-btn.twitter:hover svg { color: #1da1f2; }
-.share-btn.copy:hover svg { color: var(--accent); }
-.share-btn svg { flex-shrink: 0; }
