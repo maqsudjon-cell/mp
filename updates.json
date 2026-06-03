@@ -1,5 +1,11 @@
 [
   {
+    "date": "2026-06-03",
+    "title": "Pangeya essay platform — speed & security overhaul 🛡️",
+    "tag": "Tech",
+    "body": "Major update to Pangeya (pangeya-essay-platform):\n\n⚡ Real-time listener — essays now appear instantly after submit/edit/delete (no more full re-query).\n🛡️ XSS sanitization — strips malicious script injection while preserving teacher markup.\n🐛 Fixed duplicate submissions, negative credits, and duplicate function declarations.\n♿ Accessibility — aria roles, Escape key closes modals, Ctrl+Enter to submit.\n🎨 Favicon + polish.\n\nLive at maqsudjon-cell.github.io/pangeya-essay-platform-/index-14.html"
+  },
+  {
     "date": "2026-05-29",
     "title": "IELTS Hub — 73 listening tests 🚀",
     "tag": "IELTS",
