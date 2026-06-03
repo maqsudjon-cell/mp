@@ -1,9 +1,9 @@
 [
   {
     "date": "2026-06-03",
-    "title": "Pangeya essay platform — speed & security overhaul 🛡️",
+    "title": "Pangeya Essay Platform — full overhaul ⚡🛡️",
     "tag": "Tech",
-    "body": "Major update to Pangeya (pangeya-essay-platform):\n\n⚡ Real-time listener — essays now appear instantly after submit/edit/delete (no more full re-query).\n🛡️ XSS sanitization — strips malicious script injection while preserving teacher markup.\n🐛 Fixed duplicate submissions, negative credits, and duplicate function declarations.\n♿ Accessibility — aria roles, Escape key closes modals, Ctrl+Enter to submit.\n🎨 Favicon + polish.\n\nLive at maqsudjon-cell.github.io/pangeya-essay-platform-/index-14.html"
+    "body": "Major overhaul of the Pangeya essay platform (index-14.html):\n\n⚡ Real-time speed — Replaced old getDocs polling with Firestore onSnapshot listener. Essays now appear instantly on submit, edit, or delete — no more full re-query wait.\n\n🛡️ XSS sanitization — Added sanitizeEssay() that strips malicious script injection while preserving teacher markup (<mark>, <u>, <s>).\n\n🐛 Bug fixes — Fixed duplicate submissions (button disables + spinner on click), negative credits (stops at 0 with a playful reminder), and duplicate function declarations that broke download PDF.\n\n♿ Accessibility — All modals have role=\"dialog\", aria-modal, proper labelling, and aria-live regions. Escape key closes any modal. Ctrl+Enter submits from any text field.\n\n🎨 Polish — Added SVG fountain pen favicon with deep purple theme-color. Kept the pixel canvas art as requested.\n\nLive at maqsudjon-cell.github.io/pangeya-essay-platform-/index-14.html"
   },
   {
     "date": "2026-05-29",
