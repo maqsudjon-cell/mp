@@ -1,13 +1,13 @@
 [
   {
     "date": "2026-06-03",
-    "title": "Pangeya Essay Platform \u2014 full overhaul \u26a1\ud83d\udee1\ufe0f",
+    "title": "Pangeya Essay Platform \u2014 full overhaul",
     "tag": "Tech",
     "body": "Today I shipped a major update to the Pangeya Essay Platform. The goal was to make it faster, safer, and more solid all around.\n\nThe biggest change is a real-time onSnapshot listener. Essays now show up instantly after you submit, edit, or delete them \u2014 no more waiting around for a full Firestore re-query.\n\nOn the security side, I added XSS sanitization, so essay content is now cleaned before it's rendered to the screen.\n\nI also fixed a handful of bugs: duplicate submissions are now prevented, the negative credits issue is resolved, duplicate functions were removed, and stale renderEssays() calls got cleaned up.\n\nFor accessibility, I added aria roles, the Escape key now closes modals, and Ctrl+Enter submits.\n\nAnd finally, some visual polish: a favicon was added, along with a few responsive refinements.\n\nLive at maqsudjon-cell.github.io/pangeya-essay-platform-/index-14.html and pangea8.com"
   },
   {
     "date": "2026-05-29",
-    "title": "IELTS Hub \u2014 73 listening tests \ud83d\ude80",
+    "title": "IELTS Hub \u2014 73 listening tests",
     "tag": "IELTS",
     "body": "Big update today! Added 35 new Diyorbek listening tests \u2014 Tests 41 through 76. That brings the total to 73 listening tests on the platform. Each test has 40 questions, full audio, and instant scoring. Check them out at pangea8.com"
   },
