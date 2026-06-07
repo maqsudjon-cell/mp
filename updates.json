@@ -1,6 +1,14 @@
 [
   {
     "date": "2026-06-07",
+    "title": "IELTS Hub — 4 new full Reading tests added",
+    "tag": "IELTS",
+    "body": "Added 4 new CDI Reading tests to the IELTS Hub (pangea8.com). These are full Academic reading tests with 3 passages, 40 questions each, and a 60-minute timer.\n\nThe new tests are: CDI Reading 1 through CDI Reading 4. They join the existing reading collection including C20T1, Manatees, and Kakapo tests. The hub now has a total of 10 reading tests alongside 73 listening tests, writing, and tools.\n\nBuilt with vanilla HTML/CSS/JS, each test runs as a standalone page with instant scoring and answer checking.",
+    "date": "2026-06-07",
+    "title": "Flarestamina — 40-Day IELTS Challenge tracker is live",
+    "tag": "Tech",
+    "body": "I launched Flarestamina
+    "date": "2026-06-07",
     "title": "Flarestamina \u2014 40-Day IELTS Challenge tracker is live",
     "tag": "Tech",
     "body": "I launched Flarestamina (flarestamina.com) \u2014 a complete 40-Day IELTS Challenge tracker covering all four skills: Listening, Reading, Writing, and Speaking across 38 active days with 265 tasks. Users sign in with Google, check off tasks daily, and their progress auto-saves and syncs across devices in real time. The tracker includes a progress ring, a streak heatmap, and a class leaderboard.\n\nI also built a gated Teacher Dashboard that lets me add or remove days from the plan, view individual student progress, and track the leaderboard. The whole thing runs on vanilla HTML/CSS/JS with Firebase v10 (Auth + Firestore) loaded over CDN \u2014 no frameworks, no build step. Deployed to GitHub Pages with a custom domain at flarestamina.com.\n\nThis is the first product I've shipped that other people can actually use to study. Building it taught me a lot about Firebase security rules, real-time sync, and shipping something that just works."
