@@ -1,9 +1,9 @@
 [
   {
     "date": "2026-06-07",
-    "title": "IELTS Hub \u2014 4 new full Reading tests added",
+    "title": "IELTS Hub \u2014 10 CDI Reading tests now live",
     "tag": "IELTS",
-    "body": "Added 4 new CDI Reading tests to the IELTS Hub (pangea8.com). These are full Academic reading tests with 3 passages, 40 questions each, and a 60-minute timer.\n\nThe new tests are: CDI Reading 1 through CDI Reading 4. They join the existing reading collection including C20T1, Manatees, and Kakapo tests. The hub now has a total of 10 reading tests alongside 73 listening tests, writing, and tools.\n\nBuilt with vanilla HTML/CSS/JS, each test runs as a standalone page with instant scoring and answer checking."
+    "body": "Added 6 more full Academic reading tests to the IELTS Hub (pangea8.com), bringing the total to 10 CDI Reading tests. CDI Reading 5 through CDI Reading 10 are now live alongside the earlier CDI 1 through 4.\n\nEach test has 3 passages, 40 questions, and a 60-minute timer with instant scoring and answer checking. The hub now offers 16 reading tests total.\n\nAll built with vanilla HTML/CSS/JS, each running as its own standalone page."
   },
   {
     "date": "2026-06-07",
