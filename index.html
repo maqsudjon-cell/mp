@@ -1,177 +1,369 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#0a0a0a" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maqsudjon Polatov</title>
+<meta name="description" content="Engineer, student, and music producer from Tashkent. Building pangea8, Minnos, and making music as Matsumi.">
+<link rel="canonical" href="https://maqsudjon.com/">
+<meta property="og:title" content="Maqsudjon Polatov">
+<meta property="og:description" content="Engineer · Student · Producer — Tashkent.">
+<meta property="og:url" content="https://maqsudjon.com/">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --black:#000000;
+  --white:#ffffff;
+  --red:#d71921;
+  --panel:#0a0a0a;
+  --panel2:#141414;
+  --line:#262626;
+  --line2:#363636;
+  --dim:#666666;
+  --dim2:#8a8a8a;
+  --mono:'JetBrains Mono',ui-monospace,monospace;
+  --body:'Inter',system-ui,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  background:var(--black);color:var(--white);font-family:var(--body);
+  font-size:16px;line-height:1.6;overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+/* dotted texture layer */
+body::before{
+  content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+  background-image:radial-gradient(circle, rgba(255,255,255,.045) 1px, transparent 1px);
+  background-size:22px 22px;
+}
+a{color:inherit;text-decoration:none}
+::selection{background:var(--red);color:var(--white)}
 
-  <title>Maqsudjon Polatov</title>
-  <meta name="description" content="Maqsudjon Polatov — a 21-year-old from Namangan, building things at the intersection of education, logistics, and music. IELTS instructor, trucking logistics expert, and electronic music producer as Matsumi." />
-  <meta name="author" content="Maqsudjon Polatov" />
-  <link rel="canonical" href="https://maqsudjon.com/" />
+.wrap{position:relative;z-index:1;max-width:1080px;margin:0 auto;padding:0 24px}
 
-  <!-- Preload hero image -->
-  <link rel="preload" as="image" href="assets/profile.jpg" />
+/* ============ MONO LABELS ============ */
+.lab{font-family:var(--mono);font-size:.7rem;font-weight:500;letter-spacing:.22em;
+  text-transform:uppercase;color:var(--dim2)}
+.lab .red{color:var(--red)}
 
-  <!-- Open Graph -->
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://maqsudjon.com/" />
-  <meta property="og:title" content="Maqsudjon Polatov — Updates from Tashkent" />
-  <meta property="og:description" content="IELTS Hub: 73 listening tests. Pangea8.com — IELTS practice platform. Music as Matsumi. Personal updates, projects, and thoughts." />
-  <meta property="og:image" content="https://maqsudjon.com/assets/profile.jpg" />
-  <meta property="og:image:width" content="512" />
-  <meta property="og:image:height" content="512" />
-  <meta property="og:locale" content="en_US" />
+/* ============ TOP BAR ============ */
+.bar{position:fixed;top:0;left:0;right:0;z-index:50;
+  border-bottom:1px solid var(--line);background:rgba(0,0,0,.78);backdrop-filter:blur(12px)}
+.bar .wrap{display:flex;align-items:center;justify-content:space-between;height:54px}
+.brand{font-family:var(--mono);font-weight:800;font-size:.95rem;letter-spacing:.04em;display:flex;align-items:center;gap:9px}
+.brand .led{width:9px;height:9px;border-radius:50%;background:var(--red);box-shadow:0 0 10px var(--red);animation:blink 2.6s steps(1) infinite}
+@keyframes blink{0%,82%{opacity:1}83%,100%{opacity:.25}}
+.bar nav{display:flex;gap:4px}
+.bar nav a{font-family:var(--mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--dim2);padding:7px 12px;border:1px solid transparent;transition:.16s}
+.bar nav a:hover{color:var(--white);border-color:var(--line2)}
+.clock{font-family:var(--mono);font-size:.72rem;color:var(--dim);letter-spacing:.08em}
+@media(max-width:680px){.bar nav a:not(.cta){display:none}.clock{display:none}}
 
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:site" content="@mpolatov13" />
-  <meta name="twitter:creator" content="@mpolatov13" />
-  <meta name="twitter:title" content="Maqsudjon Polatov — Updates from Tashkent" />
-  <meta name="twitter:description" content="IELTS Hub: 73 listening tests. Pangea8.com — IELTS practice platform. Music as Matsumi." />
-  <meta name="twitter:image" content="https://maqsudjon.com/assets/profile.jpg" />
-  <meta name="twitter:image:alt" content="Maqsudjon Polatov profile photo" />
+/* ============ HERO ============ */
+.hero{padding:130px 0 70px;border-bottom:1px solid var(--line)}
+.hero-top{display:flex;align-items:center;gap:14px;margin-bottom:34px}
+.hero-top .line{flex:1;height:1px;background:var(--line2)}
 
-  <link rel="icon" href="/favicon.ico" sizes="any" />
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-  <link rel="manifest" href="/site.webmanifest" />
+/* dot-matrix LED name */
+.matrix{margin:0 0 6px;font-family:var(--mono);font-weight:800;line-height:.92;
+  letter-spacing:-.01em;font-size:clamp(2.7rem,9vw,6.2rem);text-transform:uppercase}
+.matrix .row{display:block}
+.matrix .cur{color:var(--red)}
+.role{font-family:var(--mono);font-size:clamp(.8rem,2.4vw,1rem);letter-spacing:.32em;
+  text-transform:uppercase;color:var(--dim2);margin-top:22px;display:flex;flex-wrap:wrap;gap:10px 16px}
+.role span{display:inline-flex;align-items:center;gap:9px}
+.role .dot{width:5px;height:5px;background:var(--red);border-radius:50%}
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet" />
+.hero-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:40px;margin-top:54px;align-items:end}
+@media(max-width:760px){.hero-grid{grid-template-columns:1fr;gap:34px}}
+.bio{font-size:1.05rem;color:#cfcfcf;max-width:48ch;line-height:1.65}
+.bio b{color:var(--white);font-weight:600}
+.herocta{display:flex;flex-direction:column;gap:10px}
+.btn{font-family:var(--mono);font-size:.78rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;
+  padding:15px 20px;border:1px solid var(--line2);display:flex;align-items:center;justify-content:space-between;
+  gap:14px;transition:.16s;background:var(--panel)}
+.btn:hover{background:var(--white);color:var(--black);border-color:var(--white)}
+.btn.solid{background:var(--red);border-color:var(--red);color:var(--white)}
+.btn.solid:hover{background:var(--white);color:var(--black);border-color:var(--white)}
+.btn .ar{font-size:1rem}
 
-  <link rel="stylesheet" href="styles.css" />
+/* ============ SECTION SHELL ============ */
+section{padding:64px 0;border-bottom:1px solid var(--line)}
+.shead{display:flex;align-items:baseline;justify-content:space-between;gap:16px;margin-bottom:38px;flex-wrap:wrap}
+.shead h2{font-family:var(--mono);font-weight:800;font-size:clamp(1.5rem,4vw,2.3rem);
+  letter-spacing:-.01em;text-transform:uppercase}
+.shead .idx{font-family:var(--mono);font-size:.72rem;letter-spacing:.2em;color:var(--red)}
+
+/* ============ WORK / PROJECTS ============ */
+.work{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line);border-bottom:none}
+@media(max-width:680px){.work{grid-template-columns:1fr}}
+.proj{position:relative;padding:30px 26px;border-bottom:1px solid var(--line);border-right:1px solid var(--line);
+  display:flex;flex-direction:column;gap:14px;min-height:200px;transition:.2s;overflow:hidden}
+.work .proj:nth-child(2n){border-right:none}
+@media(max-width:680px){.proj{border-right:none}}
+.proj:hover{background:var(--panel)}
+.proj .num{font-family:var(--mono);font-size:.7rem;letter-spacing:.2em;color:var(--dim)}
+.proj h3{font-family:var(--mono);font-weight:700;font-size:1.4rem;letter-spacing:-.01em;display:flex;align-items:center;gap:10px}
+.proj p{font-size:.92rem;color:var(--dim2);line-height:1.55;flex:1}
+.proj .meta{font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);
+  display:flex;align-items:center;gap:8px}
+.proj .go{position:absolute;top:26px;right:24px;font-family:var(--mono);font-size:1.1rem;color:var(--dim);transition:.2s}
+.proj:hover .go{color:var(--red);transform:translate(3px,-3px)}
+.proj .tagdot{width:7px;height:7px;border-radius:50%;background:var(--red)}
+
+/* ============ UPDATES ============ */
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:30px}
+.filters button{font-family:var(--mono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--dim2);background:transparent;border:1px solid var(--line2);padding:8px 14px;cursor:pointer;transition:.15s}
+.filters button:hover{color:var(--white)}
+.filters button.on{background:var(--white);color:var(--black);border-color:var(--white)}
+
+.feed{display:flex;flex-direction:column;border-top:1px solid var(--line)}
+.post{border-bottom:1px solid var(--line);padding:24px 0;display:grid;grid-template-columns:130px 1fr 30px;
+  gap:20px;cursor:pointer;transition:.18s;align-items:start}
+@media(max-width:680px){.post{grid-template-columns:1fr;gap:8px}}
+.post:hover{background:var(--panel);padding-left:18px;padding-right:18px}
+.post .when{font-family:var(--mono);font-size:.72rem;color:var(--dim);letter-spacing:.06em;padding-top:3px}
+.post .tag{display:inline-block;font-family:var(--mono);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--red);border:1px solid var(--line2);padding:2px 7px;margin-top:7px}
+.post h3{font-family:var(--mono);font-weight:600;font-size:1.12rem;letter-spacing:-.01em;line-height:1.35}
+.post .ex{font-family:var(--mono);font-size:1.3rem;color:var(--dim);justify-self:end;transition:.2s;line-height:1}
+@media(max-width:680px){.post .ex{display:none}}
+.post:hover .ex{color:var(--red)}
+.post .body{display:none;grid-column:2/3;font-size:.95rem;color:var(--dim2);line-height:1.7;
+  margin-top:14px;white-space:pre-wrap;max-width:62ch}
+@media(max-width:680px){.post .body{grid-column:1}}
+.post.open .body{display:block}
+.post.open .ex{transform:rotate(45deg);color:var(--red)}
+
+/* ============ CONTACT ============ */
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line)}
+@media(max-width:680px){.contact{grid-template-columns:1fr}}
+.contact a, .contact .cell{padding:24px 26px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);
+  display:flex;align-items:center;justify-content:space-between;gap:14px;transition:.16s;font-family:var(--mono);
+  font-size:.82rem;letter-spacing:.06em}
+.contact a:nth-child(2n){border-right:none}
+@media(max-width:680px){.contact a,.contact .cell{border-right:none}}
+.contact a:hover{background:var(--white);color:var(--black)}
+.contact a .k{color:var(--dim);text-transform:uppercase;font-size:.66rem;letter-spacing:.18em}
+.contact a:hover .k{color:var(--black)}
+.contact a .v{font-weight:500}
+
+/* ============ FOOTER ============ */
+footer{padding:40px 0 60px;text-align:center}
+footer .big{font-family:var(--mono);font-weight:800;font-size:clamp(2.4rem,11vw,7rem);letter-spacing:-.02em;
+  color:transparent;-webkit-text-stroke:1px var(--line2);text-stroke:1px var(--line2);line-height:1;margin-bottom:24px;
+  text-transform:uppercase;user-select:none}
+footer .meta{font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);
+  display:flex;justify-content:center;align-items:center;gap:14px;flex-wrap:wrap}
+footer .meta .red{color:var(--red)}
+
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
 </head>
 <body>
-  <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
-    <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
-    <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-  </button>
 
-  <main>
-    <!-- HERO -->
-    <section class="hero" id="hero">
-      <div class="hero-grid">
-        <div class="hero-photo" data-initials="MP">
-          <img src="assets/profile.jpg" alt="Maqsudjon Polatov" width="180" height="180" loading="eager" onerror="this.style.display='none'" />
-        </div>
-        <div class="hero-text">
-          <h1>Maqsudjon Polatov</h1>
-          <p class="subtitle">Engineer · Student · Producer</p>
-          <p class="intro">
-            I'm Maqsudjon — a 21-year-old from Namangan, now in Tashkent. I work as a welder, study, and produce electronic music as Matsumi. I also build small things on the side — like pangea8.com, an IELTS practice hub. This site is where I share what I'm building and thinking about.
-          </p>
+<!-- TOP BAR -->
+<header class="bar">
+  <div class="wrap">
+    <a href="#top" class="brand"><span class="led"></span>M.POLATOV</a>
+    <nav>
+      <a href="#work">Work</a>
+      <a href="#updates">Updates</a>
+      <a href="#contact">Contact</a>
+      <a href="https://t.me/mrbmp13" class="cta" target="_blank" rel="noopener">Say hi →</a>
+    </nav>
+    <div class="clock" id="clock">TASHKENT —:—</div>
+  </div>
+</header>
 
-          <ul class="socials" aria-label="Social links">
-            <li><a href="https://t.me/mrbmp13" target="_blank" rel="noopener" aria-label="Telegram">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
-            </a></li>
-            <li><a href="https://www.instagram.com/ma1sumi" target="_blank" rel="noopener" aria-label="Instagram">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-            </a></li>
-            <li><a href="https://github.com/maqsudjon-cell" target="_blank" rel="noopener" aria-label="GitHub">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
-            </a></li>
-            <li><a href="https://open.spotify.com/artist/5JrOkWvknHZoAH9qWQ9eNr" target="_blank" rel="noopener" aria-label="Spotify">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.42 1.56-.299.421-1.02.599-1.559.3z"/></svg>
-            </a></li>
-            <li><a href="https://youtube.com/@matsumimusic" target="_blank" rel="noopener" aria-label="YouTube">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-            </a></li>
-            <li><a href="https://x.com/mpolatov13" target="_blank" rel="noopener" aria-label="X (Twitter)">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-            </a></li>
-            <li><a href="mailto:polatovmaqsudjon1@gmail.com" aria-label="Email">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-            </a></li>
-          </ul>
+<!-- HERO -->
+<div class="wrap" id="top">
+<section class="hero">
+  <div class="hero-top">
+    <span class="lab"><span class="red">●</span> TASHKENT, UZ · 41.31°N</span>
+    <span class="line"></span>
+    <span class="lab">EST. 2004 / NAMANGAN</span>
+  </div>
 
-          <div class="cta-row">
-            <a href="#updates" class="btn btn-primary">Read updates</a>
-            <a href="#about" class="btn btn-ghost">About me</a>
-          </div>
-        </div>
-      </div>
-    </section>
+  <h1 class="matrix" id="matrix" aria-label="Maqsudjon Polatov">
+    <span class="row">MAQSUDJON</span>
+    <span class="row">POLATOV<span class="cur">_</span></span>
+  </h1>
 
-    <!-- UPDATES -->
-    <section class="updates" id="updates">
-      <h2>Updates</h2>
-      <p class="section-lead">Short notes on what I'm building, learning, or thinking about.</p>
+  <div class="role">
+    <span><i class="dot"></i>ENGINEER</span>
+    <span><i class="dot"></i>STUDENT</span>
+    <span><i class="dot"></i>PRODUCER</span>
+  </div>
 
-      <div id="updates-list" class="updates-list" aria-live="polite">
-        <!-- Skeleton loader shown while fetching -->
-        <div class="skeleton" aria-hidden="true">
-          <div class="skeleton-line skeleton-line--short"></div>
-          <div class="skeleton-line skeleton-line--medium"></div>
-          <div class="skeleton-line skeleton-line--long"></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SHARE BUTTONS -->
-    <section class="share-section" id="share">
-      <h2>Share this page</h2>
-      <p class="section-lead">Tell someone about this site.</p>
-      <div class="share-buttons">
-        <button onclick="sharePage('telegram')" class="share-btn telegram" title="Share on Telegram" aria-label="Share on Telegram">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
-          Telegram
-        </button>
-        <button onclick="sharePage('twitter')" class="share-btn twitter" title="Share on Twitter/X" aria-label="Share on Twitter/X">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-          Twitter/X
-        </button>
-        <button onclick="sharePage('copy')" class="share-btn copy" title="Copy link" aria-label="Copy link to clipboard">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
-          Copy Link
-        </button>
-      </div>
-    </section>
-
-    <!-- ABOUT -->
-    <section class="about" id="about">
-      <h2>About</h2>
-
-      <div class="about-block">
-        <div class="about-icon" aria-hidden="true">📍</div>
-        <div>
-          <h3>Where I'm from</h3>
-          <p>I was born in Namangan in 2004. I went to vocational school №1 and studied to be an electrician — graduated with a red diploma. Later I worked as a welder. Engineering trained me to be precise.</p>
-        </div>
-      </div>
-
-      <div class="about-block">
-        <div class="about-icon" aria-hidden="true">⚡</div>
-        <div>
-          <h3>What I do now</h3>
-          <p>Today I live in Tashkent and work as a welder. I'm also a student, still learning. On the side I run <a href="https://pangea8.com" target="_blank" rel="noopener">pangea8.com</a> — an IELTS practice hub I built with passion for students preparing for the test. Outside of all that, I make electronic music as <a href="https://open.spotify.com/artist/5JrOkWvknHZoAH9qWQ9eNr" target="_blank" rel="noopener">Matsumi</a> — UK Garage, Bassline, Hard Techno.</p>
-        </div>
-      </div>
-
-      <div class="about-block">
-        <div class="about-icon" aria-hidden="true">🌍</div>
-        <div>
-          <h3>Languages &amp; curiosity</h3>
-          <p>I speak Uzbek, English (C1), and Korean (TOPIK Level 2). I'm curious about a lot of things and not sure yet where it all leads. This site is partly to keep track of the journey.</p>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer id="contact">
-    <p class="contact-lead">Want to talk? <span lang="uz">Salom yozing</span>.</p>
-    <p class="contact-links">
-      <a href="mailto:polatovmaqsudjon1@gmail.com">polatovmaqsudjon1@gmail.com</a>
-      <span class="dot">·</span>
-      <a href="https://t.me/mrbmp13" target="_blank" rel="noopener">@mrbmp13</a>
+  <div class="hero-grid">
+    <p class="bio">
+      Self-taught across <b>web, Python, electronics, and sound</b>. I build free
+      tools for IELTS students, prototype an AI robot called <b>Minnos</b>, and
+      release music as <b>Matsumi</b>. I speak Uzbek, English (C1), and some Korean.
+      Curious about a lot — still figuring out where it all points.
     </p>
-    <p class="copyright">© 2026 maqsudjon.com · Built with passion</p>
-  </footer>
+    <div class="herocta">
+      <a href="#work" class="btn solid">View the work <span class="ar">↓</span></a>
+      <a href="#updates" class="btn">Read updates <span class="ar">→</span></a>
+    </div>
+  </div>
+</section>
+</div>
 
-  <script src="script.js"></script>
+<!-- WORK -->
+<div class="wrap">
+<section id="work">
+  <div class="shead">
+    <h2>Selected work</h2>
+    <span class="idx">[ 01 — BUILD ]</span>
+  </div>
+  <div class="work">
+    <a class="proj" href="https://pangea8.com" target="_blank" rel="noopener">
+      <span class="go">↗</span>
+      <span class="num">// 001</span>
+      <h3><span class="tagdot"></span>pangea8</h3>
+      <p>A free IELTS ecosystem — 90+ listening &amp; reading tests, an essay platform, and a 40-day challenge tracker. Built end to end, deployed on GitHub Pages.</p>
+      <span class="meta">WEB · FIREBASE · IELTS</span>
+    </a>
+    <a class="proj" href="https://flarestamina.com" target="_blank" rel="noopener">
+      <span class="go">↗</span>
+      <span class="num">// 002</span>
+      <h3><span class="tagdot"></span>Flarestamina</h3>
+      <p>A 40-day IELTS challenge tracker — PWA with a live leaderboard, streaks, and a teacher dashboard. Google auth, Firestore, deployed for a real class.</p>
+      <span class="meta">PWA · FIRESTORE · TRACKER</span>
+    </a>
+    <a class="proj" href="https://maqsudjon.com" target="_blank" rel="noopener">
+      <span class="go">↗</span>
+      <span class="num">// 003</span>
+      <h3><span class="tagdot"></span>Minnos</h3>
+      <p>A pocket-sized conversational AI robot — Raspberry Pi, a round display with five expressions, mic and speaker. Uzbek speech in, Claude reasoning, voice out.</p>
+      <span class="meta">RASPBERRY PI · AI · HARDWARE</span>
+    </a>
+    <a class="proj" href="https://open.spotify.com/artist/5JrOkWvknHZoAH9qWQ9eNr" target="_blank" rel="noopener">
+      <span class="go">↗</span>
+      <span class="num">// 004</span>
+      <h3><span class="tagdot"></span>Matsumi</h3>
+      <p>UK Garage, bassline, and bounce — produced from Tashkent, released via DistroKid. Growing on Spotify with the UK as the top market.</p>
+      <span class="meta">MUSIC · UK GARAGE · SPOTIFY</span>
+    </a>
+  </div>
+</section>
+</div>
+
+<!-- UPDATES -->
+<div class="wrap">
+<section id="updates">
+  <div class="shead">
+    <h2>Updates</h2>
+    <span class="idx">[ 02 — LOG ]</span>
+  </div>
+  <div class="filters" id="filters">
+    <button class="on" data-f="all">All</button>
+    <button data-f="Tech">Tech</button>
+    <button data-f="IELTS">IELTS</button>
+    <button data-f="Music">Music</button>
+    <button data-f="Teaching">Teaching</button>
+  </div>
+  <div class="feed" id="feed"></div>
+</section>
+</div>
+
+<!-- CONTACT -->
+<div class="wrap">
+<section id="contact">
+  <div class="shead">
+    <h2>Get in touch</h2>
+    <span class="idx">[ 03 — LINK ]</span>
+  </div>
+  <div class="contact">
+    <a href="https://t.me/mrbmp13" target="_blank" rel="noopener"><span class="k">Telegram</span><span class="v">@mrbmp13 →</span></a>
+    <a href="https://www.instagram.com/ma1sumi" target="_blank" rel="noopener"><span class="k">Instagram</span><span class="v">@ma1sumi →</span></a>
+    <a href="https://github.com/maqsudjon-cell" target="_blank" rel="noopener"><span class="k">GitHub</span><span class="v">maqsudjon-cell →</span></a>
+    <a href="https://x.com/mpolatov13" target="_blank" rel="noopener"><span class="k">X</span><span class="v">@mpolatov13 →</span></a>
+    <a href="https://youtube.com/@matsumimusic" target="_blank" rel="noopener"><span class="k">YouTube</span><span class="v">@matsumimusic →</span></a>
+    <a href="mailto:polatovmaqsudjon1@gmail.com"><span class="k">Email</span><span class="v">polatovmaqsudjon1 →</span></a>
+  </div>
+</section>
+</div>
+
+<!-- FOOTER -->
+<div class="wrap">
+<footer>
+  <div class="big">POLATOV</div>
+  <div class="meta">
+    <span>© 2026 MAQSUDJON.COM</span>
+    <span class="red">●</span>
+    <span>MADE IN TASHKENT</span>
+  </div>
+</footer>
+</div>
+
+<script>
+const updates = [{"date": "2026-06-12", "title": "pangea8.com — all-new landing page, built end to end", "tag": "Tech", "body": "pangea8.com has a real face now. Until today the domain pointed straight at the test hub — functional, but it never told anyone what Pangea8 is. Today I shipped a full landing page and moved the hub to its own address (maqsudjon-cell.github.io/ielts-hub). The Start practicing button drops you straight into the tests.\n\nThe origin story is funny: I saw one of those viral \"can you believe Claude did this\" reels on Instagram and decided pangea8 deserved the same energy. The design went through three full iterations in one session with Claude. Version one was a cinematic renaissance museum — gold frames, Vermeer paintings, a rotating wax seal. Beautiful, but too luxury for an IELTS platform. Version two swung the other way: cream-and-coral minimalism. Clean, but boring and not our colors. Version three landed it: dark hi-tech in pangea8's own emerald, Linear/Vercel energy.\n\nThe hero is the heart of it. Aurora glow blobs drift behind an animated grid, the headline \"Band 7.5 & beyond\" decodes with a matrix-style scramble, and the centerpiece is a glass mock of the actual hub — browser chrome, search bar, filter pills, and a 3-column grid of real test cards (Mock Listening 76, CDI Reading 4...).\n\nAnd the mock is alive. The search bar types by itself — \"listening\", then \"reading\" — the filter pills switch on their own, and the test cards dim and highlight to match, like someone is using the product right in front of you. A green tracer light runs around the card border, and on desktop the whole thing tilts in 3D as your cursor moves.\n\nThen there's the ambient layer, my favorite part. Meteors streak across the hero every twenty-something seconds — and if you tap anywhere on the hero, a meteor fires from exactly where you touched. There are 38 twinkling stars, random grid cells that pulse green, and embers rising through the final CTA. Light mode gets its own character instead of just recoloring: the stars become soft green sparkles, meteors turn into deep-green comets, and floating ring-and-plus shapes drift around that only exist in light mode.\n\nThe theme system does both: it follows your device setting automatically, and a moon/sun toggle in the nav lets you override it — your choice is remembered, with zero flash on page load.\n\nSign-in is live too. Google auth through Firebase, and once you're signed in, Start practicing jumps you to the hub instantly — same tab, preconnected, prefetched. If the sign-in popup fails or you close it, you still go straight to the tests. Practice is never blocked. I also deferred the Firebase SDK so the page paints and animates instantly even on slow connections — the SDK loads in the background and attaches auth when it's ready.\n\nUnder the hood it's one 58KB HTML file. No frameworks, no build step — vanilla CSS and JS, Google Fonts, and Firebase over CDN. Spotlight hover cards, magnetic buttons, count-up stats, an animated band-score gauge, a scroll progress bar, a real favicon set (Google Search needs actual files, not data URIs), and a proper OG image for link previews.\n\nThe last piece was the domain migration. pangea8.com moved from the hub repo to the landing repo — before flipping it I checked every one of the 92 test links to make sure nothing would break (they all point to their own github.io pages, so nothing did). The hub now lives at maqsudjon-cell.github.io/ielts-hub and the brand finally lives at pangea8.com.\n\nNext up: pushing past 100 tests. The landing already says 100+ — now I have to catch up to my own marketing."}, {"date": "2026-06-07", "title": "IELTS Hub — 10 CDI Reading tests now live", "tag": "IELTS", "body": "Added 6 more full Academic reading tests to the IELTS Hub (pangea8.com), bringing the total to 10 CDI Reading tests. CDI Reading 5 through CDI Reading 10 are now live alongside the earlier CDI 1 through 4.\n\nEach test has 3 passages, 40 questions, and a 60-minute timer with instant scoring and answer checking. The hub now offers 16 reading tests total.\n\nAll built with vanilla HTML/CSS/JS, each running as its own standalone page."}, {"date": "2026-06-07", "title": "Flarestamina — 40-Day IELTS Challenge tracker is live", "tag": "Tech", "body": "I launched Flarestamina (flarestamina.com) — a complete 40-Day IELTS Challenge tracker covering all four skills: Listening, Reading, Writing, and Speaking across 38 active days with 265 tasks. Users sign in with Google, check off tasks daily, and their progress auto-saves and syncs across devices in real time. The tracker includes a progress ring, a streak heatmap, and a class leaderboard.\n\nI also built a gated Teacher Dashboard that lets me add or remove days from the plan, view individual student progress, and track the leaderboard. The whole thing runs on vanilla HTML/CSS/JS with Firebase v10 (Auth + Firestore) loaded over CDN — no frameworks, no build step. Deployed to GitHub Pages with a custom domain at flarestamina.com.\n\nThis is the first product I've shipped that other people can actually use to study. Building it taught me a lot about Firebase security rules, real-time sync, and shipping something that just works."}, {"date": "2026-06-03", "title": "Pangeya Essay Platform — full overhaul", "tag": "Tech", "body": "Today I shipped a major update to the Pangeya Essay Platform. The goal was to make it faster, safer, and more solid all around.\n\nThe biggest change is a real-time onSnapshot listener. Essays now show up instantly after you submit, edit, or delete them — no more waiting around for a full Firestore re-query.\n\nOn the security side, I added XSS sanitization, so essay content is now cleaned before it's rendered to the screen.\n\nI also fixed a handful of bugs: duplicate submissions are now prevented, the negative credits issue is resolved, duplicate functions were removed, and stale renderEssays() calls got cleaned up.\n\nFor accessibility, I added aria roles, the Escape key now closes modals, and Ctrl+Enter submits.\n\nAnd finally, some visual polish: a favicon was added, along with a few responsive refinements.\n\nLive at maqsudjon-cell.github.io/pangeya-essay-platform-/index-14.html and pangea8.com"}, {"date": "2026-05-29", "title": "IELTS Hub — 73 listening tests", "tag": "IELTS", "body": "Big update today! Added 35 new Diyorbek listening tests — Tests 41 through 76. That brings the total to 73 listening tests on the platform. Each test has 40 questions, full audio, and instant scoring. Check them out at pangea8.com"}, {"date": "2026-05-27", "title": "Launched pangea8.com", "tag": "Tech", "body": "Today I officially launched pangea8.com — my IELTS practice hub. It hosts mock tests for Reading, Writing, Listening, and Speaking, plus the Pangeya Essay platform. Built with passion for students preparing for IELTS, but it's open to anyone preparing for IELTS. Setting up the domain through Cloudflare and connecting it to GitHub Pages took an afternoon. The hardest part was choosing the name."}, {"date": "2026-05-29", "title": "IELTS Hub — 59 listening tests", "tag": "IELTS", "body": "Added 8 more Diyorbek listening tests — Tests 56 through 63. Fixed test ordering, added share buttons, and fixed Test 12 URL. Now at 59 total listening tests on the hub. Full audio, instant scoring, all on pangea8.com."}, {"date": "2026-05-28", "title": "IELTS Hub — 10 new tests (31–40)", "tag": "IELTS", "body": "Added 10 new Diyorbek listening tests to the hub today — Tests 31 through 40. That brings the total to 37 listening tests on the platform. Each test has 40 questions, full audio, and instant scoring.\n\nCheck them out at pangea8.com"}, {"date": "2026-05-28", "title": "IELTS Hub — 42 listening tests", "tag": "IELTS", "body": "Added 5 more Diyorbek listening tests — Tests 41 through 45. Full audio, instant scoring, all on pangea8.com."}, {"date": "2026-05-29", "title": "IELTS Hub — 51 listening tests", "tag": "IELTS", "body": "Added 9 more Diyorbek listening tests — Tests 46 through 55 (except 49). Now at 51 total listening tests on the platform. Full audio, instant scoring, all on pangea8.com."}, {"date": "2026-05-20", "title": "Why Pangea?", "tag": "Teaching", "body": "Pangea was the single supercontinent before everything drifted apart. I liked the metaphor — one world, one platform. The 8 in pangea8 stands for IELTS Band 8 — the goal most students aim for, and also looks like the infinity symbol when laid sideways. Pangea forever, Pangea eight. Brand names should mean something to the founder, even if nobody else gets it at first."}, {"date": "2026-05-15", "title": "Making music from Tashkent", "tag": "Music", "body": "Releasing UK Garage tracks from Uzbekistan feels strange sometimes. I'm probably one of the only producers in Central Asia making this sound. My album HOME is out on Spotify under Matsumi. Most of my listeners are in the UK, which makes sense — that's where the genre lives. But it also tells me something: location doesn't matter anymore. The internet erased that."}];
+
+// ---- clock (Tashkent UTC+5) ----
+function tick(){
+  const now=new Date();
+  const u=new Date(now.getTime()+(now.getTimezoneOffset()*60000)+(5*3600000));
+  const hh=String(u.getHours()).padStart(2,'0');
+  const mm=String(u.getMinutes()).padStart(2,'0');
+  const ss=String(u.getSeconds()).padStart(2,'0');
+  const el=document.getElementById('clock');
+  if(el) el.textContent=`TASHKENT ${hh}:${mm}:${ss}`;
+}
+tick(); setInterval(tick,1000);
+
+// ---- feed render ----
+const feed=document.getElementById('feed');
+function fmtDate(d){
+  const m=['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP','OCT','NOV','DEC'];
+  const [y,mo,da]=d.split('-');
+  return `${da} ${m[+mo-1]} ${y}`;
+}
+function render(filter){
+  feed.innerHTML='';
+  const list=updates
+    .filter(p=>filter==='all'||p.tag===filter)
+    .sort((a,b)=>b.date.localeCompare(a.date));
+  if(!list.length){
+    feed.innerHTML='<div style="padding:40px 0;font-family:var(--mono);color:var(--dim);font-size:.85rem">No entries under this tag yet.</div>';
+    return;
+  }
+  list.forEach(p=>{
+    const el=document.createElement('article');
+    el.className='post';
+    el.innerHTML=`
+      <div><div class="when">${fmtDate(p.date)}</div><span class="tag">${p.tag||'NOTE'}</span></div>
+      <div><h3>${esc(p.title)}</h3><div class="body">${esc(p.body)}</div></div>
+      <div class="ex">+</div>`;
+    el.addEventListener('click',()=>el.classList.toggle('open'));
+    feed.appendChild(el);
+  });
+}
+function esc(s){return (s||'').replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));}
+render('all');
+
+// ---- filters ----
+document.querySelectorAll('#filters button').forEach(b=>{
+  b.addEventListener('click',()=>{
+    document.querySelectorAll('#filters button').forEach(x=>x.classList.remove('on'));
+    b.classList.add('on');
+    render(b.dataset.f);
+  });
+});
+
+// ---- blinking cursor in hero ----
+const cur=document.querySelector('.matrix .cur');
+if(cur){ setInterval(()=>{ cur.style.opacity = cur.style.opacity==='0'?'1':'0'; }, 530); }
+</script>
 </body>
 </html>
