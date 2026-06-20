@@ -6,6 +6,12 @@
     "body": "New side project is live: pierics.com, my own take on Wordle. Guess the hidden word in six tries — type a guess, and each tile flips to tell you what's right: green for the correct letter in the correct spot, yellow for a letter that's in the word but somewhere else, grey for one that isn't there at all.\n\nIt's the kind of build I love — a small, self-contained game with tight rules and instant feedback, the whole thing running in the browser on its own domain. Quick to pick up, hard to put down. Go break your streak: pierics.com."
   },
   {
+    "date": "2026-06-20",
+    "title": "Pangeya Essay Platform — rebuilt from scratch in a Nothing style",
+    "tag": "Tech",
+    "body": "Took the IELTS essay platform apart and rebuilt the whole thing in a monochrome, dot-matrix style inspired by Nothing — pure black, a red accent, mono type, a live particle field, and a dot-matrix \"WRITING LAB\" wordmark with a blinking cursor. Same tool, a completely sharper identity.\n\nEvery feature survived the rebuild and a few got better. Pangeya AI now lives in a floating button you can open from anywhere instead of being buried at the bottom of the page — it slides up as a panel on desktop and a bottom sheet on phones. AI band-score feedback on each essay stays collapsed until you ask for it, so long feedback no longer clutters the list.\n\nUnder the hood I made submitting, deleting, and switching to teacher mode instant by rendering from an in-memory cache instead of re-reading the whole database every time. I also disabled spellcheck, autocorrect, and grammar underlines in the editor so students write a fair exam with no hints, and added a proper branded PDF export — every essay downloads with the Pangeya mark, the candidate's details, word count, and any teacher feedback, designed to look clean in both colour and black-and-white.\n\nThere's a new favicon to match, and the whole thing ships as a single self-contained file."
+  },
+  {
     "date": "2026-06-19",
     "title": "Pangeya Essay Platform — faster, with a focus mode",
     "tag": "Tech",
