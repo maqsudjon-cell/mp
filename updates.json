@@ -6,6 +6,30 @@
     "body": "New side project is live: pierics.com, my own take on Wordle. Guess the hidden word in six tries — type a guess, and each tile flips to tell you what's right: green for the correct letter in the correct spot, yellow for a letter that's in the word but somewhere else, grey for one that isn't there at all.\n\nIt's the kind of build I love — a small, self-contained game with tight rules and instant feedback, the whole thing running in the browser on its own domain. Quick to pick up, hard to put down. Go break your streak: pierics.com."
   },
   {
+    "date": "2026-06-19",
+    "title": "Pangeya Essay Platform — faster, with a focus mode",
+    "tag": "Tech",
+    "body": "Gave the IELTS essay platform a speed and UX pass. Old essays were loading slowly because the app re-read the entire Firebase collection on every action — even on every keystroke in the search box. Now it loads once, caches in memory, and search filters instantly without touching the network.\n\nOn the writing side: the word count is now large and colour-coded — amber while you're under the IELTS minimum, green once you hit it, with an 'X words to go' hint. I added a Focus mode that hides everything but the editor, timer and word count, a timer that pulses and beeps in the final minute like a real exam, and cleaner essay cards that show a word-count badge, a feedback marker, and collapse long essays. Search now also tells you when nothing matches instead of going blank."
+  },
+  {
+    "date": "2026-06-18",
+    "title": "pierics.com — polishing the Wordle clone",
+    "tag": "Tech",
+    "body": "Spent a session refining pierics.com, my Wordle clone. Rebranded it from its working name to Pierics, wired up the pierics.com custom domain, and made the keyboard keys much bigger and more tap-friendly on phones.\n\nThe word list got real attention too: I swapped out every word that wasn't exactly five letters, added around 80 common five-letter words — plurals and verbs — to the list of allowed guesses, and ended up with a clean set of 128 answer words. Small game, but the details are what make it feel right."
+  },
+  {
+    "date": "2026-06-17",
+    "title": "explainer-engine — a branded video generator, built from scratch",
+    "tag": "Tech",
+    "body": "This week's big build: explainer-engine, a tool that turns a topic into a fully branded, narration-free explainer video — kinetic text, data visualisations, glowing spheres, network graphs, all in the pangea8 neon-mint style, with its own generated soundtrack. No footage, no voiceover, no editing: it renders everything from code into an MP4.\n\nIt grew into a proper desktop app over a few days. You describe an idea in a chatbot-style interface and it writes a spec, then renders the video locally on your machine. I added a Templates mode so it runs without an API key, parallel multi-core rendering for speed, a Draft quality option, and a Full/Draft selector.\n\nThe soundtrack engine was the most fun part. Instead of one repetitive loop, it now has six mood palettes — emotional, uplifting, cosmic, driving, tense, playful — each with its own chords and tempo, auto-picked from the topic, in a Fred again..-ish style. I also cleaned up the audio so there's no hiss and no clipping.\n\nThen the real-world fixes: Uzbek text was overflowing the frame, so I made every text block auto-scale and wrap; added an EN/UZ language toggle so the whole video renders in the chosen language; fixed Safari downloads; and — after one render ran for a full day and filled the disk — capped video length and made the whole pipeline fail safely instead of crashing."
+  },
+  {
+    "date": "2026-06-16",
+    "title": "maqsudjon.com — rebuilt in a Nothing-inspired style",
+    "tag": "Tech",
+    "body": "Redesigned this site from the ground up in a monochrome, dot-matrix style inspired by Nothing — pure black, a dotted-LED texture, a signature red accent, and a mono type treatment throughout. The work and updates are laid out on a hairline grid, with a live Tashkent clock and an expandable log. Same content, a much sharper identity."
+  },
+  {
     "date": "2026-06-12",
     "title": "pangea8.com — all-new landing page, built end to end",
     "tag": "Tech",
@@ -36,16 +60,16 @@
     "body": "Big update today! Added 35 new Diyorbek listening tests — Tests 41 through 76. That brings the total to 73 listening tests on the platform. Each test has 40 questions, full audio, and instant scoring. Check them out at pangea8.com"
   },
   {
-    "date": "2026-05-27",
-    "title": "Launched pangea8.com",
-    "tag": "Tech",
-    "body": "Today I officially launched pangea8.com — my IELTS practice hub. It hosts mock tests for Reading, Writing, Listening, and Speaking, plus the Pangeya Essay platform. Built with passion for students preparing for IELTS, but it's open to anyone preparing for IELTS. Setting up the domain through Cloudflare and connecting it to GitHub Pages took an afternoon. The hardest part was choosing the name."
-  },
-  {
     "date": "2026-05-29",
     "title": "IELTS Hub — 59 listening tests",
     "tag": "IELTS",
     "body": "Added 8 more Diyorbek listening tests — Tests 56 through 63. Fixed test ordering, added share buttons, and fixed Test 12 URL. Now at 59 total listening tests on the hub. Full audio, instant scoring, all on pangea8.com."
+  },
+  {
+    "date": "2026-05-29",
+    "title": "IELTS Hub — 51 listening tests",
+    "tag": "IELTS",
+    "body": "Added 9 more Diyorbek listening tests — Tests 46 through 55 (except 49). Now at 51 total listening tests on the platform. Full audio, instant scoring, all on pangea8.com."
   },
   {
     "date": "2026-05-28",
@@ -60,10 +84,10 @@
     "body": "Added 5 more Diyorbek listening tests — Tests 41 through 45. Full audio, instant scoring, all on pangea8.com."
   },
   {
-    "date": "2026-05-29",
-    "title": "IELTS Hub — 51 listening tests",
-    "tag": "IELTS",
-    "body": "Added 9 more Diyorbek listening tests — Tests 46 through 55 (except 49). Now at 51 total listening tests on the platform. Full audio, instant scoring, all on pangea8.com."
+    "date": "2026-05-27",
+    "title": "Launched pangea8.com",
+    "tag": "Tech",
+    "body": "Today I officially launched pangea8.com — my IELTS practice hub. It hosts mock tests for Reading, Writing, Listening, and Speaking, plus the Pangeya Essay platform. Built with passion for students preparing for IELTS, but it's open to anyone preparing for IELTS. Setting up the domain through Cloudflare and connecting it to GitHub Pages took an afternoon. The hardest part was choosing the name."
   },
   {
     "date": "2026-05-20",
