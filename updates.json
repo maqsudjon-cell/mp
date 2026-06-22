@@ -1,5 +1,17 @@
 [
   {
+    "date": "2026-06-22",
+    "title": "pangea8 Speaking — a live IELTS Speaking lab, shipped",
+    "tag": "Tech",
+    "body": "Built and shipped pangea8 Speaking — a full IELTS Speaking practice platform where students record their answers right in the browser and teachers listen back and leave feedback. It's the speaking half of the pangea8 ecosystem, sitting alongside the essay platform and the test hub.\n\nIt opens with the whole official Jan–Apr 2026 question bank already loaded — 166 topics across Part 1, Part 2 and Part 3, every question numbered exactly like the real exam. A student picks a topic, taps record, and the audio uploads so I can review it later. Recordings are tiny, so a whole class can practise for months on the free tier.\n\nThe small details are what make it usable. Before recording, a student chooses which of the topic's questions they're answering, so I always know exactly what they spoke about. There's a live search across both questions and student names, a one-tap light/dark theme that's remembered, and per-answer feedback — I can leave a band score and notes, and classmates can leave peer feedback too.\n\nUnder the hood it's one self-contained file: Firebase for the questions and feedback, Supabase Storage for the audio, vanilla JS, no build step. I made it fast with an in-memory cache and a cache-first first paint, debounced search, and an indexed answer lookup so it stays smooth as answers pile up. Deleting an answer now also frees its audio file automatically. Live, and already added to the hub."
+  },
+  {
+    "date": "2026-06-08",
+    "title": "ID & Passport Photo Maker — a free browser tool",
+    "tag": "Tech",
+    "body": "Shipped a small but genuinely useful tool: a free browser app that crops and resizes any photo to exact passport, visa, and ID dimensions without losing quality. Everything runs on-device — your photo never leaves your phone or laptop.\n\nYou drop in a picture, pick a size, and it gives you a print-ready photo. There's also an on-device AI step that turns the background white, which is what most document photos require. No upload, no server, no sign-in — 100% client-side. Open it and go."
+  },
+  {
     "date": "2026-06-20",
     "title": "pierics.com — a Wordle clone, shipped",
     "tag": "Tech",
