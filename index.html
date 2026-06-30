@@ -270,7 +270,7 @@ footer{border-top:1px solid var(--line);padding:clamp(50px,7vw,88px) 0 60px}
         <span>ASCII //</span><span class="scene" id="sceneName">FLOW</span>
         <span class="tabs" id="tabs">
           <button class="on" data-s="0">Flow</button>
-          <button data-s="1">Globe</button>
+          <button data-s="1">Robot</button>
           <button data-s="2">Torus</button>
           <button data-s="3">Wave</button>
           <button data-s="4">Rain</button>
@@ -314,7 +314,7 @@ footer{border-top:1px solid var(--line);padding:clamp(50px,7vw,88px) 0 60px}
 </section></div>
 
 <!-- ASCII BAND · GLOBE -->
-<section class="band"><canvas class="ascii-band" data-scene="globe" aria-hidden="true"></canvas><div class="bedge"></div><div class="blabel">ASCII // <b>GLOBE</b> · REAL-TIME</div></section>
+<section class="band"><canvas class="ascii-band" data-scene="robot" aria-hidden="true"></canvas><div class="bedge"></div><div class="blabel">ASCII // <b>ROBOT</b> · REAL-TIME</div></section>
 
 <!-- 03 UPDATES -->
 <div class="wrap"><section class="sec" id="updates">
@@ -433,6 +433,32 @@ window.addEventListener('DOMContentLoaded',()=>{document.querySelectorAll('.hero
     for(let lo=0;lo<360;lo+=30){const lor=lo*Math.PI/180;for(let la=-90;la<=90;la+=3){const lar=la*Math.PI/180,cla=Math.cos(lar);
       let x=cla*Math.cos(lor),y=Math.sin(lar),z=cla*Math.sin(lor);let x1=x*ya-z*yb,z1=x*yb+z*ya,y2=y*ta-z1*tb,z2=y*tb+z1*ta;const dep=(z2+1)/2;
       put(cx+x1*R*0.5,cy-y2*R*0.5,0.4+dep*0.6,0.55+dep*0.4);}}}
+  function robot(st,t){fieldBase(st,t,0.08,0.26);const cols=st.cols,rows=st.rows,put=st.put;
+    const cx=Math.round(cols/2),bob=Math.round(Math.sin(t*1.6)*0.6),cy=Math.round(rows*0.54)+bob;
+    let hh=Math.max(4,Math.floor(rows*0.30));let hw=Math.min(Math.floor(cols*0.30),Math.floor(hh*1.9));
+    const cr=Math.max(1,Math.floor(hh*0.32)),HEAD=0.16,EYE=0.4,LIT=0.86,MOU=0.6;
+    // head outline (edges, corners chamfered)
+    for(let x=cx-hw+cr;x<=cx+hw-cr;x++){put(x,cy-hh,0.92,HEAD);put(x,cy+hh,0.92,HEAD);}
+    for(let y=cy-hh+cr;y<=cy+hh-cr;y++){put(cx-hw,y,0.92,HEAD);put(cx+hw,y,0.92,HEAD);}
+    for(let k=0;k<=cr;k++){put(cx-hw+(cr-k),cy-hh+k,0.92,HEAD);put(cx+hw-(cr-k),cy-hh+k,0.92,HEAD);
+      put(cx-hw+(cr-k),cy+hh-k,0.92,HEAD);put(cx+hw-(cr-k),cy+hh-k,0.92,HEAD);}
+    // antenna + pulsing light
+    const antLen=Math.max(2,Math.floor(hh*0.55));for(let k=1;k<=antLen;k++)put(cx,cy-hh-k,0.7,HEAD);
+    const lit=0.55+0.45*Math.sin(t*6);put(cx,cy-hh-antLen-1,Math.max(0.5,lit),LIT);put(cx-1,cy-hh-antLen-1,lit*0.7,LIT);put(cx+1,cy-hh-antLen-1,lit*0.7,LIT);
+    // eyes (blink + look)
+    const ex=Math.round(hw*0.46),ey=cy-Math.round(hh*0.16),er=Math.max(1,Math.floor(hh*0.26));
+    const blink=(t%3.1)<0.16,look=Math.round(Math.sin(t*0.8)*er*0.55);
+    for(const sx of [-1,1]){const ox=cx+sx*ex;
+      if(blink){for(let dx=-er;dx<=er;dx++)put(ox+dx,ey,0.95,EYE);}
+      else{for(let dy=-er;dy<=er;dy++)for(let dx=-Math.round(er*1.6);dx<=Math.round(er*1.6);dx++){
+        if((dx/(er*1.7))*(dx/(er*1.7))+(dy/er)*(dy/er)<=1)put(ox+dx,ey+dy,0.62,EYE);}
+        put(ox+look,ey,1,LIT);put(ox+look,ey-1,0.8,LIT);}}
+    // mouth grille
+    const my=cy+Math.round(hh*0.5),mw=Math.round(hw*0.55);
+    for(let x=cx-mw;x<=cx+mw;x++){put(x,my-1,0.6,MOU);put(x,my+1,0.6,MOU);if(((x-cx+mw)&1)===0)put(x,my,0.92,MOU);}
+    // cheek bolts
+    put(cx-hw-1,cy+1,0.7,EYE);put(cx+hw+1,cy+1,0.7,EYE);}
+
   function torus(st,t){fieldBase(st,t,0.1,0.32);const cols=st.cols,rows=st.rows,zb=st.zb;zb.fill(0);const A=t*0.85,B=t*0.5,cA=Math.cos(A),sA=Math.sin(A),cB=Math.cos(B),sB=Math.sin(B);
     const R1=1,R2=2,K2=5,K1=Math.min(cols*0.42,rows*1.0);
     for(let th=0;th<6.283;th+=0.06){const ct=Math.cos(th),s2=Math.sin(th);
@@ -495,8 +521,8 @@ window.addEventListener('DOMContentLoaded',()=>{document.querySelectorAll('.hero
         else{const ang=Math.atan2(dy,dx)+rot;const spoke=Math.abs(Math.sin(ang*3))>0.72||d<0.15;put(x,y,spoke?0.97:0.28,spoke?0.5:0.03);}}}
     wheel(rearX);wheel(frontX);}
 
-  const SCENES={flow:flow,globe:globe,torus:torus,wave:wave,rain:rain,car:car};
-  const NAMES={flow:'FLOW',globe:'GLOBE',torus:'TORUS',wave:'WAVE',rain:'RAIN',car:'RACE',video:'F1'};
+  const SCENES={flow:flow,robot:robot,globe:globe,torus:torus,wave:wave,rain:rain,car:car};
+  const NAMES={flow:'FLOW',robot:'ROBOT',globe:'GLOBE',torus:'TORUS',wave:'WAVE',rain:'RAIN',car:'RACE',video:'F1'};
   const DYN={rain:1,car:1};
   const VID=document.getElementById('f1vid');
   function vidReady(){return VID&&VID.readyState>=2&&VID.videoWidth>0;}
@@ -541,7 +567,7 @@ window.addEventListener('DOMContentLoaded',()=>{document.querySelectorAll('.hero
 
   if('IntersectionObserver' in window){const io=new IntersectionObserver(function(es){es.forEach(function(e){const r=renderers.find(function(r){return r.canvas===e.target;});if(r)r.visible=e.isIntersecting;});},{rootMargin:'120px'});renderers.forEach(function(r){io.observe(r.canvas);});}
 
-  if(hero){const order=['flow','globe','torus','wave','rain','video'];
+  if(hero){const order=['flow','robot','torus','wave','rain','video'];
     const sceneName=document.getElementById('sceneName'),tabs=document.getElementById('tabs');
     let idx=0,userLock=0,lastCycle=performance.now();const CYCLE=10000;
     const setScene=function(i,byUser){idx=((i%order.length)+order.length)%order.length;hero.scene=order[idx];if(sceneName)sceneName.textContent=NAMES[order[idx]];if(tabs)[...tabs.children].forEach(function(b,j){b.classList.toggle('on',j===idx);});if(byUser)userLock=performance.now();};
