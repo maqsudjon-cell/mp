@@ -4,10 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Maqsudjon Polatov</title>
-<meta name="description" content="Engineer, student, and music producer from Tashkent. Building pangea8, Minnos, and making music as Matsumi.">
+<meta name="description" content="Engineer, student, and music producer from Uzbekistan. Building pangea8, Minnos, and making music as Matsumi.">
 <link rel="canonical" href="https://maqsudjon.com/">
 <meta property="og:title" content="Maqsudjon Polatov">
-<meta property="og:description" content="Engineer · Student · Producer — Tashkent.">
+<meta property="og:description" content="Engineer · Student · Producer — Uzbekistan.">
 <meta property="og:url" content="https://maqsudjon.com/">
 <meta name="twitter:card" content="summary">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
@@ -117,7 +117,14 @@ a{color:inherit;text-decoration:none}
 .list{border-top:1px solid var(--line)}
 .row{display:grid;grid-template-columns:54px 1.05fr 1.55fr 30px;gap:20px;align-items:start;padding:22px 8px;border-bottom:1px solid var(--line);transition:.18s}
 .row:hover{background:var(--bg-2);padding-left:16px;padding-right:16px}
-@media(max-width:720px){.row{grid-template-columns:1fr 28px;gap:6px 16px}.row .rnum{grid-row:1;font-size:.64rem}.row .rmid{grid-column:1}}
+@media(max-width:720px){
+  .row{grid-template-columns:1fr;gap:7px;padding:20px 30px 20px 0;position:relative;align-items:start}
+  .row:hover{padding-left:0;padding-right:30px;background:transparent}
+  .row .rnum{font-size:.66rem;padding-top:0}
+  .row .rname{font-size:1.16rem}
+  .row .rmid{font-size:.92rem}
+  .row .rar{position:absolute;top:20px;right:2px;padding-top:0}
+}
 .row .rnum{font-family:var(--mono);font-size:.7rem;letter-spacing:.12em;color:var(--dim-2);padding-top:5px}
 .row .rname{font-family:var(--display);font-weight:500;font-size:1.28rem;letter-spacing:-.02em;display:flex;align-items:center;gap:10px}
 .row .rname .d{width:7px;height:7px;border-radius:50%;background:var(--peri)}
@@ -161,6 +168,23 @@ footer{border-top:1px solid var(--line);padding:clamp(50px,7vw,88px) 0 60px}
 .fmeta{font-family:var(--mono);font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--dim-2);display:flex;align-items:center;gap:12px;flex-wrap:wrap}
 .fmeta .ac{color:var(--peri)}
 
+/* ===== MOBILE: compact so the ASCII stays visible ===== */
+@media(max-width:600px){
+  .hero-inner{padding:88px 0 70px}
+  .hero-card{max-width:none;padding:18px 16px}
+  .hero-card .eye{font-size:.58rem;letter-spacing:.12em;margin-bottom:11px}
+  .hero-card h1{font-size:1.5rem;line-height:1.2}
+  .hero-card .sub{font-size:.9rem;margin-top:12px;line-height:1.45}
+  .hero-card .row{margin-top:18px;gap:8px}
+  .bd{padding:11px 14px;font-size:.66rem}
+  .sec{padding:52px 0}
+  .sec-head{margin-bottom:26px;gap:12px}
+  .sec-h2{font-size:1.65rem;line-height:1.15}
+  .lede{font-size:1.05rem;line-height:1.45}
+  .prose p{font-size:.95rem}
+  .fbig{font-size:1.65rem}
+}
+
 .reveal{opacity:0;transform:translateY(16px);transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1)}
 .reveal.in{opacity:1;transform:none}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.reveal{opacity:1;transform:none}}
@@ -182,7 +206,7 @@ footer{border-top:1px solid var(--line);padding:clamp(50px,7vw,88px) 0 60px}
       <a href="#contact">Contact</a>
       <a href="https://t.me/mrbmp13" class="cta" target="_blank" rel="noopener">Say hi →</a>
     </nav>
-    <div class="clock" id="clock">TASHKENT —:—</div>
+    <div class="clock" id="clock">UZBEKISTAN —:—</div>
   </div>
 </header>
 
@@ -192,9 +216,9 @@ footer{border-top:1px solid var(--line);padding:clamp(50px,7vw,88px) 0 60px}
   <div class="veil"></div>
   <div class="wrap hero-inner">
     <div class="hero-card">
-      <div class="eye">MAQSUDJON POLATOV · TASHKENT, UZ</div>
+      <div class="eye">MAQSUDJON POLATOV · UZBEKISTAN</div>
       <h1><span data-scramble>I build small, useful things</span> — and ship them to real people.</h1>
-      <p class="sub">Engineer, student and producer. Free tools for IELTS students, little learning apps, and music as Matsumi — all built end to end, from Tashkent to the web.</p>
+      <p class="sub">Engineer, student and producer. Free tools for IELTS students, little learning apps, and music as Matsumi — all built end to end, from Uzbekistan to the web.</p>
       <div class="row">
         <a href="#work" class="bd solid">View the work →</a>
         <a href="#contact" class="bd">Get in touch</a>
@@ -279,7 +303,7 @@ footer{border-top:1px solid var(--line);padding:clamp(50px,7vw,88px) 0 60px}
 </section></div>
 
 <div class="wrap"><footer>
-  <div class="fbig reveal"><span data-scramble>Engineer, student &amp; producer</span> — made in Tashkent.</div>
+  <div class="fbig reveal"><span data-scramble>Engineer, student &amp; producer</span> — made in Uzbekistan.</div>
   <div class="frow reveal">
     <div class="fsoc">
       <a href="https://github.com/maqsudjon-cell" target="_blank" rel="noopener">GitHub</a>
@@ -303,7 +327,7 @@ updates.unshift({
 
 function tick(){const now=new Date();const u=new Date(now.getTime()+now.getTimezoneOffset()*60000+5*3600000);
   const hh=String(u.getHours()).padStart(2,'0'),mm=String(u.getMinutes()).padStart(2,'0'),ss=String(u.getSeconds()).padStart(2,'0');
-  const a=document.getElementById('clock');if(a)a.textContent=`TASHKENT ${hh}:${mm}:${ss}`;
+  const a=document.getElementById('clock');if(a)a.textContent=`UZBEKISTAN ${hh}:${mm}:${ss}`;
   const b=document.getElementById('stageClock');if(b)b.textContent=`${hh}:${mm}:${ss}`;}
 tick();setInterval(tick,1000);
 
