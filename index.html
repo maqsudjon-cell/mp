@@ -186,6 +186,25 @@ footer{border-top:1px solid var(--line);padding:clamp(50px,7vw,88px) 0 60px}
 .fmeta{font-family:var(--mono);font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--dim-2);display:flex;align-items:center;gap:12px;flex-wrap:wrap}
 .fmeta .ac{color:var(--peri)}
 
+/* ===== WHITE CARD LOGO WATERMARK ===== */
+.hero-card{position:relative;overflow:hidden}
+.hero-card>*{position:relative;z-index:1}
+.wm{position:absolute;pointer-events:none;z-index:0;opacity:.07}
+.hero-card .wm{right:-8%;bottom:-22%;width:58%}
+/* ===== CLOSING STATEMENT CARD (like GI footer card) ===== */
+.statement{padding:clamp(40px,6vw,80px) 0}
+.st-card{position:relative;overflow:hidden;background:var(--paper);color:#000;padding:clamp(34px,6vw,76px)}
+.st-card>*{position:relative;z-index:1}
+.st-card .wm{right:-6%;top:-26%;width:50%}
+.st-card h2{font-family:var(--display);font-weight:500;font-size:var(--t-xxl);line-height:1.12;letter-spacing:-.025em;max-width:18ch;color:#000}
+.st-card .bd{margin-top:clamp(22px,3vw,34px)}
+/* ===== FULL-BLEED ASCII BANDS (appear on scroll) ===== */
+.band{position:relative;height:clamp(280px,44vh,440px);overflow:hidden;background:#000;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.band canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+.band .blabel{position:absolute;left:0;bottom:0;z-index:2;font-family:var(--mono);font-size:.62rem;letter-spacing:.13em;text-transform:uppercase;color:var(--dim);padding:8px 13px;background:rgba(0,0,0,.42);backdrop-filter:blur(7px);border-top:1px solid var(--line);border-right:1px solid var(--line)}
+.band .blabel b{color:var(--peri);font-weight:500}
+.band .bedge{position:absolute;inset:0;z-index:1;pointer-events:none;background:radial-gradient(130% 100% at 50% 50%,transparent 55%,rgba(0,0,0,.5) 100%)}
+
 /* ===== MOBILE: compact so the ASCII stays visible ===== */
 @media(max-width:600px){
   .hero-inner{padding:88px 0 70px}
@@ -234,6 +253,7 @@ footer{border-top:1px solid var(--line);padding:clamp(50px,7vw,88px) 0 60px}
   <div class="veil"></div>
   <div class="wrap hero-inner">
     <div class="hero-card">
+      <svg class="wm" viewBox="0 0 100 100" aria-hidden="true"><g stroke="#0b0b0b" stroke-width="6.5" stroke-linecap="round"><line x1="50" y1="50" x2="50" y2="18"/><line x1="50" y1="50" x2="77.7" y2="34"/><line x1="50" y1="50" x2="77.7" y2="66"/><line x1="50" y1="50" x2="50" y2="82"/><line x1="50" y1="50" x2="22.3" y2="66"/><line x1="50" y1="50" x2="22.3" y2="34"/></g><circle cx="50" cy="50" r="4.5" fill="#0b0b0b"/></svg>
       <div class="eye">MAQSUDJON POLATOV · UZBEKISTAN</div>
       <h1><span data-scramble>I build small, useful things</span> — and ship them to real people.</h1>
       <p class="sub">Engineer, student and producer. Free tools for IELTS students, little learning apps, and music as Matsumi — all built end to end, from Uzbekistan to the web.</p>
@@ -253,6 +273,7 @@ footer{border-top:1px solid var(--line);padding:clamp(50px,7vw,88px) 0 60px}
           <button data-s="2">Torus</button>
           <button data-s="3">Wave</button>
           <button data-s="4">Rain</button>
+          <button data-s="5">Race</button>
         </span>
       </div>
       <div class="ph-r"><span id="stageClock">--:--:--</span><span class="live"><i></i>Live</span></div>
@@ -273,6 +294,9 @@ footer{border-top:1px solid var(--line);padding:clamp(50px,7vw,88px) 0 60px}
   </div>
 </section></div>
 
+<!-- ASCII BAND · RACE -->
+<section class="band"><canvas class="ascii-band" data-scene="car" aria-hidden="true"></canvas><div class="bedge"></div><div class="blabel">ASCII // <b>RACE</b> · REAL-TIME</div></section>
+
 <!-- 02 WORK -->
 <div class="wrap"><section class="sec" id="work">
   <div class="sec-head reveal"><span class="sec-label"><b>02</b> / BUILD</span><h2 class="sec-h2" data-scramble>Built end to end, shipped to real users.</h2></div>
@@ -287,6 +311,9 @@ footer{border-top:1px solid var(--line);padding:clamp(50px,7vw,88px) 0 60px}
     <a class="row" href="https://pierics.com" target="_blank" rel="noopener"><span class="rnum">// 007</span><span class="rname"><i class="d"></i>pierics</span><span class="rmid">A Wordle clone — guess the word in six tries, tiles flip green, yellow and grey. Instant feedback.<span class="rmeta">WEB · GAME · WORDLE</span></span><span class="rar">↗</span></a>
   </div>
 </section></div>
+
+<!-- ASCII BAND · GLOBE -->
+<section class="band"><canvas class="ascii-band" data-scene="globe" aria-hidden="true"></canvas><div class="bedge"></div><div class="blabel">ASCII // <b>GLOBE</b> · REAL-TIME</div></section>
 
 <!-- 03 UPDATES -->
 <div class="wrap"><section class="sec" id="updates">
@@ -320,8 +347,16 @@ footer{border-top:1px solid var(--line);padding:clamp(50px,7vw,88px) 0 60px}
   </div>
 </section></div>
 
+<!-- CLOSING STATEMENT CARD (white, logo watermark) -->
+<div class="wrap"><section class="statement">
+  <div class="st-card reveal">
+    <svg class="wm" viewBox="0 0 100 100" aria-hidden="true"><g stroke="#0b0b0b" stroke-width="6.5" stroke-linecap="round"><line x1="50" y1="50" x2="50" y2="18"/><line x1="50" y1="50" x2="77.7" y2="34"/><line x1="50" y1="50" x2="77.7" y2="66"/><line x1="50" y1="50" x2="50" y2="82"/><line x1="50" y1="50" x2="22.3" y2="66"/><line x1="50" y1="50" x2="22.3" y2="34"/></g><circle cx="50" cy="50" r="4.5" fill="#0b0b0b"/></svg>
+    <h2><span data-scramble>Engineer, student &amp; producer</span> — building from Uzbekistan.</h2>
+    <a href="#contact" class="bd solid">Get in touch →</a>
+  </div>
+</section></div>
+
 <div class="wrap"><footer>
-  <div class="fbig reveal"><span data-scramble>Engineer, student &amp; producer</span> — made in Uzbekistan.</div>
   <div class="frow reveal">
     <div class="fsoc">
       <a href="https://github.com/maqsudjon-cell" target="_blank" rel="noopener">GitHub</a>
@@ -372,97 +407,143 @@ const io=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return
 document.querySelectorAll('.reveal,[data-scramble]').forEach(el=>io.observe(el));
 window.addEventListener('DOMContentLoaded',()=>{document.querySelectorAll('.hero-card [data-scramble]').forEach(s=>{s.dataset.done='1';setTimeout(()=>scramble(s,780),180);});});
 
-/* ===== FULL-SCREEN COLOUR ASCII ENGINE ===== */
+/* ===== MULTI-CANVAS COLOUR ASCII ENGINE ===== */
 (function(){
-  const cvs=document.getElementById('ascii');if(!cvs)return;
-  const ctx=cvs.getContext('2d',{alpha:false});
   const RAMP=" .,:;-=+*oxe%#@$";const RL=RAMP.length-1;
-  // navy -> blue -> teal -> mint -> sand -> peach -> coral -> crimson
   const STOPS=[[26,34,66],[40,86,170],[58,160,196],[141,249,232],[206,206,176],[242,200,170],[255,140,110],[200,52,74]];
   const PN=96,PAL=[];for(let i=0;i<PN;i++){let t=i/(PN-1)*(STOPS.length-1),a=STOPS[Math.floor(t)],b=STOPS[Math.min(STOPS.length-1,Math.floor(t)+1)],k=t-Math.floor(t);
     PAL.push(`rgb(${Math.round(a[0]+(b[0]-a[0])*k)},${Math.round(a[1]+(b[1]-a[1])*k)},${Math.round(a[2]+(b[2]-a[2])*k)})`);}
   const col=t=>PAL[Math.max(0,Math.min(PN-1,t*(PN-1)|0))];
-  let W=0,H=0,cw=0,ch=0,cols=0,rows=0,dpr=1,val,hue,zb;
   const FS=15;
-  function alloc(){const n=cols*rows;val=new Float32Array(n);hue=new Float32Array(n);zb=new Float32Array(n);}
-  function resize(){const r=cvs.getBoundingClientRect();dpr=Math.min(2,window.devicePixelRatio||1);
-    W=Math.max(1,Math.floor(r.width));H=Math.max(1,Math.floor(r.height));
-    cvs.width=W*dpr;cvs.height=H*dpr;ctx.setTransform(dpr,0,0,dpr,0,0);
-    ctx.font=`${FS}px 'Geist Mono',ui-monospace,monospace`;ctx.textBaseline='top';
-    cw=Math.max(7,ctx.measureText('M').width||FS*0.6);ch=FS*1.16;
-    cols=Math.max(8,Math.floor(W/cw)+1);rows=Math.max(6,Math.floor(H/ch)+1);alloc();}
-  function put(x,y,v,h){if(x<0||y<0||x>=cols||y>=rows)return;const i=x+y*cols;if(v>val[i]){val[i]=v;hue[i]=h;}}
 
-  // dense flowing colour field — fills EVERY cell
-  function fieldBase(t,lo,hi){
+  function fieldBase(st,t,lo,hi){const cols=st.cols,rows=st.rows,val=st.val,hue=st.hue;
     for(let y=0;y<rows;y++){const ny=y/rows;
       for(let x=0;x<cols;x++){const nx=x/cols;
-        let a=Math.sin(nx*3.0+t*0.42)+Math.sin(ny*3.6-t*0.36+1.3)
-             +Math.sin((nx*1.7+ny*2.2)*2.3+t*0.55)
-             +Math.sin(Math.hypot(nx-0.5,ny-0.5)*7.0-t*0.85)
-             +0.7*Math.sin(nx*8.0-ny*6.0+t*0.7);
-        const f=0.5+0.5*Math.sin(a*0.8);
-        const ed=1-0.55*Math.min(1,Math.hypot((nx-0.5)*1.25,(ny-0.5)*1.5)); // vignette
-        const i=x+y*cols;val[i]=lo+(hi-lo)*f*ed;hue[i]=0.5+0.5*Math.sin(a*0.5+t*0.1+nx*0.5);}}
-  }
-  function flow(t){fieldBase(t,0.16,0.98);}
-
-  function globe(t){fieldBase(t,0.1,0.34);const cx=cols/2,cy=rows/2,R=Math.min(cols*0.34,rows*0.82);
+        let a=Math.sin(nx*3.0+t*0.42)+Math.sin(ny*3.6-t*0.36+1.3)+Math.sin((nx*1.7+ny*2.2)*2.3+t*0.55)+Math.sin(Math.hypot(nx-0.5,ny-0.5)*7.0-t*0.85)+0.7*Math.sin(nx*8.0-ny*6.0+t*0.7);
+        const f=0.5+0.5*Math.sin(a*0.8);const ed=1-0.55*Math.min(1,Math.hypot((nx-0.5)*1.25,(ny-0.5)*1.5));
+        const i=x+y*cols;val[i]=lo+(hi-lo)*f*ed;hue[i]=0.5+0.5*Math.sin(a*0.5+t*0.1+nx*0.5);}}}
+  function flow(st,t){fieldBase(st,t,0.16,0.98);}
+  function globe(st,t){fieldBase(st,t,0.1,0.34);const cols=st.cols,rows=st.rows,put=st.put;const cx=cols/2,cy=rows/2,R=Math.min(cols*0.34,rows*0.82);
     const yaw=t*0.5,ya=Math.cos(yaw),yb=Math.sin(yaw),tl=0.42,ta=Math.cos(tl),tb=Math.sin(tl);
     for(let la=-80;la<=80;la+=7){const lar=la*Math.PI/180,cla=Math.cos(lar),sla=Math.sin(lar);
       for(let lo=0;lo<360;lo+=4){const lor=lo*Math.PI/180;let x=cla*Math.cos(lor),y=sla,z=cla*Math.sin(lor);
         let x1=x*ya-z*yb,z1=x*yb+z*ya,y2=y*ta-z1*tb,z2=y*tb+z1*ta;const dep=(z2+1)/2;
-        put(Math.round(cx+x1*R*0.5),Math.round(cy-y2*R*0.5),0.3+dep*0.7,0.18+dep*0.55);}}
+        put(cx+x1*R*0.5,cy-y2*R*0.5,0.3+dep*0.7,0.18+dep*0.55);}}
     for(let lo=0;lo<360;lo+=30){const lor=lo*Math.PI/180;for(let la=-90;la<=90;la+=3){const lar=la*Math.PI/180,cla=Math.cos(lar);
       let x=cla*Math.cos(lor),y=Math.sin(lar),z=cla*Math.sin(lor);let x1=x*ya-z*yb,z1=x*yb+z*ya,y2=y*ta-z1*tb,z2=y*tb+z1*ta;const dep=(z2+1)/2;
-      put(Math.round(cx+x1*R*0.5),Math.round(cy-y2*R*0.5),0.4+dep*0.6,0.55+dep*0.4);}}}
-
-  function torus(t){fieldBase(t,0.1,0.32);zb.fill(0);const A=t*0.85,B=t*0.5,cA=Math.cos(A),sA=Math.sin(A),cB=Math.cos(B),sB=Math.sin(B);
+      put(cx+x1*R*0.5,cy-y2*R*0.5,0.4+dep*0.6,0.55+dep*0.4);}}}
+  function torus(st,t){fieldBase(st,t,0.1,0.32);const cols=st.cols,rows=st.rows,zb=st.zb;zb.fill(0);const A=t*0.85,B=t*0.5,cA=Math.cos(A),sA=Math.sin(A),cB=Math.cos(B),sB=Math.sin(B);
     const R1=1,R2=2,K2=5,K1=Math.min(cols*0.42,rows*1.0);
-    for(let th=0;th<6.283;th+=0.06){const ct=Math.cos(th),st=Math.sin(th);
+    for(let th=0;th<6.283;th+=0.06){const ct=Math.cos(th),s2=Math.sin(th);
       for(let ph=0;ph<6.283;ph+=0.018){const cp=Math.cos(ph),sp=Math.sin(ph);
-        const c2=R2+R1*ct,cy2=R1*st;const x=c2*(cB*cp+sA*sB*sp)-cy2*cA*sB,y=c2*(sB*cp-sA*cB*sp)+cy2*cA*cB,z=K2+cA*c2*sp+cy2*sA,ooz=1/z;
+        const c2=R2+R1*ct,cy2=R1*s2;const x=c2*(cB*cp+sA*sB*sp)-cy2*cA*sB,y=c2*(sB*cp-sA*cB*sp)+cy2*cA*cB,z=K2+cA*c2*sp+cy2*sA,ooz=1/z;
         const xp=Math.round(cols/2+K1*ooz*x),yp=Math.round(rows/2-K1*ooz*y*0.5);
         if(xp<0||yp<0||xp>=cols||yp>=rows)continue;const i=xp+yp*cols;
-        if(ooz>zb[i]){zb[i]=ooz;let L=cp*ct*sB-cA*ct*sp-sA*st+cB*(cA*st-ct*sA*sp);L=Math.max(0,L);
-          val[i]=Math.min(1,0.18+L*0.7);hue[i]=Math.min(1,0.2+L*0.6+(ooz-0.18)*1.4);}}}}
-
-  function wave(t){fieldBase(t,0.1,0.3);const base=rows-1;
+        if(ooz>zb[i]){zb[i]=ooz;let L=cp*ct*sB-cA*ct*sp-sA*s2+cB*(cA*s2-ct*sA*sp);L=Math.max(0,L);
+          st.val[i]=Math.min(1,0.18+L*0.7);st.hue[i]=Math.min(1,0.2+L*0.6+(ooz-0.18)*1.4);}}}}
+  function wave(st,t){fieldBase(st,t,0.1,0.3);const cols=st.cols,rows=st.rows,put=st.put;const base=rows-1;
     for(let x=0;x<cols;x++){const fx=x/cols;const env=0.42+0.58*Math.pow(Math.sin(Math.PI*Math.min(1,Math.max(0,fx))),0.55);
       let a=0.5*Math.sin(fx*6+t*2)+0.32*Math.sin(fx*13-t*3.1+1.3)+0.26*Math.sin(fx*22+t*1.7)+0.2*Math.sin(t*5+fx*40);
       a=0.5+0.5*Math.sin(a*1.8);const beat=0.72+0.28*Math.sin(t*2.4+fx*2);
       const h=Math.max(1,Math.round((0.3+0.7*a)*env*beat*(rows-2)));
       for(let k=0;k<h;k++){const ct=k/Math.max(1,h);put(x,base-k,0.3+0.7*ct,0.2+0.75*ct);}
       put(x,base-h,0.95,Math.min(1,0.2+0.8*(h/(rows-2))));}}
+  function rain(st,t,dt){fieldBase(st,t,0.08,0.26);const cols=st.cols,rows=st.rows,put=st.put;if(!st._drops||st._drops.length!==cols){st._drops=[];for(let x=0;x<cols;x++)st._drops[x]={y:Math.random()*rows,sp:6+Math.random()*16,len:5+(Math.random()*10|0)};}
+    for(let x=0;x<cols;x++){const d=st._drops[x];d.y+=d.sp*dt;if(d.y-d.len>rows){d.y=-(Math.random()*8);d.sp=6+Math.random()*16;d.len=5+(Math.random()*10|0);}
+      for(let k=0;k<d.len;k++){const y=Math.round(d.y-k);if(y<0||y>=rows)continue;const head=k===0;put(x,y,head?1:Math.max(0.12,1-k/d.len),head?0.25:0.4+0.35*(k/d.len));}}}
 
-  let drops=null;
-  function rain(t,dt){fieldBase(t,0.08,0.26);if(!drops||drops.length!==cols){drops=new Array(cols);for(let x=0;x<cols;x++)drops[x]={y:Math.random()*rows,sp:6+Math.random()*16,len:5+(Math.random()*10|0)};}
-    for(let x=0;x<cols;x++){const d=drops[x];d.y+=d.sp*dt;
-      if(d.y-d.len>rows){d.y=-(Math.random()*8);d.sp=6+Math.random()*16;d.len=5+(Math.random()*10|0);}
-      for(let k=0;k<d.len;k++){const y=Math.round(d.y-k);if(y<0||y>=rows)continue;const head=k===0;
-        put(x,y,head?1:Math.max(0.12,1-k/d.len),head?0.25:0.4+0.35*(k/d.len));}}}
+  // RACE — a procedural F1-style car driving (motion lines + spinning wheels)
+  function car(st,t,dt){fieldBase(st,t,0.05,0.12);const cols=st.cols,rows=st.rows,put=st.put;
+    const cx=cols*0.5;const bob=Math.sin(t*7)*Math.max(0.5,rows*0.014);
+    const base=rows*0.63+bob;
+    const u=cols*0.33;
+    const wry=Math.max(2.4,rows*0.18),wrx=wry*1.9;
+    const wy=base-wry*0.45;
+    const rearX=cx-u*0.56,frontX=cx+u*0.54;
+    // motion streaks behind the car
+    for(let i=0;i<7;i++){const sy=Math.round(wy-wry*(0.05+i*0.4));const sp=t*135+i*27;const lim=Math.round(cx-u*1.02);
+      for(let x=0;x<lim;x++){if((((x-Math.floor(sp))%12)+12)%12<5)put(x,sy,0.3,0.46);}}
+    // road
+    const off=Math.floor(t*85)%9;
+    for(let x=0;x<cols;x++){if(((x+off)%9)<5)put(x,Math.round(base+1.6),0.5,0.1);}
+    // body profile
+    const x0=Math.round(cx-u*1.06),x1=Math.round(cx+u*1.1);
+    for(let x=x0;x<=x1;x++){const uu=(x-cx)/u;let top=null,bot=wy-wry*0.05;
+      if(uu<-1.0){top=null;}
+      else if(uu<-0.82){top=wy-wry*2.75;}                                 // rear wing (tall)
+      else if(uu<-0.5){const f=(uu+0.82)/0.32;top=wy-wry*(2.0-0.85*f);}    // engine / sidepod
+      else if(uu<-0.1){top=wy-wry*1.18;}                                   // low body
+      else if(uu<0.2){top=wy-wry*1.5;}                                     // cockpit surround
+      else if(uu<0.92){const f=(uu-0.2)/0.72;top=wy-wry*(1.12-0.72*f);}    // nose taper
+      else{top=wy-wry*0.42;bot=wy+wry*0.05;}                               // front wing
+      if(top==null)continue;const ty=Math.round(top),by=Math.round(bot);const hh=0.26+0.58*((uu+1)/2);
+      for(let y=ty;y<=by;y++)put(x,y,0.92,hh);}
+    // rear-wing plates
+    for(let x=Math.round(cx-u*1.06);x<=Math.round(cx-u*0.78);x++){put(x,Math.round(wy-wry*2.75),0.97,0.6);put(x,Math.round(wy-wry*2.4),0.82,0.57);}
+    // driver helmet
+    const hx=cx-u*0.0,hyc=wy-wry*1.9,hr=wry*0.62;
+    for(let y=Math.round(hyc-hr);y<=Math.round(hyc+hr);y++)for(let x=Math.round(hx-hr*1.8);x<=Math.round(hx+hr*1.8);x++){const dx=(x-hx)/(hr*1.8),dy=(y-hyc)/hr;if(dx*dx+dy*dy<=1)put(x,y,1,0.74);}
+    // halo bar
+    for(let x=Math.round(cx-u*0.28);x<=Math.round(cx+u*0.12);x++)put(x,Math.round(wy-wry*1.98),0.86,0.66);
+    // wheels with spinning spokes + bright rim
+    function wheel(wx){const rot=-t*10;const ax0=Math.round(wx-wrx),ax1=Math.round(wx+wrx),ay0=Math.round(wy-wry),ay1=Math.round(wy+wry);
+      for(let y=ay0;y<=ay1;y++)for(let x=ax0;x<=ax1;x++){const dx=(x-wx)/wrx,dy=(y-wy)/wry,d=Math.hypot(dx,dy);
+        if(d>1.04)continue;
+        if(d>0.62){put(x,y,0.72,0.02);}                                   // tyre
+        else if(d>0.5){put(x,y,0.92,0.55);}                               // bright rim
+        else{const ang=Math.atan2(dy,dx)+rot;const spoke=Math.abs(Math.sin(ang*3))>0.72||d<0.15;put(x,y,spoke?0.97:0.28,spoke?0.5:0.03);}}}
+    wheel(rearX);wheel(frontX);}
 
-  const scenes=[flow,globe,torus,wave,rain],names=['FLOW','GLOBE','TORUS','WAVE','RAIN'];
-  let idx=0,userLock=0;const sceneName=document.getElementById('sceneName'),tabs=document.getElementById('tabs');
-  function setScene(i,byUser){idx=i;if(sceneName)sceneName.textContent=names[i];if(tabs)[...tabs.children].forEach((b,j)=>b.classList.toggle('on',j===i));if(byUser)userLock=performance.now();}
-  if(tabs)tabs.addEventListener('click',e=>{const b=e.target.closest('button');if(b)setScene(+b.dataset.s,true);});
+  const SCENES={flow:flow,globe:globe,torus:torus,wave:wave,rain:rain,car:car};
+  const NAMES={flow:'FLOW',globe:'GLOBE',torus:'TORUS',wave:'WAVE',rain:'RAIN',car:'RACE'};
+  const DYN={rain:1,car:1};
 
-  const CYCLE=10000,FPS=30,FRAME=1000/FPS;let t0=performance.now(),lastCycle=performance.now();
-  function draw(now){requestAnimationFrame(draw);
-    if(now-(draw._p||0)<FRAME)return;const rdt=Math.min(0.05,(now-(draw._p||now))/1000);draw._p=now;
-    const rc=cvs.getBoundingClientRect();
-    if(rc.width>4&&rc.height>4&&(Math.abs(rc.width-W)>2||Math.abs(rc.height-H)>2))resize();
-    if(REDUCE){flow(2.0);}else{
-      if(now-userLock>22000&&now-lastCycle>CYCLE){lastCycle=now;setScene((idx+1)%scenes.length,false);}
-      const t=(now-t0)/1000;if(idx===4)rain(t,rdt);else scenes[idx](t);}
-    ctx.fillStyle='#000';ctx.fillRect(0,0,W,H);
-    for(let y=0;y<rows;y++){const r=y*cols;for(let x=0;x<cols;x++){const v=val[r+x];if(v<=0.05)continue;
-      ctx.fillStyle=col(hue[r+x]);ctx.globalAlpha=Math.min(1,0.25+v*0.75);ctx.fillText(RAMP[Math.min(RL,(v*RL)|0)|0],x*cw,y*ch);}}
-    ctx.globalAlpha=1;}
-  if(document.fonts&&document.fonts.ready)document.fonts.ready.then(resize);
-  let rt;window.addEventListener('resize',()=>{clearTimeout(rt);rt=setTimeout(resize,150);});
-  resize();setScene(0,false);requestAnimationFrame(draw);
+  function Renderer(canvas,sceneKey){
+    const ctx=canvas.getContext('2d',{alpha:false});
+    const st={cols:0,rows:0,val:null,hue:null,zb:null};
+    st.put=function(x,y,v,h){x=Math.round(x);y=Math.round(y);if(x<0||y<0||x>=st.cols||y>=st.rows)return;const i=x+y*st.cols;if(v>st.val[i]){st.val[i]=v;st.hue[i]=h;}};
+    let W=0,H=0,cw=0,ch=0,dpr=1;
+    function resize(){const rc=canvas.getBoundingClientRect();dpr=Math.min(2,window.devicePixelRatio||1);
+      W=Math.max(1,Math.floor(rc.width));H=Math.max(1,Math.floor(rc.height));
+      canvas.width=W*dpr;canvas.height=H*dpr;ctx.setTransform(dpr,0,0,dpr,0,0);
+      ctx.font=`${FS}px 'Geist Mono',ui-monospace,monospace`;ctx.textBaseline='top';
+      cw=Math.max(7,ctx.measureText('M').width||FS*0.6);ch=FS*1.16;
+      st.cols=Math.max(8,Math.floor(W/cw)+1);st.rows=Math.max(6,Math.floor(H/ch)+1);
+      const n=st.cols*st.rows;st.val=new Float32Array(n);st.hue=new Float32Array(n);st.zb=new Float32Array(n);}
+    const r={canvas:canvas,scene:sceneKey,visible:true,t0:performance.now()};
+    r.resize=resize;
+    r.measure=function(){const rc=canvas.getBoundingClientRect();if(rc.width>4&&rc.height>4&&(Math.abs(rc.width-W)>2||Math.abs(rc.height-H)>2))resize();};
+    r.paint=function(now,dt){st.val.fill(0);const t=(now-r.t0)/1000;const s=SCENES[r.scene]||flow;if(DYN[r.scene])s(st,t,dt);else s(st,t);
+      ctx.fillStyle='#000';ctx.fillRect(0,0,W,H);const cols=st.cols,rows=st.rows,val=st.val,hue=st.hue;
+      for(let y=0;y<rows;y++){const rr=y*cols;for(let x=0;x<cols;x++){const v=val[rr+x];if(v<=0.05)continue;
+        ctx.fillStyle=col(hue[rr+x]);ctx.globalAlpha=Math.min(1,0.25+v*0.75);ctx.fillText(RAMP[Math.min(RL,(v*RL)|0)],x*cw,y*ch);}}
+      ctx.globalAlpha=1;};
+    resize();return r;}
+
+  const renderers=[];
+  const heroCanvas=document.getElementById('ascii');let hero=null;
+  if(heroCanvas){hero=Renderer(heroCanvas,'flow');renderers.push(hero);}
+  document.querySelectorAll('canvas.ascii-band').forEach(function(cv){renderers.push(Renderer(cv,cv.dataset.scene||'flow'));});
+
+  if('IntersectionObserver' in window){const io=new IntersectionObserver(function(es){es.forEach(function(e){const r=renderers.find(function(r){return r.canvas===e.target;});if(r)r.visible=e.isIntersecting;});},{rootMargin:'120px'});renderers.forEach(function(r){io.observe(r.canvas);});}
+
+  if(hero){const order=['flow','globe','torus','wave','rain','car'];
+    const sceneName=document.getElementById('sceneName'),tabs=document.getElementById('tabs');
+    let idx=0,userLock=0,lastCycle=performance.now();const CYCLE=10000;
+    const setScene=function(i,byUser){idx=((i%order.length)+order.length)%order.length;hero.scene=order[idx];if(sceneName)sceneName.textContent=NAMES[order[idx]];if(tabs)[...tabs.children].forEach(function(b,j){b.classList.toggle('on',j===idx);});if(byUser)userLock=performance.now();};
+    if(tabs)tabs.addEventListener('click',function(e){const b=e.target.closest('button');if(b)setScene(+b.dataset.s,true);});
+    hero.cycle=function(now){if(REDUCE)return;if(now-userLock>22000&&now-lastCycle>CYCLE){lastCycle=now;setScene(idx+1,false);}};
+    setScene(0,false);}
+
+  const FPS=30,FRAME=1000/FPS;let prev=0;
+  function loop(now){requestAnimationFrame(loop);if(now-prev<FRAME)return;const dt=Math.min(0.05,(now-prev)/1000);prev=now;
+    if(hero&&hero.cycle)hero.cycle(now);
+    for(const r of renderers){if(!r.visible)continue;r.measure();r.paint(now,dt);}}
+  if(document.fonts&&document.fonts.ready)document.fonts.ready.then(function(){renderers.forEach(function(r){r.resize();});});
+  let rt;window.addEventListener('resize',function(){clearTimeout(rt);rt=setTimeout(function(){renderers.forEach(function(r){r.resize();});},150);});
+  requestAnimationFrame(loop);
 })();
+
 </script>
 </body>
 </html>
