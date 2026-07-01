@@ -3,374 +3,583 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Maqsudjon Polatov</title>
-<meta name="description" content="Engineer and creator from Uzbekistan — free IELTS &amp; English-learning platforms, AI agents, and welding. Creating pangea8 and more.">
+<title>Maqsudjon Polatov | A one-person lab for acting in code and steel.</title>
+<meta name="description" content="Engineer and creator from Uzbekistan. I build free IELTS &amp; English-learning platforms, AI agents and tools — end to end, from Tashkent to the web.">
 <link rel="canonical" href="https://maqsudjon.com/">
-<meta property="og:title" content="Maqsudjon Polatov">
-<meta property="og:description" content="Engineer · Creator · Welder — Uzbekistan.">
+<meta property="og:title" content="Maqsudjon Polatov | A one-person lab for acting in code and steel.">
+<meta property="og:description" content="Free IELTS platforms, AI agents and tools — built end to end from Uzbekistan.">
 <meta property="og:url" content="https://maqsudjon.com/">
+<meta property="og:type" content="website">
 <meta name="twitter:card" content="summary">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
-<link rel="icon" type="image/png" sizes="48x48" href="favicon-48x48.png">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300;400;500;600;700&family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
+/* ==========================================================================
+   ROOT VARIABLES
+   ========================================================================== */
+*{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --bg:#000000; --bg-2:#080808; --surface:#0d0d0d; --paper:#ffffff;
-  --ink:#ffffff; --ink-2:#cfcfcf; --dim:#8a8a8a; --dim-2:#5a5a5a;
-  --line:#1c1c1c; --line-2:#333333;
-  --peri:#7aa2ff; --mint:#8df9e8;
-  --display:'Geist',system-ui,sans-serif;
-  --mono:'Geist Mono',ui-monospace,SFMono-Regular,monospace;
-  --body:'Geist',system-ui,sans-serif;
-  --t-xxl:clamp(1.9rem,1.4rem + 2.1vw,3rem);
-  --t-xl:clamp(1.5rem,1.15rem + 1.6vw,2.3rem);
-  --t-lg:clamp(1.1rem,0.92rem + 0.62vw,1.4rem);
-  --t-body:clamp(1rem,0.95rem + 0.2vw,1.1rem);
+  --content-padding:40px;
+  --content-padding-half:calc(var(--content-padding)/2);
+  --border-color-clear:#ffffff00;
+  --border-color-main:#ffffff;
+  --border-color-subtle:#4d4d4d;
+  --border-main:1px var(--border-color-main) solid;
+  --border-subtle:1px var(--border-color-subtle) solid;
+  --w-content:40vw;
+  --min-w-content:420px;
+  --max-w-content:1000px;
+  --space-base:1rem;
+  --space-sm:calc(var(--space-base)*.75);
+  --space-md:var(--space-base);
+  --space-lg:calc(var(--space-base)*1.5);
+  --space-xl:calc(var(--space-base)*2);
+  --track:#474b51;--track-hover:#5a5e64;--thumb:#ddd;--thumb-hover:#fff;--focus:#7aa2ff;
 }
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6;
-  overflow-x:hidden;-webkit-font-smoothing:antialiased;letter-spacing:-.005em}
-a{color:inherit;text-decoration:none}
-::selection{background:var(--peri);color:#000}
-.wrap{position:relative;width:100%;max-width:1280px;margin:0 auto;padding:0 clamp(20px,3.6vw,44px)}
-.lab{font-family:var(--mono);font-size:.72rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--dim)}
+@media screen and (min-width:1280px){:root{--content-padding:50px}}
+@media screen and (max-width:991px){:root{--content-padding:36px}}
+@media screen and (max-width:767px){:root{--content-padding:32px}}
+@media screen and (max-width:479px){:root{--content-padding:28px}}
 
-/* blueprint vertical guide lines */
-.guides{position:fixed;inset:0;z-index:1;pointer-events:none}
-.guides i{position:absolute;top:0;bottom:0;width:1px;background:var(--line)}
-.guides i:nth-child(1){left:max(20px,calc(50% - 640px + 44px))}
-.guides i:nth-child(2){left:50%}
-.guides i:nth-child(3){right:max(20px,calc(50% - 640px + 44px))}
-@media(max-width:900px){.guides i:nth-child(2){display:none}}
+/* ==========================================================================
+   GLOBAL RESETS & BASE
+   ========================================================================== */
+html{text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased;scrollbar-gutter:stable;scroll-behavior:smooth;background:#000}
+body{background:#000;color:#ffffffbb;line-height:1.2;font-family:'Geist',system-ui,sans-serif;overflow-x:hidden}
+::selection{background:#fff;color:#000}
+.highlight ::selection{background:#222;color:#fff}
+img{max-width:100%;display:block}
 
-/* ========== NAV ========== */
-.bar{position:fixed;top:0;left:0;right:0;z-index:60;border-bottom:1px solid var(--line);
-  background:rgba(0,0,0,.45);backdrop-filter:blur(16px) saturate(1.3)}
-.bar .wrap{display:flex;align-items:center;justify-content:space-between;height:62px}
-.brand{display:flex;align-items:center;gap:11px}
-.brand svg{width:27px;height:27px;display:block;overflow:visible;animation:sp-glow 3.2s ease-in-out infinite}
-.spark-rays{transform-box:fill-box;transform-origin:50% 50%;animation:sp-spin 16s linear infinite}
-.spark-rays line{animation:sp-tw 2.6s ease-in-out infinite}
-.spark-rays line:nth-child(1){animation-delay:0s}
-.spark-rays line:nth-child(2){animation-delay:-.43s}
-.spark-rays line:nth-child(3){animation-delay:-.86s}
-.spark-rays line:nth-child(4){animation-delay:-1.3s}
-.spark-rays line:nth-child(5){animation-delay:-1.73s}
-.spark-rays line:nth-child(6){animation-delay:-2.16s}
-.spark-core{transform-box:fill-box;transform-origin:50% 50%;animation:sp-core 2.2s ease-in-out infinite}
-.brand:hover .spark-rays{animation-duration:3.2s}
-.brand:hover svg{animation-duration:1.6s}
-@keyframes sp-spin{to{transform:rotate(360deg)}}
-@keyframes sp-tw{0%,100%{opacity:.45}50%{opacity:1}}
-@keyframes sp-core{0%,100%{transform:scale(.78);opacity:.85}50%{transform:scale(1.3);opacity:1}}
-@keyframes sp-glow{0%,100%{filter:drop-shadow(0 0 1px rgba(141,249,232,.35))}50%{filter:drop-shadow(0 0 5px rgba(122,162,255,.65))}}
-@media(prefers-reduced-motion:reduce){.brand svg,.spark-rays,.spark-rays line,.spark-core{animation:none!important}}
-.brand b{font-family:var(--display);font-weight:500;font-size:1rem;letter-spacing:-.01em;text-transform:lowercase}
-.bar nav{display:flex;gap:2px;align-items:center}
-.bar nav a{font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);padding:9px 13px;transition:.16s}
-.bar nav a:hover{color:var(--ink)}
-.bar nav a.cta{border:1px solid var(--line-2);margin-left:8px}
-.bar nav a.cta:hover{background:var(--ink);color:#000;border-color:var(--ink)}
-.clock{font-family:var(--mono);font-size:.7rem;color:var(--dim);letter-spacing:.04em}
-@media(max-width:880px){.bar nav a:not(.cta){display:none}.clock{display:none}}
-
-/* ========== HERO (full-bleed dense ASCII) ========== */
-.hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;overflow:hidden;border-bottom:1px solid var(--line)}
-#ascii{position:absolute;inset:0;width:100%;height:100%;z-index:0;display:block}
-.hero .veil{position:absolute;inset:0;z-index:1;pointer-events:none;
-  background:radial-gradient(140% 120% at 50% 30%,transparent 40%,rgba(0,0,0,.45) 100%)}
-.hero-inner{position:relative;z-index:3;padding:118px 0 92px;width:100%}
-.hero-card{background:var(--paper);color:#000;max-width:620px;padding:clamp(26px,3.4vw,44px)}
-.hero-card .eye{font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:#555;margin-bottom:18px}
-.hero-card h1{font-family:var(--display);font-weight:500;font-size:var(--t-xl);line-height:1.16;letter-spacing:-.02em;color:#000}
-.hero-card .sub{margin-top:18px;font-size:var(--t-body);color:#3a3a3a;line-height:1.5;max-width:50ch}
-.hero-card .row{display:flex;gap:10px;margin-top:26px;flex-wrap:wrap}
-.bd{font-family:var(--mono);font-size:.72rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;
-  padding:12px 18px;display:inline-flex;align-items:center;gap:10px;transition:.16s;border:1px solid #000;color:#000;background:transparent}
-.bd:hover{background:#000;color:#fff}
-.bd.solid{background:#000;color:#fff}.bd.solid:hover{background:#fff;color:#000}
-/* hero control strip */
-.hero-ctl{position:absolute;left:0;right:0;bottom:0;z-index:4;border-top:1px solid var(--line);background:rgba(0,0,0,.5);backdrop-filter:blur(10px)}
-.hero-ctl .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;height:44px;
-  font-family:var(--mono);font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--dim)}
-.hero-ctl .ph-l{display:flex;align-items:center;gap:11px;min-width:0}
-.hero-ctl .scene{color:var(--peri);min-width:7ch}
-.tabs{display:flex;border:1px solid var(--line)}
-.tabs button{font-family:var(--mono);font-size:.56rem;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);
-  background:transparent;border:none;border-right:1px solid var(--line);padding:5px 10px;cursor:pointer;transition:.15s}
-.tabs button:last-child{border-right:none}.tabs button:hover{color:var(--ink)}.tabs button.on{background:var(--ink);color:#000}
-.hero-ctl .ph-r{display:flex;align-items:center;gap:10px}
-.hero-ctl .live{display:inline-flex;align-items:center;gap:6px;color:var(--mint)}
-.hero-ctl .live i{width:6px;height:6px;border-radius:50%;background:var(--mint);box-shadow:0 0 8px var(--mint);animation:blink 1.6s steps(1) infinite}
-@keyframes blink{0%,82%{opacity:1}83%,100%{opacity:.2}}
-@media(max-width:640px){.hero-ctl .tabs{display:none}}
-
-/* ========== SECTIONS ========== */
-.sec{padding:clamp(60px,8vw,120px) 0;border-top:1px solid var(--line)}
-.sec-head{display:flex;flex-direction:column;gap:16px;margin-bottom:clamp(32px,5vw,56px)}
-.sec-label{font-family:var(--mono);font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--dim)}
-.sec-label b{color:var(--peri);font-weight:500}
-.sec-h2{font-family:var(--display);font-weight:500;font-size:var(--t-xxl);line-height:1.12;letter-spacing:-.025em;max-width:20ch}
-.cols{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,64px)}
-@media(max-width:820px){.cols{grid-template-columns:1fr;gap:28px}}
-.lede{font-size:var(--t-lg);color:var(--ink-2);line-height:1.5;max-width:44ch;letter-spacing:-.01em}
-.lede b{color:var(--ink);font-weight:600}
-.prose p{color:var(--dim);max-width:54ch;font-size:var(--t-body);line-height:1.7}
-.prose p+p{margin-top:14px}
-.card{display:flex;align-items:center;justify-content:space-between;gap:18px;border:1px solid var(--line-2);padding:20px 22px;margin-top:24px;transition:.18s;background:var(--bg-2)}
-.card:hover{border-color:var(--ink);background:#121212}
-.card .ct{font-family:var(--display);font-weight:500;font-size:1.1rem;letter-spacing:-.01em}
-.card .cs{font-family:var(--mono);font-size:.64rem;letter-spacing:.12em;text-transform:uppercase;color:var(--dim);margin-top:5px}
-.card .ar{font-family:var(--mono);color:var(--dim);transition:.2s}.card:hover .ar{color:var(--peri);transform:translate(3px,-3px)}
-
-/* work list */
-.list{border-top:1px solid var(--line)}
-.row{display:grid;grid-template-columns:54px 1.05fr 1.55fr 30px;gap:20px;align-items:start;padding:22px 8px;border-bottom:1px solid var(--line);transition:.18s}
-.row:hover{background:var(--bg-2);padding-left:16px;padding-right:16px}
-@media(max-width:720px){
-  .row{grid-template-columns:1fr;gap:7px;padding:20px 30px 20px 0;position:relative;align-items:start}
-  .row:hover{padding-left:0;padding-right:30px;background:transparent}
-  .row .rnum{font-size:.66rem;padding-top:0}
-  .row .rname{font-size:1.16rem}
-  .row .rmid{font-size:.92rem}
-  .row .rar{position:absolute;top:20px;right:2px;padding-top:0}
+/* ==========================================================================
+   TYPOGRAPHY
+   ========================================================================== */
+.font-header{font-family:'Funnel Display',sans-serif}
+.font-mono{font-family:'Geist Mono',ui-monospace,SFMono-Regular,monospace}
+h1,h2,h3,h4{font-weight:400;font-size:unset;margin:0;line-height:1.25;text-wrap:balance;max-width:45ch}
+p{line-height:1.7;font-size:16px;text-wrap:pretty;max-width:45ch}
+p:first-child{margin-top:0}p:last-child{margin-bottom:0}
+p+p{margin-top:1em}
+ul{line-height:1.25;max-width:45ch;padding-left:1.2em}
+li{line-height:1.7;max-width:45ch;text-wrap:pretty}
+strong,b{color:#fff}
+em{color:#fff;font-style:italic}
+.uppercase{text-transform:uppercase}
+.text-xs{font-size:12px}.text-sm{font-size:14px}.text-md{font-size:16px}
+.text-lg{font-size:18px}.text-xl{font-size:24px}.text-xxl{font-size:32px}
+@media (min-width:1200px){
+  p{font-size:18px}
+  .text-xs{font-size:14px}.text-sm{font-size:16px}.text-md{font-size:18px}
+  .text-lg{font-size:20px}.text-xl{font-size:28px}.text-xxl{font-size:36px}
 }
-.row .rnum{font-family:var(--mono);font-size:.7rem;letter-spacing:.12em;color:var(--dim-2);padding-top:5px}
-.row .rname{font-family:var(--display);font-weight:500;font-size:1.28rem;letter-spacing:-.02em;display:flex;align-items:center;gap:10px}
-.row .rname .d{width:7px;height:7px;border-radius:50%;background:var(--peri)}
-.row .rmid{font-size:.95rem;color:var(--dim);line-height:1.5}
-.row .rmeta{font-family:var(--mono);font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--dim-2);margin-top:8px;display:block}
-.row .rar{font-family:var(--mono);color:var(--dim-2);justify-self:end;transition:.2s;padding-top:5px}.row:hover .rar{color:var(--peri);transform:translate(2px,-2px)}
+@media (min-width:1600px){
+  p{font-size:20px}
+  .text-xs{font-size:16px}.text-sm{font-size:18px}.text-md{font-size:20px}
+  .text-lg{font-size:24px}.text-xl{font-size:32px}.text-xxl{font-size:40px}
+}
+.color-light{color:#fff}
+.color-dark{color:#000}
+.color-body{color:#f2d8cd}
+.color-subtle{color:#888}
+.color-offdark{color:#666}
 
-/* updates */
-.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:8px}
-.filters button{font-family:var(--mono);font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);background:transparent;border:1px solid var(--line-2);padding:8px 14px;cursor:pointer;transition:.15s}
-.filters button:hover{color:var(--ink);border-color:var(--ink)}.filters button.on{background:var(--ink);color:#000;border-color:var(--ink)}
-.feed{display:flex;flex-direction:column;border-top:1px solid var(--line);margin-top:24px}
-.post{border-bottom:1px solid var(--line);padding:20px 8px;display:grid;grid-template-columns:140px 1fr 28px;gap:22px;cursor:pointer;transition:.18s;align-items:start}
-@media(max-width:720px){.post{grid-template-columns:1fr;gap:8px}}
-.post:hover{background:var(--bg-2);padding-left:16px;padding-right:16px}
-.post .when{font-family:var(--mono);font-size:.72rem;color:var(--dim);letter-spacing:.04em;padding-top:4px}
-.post .tag{display:inline-block;font-family:var(--mono);font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--peri);border:1px solid var(--line-2);padding:2px 7px;margin-top:8px}
-.post h3{font-family:var(--display);font-weight:500;font-size:1.14rem;letter-spacing:-.015em;line-height:1.35}
-.post .ex{font-family:var(--mono);font-size:1.2rem;color:var(--dim-2);justify-self:end;transition:.2s;line-height:1}
-@media(max-width:720px){.post .ex{display:none}}.post:hover .ex{color:var(--peri)}
-.post .body{display:none;grid-column:2/3;font-size:.95rem;color:var(--ink-2);line-height:1.7;margin-top:14px;white-space:pre-wrap;max-width:64ch}
-@media(max-width:720px){.post .body{grid-column:1}}.post.open .body{display:block}.post.open .ex{transform:rotate(45deg);color:var(--peri)}
+/* ==========================================================================
+   LINKS & BUTTONS
+   ========================================================================== */
+a{text-decoration:none;color:#fff}
+p a{font-weight:700;transition:text-underline-offset 1s cubic-bezier(.16,1,.3,1),text-decoration-color 1s cubic-bezier(.16,1,.3,1);text-underline-offset:0;text-decoration:underline;text-decoration-color:#ffffff00}
+p a:hover{text-underline-offset:5px;text-decoration-color:#fff}
+.a-subtle{color:#888;transition:color .4s cubic-bezier(.16,1,.3,1)}
+.a-subtle:hover{color:#fff}
+.btn{display:inline-block;font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;background:#fff;color:#000;border:1px solid #fff;padding:13px 22px;cursor:pointer;transition:background .4s cubic-bezier(.16,1,.3,1),color .4s cubic-bezier(.16,1,.3,1)}
+.btn:hover{background:transparent;color:#fff}
+.btn-dark{background:#000;color:#fff;border-color:#000}
+.btn-dark:hover{background:transparent;color:#000}
 
-/* contact */
-.touch{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,64px)}
-@media(max-width:820px){.touch{grid-template-columns:1fr;gap:32px}}
-.touch h3{font-family:var(--mono);font-weight:500;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);margin-bottom:16px}
-.touch p{color:var(--ink-2);font-size:var(--t-body);line-height:1.55;max-width:42ch;margin-bottom:22px}
-.links{border-top:1px solid var(--line)}
-.links a{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:14px 4px;border-bottom:1px solid var(--line);font-family:var(--mono);font-size:.82rem;transition:.16s}
-.links a:hover{padding-left:12px;padding-right:12px;background:var(--bg-2);color:var(--peri)}
-.links a .k{color:var(--dim);text-transform:uppercase;font-size:.62rem;letter-spacing:.14em}
+/* ==========================================================================
+   LAYOUT — MAIN GRID (the blueprint frame)
+   ========================================================================== */
+.main{padding:var(--content-padding-half)}
+.shell{border-left:var(--border-main);border-top:var(--border-main)}
+.grid-main{display:grid;grid-template-columns:1fr}
+@media (min-width:768px){.grid-main{grid-template-columns:1fr 1fr}}
+@media (min-width:992px){.grid-main{grid-template-columns:1fr repeat(2,clamp(var(--min-w-content),var(--w-content),var(--max-w-content))) 1fr}}
+.grid-main>*{border-right:var(--border-main);border-bottom:var(--border-main);min-width:0}
+.grid-main.grid-clear>*{border-color:var(--border-color-clear)}
+.full{grid-column:1/-1}
+@media (max-width:991px){.grid-g{display:none}}
+@media (min-width:768px) and (max-width:991px){.c23{grid-column:1/-1}}
+@media (min-width:992px){
+  .gl{grid-column:1;grid-row:1/-1}
+  .gr{grid-column:4;grid-row:1/-1}
+  .c2{grid-column:2}.c3{grid-column:3}.c23{grid-column:2/4}
+  .rs2{grid-row:span 2}
+}
+.content-padding{padding:var(--content-padding)}
+.content-padding-horizontal{padding-left:var(--content-padding);padding-right:var(--content-padding)}
+.content-padding-half-vertical{padding-top:var(--content-padding-half);padding-bottom:var(--content-padding-half)}
+.spacer{height:calc(var(--content-padding)*2)}
+
+/* subtle sub-grids */
+.grid-wrapper-subtle{border-top:var(--border-subtle);overflow:hidden}
+.grid-item-subtle{border-right:var(--border-subtle);border-bottom:var(--border-subtle)}
+a.grid-item-subtle{background:#ffffff00;transition:background .5s cubic-bezier(.16,1,.3,1),border-color .5s cubic-bezier(.16,1,.3,1);display:block}
+a.grid-item-subtle>*{filter:invert(0);transition:filter .5s cubic-bezier(.16,1,.3,1)}
+a.grid-item-subtle:hover{background:#fff;border-color:var(--border-color-clear)}
+a.grid-item-subtle:hover>*{filter:invert(100%)}
+
+/* ==========================================================================
+   QUOTES & ARTICLES
+   ========================================================================== */
+.quote{position:relative;margin:calc(var(--content-padding)/2) calc(var(--content-padding)*-1);padding:var(--content-padding-half) var(--content-padding);background:#ffffff11}
+.quote p{transition:color 2s cubic-bezier(.16,1,.3,1)}
+.quote.active p{color:#fff}
+.grid-quote .qmark{font-family:'Funnel Display',sans-serif;font-size:64px;line-height:.6;color:#fff;margin:18px 0 10px}
+.grid-quote .qmark.close{text-align:right;margin:14px 0 24px}
+
+/* ==========================================================================
+   NAV (appears on scroll)
+   ========================================================================== */
+body .nav{display:block;position:fixed;inset:0 0 auto 0;z-index:80;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .75s cubic-bezier(.16,1,.3,1),visibility 0s 2s}
+body.nav-open .nav{opacity:1;visibility:visible;pointer-events:auto;transition:opacity 1s cubic-bezier(.16,1,.3,1),visibility 0s 0s}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:calc(var(--content-padding-half)*.8) var(--content-padding-half);background:linear-gradient(#000c,#0000);overflow:hidden}
+.nav-logo,.nav-button{transform:translateX(100%);opacity:0;transition:transform 1s cubic-bezier(.16,1,.3,1),opacity 1s cubic-bezier(.16,1,.3,1)}
+body.nav-open .nav-logo,body.nav-open .nav-button{transform:translateX(1px);opacity:1}
+.nav-logo{font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:#fff}
+@media (max-width:767px){.nav-logo{transform:translateX(-100%)}}
+body.modal-open .nav{opacity:0}
+
+/* ==========================================================================
+   HEADER
+   ========================================================================== */
+.header-cell{position:relative;overflow:hidden;min-height:100svh;display:flex;flex-direction:column}
+.header-bg{position:absolute;inset:0;z-index:0}
+.header-bg canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+.header-gradient-top{position:absolute;inset:0 0 auto 0;height:22%;background:linear-gradient(#000d,#0000);pointer-events:none}
+.header-gradient-bottom{position:absolute;inset:auto 0 0 0;height:30%;background:linear-gradient(#0000,#000d);pointer-events:none}
+.header-inner{position:relative;z-index:2;flex:1;display:flex;flex-direction:column;justify-content:space-between;gap:40px}
+.logo-ascii{font-family:'Geist Mono',ui-monospace,monospace;font-weight:500;color:#fff;font-size:clamp(9px,1.9vw,22px);line-height:1.3;letter-spacing:.04em;white-space:pre;text-shadow:0 2px 18px #000}
+.logo-sub{font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:#888;margin-top:14px}
+@media (min-width:1200px){.logo-sub{font-size:13px}}
+.highlight{background:#fff;color:#000}
+.header-card{max-width:660px}
+.header-card h1{color:#000;font-variant-ligatures:no-contextual}
+.header-card h1+h1{margin-top:.9em}
+.header-badges{display:flex;gap:26px;align-items:baseline;flex-wrap:wrap;margin-top:2em}
+.header-badges span{font-family:'Funnel Display',sans-serif;font-weight:600;font-size:18px;letter-spacing:-.01em;color:#000}
+.header-badges i{font-family:'Geist Mono',monospace;font-style:normal;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#777;display:block;margin-top:2px}
+
+/* settings toggle + panel */
+.button-settings{display:inline-grid;place-items:center;width:40px;height:40px;position:relative;border:var(--border-subtle);background:#000a;cursor:pointer}
+.button-settings svg{grid-area:1/1;transition:opacity 1s cubic-bezier(.16,1,.3,1)}
+body .button-settings .icon-close{opacity:0}
+body.ascii-settings-open .button-settings .icon-close{opacity:1}
+body.ascii-settings-open .button-settings .icon-open{opacity:0}
+body .ascii-controls{pointer-events:none;opacity:.5;max-height:0;overflow:hidden;transition:opacity 1s cubic-bezier(.16,1,.3,1),max-height .5s ease-in-out}
+body.ascii-settings-open .ascii-controls{pointer-events:auto;opacity:1;max-height:500px}
+.grid-ascii-controls{display:grid;grid-template-columns:repeat(5,1fr);background:#000b;backdrop-filter:blur(6px)}
+@media (max-width:900px){.grid-ascii-controls{grid-template-columns:repeat(2,1fr)}}
+.ascii-control-header{display:flex;justify-content:space-between;width:100%;gap:10px;font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#888}
+.ascii-control-header output,.ascii-control-header span{color:#fff}
+input[type='range']{-webkit-appearance:none;appearance:none;width:100%;height:36px;background:transparent;margin:0;cursor:pointer}
+input[type='range']:focus-visible{outline:2px solid var(--focus);outline-offset:4px;border-radius:999px}
+input[type='range']::-webkit-slider-runnable-track{height:6px;border-radius:999px;background:var(--track);transition:background-color .2s}
+input[type='range']:hover::-webkit-slider-runnable-track{background:var(--track-hover)}
+input[type='range']::-moz-range-track{height:6px;border-radius:999px;background:var(--track)}
+input[type='range']::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:36px;height:18px;border-radius:9px;background:var(--thumb);box-shadow:0 2px 6px rgba(0,0,0,.45);border:none;margin-top:-6px;transition:background-color .15s,transform .15s}
+input[type='range']:hover::-webkit-slider-thumb{background:var(--thumb-hover)}
+input[type='range']:active::-webkit-slider-thumb{transform:scale(1.08)}
+input[type='range']::-moz-range-thumb{width:36px;height:18px;border-radius:9px;background:var(--thumb);border:none;box-shadow:0 2px 6px rgba(0,0,0,.45)}
+
+/* ==========================================================================
+   ASCII CELLS
+   ========================================================================== */
+.ascii-cell{position:relative;overflow:hidden;min-height:340px}
+.ascii-cell canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+.ascii-tag{position:absolute;left:0;bottom:0;z-index:2;font-family:'Geist Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#888;padding:8px 14px;background:#000a;border-top:var(--border-subtle);border-right:var(--border-subtle)}
+.ascii-tag b{color:#f2d8cd;font-weight:500}
+
+/* ==========================================================================
+   SECTION TITLES / CARDS / LISTS
+   ========================================================================== */
+.sec-title{color:#fff}
+.card-link .apart{display:flex;justify-content:space-between;gap:14px;align-items:flex-start;padding-bottom:var(--space-md)}
+.card-link .heavy{font-family:'Funnel Display',sans-serif;font-weight:600;color:#fff}
+.mono-head{font-family:'Geist Mono',monospace;font-size:16px;color:#888;font-weight:400}
+.grid-press{display:grid;grid-template-columns:repeat(4,1fr)}
+@media (max-width:700px){.grid-press{grid-template-columns:repeat(2,1fr)}}
+.tile-word{font-family:'Funnel Display',sans-serif;font-weight:600;font-size:19px;letter-spacing:-.01em;color:#fff}
+.tile-sub{font-family:'Geist Mono',monospace;font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:#888;margin-top:6px}
+.grid-research{display:grid;grid-template-columns:1fr 1fr}
+@media (max-width:700px){.grid-research{grid-template-columns:1fr}}
+.icon-external{flex:none;margin-top:6px}
+
+/* links list (contact) */
+.flex-v{display:flex;flex-direction:column;gap:10px}
+.flex-v>div:first-child{color:#fff;padding-bottom:var(--space-sm)}
+
+/* updates feed */
+.filters{display:flex;flex-wrap:wrap}
+.filters button{font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#888;background:transparent;border:none;border-right:var(--border-subtle);padding:12px 18px;cursor:pointer;transition:background .4s,color .4s}
+.filters button:hover{color:#fff}
+.filters button.on{background:#fff;color:#000}
+.feed .post{border-bottom:var(--border-subtle);cursor:pointer;transition:background .4s}
+.feed .post:hover{background:#ffffff0a}
+.post-head{display:grid;grid-template-columns:150px 1fr 30px;gap:18px;align-items:start;padding:20px var(--content-padding)}
+@media (max-width:700px){.post-head{grid-template-columns:1fr;gap:8px;padding:18px var(--content-padding)}}
+.post-when{font-family:'Geist Mono',monospace;font-size:12px;color:#888;letter-spacing:.06em;padding-top:3px}
+.post-tag{display:inline-block;font-family:'Geist Mono',monospace;font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:#f2d8cd;border:var(--border-subtle);padding:2px 7px;margin-top:8px}
+.post h3{font-family:'Funnel Display',sans-serif;font-weight:500;font-size:17px;color:#fff;line-height:1.35}
+.post .ex{font-family:'Geist Mono',monospace;font-size:18px;color:#666;justify-self:end;transition:transform .3s,color .3s;line-height:1}
+.post.open .ex{transform:rotate(45deg);color:#f2d8cd}
+.post-body{display:none;padding:0 var(--content-padding) 26px;font-size:15px;color:#ffffffbb;line-height:1.7;white-space:pre-wrap;max-width:70ch}
+@media (min-width:768px){.post-body{padding-left:calc(150px + 18px + var(--content-padding))}}
+.post.open .post-body{display:block}
 
 /* footer */
-footer{border-top:1px solid var(--line);padding:clamp(50px,7vw,88px) 0 60px}
-.fbig{font-family:var(--display);font-weight:500;font-size:var(--t-xxl);line-height:1.12;letter-spacing:-.025em;max-width:22ch}
-.frow{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-top:38px}
-.fsoc{display:flex;gap:8px;flex-wrap:wrap}
-.fsoc a{font-family:var(--mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);border:1px solid var(--line-2);padding:8px 13px;transition:.16s}
-.fsoc a:hover{color:#000;background:var(--ink);border-color:var(--ink)}
-.fmeta{font-family:var(--mono);font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--dim-2);display:flex;align-items:center;gap:12px;flex-wrap:wrap}
-.fmeta .ac{color:var(--peri)}
+.footer-big h3{color:#000}
+.grid-footer{display:grid;grid-template-columns:repeat(4,1fr)}
+@media (max-width:700px){.grid-footer{grid-template-columns:repeat(2,1fr)}}
+.grid-footer .copyright{grid-column:1/-1}
+.flex-footer{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 
-/* ===== WHITE CARD LOGO WATERMARK ===== */
-.hero-card{position:relative;overflow:hidden}
-.hero-card>*{position:relative;z-index:1}
-.wm{position:absolute;pointer-events:none;z-index:0;opacity:.07}
-.hero-card .wm{right:-8%;bottom:-22%;width:58%}
-/* ===== CLOSING STATEMENT CARD (like GI footer card) ===== */
-.statement{padding:clamp(40px,6vw,80px) 0}
-.st-card{position:relative;overflow:hidden;background:var(--paper);color:#000;padding:clamp(34px,6vw,76px)}
-.st-card>*{position:relative;z-index:1}
-.st-card .wm{right:-6%;top:-26%;width:50%}
-.st-card h2{font-family:var(--display);font-weight:500;font-size:var(--t-xxl);line-height:1.12;letter-spacing:-.025em;max-width:18ch;color:#000}
-.st-card .bd{margin-top:clamp(22px,3vw,34px)}
-/* ===== FULL-BLEED ASCII BANDS (appear on scroll) ===== */
-.band{position:relative;height:clamp(280px,44vh,440px);overflow:hidden;background:#000;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.band canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
-.band .blabel{position:absolute;left:0;bottom:0;z-index:2;font-family:var(--mono);font-size:.62rem;letter-spacing:.13em;text-transform:uppercase;color:var(--dim);padding:8px 13px;background:rgba(0,0,0,.42);backdrop-filter:blur(7px);border-top:1px solid var(--line);border-right:1px solid var(--line)}
-.band .blabel b{color:var(--peri);font-weight:500}
-.band .bedge{position:absolute;inset:0;z-index:1;pointer-events:none;background:radial-gradient(130% 100% at 50% 50%,transparent 55%,rgba(0,0,0,.5) 100%)}
+/* ==========================================================================
+   MODAL
+   ========================================================================== */
+body .modal{display:block;position:fixed;inset:0;z-index:100;background:#000;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .75s cubic-bezier(.16,1,.3,1),visibility 0s 2s}
+body.modal-open .modal{opacity:1;visibility:visible;pointer-events:auto;transition:opacity 1s cubic-bezier(.16,1,.3,1),visibility 0s 0s}
+body.modal-open{overflow:hidden}
+.modal-scroll{height:100%;overflow-y:auto;opacity:0;transform:translate3d(0,100px,0);transition:transform .75s cubic-bezier(.16,1,.3,1),opacity .75s cubic-bezier(.16,1,.3,1)}
+body.modal-open .modal-scroll{opacity:1;transform:translate3d(0,0,0);transition-delay:100ms}
+.modal-wrapper{padding:var(--content-padding-half)}
+.modal-frame{border:var(--border-main);max-width:900px;margin:0 auto;background:#000}
+.modal-close-sticky{position:sticky;top:var(--content-padding-half);display:flex;justify-content:flex-end;z-index:5;margin-bottom:calc(var(--content-padding-half)*-1)}
+.article-body h2{margin-bottom:1em}
+.article-body p{max-width:60ch}
+.return-bar{display:block}
+.return-bar .flex-footer{padding:var(--content-padding)}
 
-/* ===== MOBILE: compact so the ASCII stays visible ===== */
-@media(max-width:600px){
-  .hero-inner{padding:88px 0 70px}
-  .hero-card{max-width:none;padding:18px 16px}
-  .hero-card .eye{font-size:.58rem;letter-spacing:.12em;margin-bottom:11px}
-  .hero-card h1{font-size:1.5rem;line-height:1.2}
-  .hero-card .sub{font-size:.9rem;margin-top:12px;line-height:1.45}
-  .hero-card .row{margin-top:18px;gap:8px}
-  .bd{padding:11px 14px;font-size:.66rem}
-  .sec{padding:52px 0}
-  .sec-head{margin-bottom:26px;gap:12px}
-  .sec-h2{font-size:1.65rem;line-height:1.15}
-  .lede{font-size:1.05rem;line-height:1.45}
-  .prose p{font-size:.95rem}
-  .fbig{font-size:1.65rem}
-}
-
-.reveal{opacity:0;transform:translateY(16px);transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1)}
+/* reveal + reduced motion */
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1)}
 .reveal.in{opacity:1;transform:none}
-@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.reveal{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .reveal{opacity:1;transform:none}
+}
 </style>
 </head>
 <body>
-<video id="f1vid" muted loop autoplay playsinline preload="auto" aria-hidden="true" style="position:fixed;left:0;bottom:0;width:2px;height:2px;opacity:.01;pointer-events:none;z-index:-1"><source src="f1.mp4" type="video/mp4"></video>
-<div class="guides"><i></i><i></i><i></i></div>
 
-<header class="bar">
-  <div class="wrap">
-    <a href="#top" class="brand" aria-label="Maqsudjon Polatov">
-      <svg class="spark" viewBox="0 0 100 100" aria-hidden="true"><g class="spark-rays" stroke-width="6.5" stroke-linecap="round"><line x1="50" y1="50" x2="50" y2="18" stroke="#8df9e8"/><line x1="50" y1="50" x2="77.7" y2="34" stroke="#7aa2ff"/><line x1="50" y1="50" x2="77.7" y2="66" stroke="#b9a7ff"/><line x1="50" y1="50" x2="50" y2="82" stroke="#f2d8cd"/><line x1="50" y1="50" x2="22.3" y2="66" stroke="#ff9d7a"/><line x1="50" y1="50" x2="22.3" y2="34" stroke="#8df9e8"/></g><circle class="spark-core" cx="50" cy="50" r="4.5" fill="#fff"/></svg>
-      <b>maqsudjon polatov</b>
-    </a>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#work">Work</a>
-      <a href="#updates">Updates</a>
-      <a href="#contact">Contact</a>
-      <a href="https://t.me/mrbmp13" class="cta" target="_blank" rel="noopener">Say hi →</a>
-    </nav>
-    <div class="clock" id="clock">UZBEKISTAN —:—</div>
+<video id="srcvid" muted loop autoplay playsinline preload="auto" aria-hidden="true" style="position:fixed;left:0;bottom:0;width:2px;height:2px;opacity:.01;pointer-events:none;z-index:-1"><source src="f1.mp4" type="video/mp4"></video>
+
+<!-- NAV (slides in after the header wordmark scrolls away) -->
+<div class="nav" aria-hidden="true">
+  <div class="nav-inner">
+    <a href="#top" class="nav-logo">MAQSUDJON POLATOV</a>
+    <div class="nav-button"><a href="https://t.me/mrbmp13" target="_blank" rel="noopener" class="btn">Say hi</a></div>
   </div>
-</header>
+</div>
 
-<!-- HERO -->
-<section class="hero" id="top">
-  <canvas id="ascii" aria-hidden="true"></canvas>
-  <div class="veil"></div>
-  <div class="wrap hero-inner">
-    <div class="hero-card">
-      <svg class="wm" viewBox="0 0 100 100" aria-hidden="true"><g stroke="#0b0b0b" stroke-width="6.5" stroke-linecap="round"><line x1="50" y1="50" x2="50" y2="18"/><line x1="50" y1="50" x2="77.7" y2="34"/><line x1="50" y1="50" x2="77.7" y2="66"/><line x1="50" y1="50" x2="50" y2="82"/><line x1="50" y1="50" x2="22.3" y2="66"/><line x1="50" y1="50" x2="22.3" y2="34"/></g><circle cx="50" cy="50" r="4.5" fill="#0b0b0b"/></svg>
-      <div class="eye">MAQSUDJON POLATOV · UZBEKISTAN</div>
-      <h1><span data-scramble>I create small, useful things</span> — and ship them to real people.</h1>
-      <p class="sub">Engineer and creator. I make free IELTS &amp; English-learning platforms, create AI agents and tools, and weld in the workshop — all made end to end, from Uzbekistan to the web.</p>
-      <div class="row">
-        <a href="#work" class="bd solid">View the work →</a>
-        <a href="#contact" class="bd">Get in touch</a>
+<!-- MODAL — Why pangea8 -->
+<div id="modal" class="modal" role="dialog" aria-modal="true" aria-label="Why pangea8">
+  <div class="modal-scroll">
+    <div class="modal-wrapper">
+      <div class="modal-frame">
+        <div class="content-padding">
+          <div class="modal-close-sticky"><a id="modal-close-button" href="#" class="btn">Close</a></div>
+          <div id="modal-article-1" class="article-body text-md">
+            <h2 class="text-xxl font-header color-light">One world, one platform.</h2>
+            <p>Pangea was the single supercontinent — every landmass on Earth joined into one, before everything drifted apart. I liked the metaphor: <strong>one world, one platform</strong>. A student in Tashkent, in Jakarta, in Lagos opens the same URL and gets the same tests, free.</p>
+            <p>The 8 in pangea8 stands for <strong>Band 8</strong> — the score most students aim for. Laid sideways, it is also the infinity symbol. Pangea forever, Pangea eight.</p>
+            <div class="quote"><p>Brand names should mean something to the founder, even if nobody else gets it at first.</p></div>
+            <p>What started as a handful of listening tests grew into an ecosystem: <strong>90+ listening and reading tests</strong> with instant scoring, an essay platform with AI band-score feedback, a speaking lab where students record in the browser, and a 40-day challenge tracker with streaks and a leaderboard. Every piece ships as a single self-contained file — vanilla JS, no build step, deployed on GitHub Pages with Firebase underneath.</p>
+            <p>I am self-taught across web, Python, AI and welding — the workshop and the codebase turn out to demand the same thing: measure carefully, join cleanly, and test the seam under load. I speak Uzbek, English and some Korean, and I still release the occasional UK Garage track as <a href="https://youtube.com/@matsumimusic" target="_blank" rel="noopener">Matsumi</a>.</p>
+            <p><em>If it helps one student study, it was worth making.</em> That is the whole business model, and the whole point.</p>
+          </div>
+        </div>
+        <div class="grid-wrapper-subtle">
+          <a id="modal-close-bar" href="#" class="grid-item-subtle return-bar"><div class="flex-footer"><div class="color-subtle text-sm">Return to main page</div></div></a>
+        </div>
       </div>
     </div>
   </div>
-  <div class="hero-ctl">
-    <div class="wrap">
-      <div class="ph-l">
-        <span>ASCII //</span><span class="scene" id="sceneName">FLOW</span>
-        <span class="tabs" id="tabs">
-          <button class="on" data-s="0">Flow</button>
-          <button data-s="1">Robot</button>
-          <button data-s="2">Torus</button>
-          <button data-s="3">Wave</button>
-          <button data-s="4">Rain</button>
-          <button data-s="5">F1</button>
-        </span>
+</div>
+
+<div id="top"></div>
+
+<div class="main">
+<div class="shell">
+
+  <!-- ============================ HEADER ============================ -->
+  <header class="grid-main">
+    <div class="header-cell full">
+      <div class="header-bg">
+        <canvas id="hero-ascii" data-scene="video" aria-hidden="true"></canvas>
+        <div class="header-gradient-top"></div>
+        <div class="header-gradient-bottom"></div>
       </div>
-      <div class="ph-r"><span id="stageClock">--:--:--</span><span class="live"><i></i>Live</span></div>
-    </div>
-  </div>
-</section>
-
-<!-- 01 ABOUT -->
-<div class="wrap"><section class="sec" id="about">
-  <div class="sec-head reveal"><span class="sec-label"><b>01</b> / ABOUT</span><h2 class="sec-h2" data-scramble>Turning curiosity into tools.</h2></div>
-  <div class="cols">
-    <p class="lede reveal">I design, create and ship small useful things end to end — usually a single self-contained file deployed on GitHub Pages. <b>If it helps one student study, it was worth making.</b></p>
-    <div class="prose reveal">
-      <p>Most of what I make is for IELTS and English learners: a free ecosystem of listening and reading tests, an essay platform with AI feedback, a speaking lab, and a 40-day challenge tracker. Lately I'm creating AI agents and tools that work with large language models.</p>
-      <p>I'm self-taught across web, Python, AI and welding, and I speak Uzbek, English (C1) and some Korean. I still make the occasional track as Matsumi, but that's a small part now. Curious about a lot — still figuring out where it all points.</p>
-      <a class="card" href="https://pangea8.com" target="_blank" rel="noopener"><div><div class="ct">pangea8 — the IELTS ecosystem</div><div class="cs">90+ TESTS · ESSAY · SPEAKING · TRACKER</div></div><span class="ar">↗</span></a>
-    </div>
-  </div>
-</section></div>
-
-<!-- ASCII BAND · F1 (real video -> ASCII) -->
-<section class="band"><canvas class="ascii-band" data-scene="video" aria-hidden="true"></canvas><div class="bedge"></div><div class="blabel">ASCII // <b>F1</b> · REAL VIDEO</div></section>
-
-<!-- 02 WORK -->
-<div class="wrap"><section class="sec" id="work">
-  <div class="sec-head reveal"><span class="sec-label"><b>02</b> / CREATE</span><h2 class="sec-h2" data-scramble>Created end to end, shipped to real users.</h2></div>
-  <p class="lede reveal" style="margin-bottom:16px">Seven things I designed, created and deployed — each on its own domain.</p>
-  <div class="list reveal">
-    <a class="row" href="https://pangea8.com" target="_blank" rel="noopener"><span class="rnum">// 001</span><span class="rname"><i class="d"></i>pangea8</span><span class="rmid">A free IELTS ecosystem — 90+ listening &amp; reading tests, an essay platform, and a 40-day tracker.<span class="rmeta">WEB · FIREBASE · IELTS</span></span><span class="rar">↗</span></a>
-    <a class="row" href="https://maqsudjon-cell.github.io/pangea8-speaking/" target="_blank" rel="noopener"><span class="rnum">// 002</span><span class="rname"><i class="d"></i>pangea8 Speaking</span><span class="rmid">An IELTS Speaking lab — record in the browser, 166 topics, live search and peer feedback.<span class="rmeta">WEB · FIREBASE · SUPABASE</span></span><span class="rar">↗</span></a>
-    <a class="row" href="https://maqsudjon-cell.github.io/pangeya-essay-platform-/index-14.html" target="_blank" rel="noopener"><span class="rnum">// 003</span><span class="rname"><i class="d"></i>pangea8 Essay</span><span class="rmid">A writing platform — submit essays, get AI band-score feedback, focus mode, exam timer, PDF export.<span class="rmeta">WEB · FIREBASE · WRITING</span></span><span class="rar">↗</span></a>
-    <a class="row" href="https://flarestamina.com" target="_blank" rel="noopener"><span class="rnum">// 004</span><span class="rname"><i class="d"></i>Flarestamina</span><span class="rmid">A 40-day IELTS challenge tracker — PWA with a live leaderboard, streaks, and a teacher dashboard.<span class="rmeta">PWA · FIRESTORE · TRACKER</span></span><span class="rar">↗</span></a>
-    <a class="row" href="https://minnos.cc" target="_blank" rel="noopener"><span class="rnum">// 005</span><span class="rname"><i class="d"></i>Minnos</span><span class="rmid">Learn English one cat at a time — pet the cat for idioms, every one about cats, with audio &amp; Uzbek.<span class="rmeta">WEB · ENGLISH · IDIOMS</span></span><span class="rar">↗</span></a>
-    <a class="row" href="https://maqsudjon-cell.github.io/id-passport-photo-maker/" target="_blank" rel="noopener"><span class="rnum">// 006</span><span class="rname"><i class="d"></i>ID Photo Maker</span><span class="rmid">A free tool that crops photos to exact passport/visa sizes, with on-device AI to whiten the background.<span class="rmeta">WEB · IMAGE · ON-DEVICE</span></span><span class="rar">↗</span></a>
-    <a class="row" href="https://pierics.com" target="_blank" rel="noopener"><span class="rnum">// 007</span><span class="rname"><i class="d"></i>pierics</span><span class="rmid">A Wordle clone — guess the word in six tries, tiles flip green, yellow and grey. Instant feedback.<span class="rmeta">WEB · GAME · WORDLE</span></span><span class="rar">↗</span></a>
-  </div>
-</section></div>
-
-<!-- ASCII BAND · GLOBE -->
-<section class="band"><canvas class="ascii-band" data-scene="robot" aria-hidden="true"></canvas><div class="bedge"></div><div class="blabel">ASCII // <b>ROBOT</b> · REAL-TIME</div></section>
-
-<!-- 03 UPDATES -->
-<div class="wrap"><section class="sec" id="updates">
-  <div class="sec-head reveal"><span class="sec-label"><b>03</b> / LOG</span><h2 class="sec-h2" data-scramble>Updates</h2></div>
-  <div class="filters reveal" id="filters">
-    <button class="on" data-f="all">All</button><button data-f="Tech">Tech</button><button data-f="IELTS">IELTS</button><button data-f="Music">Music</button><button data-f="Teaching">Teaching</button>
-  </div>
-  <div class="feed" id="feed"></div>
-</section></div>
-
-<!-- 04 CONTACT -->
-<div class="wrap"><section class="sec" id="contact">
-  <div class="sec-head reveal"><span class="sec-label"><b>04</b> / LINK</span><h2 class="sec-h2" data-scramble>Work with me, or just say hi.</h2></div>
-  <div class="touch">
-    <div class="reveal">
-      <h3>Collaborate</h3>
-      <p>If you're creating something for students, music, or the web — or you just want to talk shop — I'd love to hear from you. Telegram is fastest.</p>
-      <a href="https://t.me/mrbmp13" class="bd solid" target="_blank" rel="noopener" style="border-color:var(--ink);background:var(--ink);color:#000">Message on Telegram →</a>
-    </div>
-    <div class="reveal">
-      <h3>Find me</h3>
-      <div class="links">
-        <a href="https://t.me/mrbmp13" target="_blank" rel="noopener"><span class="k">Telegram</span><span>@mrbmp13 →</span></a>
-        <a href="https://www.instagram.com/ma1sumi" target="_blank" rel="noopener"><span class="k">Instagram</span><span>@ma1sumi →</span></a>
-        <a href="https://github.com/maqsudjon-cell" target="_blank" rel="noopener"><span class="k">GitHub</span><span>maqsudjon-cell →</span></a>
-        <a href="https://x.com/mpolatov13" target="_blank" rel="noopener"><span class="k">X</span><span>@mpolatov13 →</span></a>
-        <a href="https://youtube.com/@matsumimusic" target="_blank" rel="noopener"><span class="k">YouTube</span><span>@matsumimusic →</span></a>
-        <a href="mailto:polatovmaqsudjon1@gmail.com"><span class="k">Email</span><span>polatovmaqsudjon1 →</span></a>
+      <div class="header-inner content-padding">
+        <div id="logo-anchor">
+          <pre class="logo-ascii" role="img" aria-label="MAQSUDJON">
+█▀▄▀█ ▄▀█ █▀█ █▀ █░█ █▀▄ ░░█ █▀█ █▄░█
+█░▀░█ █▀█ ▀▀█ ▄█ █▄█ █▄▀ █▄█ █▄█ █░▀█</pre>
+          <div class="logo-sub">POLATOV · A ONE-PERSON LAB · TASHKENT, UZBEKISTAN</div>
+        </div>
+        <div>
+          <div class="highlight header-card content-padding">
+            <h1 class="text-xl font-header">I am a one-person lab for acting in code and steel.</h1>
+            <h1 class="text-xl font-header">I build free IELTS platforms, AI agents and tools that ship to real people — end to end, from Uzbekistan to the web.</h1>
+            <div class="header-badges">
+              <span>pangea8<i>IELTS ECOSYSTEM</i></span>
+              <span>flarestamina<i>40-DAY TRACKER</i></span>
+              <span>matsumi<i>UK GARAGE</i></span>
+            </div>
+          </div>
+          <div style="margin-top:14px">
+            <a id="ascii-ctl-toggle" href="#" class="button-settings" aria-expanded="false" aria-controls="ascii-ctl" aria-label="ASCII settings">
+              <svg class="icon-open" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6"><circle cx="12" cy="12" r="3.2"/><path d="M19.4 15a1.7 1.7 0 0 0 .34 1.87l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.7 1.7 0 0 0-1.87-.34 1.7 1.7 0 0 0-1 1.55V21a2 2 0 1 1-4 0v-.09a1.7 1.7 0 0 0-1-1.55 1.7 1.7 0 0 0-1.87.34l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.7 1.7 0 0 0 .34-1.87 1.7 1.7 0 0 0-1.55-1H3a2 2 0 1 1 0-4h.09a1.7 1.7 0 0 0 1.55-1 1.7 1.7 0 0 0-.34-1.87l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.7 1.7 0 0 0 1.87.34h.09a1.7 1.7 0 0 0 1-1.55V3a2 2 0 1 1 4 0v.09a1.7 1.7 0 0 0 1 1.55 1.7 1.7 0 0 0 1.87-.34l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.7 1.7 0 0 0-.34 1.87v.09a1.7 1.7 0 0 0 1.55 1H21a2 2 0 1 1 0 4h-.09a1.7 1.7 0 0 0-1.55 1z"/></svg>
+              <svg class="icon-close" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"><path d="M4 4l16 16M20 4L4 20"/></svg>
+            </a>
+            <div id="ascii-ctl" class="ascii-controls" style="margin-top:14px">
+              <div class="grid-wrapper-subtle">
+                <div class="grid-ascii-controls">
+                  <div class="grid-item-subtle content-padding-horizontal content-padding-half-vertical">
+                    <div class="font-mono text-md color-subtle">ASCII Settings</div>
+                    <div class="font-mono text-xs color-offdark" id="hdr-clock" style="margin-top:8px">TASHKENT —:—:—</div>
+                  </div>
+                  <div class="grid-item-subtle content-padding-horizontal content-padding-half-vertical">
+                    <div class="ascii-control-header"><label for="asciiCellSize">Cell size</label><span id="asciiCellSizeOut" aria-live="polite">12</span></div>
+                    <input id="asciiCellSize" type="range" min="6" max="36" step="1" value="12">
+                  </div>
+                  <div class="grid-item-subtle content-padding-horizontal content-padding-half-vertical">
+                    <div class="ascii-control-header"><label for="asciiGlyphOpacity">Text opacity</label><span id="asciiGlyphOpacityOut" aria-live="polite">100</span></div>
+                    <input id="asciiGlyphOpacity" type="range" min="1" max="100" step="1" value="100">
+                  </div>
+                  <div class="grid-item-subtle content-padding-horizontal content-padding-half-vertical">
+                    <div class="ascii-control-header"><label for="asciiTileOpacity">Tile opacity</label><span id="asciiTileOpacityOut" aria-live="polite">50</span></div>
+                    <input id="asciiTileOpacity" type="range" min="1" max="100" step="1" value="50">
+                  </div>
+                  <div class="grid-item-subtle content-padding-horizontal content-padding-half-vertical">
+                    <div class="ascii-control-header"><label for="musicVolume">Music</label><span id="musicVolumeOut" aria-live="polite">MUTED</span></div>
+                    <input id="musicVolume" type="range" min="0" max="100" step="1" value="0">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</section></div>
+  </header>
 
-<!-- CLOSING STATEMENT CARD (white, logo watermark) -->
-<div class="wrap"><section class="statement">
-  <div class="st-card reveal">
-    <svg class="wm" viewBox="0 0 100 100" aria-hidden="true"><g stroke="#0b0b0b" stroke-width="6.5" stroke-linecap="round"><line x1="50" y1="50" x2="50" y2="18"/><line x1="50" y1="50" x2="77.7" y2="34"/><line x1="50" y1="50" x2="77.7" y2="66"/><line x1="50" y1="50" x2="50" y2="82"/><line x1="50" y1="50" x2="22.3" y2="66"/><line x1="50" y1="50" x2="22.3" y2="34"/></g><circle cx="50" cy="50" r="4.5" fill="#0b0b0b"/></svg>
-    <h2><span data-scramble>Engineer, creator &amp; welder</span> — creating from Uzbekistan.</h2>
-    <a href="#contact" class="bd solid">Get in touch →</a>
-  </div>
-</section></div>
-
-<div class="wrap"><footer>
-  <div class="frow reveal">
-    <div class="fsoc">
-      <a href="https://github.com/maqsudjon-cell" target="_blank" rel="noopener">GitHub</a>
-      <a href="https://t.me/mrbmp13" target="_blank" rel="noopener">Telegram</a>
-      <a href="https://www.instagram.com/ma1sumi" target="_blank" rel="noopener">Instagram</a>
-      <a href="https://youtube.com/@matsumimusic" target="_blank" rel="noopener">YouTube</a>
-      <a href="mailto:polatovmaqsudjon1@gmail.com">Email</a>
+  <!-- ============================ 01 · ABOUT ============================ -->
+  <section class="grid-main" id="about">
+    <div class="grid-g gl"></div>
+    <div class="c2">
+      <div class="content-padding">
+        <h2 class="font-header text-xxl sec-title" data-scramble>Turning curiosity into shipped tools.</h2>
+      </div>
     </div>
-    <div class="fmeta"><span>© 2026 MAQSUDJON.COM</span><span class="ac">●</span><span>MADE WITH VANILLA JS</span></div>
-  </div>
-</footer></div>
+    <div class="c3 rs2 ascii-cell">
+      <canvas data-scene="torus" aria-hidden="true"></canvas>
+      <div class="ascii-tag">ASCII // <b>TORUS</b> · REALTIME</div>
+    </div>
+    <div class="c2">
+      <div class="content-padding">
+        <p class="text-md reveal">Most of what I make is for IELTS and English learners: a free ecosystem of listening and reading tests, an essay platform with AI feedback, a speaking lab, and a 40-day challenge tracker. Lately I am building AI agents and tools that work with large language models.</p>
+        <div class="quote"><p class="text-md">I design, build and ship small useful things end to end — usually a single self-contained file on its own domain. <strong>If it helps one student study, it was worth making.</strong></p></div>
+        <p class="text-md reveal">Self-taught across web, Python, AI and welding. Uzbek, English (C1), some Korean. The occasional UK Garage track as Matsumi.</p>
+      </div>
+      <div class="grid-wrapper-subtle">
+        <a id="button1" href="#" class="grid-item-subtle card-link">
+          <div class="content-padding">
+            <div class="apart"><div class="text-md heavy uppercase">Why pangea8</div></div>
+            <div class="text-sm color-subtle">On supercontinents, Band 8, and infinity</div>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="grid-g gr"></div>
+  </section>
+
+  <!-- ============================ QUOTE + PROJECT TILES ============================ -->
+  <section class="grid-main">
+    <div class="grid-g gl"></div>
+    <div class="c2 ascii-cell">
+      <canvas data-scene="globe" aria-hidden="true"></canvas>
+      <div class="ascii-tag">ASCII // <b>GLOBE</b> · REALTIME</div>
+    </div>
+    <div class="c3">
+      <div class="grid-quote content-padding">
+        <div class="qmark">“</div>
+        <p class="color-light font-header text-xl">Location doesn’t matter anymore. The internet erased that. I release UK Garage from Tashkent and most of my listeners are in the UK.</p>
+        <div class="qmark close">”</div>
+        <p class="text-sm" style="margin:0">Maqsudjon — Making music from Tashkent</p>
+      </div>
+    </div>
+    <div class="c23">
+      <div class="grid-press">
+        <a href="https://pangea8.com" target="_blank" rel="noopener" class="grid-item-subtle"><div class="content-padding"><div class="tile-word">pangea8</div><div class="tile-sub">90+ IELTS tests</div></div></a>
+        <a href="https://maqsudjon-cell.github.io/pangea8-speaking/" target="_blank" rel="noopener" class="grid-item-subtle"><div class="content-padding"><div class="tile-word">speaking</div><div class="tile-sub">record in browser</div></div></a>
+        <a href="https://maqsudjon-cell.github.io/pangeya-essay-platform-/index-14.html" target="_blank" rel="noopener" class="grid-item-subtle"><div class="content-padding"><div class="tile-word">essay</div><div class="tile-sub">AI band feedback</div></div></a>
+        <a href="https://flarestamina.com" target="_blank" rel="noopener" class="grid-item-subtle"><div class="content-padding"><div class="tile-word">flarestamina</div><div class="tile-sub">40-day tracker</div></div></a>
+        <a href="https://minnos.cc" target="_blank" rel="noopener" class="grid-item-subtle"><div class="content-padding"><div class="tile-word">minnos</div><div class="tile-sub">idioms, one cat at a time</div></div></a>
+        <a href="https://maqsudjon-cell.github.io/id-passport-photo-maker/" target="_blank" rel="noopener" class="grid-item-subtle"><div class="content-padding"><div class="tile-word">id photo</div><div class="tile-sub">on-device passport photos</div></div></a>
+        <a href="https://pierics.com" target="_blank" rel="noopener" class="grid-item-subtle"><div class="content-padding"><div class="tile-word">pierics</div><div class="tile-sub">a wordle clone</div></div></a>
+        <a href="https://youtube.com/@matsumimusic" target="_blank" rel="noopener" class="grid-item-subtle"><div class="content-padding"><div class="tile-word">matsumi</div><div class="tile-sub">UK garage · album HOME</div></div></a>
+      </div>
+    </div>
+    <div class="grid-g gr"></div>
+  </section>
+
+  <!-- ============================ 02 · CRAFT ============================ -->
+  <section class="grid-main" id="work">
+    <div class="grid-g gl"></div>
+    <div class="c2 rs2 ascii-cell">
+      <canvas data-scene="wave" aria-hidden="true"></canvas>
+      <div class="ascii-tag">ASCII // <b>WAVE</b> · REALTIME</div>
+    </div>
+    <div class="c3">
+      <div class="content-padding">
+        <h2 class="font-header text-xxl sec-title" data-scramble>Built end to end, on unique training grounds.</h2>
+      </div>
+    </div>
+    <div class="c3">
+      <div class="content-padding">
+        <div class="quote"><p class="text-md">pangea8 is built on one belief: <strong>exam prep should be free.</strong> Every year students pay for materials that could be a single URL. So the whole ecosystem lives on open domains, costs nothing, and works on any phone.</p></div>
+        <p class="text-md">For the past year, I have been shipping across:</p>
+        <ul class="text-md">
+          <li><strong>Listening &amp; reading</strong> — 90+ full tests with audio and instant scoring</li>
+          <li><strong>Writing</strong> — an essay platform with AI band-score feedback</li>
+          <li><strong>Speaking</strong> — a lab that records in the browser, 166 topics</li>
+          <li><strong>Habit</strong> — a 40-day challenge tracker with streaks and a leaderboard</li>
+        </ul>
+        <p class="text-md">As a student of the craft myself, I build tools that work with teachers, not around them — every platform has a teacher dashboard baked in.</p>
+      </div>
+    </div>
+    <div class="grid-g gr"></div>
+  </section>
+
+  <!-- ============================ 03 · WORK WITH ME ============================ -->
+  <section class="grid-main" id="contact">
+    <div class="grid-g gl"></div>
+    <div class="c2">
+      <div class="content-padding">
+        <h2 class="font-header text-xxl sec-title" data-scramble>Work with me.</h2>
+      </div>
+    </div>
+    <div class="c3 rs2 ascii-cell">
+      <canvas data-scene="portrait" aria-hidden="true"></canvas>
+      <div class="ascii-tag">ASCII // <b>ME</b> · PROFILE.JPG</div>
+    </div>
+    <div class="c2">
+      <div class="grid-wrapper-subtle">
+        <div class="grid-item-subtle content-padding-horizontal content-padding-half-vertical"><h3 class="mono-head">Collaborate</h3></div>
+      </div>
+      <div class="content-padding">
+        <p class="text-md">If you are building something for students, music, or the web — or you just want to talk shop — I would love to hear from you. Telegram is fastest.</p>
+        <div style="padding:var(--space-md) 0 0"><a href="https://t.me/mrbmp13" target="_blank" rel="noopener" class="btn">Message on Telegram</a></div>
+      </div>
+      <div class="grid-wrapper-subtle">
+        <div class="grid-item-subtle content-padding-horizontal content-padding-half-vertical"><h3 class="mono-head">Find me</h3></div>
+      </div>
+      <div class="content-padding">
+        <div class="flex-v text-sm">
+          <a href="https://t.me/mrbmp13" target="_blank" rel="noopener" class="a-subtle font-mono">TELEGRAM — @mrbmp13</a>
+          <a href="https://github.com/maqsudjon-cell" target="_blank" rel="noopener" class="a-subtle font-mono">GITHUB — maqsudjon-cell</a>
+          <a href="https://www.instagram.com/ma1sumi" target="_blank" rel="noopener" class="a-subtle font-mono">INSTAGRAM — @ma1sumi</a>
+          <a href="https://x.com/mpolatov13" target="_blank" rel="noopener" class="a-subtle font-mono">X — @mpolatov13</a>
+          <a href="https://youtube.com/@matsumimusic" target="_blank" rel="noopener" class="a-subtle font-mono">YOUTUBE — @matsumimusic</a>
+          <a href="mailto:polatovmaqsudjon1@gmail.com" class="a-subtle font-mono">EMAIL — polatovmaqsudjon1@gmail.com</a>
+        </div>
+      </div>
+    </div>
+    <div class="c23">
+      <div class="grid-wrapper-subtle">
+        <div class="grid-item-subtle content-padding-horizontal content-padding-half-vertical"><h3 class="mono-head">Selected builds</h3></div>
+      </div>
+      <div class="grid-research">
+        <a href="https://pangea8.com" target="_blank" rel="noopener" class="grid-item-subtle card-link"><div class="content-padding"><div class="apart"><div class="text-md heavy">PANGEA8</div><svg class="icon-external" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12"><g fill="#FFF"><path d="M2,12h9a1,1,0,0,0,0-2H2V1A1,1,0,0,0,0,1v9A2,2,0,0,0,2,12Z"/><path d="M5.293,6.707a1,1,0,0,0,1.414,0L9.354,4.061l1.792,1.793A.5.5,0,0,0,11.5,6a.512.512,0,0,0,.191-.038A.5.5,0,0,0,12,5.5V.5a.5.5,0,0,0-.5-.5h-5a.5.5,0,0,0-.354.854L7.939,2.646,5.293,5.293A1,1,0,0,0,5.293,6.707Z"/></g></svg></div><div class="text-sm color-subtle">The free IELTS ecosystem — 90+ tests, essay, speaking, tracker (2026)</div></div></a>
+        <a href="https://flarestamina.com" target="_blank" rel="noopener" class="grid-item-subtle card-link"><div class="content-padding"><div class="apart"><div class="text-md heavy">FLARESTAMINA</div><svg class="icon-external" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12"><g fill="#FFF"><path d="M2,12h9a1,1,0,0,0,0-2H2V1A1,1,0,0,0,0,1v9A2,2,0,0,0,2,12Z"/><path d="M5.293,6.707a1,1,0,0,0,1.414,0L9.354,4.061l1.792,1.793A.5.5,0,0,0,11.5,6a.512.512,0,0,0,.191-.038A.5.5,0,0,0,12,5.5V.5a.5.5,0,0,0-.5-.5h-5a.5.5,0,0,0-.354.854L7.939,2.646,5.293,5.293A1,1,0,0,0,5.293,6.707Z"/></g></svg></div><div class="text-sm color-subtle">40-day IELTS challenge PWA — 265 tasks, streaks, live leaderboard (2026)</div></div></a>
+        <a href="https://maqsudjon-cell.github.io/id-passport-photo-maker/" target="_blank" rel="noopener" class="grid-item-subtle card-link"><div class="content-padding"><div class="apart"><div class="text-md heavy">ID PHOTO MAKER</div><svg class="icon-external" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12"><g fill="#FFF"><path d="M2,12h9a1,1,0,0,0,0-2H2V1A1,1,0,0,0,0,1v9A2,2,0,0,0,2,12Z"/><path d="M5.293,6.707a1,1,0,0,0,1.414,0L9.354,4.061l1.792,1.793A.5.5,0,0,0,11.5,6a.512.512,0,0,0,.191-.038A.5.5,0,0,0,12,5.5V.5a.5.5,0,0,0-.5-.5h-5a.5.5,0,0,0-.354.854L7.939,2.646,5.293,5.293A1,1,0,0,0,5.293,6.707Z"/></g></svg></div><div class="text-sm color-subtle">Passport &amp; visa photos with on-device background whitening (2026)</div></div></a>
+        <a href="https://github.com/maqsudjon-cell" target="_blank" rel="noopener" class="grid-item-subtle card-link"><div class="content-padding"><div class="apart"><div class="text-md heavy">EXPLAINER-ENGINE</div><svg class="icon-external" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12"><g fill="#FFF"><path d="M2,12h9a1,1,0,0,0,0-2H2V1A1,1,0,0,0,0,1v9A2,2,0,0,0,2,12Z"/><path d="M5.293,6.707a1,1,0,0,0,1.414,0L9.354,4.061l1.792,1.793A.5.5,0,0,0,11.5,6a.512.512,0,0,0,.191-.038A.5.5,0,0,0,12,5.5V.5a.5.5,0,0,0-.5-.5h-5a.5.5,0,0,0-.354.854L7.939,2.646,5.293,5.293A1,1,0,0,0,5.293,6.707Z"/></g></svg></div><div class="text-sm color-subtle">Topic → branded explainer video, soundtrack generated from code (2026)</div></div></a>
+      </div>
+    </div>
+    <div class="grid-g gr"></div>
+  </section>
+
+  <!-- ============================ 04 · LOG ============================ -->
+  <section class="grid-main" id="updates">
+    <div class="grid-g gl"></div>
+    <div class="c23">
+      <div class="content-padding">
+        <h2 class="font-header text-xxl sec-title" data-scramble>Build log.</h2>
+      </div>
+      <div class="grid-wrapper-subtle">
+        <div class="filters" id="filters">
+          <button class="on" data-f="all">All</button><button data-f="Tech">Tech</button><button data-f="IELTS">IELTS</button><button data-f="Music">Music</button><button data-f="Teaching">Teaching</button>
+        </div>
+      </div>
+      <div class="feed grid-wrapper-subtle" id="feed"></div>
+    </div>
+    <div class="grid-g gr"></div>
+  </section>
+
+  <!-- ============================ FOOTER HIGHLIGHT ============================ -->
+  <section class="grid-main">
+    <div class="grid-g gl"></div>
+    <div class="c23"><div class="spacer"></div></div>
+    <div class="grid-g gr"></div>
+  </section>
+  <section class="grid-main" id="footer">
+    <div class="grid-g gl"></div>
+    <div class="c23">
+      <div class="highlight footer-big">
+        <div class="content-padding">
+          <pre class="logo-ascii" style="color:#000;text-shadow:none;font-size:clamp(8px,1.4vw,15px)" aria-hidden="true">
+█▀▄▀█ ▄▀█ █▀█ █▀ █░█ █▀▄ ░░█ █▀█ █▄░█
+█░▀░█ █▀█ ▀▀█ ▄█ █▄█ █▄▀ █▄█ █▄█ █░▀█</pre>
+        </div>
+        <div class="content-padding" style="padding-top:0">
+          <h3 class="font-header text-xxl" data-scramble>A one-person lab for acting in code and steel.</h3>
+          <p class="text-md" style="color:#333;margin-top:1.2em">Free IELTS &amp; English-learning platforms, AI agents and small sharp tools — designed, built and shipped by one person, to real students, for nothing.</p>
+          <div style="margin-top:1.6em"><a href="https://t.me/mrbmp13" target="_blank" rel="noopener" class="btn btn-dark">Say hi</a></div>
+        </div>
+      </div>
+    </div>
+    <div class="grid-g gr"></div>
+  </section>
+
+  <!-- ============================ FOOTER LINKS ============================ -->
+  <section class="grid-main">
+    <div class="grid-g gl"></div>
+    <div class="c23">
+      <div class="grid-wrapper-subtle text-xs">
+        <div class="grid-footer">
+          <div class="grid-item-subtle content-padding"><div class="flex-v"><div>Explore</div><a href="https://pangea8.com" target="_blank" rel="noopener" class="a-subtle">pangea8</a><a href="https://flarestamina.com" target="_blank" rel="noopener" class="a-subtle">Flarestamina</a><a href="https://minnos.cc" target="_blank" rel="noopener" class="a-subtle">Minnos</a><a href="https://pierics.com" target="_blank" rel="noopener" class="a-subtle">Pierics</a></div></div>
+          <div class="grid-item-subtle content-padding"><div class="flex-v"><div>Socials</div><a href="https://t.me/mrbmp13" target="_blank" rel="noopener" class="a-subtle">Telegram</a><a href="https://www.instagram.com/ma1sumi" target="_blank" rel="noopener" class="a-subtle">Instagram</a><a href="https://x.com/mpolatov13" target="_blank" rel="noopener" class="a-subtle">X</a><a href="https://youtube.com/@matsumimusic" target="_blank" rel="noopener" class="a-subtle">YouTube</a></div></div>
+          <div class="grid-item-subtle content-padding"><div class="flex-v"><div>Contact</div><a href="https://t.me/mrbmp13" target="_blank" rel="noopener" class="a-subtle">Message me</a><a href="mailto:polatovmaqsudjon1@gmail.com" class="a-subtle">Email</a></div></div>
+          <div class="grid-item-subtle content-padding"><div class="flex-v"><div>Source</div><a href="https://github.com/maqsudjon-cell" target="_blank" rel="noopener" class="a-subtle">GitHub</a><span class="color-offdark">Vanilla JS, one file</span></div></div>
+          <div class="grid-item-subtle content-padding copyright"><div class="flex-footer"><div class="color-subtle">© 2026 Maqsudjon Polatov. All rights reserved.</div><div class="color-offdark font-mono" id="ftr-clock">TASHKENT —:—:—</div></div></div>
+        </div>
+      </div>
+    </div>
+    <div class="grid-g gr"></div>
+  </section>
+
+</div>
+</div>
 
 <script>
+/* ==========================================================================
+   DATA — build log
+   ========================================================================== */
 const updates = [{"date": "2026-06-22", "title": "pangea8 Speaking — a live IELTS Speaking lab, shipped", "tag": "Tech", "body": "Built and shipped pangea8 Speaking — a full IELTS Speaking practice platform where students record their answers right in the browser and teachers listen back and leave feedback. It's the speaking half of the pangea8 ecosystem, sitting alongside the essay platform and the test hub.\n\nIt opens with the whole official Jan–Apr 2026 question bank already loaded — 166 topics across Part 1, Part 2 and Part 3, every question numbered exactly like the real exam. A student picks a topic, taps record, and the audio uploads so I can review it later. Recordings are tiny, so a whole class can practise for months on the free tier.\n\nThe small details are what make it usable. Before recording, a student chooses which of the topic's questions they're answering, so I always know exactly what they spoke about. There's a live search across both questions and student names, a one-tap light/dark theme that's remembered, and per-answer feedback — I can leave a band score and notes, and classmates can leave peer feedback too.\n\nUnder the hood it's one self-contained file: Firebase for the questions and feedback, Supabase Storage for the audio, vanilla JS, no build step. I made it fast with an in-memory cache and a cache-first first paint, debounced search, and an indexed answer lookup so it stays smooth as answers pile up. Deleting an answer now also frees its audio file automatically. Live, and already added to the hub."}, {"date": "2026-06-08", "title": "ID & Passport Photo Maker — a free browser tool", "tag": "Tech", "body": "Shipped a small but genuinely useful tool: a free browser app that crops and resizes any photo to exact passport, visa, and ID dimensions without losing quality. Everything runs on-device — your photo never leaves your phone or laptop.\n\nYou drop in a picture, pick a size, and it gives you a print-ready photo. There's also an on-device AI step that turns the background white, which is what most document photos require. No upload, no server, no sign-in — 100% client-side. Open it and go."}, {"date": "2026-06-20", "title": "pierics.com — a Wordle clone, shipped", "tag": "Tech", "body": "New side project is live: pierics.com, my own take on Wordle. Guess the hidden word in six tries — type a guess, and each tile flips to tell you what's right: green for the correct letter in the correct spot, yellow for a letter that's in the word but somewhere else, grey for one that isn't there at all.\n\nIt's the kind of build I love — a small, self-contained game with tight rules and instant feedback, the whole thing running in the browser on its own domain. Quick to pick up, hard to put down. Go break your streak: pierics.com."}, {"date": "2026-06-20", "title": "Pangeya Essay Platform — rebuilt from scratch in a Nothing style", "tag": "Tech", "body": "Took the IELTS essay platform apart and rebuilt the whole thing in a monochrome, dot-matrix style inspired by Nothing — pure black, a red accent, mono type, a live particle field, and a dot-matrix \"WRITING LAB\" wordmark with a blinking cursor. Same tool, a completely sharper identity.\n\nEvery feature survived the rebuild and a few got better. Pangeya AI now lives in a floating button you can open from anywhere instead of being buried at the bottom of the page — it slides up as a panel on desktop and a bottom sheet on phones. AI band-score feedback on each essay stays collapsed until you ask for it, so long feedback no longer clutters the list.\n\nUnder the hood I made submitting, deleting, and switching to teacher mode instant by rendering from an in-memory cache instead of re-reading the whole database every time. I also disabled spellcheck, autocorrect, and grammar underlines in the editor so students write a fair exam with no hints, and added a proper branded PDF export — every essay downloads with the Pangeya mark, the candidate's details, word count, and any teacher feedback, designed to look clean in both colour and black-and-white.\n\nThere's a new favicon to match, and the whole thing ships as a single self-contained file."}, {"date": "2026-06-19", "title": "Pangeya Essay Platform — faster, with a focus mode", "tag": "Tech", "body": "Gave the IELTS essay platform a speed and UX pass. Old essays were loading slowly because the app re-read the entire Firebase collection on every action — even on every keystroke in the search box. Now it loads once, caches in memory, and search filters instantly without touching the network.\n\nOn the writing side: the word count is now large and colour-coded — amber while you're under the IELTS minimum, green once you hit it, with an 'X words to go' hint. I added a Focus mode that hides everything but the editor, timer and word count, a timer that pulses and beeps in the final minute like a real exam, and cleaner essay cards that show a word-count badge, a feedback marker, and collapse long essays. Search now also tells you when nothing matches instead of going blank."}, {"date": "2026-06-18", "title": "pierics.com — polishing the Wordle clone", "tag": "Tech", "body": "Spent a session refining pierics.com, my Wordle clone. Rebranded it from its working name to Pierics, wired up the pierics.com custom domain, and made the keyboard keys much bigger and more tap-friendly on phones.\n\nThe word list got real attention too: I swapped out every word that wasn't exactly five letters, added around 80 common five-letter words — plurals and verbs — to the list of allowed guesses, and ended up with a clean set of 128 answer words. Small game, but the details are what make it feel right."}, {"date": "2026-06-17", "title": "explainer-engine — a branded video generator, built from scratch", "tag": "Tech", "body": "This week's big build: explainer-engine, a tool that turns a topic into a fully branded, narration-free explainer video — kinetic text, data visualisations, glowing spheres, network graphs, all in the pangea8 neon-mint style, with its own generated soundtrack. No footage, no voiceover, no editing: it renders everything from code into an MP4.\n\nIt grew into a proper desktop app over a few days. You describe an idea in a chatbot-style interface and it writes a spec, then renders the video locally on your machine. I added a Templates mode so it runs without an API key, parallel multi-core rendering for speed, a Draft quality option, and a Full/Draft selector.\n\nThe soundtrack engine was the most fun part. Instead of one repetitive loop, it now has six mood palettes — emotional, uplifting, cosmic, driving, tense, playful — each with its own chords and tempo, auto-picked from the topic, in a Fred again..-ish style. I also cleaned up the audio so there's no hiss and no clipping.\n\nThen the real-world fixes: Uzbek text was overflowing the frame, so I made every text block auto-scale and wrap; added an EN/UZ language toggle so the whole video renders in the chosen language; fixed Safari downloads; and — after one render ran for a full day and filled the disk — capped video length and made the whole pipeline fail safely instead of crashing."}, {"date": "2026-06-16", "title": "maqsudjon.com — rebuilt in a Nothing-inspired style", "tag": "Tech", "body": "Redesigned this site from the ground up in a monochrome, dot-matrix style inspired by Nothing — pure black, a dotted-LED texture, a signature red accent, and a mono type treatment throughout. The work and updates are laid out on a hairline grid, with a live Tashkent clock and an expandable log. Same content, a much sharper identity."}, {"date": "2026-06-12", "title": "pangea8.com — all-new landing page, built end to end", "tag": "Tech", "body": "pangea8.com has a real face now. Until today the domain pointed straight at the test hub — functional, but it never told anyone what Pangea8 is. Today I shipped a full landing page and moved the hub to its own address (maqsudjon-cell.github.io/ielts-hub). The Start practicing button drops you straight into the tests.\n\nThe origin story is funny: I saw one of those viral \"can you believe Claude did this\" reels on Instagram and decided pangea8 deserved the same energy. The design went through three full iterations in one session with Claude. Version one was a cinematic renaissance museum — gold frames, Vermeer paintings, a rotating wax seal. Beautiful, but too luxury for an IELTS platform. Version two swung the other way: cream-and-coral minimalism. Clean, but boring and not our colors. Version three landed it: dark hi-tech in pangea8's own emerald, Linear/Vercel energy.\n\nThe hero is the heart of it. Aurora glow blobs drift behind an animated grid, the headline \"Band 7.5 & beyond\" decodes with a matrix-style scramble, and the centerpiece is a glass mock of the actual hub — browser chrome, search bar, filter pills, and a 3-column grid of real test cards (Mock Listening 76, CDI Reading 4...).\n\nAnd the mock is alive. The search bar types by itself — \"listening\", then \"reading\" — the filter pills switch on their own, and the test cards dim and highlight to match, like someone is using the product right in front of you. A green tracer light runs around the card border, and on desktop the whole thing tilts in 3D as your cursor moves.\n\nThen there's the ambient layer, my favorite part. Meteors streak across the hero every twenty-something seconds — and if you tap anywhere on the hero, a meteor fires from exactly where you touched. There are 38 twinkling stars, random grid cells that pulse green, and embers rising through the final CTA. Light mode gets its own character instead of just recoloring: the stars become soft green sparkles, meteors turn into deep-green comets, and floating ring-and-plus shapes drift around that only exist in light mode.\n\nThe theme system does both: it follows your device setting automatically, and a moon/sun toggle in the nav lets you override it — your choice is remembered, with zero flash on page load.\n\nSign-in is live too. Google auth through Firebase, and once you're signed in, Start practicing jumps you to the hub instantly — same tab, preconnected, prefetched. If the sign-in popup fails or you close it, you still go straight to the tests. Practice is never blocked. I also deferred the Firebase SDK so the page paints and animates instantly even on slow connections — the SDK loads in the background and attaches auth when it's ready.\n\nUnder the hood it's one 58KB HTML file. No frameworks, no build step — vanilla CSS and JS, Google Fonts, and Firebase over CDN. Spotlight hover cards, magnetic buttons, count-up stats, an animated band-score gauge, a scroll progress bar, a real favicon set (Google Search needs actual files, not data URIs), and a proper OG image for link previews.\n\nThe last piece was the domain migration. pangea8.com moved from the hub repo to the landing repo — before flipping it I checked every one of the 92 test links to make sure nothing would break (they all point to their own github.io pages, so nothing did). The hub now lives at maqsudjon-cell.github.io/ielts-hub and the brand finally lives at pangea8.com.\n\nNext up: pushing past 100 tests. The landing already says 100+ — now I have to catch up to my own marketing."}, {"date": "2026-06-07", "title": "IELTS Hub — 10 CDI Reading tests now live", "tag": "IELTS", "body": "Added 6 more full Academic reading tests to the IELTS Hub (pangea8.com), bringing the total to 10 CDI Reading tests. CDI Reading 5 through CDI Reading 10 are now live alongside the earlier CDI 1 through 4.\n\nEach test has 3 passages, 40 questions, and a 60-minute timer with instant scoring and answer checking. The hub now offers 16 reading tests total.\n\nAll built with vanilla HTML/CSS/JS, each running as its own standalone page."}, {"date": "2026-06-07", "title": "Flarestamina — 40-Day IELTS Challenge tracker is live", "tag": "Tech", "body": "I launched Flarestamina (flarestamina.com) — a complete 40-Day IELTS Challenge tracker covering all four skills: Listening, Reading, Writing, and Speaking across 38 active days with 265 tasks. Users sign in with Google, check off tasks daily, and their progress auto-saves and syncs across devices in real time. The tracker includes a progress ring, a streak heatmap, and a class leaderboard.\n\nI also built a gated Teacher Dashboard that lets me add or remove days from the plan, view individual student progress, and track the leaderboard. The whole thing runs on vanilla HTML/CSS/JS with Firebase v10 (Auth + Firestore) loaded over CDN — no frameworks, no build step. Deployed to GitHub Pages with a custom domain at flarestamina.com.\n\nThis is the first product I've shipped that other people can actually use to study. Building it taught me a lot about Firebase security rules, real-time sync, and shipping something that just works."}, {"date": "2026-06-03", "title": "Pangeya Essay Platform — full overhaul", "tag": "Tech", "body": "Today I shipped a major update to the Pangeya Essay Platform. The goal was to make it faster, safer, and more solid all around.\n\nThe biggest change is a real-time onSnapshot listener. Essays now show up instantly after you submit, edit, or delete them — no more waiting around for a full Firestore re-query.\n\nOn the security side, I added XSS sanitization, so essay content is now cleaned before it's rendered to the screen.\n\nI also fixed a handful of bugs: duplicate submissions are now prevented, the negative credits issue is resolved, duplicate functions were removed, and stale renderEssays() calls got cleaned up.\n\nFor accessibility, I added aria roles, the Escape key now closes modals, and Ctrl+Enter submits.\n\nAnd finally, some visual polish: a favicon was added, along with a few responsive refinements.\n\nLive at maqsudjon-cell.github.io/pangeya-essay-platform-/index-14.html and pangea8.com"}, {"date": "2026-05-29", "title": "IELTS Hub — 73 listening tests", "tag": "IELTS", "body": "Big update today! Added 35 new Diyorbek listening tests — Tests 41 through 76. That brings the total to 73 listening tests on the platform. Each test has 40 questions, full audio, and instant scoring. Check them out at pangea8.com"}, {"date": "2026-05-29", "title": "IELTS Hub — 59 listening tests", "tag": "IELTS", "body": "Added 8 more Diyorbek listening tests — Tests 56 through 63. Fixed test ordering, added share buttons, and fixed Test 12 URL. Now at 59 total listening tests on the hub. Full audio, instant scoring, all on pangea8.com."}, {"date": "2026-05-29", "title": "IELTS Hub — 51 listening tests", "tag": "IELTS", "body": "Added 9 more Diyorbek listening tests — Tests 46 through 55 (except 49). Now at 51 total listening tests on the platform. Full audio, instant scoring, all on pangea8.com."}, {"date": "2026-05-28", "title": "IELTS Hub — 10 new tests (31–40)", "tag": "IELTS", "body": "Added 10 new Diyorbek listening tests to the hub today — Tests 31 through 40. That brings the total to 37 listening tests on the platform. Each test has 40 questions, full audio, and instant scoring.\n\nCheck them out at pangea8.com"}, {"date": "2026-05-28", "title": "IELTS Hub — 42 listening tests", "tag": "IELTS", "body": "Added 5 more Diyorbek listening tests — Tests 41 through 45. Full audio, instant scoring, all on pangea8.com."}, {"date": "2026-05-27", "title": "Launched pangea8.com", "tag": "Tech", "body": "Today I officially launched pangea8.com — my IELTS practice hub. It hosts mock tests for Reading, Writing, Listening, and Speaking, plus the Pangeya Essay platform. Built with passion for students preparing for IELTS, but it's open to anyone preparing for IELTS. Setting up the domain through Cloudflare and connecting it to GitHub Pages took an afternoon. The hardest part was choosing the name."}, {"date": "2026-05-20", "title": "Why Pangea?", "tag": "Teaching", "body": "Pangea was the single supercontinent before everything drifted apart. I liked the metaphor — one world, one platform. The 8 in pangea8 stands for IELTS Band 8 — the goal most students aim for, and also looks like the infinity symbol when laid sideways. Pangea forever, Pangea eight. Brand names should mean something to the founder, even if nobody else gets it at first."}, {"date": "2026-05-15", "title": "Making music from Tashkent", "tag": "Music", "body": "Releasing UK Garage tracks from Uzbekistan feels strange sometimes. I'm probably one of the only producers in Central Asia making this sound. My album HOME is out on Spotify under Matsumi. Most of my listeners are in the UK, which makes sense — that's where the genre lives. But it also tells me something: location doesn't matter anymore. The internet erased that."}];
 updates.unshift({
   "date":"2026-06-29",
@@ -378,215 +587,349 @@ updates.unshift({
   "tag":"Tech",
   "body":"Rebuilt the site to echo the look of a frontier research lab: pure black, clean Geist type, blueprint guide lines, and a hero statement set in a solid white card over a full-bleed, real-time colour ASCII engine. The ASCII fills the whole screen with a dense, flowing colour field and cycles through scenes on its own — FLOW, a rotating GLOBE, a spinning TORUS, a music WAVE, and matrix RAIN — every glyph tinted from a navy → teal → mint → peach → coral gradient, with scene tabs and a live Tashkent clock. New hexagon-mark logo, drawn from scratch. Same content, a far sharper identity."
 });
+updates.unshift({
+  "date":"2026-07-02",
+  "title":"maqsudjon.com — rebuilt again, this time as a full General Intuition homage",
+  "tag":"Tech",
+  "body":"Tore the site down and rebuilt it in the image of generalintuition.com — the frontier lab whose whole visual language is ASCII. Everything is here: the white 1px blueprint grid that frames every section, the giant video-to-ASCII header (my F1 lap footage sampled live into coloured glyphs and tiles), the ASCII Settings panel with working Cell size / Text opacity / Tile opacity sliders, quotes that light up as you scroll, headings that de-scramble from glyph noise, invert-on-hover project tiles, a story modal (Why pangea8), and a white footer highlight card.\n\nMy own touches: the wordmark is a two-line figlet MAQSUDJON rendered in block glyphs, my profile photo is re-rendered as a live ASCII portrait in the contact section, and the Music slider in the settings panel doesn't play a hidden track — it plays a tiny ambient synth generated in the browser with the Web Audio API, a nod to Matsumi. Still one self-contained HTML file, vanilla JS, no build step."
+});
 
-function tick(){const now=new Date();const u=new Date(now.getTime()+now.getTimezoneOffset()*60000+5*3600000);
-  const hh=String(u.getHours()).padStart(2,'0'),mm=String(u.getMinutes()).padStart(2,'0'),ss=String(u.getSeconds()).padStart(2,'0');
-  const a=document.getElementById('clock');if(a)a.textContent=`UZBEKISTAN ${hh}:${mm}:${ss}`;
-  const b=document.getElementById('stageClock');if(b)b.textContent=`${hh}:${mm}:${ss}`;}
+/* ==========================================================================
+   CLOCKS — Tashkent (UTC+5)
+   ========================================================================== */
+function tick(){
+  const now=new Date();
+  const u=new Date(now.getTime()+now.getTimezoneOffset()*60000+5*3600000);
+  const s=`TASHKENT ${String(u.getHours()).padStart(2,'0')}:${String(u.getMinutes()).padStart(2,'0')}:${String(u.getSeconds()).padStart(2,'0')}`;
+  for(const id of ['hdr-clock','ftr-clock']){const el=document.getElementById(id);if(el)el.textContent=s;}
+}
 tick();setInterval(tick,1000);
 
-const feed=document.getElementById('feed');
-function fmtDate(d){const m=['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP','OCT','NOV','DEC'];const[y,mo,da]=d.split('-');return `${da} ${m[+mo-1]} ${y}`;}
-function esc(s){return(s||'').replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));}
-function render(filter){feed.innerHTML='';const list=updates.filter(p=>filter==='all'||p.tag===filter).sort((a,b)=>b.date.localeCompare(a.date));
-  if(!list.length){feed.innerHTML='<div style="padding:40px 0;font-family:var(--mono);color:var(--dim);font-size:.85rem">No entries under this tag yet.</div>';return;}
-  list.forEach(p=>{const el=document.createElement('article');el.className='post';
-    el.innerHTML=`<div><div class="when">${fmtDate(p.date)}</div><span class="tag">${p.tag||'NOTE'}</span></div><div><h3>${esc(p.title)}</h3><div class="body">${esc(p.body)}</div></div><div class="ex">+</div>`;
-    el.addEventListener('click',()=>el.classList.toggle('open'));feed.appendChild(el);});}
-render('all');
-document.querySelectorAll('#filters button').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('#filters button').forEach(x=>x.classList.remove('on'));b.classList.add('on');render(b.dataset.f);}));
-
-const GLYPHS='ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789/\\<>*#=+-';
+/* ==========================================================================
+   SCRAMBLE HEADINGS (General Intuition character set)
+   ========================================================================== */
+const CHARS=".,'^\":;Il!i><~+-_?][}{1)(|tf/jrxnuvcXZYUJCLQ0OZmwqpdbkhao*#MW&8%B@$";
 const REDUCE=window.matchMedia('(prefers-reduced-motion:reduce)').matches;
-function scramble(el,dur){const final=(el.dataset.final||el.textContent);el.dataset.final=final;if(REDUCE){el.textContent=final;return;}
+function scramble(el,dur){
+  const final=(el.dataset.final||el.textContent);el.dataset.final=final;
+  if(REDUCE){el.textContent=final;return;}
   const chars=final.split('');const start=performance.now();
-  (function f(now){const p=Math.min(1,(now-start)/dur);const rv=Math.floor(p*chars.length);let out='';
-    for(let i=0;i<chars.length;i++){const c=chars[i];out+=c===' '?' ':(i<rv?c:GLYPHS[(Math.random()*GLYPHS.length)|0]);}
-    el.textContent=out;if(p<1)requestAnimationFrame(f);else el.textContent=final;})(start);}
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;e.target.classList.add('in');
-  if(e.target.matches('[data-scramble]')&&!e.target.dataset.done){e.target.dataset.done='1';scramble(e.target,600);}io.unobserve(e.target);}),{threshold:.14});
-document.querySelectorAll('.reveal,[data-scramble]').forEach(el=>io.observe(el));
-window.addEventListener('DOMContentLoaded',()=>{document.querySelectorAll('.hero-card [data-scramble]').forEach(s=>{s.dataset.done='1';setTimeout(()=>scramble(s,780),180);});});
+  (function f(now){
+    const p=Math.min(1,(now-start)/dur);const rv=Math.floor(p*chars.length);let out='';
+    for(let i=0;i<chars.length;i++){const c=chars[i];out+=c===' '?' ':(i<rv?c:CHARS[(Math.random()*CHARS.length)|0]);}
+    el.textContent=out;if(p<1)requestAnimationFrame(f);else el.textContent=final;
+  })(start);
+}
 
-/* ===== MULTI-CANVAS COLOUR ASCII ENGINE ===== */
+/* ==========================================================================
+   SCROLL OBSERVERS — reveal, scramble, quote highlight, nav visibility
+   ========================================================================== */
+const io=new IntersectionObserver(es=>es.forEach(e=>{
+  if(!e.isIntersecting)return;
+  e.target.classList.add('in');
+  if(e.target.matches('[data-scramble]')&&!e.target.dataset.done){e.target.dataset.done='1';scramble(e.target,800);}
+  io.unobserve(e.target);
+}),{threshold:.15});
+document.querySelectorAll('.reveal,[data-scramble]').forEach(el=>io.observe(el));
+
+const quoteIO=new IntersectionObserver(es=>es.forEach(e=>{
+  e.target.classList.toggle('active',e.isIntersecting);
+}),{threshold:.3,rootMargin:'0px 0px -100px 0px'});
+document.querySelectorAll('.quote').forEach(q=>quoteIO.observe(q));
+
 (function(){
+  const logo=document.getElementById('logo-anchor'),footer=document.getElementById('footer'),body=document.body;
+  if(!logo||!footer)return;
+  let logoVisible=true,footerVisible=false,t=null;
+  function update(){
+    clearTimeout(t);
+    t=setTimeout(()=>{
+      if(!logoVisible&&!footerVisible)body.classList.add('nav-open');
+      else body.classList.remove('nav-open');
+    },50);
+  }
+  new IntersectionObserver(es=>{es.forEach(e=>{logoVisible=e.isIntersecting;update();});},{threshold:0,rootMargin:'20px 0px 0px 0px'}).observe(logo);
+  new IntersectionObserver(es=>{es.forEach(e=>{footerVisible=e.isIntersecting;update();});},{threshold:0,rootMargin:'0px 0px 20px 0px'}).observe(footer);
+})();
+
+/* ==========================================================================
+   MODAL
+   ========================================================================== */
+(function(){
+  const body=document.body,scrollEl=document.querySelector('.modal-scroll');
+  function openModal(){scrollEl.scrollTop=0;body.classList.add('modal-open');}
+  function closeModal(e){if(e)e.preventDefault();body.classList.remove('modal-open');}
+  document.getElementById('button1').addEventListener('click',e=>{e.preventDefault();openModal();});
+  document.getElementById('modal-close-button').addEventListener('click',closeModal);
+  document.getElementById('modal-close-bar').addEventListener('click',closeModal);
+  document.addEventListener('keydown',e=>{if(body.classList.contains('modal-open')&&e.key==='Escape'){e.preventDefault();closeModal();}});
+})();
+
+/* ==========================================================================
+   BUILD LOG FEED
+   ========================================================================== */
+(function(){
+  const feed=document.getElementById('feed');
+  const M=['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP','OCT','NOV','DEC'];
+  const fmt=d=>{const[y,mo,da]=d.split('-');return `${da} ${M[+mo-1]} ${y}`;};
+  const esc=s=>(s||'').replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+  function render(filter){
+    feed.innerHTML='';
+    const list=updates.filter(p=>filter==='all'||p.tag===filter).sort((a,b)=>b.date.localeCompare(a.date));
+    if(!list.length){feed.innerHTML='<div class="content-padding font-mono text-sm color-subtle">No entries under this tag yet.</div>';return;}
+    list.forEach(p=>{
+      const el=document.createElement('article');el.className='post';
+      el.innerHTML=`<div class="post-head"><div><div class="post-when">${fmt(p.date)}</div><span class="post-tag">${p.tag||'NOTE'}</span></div><h3>${esc(p.title)}</h3><div class="ex">+</div></div><div class="post-body">${esc(p.body)}</div>`;
+      el.addEventListener('click',()=>el.classList.toggle('open'));
+      feed.appendChild(el);
+    });
+  }
+  render('all');
+  document.querySelectorAll('#filters button').forEach(b=>b.addEventListener('click',()=>{
+    document.querySelectorAll('#filters button').forEach(x=>x.classList.remove('on'));
+    b.classList.add('on');render(b.dataset.f);
+  }));
+})();
+
+/* ==========================================================================
+   ASCII ENGINE — video, image and procedural scenes on 2D canvas
+   Config is shared and driven live by the ASCII Settings panel.
+   ========================================================================== */
+(function(){
+  const CFG={cell:12,glyph:1,tile:0.5};
   const RAMP=" .,:;-=+*oxe%#@$";const RL=RAMP.length-1;
   const STOPS=[[26,34,66],[40,86,170],[58,160,196],[141,249,232],[206,206,176],[242,200,170],[255,140,110],[200,52,74]];
-  const PN=96,PAL=[];for(let i=0;i<PN;i++){let t=i/(PN-1)*(STOPS.length-1),a=STOPS[Math.floor(t)],b=STOPS[Math.min(STOPS.length-1,Math.floor(t)+1)],k=t-Math.floor(t);
-    PAL.push(`rgb(${Math.round(a[0]+(b[0]-a[0])*k)},${Math.round(a[1]+(b[1]-a[1])*k)},${Math.round(a[2]+(b[2]-a[2])*k)})`);}
+  const PN=96,PAL=[];
+  for(let i=0;i<PN;i++){
+    let t=i/(PN-1)*(STOPS.length-1),a=STOPS[Math.floor(t)],b=STOPS[Math.min(STOPS.length-1,Math.floor(t)+1)],k=t-Math.floor(t);
+    PAL.push(`rgb(${Math.round(a[0]+(b[0]-a[0])*k)},${Math.round(a[1]+(b[1]-a[1])*k)},${Math.round(a[2]+(b[2]-a[2])*k)})`);
+  }
   const col=t=>PAL[Math.max(0,Math.min(PN-1,t*(PN-1)|0))];
-  const FS=15;
 
-  function fieldBase(st,t,lo,hi){const cols=st.cols,rows=st.rows,val=st.val,hue=st.hue;
+  /* --- procedural scenes (value + hue per cell) --- */
+  function fieldBase(st,t,lo,hi){
+    const cols=st.cols,rows=st.rows,val=st.val,hue=st.hue;
     for(let y=0;y<rows;y++){const ny=y/rows;
       for(let x=0;x<cols;x++){const nx=x/cols;
         let a=Math.sin(nx*3.0+t*0.42)+Math.sin(ny*3.6-t*0.36+1.3)+Math.sin((nx*1.7+ny*2.2)*2.3+t*0.55)+Math.sin(Math.hypot(nx-0.5,ny-0.5)*7.0-t*0.85)+0.7*Math.sin(nx*8.0-ny*6.0+t*0.7);
         const f=0.5+0.5*Math.sin(a*0.8);const ed=1-0.55*Math.min(1,Math.hypot((nx-0.5)*1.25,(ny-0.5)*1.5));
         const i=x+y*cols;val[i]=lo+(hi-lo)*f*ed;hue[i]=0.5+0.5*Math.sin(a*0.5+t*0.1+nx*0.5);}}}
   function flow(st,t){fieldBase(st,t,0.16,0.98);}
-  function globe(st,t){fieldBase(st,t,0.1,0.34);const cols=st.cols,rows=st.rows,put=st.put;const cx=cols/2,cy=rows/2,R=Math.min(cols*0.34,rows*0.82);
+  function globe(st,t){
+    fieldBase(st,t,0.1,0.34);
+    const cols=st.cols,rows=st.rows,put=st.put;const cx=cols/2,cy=rows/2,R=Math.min(cols*0.34,rows*0.82);
     const yaw=t*0.5,ya=Math.cos(yaw),yb=Math.sin(yaw),tl=0.42,ta=Math.cos(tl),tb=Math.sin(tl);
     for(let la=-80;la<=80;la+=7){const lar=la*Math.PI/180,cla=Math.cos(lar),sla=Math.sin(lar);
       for(let lo=0;lo<360;lo+=4){const lor=lo*Math.PI/180;let x=cla*Math.cos(lor),y=sla,z=cla*Math.sin(lor);
         let x1=x*ya-z*yb,z1=x*yb+z*ya,y2=y*ta-z1*tb,z2=y*tb+z1*ta;const dep=(z2+1)/2;
         put(cx+x1*R*0.5,cy-y2*R*0.5,0.3+dep*0.7,0.18+dep*0.55);}}
-    for(let lo=0;lo<360;lo+=30){const lor=lo*Math.PI/180;for(let la=-90;la<=90;la+=3){const lar=la*Math.PI/180,cla=Math.cos(lar);
-      let x=cla*Math.cos(lor),y=Math.sin(lar),z=cla*Math.sin(lor);let x1=x*ya-z*yb,z1=x*yb+z*ya,y2=y*ta-z1*tb,z2=y*tb+z1*ta;const dep=(z2+1)/2;
-      put(cx+x1*R*0.5,cy-y2*R*0.5,0.4+dep*0.6,0.55+dep*0.4);}}}
-  function robot(st,t){fieldBase(st,t,0.08,0.26);const cols=st.cols,rows=st.rows,put=st.put;
-    const cx=Math.round(cols/2),bob=Math.round(Math.sin(t*1.6)*0.6),cy=Math.round(rows*0.54)+bob;
-    let hh=Math.max(4,Math.floor(rows*0.30));let hw=Math.min(Math.floor(cols*0.30),Math.floor(hh*1.9));
-    const cr=Math.max(1,Math.floor(hh*0.32)),HEAD=0.16,EYE=0.4,LIT=0.86,MOU=0.6;
-    // head outline (edges, corners chamfered)
-    for(let x=cx-hw+cr;x<=cx+hw-cr;x++){put(x,cy-hh,0.92,HEAD);put(x,cy+hh,0.92,HEAD);}
-    for(let y=cy-hh+cr;y<=cy+hh-cr;y++){put(cx-hw,y,0.92,HEAD);put(cx+hw,y,0.92,HEAD);}
-    for(let k=0;k<=cr;k++){put(cx-hw+(cr-k),cy-hh+k,0.92,HEAD);put(cx+hw-(cr-k),cy-hh+k,0.92,HEAD);
-      put(cx-hw+(cr-k),cy+hh-k,0.92,HEAD);put(cx+hw-(cr-k),cy+hh-k,0.92,HEAD);}
-    // antenna + pulsing light
-    const antLen=Math.max(2,Math.floor(hh*0.55));for(let k=1;k<=antLen;k++)put(cx,cy-hh-k,0.7,HEAD);
-    const lit=0.55+0.45*Math.sin(t*6);put(cx,cy-hh-antLen-1,Math.max(0.5,lit),LIT);put(cx-1,cy-hh-antLen-1,lit*0.7,LIT);put(cx+1,cy-hh-antLen-1,lit*0.7,LIT);
-    // eyes (blink + look)
-    const ex=Math.round(hw*0.46),ey=cy-Math.round(hh*0.16),er=Math.max(1,Math.floor(hh*0.26));
-    const blink=(t%3.1)<0.16,look=Math.round(Math.sin(t*0.8)*er*0.55);
-    for(const sx of [-1,1]){const ox=cx+sx*ex;
-      if(blink){for(let dx=-er;dx<=er;dx++)put(ox+dx,ey,0.95,EYE);}
-      else{for(let dy=-er;dy<=er;dy++)for(let dx=-Math.round(er*1.6);dx<=Math.round(er*1.6);dx++){
-        if((dx/(er*1.7))*(dx/(er*1.7))+(dy/er)*(dy/er)<=1)put(ox+dx,ey+dy,0.62,EYE);}
-        put(ox+look,ey,1,LIT);put(ox+look,ey-1,0.8,LIT);}}
-    // mouth grille
-    const my=cy+Math.round(hh*0.5),mw=Math.round(hw*0.55);
-    for(let x=cx-mw;x<=cx+mw;x++){put(x,my-1,0.6,MOU);put(x,my+1,0.6,MOU);if(((x-cx+mw)&1)===0)put(x,my,0.92,MOU);}
-    // cheek bolts
-    put(cx-hw-1,cy+1,0.7,EYE);put(cx+hw+1,cy+1,0.7,EYE);}
-
-  function torus(st,t){fieldBase(st,t,0.1,0.32);const cols=st.cols,rows=st.rows,zb=st.zb;zb.fill(0);const A=t*0.85,B=t*0.5,cA=Math.cos(A),sA=Math.sin(A),cB=Math.cos(B),sB=Math.sin(B);
+    for(let lo=0;lo<360;lo+=30){const lor=lo*Math.PI/180;
+      for(let la=-90;la<=90;la+=3){const lar=la*Math.PI/180,cla=Math.cos(lar);
+        let x=cla*Math.cos(lor),y=Math.sin(lar),z=cla*Math.sin(lor);
+        let x1=x*ya-z*yb,z1=x*yb+z*ya,y2=y*ta-z1*tb,z2=y*tb+z1*ta;const dep=(z2+1)/2;
+        put(cx+x1*R*0.5,cy-y2*R*0.5,0.4+dep*0.6,0.55+dep*0.4);}}}
+  function torus(st,t){
+    fieldBase(st,t,0.1,0.32);
+    const cols=st.cols,rows=st.rows,zb=st.zb;zb.fill(0);
+    const A=t*0.85,B=t*0.5,cA=Math.cos(A),sA=Math.sin(A),cB=Math.cos(B),sB=Math.sin(B);
     const R1=1,R2=2,K2=5,K1=Math.min(cols*0.42,rows*1.0);
     for(let th=0;th<6.283;th+=0.06){const ct=Math.cos(th),s2=Math.sin(th);
       for(let ph=0;ph<6.283;ph+=0.018){const cp=Math.cos(ph),sp=Math.sin(ph);
-        const c2=R2+R1*ct,cy2=R1*s2;const x=c2*(cB*cp+sA*sB*sp)-cy2*cA*sB,y=c2*(sB*cp-sA*cB*sp)+cy2*cA*cB,z=K2+cA*c2*sp+cy2*sA,ooz=1/z;
+        const c2=R2+R1*ct,cy2=R1*s2;
+        const x=c2*(cB*cp+sA*sB*sp)-cy2*cA*sB,y=c2*(sB*cp-sA*cB*sp)+cy2*cA*cB,z=K2+cA*c2*sp+cy2*sA,ooz=1/z;
         const xp=Math.round(cols/2+K1*ooz*x),yp=Math.round(rows/2-K1*ooz*y*0.5);
         if(xp<0||yp<0||xp>=cols||yp>=rows)continue;const i=xp+yp*cols;
         if(ooz>zb[i]){zb[i]=ooz;let L=cp*ct*sB-cA*ct*sp-sA*s2+cB*(cA*s2-ct*sA*sp);L=Math.max(0,L);
           st.val[i]=Math.min(1,0.18+L*0.7);st.hue[i]=Math.min(1,0.2+L*0.6+(ooz-0.18)*1.4);}}}}
-  function wave(st,t){fieldBase(st,t,0.1,0.3);const cols=st.cols,rows=st.rows,put=st.put;const base=rows-1;
+  function wave(st,t){
+    fieldBase(st,t,0.1,0.3);
+    const cols=st.cols,rows=st.rows,put=st.put;const base=rows-1;
     for(let x=0;x<cols;x++){const fx=x/cols;const env=0.42+0.58*Math.pow(Math.sin(Math.PI*Math.min(1,Math.max(0,fx))),0.55);
       let a=0.5*Math.sin(fx*6+t*2)+0.32*Math.sin(fx*13-t*3.1+1.3)+0.26*Math.sin(fx*22+t*1.7)+0.2*Math.sin(t*5+fx*40);
       a=0.5+0.5*Math.sin(a*1.8);const beat=0.72+0.28*Math.sin(t*2.4+fx*2);
       const h=Math.max(1,Math.round((0.3+0.7*a)*env*beat*(rows-2)));
       for(let k=0;k<h;k++){const ct=k/Math.max(1,h);put(x,base-k,0.3+0.7*ct,0.2+0.75*ct);}
       put(x,base-h,0.95,Math.min(1,0.2+0.8*(h/(rows-2))));}}
-  function rain(st,t,dt){fieldBase(st,t,0.08,0.26);const cols=st.cols,rows=st.rows,put=st.put;if(!st._drops||st._drops.length!==cols){st._drops=[];for(let x=0;x<cols;x++)st._drops[x]={y:Math.random()*rows,sp:6+Math.random()*16,len:5+(Math.random()*10|0)};}
-    for(let x=0;x<cols;x++){const d=st._drops[x];d.y+=d.sp*dt;if(d.y-d.len>rows){d.y=-(Math.random()*8);d.sp=6+Math.random()*16;d.len=5+(Math.random()*10|0);}
-      for(let k=0;k<d.len;k++){const y=Math.round(d.y-k);if(y<0||y>=rows)continue;const head=k===0;put(x,y,head?1:Math.max(0.12,1-k/d.len),head?0.25:0.4+0.35*(k/d.len));}}}
 
-  // RACE — a procedural F1-style car driving (motion lines + spinning wheels)
-  function car(st,t,dt){fieldBase(st,t,0.05,0.12);const cols=st.cols,rows=st.rows,put=st.put;
-    const cx=cols*0.5;const bob=Math.sin(t*7)*Math.max(0.5,rows*0.014);
-    const base=rows*0.63+bob;
-    const u=cols*0.33;
-    const wry=Math.max(2.4,rows*0.18),wrx=wry*1.9;
-    const wy=base-wry*0.45;
-    const rearX=cx-u*0.56,frontX=cx+u*0.54;
-    // motion streaks behind the car
-    for(let i=0;i<7;i++){const sy=Math.round(wy-wry*(0.05+i*0.4));const sp=t*135+i*27;const lim=Math.round(cx-u*1.02);
-      for(let x=0;x<lim;x++){if((((x-Math.floor(sp))%12)+12)%12<5)put(x,sy,0.3,0.46);}}
-    // road
-    const off=Math.floor(t*85)%9;
-    for(let x=0;x<cols;x++){if(((x+off)%9)<5)put(x,Math.round(base+1.6),0.5,0.1);}
-    // body profile
-    const x0=Math.round(cx-u*1.06),x1=Math.round(cx+u*1.1);
-    for(let x=x0;x<=x1;x++){const uu=(x-cx)/u;let top=null,bot=wy-wry*0.05;
-      if(uu<-1.0){top=null;}
-      else if(uu<-0.82){top=wy-wry*2.75;}                                 // rear wing (tall)
-      else if(uu<-0.5){const f=(uu+0.82)/0.32;top=wy-wry*(2.0-0.85*f);}    // engine / sidepod
-      else if(uu<-0.1){top=wy-wry*1.18;}                                   // low body
-      else if(uu<0.2){top=wy-wry*1.5;}                                     // cockpit surround
-      else if(uu<0.92){const f=(uu-0.2)/0.72;top=wy-wry*(1.12-0.72*f);}    // nose taper
-      else{top=wy-wry*0.42;bot=wy+wry*0.05;}                               // front wing
-      if(top==null)continue;const ty=Math.round(top),by=Math.round(bot);const hh=0.26+0.58*((uu+1)/2);
-      for(let y=ty;y<=by;y++)put(x,y,0.92,hh);}
-    // rear-wing plates
-    for(let x=Math.round(cx-u*1.06);x<=Math.round(cx-u*0.78);x++){put(x,Math.round(wy-wry*2.75),0.97,0.6);put(x,Math.round(wy-wry*2.4),0.82,0.57);}
-    // driver helmet
-    const hx=cx-u*0.0,hyc=wy-wry*1.9,hr=wry*0.62;
-    for(let y=Math.round(hyc-hr);y<=Math.round(hyc+hr);y++)for(let x=Math.round(hx-hr*1.8);x<=Math.round(hx+hr*1.8);x++){const dx=(x-hx)/(hr*1.8),dy=(y-hyc)/hr;if(dx*dx+dy*dy<=1)put(x,y,1,0.74);}
-    // halo bar
-    for(let x=Math.round(cx-u*0.28);x<=Math.round(cx+u*0.12);x++)put(x,Math.round(wy-wry*1.98),0.86,0.66);
-    // wheels with spinning spokes + bright rim
-    function wheel(wx){const rot=-t*10;const ax0=Math.round(wx-wrx),ax1=Math.round(wx+wrx),ay0=Math.round(wy-wry),ay1=Math.round(wy+wry);
-      for(let y=ay0;y<=ay1;y++)for(let x=ax0;x<=ax1;x++){const dx=(x-wx)/wrx,dy=(y-wy)/wry,d=Math.hypot(dx,dy);
-        if(d>1.04)continue;
-        if(d>0.62){put(x,y,0.72,0.02);}                                   // tyre
-        else if(d>0.5){put(x,y,0.92,0.55);}                               // bright rim
-        else{const ang=Math.atan2(dy,dx)+rot;const spoke=Math.abs(Math.sin(ang*3))>0.72||d<0.15;put(x,y,spoke?0.97:0.28,spoke?0.5:0.03);}}}
-    wheel(rearX);wheel(frontX);}
+  const SCENES={flow,globe,torus,wave};
 
-  const SCENES={flow:flow,robot:robot,globe:globe,torus:torus,wave:wave,rain:rain,car:car};
-  const NAMES={flow:'FLOW',robot:'ROBOT',globe:'GLOBE',torus:'TORUS',wave:'WAVE',rain:'RAIN',car:'RACE',video:'F1'};
-  const DYN={rain:1,car:1};
-  const VID=document.getElementById('f1vid');
-  function vidReady(){return VID&&VID.readyState>=2&&VID.videoWidth>0;}
-  function vidPlay(){if(VID&&VID.paused){const p=VID.play();if(p&&p.catch)p.catch(function(){});}}
+  /* --- media sources --- */
+  const VID=document.getElementById('srcvid');
+  const vidReady=()=>VID&&VID.readyState>=2&&VID.videoWidth>0;
+  const vidPlay=()=>{if(VID&&VID.paused){const p=VID.play();if(p&&p.catch)p.catch(()=>{});}};
+  const IMG=new Image();IMG.src='profile.jpg';
+  IMG.onload=()=>renderers.forEach(r=>{if(r.scene==='portrait'){r.measure();r.paint(performance.now());}});
 
   function Renderer(canvas,sceneKey){
     const ctx=canvas.getContext('2d',{alpha:false});
     const st={cols:0,rows:0,val:null,hue:null,zb:null};
     st.put=function(x,y,v,h){x=Math.round(x);y=Math.round(y);if(x<0||y<0||x>=st.cols||y>=st.rows)return;const i=x+y*st.cols;if(v>st.val[i]){st.val[i]=v;st.hue[i]=h;}};
-    let W=0,H=0,cw=0,ch=0,dpr=1;
-    function resize(){const rc=canvas.getBoundingClientRect();dpr=Math.min(2,window.devicePixelRatio||1);
+    let W=0,H=0,cw=0,ch=0;
+    function resize(){
+      const rc=canvas.getBoundingClientRect();const dpr=Math.min(2,window.devicePixelRatio||1);
       W=Math.max(1,Math.floor(rc.width));H=Math.max(1,Math.floor(rc.height));
       canvas.width=W*dpr;canvas.height=H*dpr;ctx.setTransform(dpr,0,0,dpr,0,0);
+      const FS=CFG.cell;
       ctx.font=`${FS}px 'Geist Mono',ui-monospace,monospace`;ctx.textBaseline='top';
-      cw=Math.max(7,ctx.measureText('M').width||FS*0.6);ch=FS*1.16;
+      cw=Math.max(3.5,ctx.measureText('M').width||FS*0.6);ch=FS*1.16;
       st.cols=Math.max(8,Math.floor(W/cw)+1);st.rows=Math.max(6,Math.floor(H/ch)+1);
-      const n=st.cols*st.rows;st.val=new Float32Array(n);st.hue=new Float32Array(n);st.zb=new Float32Array(n);}
-    const r={canvas:canvas,scene:sceneKey,visible:true,t0:performance.now()};
+      const n=st.cols*st.rows;st.val=new Float32Array(n);st.hue=new Float32Array(n);st.zb=new Float32Array(n);
+      st._smp=null;
+    }
+    const r={canvas,scene:sceneKey,visible:true,t0:performance.now()};
     r.resize=resize;
     r.measure=function(){const rc=canvas.getBoundingClientRect();if(rc.width>4&&rc.height>4&&(Math.abs(rc.width-W)>2||Math.abs(rc.height-H)>2))resize();};
-    r.paintVideo=function(){ctx.fillStyle='#000';ctx.fillRect(0,0,W,H);if(!vidReady())return;const cols=st.cols,rows=st.rows;
+
+    function sample(src,sw,sh){
+      const cols=st.cols,rows=st.rows;
       if(!st._smp){st._smp=document.createElement('canvas');st._sx=st._smp.getContext('2d',{willReadFrequently:true});}
       if(st._smp.width!==cols||st._smp.height!==rows){st._smp.width=cols;st._smp.height=rows;}
-      try{st._sx.drawImage(VID,0,0,cols,rows);}catch(e){return;}
-      let d;try{d=st._sx.getImageData(0,0,cols,rows).data;}catch(e){return;}
-      for(let y=0;y<rows;y++){for(let x=0;x<cols;x++){const i=(y*cols+x)*4;const r2=d[i],g2=d[i+1],b2=d[i+2];
-        const lum=(0.3*r2+0.59*g2+0.11*b2)/255;if(lum<0.07)continue;
-        ctx.fillStyle='rgb('+Math.min(255,(r2*1.18)|0)+','+Math.min(255,(g2*1.18)|0)+','+Math.min(255,(b2*1.18)|0)+')';
-        ctx.globalAlpha=Math.min(1,0.35+lum*0.65);ctx.fillText(RAMP[Math.min(RL,(lum*RL*1.12)|0)],x*cw,y*ch);}}
-      ctx.globalAlpha=1;};
-    r.paint=function(now,dt){if(r.scene==='video'){r.paintVideo();return;}st.val.fill(0);const t=(now-r.t0)/1000;const s=SCENES[r.scene]||flow;if(DYN[r.scene])s(st,t,dt);else s(st,t);
-      ctx.fillStyle='#000';ctx.fillRect(0,0,W,H);const cols=st.cols,rows=st.rows,val=st.val,hue=st.hue;
-      for(let y=0;y<rows;y++){const rr=y*cols;for(let x=0;x<cols;x++){const v=val[rr+x];if(v<=0.05)continue;
-        ctx.fillStyle=col(hue[rr+x]);ctx.globalAlpha=Math.min(1,0.25+v*0.75);ctx.fillText(RAMP[Math.min(RL,(v*RL)|0)],x*cw,y*ch);}}
-      ctx.globalAlpha=1;};
-    resize();return r;}
+      // cover-crop the source into the cell grid
+      const cellAR=(cols*cw)/(rows*ch);const srcAR=sw/sh;
+      let cx=0,cy=0,cw2=sw,ch2=sh;
+      if(srcAR>cellAR){cw2=sh*cellAR;cx=(sw-cw2)/2;}else{ch2=sw/cellAR;cy=(sh-ch2)/2;}
+      try{st._sx.drawImage(src,cx,cy,cw2,ch2,0,0,cols,rows);return st._sx.getImageData(0,0,cols,rows).data;}
+      catch(e){return null;}
+    }
+    function paintPixels(d){
+      ctx.fillStyle='#000';ctx.fillRect(0,0,W,H);
+      if(!d)return;
+      const cols=st.cols,rows=st.rows;
+      for(let y=0;y<rows;y++){
+        for(let x=0;x<cols;x++){
+          const i=(y*cols+x)*4;const r2=d[i],g2=d[i+1],b2=d[i+2];
+          const lum=(0.3*r2+0.59*g2+0.11*b2)/255;
+          if(lum<0.05)continue;
+          const c=`rgb(${Math.min(255,(r2*1.18)|0)},${Math.min(255,(g2*1.18)|0)},${Math.min(255,(b2*1.18)|0)})`;
+          const px=x*cw,py=y*ch;
+          if(CFG.tile>0.011){ctx.fillStyle=c;ctx.globalAlpha=CFG.tile*Math.min(1,0.15+lum*0.85);ctx.fillRect(px,py,cw+0.5,ch+0.5);}
+          ctx.fillStyle=c;ctx.globalAlpha=CFG.glyph*Math.min(1,0.35+lum*0.65);
+          ctx.fillText(RAMP[Math.min(RL,(lum*RL*1.12)|0)],px,py);
+        }
+      }
+      ctx.globalAlpha=1;
+    }
+    r.paint=function(now){
+      if(r.scene==='video'){
+        if(vidReady()){paintPixels(sample(VID,VID.videoWidth,VID.videoHeight));return;}
+        // fall through to flow while the video buffers
+      }
+      if(r.scene==='portrait'){
+        if(IMG.complete&&IMG.naturalWidth>0){paintPixels(sample(IMG,IMG.naturalWidth,IMG.naturalHeight));return;}
+      }
+      st.val.fill(0);
+      const t=(now-r.t0)/1000;
+      const s=SCENES[r.scene]||flow;s(st,t);
+      ctx.fillStyle='#000';ctx.fillRect(0,0,W,H);
+      const cols=st.cols,rows=st.rows,val=st.val,hue=st.hue;
+      for(let y=0;y<rows;y++){const rr=y*cols;
+        for(let x=0;x<cols;x++){
+          const v=val[rr+x];if(v<=0.05)continue;
+          const c=col(hue[rr+x]);const px=x*cw,py=y*ch;
+          if(CFG.tile>0.011){ctx.fillStyle=c;ctx.globalAlpha=CFG.tile*v*0.9;ctx.fillRect(px,py,cw+0.5,ch+0.5);}
+          ctx.fillStyle=c;ctx.globalAlpha=CFG.glyph*Math.min(1,0.25+v*0.75);
+          ctx.fillText(RAMP[Math.min(RL,(v*RL)|0)],px,py);
+        }
+      }
+      ctx.globalAlpha=1;
+    };
+    resize();return r;
+  }
 
   const renderers=[];
-  const heroCanvas=document.getElementById('ascii');let hero=null;
-  if(heroCanvas){hero=Renderer(heroCanvas,'flow');renderers.push(hero);}
-  document.querySelectorAll('canvas.ascii-band').forEach(function(cv){renderers.push(Renderer(cv,cv.dataset.scene||'flow'));});
+  document.querySelectorAll('canvas[data-scene]').forEach(cv=>renderers.push(Renderer(cv,cv.dataset.scene)));
 
-  if('IntersectionObserver' in window){const io=new IntersectionObserver(function(es){es.forEach(function(e){const r=renderers.find(function(r){return r.canvas===e.target;});if(r)r.visible=e.isIntersecting;});},{rootMargin:'120px'});renderers.forEach(function(r){io.observe(r.canvas);});}
-
-  if(hero){const order=['flow','robot','torus','wave','rain','video'];
-    const sceneName=document.getElementById('sceneName'),tabs=document.getElementById('tabs');
-    let idx=0,userLock=0,lastCycle=performance.now();const CYCLE=10000;
-    const setScene=function(i,byUser){idx=((i%order.length)+order.length)%order.length;hero.scene=order[idx];if(sceneName)sceneName.textContent=NAMES[order[idx]];if(tabs)[...tabs.children].forEach(function(b,j){b.classList.toggle('on',j===idx);});if(byUser)userLock=performance.now();};
-    if(tabs)tabs.addEventListener('click',function(e){const b=e.target.closest('button');if(b)setScene(+b.dataset.s,true);});
-    hero.cycle=function(now){if(REDUCE)return;if(now-userLock>22000&&now-lastCycle>CYCLE){lastCycle=now;setScene(idx+1,false);}};
-    setScene(0,false);}
+  if('IntersectionObserver' in window){
+    const vio=new IntersectionObserver(es=>es.forEach(e=>{
+      const r=renderers.find(r=>r.canvas===e.target);if(!r)return;
+      r.visible=e.isIntersecting;
+      // paint one frame right away so a cell never sits black while rAF is throttled
+      if(r.visible){r.measure();r.paint(performance.now());}
+    }),{rootMargin:'120px'});
+    renderers.forEach(r=>vio.observe(r.canvas));
+  }
+  window.__ascii={renderers,CFG};
 
   const FPS=30,FRAME=1000/FPS;let prev=0;
-  function loop(now){requestAnimationFrame(loop);if(now-prev<FRAME)return;const dt=Math.min(0.05,(now-prev)/1000);prev=now;
-    if(hero&&hero.cycle)hero.cycle(now);
+  function loop(now){
+    requestAnimationFrame(loop);
+    if(now-prev<FRAME)return;prev=now;
     let needVid=false;
-    for(const r of renderers){if(!r.visible)continue;if(r.scene==='video')needVid=true;r.measure();r.paint(now,dt);}
-    if(needVid)vidPlay();}
-  ['click','touchstart','scroll'].forEach(function(ev){window.addEventListener(ev,vidPlay,{once:false,passive:true});});
-  if(document.fonts&&document.fonts.ready)document.fonts.ready.then(function(){renderers.forEach(function(r){r.resize();});});
-  let rt;window.addEventListener('resize',function(){clearTimeout(rt);rt=setTimeout(function(){renderers.forEach(function(r){r.resize();});},150);});
+    for(const r of renderers){
+      if(!r.visible)continue;
+      if(r.scene==='video')needVid=true;
+      r.measure();r.paint(now);
+    }
+    if(needVid)vidPlay();
+  }
+  ['click','touchstart','scroll'].forEach(ev=>window.addEventListener(ev,vidPlay,{passive:true}));
+  if(document.fonts&&document.fonts.ready)document.fonts.ready.then(()=>renderers.forEach(r=>r.resize()));
+  let rt;window.addEventListener('resize',()=>{clearTimeout(rt);rt=setTimeout(()=>renderers.forEach(r=>r.resize()),150);});
   requestAnimationFrame(loop);
-})();
 
+  /* --- ASCII Settings panel --- */
+  const body=document.body;
+  const toggle=document.getElementById('ascii-ctl-toggle');
+  toggle.addEventListener('click',e=>{
+    e.preventDefault();
+    const open=body.classList.toggle('ascii-settings-open');
+    toggle.setAttribute('aria-expanded',open?'true':'false');
+  });
+  const el=id=>document.getElementById(id);
+  const cell=el('asciiCellSize'),cellOut=el('asciiCellSizeOut');
+  const glyph=el('asciiGlyphOpacity'),glyphOut=el('asciiGlyphOpacityOut');
+  const tile=el('asciiTileOpacity'),tileOut=el('asciiTileOpacityOut');
+  cell.addEventListener('input',()=>{const v=+cell.value;cellOut.textContent=v;CFG.cell=v;renderers.forEach(r=>r.resize());},{passive:true});
+  glyph.addEventListener('input',()=>{const v=+glyph.value;glyphOut.textContent=v;CFG.glyph=v/100;},{passive:true});
+  tile.addEventListener('input',()=>{const v=+tile.value;tileOut.textContent=v;CFG.tile=v/100;},{passive:true});
+
+  /* --- Music: a tiny generated ambient synth (a nod to Matsumi) --- */
+  const music=el('musicVolume'),musicOut=el('musicVolumeOut');
+  let AC=null,master=null;
+  function ensureAudio(){
+    if(AC)return;
+    AC=new (window.AudioContext||window.webkitAudioContext)();
+    master=AC.createGain();master.gain.value=0;
+    const lp=AC.createBiquadFilter();lp.type='lowpass';lp.frequency.value=900;lp.Q.value=0.4;
+    master.connect(lp);lp.connect(AC.destination);
+    // slow LFO breathing on the filter
+    const lfo=AC.createOscillator(),lfoG=AC.createGain();
+    lfo.frequency.value=0.05;lfoG.gain.value=350;lfo.connect(lfoG);lfoG.connect(lp.frequency);lfo.start();
+    // pad: four detuned voices retuned through a chord cycle
+    const CHORDS=[[110,164.81,220,261.63],[87.31,130.81,174.61,220],[98,146.83,196,246.94],[110,174.61,220,293.66]];
+    const voices=CHORDS[0].map(f=>{
+      const o=AC.createOscillator(),g=AC.createGain();
+      o.type='sawtooth';o.frequency.value=f;o.detune.value=(Math.random()*10-5);
+      g.gain.value=0.045;o.connect(g);g.connect(master);o.start();return o;
+    });
+    let ci=0;
+    setInterval(()=>{
+      ci=(ci+1)%CHORDS.length;
+      const now=AC.currentTime;
+      voices.forEach((o,i)=>{o.frequency.cancelScheduledValues(now);o.frequency.setTargetAtTime(CHORDS[ci][i],now,2.5);});
+    },8000);
+    // a soft sparse arp two octaves up
+    const arpG=AC.createGain();arpG.gain.value=0;arpG.connect(master);
+    const arp=AC.createOscillator();arp.type='triangle';arp.connect(arpG);arp.start();
+    setInterval(()=>{
+      if(!AC||master.gain.value<=0.001)return;
+      const notes=CHORDS[ci];const f=notes[(Math.random()*notes.length)|0]*4;
+      const now=AC.currentTime;
+      arp.frequency.setValueAtTime(f,now);
+      arpG.gain.cancelScheduledValues(now);
+      arpG.gain.setValueAtTime(0,now);
+      arpG.gain.linearRampToValueAtTime(0.05,now+0.02);
+      arpG.gain.exponentialRampToValueAtTime(0.0001,now+1.4);
+    },1900);
+  }
+  music.addEventListener('input',()=>{
+    const v=+music.value;
+    musicOut.textContent=v===0?'MUTED':v;
+    ensureAudio();
+    if(AC.state==='suspended')AC.resume();
+    master.gain.setTargetAtTime((v/100)*0.6,AC.currentTime,0.15);
+  },{passive:true});
+})();
 </script>
 </body>
 </html>
