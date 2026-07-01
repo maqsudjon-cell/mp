@@ -299,7 +299,7 @@ body.modal-open .modal-scroll{opacity:1;transform:translate3d(0,0,0);transition-
             <p>The 8 in pangea8 stands for <strong>Band 8</strong> — the score most students aim for. Laid sideways, it is also the infinity symbol. Pangea forever, Pangea eight.</p>
             <div class="quote"><p>Brand names should mean something to the founder, even if nobody else gets it at first.</p></div>
             <p>What started as a handful of listening tests grew into an ecosystem: <strong>90+ listening and reading tests</strong> with instant scoring, an essay platform with AI band-score feedback, a speaking lab where students record in the browser, and a 40-day challenge tracker with streaks and a leaderboard. Every piece ships as a single self-contained file — vanilla JS, no build step, deployed on GitHub Pages with Firebase underneath.</p>
-            <p>I am self-taught across web, Python, AI and welding — the workshop and the codebase turn out to demand the same thing: measure carefully, join cleanly, and test the seam under load. I speak Uzbek, English and some Korean, and I still release the occasional UK Garage track as <a href="https://youtube.com/@matsumimusic" target="_blank" rel="noopener">Matsumi</a>.</p>
+            <p>I am self-taught across web, Python, AI and welding — the workshop and the codebase turn out to demand the same thing: measure carefully, join cleanly, and test the seam under load. I speak Uzbek, English and some Korean. Once in a while there is still a quiet <a href="https://youtube.com/@matsumimusic" target="_blank" rel="noopener">Matsumi</a> track.</p>
             <p><em>If it helps one student study, it was worth making.</em> That is the whole business model, and the whole point.</p>
           </div>
         </div>
@@ -338,7 +338,7 @@ body.modal-open .modal-scroll{opacity:1;transform:translate3d(0,0,0);transition-
             <div class="header-badges">
               <span>pangea8<i>IELTS ECOSYSTEM</i></span>
               <span>flarestamina<i>40-DAY TRACKER</i></span>
-              <span>matsumi<i>UK GARAGE</i></span>
+              <span>minnos<i>ENGLISH IDIOMS</i></span>
             </div>
           </div>
           <div style="margin-top:14px">
@@ -394,7 +394,7 @@ body.modal-open .modal-scroll{opacity:1;transform:translate3d(0,0,0);transition-
       <div class="content-padding">
         <p class="text-md reveal">Most of what I make is for IELTS and English learners: a free ecosystem of listening and reading tests, an essay platform with AI feedback, a speaking lab, and a 40-day challenge tracker. Lately I am building AI agents and tools that work with large language models.</p>
         <div class="quote"><p class="text-md">I design, build and ship small useful things end to end — usually a single self-contained file on its own domain. <strong>If it helps one student study, it was worth making.</strong></p></div>
-        <p class="text-md reveal">Self-taught across web, Python, AI and welding. Uzbek, English (C1), some Korean. The occasional UK Garage track as Matsumi.</p>
+        <p class="text-md reveal">Self-taught across web, Python, AI and welding. Uzbek, English (C1), some Korean.</p>
       </div>
       <div class="grid-wrapper-subtle">
         <a id="button1" href="#" class="grid-item-subtle card-link">
@@ -418,9 +418,9 @@ body.modal-open .modal-scroll{opacity:1;transform:translate3d(0,0,0);transition-
     <div class="c3">
       <div class="grid-quote content-padding">
         <div class="qmark">“</div>
-        <p class="color-light font-header text-xl">Location doesn’t matter anymore. The internet erased that. I release UK Garage from Tashkent and most of my listeners are in the UK.</p>
+        <p class="color-light font-header text-xl">Location doesn’t matter anymore. The internet erased that. I build from Tashkent, and the tools get used wherever a student opens them.</p>
         <div class="qmark close">”</div>
-        <p class="text-sm" style="margin:0">Maqsudjon — Making music from Tashkent</p>
+        <p class="text-sm" style="margin:0">Maqsudjon — building from Uzbekistan</p>
       </div>
     </div>
     <div class="c23">
@@ -432,7 +432,7 @@ body.modal-open .modal-scroll{opacity:1;transform:translate3d(0,0,0);transition-
         <a href="https://minnos.cc" target="_blank" rel="noopener" class="grid-item-subtle"><div class="content-padding"><div class="tile-word">minnos</div><div class="tile-sub">idioms, one cat at a time</div></div></a>
         <a href="https://maqsudjon-cell.github.io/id-passport-photo-maker/" target="_blank" rel="noopener" class="grid-item-subtle"><div class="content-padding"><div class="tile-word">id photo</div><div class="tile-sub">on-device passport photos</div></div></a>
         <a href="https://pierics.com" target="_blank" rel="noopener" class="grid-item-subtle"><div class="content-padding"><div class="tile-word">pierics</div><div class="tile-sub">a wordle clone</div></div></a>
-        <a href="https://youtube.com/@matsumimusic" target="_blank" rel="noopener" class="grid-item-subtle"><div class="content-padding"><div class="tile-word">matsumi</div><div class="tile-sub">UK garage · album HOME</div></div></a>
+        <a href="https://github.com/maqsudjon-cell" target="_blank" rel="noopener" class="grid-item-subtle"><div class="content-padding"><div class="tile-word">explainer</div><div class="tile-sub">topic → branded video</div></div></a>
       </div>
     </div>
     <div class="grid-g gr"></div>
@@ -716,18 +716,28 @@ document.querySelectorAll('.quote').forEach(q=>quoteIO.observe(q));
         const i=x+y*cols;val[i]=lo+(hi-lo)*f*ed;hue[i]=0.5+0.5*Math.sin(a*0.5+t*0.1+nx*0.5);}}}
   function flow(st,t){fieldBase(st,t,0.16,0.98);}
   function globe(st,t){
-    fieldBase(st,t,0.1,0.34);
-    const cols=st.cols,rows=st.rows,put=st.put;const cx=cols/2,cy=rows/2,R=Math.min(cols*0.34,rows*0.82);
-    const yaw=t*0.5,ya=Math.cos(yaw),yb=Math.sin(yaw),tl=0.42,ta=Math.cos(tl),tb=Math.sin(tl);
-    for(let la=-80;la<=80;la+=7){const lar=la*Math.PI/180,cla=Math.cos(lar),sla=Math.sin(lar);
-      for(let lo=0;lo<360;lo+=4){const lor=lo*Math.PI/180;let x=cla*Math.cos(lor),y=sla,z=cla*Math.sin(lor);
-        let x1=x*ya-z*yb,z1=x*yb+z*ya,y2=y*ta-z1*tb,z2=y*tb+z1*ta;const dep=(z2+1)/2;
-        put(cx+x1*R*0.5,cy-y2*R*0.5,0.3+dep*0.7,0.18+dep*0.55);}}
+    fieldBase(st,t,0.05,0.16);
+    const cols=st.cols,rows=st.rows,put=st.put;
+    const cx=cols/2,cy=rows/2;
+    const ar=(st.cw||8)/(st.ch||14);             // cell aspect (width/height, <1)
+    const Rx=Math.min(cols*0.40,(rows*0.42)/ar); // radius in columns
+    const Ry=Rx*ar;                              // radius in rows — circular on screen
+    const yaw=t*0.4,ya=Math.cos(yaw),yb=Math.sin(yaw);
+    const tl=0.35,ta=Math.cos(tl),tb=Math.sin(tl);
+    function P(x,y,z){const x1=x*ya-z*yb,z1=x*yb+z*ya;return [x1,y*ta-z1*tb,y*tb+z1*ta];}
+    // parallels — front hemisphere bright, back a faint ghost
+    for(let la=-75;la<=75;la+=15){const lar=la*Math.PI/180,cla=Math.cos(lar),sla=Math.sin(lar);
+      for(let lo=0;lo<360;lo+=3){const lor=lo*Math.PI/180;
+        const p=P(cla*Math.cos(lor),sla,cla*Math.sin(lor));
+        if(p[2]>0)put(cx+p[0]*Rx,cy-p[1]*Ry,0.34+p[2]*0.6,0.22+p[2]*0.5);
+        else if(lo%12===0)put(cx+p[0]*Rx,cy-p[1]*Ry,0.13,0.14);}}
+    // meridians
     for(let lo=0;lo<360;lo+=30){const lor=lo*Math.PI/180;
-      for(let la=-90;la<=90;la+=3){const lar=la*Math.PI/180,cla=Math.cos(lar);
-        let x=cla*Math.cos(lor),y=Math.sin(lar),z=cla*Math.sin(lor);
-        let x1=x*ya-z*yb,z1=x*yb+z*ya,y2=y*ta-z1*tb,z2=y*tb+z1*ta;const dep=(z2+1)/2;
-        put(cx+x1*R*0.5,cy-y2*R*0.5,0.4+dep*0.6,0.55+dep*0.4);}}}
+      for(let la=-90;la<=90;la+=2){const lar=la*Math.PI/180,cla=Math.cos(lar);
+        const p=P(cla*Math.cos(lor),Math.sin(lar),cla*Math.sin(lor));
+        if(p[2]>0)put(cx+p[0]*Rx,cy-p[1]*Ry,0.4+p[2]*0.6,0.3+p[2]*0.55);}}
+    // bright limb so the sphere silhouette always reads
+    for(let a=0;a<6.283;a+=0.02)put(cx+Math.cos(a)*Rx,cy+Math.sin(a)*Ry,0.9,0.6);}
   function torus(st,t){
     fieldBase(st,t,0.1,0.32);
     const cols=st.cols,rows=st.rows,zb=st.zb;zb.fill(0);
@@ -772,6 +782,7 @@ document.querySelectorAll('.quote').forEach(q=>quoteIO.observe(q));
       const FS=CFG.cell;
       ctx.font=`${FS}px 'Geist Mono',ui-monospace,monospace`;ctx.textBaseline='top';
       cw=Math.max(3.5,ctx.measureText('M').width||FS*0.6);ch=FS*1.16;
+      st.cw=cw;st.ch=ch;
       st.cols=Math.max(8,Math.floor(W/cw)+1);st.rows=Math.max(6,Math.floor(H/ch)+1);
       const n=st.cols*st.rows;st.val=new Float32Array(n);st.hue=new Float32Array(n);st.zb=new Float32Array(n);
       st._smp=null;
