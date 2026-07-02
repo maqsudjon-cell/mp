@@ -194,7 +194,7 @@ body.ascii-settings-open .button-settings .icon-close{opacity:1}
 body.ascii-settings-open .button-settings .icon-open{opacity:0}
 body .ascii-controls{pointer-events:none;opacity:.5;max-height:0;overflow:hidden;transition:opacity 1s cubic-bezier(.16,1,.3,1),max-height .5s ease-in-out}
 body.ascii-settings-open .ascii-controls{pointer-events:auto;opacity:1;max-height:500px}
-.grid-ascii-controls{display:grid;grid-template-columns:repeat(5,1fr);background:#000b;backdrop-filter:blur(6px)}
+.grid-ascii-controls{display:grid;grid-template-columns:repeat(6,1fr);background:#000b;backdrop-filter:blur(6px)}
 @media (max-width:900px){.grid-ascii-controls{grid-template-columns:repeat(2,1fr)}}
 .ascii-control-header{display:flex;justify-content:space-between;width:100%;gap:10px;font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#888}
 .ascii-control-header output,.ascii-control-header span{color:#fff}
@@ -225,9 +225,16 @@ input[type='range']::-moz-range-thumb{width:36px;height:18px;border-radius:9px;b
 @media (max-width:700px){.grid-press{grid-template-columns:repeat(2,1fr)}}
 .tile-word{font-family:'Funnel Display',sans-serif;font-weight:600;font-size:19px;letter-spacing:-.01em;color:#fff}
 .tile-sub{font-family:'Geist Mono',monospace;font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:#888;margin-top:6px}
-.grid-research{display:grid;grid-template-columns:1fr 1fr}
-@media (max-width:700px){.grid-research{grid-template-columns:1fr}}
 .icon-external{flex:none;margin-top:6px}
+
+/* project showcase rows */
+.project-inner{display:grid;grid-template-columns:110px 1fr auto;gap:26px;align-items:start}
+@media (max-width:700px){.project-inner{grid-template-columns:1fr;gap:10px}}
+.p-num{font-family:'Geist Mono',monospace;font-size:12px;color:#666;letter-spacing:.16em;padding-top:14px}
+.p-name{font-family:'Funnel Display',sans-serif;font-weight:600;font-size:clamp(26px,3.2vw,42px);letter-spacing:-.015em;color:#fff;line-height:1.08}
+.p-desc{margin-top:10px;max-width:56ch;color:#888}
+.p-meta{font-family:'Geist Mono',monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:#666;margin-top:14px}
+.p-icon{padding-top:20px}
 
 /* links list (contact) */
 .flex-v{display:flex;flex-direction:column;gap:10px}
@@ -277,6 +284,17 @@ body.modal-open .modal-scroll{opacity:1;transform:translate3d(0,0,0);transition-
 /* scroll progress hairline */
 .progress{position:fixed;top:0;left:0;height:2px;width:0;background:#fff;z-index:95;pointer-events:none}
 
+/* scene switcher (in ASCII settings) */
+.scene-tabs{display:flex;flex-wrap:wrap;margin-top:10px;border:var(--border-subtle)}
+.scene-tabs button{font-family:'Geist Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#888;background:transparent;border:none;border-right:var(--border-subtle);padding:7px 10px;cursor:pointer;transition:background .3s,color .3s}
+.scene-tabs button:last-child{border-right:none}
+.scene-tabs button:hover{color:#fff}
+.scene-tabs button.on{background:#fff;color:#000}
+
+/* toast (easter egg + notices) */
+.toast{position:fixed;left:50%;bottom:26px;transform:translate(-50%,20px);z-index:96;font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#8df9e8;background:#000d;border:var(--border-subtle);padding:10px 16px;opacity:0;pointer-events:none;transition:opacity .5s,transform .5s;white-space:nowrap}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+
 /* reveal + reduced motion */
 .reveal{opacity:0;transform:translateY(16px);transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1)}
 .reveal.in{opacity:1;transform:none}
@@ -289,6 +307,7 @@ body.modal-open .modal-scroll{opacity:1;transform:translate3d(0,0,0);transition-
 <body>
 
 <div class="progress" id="progress" aria-hidden="true"></div>
+<div class="toast" id="toast" aria-hidden="true"></div>
 <video id="srcvid" muted loop autoplay playsinline preload="auto" aria-hidden="true" style="position:fixed;left:0;bottom:0;width:2px;height:2px;opacity:.01;pointer-events:none;z-index:-1"><source src="f1.mp4" type="video/mp4"></video>
 
 <!-- NAV (slides in after the header wordmark scrolls away) -->
@@ -383,6 +402,10 @@ body.modal-open .modal-scroll{opacity:1;transform:translate3d(0,0,0);transition-
                     <div class="ascii-control-header"><label for="musicVolume">Music</label><span id="musicVolumeOut" aria-live="polite">MUTED</span></div>
                     <input id="musicVolume" type="range" min="0" max="100" step="1" value="0">
                   </div>
+                  <div class="grid-item-subtle content-padding-horizontal content-padding-half-vertical">
+                    <div class="ascii-control-header"><label>Scene</label><span id="sceneOut" aria-live="polite">F1</span></div>
+                    <div class="scene-tabs" id="sceneTabs"><button data-s="video" class="on">F1</button><button data-s="flow">Flow</button><button data-s="torus">Torus</button><button data-s="globe">Globe</button><button data-s="wave">Wave</button><button data-s="rain">Rain</button></div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -416,6 +439,26 @@ body.modal-open .modal-scroll{opacity:1;transform:translate3d(0,0,0);transition-
             <div class="text-sm color-subtle">On supercontinents, Band 8, and infinity</div>
           </div>
         </a>
+      </div>
+    </div>
+    <div class="grid-g gr"></div>
+  </section>
+
+  <!-- ============================ PROJECTS ============================ -->
+  <section class="grid-main" id="projects">
+    <div class="grid-g gl"></div>
+    <div class="c23">
+      <div class="content-padding">
+        <h2 class="font-header text-xxl sec-title" data-scramble>Seven things, shipped to real users.</h2>
+      </div>
+      <div class="grid-wrapper-subtle">
+        <a href="https://pangea8.com" target="_blank" rel="noopener" class="grid-item-subtle"><div class="project-inner content-padding"><div class="p-num">// 001</div><div><div class="p-name">pangea8</div><div class="p-desc text-sm">A free IELTS ecosystem — 90+ listening &amp; reading tests with instant scoring, an essay platform, a speaking lab and a 40-day tracker.</div><div class="p-meta">WEB · FIREBASE · IELTS</div></div><div class="p-icon"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 12 12"><g fill="#FFF"><path d="M2,12h9a1,1,0,0,0,0-2H2V1A1,1,0,0,0,0,1v9A2,2,0,0,0,2,12Z"/><path d="M5.293,6.707a1,1,0,0,0,1.414,0L9.354,4.061l1.792,1.793A.5.5,0,0,0,11.5,6a.512.512,0,0,0,.191-.038A.5.5,0,0,0,12,5.5V.5a.5.5,0,0,0-.5-.5h-5a.5.5,0,0,0-.354.854L7.939,2.646,5.293,5.293A1,1,0,0,0,5.293,6.707Z"/></g></svg></div></div></a>
+        <a href="https://maqsudjon-cell.github.io/pangea8-speaking/" target="_blank" rel="noopener" class="grid-item-subtle"><div class="project-inner content-padding"><div class="p-num">// 002</div><div><div class="p-name">pangea8 Speaking</div><div class="p-desc text-sm">An IELTS Speaking lab — record in the browser, 166 topics, live search, band scores and peer feedback.</div><div class="p-meta">WEB · FIREBASE · SUPABASE</div></div><div class="p-icon"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 12 12"><g fill="#FFF"><path d="M2,12h9a1,1,0,0,0,0-2H2V1A1,1,0,0,0,0,1v9A2,2,0,0,0,2,12Z"/><path d="M5.293,6.707a1,1,0,0,0,1.414,0L9.354,4.061l1.792,1.793A.5.5,0,0,0,11.5,6a.512.512,0,0,0,.191-.038A.5.5,0,0,0,12,5.5V.5a.5.5,0,0,0-.5-.5h-5a.5.5,0,0,0-.354.854L7.939,2.646,5.293,5.293A1,1,0,0,0,5.293,6.707Z"/></g></svg></div></div></a>
+        <a href="https://maqsudjon-cell.github.io/pangeya-essay-platform-/index-14.html" target="_blank" rel="noopener" class="grid-item-subtle"><div class="project-inner content-padding"><div class="p-num">// 003</div><div><div class="p-name">pangea8 Essay</div><div class="p-desc text-sm">A writing platform — submit essays, get AI band-score feedback, focus mode, an exam timer and branded PDF export.</div><div class="p-meta">WEB · FIREBASE · WRITING</div></div><div class="p-icon"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 12 12"><g fill="#FFF"><path d="M2,12h9a1,1,0,0,0,0-2H2V1A1,1,0,0,0,0,1v9A2,2,0,0,0,2,12Z"/><path d="M5.293,6.707a1,1,0,0,0,1.414,0L9.354,4.061l1.792,1.793A.5.5,0,0,0,11.5,6a.512.512,0,0,0,.191-.038A.5.5,0,0,0,12,5.5V.5a.5.5,0,0,0-.5-.5h-5a.5.5,0,0,0-.354.854L7.939,2.646,5.293,5.293A1,1,0,0,0,5.293,6.707Z"/></g></svg></div></div></a>
+        <a href="https://flarestamina.com" target="_blank" rel="noopener" class="grid-item-subtle"><div class="project-inner content-padding"><div class="p-num">// 004</div><div><div class="p-name">Flarestamina</div><div class="p-desc text-sm">A 40-day IELTS challenge tracker — PWA with a live leaderboard, streak heatmap and a teacher dashboard.</div><div class="p-meta">PWA · FIRESTORE · TRACKER</div></div><div class="p-icon"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 12 12"><g fill="#FFF"><path d="M2,12h9a1,1,0,0,0,0-2H2V1A1,1,0,0,0,0,1v9A2,2,0,0,0,2,12Z"/><path d="M5.293,6.707a1,1,0,0,0,1.414,0L9.354,4.061l1.792,1.793A.5.5,0,0,0,11.5,6a.512.512,0,0,0,.191-.038A.5.5,0,0,0,12,5.5V.5a.5.5,0,0,0-.5-.5h-5a.5.5,0,0,0-.354.854L7.939,2.646,5.293,5.293A1,1,0,0,0,5.293,6.707Z"/></g></svg></div></div></a>
+        <a href="https://minnos.cc" target="_blank" rel="noopener" class="grid-item-subtle"><div class="project-inner content-padding"><div class="p-num">// 005</div><div><div class="p-name">Minnos</div><div class="p-desc text-sm">Learn English one cat at a time — pet the cat for idioms, every one about cats, with audio and Uzbek translations.</div><div class="p-meta">WEB · ENGLISH · IDIOMS</div></div><div class="p-icon"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 12 12"><g fill="#FFF"><path d="M2,12h9a1,1,0,0,0,0-2H2V1A1,1,0,0,0,0,1v9A2,2,0,0,0,2,12Z"/><path d="M5.293,6.707a1,1,0,0,0,1.414,0L9.354,4.061l1.792,1.793A.5.5,0,0,0,11.5,6a.512.512,0,0,0,.191-.038A.5.5,0,0,0,12,5.5V.5a.5.5,0,0,0-.5-.5h-5a.5.5,0,0,0-.354.854L7.939,2.646,5.293,5.293A1,1,0,0,0,5.293,6.707Z"/></g></svg></div></div></a>
+        <a href="https://maqsudjon-cell.github.io/id-passport-photo-maker/" target="_blank" rel="noopener" class="grid-item-subtle"><div class="project-inner content-padding"><div class="p-num">// 006</div><div><div class="p-name">ID Photo Maker</div><div class="p-desc text-sm">Crops photos to exact passport and visa sizes, with on-device AI background whitening. Nothing leaves your phone.</div><div class="p-meta">WEB · IMAGE · ON-DEVICE AI</div></div><div class="p-icon"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 12 12"><g fill="#FFF"><path d="M2,12h9a1,1,0,0,0,0-2H2V1A1,1,0,0,0,0,1v9A2,2,0,0,0,2,12Z"/><path d="M5.293,6.707a1,1,0,0,0,1.414,0L9.354,4.061l1.792,1.793A.5.5,0,0,0,11.5,6a.512.512,0,0,0,.191-.038A.5.5,0,0,0,12,5.5V.5a.5.5,0,0,0-.5-.5h-5a.5.5,0,0,0-.354.854L7.939,2.646,5.293,5.293A1,1,0,0,0,5.293,6.707Z"/></g></svg></div></div></a>
+        <a href="https://pierics.com" target="_blank" rel="noopener" class="grid-item-subtle"><div class="project-inner content-padding"><div class="p-num">// 007</div><div><div class="p-name">pierics</div><div class="p-desc text-sm">A word game — guess the hidden word in six tries; tiles flip green, yellow and grey. Quick to pick up, hard to put down.</div><div class="p-meta">WEB · GAME · WORDLE</div></div><div class="p-icon"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 12 12"><g fill="#FFF"><path d="M2,12h9a1,1,0,0,0,0-2H2V1A1,1,0,0,0,0,1v9A2,2,0,0,0,2,12Z"/><path d="M5.293,6.707a1,1,0,0,0,1.414,0L9.354,4.061l1.792,1.793A.5.5,0,0,0,11.5,6a.512.512,0,0,0,.191-.038A.5.5,0,0,0,12,5.5V.5a.5.5,0,0,0-.5-.5h-5a.5.5,0,0,0-.354.854L7.939,2.646,5.293,5.293A1,1,0,0,0,5.293,6.707Z"/></g></svg></div></div></a>
       </div>
     </div>
     <div class="grid-g gr"></div>
@@ -510,17 +553,6 @@ body.modal-open .modal-scroll{opacity:1;transform:translate3d(0,0,0);transition-
         </div>
       </div>
     </div>
-    <div class="c23">
-      <div class="grid-wrapper-subtle">
-        <div class="grid-item-subtle content-padding-horizontal content-padding-half-vertical"><h3 class="mono-head">Selected builds</h3></div>
-      </div>
-      <div class="grid-research">
-        <a href="https://pangea8.com" target="_blank" rel="noopener" class="grid-item-subtle card-link"><div class="content-padding"><div class="apart"><div class="text-md heavy">PANGEA8</div><svg class="icon-external" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12"><g fill="#FFF"><path d="M2,12h9a1,1,0,0,0,0-2H2V1A1,1,0,0,0,0,1v9A2,2,0,0,0,2,12Z"/><path d="M5.293,6.707a1,1,0,0,0,1.414,0L9.354,4.061l1.792,1.793A.5.5,0,0,0,11.5,6a.512.512,0,0,0,.191-.038A.5.5,0,0,0,12,5.5V.5a.5.5,0,0,0-.5-.5h-5a.5.5,0,0,0-.354.854L7.939,2.646,5.293,5.293A1,1,0,0,0,5.293,6.707Z"/></g></svg></div><div class="text-sm color-subtle">The free IELTS ecosystem — 90+ tests, essay, speaking, tracker (2026)</div></div></a>
-        <a href="https://flarestamina.com" target="_blank" rel="noopener" class="grid-item-subtle card-link"><div class="content-padding"><div class="apart"><div class="text-md heavy">FLARESTAMINA</div><svg class="icon-external" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12"><g fill="#FFF"><path d="M2,12h9a1,1,0,0,0,0-2H2V1A1,1,0,0,0,0,1v9A2,2,0,0,0,2,12Z"/><path d="M5.293,6.707a1,1,0,0,0,1.414,0L9.354,4.061l1.792,1.793A.5.5,0,0,0,11.5,6a.512.512,0,0,0,.191-.038A.5.5,0,0,0,12,5.5V.5a.5.5,0,0,0-.5-.5h-5a.5.5,0,0,0-.354.854L7.939,2.646,5.293,5.293A1,1,0,0,0,5.293,6.707Z"/></g></svg></div><div class="text-sm color-subtle">40-day IELTS challenge PWA — 265 tasks, streaks, live leaderboard (2026)</div></div></a>
-        <a href="https://maqsudjon-cell.github.io/id-passport-photo-maker/" target="_blank" rel="noopener" class="grid-item-subtle card-link"><div class="content-padding"><div class="apart"><div class="text-md heavy">ID PHOTO MAKER</div><svg class="icon-external" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12"><g fill="#FFF"><path d="M2,12h9a1,1,0,0,0,0-2H2V1A1,1,0,0,0,0,1v9A2,2,0,0,0,2,12Z"/><path d="M5.293,6.707a1,1,0,0,0,1.414,0L9.354,4.061l1.792,1.793A.5.5,0,0,0,11.5,6a.512.512,0,0,0,.191-.038A.5.5,0,0,0,12,5.5V.5a.5.5,0,0,0-.5-.5h-5a.5.5,0,0,0-.354.854L7.939,2.646,5.293,5.293A1,1,0,0,0,5.293,6.707Z"/></g></svg></div><div class="text-sm color-subtle">Passport &amp; visa photos with on-device background whitening (2026)</div></div></a>
-        <a href="https://github.com/maqsudjon-cell" target="_blank" rel="noopener" class="grid-item-subtle card-link"><div class="content-padding"><div class="apart"><div class="text-md heavy">EXPLAINER-ENGINE</div><svg class="icon-external" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12"><g fill="#FFF"><path d="M2,12h9a1,1,0,0,0,0-2H2V1A1,1,0,0,0,0,1v9A2,2,0,0,0,2,12Z"/><path d="M5.293,6.707a1,1,0,0,0,1.414,0L9.354,4.061l1.792,1.793A.5.5,0,0,0,11.5,6a.512.512,0,0,0,.191-.038A.5.5,0,0,0,12,5.5V.5a.5.5,0,0,0-.5-.5h-5a.5.5,0,0,0-.354.854L7.939,2.646,5.293,5.293A1,1,0,0,0,5.293,6.707Z"/></g></svg></div><div class="text-sm color-subtle">Topic → branded explainer video, soundtrack generated from code (2026)</div></div></a>
-      </div>
-    </div>
     <div class="grid-g gr"></div>
   </section>
 
@@ -576,7 +608,7 @@ body.modal-open .modal-scroll{opacity:1;transform:translate3d(0,0,0);transition-
           <div class="grid-item-subtle content-padding"><div class="flex-v"><div>Explore</div><a href="https://pangea8.com" target="_blank" rel="noopener" class="a-subtle">pangea8</a><a href="https://flarestamina.com" target="_blank" rel="noopener" class="a-subtle">Flarestamina</a><a href="https://minnos.cc" target="_blank" rel="noopener" class="a-subtle">Minnos</a><a href="https://pierics.com" target="_blank" rel="noopener" class="a-subtle">Pierics</a></div></div>
           <div class="grid-item-subtle content-padding"><div class="flex-v"><div>Socials</div><a href="https://t.me/mrbmp13" target="_blank" rel="noopener" class="a-subtle">Telegram</a><a href="https://www.instagram.com/ma1sumi" target="_blank" rel="noopener" class="a-subtle">Instagram</a><a href="https://x.com/mpolatov13" target="_blank" rel="noopener" class="a-subtle">X</a><a href="https://youtube.com/@matsumimusic" target="_blank" rel="noopener" class="a-subtle">YouTube</a></div></div>
           <div class="grid-item-subtle content-padding"><div class="flex-v"><div>Contact</div><a href="https://t.me/mrbmp13" target="_blank" rel="noopener" class="a-subtle">Message me</a><a href="mailto:polatovmaqsudjon1@gmail.com" class="a-subtle">Email</a></div></div>
-          <div class="grid-item-subtle content-padding"><div class="flex-v"><div>Source</div><a href="https://github.com/maqsudjon-cell" target="_blank" rel="noopener" class="a-subtle">GitHub</a><span class="color-offdark">Vanilla JS, one file</span></div></div>
+          <div class="grid-item-subtle content-padding"><div class="flex-v"><div>Source</div><a href="https://github.com/maqsudjon-cell" target="_blank" rel="noopener" class="a-subtle">GitHub</a><span class="color-offdark">Vanilla JS, one file</span><span class="color-offdark">↑↑↓↓←→←→BA</span></div></div>
           <div class="grid-item-subtle content-padding copyright"><div class="flex-footer"><div class="color-subtle">© 2026 Maqsudjon Polatov. All rights reserved.</div><div class="color-offdark font-mono" id="ftr-clock">TASHKENT —:—:—</div></div></div>
         </div>
       </div>
@@ -609,6 +641,13 @@ updates.unshift({
   "title":"maqsudjon.com — rebuilt again, this time as a full General Intuition homage",
   "tag":"Tech",
   "body":"Tore the site down and rebuilt it in the image of generalintuition.com — the frontier lab whose whole visual language is ASCII. Everything is here: the white 1px blueprint grid that frames every section, the giant video-to-ASCII header (my F1 lap footage sampled live into coloured glyphs and tiles), the ASCII Settings panel with working Cell size / Text opacity / Tile opacity sliders, quotes that light up as you scroll, headings that de-scramble from glyph noise, invert-on-hover project tiles, a story modal (Why pangea8), and a white footer highlight card.\n\nMy own touches: the wordmark is a two-line figlet MAQSUDJON rendered in block glyphs, my profile photo is re-rendered as a live ASCII portrait in the contact section, and the Music slider in the settings panel doesn't play a hidden track — it plays a tiny ambient synth generated in the browser with the Web Audio API, a nod to Matsumi. Still one self-contained HTML file, vanilla JS, no build step."
+});
+
+updates.unshift({
+  "date":"2026-07-02",
+  "title":"maqsudjon.com \u2014 projects front and center, a scene switcher, and a secret",
+  "tag":"Tech",
+  "body":"Feedback said the projects were blending into the log \u2014 fair. They now have their own full-width section: seven builds, numbered like a lab index, set in big display type, the whole row inverting to white on hover. The ASCII Settings panel gained a Scene control \u2014 switch the header between the F1 video, FLOW, TORUS, GLOBE, WAVE and RAIN. And there is now a secret: type a certain classic ten-key code anywhere on the page and every ASCII field erupts into a glyph storm, ripples firing everywhere, until you press Escape. A hint lives in the footer."
 });
 
 /* ==========================================================================
@@ -803,7 +842,17 @@ document.querySelectorAll('.quote').forEach(q=>quoteIO.observe(q));
       for(let k=0;k<h;k++){const ct=k/Math.max(1,h);put(x,base-k,0.3+0.7*ct,0.2+0.75*ct);}
       put(x,base-h,0.95,Math.min(1,0.2+0.8*(h/(rows-2))));}}
 
-  const SCENES={flow,globe,torus,wave};
+  function rain(st,t){
+    fieldBase(st,t,0.06,0.2);
+    const cols=st.cols,rows=st.rows,put=st.put;
+    if(st._lt==null)st._lt=t;const dt=Math.max(0,Math.min(0.05,t-st._lt));st._lt=t;
+    if(!st._drops||st._drops.length!==cols){st._drops=[];for(let x=0;x<cols;x++)st._drops[x]={y:Math.random()*rows,sp:6+Math.random()*16,len:5+(Math.random()*10|0)};}
+    for(let x=0;x<cols;x++){const d=st._drops[x];d.y+=d.sp*dt;
+      if(d.y-d.len>rows){d.y=-(Math.random()*8);d.sp=6+Math.random()*16;d.len=5+(Math.random()*10|0);}
+      for(let k=0;k<d.len;k++){const y=Math.round(d.y-k);if(y<0||y>=rows)continue;const head=k===0;
+        put(x,y,head?1:Math.max(0.12,1-k/d.len),head?0.25:0.4+0.35*(k/d.len));}}}
+
+  const SCENES={flow,globe,torus,wave,rain};
 
   /* --- media sources --- */
   const VID=document.getElementById('srcvid');
@@ -849,6 +898,7 @@ document.querySelectorAll('.quote').forEach(q=>quoteIO.observe(q));
     }
     const hasBoost=()=>ptr.x>=0||ptr.rip.length>0;
     const prune=now=>{if(ptr.rip.length)ptr.rip=ptr.rip.filter(rp=>now-rp.t<1500);};
+    r.addRipple=(nx,ny)=>{if(ptr.rip.length>5)ptr.rip.shift();ptr.rip.push({x:nx*st.cols,y:ny*st.rows,t:performance.now()});};
 
     function sample(src,sw,sh){
       const cols=st.cols,rows=st.rows;
@@ -957,6 +1007,17 @@ document.querySelectorAll('.quote').forEach(q=>quoteIO.observe(q));
   glyph.addEventListener('input',()=>{const v=+glyph.value;glyphOut.textContent=v;CFG.glyph=v/100;},{passive:true});
   tile.addEventListener('input',()=>{const v=+tile.value;tileOut.textContent=v;CFG.tile=v/100;},{passive:true});
 
+  // hero scene switcher
+  const heroR=renderers.find(rr=>rr.canvas.id==='hero-ascii');
+  const sceneTabs=document.getElementById('sceneTabs'),sceneOut=document.getElementById('sceneOut');
+  if(heroR&&sceneTabs){
+    sceneTabs.addEventListener('click',e=>{
+      const b=e.target.closest('button');if(!b)return;e.preventDefault();
+      heroR.scene=b.dataset.s;if(sceneOut)sceneOut.textContent=b.textContent.toUpperCase();
+      sceneTabs.querySelectorAll('button').forEach(x=>x.classList.toggle('on',x===b));
+    });
+  }
+
   /* --- Music: a tiny generated ambient synth (a nod to Matsumi) --- */
   const music=el('musicVolume'),musicOut=el('musicVolumeOut');
   let AC=null,master=null;
@@ -1003,6 +1064,37 @@ document.querySelectorAll('.quote').forEach(q=>quoteIO.observe(q));
     if(AC.state==='suspended')AC.resume();
     master.gain.setTargetAtTime((v/100)*0.6,AC.currentTime,0.15);
   },{passive:true});
+})();
+
+/* ==========================================================================
+   KONAMI — glyph storm easter egg (hint in the footer)
+   ========================================================================== */
+(function(){
+  const seq=['arrowup','arrowup','arrowdown','arrowdown','arrowleft','arrowright','arrowleft','arrowright','b','a'];
+  let idx=0,active=false,timer=null,rippler=null,prevScenes=null;
+  const toast=document.getElementById('toast');
+  function stop(){
+    if(!active)return;active=false;
+    clearTimeout(timer);clearInterval(rippler);
+    window.__ascii.renderers.forEach((r,i)=>{r.scene=prevScenes[i];});
+    toast.classList.remove('show');
+  }
+  function start(){
+    if(active||!window.__ascii)return;active=true;
+    const rs=window.__ascii.renderers;
+    prevScenes=rs.map(r=>r.scene);
+    rs.forEach(r=>{r.scene='rain';});
+    toast.textContent='\u25FC GLYPH STORM UNLOCKED \u00B7 ESC TO EXIT';
+    toast.classList.add('show');
+    rippler=setInterval(()=>{rs.forEach(r=>{if(r.visible&&Math.random()<0.6&&r.addRipple)r.addRipple(Math.random(),Math.random());});},260);
+    timer=setTimeout(stop,14000);
+  }
+  document.addEventListener('keydown',e=>{
+    if(e.key==='Escape'){stop();return;}
+    const k=e.key.toLowerCase();
+    idx=(k===seq[idx])?idx+1:(k===seq[0]?1:0);
+    if(idx===seq.length){idx=0;start();}
+  });
 })();
 </script>
 </body>
