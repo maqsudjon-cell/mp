@@ -17,7 +17,8 @@
 <meta name="twitter:title" content="Maqsudjon Polatov | A one-person lab for acting in code and steel.">
 <meta name="twitter:image" content="https://maqsudjon.com/og-image.png">
 <meta name="theme-color" content="#000000">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Maqsudjon Polatov","url":"https://maqsudjon.com/","jobTitle":"Engineer & Creator","address":{"@type":"PostalAddress","addressLocality":"Tashkent","addressCountry":"UZ"},"sameAs":["https://github.com/maqsudjon-cell","https://t.me/mrbmp13","https://x.com/mpolatov13","https://www.instagram.com/ma1sumi"]}</script>
+<link rel="manifest" href="site.webmanifest">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Maqsudjon Polatov","url":"https://maqsudjon.com/","image":"https://maqsudjon.com/profile.jpg","jobTitle":"Engineer & Creator","description":"Engineer and creator from Tashkent, Uzbekistan. Builds free IELTS and English-learning platforms, AI agents and web tools — pangea8, Flarestamina, Minnos, ID Photo Maker and pierics — end to end, solo.","knowsAbout":["Web development","Educational technology","IELTS preparation platforms","AI agents","Large language models","Welding"],"mainEntityOfPage":"https://maqsudjon.com/","address":{"@type":"PostalAddress","addressLocality":"Tashkent","addressCountry":"UZ"},"sameAs":["https://github.com/maqsudjon-cell","https://t.me/mrbmp13","https://x.com/mpolatov13","https://www.instagram.com/ma1sumi"]}</script>
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
@@ -173,6 +174,8 @@ body.modal-open .nav{opacity:0}
 .header-inner{position:relative;z-index:2;flex:1;display:flex;flex-direction:column;justify-content:space-between;gap:40px}
 .logo-ascii{font-family:'Geist Mono',ui-monospace,monospace;font-weight:500;color:#fff;font-size:clamp(9px,1.9vw,22px);line-height:1.3;letter-spacing:.04em;white-space:pre;text-shadow:0 2px 18px #000}
 .logo-sub{font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:#888;margin-top:14px}
+.lang-btn{color:#8df9e8;cursor:pointer;transition:color .3s}
+.lang-btn:hover{color:#fff}
 @media (min-width:1200px){.logo-sub{font-size:13px}}
 .highlight{background:#fff;color:#000;position:relative;overflow:hidden}
 .highlight>*{position:relative;z-index:1}
@@ -334,7 +337,7 @@ body.modal-open .modal-scroll{opacity:1;transform:translate3d(0,0,0);transition-
 <div class="nav" aria-hidden="true">
   <div class="nav-inner">
     <a href="#top" class="nav-logo">MAQSUDJON POLATOV</a>
-    <div class="nav-button"><a href="https://t.me/mrbmp13" target="_blank" rel="noopener" class="btn">Say hi</a></div>
+    <div class="nav-button"><a href="https://t.me/mrbmp13" target="_blank" rel="noopener" class="btn" data-i18n="sayhi">Say hi</a></div>
   </div>
 </div>
 
@@ -381,13 +384,13 @@ body.modal-open .modal-scroll{opacity:1;transform:translate3d(0,0,0);transition-
           <pre class="logo-ascii" role="img" aria-label="MAQSUDJON">
 █▀▄▀█ ▄▀█ █▀█ █▀ █░█ █▀▄ ░░█ █▀█ █▄░█
 █░▀░█ █▀█ ▀▀█ ▄█ █▄█ █▄▀ █▄█ █▄█ █░▀█</pre>
-          <div class="logo-sub">POLATOV · A ONE-PERSON LAB · TASHKENT, UZBEKISTAN</div>
+          <div class="logo-sub">POLATOV · A ONE-PERSON LAB · TASHKENT, UZBEKISTAN · <a href="#" id="langBtn" class="lang-btn">O'Z</a></div>
         </div>
         <div>
           <div class="highlight header-card content-padding">
             <svg class="wm" viewBox="0 0 100 100" aria-hidden="true"><g stroke="#000" stroke-width="7.6"><line x1="50" y1="23" x2="50" y2="81"/><line x1="24.9" y1="37.5" x2="75.1" y2="66.5"/><line x1="75.1" y1="37.5" x2="24.9" y2="66.5"/></g><g stroke="#000" stroke-width="3.4"><line x1="12.3" y1="50" x2="23.3" y2="50"/><line x1="17.8" y1="44.5" x2="17.8" y2="55.5"/><line x1="76.7" y1="50" x2="87.7" y2="50"/><line x1="82.2" y1="44.5" x2="82.2" y2="55.5"/></g><g stroke="#000" stroke-width="3"><line x1="71" y1="19.2" x2="77" y2="25.2"/><line x1="77" y1="19.2" x2="71" y2="25.2"/><line x1="23" y1="19.2" x2="29" y2="25.2"/><line x1="29" y1="19.2" x2="23" y2="25.2"/><line x1="71" y1="80.6" x2="77" y2="86.6"/><line x1="77" y1="80.6" x2="71" y2="86.6"/><line x1="23" y1="80.6" x2="29" y2="86.6"/><line x1="29" y1="80.6" x2="23" y2="86.6"/></g></svg>
-            <h1 class="text-xl font-header">I am a one-person lab for acting in code and steel.</h1>
-            <h1 class="text-xl font-header">I build free IELTS platforms, AI agents and tools that ship to real people — end to end, from Uzbekistan to the web.</h1>
+            <h1 class="text-xl font-header" data-i18n="hero1">I am a one-person lab for acting in code and steel.</h1>
+            <h1 class="text-xl font-header" data-i18n="hero2">I build free IELTS platforms, AI agents and tools that ship to real people — end to end, from Uzbekistan to the web.</h1>
             <div class="header-badges">
               <span>pangea8<i>IELTS ECOSYSTEM</i></span>
               <span>flarestamina<i>40-DAY TRACKER</i></span>
@@ -444,7 +447,7 @@ body.modal-open .modal-scroll{opacity:1;transform:translate3d(0,0,0);transition-
     <div class="grid-g gl"></div>
     <div class="c2">
       <div class="content-padding">
-        <h2 class="font-header text-xxl sec-title" data-scramble>Turning curiosity into shipped tools.</h2>
+        <h2 class="font-header text-xxl sec-title" data-scramble data-i18n="aboutTitle">Turning curiosity into shipped tools.</h2>
       </div>
     </div>
     <div class="c3 rs2 ascii-cell">
@@ -452,15 +455,15 @@ body.modal-open .modal-scroll{opacity:1;transform:translate3d(0,0,0);transition-
     </div>
     <div class="c2">
       <div class="content-padding">
-        <p class="text-md reveal">Most of what I make is for IELTS and English learners: a free ecosystem of listening and reading tests, an essay platform with AI feedback, a speaking lab, and a 40-day challenge tracker. Lately I am building AI agents and tools that work with large language models.</p>
-        <div class="quote"><p class="text-md">I design, build and ship small useful things end to end — usually a single self-contained file on its own domain. <strong>If it helps one student study, it was worth making.</strong></p></div>
-        <p class="text-md reveal">Self-taught across web, Python, AI and welding. Uzbek, English (C1), some Korean.</p>
+        <p class="text-md reveal" data-i18n="aboutP1">Most of what I make is for IELTS and English learners: a free ecosystem of listening and reading tests, an essay platform with AI feedback, a speaking lab, and a 40-day challenge tracker. Lately I am building AI agents and tools that work with large language models.</p>
+        <div class="quote"><p class="text-md" data-i18n="aboutQuote">I design, build and ship small useful things end to end — usually a single self-contained file on its own domain. <strong>If it helps one student study, it was worth making.</strong></p></div>
+        <p class="text-md reveal" data-i18n="aboutP2">Self-taught across web, Python, AI and welding. Uzbek, English (C1), some Korean.</p>
       </div>
       <div class="grid-wrapper-subtle">
         <a id="button1" href="#" class="grid-item-subtle card-link">
           <div class="content-padding">
-            <div class="apart"><div class="text-md heavy uppercase">Why pangea8</div></div>
-            <div class="text-sm color-subtle">On supercontinents, Band 8, and infinity</div>
+            <div class="apart"><div class="text-md heavy uppercase" data-i18n="whyTitle">Why pangea8</div></div>
+            <div class="text-sm color-subtle" data-i18n="whySub">On supercontinents, Band 8, and infinity</div>
           </div>
         </a>
       </div>
@@ -473,24 +476,24 @@ body.modal-open .modal-scroll{opacity:1;transform:translate3d(0,0,0);transition-
     <div class="grid-g gl"></div>
     <div class="c23">
       <div class="content-padding">
-        <h2 class="font-header text-xxl sec-title" data-scramble>Seven things, shipped to real users.</h2>
+        <h2 class="font-header text-xxl sec-title" data-scramble data-i18n="projTitle">Seven things, shipped to real users.</h2>
       </div>
       <div class="grid-wrapper-subtle">
         <div class="stats-grid">
-          <div class="grid-item-subtle content-padding"><div class="stat-n font-header" data-count="90" data-suffix="+">0</div><div class="stat-l font-mono">IELTS TESTS, FREE</div></div>
-          <div class="grid-item-subtle content-padding"><div class="stat-n font-header" data-count="166">0</div><div class="stat-l font-mono">SPEAKING TOPICS</div></div>
-          <div class="grid-item-subtle content-padding"><div class="stat-n font-header" data-count="265">0</div><div class="stat-l font-mono">TRACKER TASKS</div></div>
-          <div class="grid-item-subtle content-padding"><div class="stat-n font-header" data-count="7">0</div><div class="stat-l font-mono">PRODUCTS, SOLO</div></div>
+          <div class="grid-item-subtle content-padding"><div class="stat-n font-header" data-count="90" data-suffix="+">0</div><div class="stat-l font-mono" data-i18n="stat1">IELTS TESTS, FREE</div></div>
+          <div class="grid-item-subtle content-padding"><div class="stat-n font-header" data-count="166">0</div><div class="stat-l font-mono" data-i18n="stat2">SPEAKING TOPICS</div></div>
+          <div class="grid-item-subtle content-padding"><div class="stat-n font-header" data-count="265">0</div><div class="stat-l font-mono" data-i18n="stat3">TRACKER TASKS</div></div>
+          <div class="grid-item-subtle content-padding"><div class="stat-n font-header" data-count="7">0</div><div class="stat-l font-mono" data-i18n="stat4">PRODUCTS, SOLO</div></div>
         </div>
       </div>
       <div class="grid-wrapper-subtle">
-        <a href="https://pangea8.com" target="_blank" rel="noopener" class="grid-item-subtle"><div class="project-inner content-padding"><div class="p-num">// 001</div><div><div class="p-name">pangea8</div><div class="p-desc text-sm">A free IELTS ecosystem — 90+ listening &amp; reading tests with instant scoring, an essay platform, a speaking lab and a 40-day tracker.</div><div class="p-meta">WEB · FIREBASE · IELTS</div></div><div class="p-side"><div class="p-mini"><canvas data-scene="globe" data-cell="6" aria-hidden="true"></canvas></div><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 12 12"><g fill="#FFF"><path d="M2,12h9a1,1,0,0,0,0-2H2V1A1,1,0,0,0,0,1v9A2,2,0,0,0,2,12Z"/><path d="M5.293,6.707a1,1,0,0,0,1.414,0L9.354,4.061l1.792,1.793A.5.5,0,0,0,11.5,6a.512.512,0,0,0,.191-.038A.5.5,0,0,0,12,5.5V.5a.5.5,0,0,0-.5-.5h-5a.5.5,0,0,0-.354.854L7.939,2.646,5.293,5.293A1,1,0,0,0,5.293,6.707Z"/></g></svg></div></div></a>
-        <a href="https://maqsudjon-cell.github.io/pangea8-speaking/" target="_blank" rel="noopener" class="grid-item-subtle"><div class="project-inner content-padding"><div class="p-num">// 002</div><div><div class="p-name">pangea8 Speaking</div><div class="p-desc text-sm">An IELTS Speaking lab — record in the browser, 166 topics, live search, band scores and peer feedback.</div><div class="p-meta">WEB · FIREBASE · SUPABASE</div></div><div class="p-side"><div class="p-mini"><canvas data-scene="wave" data-cell="6" aria-hidden="true"></canvas></div><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 12 12"><g fill="#FFF"><path d="M2,12h9a1,1,0,0,0,0-2H2V1A1,1,0,0,0,0,1v9A2,2,0,0,0,2,12Z"/><path d="M5.293,6.707a1,1,0,0,0,1.414,0L9.354,4.061l1.792,1.793A.5.5,0,0,0,11.5,6a.512.512,0,0,0,.191-.038A.5.5,0,0,0,12,5.5V.5a.5.5,0,0,0-.5-.5h-5a.5.5,0,0,0-.354.854L7.939,2.646,5.293,5.293A1,1,0,0,0,5.293,6.707Z"/></g></svg></div></div></a>
-        <a href="https://maqsudjon-cell.github.io/pangeya-essay-platform-/index-14.html" target="_blank" rel="noopener" class="grid-item-subtle"><div class="project-inner content-padding"><div class="p-num">// 003</div><div><div class="p-name">pangea8 Essay</div><div class="p-desc text-sm">A writing platform — submit essays, get AI band-score feedback, focus mode, an exam timer and branded PDF export.</div><div class="p-meta">WEB · FIREBASE · WRITING</div></div><div class="p-side"><div class="p-mini"><canvas data-scene="flow" data-cell="6" aria-hidden="true"></canvas></div><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 12 12"><g fill="#FFF"><path d="M2,12h9a1,1,0,0,0,0-2H2V1A1,1,0,0,0,0,1v9A2,2,0,0,0,2,12Z"/><path d="M5.293,6.707a1,1,0,0,0,1.414,0L9.354,4.061l1.792,1.793A.5.5,0,0,0,11.5,6a.512.512,0,0,0,.191-.038A.5.5,0,0,0,12,5.5V.5a.5.5,0,0,0-.5-.5h-5a.5.5,0,0,0-.354.854L7.939,2.646,5.293,5.293A1,1,0,0,0,5.293,6.707Z"/></g></svg></div></div></a>
-        <a href="https://flarestamina.com" target="_blank" rel="noopener" class="grid-item-subtle"><div class="project-inner content-padding"><div class="p-num">// 004</div><div><div class="p-name">Flarestamina</div><div class="p-desc text-sm">A 40-day IELTS challenge tracker — PWA with a live leaderboard, streak heatmap and a teacher dashboard.</div><div class="p-meta">PWA · FIRESTORE · TRACKER</div></div><div class="p-side"><div class="p-mini"><canvas data-scene="torus" data-cell="6" aria-hidden="true"></canvas></div><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 12 12"><g fill="#FFF"><path d="M2,12h9a1,1,0,0,0,0-2H2V1A1,1,0,0,0,0,1v9A2,2,0,0,0,2,12Z"/><path d="M5.293,6.707a1,1,0,0,0,1.414,0L9.354,4.061l1.792,1.793A.5.5,0,0,0,11.5,6a.512.512,0,0,0,.191-.038A.5.5,0,0,0,12,5.5V.5a.5.5,0,0,0-.5-.5h-5a.5.5,0,0,0-.354.854L7.939,2.646,5.293,5.293A1,1,0,0,0,5.293,6.707Z"/></g></svg></div></div></a>
-        <a href="https://minnos.cc" target="_blank" rel="noopener" class="grid-item-subtle"><div class="project-inner content-padding"><div class="p-num">// 005</div><div><div class="p-name">Minnos</div><div class="p-desc text-sm">Learn English one cat at a time — pet the cat for idioms, every one about cats, with audio and Uzbek translations.</div><div class="p-meta">WEB · ENGLISH · IDIOMS</div></div><div class="p-side"><div class="p-mini"><canvas data-scene="rain" data-cell="6" aria-hidden="true"></canvas></div><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 12 12"><g fill="#FFF"><path d="M2,12h9a1,1,0,0,0,0-2H2V1A1,1,0,0,0,0,1v9A2,2,0,0,0,2,12Z"/><path d="M5.293,6.707a1,1,0,0,0,1.414,0L9.354,4.061l1.792,1.793A.5.5,0,0,0,11.5,6a.512.512,0,0,0,.191-.038A.5.5,0,0,0,12,5.5V.5a.5.5,0,0,0-.5-.5h-5a.5.5,0,0,0-.354.854L7.939,2.646,5.293,5.293A1,1,0,0,0,5.293,6.707Z"/></g></svg></div></div></a>
-        <a href="https://maqsudjon-cell.github.io/id-passport-photo-maker/" target="_blank" rel="noopener" class="grid-item-subtle"><div class="project-inner content-padding"><div class="p-num">// 006</div><div><div class="p-name">ID Photo Maker</div><div class="p-desc text-sm">Crops photos to exact passport and visa sizes, with on-device AI background whitening. Nothing leaves your phone.</div><div class="p-meta">WEB · IMAGE · ON-DEVICE AI</div></div><div class="p-side"><div class="p-mini"><canvas data-scene="portrait" data-cell="6" aria-hidden="true"></canvas></div><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 12 12"><g fill="#FFF"><path d="M2,12h9a1,1,0,0,0,0-2H2V1A1,1,0,0,0,0,1v9A2,2,0,0,0,2,12Z"/><path d="M5.293,6.707a1,1,0,0,0,1.414,0L9.354,4.061l1.792,1.793A.5.5,0,0,0,11.5,6a.512.512,0,0,0,.191-.038A.5.5,0,0,0,12,5.5V.5a.5.5,0,0,0-.5-.5h-5a.5.5,0,0,0-.354.854L7.939,2.646,5.293,5.293A1,1,0,0,0,5.293,6.707Z"/></g></svg></div></div></a>
-        <a href="https://pierics.com" target="_blank" rel="noopener" class="grid-item-subtle"><div class="project-inner content-padding"><div class="p-num">// 007</div><div><div class="p-name">pierics</div><div class="p-desc text-sm">A word game — guess the hidden word in six tries; tiles flip green, yellow and grey. Quick to pick up, hard to put down.</div><div class="p-meta">WEB · GAME · WORDLE</div></div><div class="p-side"><div class="p-mini"><canvas data-scene="flow" data-cell="6" aria-hidden="true"></canvas></div><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 12 12"><g fill="#FFF"><path d="M2,12h9a1,1,0,0,0,0-2H2V1A1,1,0,0,0,0,1v9A2,2,0,0,0,2,12Z"/><path d="M5.293,6.707a1,1,0,0,0,1.414,0L9.354,4.061l1.792,1.793A.5.5,0,0,0,11.5,6a.512.512,0,0,0,.191-.038A.5.5,0,0,0,12,5.5V.5a.5.5,0,0,0-.5-.5h-5a.5.5,0,0,0-.354.854L7.939,2.646,5.293,5.293A1,1,0,0,0,5.293,6.707Z"/></g></svg></div></div></a>
+        <a href="https://pangea8.com" target="_blank" rel="noopener" class="grid-item-subtle"><div class="project-inner content-padding"><div class="p-num">// 001</div><div><div class="p-name">pangea8</div><div class="p-desc text-sm" data-i18n="p1">A free IELTS ecosystem — 90+ listening &amp; reading tests with instant scoring, an essay platform, a speaking lab and a 40-day tracker.</div><div class="p-meta">WEB · FIREBASE · IELTS</div></div><div class="p-side"><div class="p-mini"><canvas data-scene="globe" data-cell="6" aria-hidden="true"></canvas></div><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 12 12"><g fill="#FFF"><path d="M2,12h9a1,1,0,0,0,0-2H2V1A1,1,0,0,0,0,1v9A2,2,0,0,0,2,12Z"/><path d="M5.293,6.707a1,1,0,0,0,1.414,0L9.354,4.061l1.792,1.793A.5.5,0,0,0,11.5,6a.512.512,0,0,0,.191-.038A.5.5,0,0,0,12,5.5V.5a.5.5,0,0,0-.5-.5h-5a.5.5,0,0,0-.354.854L7.939,2.646,5.293,5.293A1,1,0,0,0,5.293,6.707Z"/></g></svg></div></div></a>
+        <a href="https://maqsudjon-cell.github.io/pangea8-speaking/" target="_blank" rel="noopener" class="grid-item-subtle"><div class="project-inner content-padding"><div class="p-num">// 002</div><div><div class="p-name">pangea8 Speaking</div><div class="p-desc text-sm" data-i18n="p2">An IELTS Speaking lab — record in the browser, 166 topics, live search, band scores and peer feedback.</div><div class="p-meta">WEB · FIREBASE · SUPABASE</div></div><div class="p-side"><div class="p-mini"><canvas data-scene="wave" data-cell="6" aria-hidden="true"></canvas></div><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 12 12"><g fill="#FFF"><path d="M2,12h9a1,1,0,0,0,0-2H2V1A1,1,0,0,0,0,1v9A2,2,0,0,0,2,12Z"/><path d="M5.293,6.707a1,1,0,0,0,1.414,0L9.354,4.061l1.792,1.793A.5.5,0,0,0,11.5,6a.512.512,0,0,0,.191-.038A.5.5,0,0,0,12,5.5V.5a.5.5,0,0,0-.5-.5h-5a.5.5,0,0,0-.354.854L7.939,2.646,5.293,5.293A1,1,0,0,0,5.293,6.707Z"/></g></svg></div></div></a>
+        <a href="https://maqsudjon-cell.github.io/pangeya-essay-platform-/index-14.html" target="_blank" rel="noopener" class="grid-item-subtle"><div class="project-inner content-padding"><div class="p-num">// 003</div><div><div class="p-name">pangea8 Essay</div><div class="p-desc text-sm" data-i18n="p3">A writing platform — submit essays, get AI band-score feedback, focus mode, an exam timer and branded PDF export.</div><div class="p-meta">WEB · FIREBASE · WRITING</div></div><div class="p-side"><div class="p-mini"><canvas data-scene="flow" data-cell="6" aria-hidden="true"></canvas></div><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 12 12"><g fill="#FFF"><path d="M2,12h9a1,1,0,0,0,0-2H2V1A1,1,0,0,0,0,1v9A2,2,0,0,0,2,12Z"/><path d="M5.293,6.707a1,1,0,0,0,1.414,0L9.354,4.061l1.792,1.793A.5.5,0,0,0,11.5,6a.512.512,0,0,0,.191-.038A.5.5,0,0,0,12,5.5V.5a.5.5,0,0,0-.5-.5h-5a.5.5,0,0,0-.354.854L7.939,2.646,5.293,5.293A1,1,0,0,0,5.293,6.707Z"/></g></svg></div></div></a>
+        <a href="https://flarestamina.com" target="_blank" rel="noopener" class="grid-item-subtle"><div class="project-inner content-padding"><div class="p-num">// 004</div><div><div class="p-name">Flarestamina</div><div class="p-desc text-sm" data-i18n="p4">A 40-day IELTS challenge tracker — PWA with a live leaderboard, streak heatmap and a teacher dashboard.</div><div class="p-meta">PWA · FIRESTORE · TRACKER</div></div><div class="p-side"><div class="p-mini"><canvas data-scene="torus" data-cell="6" aria-hidden="true"></canvas></div><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 12 12"><g fill="#FFF"><path d="M2,12h9a1,1,0,0,0,0-2H2V1A1,1,0,0,0,0,1v9A2,2,0,0,0,2,12Z"/><path d="M5.293,6.707a1,1,0,0,0,1.414,0L9.354,4.061l1.792,1.793A.5.5,0,0,0,11.5,6a.512.512,0,0,0,.191-.038A.5.5,0,0,0,12,5.5V.5a.5.5,0,0,0-.5-.5h-5a.5.5,0,0,0-.354.854L7.939,2.646,5.293,5.293A1,1,0,0,0,5.293,6.707Z"/></g></svg></div></div></a>
+        <a href="https://minnos.cc" target="_blank" rel="noopener" class="grid-item-subtle"><div class="project-inner content-padding"><div class="p-num">// 005</div><div><div class="p-name">Minnos</div><div class="p-desc text-sm" data-i18n="p5">Learn English one cat at a time — pet the cat for idioms, every one about cats, with audio and Uzbek translations.</div><div class="p-meta">WEB · ENGLISH · IDIOMS</div></div><div class="p-side"><div class="p-mini"><canvas data-scene="rain" data-cell="6" aria-hidden="true"></canvas></div><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 12 12"><g fill="#FFF"><path d="M2,12h9a1,1,0,0,0,0-2H2V1A1,1,0,0,0,0,1v9A2,2,0,0,0,2,12Z"/><path d="M5.293,6.707a1,1,0,0,0,1.414,0L9.354,4.061l1.792,1.793A.5.5,0,0,0,11.5,6a.512.512,0,0,0,.191-.038A.5.5,0,0,0,12,5.5V.5a.5.5,0,0,0-.5-.5h-5a.5.5,0,0,0-.354.854L7.939,2.646,5.293,5.293A1,1,0,0,0,5.293,6.707Z"/></g></svg></div></div></a>
+        <a href="https://maqsudjon-cell.github.io/id-passport-photo-maker/" target="_blank" rel="noopener" class="grid-item-subtle"><div class="project-inner content-padding"><div class="p-num">// 006</div><div><div class="p-name">ID Photo Maker</div><div class="p-desc text-sm" data-i18n="p6">Crops photos to exact passport and visa sizes, with on-device AI background whitening. Nothing leaves your phone.</div><div class="p-meta">WEB · IMAGE · ON-DEVICE AI</div></div><div class="p-side"><div class="p-mini"><canvas data-scene="portrait" data-cell="6" aria-hidden="true"></canvas></div><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 12 12"><g fill="#FFF"><path d="M2,12h9a1,1,0,0,0,0-2H2V1A1,1,0,0,0,0,1v9A2,2,0,0,0,2,12Z"/><path d="M5.293,6.707a1,1,0,0,0,1.414,0L9.354,4.061l1.792,1.793A.5.5,0,0,0,11.5,6a.512.512,0,0,0,.191-.038A.5.5,0,0,0,12,5.5V.5a.5.5,0,0,0-.5-.5h-5a.5.5,0,0,0-.354.854L7.939,2.646,5.293,5.293A1,1,0,0,0,5.293,6.707Z"/></g></svg></div></div></a>
+        <a href="https://pierics.com" target="_blank" rel="noopener" class="grid-item-subtle"><div class="project-inner content-padding"><div class="p-num">// 007</div><div><div class="p-name">pierics</div><div class="p-desc text-sm" data-i18n="p7">A word game — guess the hidden word in six tries; tiles flip green, yellow and grey. Quick to pick up, hard to put down.</div><div class="p-meta">WEB · GAME · WORDLE</div></div><div class="p-side"><div class="p-mini"><canvas data-scene="flow" data-cell="6" aria-hidden="true"></canvas></div><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 12 12"><g fill="#FFF"><path d="M2,12h9a1,1,0,0,0,0-2H2V1A1,1,0,0,0,0,1v9A2,2,0,0,0,2,12Z"/><path d="M5.293,6.707a1,1,0,0,0,1.414,0L9.354,4.061l1.792,1.793A.5.5,0,0,0,11.5,6a.512.512,0,0,0,.191-.038A.5.5,0,0,0,12,5.5V.5a.5.5,0,0,0-.5-.5h-5a.5.5,0,0,0-.354.854L7.939,2.646,5.293,5.293A1,1,0,0,0,5.293,6.707Z"/></g></svg></div></div></a>
       </div>
     </div>
     <div class="grid-g gr"></div>
@@ -505,9 +508,9 @@ body.modal-open .modal-scroll{opacity:1;transform:translate3d(0,0,0);transition-
     <div class="c3">
       <div class="grid-quote content-padding">
         <div class="qmark">“</div>
-        <p class="color-light font-header text-xl">Location doesn’t matter anymore. The internet erased that. I build from Tashkent, and the tools get used wherever a student opens them.</p>
+        <p class="color-light font-header text-xl" data-i18n="quoteBig">Location doesn’t matter anymore. The internet erased that. I build from Tashkent, and the tools get used wherever a student opens them.</p>
         <div class="qmark close">”</div>
-        <p class="text-sm" style="margin:0">Maqsudjon — building from Uzbekistan</p>
+        <p class="text-sm" style="margin:0" data-i18n="quoteAttr">Maqsudjon — building from Uzbekistan</p>
       </div>
     </div>
     <div class="c23">
@@ -533,20 +536,20 @@ body.modal-open .modal-scroll{opacity:1;transform:translate3d(0,0,0);transition-
     </div>
     <div class="c3">
       <div class="content-padding">
-        <h2 class="font-header text-xxl sec-title" data-scramble>Built end to end, on unique training grounds.</h2>
+        <h2 class="font-header text-xxl sec-title" data-scramble data-i18n="craftTitle">Built end to end, on unique training grounds.</h2>
       </div>
     </div>
     <div class="c3">
       <div class="content-padding">
-        <div class="quote"><p class="text-md">pangea8 is built on one belief: <strong>exam prep should be free.</strong> Every year students pay for materials that could be a single URL. So the whole ecosystem lives on open domains, costs nothing, and works on any phone.</p></div>
-        <p class="text-md">For the past year, I have been shipping across:</p>
+        <div class="quote"><p class="text-md" data-i18n="craftQuote">pangea8 is built on one belief: <strong>exam prep should be free.</strong> Every year students pay for materials that could be a single URL. So the whole ecosystem lives on open domains, costs nothing, and works on any phone.</p></div>
+        <p class="text-md" data-i18n="craftLead">For the past year, I have been shipping across:</p>
         <ul class="text-md">
-          <li><strong>Listening &amp; reading</strong> — 90+ full tests with audio and instant scoring</li>
-          <li><strong>Writing</strong> — an essay platform with AI band-score feedback</li>
-          <li><strong>Speaking</strong> — a lab that records in the browser, 166 topics</li>
-          <li><strong>Habit</strong> — a 40-day challenge tracker with streaks and a leaderboard</li>
+          <li data-i18n="li1"><strong>Listening &amp; reading</strong> — 90+ full tests with audio and instant scoring</li>
+          <li data-i18n="li2"><strong>Writing</strong> — an essay platform with AI band-score feedback</li>
+          <li data-i18n="li3"><strong>Speaking</strong> — a lab that records in the browser, 166 topics</li>
+          <li data-i18n="li4"><strong>Habit</strong> — a 40-day challenge tracker with streaks and a leaderboard</li>
         </ul>
-        <p class="text-md">As a student of the craft myself, I build tools that work with teachers, not around them — every platform has a teacher dashboard baked in.</p>
+        <p class="text-md" data-i18n="craftP">As a student of the craft myself, I build tools that work with teachers, not around them — every platform has a teacher dashboard baked in.</p>
       </div>
     </div>
     <div class="grid-g gr"></div>
@@ -557,7 +560,7 @@ body.modal-open .modal-scroll{opacity:1;transform:translate3d(0,0,0);transition-
     <div class="grid-g gl"></div>
     <div class="c2">
       <div class="content-padding">
-        <h2 class="font-header text-xxl sec-title" data-scramble>Work with me.</h2>
+        <h2 class="font-header text-xxl sec-title" data-scramble data-i18n="contactTitle">Work with me.</h2>
       </div>
     </div>
     <div class="c3 rs2 ascii-cell">
@@ -565,14 +568,14 @@ body.modal-open .modal-scroll{opacity:1;transform:translate3d(0,0,0);transition-
     </div>
     <div class="c2">
       <div class="grid-wrapper-subtle">
-        <div class="grid-item-subtle content-padding-horizontal content-padding-half-vertical"><h3 class="mono-head">Collaborate</h3></div>
+        <div class="grid-item-subtle content-padding-horizontal content-padding-half-vertical"><h3 class="mono-head" data-i18n="collab">Collaborate</h3></div>
       </div>
       <div class="content-padding">
-        <p class="text-md">If you are building something for students, music, or the web — or you just want to talk shop — I would love to hear from you. Telegram is fastest.</p>
-        <div style="padding:var(--space-md) 0 0"><a href="https://t.me/mrbmp13" target="_blank" rel="noopener" class="btn">Message on Telegram</a></div>
+        <p class="text-md" data-i18n="collabP">If you are building something for students, music, or the web — or you just want to talk shop — I would love to hear from you. Telegram is fastest.</p>
+        <div style="padding:var(--space-md) 0 0"><a href="https://t.me/mrbmp13" target="_blank" rel="noopener" class="btn" data-i18n="tgBtn">Message on Telegram</a></div>
       </div>
       <div class="grid-wrapper-subtle">
-        <div class="grid-item-subtle content-padding-horizontal content-padding-half-vertical"><h3 class="mono-head">Find me</h3></div>
+        <div class="grid-item-subtle content-padding-horizontal content-padding-half-vertical"><h3 class="mono-head" data-i18n="findme">Find me</h3></div>
       </div>
       <div class="content-padding">
         <div class="flex-v text-sm">
@@ -593,7 +596,7 @@ body.modal-open .modal-scroll{opacity:1;transform:translate3d(0,0,0);transition-
     <div class="grid-g gl"></div>
     <div class="c23">
       <div class="content-padding">
-        <h2 class="font-header text-xxl sec-title" data-scramble>Build log.</h2>
+        <h2 class="font-header text-xxl sec-title" data-scramble data-i18n="logTitle">Build log.</h2>
       </div>
       <div class="grid-wrapper-subtle">
         <div class="filters" id="filters">
@@ -622,9 +625,9 @@ body.modal-open .modal-scroll{opacity:1;transform:translate3d(0,0,0);transition-
 █░▀░█ █▀█ ▀▀█ ▄█ █▄█ █▄▀ █▄█ █▄█ █░▀█</pre>
         </div>
         <div class="content-padding" style="padding-top:0">
-          <h3 class="font-header text-xxl" data-scramble>A one-person lab for acting in code and steel.</h3>
-          <p class="text-md" style="color:#333;margin-top:1.2em">Free IELTS &amp; English-learning platforms, AI agents and small sharp tools — designed, built and shipped by one person, to real students, for nothing.</p>
-          <div style="margin-top:1.6em"><a href="https://t.me/mrbmp13" target="_blank" rel="noopener" class="btn btn-dark">Say hi</a></div>
+          <h3 class="font-header text-xxl" data-scramble data-i18n="footBig">A one-person lab for acting in code and steel.</h3>
+          <p class="text-md" style="color:#333;margin-top:1.2em" data-i18n="footP">Free IELTS &amp; English-learning platforms, AI agents and small sharp tools — designed, built and shipped by one person, to real students, for nothing.</p>
+          <div style="margin-top:1.6em"><a href="https://t.me/mrbmp13" target="_blank" rel="noopener" class="btn btn-dark" data-i18n="sayhi">Say hi</a></div>
         </div>
       </div>
     </div>
@@ -687,6 +690,13 @@ updates.unshift({
   "title":"maqsudjon.com \u2014 a terminal in the header, count-up stats, mini previews, and a secret you can tap",
   "tag":"Tech",
   "body":"Four more additions in one pass. A tiny terminal now lives in the header \u2014 type help and it answers: jump to projects, switch the ASCII scene, open the settings, or fire the glyph storm from the command line. The projects section opens with count-up stats (90+ free tests, 166 speaking topics, 265 tracker tasks, 7 products) that animate the first time they scroll into view. Every project row got a live mini ASCII preview \u2014 a little globe for pangea8, a waveform for Speaking, my actual photo for the ID tool \u2014 which invert along with the row on hover. And the Konami secret is fixed and fairer: it now reads physical keys (so it works on any keyboard layout), and on the phone you can simply tap the \u2191\u2191\u2193\u2193\u2190\u2192\u2190\u2192BA hint in the footer to unleash the storm."
+});
+
+updates.unshift({
+  "date":"2026-07-02",
+  "title":"maqsudjon.com \u2014 installable PWA, o'zbekcha, ASCII snake, and a 404 that rains",
+  "tag":"Tech",
+  "body":"The everything pass. The site is now an installable PWA \u2014 a service worker caches the shell so it opens offline, and Add to Home Screen gives it the spark icon. There is a language toggle: the O'Z link in the header (or the uz / en terminal commands) flips all the main content into Uzbek \u2014 hero, projects, stats, quotes, contact \u2014 while the build log stays English. Type snake in the terminal and the header canvas becomes a playable ASCII snake \u2014 arrow keys, wrap-around walls, score in the toast, Escape to quit. Broken links now land on an ASCII 404 page where matrix rain falls behind a SIGNAL LOST card. And for the search engines: richer Person schema (engineer and creator, with knowsAbout), a sitemap, and an accurate description \u2014 so Google learns I build platforms, not only tracks."
 });
 
 /* ==========================================================================
@@ -891,7 +901,35 @@ document.querySelectorAll('.quote').forEach(q=>quoteIO.observe(q));
       for(let k=0;k<d.len;k++){const y=Math.round(d.y-k);if(y<0||y>=rows)continue;const head=k===0;
         put(x,y,head?1:Math.max(0.12,1-k/d.len),head?0.25:0.4+0.35*(k/d.len));}}}
 
-  const SCENES={flow,globe,torus,wave,rain};
+  function snake(st,t){
+    fieldBase(st,t,0.03,0.07);
+    const put=st.put,cols=st.cols,rows=st.rows;
+    let g=st._sn;
+    if(!g||g.cols!==cols||g.rows!==rows){
+      g=st._sn={cols,rows,body:[[cols>>1,rows>>1]],dir:[1,0],pend:[1,0],
+        food:[3+(Math.random()*(cols-6)|0),3+(Math.random()*(rows-6)|0)],lt:t,score:0,shown:-1,dead:0};
+      window.__snake=g;
+    }
+    if(!g.dead&&t-g.lt>0.085){g.lt=t;g.dir=g.pend;
+      const h=[(g.body[0][0]+g.dir[0]+cols)%cols,(g.body[0][1]+g.dir[1]+rows)%rows];
+      if(g.body.some(b=>b[0]===h[0]&&b[1]===h[1]))g.dead=t;
+      else{g.body.unshift(h);
+        if(h[0]===g.food[0]&&h[1]===g.food[1]){g.score++;g.food=[1+(Math.random()*(cols-2)|0),1+(Math.random()*(rows-2)|0)];}
+        else g.body.pop();}
+    }
+    if(g.shown!==g.score||g.dead){
+      const tt=document.getElementById('toast');
+      if(tt){tt.textContent=g.dead?('\u25fc GAME OVER \u00b7 SCORE '+g.score+' \u00b7 RESTARTING\u2026'):('\u25fc SNAKE \u00b7 SCORE '+g.score+' \u00b7 ESC TO QUIT');}
+      g.shown=g.score;
+    }
+    if(g.dead&&t-g.dead>1.6){st._sn=null;return;}
+    put(g.food[0],g.food[1],0.6+0.4*Math.sin(t*8),0.62);
+    g.body.forEach((b,i)=>{const f=1-i/(g.body.length+4);put(b[0],b[1],g.dead?0.5:0.35+0.65*f,0.25+0.35*f);});
+    for(let x=0;x<cols;x++){put(x,0,0.25,0.5);put(x,rows-1,0.25,0.5);}
+    for(let y=0;y<rows;y++){put(0,y,0.25,0.5);put(cols-1,y,0.25,0.5);}
+  }
+
+  const SCENES={flow,globe,torus,wave,rain,snake};
 
   /* --- media sources --- */
   const VID=document.getElementById('srcvid');
@@ -1057,6 +1095,15 @@ document.querySelectorAll('.quote').forEach(q=>quoteIO.observe(q));
     });
   }
 
+  // snake controls (desktop): arrows steer, ESC quits back to the video
+  document.addEventListener('keydown',e=>{
+    if(!heroR||heroR.scene!=='snake')return;
+    const m={ArrowUp:[0,-1],ArrowDown:[0,1],ArrowLeft:[-1,0],ArrowRight:[1,0]}[e.key];
+    const g=window.__snake;
+    if(m&&g){e.preventDefault();if(!(m[0]===-g.dir[0]&&m[1]===-g.dir[1]))g.pend=m;}
+    if(e.key==='Escape'){heroR.scene='video';const tt=document.getElementById('toast');if(tt)tt.classList.remove('show');}
+  });
+
   /* --- Music: a tiny generated ambient synth (a nod to Matsumi) --- */
   const music=el('musicVolume'),musicOut=el('musicVolumeOut');
   let AC=null,master=null;
@@ -1130,7 +1177,7 @@ document.querySelectorAll('.quote').forEach(q=>quoteIO.observe(q));
   function print(t){lines.push(t);while(lines.length>4)lines.shift();out.textContent=lines.join('\n');}
   const go=sel=>{const el=document.querySelector(sel);if(el)el.scrollIntoView({behavior:'smooth'});};
   const CMDS={
-    help:()=>print('commands: whoami \u00b7 projects \u00b7 log \u00b7 contact \u00b7 scene <f1|flow|torus|globe|wave|rain> \u00b7 storm \u00b7 settings \u00b7 pangea8 \u00b7 clear'),
+    help:()=>print('commands: whoami \u00b7 projects \u00b7 log \u00b7 contact \u00b7 scene <f1|flow|torus|globe|wave|rain> \u00b7 snake \u00b7 storm \u00b7 uz / en \u00b7 settings \u00b7 pangea8 \u00b7 clear'),
     whoami:()=>print('Maqsudjon Polatov \u2014 a one-person lab, Tashkent. Code & steel.'),
     projects:()=>{go('#projects');print('\u2192 projects');},
     work:()=>CMDS.projects(),
@@ -1140,6 +1187,9 @@ document.querySelectorAll('.quote').forEach(q=>quoteIO.observe(q));
     hi:()=>CMDS.contact(),
     storm:()=>{if(window.__glyphstorm)window.__glyphstorm();print('\u25fc glyph storm engaged \u2014 ESC to exit');},
     konami:()=>CMDS.storm(),
+    snake:()=>{const A=window.__ascii;if(!A)return;const hero=A.renderers.find(r=>r.canvas.id==='hero-ascii');if(!hero)return;hero.scene='snake';window.scrollTo({top:0,behavior:'smooth'});const tt=document.getElementById('toast');if(tt){tt.textContent='\u25fc SNAKE \u00b7 ARROW KEYS \u00b7 ESC TO QUIT';tt.classList.add('show');}print('snake: arrows to steer \u00b7 esc to quit');},
+    uz:()=>{if(window.__setLang){window.__setLang('uz');print("til \u2192 o'zbekcha");}},
+    en:()=>{if(window.__setLang){window.__setLang('en');print('language \u2192 english');}},
     settings:()=>{document.body.classList.add('ascii-settings-open');print('\u2192 ascii settings open');},
     pangea8:()=>{window.open('https://pangea8.com','_blank','noopener');print('\u2192 pangea8.com');},
     clear:()=>{lines.length=0;out.textContent='';}
@@ -1159,6 +1209,69 @@ document.querySelectorAll('.quote').forEach(q=>quoteIO.observe(q));
     (CMDS[c]||(()=>print(c+': command not found \u2014 try help')))();
   });
 })();
+
+/* ==========================================================================
+   LANGUAGE TOGGLE (EN / UZ) — main content only; the build log stays EN
+   ========================================================================== */
+(function(){
+  const UZ={
+    hero1:"Men kod va po'latda ishlaydigan bir kishilik laboratoriyaman.",
+    hero2:"Bepul IELTS platformalar, AI agentlar va real odamlarga yetib boradigan vositalar quraman \u2014 boshidan oxirigacha, O'zbekistondan internetga.",
+    aboutTitle:"Qiziqish tayyor vositaga aylanadi.",
+    aboutP1:"Qilayotganlarimning aksariyati IELTS va ingliz tili o'rganuvchilar uchun: bepul listening va reading testlar ekotizimi, AI feedback beruvchi essay platforma, speaking lab va 40 kunlik challenge tracker. So'nggi paytlarda katta til modellari bilan ishlaydigan AI agentlar va vositalar quryapman.",
+    aboutQuote:"Kichik foydali narsalarni boshidan oxirigacha o'zim qurib chiqaraman \u2014 odatda o'z domenida turgan bitta mustaqil fayl. <strong>Bitta talabaning o'qishiga yordam bersa ham \u2014 arzigan.</strong>",
+    aboutP2:"Web, Python, AI va payvand ishini mustaqil o'rganganman. O'zbek, ingliz (C1), biroz koreys tili.",
+    whyTitle:"Nega pangea8",
+    whySub:"Superkontinent, Band 8 va cheksizlik haqida",
+    projTitle:"Yettita narsa \u2014 real foydalanuvchilarga yetkazilgan.",
+    stat1:"BEPUL IELTS TESTLAR",stat2:"SPEAKING MAVZULAR",stat3:"TRACKER VAZIFALAR",stat4:"MAHSULOT \u00b7 YOLG'IZ",
+    p1:"Bepul IELTS ekotizimi \u2014 zudlik bilan baholanadigan 90+ listening va reading test, essay platforma, speaking lab va 40 kunlik tracker.",
+    p2:"IELTS Speaking lab \u2014 brauzerda yozib oling: 166 mavzu, jonli qidiruv, band ballari va tengdosh feedback.",
+    p3:"Yozish platformasi \u2014 essay topshiring, AI'dan band-ball feedback oling; focus rejimi, imtihon taymeri, PDF eksport.",
+    p4:"40 kunlik IELTS challenge tracker \u2014 jonli leaderboard, streak xaritasi va o'qituvchi paneli bilan PWA.",
+    p5:"Ingliz tilini bitta-bitta mushuk bilan o'rganing \u2014 audio va o'zbekcha tarjimali idiomalar, hammasi mushuklar haqida.",
+    p6:"Suratni aniq pasport va viza o'lchamlariga kesadi, fonni qurilmaning o'zida AI bilan oqartiradi. Hech narsa telefoningizdan chiqmaydi.",
+    p7:"So'z o'yini \u2014 yashirin so'zni olti urinishda toping; kataklar yashil, sariq va kulrangga ochiladi.",
+    quoteBig:"Joylashuv endi ahamiyatsiz. Internet uni yo'q qildi. Men Toshkentdan turib quraman \u2014 vositalar esa talaba qayerda ochsa, o'sha yerda ishlaydi.",
+    quoteAttr:"Maqsudjon \u2014 O'zbekistondan turib qurish haqida",
+    craftTitle:"Boshidan oxirigacha, o'ziga xos maydonlarda.",
+    craftQuote:"pangea8 bitta e'tiqod ustiga qurilgan: <strong>imtihonga tayyorgarlik bepul bo'lishi kerak.</strong> Har yili talabalar aslida bitta URL bo'la oladigan materiallarga pul to'laydi. Shuning uchun butun ekotizim ochiq domenlarda, tekin va istalgan telefonda ishlaydi.",
+    craftLead:"So'nggi bir yilda shularni chiqardim:",
+    li1:"<strong>Listening va reading</strong> \u2014 audio va zudlik baholash bilan 90+ to'liq test",
+    li2:"<strong>Writing</strong> \u2014 AI band-ball feedback beruvchi essay platforma",
+    li3:"<strong>Speaking</strong> \u2014 brauzerda yozib oladigan lab, 166 mavzu",
+    li4:"<strong>Odat</strong> \u2014 streak va leaderboard bilan 40 kunlik challenge tracker",
+    craftP:"O'zim ham shu hunarning talabasiman \u2014 shuning uchun o'qituvchilarni chetlab emas, ular bilan birga ishlaydigan vositalar quraman: har bir platformada o'qituvchi paneli bor.",
+    contactTitle:"Men bilan ishlang \u2014 yoki shunchaki salom deng.",
+    collab:"Hamkorlik",findme:"Meni toping",
+    collabP:"Talabalar, musiqa yoki web uchun nimadir qurayotgan bo'lsangiz \u2014 yoki shunchaki gaplashgingiz kelsa \u2014 yozing. Telegram eng tezkori.",
+    tgBtn:"Telegramda yozing",
+    logTitle:"Ish jurnali.",
+    footBig:"Kod va po'latda ishlaydigan bir kishilik laboratoriya.",
+    footP:"Bepul IELTS va ingliz tili platformalari, AI agentlar va kichik o'tkir vositalar \u2014 bir kishi tomonidan yaratilib, real talabalarga tekin yetkaziladi.",
+    sayhi:"Salom deng"
+  };
+  const btn=document.getElementById('langBtn');
+  function apply(lang){
+    document.documentElement.lang=lang==='uz'?'uz':'en';
+    document.querySelectorAll('[data-i18n]').forEach(el=>{
+      const k=el.dataset.i18n;
+      if(el.dataset.enHtml==null)el.dataset.enHtml=el.innerHTML;
+      el.innerHTML=(lang==='uz'&&UZ[k])?UZ[k]:el.dataset.enHtml;
+      if(el.hasAttribute('data-scramble')){el.dataset.final=el.textContent;el.dataset.done='1';}
+    });
+    if(btn)btn.textContent=lang==='uz'?'EN':"O'Z";
+    try{localStorage.setItem('mp-lang',lang)}catch(e){}
+    window.__lang=lang;
+  }
+  window.__setLang=apply;
+  let saved='en';try{saved=localStorage.getItem('mp-lang')||'en'}catch(e){}
+  if(saved==='uz')apply('uz');else window.__lang='en';
+  if(btn)btn.addEventListener('click',e=>{e.preventDefault();apply(window.__lang==='uz'?'en':'uz');});
+})();
+
+/* service worker — installable PWA, offline shell */
+if('serviceWorker' in navigator&&location.protocol==='https:')navigator.serviceWorker.register('sw.js').catch(()=>{});
 
 /* ==========================================================================
    KONAMI — glyph storm easter egg (hint in the footer)
