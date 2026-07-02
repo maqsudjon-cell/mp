@@ -1,5 +1,5 @@
 /* maqsudjon.com service worker — offline shell, cache-first assets */
-const CACHE = 'mp-v1';
+const CACHE = 'mp-v2';
 const SHELL = ['./', './index.html', './profile.jpg', './favicon.svg', './og-image.png'];
 
 self.addEventListener('install', e => {
@@ -34,7 +34,7 @@ self.addEventListener('fetch', e => {
   // static assets: cache-first
   e.respondWith(
     caches.match(e.request).then(m => m || fetch(e.request).then(r => {
-      if (r.ok && /\.(png|jpg|svg|ico|webmanifest)$/.test(url.pathname)) {
+      if (r.ok && /\.(png|jpg|svg|ico|webmanifest|pdf)$/.test(url.pathname)) {
         const cp = r.clone();
         caches.open(CACHE).then(c => c.put(e.request, cp));
       }

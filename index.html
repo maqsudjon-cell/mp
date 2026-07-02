@@ -318,6 +318,16 @@ body.modal-open .modal-scroll{opacity:1;transform:translate3d(0,0,0);transition-
 .toast{position:fixed;left:50%;bottom:26px;transform:translate(-50%,20px);z-index:96;font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#8df9e8;background:#000d;border:var(--border-subtle);padding:10px 16px;opacity:0;pointer-events:none;transition:opacity .5s,transform .5s;white-space:nowrap}
 .toast.show{opacity:1;transform:translate(-50%,0)}
 
+/* accessibility */
+a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid #7aa2ff;outline-offset:3px}
+.skip{position:fixed;left:10px;top:-60px;z-index:200;background:#fff;color:#000;padding:10px 16px;font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;transition:top .2s}
+.skip:focus{top:10px}
+.case-link{display:inline-block;font-family:'Geist Mono',monospace;font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:#f2d8cd;border-bottom:1px dotted #4d4d4d;margin-top:12px;cursor:pointer}
+.plink{display:inline-block;font-family:'Geist Mono',monospace;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:#666;margin-top:8px;cursor:pointer}
+.plink:hover{color:#f2d8cd}
+.article-body{display:none}
+.article-body.on{display:block}
+
 /* reveal + reduced motion */
 .reveal{opacity:0;transform:translateY(16px);transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1)}
 .reveal.in{opacity:1;transform:none}
@@ -329,8 +339,9 @@ body.modal-open .modal-scroll{opacity:1;transform:translate3d(0,0,0);transition-
 </head>
 <body>
 
+<a class="skip" href="#about">Skip to content</a>
 <div class="progress" id="progress" aria-hidden="true"></div>
-<div class="toast" id="toast" aria-hidden="true"></div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
 <video id="srcvid" muted loop autoplay playsinline preload="auto" aria-hidden="true" style="position:fixed;left:0;bottom:0;width:2px;height:2px;opacity:.01;pointer-events:none;z-index:-1"><source src="f1.mp4" type="video/mp4"></video>
 
 <!-- NAV (slides in after the header wordmark scrolls away) -->
@@ -348,7 +359,7 @@ body.modal-open .modal-scroll{opacity:1;transform:translate3d(0,0,0);transition-
       <div class="modal-frame">
         <div class="content-padding">
           <div class="modal-close-sticky"><a id="modal-close-button" href="#" class="btn">Close</a></div>
-          <div id="modal-article-1" class="article-body text-md">
+          <div id="modal-article-1" class="article-body on text-md">
             <h2 class="text-xxl font-header color-light">One world, one platform.</h2>
             <p>Pangea was the single supercontinent — every landmass on Earth joined into one, before everything drifted apart. I liked the metaphor: <strong>one world, one platform</strong>. A student in Tashkent, in Jakarta, in Lagos opens the same URL and gets the same tests, free.</p>
             <p>The 8 in pangea8 stands for <strong>Band 8</strong> — the score most students aim for. Laid sideways, it is also the infinity symbol. Pangea forever, Pangea eight.</p>
@@ -356,6 +367,48 @@ body.modal-open .modal-scroll{opacity:1;transform:translate3d(0,0,0);transition-
             <p>What started as a handful of listening tests grew into an ecosystem: <strong>90+ listening and reading tests</strong> with instant scoring, an essay platform with AI band-score feedback, a speaking lab where students record in the browser, and a 40-day challenge tracker with streaks and a leaderboard. Every piece ships as a single self-contained file — vanilla JS, no build step, deployed on GitHub Pages with Firebase underneath.</p>
             <p>I am self-taught across web, Python, AI and welding — the workshop and the codebase turn out to demand the same thing: measure carefully, join cleanly, and test the seam under load. I speak Uzbek, English and some Korean. Once in a while there is still a quiet <a href="https://youtube.com/@matsumimusic" target="_blank" rel="noopener">Matsumi</a> track.</p>
             <p><em>If it helps one student study, it was worth making.</em> That is the whole business model, and the whole point.</p>
+          </div>
+          <div id="modal-case-1" class="article-body text-md">
+            <h2 class="text-xxl font-header color-light">pangea8 — the free IELTS ecosystem</h2>
+            <p class="font-mono text-xs color-subtle" style="letter-spacing:.14em">CASE STUDY · WEB · FIREBASE · SUPABASE · 2026</p>
+            <p>pangea8 started in May 2026 as a handful of listening tests and grew into a full ecosystem: <strong>90+ listening and reading tests</strong> with instant scoring, an essay platform with AI band-score feedback, a speaking lab with 166 topics, and a 40-day challenge tracker — every piece a single self-contained file on GitHub Pages with Firebase underneath.</p><div class="quote"><p>Exam prep should be free. Every year students pay for materials that could be a single URL.</p></div><p>The landing page went through three full design iterations in one session — a renaissance museum, cream minimalism, and finally dark hi-tech in pangea8’s own emerald — with a live product mock whose search bar types by itself. Google sign-in never blocks practice: if the popup fails, you still go straight to the tests.</p>
+            <div style="margin-top:1.6em"><a class="btn" href="https://pangea8.com" target="_blank" rel="noopener">Visit live</a></div>
+          </div>
+          <div id="modal-case-2" class="article-body text-md">
+            <h2 class="text-xxl font-header color-light">pangea8 Speaking — a live speaking lab</h2>
+            <p class="font-mono text-xs color-subtle" style="letter-spacing:.14em">CASE STUDY · WEB · FIREBASE · SUPABASE · 2026</p>
+            <p>The speaking half of pangea8: the whole official Jan–Apr 2026 question bank preloaded — <strong>166 topics</strong> across Parts 1–3, numbered exactly like the real exam. A student picks a topic, taps record, and the audio uploads for the teacher to score.</p><p>Recordings are tiny, so a whole class can practise for months on the free tier — Firebase holds questions and feedback, Supabase Storage holds audio. An in-memory cache gives a cache-first first paint, search is debounced across questions and student names, and deleting an answer automatically frees its audio file.</p><p>Teachers leave band scores and notes; classmates leave peer feedback. One self-contained file, no build step.</p>
+            <div style="margin-top:1.6em"><a class="btn" href="https://maqsudjon-cell.github.io/pangea8-speaking/" target="_blank" rel="noopener">Visit live</a></div>
+          </div>
+          <div id="modal-case-3" class="article-body text-md">
+            <h2 class="text-xxl font-header color-light">pangea8 Essay — writing with AI feedback</h2>
+            <p class="font-mono text-xs color-subtle" style="letter-spacing:.14em">CASE STUDY · WEB · FIREBASE · WRITING · 2026</p>
+            <p>Submit an essay, get AI band-score feedback — collapsed until you ask for it, so long feedback never clutters the list. A real-time listener makes submissions appear instantly, and essay content is sanitised before rendering.</p><p>The exam details matter: spellcheck, autocorrect and grammar underlines are disabled so students write a fair exam; a focus mode hides everything but the editor; the timer pulses and beeps in the final minute; the word count is colour-coded against the IELTS minimum.</p><p>Every essay exports as a branded PDF with the candidate’s details, word count and teacher feedback — designed to look clean in colour and black-and-white.</p>
+            <div style="margin-top:1.6em"><a class="btn" href="https://maqsudjon-cell.github.io/pangeya-essay-platform-/index-14.html" target="_blank" rel="noopener">Visit live</a></div>
+          </div>
+          <div id="modal-case-4" class="article-body text-md">
+            <h2 class="text-xxl font-header color-light">Flarestamina — the 40-day challenge</h2>
+            <p class="font-mono text-xs color-subtle" style="letter-spacing:.14em">CASE STUDY · PWA · FIRESTORE · 2026</p>
+            <p>A complete 40-day IELTS challenge tracker: <strong>265 tasks</strong> across Listening, Reading, Writing and Speaking. Students sign in with Google, tick tasks daily, and progress syncs across devices in real time — with a progress ring, a streak heatmap and a class leaderboard.</p><p>A gated teacher dashboard lets me add or remove days, watch individual progress and track the leaderboard. Built with vanilla JS and Firebase v10 over CDN, deployed to GitHub Pages on its own domain.</p><div class="quote"><p>This was the first product I shipped that other people actually used to study — it taught me Firebase security rules, real-time sync, and shipping something that just works.</p></div>
+            <div style="margin-top:1.6em"><a class="btn" href="https://flarestamina.com" target="_blank" rel="noopener">Visit live</a></div>
+          </div>
+          <div id="modal-case-5" class="article-body text-md">
+            <h2 class="text-xxl font-header color-light">Minnos — English, one cat at a time</h2>
+            <p class="font-mono text-xs color-subtle" style="letter-spacing:.14em">CASE STUDY · WEB · IDIOMS · 2026</p>
+            <p>Learn English idioms by petting a cat. Every idiom is about cats, every one comes with audio and an Uzbek translation, and the whole site is small enough to load instantly on any phone.</p><p>Minnos is deliberately tiny — a reminder that a useful learning tool doesn’t need a framework, a backend, or a sign-up wall. Pet the cat, learn a phrase, come back tomorrow.</p>
+            <div style="margin-top:1.6em"><a class="btn" href="https://minnos.cc" target="_blank" rel="noopener">Visit live</a></div>
+          </div>
+          <div id="modal-case-6" class="article-body text-md">
+            <h2 class="text-xxl font-header color-light">ID Photo Maker — documents, on-device</h2>
+            <p class="font-mono text-xs color-subtle" style="letter-spacing:.14em">CASE STUDY · WEB · ON-DEVICE AI · 2026</p>
+            <p>Drop in a photo, pick a country’s passport or visa size, and get a print-ready document photo — with an on-device AI step that turns the background white, which most documents require.</p><div class="quote"><p>100% client-side: no upload, no server, no sign-in. Your photo never leaves your phone.</p></div><p>The privacy constraint is the whole design: everything — cropping, resizing, background whitening — runs in the browser, so the tool is trustworthy by construction rather than by promise.</p>
+            <div style="margin-top:1.6em"><a class="btn" href="https://maqsudjon-cell.github.io/id-passport-photo-maker/" target="_blank" rel="noopener">Visit live</a></div>
+          </div>
+          <div id="modal-case-7" class="article-body text-md">
+            <h2 class="text-xxl font-header color-light">pierics — a word game</h2>
+            <p class="font-mono text-xs color-subtle" style="letter-spacing:.14em">CASE STUDY · WEB · GAME · 2026</p>
+            <p>Guess the hidden word in six tries; tiles flip green, yellow and grey. The kind of build I love — tight rules, instant feedback, whole thing self-contained in the browser on its own domain.</p><p>The craft was in the word list: every non-five-letter word swapped out, ~80 common words added to the allowed guesses, and a hand-curated set of 128 answers. The keyboard keys were rebuilt to be big and tap-friendly on phones. Small game — the details make it feel right.</p>
+            <div style="margin-top:1.6em"><a class="btn" href="https://pierics.com" target="_blank" rel="noopener">Visit live</a></div>
           </div>
         </div>
         <div class="grid-wrapper-subtle">
@@ -487,13 +540,13 @@ body.modal-open .modal-scroll{opacity:1;transform:translate3d(0,0,0);transition-
         </div>
       </div>
       <div class="grid-wrapper-subtle">
-        <a href="https://pangea8.com" target="_blank" rel="noopener" class="grid-item-subtle"><div class="project-inner content-padding"><div class="p-num">// 001</div><div><div class="p-name">pangea8</div><div class="p-desc text-sm" data-i18n="p1">A free IELTS ecosystem — 90+ listening &amp; reading tests with instant scoring, an essay platform, a speaking lab and a 40-day tracker.</div><div class="p-meta">WEB · FIREBASE · IELTS</div></div><div class="p-side"><div class="p-mini"><canvas data-scene="globe" data-cell="6" aria-hidden="true"></canvas></div><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 12 12"><g fill="#FFF"><path d="M2,12h9a1,1,0,0,0,0-2H2V1A1,1,0,0,0,0,1v9A2,2,0,0,0,2,12Z"/><path d="M5.293,6.707a1,1,0,0,0,1.414,0L9.354,4.061l1.792,1.793A.5.5,0,0,0,11.5,6a.512.512,0,0,0,.191-.038A.5.5,0,0,0,12,5.5V.5a.5.5,0,0,0-.5-.5h-5a.5.5,0,0,0-.354.854L7.939,2.646,5.293,5.293A1,1,0,0,0,5.293,6.707Z"/></g></svg></div></div></a>
-        <a href="https://maqsudjon-cell.github.io/pangea8-speaking/" target="_blank" rel="noopener" class="grid-item-subtle"><div class="project-inner content-padding"><div class="p-num">// 002</div><div><div class="p-name">pangea8 Speaking</div><div class="p-desc text-sm" data-i18n="p2">An IELTS Speaking lab — record in the browser, 166 topics, live search, band scores and peer feedback.</div><div class="p-meta">WEB · FIREBASE · SUPABASE</div></div><div class="p-side"><div class="p-mini"><canvas data-scene="wave" data-cell="6" aria-hidden="true"></canvas></div><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 12 12"><g fill="#FFF"><path d="M2,12h9a1,1,0,0,0,0-2H2V1A1,1,0,0,0,0,1v9A2,2,0,0,0,2,12Z"/><path d="M5.293,6.707a1,1,0,0,0,1.414,0L9.354,4.061l1.792,1.793A.5.5,0,0,0,11.5,6a.512.512,0,0,0,.191-.038A.5.5,0,0,0,12,5.5V.5a.5.5,0,0,0-.5-.5h-5a.5.5,0,0,0-.354.854L7.939,2.646,5.293,5.293A1,1,0,0,0,5.293,6.707Z"/></g></svg></div></div></a>
-        <a href="https://maqsudjon-cell.github.io/pangeya-essay-platform-/index-14.html" target="_blank" rel="noopener" class="grid-item-subtle"><div class="project-inner content-padding"><div class="p-num">// 003</div><div><div class="p-name">pangea8 Essay</div><div class="p-desc text-sm" data-i18n="p3">A writing platform — submit essays, get AI band-score feedback, focus mode, an exam timer and branded PDF export.</div><div class="p-meta">WEB · FIREBASE · WRITING</div></div><div class="p-side"><div class="p-mini"><canvas data-scene="flow" data-cell="6" aria-hidden="true"></canvas></div><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 12 12"><g fill="#FFF"><path d="M2,12h9a1,1,0,0,0,0-2H2V1A1,1,0,0,0,0,1v9A2,2,0,0,0,2,12Z"/><path d="M5.293,6.707a1,1,0,0,0,1.414,0L9.354,4.061l1.792,1.793A.5.5,0,0,0,11.5,6a.512.512,0,0,0,.191-.038A.5.5,0,0,0,12,5.5V.5a.5.5,0,0,0-.5-.5h-5a.5.5,0,0,0-.354.854L7.939,2.646,5.293,5.293A1,1,0,0,0,5.293,6.707Z"/></g></svg></div></div></a>
-        <a href="https://flarestamina.com" target="_blank" rel="noopener" class="grid-item-subtle"><div class="project-inner content-padding"><div class="p-num">// 004</div><div><div class="p-name">Flarestamina</div><div class="p-desc text-sm" data-i18n="p4">A 40-day IELTS challenge tracker — PWA with a live leaderboard, streak heatmap and a teacher dashboard.</div><div class="p-meta">PWA · FIRESTORE · TRACKER</div></div><div class="p-side"><div class="p-mini"><canvas data-scene="torus" data-cell="6" aria-hidden="true"></canvas></div><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 12 12"><g fill="#FFF"><path d="M2,12h9a1,1,0,0,0,0-2H2V1A1,1,0,0,0,0,1v9A2,2,0,0,0,2,12Z"/><path d="M5.293,6.707a1,1,0,0,0,1.414,0L9.354,4.061l1.792,1.793A.5.5,0,0,0,11.5,6a.512.512,0,0,0,.191-.038A.5.5,0,0,0,12,5.5V.5a.5.5,0,0,0-.5-.5h-5a.5.5,0,0,0-.354.854L7.939,2.646,5.293,5.293A1,1,0,0,0,5.293,6.707Z"/></g></svg></div></div></a>
-        <a href="https://minnos.cc" target="_blank" rel="noopener" class="grid-item-subtle"><div class="project-inner content-padding"><div class="p-num">// 005</div><div><div class="p-name">Minnos</div><div class="p-desc text-sm" data-i18n="p5">Learn English one cat at a time — pet the cat for idioms, every one about cats, with audio and Uzbek translations.</div><div class="p-meta">WEB · ENGLISH · IDIOMS</div></div><div class="p-side"><div class="p-mini"><canvas data-scene="rain" data-cell="6" aria-hidden="true"></canvas></div><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 12 12"><g fill="#FFF"><path d="M2,12h9a1,1,0,0,0,0-2H2V1A1,1,0,0,0,0,1v9A2,2,0,0,0,2,12Z"/><path d="M5.293,6.707a1,1,0,0,0,1.414,0L9.354,4.061l1.792,1.793A.5.5,0,0,0,11.5,6a.512.512,0,0,0,.191-.038A.5.5,0,0,0,12,5.5V.5a.5.5,0,0,0-.5-.5h-5a.5.5,0,0,0-.354.854L7.939,2.646,5.293,5.293A1,1,0,0,0,5.293,6.707Z"/></g></svg></div></div></a>
-        <a href="https://maqsudjon-cell.github.io/id-passport-photo-maker/" target="_blank" rel="noopener" class="grid-item-subtle"><div class="project-inner content-padding"><div class="p-num">// 006</div><div><div class="p-name">ID Photo Maker</div><div class="p-desc text-sm" data-i18n="p6">Crops photos to exact passport and visa sizes, with on-device AI background whitening. Nothing leaves your phone.</div><div class="p-meta">WEB · IMAGE · ON-DEVICE AI</div></div><div class="p-side"><div class="p-mini"><canvas data-scene="portrait" data-cell="6" aria-hidden="true"></canvas></div><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 12 12"><g fill="#FFF"><path d="M2,12h9a1,1,0,0,0,0-2H2V1A1,1,0,0,0,0,1v9A2,2,0,0,0,2,12Z"/><path d="M5.293,6.707a1,1,0,0,0,1.414,0L9.354,4.061l1.792,1.793A.5.5,0,0,0,11.5,6a.512.512,0,0,0,.191-.038A.5.5,0,0,0,12,5.5V.5a.5.5,0,0,0-.5-.5h-5a.5.5,0,0,0-.354.854L7.939,2.646,5.293,5.293A1,1,0,0,0,5.293,6.707Z"/></g></svg></div></div></a>
-        <a href="https://pierics.com" target="_blank" rel="noopener" class="grid-item-subtle"><div class="project-inner content-padding"><div class="p-num">// 007</div><div><div class="p-name">pierics</div><div class="p-desc text-sm" data-i18n="p7">A word game — guess the hidden word in six tries; tiles flip green, yellow and grey. Quick to pick up, hard to put down.</div><div class="p-meta">WEB · GAME · WORDLE</div></div><div class="p-side"><div class="p-mini"><canvas data-scene="flow" data-cell="6" aria-hidden="true"></canvas></div><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 12 12"><g fill="#FFF"><path d="M2,12h9a1,1,0,0,0,0-2H2V1A1,1,0,0,0,0,1v9A2,2,0,0,0,2,12Z"/><path d="M5.293,6.707a1,1,0,0,0,1.414,0L9.354,4.061l1.792,1.793A.5.5,0,0,0,11.5,6a.512.512,0,0,0,.191-.038A.5.5,0,0,0,12,5.5V.5a.5.5,0,0,0-.5-.5h-5a.5.5,0,0,0-.354.854L7.939,2.646,5.293,5.293A1,1,0,0,0,5.293,6.707Z"/></g></svg></div></div></a>
+        <a href="https://pangea8.com" target="_blank" rel="noopener" class="grid-item-subtle"><div class="project-inner content-padding"><div class="p-num">// 001</div><div><div class="p-name">pangea8</div><div class="p-desc text-sm" data-i18n="p1">A free IELTS ecosystem — 90+ listening &amp; reading tests with instant scoring, an essay platform, a speaking lab and a 40-day tracker.</div><div class="p-meta">WEB · FIREBASE · IELTS</div><span class="case-link" data-case="modal-case-1" role="button" tabindex="0">Case study +</span></div><div class="p-side"><div class="p-mini"><canvas data-scene="globe" data-cell="6" aria-hidden="true"></canvas></div><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 12 12"><g fill="#FFF"><path d="M2,12h9a1,1,0,0,0,0-2H2V1A1,1,0,0,0,0,1v9A2,2,0,0,0,2,12Z"/><path d="M5.293,6.707a1,1,0,0,0,1.414,0L9.354,4.061l1.792,1.793A.5.5,0,0,0,11.5,6a.512.512,0,0,0,.191-.038A.5.5,0,0,0,12,5.5V.5a.5.5,0,0,0-.5-.5h-5a.5.5,0,0,0-.354.854L7.939,2.646,5.293,5.293A1,1,0,0,0,5.293,6.707Z"/></g></svg></div></div></a>
+        <a href="https://maqsudjon-cell.github.io/pangea8-speaking/" target="_blank" rel="noopener" class="grid-item-subtle"><div class="project-inner content-padding"><div class="p-num">// 002</div><div><div class="p-name">pangea8 Speaking</div><div class="p-desc text-sm" data-i18n="p2">An IELTS Speaking lab — record in the browser, 166 topics, live search, band scores and peer feedback.</div><div class="p-meta">WEB · FIREBASE · SUPABASE</div><span class="case-link" data-case="modal-case-2" role="button" tabindex="0">Case study +</span></div><div class="p-side"><div class="p-mini"><canvas data-scene="wave" data-cell="6" aria-hidden="true"></canvas></div><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 12 12"><g fill="#FFF"><path d="M2,12h9a1,1,0,0,0,0-2H2V1A1,1,0,0,0,0,1v9A2,2,0,0,0,2,12Z"/><path d="M5.293,6.707a1,1,0,0,0,1.414,0L9.354,4.061l1.792,1.793A.5.5,0,0,0,11.5,6a.512.512,0,0,0,.191-.038A.5.5,0,0,0,12,5.5V.5a.5.5,0,0,0-.5-.5h-5a.5.5,0,0,0-.354.854L7.939,2.646,5.293,5.293A1,1,0,0,0,5.293,6.707Z"/></g></svg></div></div></a>
+        <a href="https://maqsudjon-cell.github.io/pangeya-essay-platform-/index-14.html" target="_blank" rel="noopener" class="grid-item-subtle"><div class="project-inner content-padding"><div class="p-num">// 003</div><div><div class="p-name">pangea8 Essay</div><div class="p-desc text-sm" data-i18n="p3">A writing platform — submit essays, get AI band-score feedback, focus mode, an exam timer and branded PDF export.</div><div class="p-meta">WEB · FIREBASE · WRITING</div><span class="case-link" data-case="modal-case-3" role="button" tabindex="0">Case study +</span></div><div class="p-side"><div class="p-mini"><canvas data-scene="flow" data-cell="6" aria-hidden="true"></canvas></div><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 12 12"><g fill="#FFF"><path d="M2,12h9a1,1,0,0,0,0-2H2V1A1,1,0,0,0,0,1v9A2,2,0,0,0,2,12Z"/><path d="M5.293,6.707a1,1,0,0,0,1.414,0L9.354,4.061l1.792,1.793A.5.5,0,0,0,11.5,6a.512.512,0,0,0,.191-.038A.5.5,0,0,0,12,5.5V.5a.5.5,0,0,0-.5-.5h-5a.5.5,0,0,0-.354.854L7.939,2.646,5.293,5.293A1,1,0,0,0,5.293,6.707Z"/></g></svg></div></div></a>
+        <a href="https://flarestamina.com" target="_blank" rel="noopener" class="grid-item-subtle"><div class="project-inner content-padding"><div class="p-num">// 004</div><div><div class="p-name">Flarestamina</div><div class="p-desc text-sm" data-i18n="p4">A 40-day IELTS challenge tracker — PWA with a live leaderboard, streak heatmap and a teacher dashboard.</div><div class="p-meta">PWA · FIRESTORE · TRACKER</div><span class="case-link" data-case="modal-case-4" role="button" tabindex="0">Case study +</span></div><div class="p-side"><div class="p-mini"><canvas data-scene="torus" data-cell="6" aria-hidden="true"></canvas></div><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 12 12"><g fill="#FFF"><path d="M2,12h9a1,1,0,0,0,0-2H2V1A1,1,0,0,0,0,1v9A2,2,0,0,0,2,12Z"/><path d="M5.293,6.707a1,1,0,0,0,1.414,0L9.354,4.061l1.792,1.793A.5.5,0,0,0,11.5,6a.512.512,0,0,0,.191-.038A.5.5,0,0,0,12,5.5V.5a.5.5,0,0,0-.5-.5h-5a.5.5,0,0,0-.354.854L7.939,2.646,5.293,5.293A1,1,0,0,0,5.293,6.707Z"/></g></svg></div></div></a>
+        <a href="https://minnos.cc" target="_blank" rel="noopener" class="grid-item-subtle"><div class="project-inner content-padding"><div class="p-num">// 005</div><div><div class="p-name">Minnos</div><div class="p-desc text-sm" data-i18n="p5">Learn English one cat at a time — pet the cat for idioms, every one about cats, with audio and Uzbek translations.</div><div class="p-meta">WEB · ENGLISH · IDIOMS</div><span class="case-link" data-case="modal-case-5" role="button" tabindex="0">Case study +</span></div><div class="p-side"><div class="p-mini"><canvas data-scene="rain" data-cell="6" aria-hidden="true"></canvas></div><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 12 12"><g fill="#FFF"><path d="M2,12h9a1,1,0,0,0,0-2H2V1A1,1,0,0,0,0,1v9A2,2,0,0,0,2,12Z"/><path d="M5.293,6.707a1,1,0,0,0,1.414,0L9.354,4.061l1.792,1.793A.5.5,0,0,0,11.5,6a.512.512,0,0,0,.191-.038A.5.5,0,0,0,12,5.5V.5a.5.5,0,0,0-.5-.5h-5a.5.5,0,0,0-.354.854L7.939,2.646,5.293,5.293A1,1,0,0,0,5.293,6.707Z"/></g></svg></div></div></a>
+        <a href="https://maqsudjon-cell.github.io/id-passport-photo-maker/" target="_blank" rel="noopener" class="grid-item-subtle"><div class="project-inner content-padding"><div class="p-num">// 006</div><div><div class="p-name">ID Photo Maker</div><div class="p-desc text-sm" data-i18n="p6">Crops photos to exact passport and visa sizes, with on-device AI background whitening. Nothing leaves your phone.</div><div class="p-meta">WEB · IMAGE · ON-DEVICE AI</div><span class="case-link" data-case="modal-case-6" role="button" tabindex="0">Case study +</span></div><div class="p-side"><div class="p-mini"><canvas data-scene="portrait" data-cell="6" aria-hidden="true"></canvas></div><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 12 12"><g fill="#FFF"><path d="M2,12h9a1,1,0,0,0,0-2H2V1A1,1,0,0,0,0,1v9A2,2,0,0,0,2,12Z"/><path d="M5.293,6.707a1,1,0,0,0,1.414,0L9.354,4.061l1.792,1.793A.5.5,0,0,0,11.5,6a.512.512,0,0,0,.191-.038A.5.5,0,0,0,12,5.5V.5a.5.5,0,0,0-.5-.5h-5a.5.5,0,0,0-.354.854L7.939,2.646,5.293,5.293A1,1,0,0,0,5.293,6.707Z"/></g></svg></div></div></a>
+        <a href="https://pierics.com" target="_blank" rel="noopener" class="grid-item-subtle"><div class="project-inner content-padding"><div class="p-num">// 007</div><div><div class="p-name">pierics</div><div class="p-desc text-sm" data-i18n="p7">A word game — guess the hidden word in six tries; tiles flip green, yellow and grey. Quick to pick up, hard to put down.</div><div class="p-meta">WEB · GAME · WORDLE</div><span class="case-link" data-case="modal-case-7" role="button" tabindex="0">Case study +</span></div><div class="p-side"><div class="p-mini"><canvas data-scene="flow" data-cell="6" aria-hidden="true"></canvas></div><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 12 12"><g fill="#FFF"><path d="M2,12h9a1,1,0,0,0,0-2H2V1A1,1,0,0,0,0,1v9A2,2,0,0,0,2,12Z"/><path d="M5.293,6.707a1,1,0,0,0,1.414,0L9.354,4.061l1.792,1.793A.5.5,0,0,0,11.5,6a.512.512,0,0,0,.191-.038A.5.5,0,0,0,12,5.5V.5a.5.5,0,0,0-.5-.5h-5a.5.5,0,0,0-.354.854L7.939,2.646,5.293,5.293A1,1,0,0,0,5.293,6.707Z"/></g></svg></div></div></a>
       </div>
     </div>
     <div class="grid-g gr"></div>
@@ -572,7 +625,7 @@ body.modal-open .modal-scroll{opacity:1;transform:translate3d(0,0,0);transition-
       </div>
       <div class="content-padding">
         <p class="text-md" data-i18n="collabP">If you are building something for students, music, or the web — or you just want to talk shop — I would love to hear from you. Telegram is fastest.</p>
-        <div style="padding:var(--space-md) 0 0"><a href="https://t.me/mrbmp13" target="_blank" rel="noopener" class="btn" data-i18n="tgBtn">Message on Telegram</a></div>
+        <div style="padding:var(--space-md) 0 0;display:flex;gap:10px;flex-wrap:wrap"><a href="https://t.me/mrbmp13" target="_blank" rel="noopener" class="btn" data-i18n="tgBtn">Message on Telegram</a><a href="cv.pdf" target="_blank" rel="noopener" class="btn" style="background:transparent;color:#fff" data-i18n="cvBtn">Download CV</a></div>
       </div>
       <div class="grid-wrapper-subtle">
         <div class="grid-item-subtle content-padding-horizontal content-padding-half-vertical"><h3 class="mono-head" data-i18n="findme">Find me</h3></div>
@@ -585,6 +638,8 @@ body.modal-open .modal-scroll{opacity:1;transform:translate3d(0,0,0);transition-
           <a href="https://x.com/mpolatov13" target="_blank" rel="noopener" class="a-subtle font-mono">X — @mpolatov13</a>
           <a href="https://youtube.com/@matsumimusic" target="_blank" rel="noopener" class="a-subtle font-mono">YOUTUBE — @matsumimusic</a>
           <a href="mailto:polatovmaqsudjon1@gmail.com" class="a-subtle font-mono">EMAIL — polatovmaqsudjon1@gmail.com</a>
+          <a href="cv.pdf" target="_blank" rel="noopener" class="a-subtle font-mono">CV — one page, PDF</a>
+          <a href="certificate-logistics.jpg" target="_blank" rel="noopener" class="a-subtle font-mono">CERTIFICATE — logistics, first class honours</a>
         </div>
       </div>
     </div>
@@ -706,6 +761,13 @@ updates.unshift({
   "body":"The site had started to stutter \u2014 fair, since every frame was drawing up to thirteen thousand characters one fillText at a time, at double resolution. The engine got a proper performance pass: glyphs now come from a pre-rendered sprite atlas (one drawImage instead of one fillText per cell, with video colours quantised so they fit the atlas), the coloured tile layer is painted as a single pixelated image instead of thousands of rectangles, resolution is capped where the chunky ASCII look hides it anyway, previews tick at half rate, and the pointer effects skip cells far from the cursor. Best of all, the engine now watches its own frame time \u2014 if a device can't keep up, it quietly coarsens the grid until it can, and restores full detail when there's headroom. Same look, a fraction of the work."
 });
 
+updates.unshift({
+  "date":"2026-07-02",
+  "title":"maqsudjon.com \u2014 a real CV, case studies for every project, and a stack of polish",
+  "tag":"Tech",
+  "body":"The professional pass. There is now a proper one-page CV at /cv.pdf \u2014 generated from HTML in the site's own type system, with the projects, the skills, the welding and electrician background, and the Trucking MBA logistics certificate (First Class Honours) that now also lives on the site. Every project row gained a CASE STUDY link that opens a full write-up in the modal, with a Visit live button. The terminal learned cv, cert and now, plus command history and tab completion. Log entries have a copy-link button, snake keeps your best score, and the F1 video now pauses when the header is offscreen and respects data-saver mode \u2014 kinder to batteries and data plans. Plus keyboard accessibility: visible focus rings and a skip-to-content link."
+});
+
 /* ==========================================================================
    CLOCKS — Tashkent (UTC+5)
    ========================================================================== */
@@ -716,6 +778,12 @@ function tick(){
   for(const id of ['hdr-clock','ftr-clock']){const el=document.getElementById(id);if(el)el.textContent=s;}
 }
 tick();setInterval(tick,1000);
+
+window.__toast=function(msg,ms){
+  const t=document.getElementById('toast');if(!t)return;
+  t.textContent=msg;t.classList.add('show');
+  clearTimeout(t._h);if(ms!==0)t._h=setTimeout(()=>t.classList.remove('show'),ms||2200);
+};
 
 /* ==========================================================================
    SCRAMBLE HEADINGS (General Intuition character set)
@@ -771,7 +839,14 @@ document.querySelectorAll('.quote').forEach(q=>quoteIO.observe(q));
   const body=document.body,scrollEl=document.querySelector('.modal-scroll');
   function openModal(){scrollEl.scrollTop=0;body.classList.add('modal-open');}
   function closeModal(e){if(e)e.preventDefault();body.classList.remove('modal-open');}
-  document.getElementById('button1').addEventListener('click',e=>{e.preventDefault();openModal();});
+  function showArticle(id){
+    document.querySelectorAll('#modal .article-body').forEach(a=>a.classList.toggle('on',a.id===id));
+  }
+  window.__openModal=id=>{showArticle(id);openModal();};
+  document.getElementById('button1').addEventListener('click',e=>{e.preventDefault();window.__openModal('modal-article-1');});
+  document.querySelectorAll('[data-case]').forEach(el=>el.addEventListener('click',e=>{
+    e.preventDefault();e.stopPropagation();window.__openModal(el.dataset.case);
+  }));
   document.getElementById('modal-close-button').addEventListener('click',closeModal);
   document.getElementById('modal-close-bar').addEventListener('click',closeModal);
   document.addEventListener('keydown',e=>{if(body.classList.contains('modal-open')&&e.key==='Escape'){e.preventDefault();closeModal();}});
@@ -807,7 +882,12 @@ document.querySelectorAll('.quote').forEach(q=>quoteIO.observe(q));
     list.forEach(p=>{
       const el=document.createElement('article');el.className='post';
       el.id='log-'+p.date+'-'+p.title.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'').slice(0,32);
-      el.innerHTML=`<div class="post-head"><div><div class="post-when">${fmt(p.date)}</div><span class="post-tag">${p.tag||'NOTE'}</span></div><h3>${esc(p.title)}</h3><div class="ex">+</div></div><div class="post-body">${esc(p.body)}</div>`;
+      el.innerHTML=`<div class="post-head"><div><div class="post-when">${fmt(p.date)}</div><span class="post-tag">${p.tag||'NOTE'}</span><br><span class="plink" role="button" tabindex="0">⧉ copy link</span></div><h3>${esc(p.title)}</h3><div class="ex">+</div></div><div class="post-body">${esc(p.body)}</div>`;
+      el.querySelector('.plink').addEventListener('click',ev=>{
+        ev.stopPropagation();
+        const url=location.origin+location.pathname+'#'+el.id;
+        if(navigator.clipboard)navigator.clipboard.writeText(url).then(()=>window.__toast('\u25fc LINK COPIED'));
+      });
       el.addEventListener('click',()=>{
         const open=el.classList.toggle('open');
         if(open)history.replaceState(null,'','#'+el.id);
@@ -927,8 +1007,10 @@ document.querySelectorAll('.quote').forEach(q=>quoteIO.observe(q));
         else g.body.pop();}
     }
     if(g.shown!==g.score||g.dead){
+      let best=0;try{best=+localStorage.getItem('mp-snake-best')||0}catch(e){}
+      if(g.score>best){best=g.score;try{localStorage.setItem('mp-snake-best',best)}catch(e){}}
       const tt=document.getElementById('toast');
-      if(tt){tt.textContent=g.dead?('\u25fc GAME OVER \u00b7 SCORE '+g.score+' \u00b7 RESTARTING\u2026'):('\u25fc SNAKE \u00b7 SCORE '+g.score+' \u00b7 ESC TO QUIT');}
+      if(tt){tt.textContent=g.dead?('\u25fc GAME OVER \u00b7 SCORE '+g.score+' \u00b7 BEST '+best):('\u25fc SNAKE \u00b7 SCORE '+g.score+' \u00b7 BEST '+best+' \u00b7 ESC TO QUIT');}
       g.shown=g.score;
     }
     if(g.dead&&t-g.dead>1.6){st._sn=null;return;}
@@ -942,6 +1024,7 @@ document.querySelectorAll('.quote').forEach(q=>quoteIO.observe(q));
 
   /* --- media sources --- */
   const VID=document.getElementById('srcvid');
+  if(navigator.connection&&navigator.connection.saveData){VID.preload='none';VID.autoplay=false;}
   const vidReady=()=>VID&&VID.readyState>=2&&VID.videoWidth>0;
   const vidPlay=()=>{if(VID&&VID.paused){const p=VID.play();if(p&&p.catch)p.catch(()=>{});}};
   const IMG=new Image();IMG.src='profile.jpg';
@@ -1135,6 +1218,7 @@ document.querySelectorAll('.quote').forEach(q=>quoteIO.observe(q));
       if(fc%12===0)r.measure();       // layout checks throttled
       r.paint(now);
     }
+    if(!needVid&&!VID.paused)VID.pause();  // battery: stop the video when the hero is offscreen
     ema=ema*0.9+(performance.now()-t0)*0.1;
     // adaptive quality: coarser cells while the device can't keep up
     if(now>adjustAt){
@@ -1258,7 +1342,7 @@ document.querySelectorAll('.quote').forEach(q=>quoteIO.observe(q));
   function print(t){lines.push(t);while(lines.length>4)lines.shift();out.textContent=lines.join('\n');}
   const go=sel=>{const el=document.querySelector(sel);if(el)el.scrollIntoView({behavior:'smooth'});};
   const CMDS={
-    help:()=>print('commands: whoami \u00b7 projects \u00b7 log \u00b7 contact \u00b7 scene <f1|flow|torus|globe|wave|rain> \u00b7 snake \u00b7 storm \u00b7 uz / en \u00b7 settings \u00b7 pangea8 \u00b7 clear'),
+    help:()=>print('commands: whoami \u00b7 cv \u00b7 now \u00b7 projects \u00b7 log \u00b7 contact \u00b7 scene <f1|flow|torus|globe|wave|rain> \u00b7 snake \u00b7 storm \u00b7 uz / en \u00b7 cert \u00b7 settings \u00b7 pangea8 \u00b7 clear \u00b7 \u2191 history \u00b7 tab complete'),
     whoami:()=>print('Maqsudjon Polatov \u2014 a one-person lab, Tashkent. Code & steel.'),
     projects:()=>{go('#projects');print('\u2192 projects');},
     work:()=>CMDS.projects(),
@@ -1273,11 +1357,26 @@ document.querySelectorAll('.quote').forEach(q=>quoteIO.observe(q));
     en:()=>{if(window.__setLang){window.__setLang('en');print('language \u2192 english');}},
     settings:()=>{document.body.classList.add('ascii-settings-open');print('\u2192 ascii settings open');},
     pangea8:()=>{window.open('https://pangea8.com','_blank','noopener');print('\u2192 pangea8.com');},
-    clear:()=>{lines.length=0;out.textContent='';}
+    clear:()=>{lines.length=0;out.textContent='';},
+    cv:()=>{window.open('cv.pdf','_blank','noopener');print('\u2192 cv.pdf \u00b7 one page');},
+    cert:()=>{window.open('certificate-logistics.jpg','_blank','noopener');print('\u2192 logistics certificate, first class honours');},
+    now:()=>print('now: growing pangea8 past 100 tests \u00b7 building AI agents \u00b7 open to collaborations: t.me/mrbmp13')
   };
+  const hist=[];let hi=-1;
   inp.addEventListener('keydown',e=>{
+    if(e.key==='ArrowUp'){if(hist.length){hi=hi<0?hist.length-1:Math.max(0,hi-1);inp.value=hist[hi];e.preventDefault();}return;}
+    if(e.key==='ArrowDown'){if(hi>=0){hi++;if(hi>=hist.length){hi=-1;inp.value='';}else inp.value=hist[hi];e.preventDefault();}return;}
+    if(e.key==='Tab'){
+      e.preventDefault();
+      const v=inp.value.trim().toLowerCase();if(!v)return;
+      const names=Object.keys(CMDS).concat(['scene']);
+      const m=names.filter(n=>n.indexOf(v)===0);
+      if(m.length===1)inp.value=m[0];else if(m.length>1)print(m.join(' \u00b7 '));
+      return;
+    }
     if(e.key!=='Enter')return;
     const raw=inp.value.trim();inp.value='';if(!raw)return;
+    hist.push(raw);hi=-1;
     print('$ '+raw);
     const parts=raw.toLowerCase().split(/\s+/),c=parts[0];
     if(c==='scene'&&parts[1]){
@@ -1330,7 +1429,8 @@ document.querySelectorAll('.quote').forEach(q=>quoteIO.observe(q));
     logTitle:"Ish jurnali.",
     footBig:"Kod va po'latda ishlaydigan bir kishilik laboratoriya.",
     footP:"Bepul IELTS va ingliz tili platformalari, AI agentlar va kichik o'tkir vositalar \u2014 bir kishi tomonidan yaratilib, real talabalarga tekin yetkaziladi.",
-    sayhi:"Salom deng"
+    sayhi:"Salom deng",
+    cvBtn:"CV yuklab olish"
   };
   const btn=document.getElementById('langBtn');
   function apply(lang){
