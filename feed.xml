@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+<channel>
+  <title>Maqsudjon Polatov — build log</title>
+  <link>https://maqsudjon.com/</link>
+  <description>A one-person lab for acting in code and steel — everything I ship, as I ship it.</description>
+  <language>en</language>
+  <item>
+    <title>maqsudjon.com — the ASCII is now interactive</title>
+    <link>https://maqsudjon.com/log/log-2026-07-02-maqsudjon-com-the-ascii-is-now-i.html</link>
+    <guid>https://maqsudjon.com/log/log-2026-07-02-maqsudjon-com-the-ascii-is-now-i.html</guid>
+    <pubDate>Thu, 02 Jul 2026 12:00:00 +0500</pubDate>
+    <description>Quality pass on the new site. The ASCII engine now reacts to you: move the cursor over any ASCII field and the glyphs glow under it; click or tap and a ripple rolls through the characters — including across the F1 video header and the ASCII portrait. The header field drifts with a subtle parallax as you scroll, a hairline progress bar tracks where you are on the page, and every build-log entry now…</description>
+  </item>
+  <item>
+    <title>maqsudjon.com — rebuilt again, this time as a full General Intuition homage</title>
+    <link>https://maqsudjon.com/log/log-2026-07-02-maqsudjon-com-rebuilt-again-this.html</link>
+    <guid>https://maqsudjon.com/log/log-2026-07-02-maqsudjon-com-rebuilt-again-this.html</guid>
+    <pubDate>Thu, 02 Jul 2026 12:00:00 +0500</pubDate>
+    <description>Tore the site down and rebuilt it in the image of generalintuition.com — the frontier lab whose whole visual language is ASCII. Everything is here: the white 1px blueprint grid that frames every section, the giant video-to-ASCII header (my F1 lap footage sampled live into coloured glyphs and tiles), the ASCII Settings panel with working Cell size / Text opacity / Tile opacity sliders, quotes that …</description>
+  </item>
+  <item>
+    <title>maqsudjon.com — projects front and center, a scene switcher, and a secret</title>
+    <link>https://maqsudjon.com/log/log-2026-07-02-maqsudjon-com-projects-front-and.html</link>
+    <guid>https://maqsudjon.com/log/log-2026-07-02-maqsudjon-com-projects-front-and.html</guid>
+    <pubDate>Thu, 02 Jul 2026 12:00:00 +0500</pubDate>
+    <description>Feedback said the projects were blending into the log — fair. They now have their own full-width section: seven builds, numbered like a lab index, set in big display type, the whole row inverting to white on hover. The ASCII Settings panel gained a Scene control — switch the header between the F1 video, FLOW, TORUS, GLOBE, WAVE and RAIN. And there is now a secret: type a certain classic ten-key co…</description>
+  </item>
+  <item>
+    <title>maqsudjon.com — a terminal in the header, count-up stats, mini previews, and a secret you can tap</title>
+    <link>https://maqsudjon.com/log/log-2026-07-02-maqsudjon-com-a-terminal-in-the-.html</link>
+    <guid>https://maqsudjon.com/log/log-2026-07-02-maqsudjon-com-a-terminal-in-the-.html</guid>
+    <pubDate>Thu, 02 Jul 2026 12:00:00 +0500</pubDate>
+    <description>Four more additions in one pass. A tiny terminal now lives in the header — type help and it answers: jump to projects, switch the ASCII scene, open the settings, or fire the glyph storm from the command line. The projects section opens with count-up stats (90+ free tests, 166 speaking topics, 265 tracker tasks, 7 products) that animate the first time they scroll into view. Every project row got a …</description>
+  </item>
+  <item>
+    <title>maqsudjon.com — installable PWA, o&#x27;zbekcha, ASCII snake, and a 404 that rains</title>
+    <link>https://maqsudjon.com/log/log-2026-07-02-maqsudjon-com-installable-pwa-o-.html</link>
+    <guid>https://maqsudjon.com/log/log-2026-07-02-maqsudjon-com-installable-pwa-o-.html</guid>
+    <pubDate>Thu, 02 Jul 2026 12:00:00 +0500</pubDate>
+    <description>The everything pass. The site is now an installable PWA — a service worker caches the shell so it opens offline, and Add to Home Screen gives it the spark icon. There is a language toggle: the O&#x27;Z link in the header (or the uz / en terminal commands) flips all the main content into Uzbek — hero, projects, stats, quotes, contact — while the build log stays English. Type snake in the terminal and th…</description>
+  </item>
+  <item>
+    <title>maqsudjon.com — the ASCII engine got 6× faster</title>
+    <link>https://maqsudjon.com/log/log-2026-07-02-maqsudjon-com-the-ascii-engine-g.html</link>
+    <guid>https://maqsudjon.com/log/log-2026-07-02-maqsudjon-com-the-ascii-engine-g.html</guid>
+    <pubDate>Thu, 02 Jul 2026 12:00:00 +0500</pubDate>
+    <description>The site had started to stutter — fair, since every frame was drawing up to thirteen thousand characters one fillText at a time, at double resolution. The engine got a proper performance pass: glyphs now come from a pre-rendered sprite atlas (one drawImage instead of one fillText per cell, with video colours quantised so they fit the atlas), the coloured tile layer is painted as a single pixelated…</description>
+  </item>
+  <item>
+    <title>maqsudjon.com — a real CV, case studies for every project, and a stack of polish</title>
+    <link>https://maqsudjon.com/log/log-2026-07-02-maqsudjon-com-a-real-cv-case-stu.html</link>
+    <guid>https://maqsudjon.com/log/log-2026-07-02-maqsudjon-com-a-real-cv-case-stu.html</guid>
+    <pubDate>Thu, 02 Jul 2026 12:00:00 +0500</pubDate>
+    <description>The professional pass. There is now a proper one-page CV at /cv.pdf — generated from HTML in the site&#x27;s own type system, with the projects, the skills, the welding and electrician background, and the Trucking MBA logistics certificate (First Class Honours) that now also lives on the site. Every project row gained a CASE STUDY link that opens a full write-up in the modal, with a Visit live button. …</description>
+  </item>
+  <item>
+    <title>maqsudjon.com — rebuilt to match a frontier-lab look, with a full-screen colour ASCII engine</title>
+    <link>https://maqsudjon.com/log/log-2026-06-29-maqsudjon-com-rebuilt-to-match-a.html</link>
+    <guid>https://maqsudjon.com/log/log-2026-06-29-maqsudjon-com-rebuilt-to-match-a.html</guid>
+    <pubDate>Mon, 29 Jun 2026 12:00:00 +0500</pubDate>
+    <description>Rebuilt the site to echo the look of a frontier research lab: pure black, clean Geist type, blueprint guide lines, and a hero statement set in a solid white card over a full-bleed, real-time colour ASCII engine. The ASCII fills the whole screen with a dense, flowing colour field and cycles through scenes on its own — FLOW, a rotating GLOBE, a spinning TORUS, a music WAVE, and matrix RAIN — every g…</description>
+  </item>
+  <item>
+    <title>pangea8 Speaking — a live IELTS Speaking lab, shipped</title>
+    <link>https://maqsudjon.com/log/log-2026-06-22-pangea8-speaking-a-live-ielts-sp.html</link>
+    <guid>https://maqsudjon.com/log/log-2026-06-22-pangea8-speaking-a-live-ielts-sp.html</guid>
+    <pubDate>Mon, 22 Jun 2026 12:00:00 +0500</pubDate>
+    <description>Built and shipped pangea8 Speaking — a full IELTS Speaking practice platform where students record their answers right in the browser and teachers listen back and leave feedback. It&#x27;s the speaking half of the pangea8 ecosystem, sitting alongside the essay platform and the test hub.  It opens with the whole official Jan–Apr 2026 question bank already loaded — 166 topics across Part 1, Part 2 and Pa…</description>
+  </item>
+  <item>
+    <title>pierics.com — a Wordle clone, shipped</title>
+    <link>https://maqsudjon.com/log/log-2026-06-20-pierics-com-a-wordle-clone-shipp.html</link>
+    <guid>https://maqsudjon.com/log/log-2026-06-20-pierics-com-a-wordle-clone-shipp.html</guid>
+    <pubDate>Sat, 20 Jun 2026 12:00:00 +0500</pubDate>
+    <description>New side project is live: pierics.com, my own take on Wordle. Guess the hidden word in six tries — type a guess, and each tile flips to tell you what&#x27;s right: green for the correct letter in the correct spot, yellow for a letter that&#x27;s in the word but somewhere else, grey for one that isn&#x27;t there at all.  It&#x27;s the kind of build I love — a small, self-contained game with tight rules and instant fee…</description>
+  </item>
+  <item>
+    <title>Pangeya Essay Platform — rebuilt from scratch in a Nothing style</title>
+    <link>https://maqsudjon.com/log/log-2026-06-20-pangeya-essay-platform-rebuilt-f.html</link>
+    <guid>https://maqsudjon.com/log/log-2026-06-20-pangeya-essay-platform-rebuilt-f.html</guid>
+    <pubDate>Sat, 20 Jun 2026 12:00:00 +0500</pubDate>
+    <description>Took the IELTS essay platform apart and rebuilt the whole thing in a monochrome, dot-matrix style inspired by Nothing — pure black, a red accent, mono type, a live particle field, and a dot-matrix &quot;WRITING LAB&quot; wordmark with a blinking cursor. Same tool, a completely sharper identity.  Every feature survived the rebuild and a few got better. Pangeya AI now lives in a floating button you can open f…</description>
+  </item>
+  <item>
+    <title>Pangeya Essay Platform — faster, with a focus mode</title>
+    <link>https://maqsudjon.com/log/log-2026-06-19-pangeya-essay-platform-faster-wi.html</link>
+    <guid>https://maqsudjon.com/log/log-2026-06-19-pangeya-essay-platform-faster-wi.html</guid>
+    <pubDate>Fri, 19 Jun 2026 12:00:00 +0500</pubDate>
+    <description>Gave the IELTS essay platform a speed and UX pass. Old essays were loading slowly because the app re-read the entire Firebase collection on every action — even on every keystroke in the search box. Now it loads once, caches in memory, and search filters instantly without touching the network.  On the writing side: the word count is now large and colour-coded — amber while you&#x27;re under the IELTS mi…</description>
+  </item>
+  <item>
+    <title>pierics.com — polishing the Wordle clone</title>
+    <link>https://maqsudjon.com/log/log-2026-06-18-pierics-com-polishing-the-wordle.html</link>
+    <guid>https://maqsudjon.com/log/log-2026-06-18-pierics-com-polishing-the-wordle.html</guid>
+    <pubDate>Thu, 18 Jun 2026 12:00:00 +0500</pubDate>
+    <description>Spent a session refining pierics.com, my Wordle clone. Rebranded it from its working name to Pierics, wired up the pierics.com custom domain, and made the keyboard keys much bigger and more tap-friendly on phones.  The word list got real attention too: I swapped out every word that wasn&#x27;t exactly five letters, added around 80 common five-letter words — plurals and verbs — to the list of allowed gu…</description>
+  </item>
+  <item>
+    <title>explainer-engine — a branded video generator, built from scratch</title>
+    <link>https://maqsudjon.com/log/log-2026-06-17-explainer-engine-a-branded-video.html</link>
+    <guid>https://maqsudjon.com/log/log-2026-06-17-explainer-engine-a-branded-video.html</guid>
+    <pubDate>Wed, 17 Jun 2026 12:00:00 +0500</pubDate>
+    <description>This week&#x27;s big build: explainer-engine, a tool that turns a topic into a fully branded, narration-free explainer video — kinetic text, data visualisations, glowing spheres, network graphs, all in the pangea8 neon-mint style, with its own generated soundtrack. No footage, no voiceover, no editing: it renders everything from code into an MP4.  It grew into a proper desktop app over a few days. You …</description>
+  </item>
+  <item>
+    <title>maqsudjon.com — rebuilt in a Nothing-inspired style</title>
+    <link>https://maqsudjon.com/log/log-2026-06-16-maqsudjon-com-rebuilt-in-a-nothi.html</link>
+    <guid>https://maqsudjon.com/log/log-2026-06-16-maqsudjon-com-rebuilt-in-a-nothi.html</guid>
+    <pubDate>Tue, 16 Jun 2026 12:00:00 +0500</pubDate>
+    <description>Redesigned this site from the ground up in a monochrome, dot-matrix style inspired by Nothing — pure black, a dotted-LED texture, a signature red accent, and a mono type treatment throughout. The work and updates are laid out on a hairline grid, with a live Tashkent clock and an expandable log. Same content, a much sharper identity.…</description>
+  </item>
+  <item>
+    <title>pangea8.com — all-new landing page, built end to end</title>
+    <link>https://maqsudjon.com/log/log-2026-06-12-pangea8-com-all-new-landing-page.html</link>
+    <guid>https://maqsudjon.com/log/log-2026-06-12-pangea8-com-all-new-landing-page.html</guid>
+    <pubDate>Fri, 12 Jun 2026 12:00:00 +0500</pubDate>
+    <description>pangea8.com has a real face now. Until today the domain pointed straight at the test hub — functional, but it never told anyone what Pangea8 is. Today I shipped a full landing page and moved the hub to its own address (maqsudjon-cell.github.io/ielts-hub). The Start practicing button drops you straight into the tests.  The origin story is funny: I saw one of those viral &quot;can you believe Claude did …</description>
+  </item>
+  <item>
+    <title>ID &amp; Passport Photo Maker — a free browser tool</title>
+    <link>https://maqsudjon.com/log/log-2026-06-08-id-passport-photo-maker-a-free-b.html</link>
+    <guid>https://maqsudjon.com/log/log-2026-06-08-id-passport-photo-maker-a-free-b.html</guid>
+    <pubDate>Mon, 08 Jun 2026 12:00:00 +0500</pubDate>
+    <description>Shipped a small but genuinely useful tool: a free browser app that crops and resizes any photo to exact passport, visa, and ID dimensions without losing quality. Everything runs on-device — your photo never leaves your phone or laptop.  You drop in a picture, pick a size, and it gives you a print-ready photo. There&#x27;s also an on-device AI step that turns the background white, which is what most doc…</description>
+  </item>
+  <item>
+    <title>IELTS Hub — 10 CDI Reading tests now live</title>
+    <link>https://maqsudjon.com/log/log-2026-06-07-ielts-hub-10-cdi-reading-tests-n.html</link>
+    <guid>https://maqsudjon.com/log/log-2026-06-07-ielts-hub-10-cdi-reading-tests-n.html</guid>
+    <pubDate>Sun, 07 Jun 2026 12:00:00 +0500</pubDate>
+    <description>Added 6 more full Academic reading tests to the IELTS Hub (pangea8.com), bringing the total to 10 CDI Reading tests. CDI Reading 5 through CDI Reading 10 are now live alongside the earlier CDI 1 through 4.  Each test has 3 passages, 40 questions, and a 60-minute timer with instant scoring and answer checking. The hub now offers 16 reading tests total.  All built with vanilla HTML/CSS/JS, each runn…</description>
+  </item>
+  <item>
+    <title>Flarestamina — 40-Day IELTS Challenge tracker is live</title>
+    <link>https://maqsudjon.com/log/log-2026-06-07-flarestamina-40-day-ielts-challe.html</link>
+    <guid>https://maqsudjon.com/log/log-2026-06-07-flarestamina-40-day-ielts-challe.html</guid>
+    <pubDate>Sun, 07 Jun 2026 12:00:00 +0500</pubDate>
+    <description>I launched Flarestamina (flarestamina.com) — a complete 40-Day IELTS Challenge tracker covering all four skills: Listening, Reading, Writing, and Speaking across 38 active days with 265 tasks. Users sign in with Google, check off tasks daily, and their progress auto-saves and syncs across devices in real time. The tracker includes a progress ring, a streak heatmap, and a class leaderboard.  I also…</description>
+  </item>
+  <item>
+    <title>Pangeya Essay Platform — full overhaul</title>
+    <link>https://maqsudjon.com/log/log-2026-06-03-pangeya-essay-platform-full-over.html</link>
+    <guid>https://maqsudjon.com/log/log-2026-06-03-pangeya-essay-platform-full-over.html</guid>
+    <pubDate>Wed, 03 Jun 2026 12:00:00 +0500</pubDate>
+    <description>Today I shipped a major update to the Pangeya Essay Platform. The goal was to make it faster, safer, and more solid all around.  The biggest change is a real-time onSnapshot listener. Essays now show up instantly after you submit, edit, or delete them — no more waiting around for a full Firestore re-query.  On the security side, I added XSS sanitization, so essay content is now cleaned before it&#x27;s…</description>
+  </item>
+  <item>
+    <title>IELTS Hub — 73 listening tests</title>
+    <link>https://maqsudjon.com/log/log-2026-05-29-ielts-hub-73-listening-tests.html</link>
+    <guid>https://maqsudjon.com/log/log-2026-05-29-ielts-hub-73-listening-tests.html</guid>
+    <pubDate>Fri, 29 May 2026 12:00:00 +0500</pubDate>
+    <description>Big update today! Added 35 new Diyorbek listening tests — Tests 41 through 76. That brings the total to 73 listening tests on the platform. Each test has 40 questions, full audio, and instant scoring. Check them out at pangea8.com…</description>
+  </item>
+  <item>
+    <title>IELTS Hub — 59 listening tests</title>
+    <link>https://maqsudjon.com/log/log-2026-05-29-ielts-hub-59-listening-tests.html</link>
+    <guid>https://maqsudjon.com/log/log-2026-05-29-ielts-hub-59-listening-tests.html</guid>
+    <pubDate>Fri, 29 May 2026 12:00:00 +0500</pubDate>
+    <description>Added 8 more Diyorbek listening tests — Tests 56 through 63. Fixed test ordering, added share buttons, and fixed Test 12 URL. Now at 59 total listening tests on the hub. Full audio, instant scoring, all on pangea8.com.…</description>
+  </item>
+  <item>
+    <title>IELTS Hub — 51 listening tests</title>
+    <link>https://maqsudjon.com/log/log-2026-05-29-ielts-hub-51-listening-tests.html</link>
+    <guid>https://maqsudjon.com/log/log-2026-05-29-ielts-hub-51-listening-tests.html</guid>
+    <pubDate>Fri, 29 May 2026 12:00:00 +0500</pubDate>
+    <description>Added 9 more Diyorbek listening tests — Tests 46 through 55 (except 49). Now at 51 total listening tests on the platform. Full audio, instant scoring, all on pangea8.com.…</description>
+  </item>
+  <item>
+    <title>IELTS Hub — 10 new tests (31–40)</title>
+    <link>https://maqsudjon.com/log/log-2026-05-28-ielts-hub-10-new-tests-31-40.html</link>
+    <guid>https://maqsudjon.com/log/log-2026-05-28-ielts-hub-10-new-tests-31-40.html</guid>
+    <pubDate>Thu, 28 May 2026 12:00:00 +0500</pubDate>
+    <description>Added 10 new Diyorbek listening tests to the hub today — Tests 31 through 40. That brings the total to 37 listening tests on the platform. Each test has 40 questions, full audio, and instant scoring.  Check them out at pangea8.com…</description>
+  </item>
+  <item>
+    <title>IELTS Hub — 42 listening tests</title>
+    <link>https://maqsudjon.com/log/log-2026-05-28-ielts-hub-42-listening-tests.html</link>
+    <guid>https://maqsudjon.com/log/log-2026-05-28-ielts-hub-42-listening-tests.html</guid>
+    <pubDate>Thu, 28 May 2026 12:00:00 +0500</pubDate>
+    <description>Added 5 more Diyorbek listening tests — Tests 41 through 45. Full audio, instant scoring, all on pangea8.com.…</description>
+  </item>
+  <item>
+    <title>Launched pangea8.com</title>
+    <link>https://maqsudjon.com/log/log-2026-05-27-launched-pangea8-com.html</link>
+    <guid>https://maqsudjon.com/log/log-2026-05-27-launched-pangea8-com.html</guid>
+    <pubDate>Wed, 27 May 2026 12:00:00 +0500</pubDate>
+    <description>Today I officially launched pangea8.com — my IELTS practice hub. It hosts mock tests for Reading, Writing, Listening, and Speaking, plus the Pangeya Essay platform. Built with passion for students preparing for IELTS, but it&#x27;s open to anyone preparing for IELTS. Setting up the domain through Cloudflare and connecting it to GitHub Pages took an afternoon. The hardest part was choosing the name.…</description>
+  </item>
+  <item>
+    <title>Why Pangea?</title>
+    <link>https://maqsudjon.com/log/log-2026-05-20-why-pangea.html</link>
+    <guid>https://maqsudjon.com/log/log-2026-05-20-why-pangea.html</guid>
+    <pubDate>Wed, 20 May 2026 12:00:00 +0500</pubDate>
+    <description>Pangea was the single supercontinent before everything drifted apart. I liked the metaphor — one world, one platform. The 8 in pangea8 stands for IELTS Band 8 — the goal most students aim for, and also looks like the infinity symbol when laid sideways. Pangea forever, Pangea eight. Brand names should mean something to the founder, even if nobody else gets it at first.…</description>
+  </item>
+  <item>
+    <title>Making music from Tashkent</title>
+    <link>https://maqsudjon.com/log/log-2026-05-15-making-music-from-tashkent.html</link>
+    <guid>https://maqsudjon.com/log/log-2026-05-15-making-music-from-tashkent.html</guid>
+    <pubDate>Fri, 15 May 2026 12:00:00 +0500</pubDate>
+    <description>Releasing UK Garage tracks from Uzbekistan feels strange sometimes. I&#x27;m probably one of the only producers in Central Asia making this sound. My album HOME is out on Spotify under Matsumi. Most of my listeners are in the UK, which makes sense — that&#x27;s where the genre lives. But it also tells me something: location doesn&#x27;t matter anymore. The internet erased that.…</description>
+  </item>
+</channel>
+</rss>
