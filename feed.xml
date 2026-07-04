@@ -6,6 +6,20 @@
   <description>A one-person lab for acting in code and steel — everything I ship, as I ship it.</description>
   <language>en</language>
   <item>
+    <title>pangea8 Writing Lab — redesigned to match the site, with a branded PDF</title>
+    <link>https://maqsudjon.com/log/log-2026-07-04-pangea8-writing-lab-redesigned-t.html</link>
+    <guid>https://maqsudjon.com/log/log-2026-07-04-pangea8-writing-lab-redesigned-t.html</guid>
+    <pubDate>Sat, 04 Jul 2026 12:00:00 +0500</pubDate>
+    <description>Brought the IELTS Writing Lab into the pangea8 look — the same calm stone-and-green theme as the rest of the site, Space Grotesk headings, softer cards, a film-grain texture, and a shared light/dark toggle that follows you across the whole domain. The biggest upgrade is the essay PDF export: it is…</description>
+  </item>
+  <item>
+    <title>IELTS Band Calculator, a progress dashboard, and six new reading tests</title>
+    <link>https://maqsudjon.com/log/log-2026-07-04-ielts-band-calculator-a-progress.html</link>
+    <guid>https://maqsudjon.com/log/log-2026-07-04-ielts-band-calculator-a-progress.html</guid>
+    <pubDate>Sat, 04 Jul 2026 12:00:00 +0500</pubDate>
+    <description>A batch of student-facing upgrades to the hub. There is a new free IELTS Band Calculator — turn a raw Listening or Reading score into a band, and work out your overall band from all four skills, for both Academic and General Training, with the correct half-band rounding. I also rebuilt the &#x27;My…</description>
+  </item>
+  <item>
     <title>maqsudjon.com — the ASCII is now interactive</title>
     <link>https://maqsudjon.com/log/log-2026-07-02-maqsudjon-com-the-ascii-is-now-i.html</link>
     <guid>https://maqsudjon.com/log/log-2026-07-02-maqsudjon-com-the-ascii-is-now-i.html</guid>

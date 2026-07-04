@@ -1,5 +1,17 @@
 [
   {
+    "date": "2026-07-04",
+    "title": "pangea8 Writing Lab — redesigned to match the site, with a branded PDF",
+    "tag": "Tech",
+    "body": "Brought the IELTS Writing Lab into the pangea8 look — the same calm stone-and-green theme as the rest of the site, Space Grotesk headings, softer cards, a film-grain texture, and a shared light/dark toggle that follows you across the whole domain. The biggest upgrade is the essay PDF export: it is now a premium, branded report. A pangea8 wordmark header, a candidate / task / date / word-count strip, a green teacher-feedback callout, and a 'Keep practising' card with a scan-to-open QR code that drops anyone straight into the hub — so every essay a student downloads and shares carries the brand. And I unified the naming at last: the old 'Pangeya' is now 'pangea8' everywhere, so the tool finally matches the domain."
+  },
+  {
+    "date": "2026-07-04",
+    "title": "IELTS Band Calculator, a progress dashboard, and six new reading tests",
+    "tag": "IELTS",
+    "body": "A batch of student-facing upgrades to the hub. There is a new free IELTS Band Calculator — turn a raw Listening or Reading score into a band, and work out your overall band from all four skills, for both Academic and General Training, with the correct half-band rounding. I also rebuilt the 'My results' page into a real progress dashboard: a study streak, a this-week count, and a 30-day practice-activity chart, all built from your own history on the device. And I added six new real-exam Academic Reading tests. Small things, but they are the ones students ask for most."
+  },
+  {
     "date": "2026-06-22",
     "title": "pangea8 Speaking — a live IELTS Speaking lab, shipped",
     "tag": "Tech",
