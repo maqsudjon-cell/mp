@@ -1,5 +1,11 @@
 [
   {
+    "date": "2026-07-06",
+    "title": "pangea8 Full Mock — the full IELTS exam, online, at the cheapest price around",
+    "tag": "IELTS",
+    "body": "The biggest pangea8 release yet: a paid, computer-delivered IELTS Full Mock at pangea8.com/full-mock. Five complete mocks, each running Listening, Reading and Writing back-to-back with real exam timers — audio that plays once, a 60-minute reading clock that survives page reloads, and two writing tasks marked in minutes by an AI examiner working from the official band descriptors. At the end the student gets an instant IELTS-style result sheet: band and raw score for every skill, task-by-task writing feedback, and an overall band. Under the hood it is a whole little economy: a coin wallet on Firestore with spend-only security rules, manual card-transfer top-ups confirmed from a one-tap admin panel, and a polite cross-promo card that appears once a day after a free practice result. Priced at 10,000 UZS per mock — a third of what test centres charge for the same thing online."
+  },
+  {
     "date": "2026-07-04",
     "title": "pangea8 Writing Lab — redesigned to match the site, with a branded PDF",
     "tag": "Tech",
