@@ -133,7 +133,7 @@
           '  <h3>IELTS Hub — 73 listening tests 🚀</h3>',
           '  <div class="update-body">',
           '    <p>Big update today! Added 35 new Diyorbek listening tests — Tests 41 through 76.</p>',
-          '    <p>That brings the total to 73 listening tests on the platform. Check them out at <a href="https://pangea8.com" target="_blank" rel="noopener">pangea8.com</a>.</p>',
+          '    <p>That brings the total to 73 listening tests on the platform. Check them out at <a href="https://flarestamina.com" target="_blank" rel="noopener">flarestamina.com</a>.</p>',
           '  </div>',
           '</article>',
           '<p class="loading">Could not load live updates. Showing latest saved entry.</p>'
@@ -148,7 +148,7 @@
    ========================================================= */
 function sharePage(platform) {
   var url = encodeURIComponent(window.location.href);
-  var fullText = encodeURIComponent("Maqsudjon Polatov — IELTS Hub with 73 listening tests, music as Matsumi, and more. Check out maqsudjon.com and pangea8.com");
+  var fullText = encodeURIComponent("Maqsudjon Polatov — IELTS Hub with 73 listening tests, music as Matsumi, and more. Check out maqsudjon.com and flarestamina.com");
 
   if (platform === 'telegram') {
     window.open("https://t.me/share/url?url=" + url + "&text=" + fullText, "_blank", "width=600,height=400");
