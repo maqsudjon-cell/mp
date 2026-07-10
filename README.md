@@ -86,7 +86,7 @@ file doesn't matter — but it's still cleaner to keep the newest on top.
 ## Deployment (GitHub Pages + Cloudflare DNS)
 
 1. **Create the repo.** On GitHub, create a new public repository named exactly
-   `maqsudjon-cell.github.io` (this is your user-site repo — must match your
+   `flarestamina.com` (this is your user-site repo — must match your
    username).
 
 2. **Push these files to `main`:**
@@ -95,7 +95,7 @@ file doesn't matter — but it's still cleaner to keep the newest on top.
    git add .
    git commit -m "Initial commit"
    git branch -M main
-   git remote add origin https://github.com/maqsudjon-cell/maqsudjon-cell.github.io.git
+   git remote add origin https://github.com/maqsudjon-cell/flarestamina.com.git
    git push -u origin main
    ```
 
@@ -121,7 +121,7 @@ file doesn't matter — but it's still cleaner to keep the newest on top.
    Add **1 CNAME** for `www`, also **DNS only** (gray cloud):
    | Type  | Name | Content                       |
    |-------|------|-------------------------------|
-   | CNAME | www  | maqsudjon-cell.github.io      |
+   | CNAME | www  | flarestamina.com      |
 
    > The gray cloud (DNS-only) is important. The orange-cloud proxy interferes
    > with GitHub's HTTPS provisioning. You can flip it on later once HTTPS is
