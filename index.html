@@ -790,6 +790,20 @@ updates.unshift({
   "body":"The biggest pangea8 release yet: a paid, computer-delivered IELTS Full Mock at flarestamina.com/full-mock. Five complete mocks, each running Listening, Reading and Writing back-to-back with real exam timers \u2014 audio that plays once, a 60-minute reading clock that survives page reloads, and two writing tasks marked in minutes by an AI examiner working from the official band descriptors. At the end the student gets an instant IELTS-style result sheet: band and raw score for every skill, task-by-task writing feedback, and an overall band. Under the hood it is a whole little economy: a coin wallet on Firestore with spend-only security rules, manual card-transfer top-ups confirmed from a one-tap admin panel, and a polite cross-promo card that appears once a day after a free practice result. Priced at 10,000 UZS per mock \u2014 a third of what test centres charge for the same thing online."
 });
 
+updates.unshift({
+  "date":"2026-07-15",
+  "title":"Flarestamina News & Community — deadlines, teacher articles, and a place to talk",
+  "tag":"Tech",
+  "body":"Flarestamina had 100+ tests and no reason to come back between them. This week it got one: a whole content and community layer at flarestamina.com/news.\n\nThe news half is IELTS updates and scholarship deadlines written for students in Uzbekistan — Chevening, GKS, El-Yurt Umidi, Stipendium Hungaricum, Türkiye Bursları, Erasmus Mundus, the current IELTS fee, One Skill Retake, and the DTM rule that a valid B2 certificate (IELTS 5.5+) is worth the maximum foreign-language score. Every post carries a key-facts box, a short Uzbek summary, and a link to the official source it came from — no rewriting rumours from Telegram.\n\nThe community half is the part I care about more. Teachers can publish an article in three minutes at flarestamina.com/writearticle — no sign-up, no account, just write and hit publish; it appears under their own name, with their centre and their social link. Students sign in with their FS Account and post ideas and advice, like each other's posts, and comment. An article can carry both an English and an Uzbek version behind a toggle, so a foreign teacher and a local student read the same page in their own language.\n\nUnder the hood there is still no server: static pages, Firestore over REST for the articles, advice and comments, and an admin panel behind a passcode where I can hide, edit or delete anything.\n\nSourced, dated, no fluff. Now I have to keep it fed."
+});
+
+updates.unshift({
+  "date":"2026-07-15",
+  "title":"A founder page, and one panel to run the whole site",
+  "tag":"Tech",
+  "body":"Two smaller things shipped alongside the news section.\n\nflarestamina.com/founder is deliberately plain — black, mono type, my name, and a list of everything I have built, in the spirit of t3.gg. Someone deciding whether to trust a free IELTS platform should be able to see who made it in about four seconds. It links back to this build log.\n\nflarestamina.com/admin is the opposite of plain: one passcode-gated panel that runs the whole site. Every page and tool I own is one click away — Search Console, both GoatCounter dashboards, both Firebase projects, the repos, and the Full Mock coin approvals. Articles and community posts can be hidden, edited or deleted from there, comments included, and there is a tab of ready-to-post copy for Telegram and X so announcing a release does not mean rewriting it every time.\n\nThe news pages also picked up the hub's own theme — the same warm black and off-white, sharing one setting across the whole domain, so switching to light on the hub keeps it light everywhere."
+});
+
 /* ==========================================================================
    CLOCKS — Tashkent (UTC+5)
    ========================================================================== */
