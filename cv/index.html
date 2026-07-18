@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CV — Maqsudjon Polatov · AI-First Builder / Vibe Coder</title>
+<meta name="description" content="One page for recruiters: who I am, how I build with AI agents, my live products, and a downloadable CV. Everything verifiable.">
+<link rel="canonical" href="https://maqsudjon.com/cv/">
+<meta property="og:title" content="CV — Maqsudjon Polatov · AI-First Builder / Vibe Coder">
+<meta property="og:description" content="I don't hand-write code. I've shipped six live products. This page is the proof.">
+<meta property="og:url" content="https://maqsudjon.com/cv/">
+<meta property="og:type" content="profile">
+<meta property="og:image" content="https://maqsudjon.com/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#000000">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300;400;500;600;700&family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:#000;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased;scroll-behavior:smooth}
+body{background:#000;color:#ffffffbb;font-family:'Geist',system-ui,sans-serif;line-height:1.55;overflow-x:hidden}
+::selection{background:#fff;color:#000}
+a{color:inherit}
+.mono{font-family:'Geist Mono',ui-monospace,SFMono-Regular,monospace}
+.wrap{max-width:980px;margin:0 auto;padding:0 24px}
+/* nav */
+nav{position:sticky;top:0;z-index:50;background:linear-gradient(#000 60%,#000c);border-bottom:1px solid #ffffff14}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 0}
+.nav-logo{font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:#fff;text-decoration:none;white-space:nowrap}
+.btn{display:inline-block;font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;background:#fff;color:#000;border:1px solid #fff;padding:12px 20px;cursor:pointer;text-decoration:none;transition:background .4s cubic-bezier(.16,1,.3,1),color .4s cubic-bezier(.16,1,.3,1);text-align:center}
+.btn:hover{background:transparent;color:#fff}
+.btn-ghost{background:transparent;color:#fff}
+.btn-ghost:hover{background:#fff;color:#000}
+/* hero */
+header{padding:72px 0 48px;border-bottom:1px solid #ffffff14}
+.kicker{font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#ffffff77}
+h1{font-family:'Funnel Display',sans-serif;font-weight:600;font-size:clamp(38px,7vw,72px);line-height:1.02;color:#fff;margin:14px 0 10px;letter-spacing:-.01em}
+.role{font-family:'Geist Mono',monospace;font-size:clamp(13px,2vw,16px);letter-spacing:.14em;text-transform:uppercase;color:#7ee2b8}
+.hook{font-size:clamp(17px,2.6vw,22px);color:#ffffffd9;max-width:640px;margin:26px 0 8px;line-height:1.45}
+.hook b{color:#fff}
+.hero-btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
+.contact-line{margin-top:22px;font-family:'Geist Mono',monospace;font-size:12.5px;color:#ffffff8a;letter-spacing:.03em;line-height:2}
+.contact-line a{color:#ffffffc4;text-decoration:none;border-bottom:1px solid #ffffff33}
+.contact-line a:hover{color:#fff;border-color:#fff}
+/* numbers */
+.numbers{display:grid;grid-template-columns:repeat(4,1fr);border-left:1px solid #ffffff1f}
+.num{border-right:1px solid #ffffff1f;padding:26px 18px}
+.num b{display:block;font-family:'Funnel Display',sans-serif;font-weight:600;font-size:clamp(28px,4.4vw,44px);color:#fff;line-height:1}
+.num span{display:block;margin-top:8px;font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#ffffff70}
+@media(max-width:700px){.numbers{grid-template-columns:repeat(2,1fr)}.num{border-bottom:1px solid #ffffff1f}}
+/* sections */
+section{padding:58px 0;border-bottom:1px solid #ffffff14}
+.label{font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#7ee2b8;margin-bottom:26px}
+h2{font-family:'Funnel Display',sans-serif;font-weight:600;font-size:clamp(24px,3.6vw,34px);color:#fff;line-height:1.15;margin-bottom:18px;letter-spacing:-.01em}
+p.big{font-size:clamp(15.5px,2vw,18px);color:#ffffffc9;max-width:700px}
+/* honest split */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid #ffffff1f;margin-top:30px}
+.split>div{padding:28px}
+.split>div:first-child{border-right:1px solid #ffffff1f;background:#ffffff08}
+.split h3{font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:.18em;text-transform:uppercase;margin-bottom:16px}
+.split .no h3{color:#ffffff66}
+.split .yes h3{color:#7ee2b8}
+.split ul{list-style:none}
+.split li{padding:7px 0;font-size:15px;color:#ffffffc4;border-bottom:1px solid #ffffff0f}
+.split li:last-child{border-bottom:0}
+.split .no li{color:#ffffff85}
+@media(max-width:700px){.split{grid-template-columns:1fr}.split>div:first-child{border-right:0;border-bottom:1px solid #ffffff1f}}
+/* terminal */
+.term{border:1px solid #ffffff24;background:#0a0a0a;margin-top:34px;font-family:'Geist Mono',monospace;font-size:13.5px;line-height:1.9}
+.term-bar{display:flex;gap:6px;padding:11px 14px;border-bottom:1px solid #ffffff14}
+.term-bar i{width:10px;height:10px;border-radius:50%;background:#ffffff22;display:block}
+.term-body{padding:20px 22px;color:#ffffffb0;overflow-x:auto;white-space:pre}
+.term-body .p{color:#7ee2b8}
+.term-body .c{color:#ffffff55}
+.term-body .w{color:#fff}
+/* skills */
+.skills{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#ffffff1f;border:1px solid #ffffff1f;margin-top:8px}
+.skill{background:#000;padding:24px}
+.skill h3{font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#fff;margin-bottom:10px}
+.skill p{font-size:14.5px;color:#ffffff9c}
+@media(max-width:700px){.skills{grid-template-columns:1fr}}
+/* projects */
+.proj{display:block;text-decoration:none;border:1px solid #ffffff1f;padding:26px;margin-top:-1px;transition:background .45s cubic-bezier(.16,1,.3,1)}
+.proj:hover{background:#fff}
+.proj:hover *{color:#000!important}
+.proj-top{display:flex;align-items:baseline;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.proj h3{font-family:'Funnel Display',sans-serif;font-weight:600;font-size:21px;color:#fff}
+.proj .tag{font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#7ee2b8}
+.proj p{margin-top:8px;font-size:14.5px;color:#ffffff9c;max-width:760px}
+.flag{background:#ffffff08}
+/* footer cta */
+.cta{padding:72px 0}
+.cta .btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+footer{padding:34px 0 44px;font-family:'Geist Mono',monospace;font-size:11.5px;letter-spacing:.08em;color:#ffffff55}
+footer a{color:#ffffff90;text-decoration:none;border-bottom:1px solid #ffffff33}
+footer a:hover{color:#fff}
+/* reveal */
+.rv{opacity:0;transform:translateY(14px);transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1)}
+.rv.on{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap nav-inner">
+  <a class="nav-logo" href="https://maqsudjon.com/">✳ maqsudjon.com <span style="color:#ffffff55">/ cv</span></a>
+  <a class="btn" href="Maqsudjon_Polatov_CV.pdf" download>Download CV · PDF</a>
+</div></nav>
+
+<header><div class="wrap">
+  <div class="kicker">For recruiters — everything on one page</div>
+  <h1>Maqsudjon Polatov</h1>
+  <div class="role">AI-First Builder · Vibe Coder — Tashkent, Uzbekistan</div>
+  <p class="hook">The most honest thing I can tell you: <b>I don't hand-write code — and I've shipped six live products.</b> This page is the proof, and every claim on it is verifiable.</p>
+  <div class="hero-btns">
+    <a class="btn" href="Maqsudjon_Polatov_CV.pdf" download>Download CV · PDF</a>
+    <a class="btn btn-ghost" href="https://t.me/mrbmp13" target="_blank" rel="noopener">Telegram</a>
+    <a class="btn btn-ghost" href="https://github.com/maqsudjon-cell" target="_blank" rel="noopener">GitHub</a>
+    <a class="btn btn-ghost" href="mailto:polatovmaqsudjon1@gmail.com">Email</a>
+  </div>
+  <div class="contact-line">
+    <a href="mailto:polatovmaqsudjon1@gmail.com">polatovmaqsudjon1@gmail.com</a> &nbsp;·&nbsp;
+    <a href="tel:+998959059493">+998 95 905 94 93</a> &nbsp;·&nbsp;
+    <a href="https://t.me/mrbmp13" target="_blank" rel="noopener">t.me/mrbmp13</a> &nbsp;·&nbsp;
+    Uzbek (native) · English (C1) · Korean (basic)
+  </div>
+</div></header>
+
+<section style="padding:0"><div class="wrap" style="padding:0 24px">
+  <div class="numbers">
+    <div class="num rv"><b data-n="170">0</b><span>public repos</span></div>
+    <div class="num rv"><b data-n="6">0</b><span>live products</span></div>
+    <div class="num rv"><b data-n="17">0</b><span>months building</span></div>
+    <div class="num rv"><b data-n="93">0</b><span>IELTS tests hosted</span></div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="label rv">01 — Who I am</div>
+  <h2 class="rv">Self-taught. AI-native. Shipping weekly.</h2>
+  <p class="big rv">I'm a builder from Tashkent who turns ideas into deployed, working products by directing AI agents — mainly <b style="color:#fff">Claude Code</b>. Seventeen months ago I created my GitHub account; today it holds 170 public repositories, and my main platform is used by real IELTS students and teachers for weekly mock exams. My skill is not typing syntax. It's knowing exactly what to build, specifying it clearly, testing it like a real user, and iterating until it works.</p>
+
+  <div class="split rv">
+    <div class="no">
+      <h3>What I don't do</h3>
+      <ul>
+        <li>Hand-write code from memory</li>
+        <li>Claim frameworks I've never used</li>
+        <li>Pretend to be a classical engineer</li>
+      </ul>
+    </div>
+    <div class="yes">
+      <h3>What I do instead</h3>
+      <ul>
+        <li>Direct AI agents end-to-end: plan → build → debug → deploy</li>
+        <li>Ship real products people use — solo, fast</li>
+        <li>Own everything around the code: product, testing, domains, SEO, analytics</li>
+      </ul>
+    </div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="label rv">02 — How I build</div>
+  <h2 class="rv">My IDE is a conversation.</h2>
+  <p class="big rv">A typical build session, compressed. The point isn't the prompt — it's knowing what to ask for, spotting what's broken, and never calling it done until a real user can use it.</p>
+  <div class="term rv">
+    <div class="term-bar"><i></i><i></i><i></i></div>
+    <div class="term-body">$ claude
+<span class="p">&gt;</span> <span class="w">Build an essay exam platform: Firestore backend, task images,</span>
+  <span class="w">one-page exam PDFs, teacher feedback flow.</span>
+<span class="c">  planning… building… debugging…</span>
+<span class="p">✓</span> deployed to GitHub Pages
+<span class="p">→</span> tested with a real teacher, in a real mock exam, same week
+<span class="c">  # then: domains, DNS, Search Console, sitemap, analytics — me</span></div>
+  </div>
+  <div class="skills" style="margin-top:34px">
+    <div class="skill rv"><h3>AI development</h3><p>Claude Code daily · AI agents &amp; workflows · prompt/spec writing · reviewing product behaviour instead of syntax</p></div>
+    <div class="skill rv"><h3>Build &amp; deploy</h3><p>GitHub repos, Pages, Actions (automated sitemaps) · staging → production flow · custom domains &amp; DNS</p></div>
+    <div class="skill rv"><h3>Data &amp; auth</h3><p>Firebase Authentication · Firestore data modelling · Supabase and Stripe at experimental level</p></div>
+    <div class="skill rv"><h3>Growth &amp; polish</h3><p>Google Search Console · SEO &amp; sitemaps · GoatCounter analytics · PWA basics · UI taste (Nothing-inspired) · localization UZ/EN/RU</p></div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="label rv">03 — Live products</div>
+  <h2 class="rv">Don't take my word for it. Click.</h2>
+  <div style="margin-top:26px">
+    <a class="proj flag rv" href="https://flarestamina.com" target="_blank" rel="noopener">
+      <div class="proj-top"><h3>Flarestamina</h3><span class="tag">flagship · flarestamina.com</span></div>
+      <p>Free IELTS ecosystem: 73 listening + 20 reading tests with instant band scores, essay platform with AI feedback, speaking lab with 166 topics, band calculator, 40-day challenge tracker. Teachers in Tashkent run real weekly mocks on it.</p>
+    </a>
+    <a class="proj rv" href="https://flarestamina.com/pangeya-essay-platform-/index-14.html" target="_blank" rel="noopener">
+      <div class="proj-top"><h3>Pangeya Writing Lab</h3><span class="tag">exam-day platform</span></div>
+      <p>Firestore backend, task images, one-page exam PDFs, teacher feedback flow — used in real mock exams.</p>
+    </a>
+    <a class="proj rv" href="https://minnos.cc" target="_blank" rel="noopener">
+      <div class="proj-top"><h3>Minnos</h3><span class="tag">minnos.cc</span></div>
+      <p>"Learn English, one cat at a time" — collectible cat-idiom game: 26 idioms with audio and Uzbek translations.</p>
+    </a>
+    <a class="proj rv" href="https://flarestamina.com/id-passport-photo-maker/" target="_blank" rel="noopener">
+      <div class="proj-top"><h3>ID Photo Maker</h3><span class="tag">on-device AI</span></div>
+      <p>100% client-side passport/visa photo tool with AI background whitening. No uploads, no server.</p>
+    </a>
+    <a class="proj rv" href="https://github.com/maqsudjon-cell/explainer-engine" target="_blank" rel="noopener">
+      <div class="proj-top"><h3>Explainer Engine</h3><span class="tag">python · github</span></div>
+      <p>Topic in → branded MP4 explainer video with synthesized music out. Entirely from code.</p>
+    </a>
+    <a class="proj rv" href="https://pierics.com" target="_blank" rel="noopener">
+      <div class="proj-top"><h3>pierics</h3><span class="tag">pierics.com</span></div>
+      <p>Daily Wordle-style word game that doubles as an IELTS vocabulary trainer.</p>
+    </a>
+    <a class="proj rv" href="https://flarestamina.com/wedding/" target="_blank" rel="noopener">
+      <div class="proj-top"><h3>Wedding Invitation Builder</h3><span class="tag">first paid product</span></div>
+      <p>3 templates × 3 languages, PNG / PDF / live-link export.</p>
+    </a>
+  </div>
+</div></section>
+
+<section class="cta" style="border-bottom:0"><div class="wrap">
+  <div class="label rv">04 — Hire me</div>
+  <h2 class="rv">Hiring a vibe coder? You just found one<br>who's already been doing the job.</h2>
+  <p class="big rv">AI fluency isn't a skill I list — it's the only way I've ever built anything. I learn fast, I ship faster, and everything above is public and live. Message me and I'll demo any of it, or take a trial task.</p>
+  <div class="btns rv">
+    <a class="btn" href="https://t.me/mrbmp13" target="_blank" rel="noopener">Message on Telegram</a>
+    <a class="btn btn-ghost" href="Maqsudjon_Polatov_CV.pdf" download>Download CV · PDF</a>
+    <a class="btn btn-ghost" href="mailto:polatovmaqsudjon1@gmail.com">polatovmaqsudjon1@gmail.com</a>
+  </div>
+</div></section>
+
+<footer><div class="wrap">
+  © <span id="y">2026</span> Maqsudjon Polatov · Tashkent — <a href="https://maqsudjon.com/">maqsudjon.com</a><br>
+  This page, like everything else here, was built by directing an AI agent. That's the whole point.
+</div></footer>
+
+<script>
+document.getElementById('y').textContent=new Date().getFullYear();
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+document.querySelectorAll('[data-n]').forEach(el=>{
+  const target=+el.dataset.n;
+  if(reduce){el.textContent=target;return}
+  const nio=new IntersectionObserver(es=>{if(!es[0].isIntersecting)return;nio.disconnect();
+    const t0=performance.now(),d=1100;
+    (function tick(t){const k=Math.min(1,(t-t0)/d),e=1-Math.pow(1-k,3);
+      el.textContent=Math.round(target*e);
+      if(k<1)requestAnimationFrame(tick)})(t0);
+  },{threshold:.4});
+  nio.observe(el);
+});
+</script>
+</body>
+</html>
