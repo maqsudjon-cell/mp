@@ -247,6 +247,7 @@ function count(el){
   (function tick(t){const k=Math.min(1,(t-t0)/d),e=1-Math.pow(1-k,3);
     el.textContent=Math.round(target*e);
     if(k<1)requestAnimationFrame(tick)})(t0);
+  setTimeout(()=>{el.textContent=target},d+300);
 }
 const rvs=[...document.querySelectorAll('.rv')];
 function reveal(){
@@ -262,6 +263,7 @@ function reveal(){
 reveal();
 addEventListener('scroll',reveal,{passive:true});
 addEventListener('resize',reveal,{passive:true});
+setInterval(reveal,400);
 </script>
 </body>
 </html>
