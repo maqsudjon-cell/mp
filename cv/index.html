@@ -239,20 +239,29 @@ footer a:hover{color:#fff}
 
 <script>
 document.getElementById('y').textContent=new Date().getFullYear();
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}}),{threshold:.12});
-document.querySelectorAll('.rv').forEach(el=>io.observe(el));
 const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
-document.querySelectorAll('[data-n]').forEach(el=>{
+function count(el){
   const target=+el.dataset.n;
   if(reduce){el.textContent=target;return}
-  const nio=new IntersectionObserver(es=>{if(!es[0].isIntersecting)return;nio.disconnect();
-    const t0=performance.now(),d=1100;
-    (function tick(t){const k=Math.min(1,(t-t0)/d),e=1-Math.pow(1-k,3);
-      el.textContent=Math.round(target*e);
-      if(k<1)requestAnimationFrame(tick)})(t0);
-  },{threshold:.4});
-  nio.observe(el);
-});
+  const t0=performance.now(),d=1100;
+  (function tick(t){const k=Math.min(1,(t-t0)/d),e=1-Math.pow(1-k,3);
+    el.textContent=Math.round(target*e);
+    if(k<1)requestAnimationFrame(tick)})(t0);
+}
+const rvs=[...document.querySelectorAll('.rv')];
+function reveal(){
+  const h=innerHeight*.96;
+  rvs.forEach(el=>{
+    if(el.classList.contains('on'))return;
+    if(el.getBoundingClientRect().top<h){
+      el.classList.add('on');
+      el.querySelectorAll('[data-n]').forEach(count);
+    }
+  });
+}
+reveal();
+addEventListener('scroll',reveal,{passive:true});
+addEventListener('resize',reveal,{passive:true});
 </script>
 </body>
 </html>
