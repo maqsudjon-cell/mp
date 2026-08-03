@@ -398,6 +398,32 @@ try{
   </div>
 </section>
 
+<!-- ==============================================  FULL PROJECT INDEX -->
+<!-- fix 7 again: the count above this list is the manifest length, read at
+     runtime — the same reason the repository total is fetched rather than
+     typed. The rows themselves render from ./projects.json, so the list can
+     be edited by hand without touching this file. Every URL in that manifest
+     answered 200 to a HEAD request on the date it carries; what did not is
+     written down in DEAD.md rather than quietly dropped. -->
+<section class="idx" id="index" data-index aria-labelledby="index-h">
+  <div class="shell">
+    <div class="idx__head">
+      <p class="label mono">Everything else</p>
+      <h2 id="index-h" data-split>Everything else that is live.</h2>
+      <p class="idx__meta mono">
+        <b data-index-count>—</b> pages <span data-index-stamp></span>
+      </p>
+    </div>
+
+    <div data-index-list>
+      <p class="idx__empty mono">
+        This index is built from
+        <a href="./projects.json">projects.json</a>.
+      </p>
+    </div>
+  </div>
+</section>
+
 <!-- ==========================  7.8 METHOD + CAPABILITIES — the light break -->
 <section class="light" data-duo>
   <div class="shell duo">

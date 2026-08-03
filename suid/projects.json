@@ -1,0 +1,53 @@
+{
+  "generated": "2026-08-03",
+  "note": "Enumerated from the GitHub API, each repo's CNAME, both sitemaps, and the root site's own links. Every entry below returned 200 to a HEAD request on the date above. Failures are logged in DEAD.md. The six projects in the Stack are deliberately absent — this is everything else.",
+  "groups": [
+    {
+      "domain": "maqsudjon.com",
+      "projects": [
+        { "url": "https://maqsudjon.com/",     "title": "Personal site",  "category": "Site",      "repo": "mp", "last_commit": "2026-08-03" },
+        { "url": "https://maqsudjon.com/cv/",  "title": "CV",             "category": "Recruiter page", "repo": "mp", "last_commit": "2026-08-03" },
+        { "url": "https://maqsudjon.com/log/", "title": "Build log",      "category": "Writing",   "repo": "mp", "last_commit": "2026-08-03" }
+      ]
+    },
+    {
+      "domain": "flarestamina.com",
+      "projects": [
+        { "url": "https://flarestamina.com/ielts-hub/",         "title": "IELTS Practice Hub",            "category": "Practice hub",       "repo": "ielts-hub",          "last_commit": "2026-08-02" },
+        { "url": "https://flarestamina.com/news/",              "title": "News and deadlines",            "category": "Editorial",          "repo": "maqsudjon-cell.github.io", "last_commit": "2026-07-26" },
+        { "url": "https://flarestamina.com/founder/",           "title": "Founder",                       "category": "Profile",            "repo": "maqsudjon-cell.github.io", "last_commit": "2026-07-26" },
+        { "url": "https://flarestamina.com/teachers/",          "title": "For teachers",                  "category": "Teacher hub",        "repo": "maqsudjon-cell.github.io", "last_commit": "2026-07-26" },
+        { "url": "https://flarestamina.com/writearticle/",      "title": "Write an IELTS article",        "category": "Teacher tool",       "repo": "maqsudjon-cell.github.io", "last_commit": "2026-07-26" },
+        { "url": "https://flarestamina.com/convert/",           "title": "IELTS / CEFR / Multilevel converter", "category": "Score tool",   "repo": "maqsudjon-cell.github.io", "last_commit": "2026-07-26" },
+        { "url": "https://flarestamina.com/band-calculator/",   "title": "IELTS band calculator",         "category": "Score tool",         "repo": "band-calculator",    "last_commit": "2026-07-10" },
+        { "url": "https://flarestamina.com/deadlines/",         "title": "Grant deadlines 2026–2027",     "category": "Scholarship tracker","repo": "maqsudjon-cell.github.io", "last_commit": "2026-07-26" },
+        { "url": "https://flarestamina.com/plan/",              "title": "Study plan generator",          "category": "Planner",            "repo": "maqsudjon-cell.github.io", "last_commit": "2026-07-26" },
+        { "url": "https://flarestamina.com/speaking-topics/",   "title": "Speaking topics 2026",          "category": "Question bank",      "repo": "maqsudjon-cell.github.io", "last_commit": "2026-07-26" },
+        { "url": "https://flarestamina.com/ielts-speaking-lab/","title": "Speaking lab — AI examiner",    "category": "AI examiner",        "repo": "ielts-speaking-lab", "last_commit": "2026-07-02" },
+        { "url": "https://flarestamina.com/pangeya-lab/",       "title": "Pangeya writing lab",           "category": "Writing lab",        "repo": "pangeya-lab",        "last_commit": "2026-07-10" },
+        { "url": "https://flarestamina.com/ctn-vocab/",         "title": "CTN vocab",                     "category": "Vocabulary tool",    "repo": "ctn-vocab",          "last_commit": "2026-07-13" },
+        { "url": "https://flarestamina.com/ielts-hub-landing/", "title": "Mock tests landing",            "category": "Landing page",       "repo": "ielts-hub-landing",  "last_commit": "2026-07-12" },
+        { "url": "https://flarestamina.com/nodir-lingo/",       "title": "Nodir Turayev — teacher site",  "category": "Client site",        "repo": "nodir-lingo",        "last_commit": "2026-07-10" },
+        { "url": "https://flarestamina.com/queueless-icons/",   "title": "QueueLess icon set",            "category": "Design study",       "repo": "queueless-icons",    "last_commit": "2026-07-31" },
+        { "url": "https://flarestamina.com/neon-bloom/",        "title": "Neon Bloom",                    "category": "Creative experiment","repo": "neon-bloom",         "last_commit": "2026-07-01" },
+        { "url": "https://flarestamina.com/neon-chat-ai/",      "title": "Neon chat UI",                  "category": "AI experiment",      "repo": "neon-chat-ai",       "last_commit": "2026-06-17" },
+        { "url": "https://flarestamina.com/chatbot-ui-uz/",     "title": "Uzbek chatbot UI",              "category": "AI experiment",      "repo": "chatbot-ui-uz",      "last_commit": "2026-06-17" },
+        { "url": "https://flarestamina.com/mp-spacex/",         "title": "Portfolio study",               "category": "Design study",       "repo": "mp-spacex",          "last_commit": "2026-07-10" }
+      ]
+    },
+    {
+      "domain": "subdomains",
+      "projects": [
+        { "url": "https://payvandchi.maqsudjon.com/", "title": "Payvandchi — metalwork shop", "category": "Client site", "repo": "payvandchi", "last_commit": "2026-08-01" }
+      ]
+    },
+    {
+      "domain": "other",
+      "projects": [
+        { "url": "https://chzq.uz/",     "title": "Chiziq — web studio",   "category": "Venture",     "repo": "chzquz",   "last_commit": "2026-07-25" },
+        { "url": "https://ctnlc.uz/",    "title": "CTN Language Centre",   "category": "Client site", "repo": "ctn",      "last_commit": "2026-07-22" },
+        { "url": "https://zedavlod.uz/", "title": "ZED AVLOD School",      "category": "Client site", "repo": "zedavlod", "last_commit": "2026-07-23" }
+      ]
+    }
+  ]
+}

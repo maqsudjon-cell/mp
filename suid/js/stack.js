@@ -7,6 +7,8 @@
    where sui.io gets heavy.
    ------------------------------------------------------------------------ */
 
+import { MOTION, revealOnce } from './main.js';
+
 export function initStack(mm){
   const section = document.querySelector('[data-stack]');
   if(!section) return;
@@ -52,18 +54,13 @@ export function initStack(mm){
      It is also cheaper than six triggers, which is the same argument §8c makes
      for not scrubbing. setActive and the reduced-motion branch are unchanged. */
   mm.add('(prefers-reduced-motion: no-preference)',()=>{
-    gsap.set(cards,{opacity:0,y:32});
+    gsap.set(cards,{opacity:0,y:MOTION.y});
 
-    const reveal = new IntersectionObserver((entries)=>{
-      entries.forEach(e=>{
-        if(!e.isIntersecting) return;
-        reveal.unobserve(e.target);                     // once
-        e.target.style.willChange='transform, opacity';
-        gsap.to(e.target,{opacity:1,y:0,duration:.42,ease:'power3.out',
-          onComplete:()=>{e.target.style.willChange='';}});
-      });
-    },{rootMargin:'0px 0px -12% 0px'});                 // ≈ start:'top 88%'
-    cards.forEach(card=>reveal.observe(card));
+    const stopReveal = revealOnce(cards, card=>{
+      card.style.willChange='transform, opacity';
+      gsap.to(card,{opacity:1,y:0,duration:MOTION.el,ease:MOTION.ease,
+        onComplete:()=>{card.style.willChange='';}});
+    });
 
     /* A zero-height band at 45% of the viewport: the card crossing it owns the
        stack. Cards never overlap, so at most one can cross at a time, and the
@@ -76,6 +73,6 @@ export function initStack(mm){
     cards.forEach(card=>line.observe(card));
 
     setActive(0);
-    return ()=>{ reveal.disconnect(); line.disconnect(); };   // matchMedia cleanup
+    return ()=>{ stopReveal(); line.disconnect(); };   // matchMedia cleanup
   });
 }

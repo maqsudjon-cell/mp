@@ -17,7 +17,10 @@
 const SEEN = 'suid_seen';
 const CAP  = 1200;
 
-export function initPreloader({ wipe, overlap }){
+/* power2.out — the counter decelerates into 100 instead of arriving flat out. */
+const easeOut = p => 1 - Math.pow(1 - p, 3);
+
+export function initPreloader({ wipe, overlap, min }){
   const el   = document.querySelector('[data-preloader]');
   const root = document.documentElement;
   const done = () => { root.dataset.preload = 'done'; };
@@ -31,10 +34,17 @@ export function initPreloader({ wipe, overlap }){
   if(skip){ done(); return Promise.resolve(); }
 
   const out = el.querySelector('[data-pl-count]');
-  let target = 0, shown = 0, raf = 0, closed = false;
+  let raf = 0, closed = false, landed = 0, span = CAP;
   const t0 = performance.now();
 
-  const signal = () => { target = Math.min(100, target + 50); };
+  /* Two real signals, no timer driving the number. Until both land the counter
+     paces itself against the 1200ms ceiling; the moment they do, the run is
+     re-scoped to however long they actually took — clamped to a 900ms floor so
+     the curtain never snaps away, and to the ceiling so it never overstays. */
+  const signal = () => {
+    if(++landed < 2) return;
+    span = Math.min(CAP, Math.max(min, performance.now() - t0));
+  };
   (document.fonts ? document.fonts.ready : Promise.resolve()).then(signal);
   if(document.readyState === 'complete') signal();
   else addEventListener('load', signal, { once:true });
@@ -51,16 +61,14 @@ export function initPreloader({ wipe, overlap }){
     };
 
     const tick = now => {
-      if(now - t0 >= CAP) target = 100;          // hard ceiling
-      shown += (target - shown) * .18;
-      if(target === 100 && 100 - shown < .8) shown = 100;
-      out.textContent = String(Math.round(shown)).padStart(3, '0');
-      if(shown >= 100){ finish(); return; }
+      const p = Math.min(1, (now - t0) / span);
+      out.textContent = String(Math.round(100 * easeOut(p))).padStart(3, '0');
+      if(p >= 1){ finish(); return; }
       raf = requestAnimationFrame(tick);
     };
     raf = requestAnimationFrame(tick);
 
-    /* The cap has to hold even when no frame is delivered. Opened in a
+    /* The ceiling has to hold even when no frame is delivered. Opened in a
        background tab, requestAnimationFrame is throttled to nothing, and an
        overlay that waits for a frame that never comes is an overlay that
        never leaves. */

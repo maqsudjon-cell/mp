@@ -46,7 +46,7 @@
   /* Motion */
   --e-out:cubic-bezier(.16,1,.3,1);
   --e-inout:cubic-bezier(.76,0,.24,1);
-  --d-micro:180ms; --d-el:420ms; --d-sec:760ms;
+  --d-micro:180ms; --d-el:620ms; --d-sec:900ms;
 }
 
 /* ---------------------------------------------------------------------------
@@ -55,8 +55,9 @@
    both CSS and JS read them from here (js/main.js → tok()).
    ------------------------------------------------------------------------ */
 :root{
-  --d-wipe:600ms;        /* §7.1 preloader clip-path wipe */
-  --d-overlap:300ms;     /* §7.1 hero starts at -0.3 of the wipe */
+  --d-wipe:900ms;        /* §7.1 preloader clip-path wipe */
+  --d-overlap:350ms;     /* §7.1 hero starts 0.35s before the wipe ends */
+  --d-pl-min:900ms;      /* §7.1 floor — the curtain is never shorter than this */
   --d-rot:520ms;         /* §7.6 rotator line change */
   --t-rot:3200ms;        /* §7.6 rotator dwell */
   --t-mq:32s;            /* §7.4 marquee cycle */
@@ -64,8 +65,8 @@
   --t-cue:2s;            /* §7.3 scroll cue */
   --t-count:1400ms;      /* §7.3 metric count-up */
   --t-count-repo:1600ms; /* §7.9 repository count-up */
-  --t-stagger-w:60ms;    /* global word stagger — never randomised */
-  --t-stagger-c:90ms;    /* global card and row stagger */
+  --t-stagger:80ms;      /* the one stagger — words, cards, rows alike */
+  --t-reveal-y:48px;     /* the one reveal distance for cards and rows */
 }
 
 /* ---------------------------------------------------------------------------

@@ -397,3 +397,47 @@ html:not([data-ready]) .plate{opacity:1}
               display:grid;gap:var(--s-2)}
 .footer__base .mono{color:var(--text-low-aa)}
 .footer__note{color:var(--text-low-aa);font-size:.875rem;max-width:76ch}
+
+/* ============================================  FULL PROJECT INDEX — Everything else/ */
+.idx{padding-block:var(--s-16);position:relative}
+.idx__head{margin-bottom:var(--s-8);max-width:62ch}
+.idx__head h2{font-size:var(--fs-h2);font-weight:500;letter-spacing:-.035em;
+              line-height:.94;margin:var(--s-3) 0 var(--s-3)}
+.idx__meta{color:var(--text-low-aa);letter-spacing:.08em;text-transform:uppercase;
+           font-size:var(--fs-label);margin:0}
+.idx__meta b{color:var(--sea);font-weight:500;font-variant-numeric:tabular-nums}
+.idx__meta [data-index-stamp]{margin-left:.75em}
+
+.idx__group{margin-bottom:var(--s-8)}
+.idx__group:last-child{margin-bottom:0}
+.idx__domain{margin:0 0 var(--s-2);color:var(--text-low-aa)}
+.idx__list{list-style:none;margin:0;padding:0}
+
+.idx__row{border-top:1px solid var(--ink-3)}
+.idx__row:last-child{border-bottom:1px solid var(--ink-3)}
+
+.idx__link{display:grid;grid-template-columns:auto 1fr;gap:.35rem var(--s-2);
+           align-items:baseline;padding:var(--s-2) 0;text-decoration:none;
+           color:var(--text-hi);min-height:44px;
+           transition:color var(--d-micro) linear}
+@media (min-width:760px){
+  .idx__link{grid-template-columns:3.5rem minmax(0,1fr) 12rem minmax(0,1fr);
+             align-items:center}
+}
+.idx__n{color:var(--text-low-aa);font-size:var(--fs-label);letter-spacing:.08em;
+        font-variant-numeric:tabular-nums}
+.idx__t{font-size:1.0625rem;letter-spacing:-.01em}
+.idx__c{color:var(--text-low-aa);font-size:var(--fs-label);letter-spacing:.08em;
+        text-transform:uppercase;grid-column:2}
+.idx__u{color:var(--text-mid);font-size:var(--fs-label);letter-spacing:.04em;
+        grid-column:2;overflow-wrap:anywhere;
+        transition:color var(--d-micro) linear}
+@media (min-width:760px){
+  .idx__c{grid-column:3}
+  .idx__u{grid-column:4;text-align:right}
+}
+@media (hover:hover){
+  .idx__link:hover{color:var(--sea)}
+  .idx__link:hover .idx__u{color:var(--sea)}
+}
+.idx__empty{color:var(--text-low-aa);font-size:var(--fs-label);letter-spacing:.08em}

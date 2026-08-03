@@ -17,6 +17,7 @@ import { initMarquee }     from './marquee.js';
 import { initCounters, initRepoCounter } from './counter.js';
 import { initRotator }     from './rotator.js';
 import { initStack }       from './stack.js';
+import { initIndex }       from './index.js';
 
 const root = document.documentElement;
 const cs   = getComputedStyle(root);
@@ -42,6 +43,24 @@ const tok = name => {
    --e-out   cubic-bezier(.16,1,.3,1)   = easeOutExpo    = 'expo.out'
    --e-inout cubic-bezier(.76,0,.24,1)  ≈ easeInOutQuart = 'power3.inOut'   */
 const E_OUT = 'expo.out';
+
+/* ---------------------------------------------------------------------------
+   The one motion config. Every module imports this and nothing else — after
+   this object there is not a duration, an ease or a stagger written anywhere
+   in the JavaScript. Durations still come from tokens.css, so the whole page
+   can be retimed from one file.
+
+   The import is circular (main → module → main), which is safe here because
+   nothing reads MOTION at module-evaluation time; every reference is inside a
+   function that runs long after both modules have finished evaluating.
+   ------------------------------------------------------------------------ */
+export const MOTION = {
+  el:      tok('--d-el')      / 1000,   // 620ms — element reveals
+  sec:     tok('--d-sec')     / 1000,   // 900ms — section reveals
+  ease:    E_OUT,                       // cubic-bezier(.16,1,.3,1)
+  stagger: tok('--t-stagger') / 1000,   // .08
+  y:       parseFloat(cs.getPropertyValue('--t-reveal-y'))   // 48
+};
 
 const REDUCED = matchMedia('(prefers-reduced-motion: reduce)').matches;
 const HAS_GSAP = typeof window.gsap !== 'undefined' &&
@@ -96,7 +115,11 @@ document.addEventListener('click', e => {
 
 /* ========================================================== sequence ===== */
 
-const ready = initPreloader({ wipe: tok('--d-wipe'), overlap: tok('--d-overlap') });
+const ready = initPreloader({
+  wipe:    tok('--d-wipe'),
+  overlap: tok('--d-overlap'),
+  min:     tok('--d-pl-min')
+});
 const fonts = document.fonts ? document.fonts.ready : Promise.resolve();
 
 fonts.then(() => {
@@ -109,6 +132,7 @@ function build(){
   initRepoCounter(tok('--t-count-repo'));
   initRotator({ dwell: tok('--t-rot'), dur: tok('--d-rot') });
   initMarquee();
+  initIndex();
 
   /* No GSAP (blocked CDN, offline): the page keeps every final state it was
      served with. Nothing is hidden waiting for a tween that will never run. */
@@ -146,6 +170,53 @@ function build(){
   if(location.hash) jumpTo(document.querySelector(location.hash));
 }
 
+/* ---------------------------------------------------------------------------
+   revealOnce — the only reveal mechanism on the page.
+
+   IntersectionObserver alone is not enough. During a fast flick the compositor
+   can scroll past an element between two observation ticks, and the callback
+   for it never arrives — the element stays at opacity 0 with nothing left to
+   trigger it. So a sweep runs alongside: on every scroll (rAF-throttled) it
+   checks whatever has not fired yet against the real viewport and releases
+   anything already inside it. Both paths call the same function, and each
+   element fires exactly once. The sweep unhooks itself when the set empties.
+   ------------------------------------------------------------------------ */
+export function revealOnce(elements, onReveal, margin = '0px 0px -12% 0px'){
+  const pending = new Set(elements);
+  if(!pending.size) return () => {};
+
+  const fire = el => {
+    if(!pending.has(el)) return;
+    pending.delete(el);
+    io.unobserve(el);
+    onReveal(el);
+    if(!pending.size) stop();
+  };
+
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if(e.isIntersecting) fire(e.target); });
+  }, { rootMargin: margin });
+  pending.forEach(el => io.observe(el));
+
+  let queued = false;
+  const sweep = () => {
+    queued = false;
+    pending.forEach(el => {
+      const r = el.getBoundingClientRect();
+      if(r.top < innerHeight * 0.88 && r.bottom > 0) fire(el);
+    });
+  };
+  const onScroll = () => { if(!queued){ queued = true; requestAnimationFrame(sweep); } };
+
+  function stop(){
+    io.disconnect();
+    removeEventListener('scroll', onScroll);
+  }
+  addEventListener('scroll', onScroll, { passive:true });
+  sweep();                      // anything already on screen at setup
+  return stop;
+}
+
 function jumpTo(target){
   if(!target) return;
   const y = target.getBoundingClientRect().top + scrollY - 72;
@@ -157,10 +228,7 @@ function jumpTo(target){
 
 function motion(mm){
   const heroWords = gsap.utils.toArray('.hero__h1 .w>i');
-  const SW = tok('--t-stagger-w') / 1000;      // .06 words
-  const SC = tok('--t-stagger-c') / 1000;      // .09 cards and rows
-  const SEC = tok('--d-sec') / 1000;
-  const EL  = tok('--d-el') / 1000;
+  const { el:EL, sec:SEC, ease:EASE, stagger:ST, y:Y } = MOTION;
 
   /* Reduced motion is off, not fast: no scrub, no pin, no loop, and every
      element sits at its final value from the first frame. */
@@ -199,23 +267,25 @@ function motion(mm){
       onStart:()  => heroWords.forEach(w => w.style.willChange = 'transform'),
       onComplete:() => heroWords.forEach(w => w.style.willChange = '')
     });
-    tl.from(heroWords, { yPercent:110, duration:SEC, ease:E_OUT, stagger:SW })
-      .from('.hero__sub',     { y:20, opacity:0, duration:EL, ease:E_OUT }, .5)
-      .from('.hero__cta',     { y:20, opacity:0, duration:EL, ease:E_OUT }, .58)
-      .from('.metrics',       { y:20, opacity:0, duration:EL, ease:E_OUT }, .66)
-      .from('.hero__caption', { opacity:0, duration:EL, ease:E_OUT }, .74);
+    tl.from(heroWords, { yPercent:110, duration:SEC, ease:EASE, stagger:ST })
+      .from('.hero__sub',     { y:Y, opacity:0, duration:EL, ease:EASE }, .5)
+      .from('.hero__cta',     { y:Y, opacity:0, duration:EL, ease:EASE }, .58)
+      .from('.metrics',       { y:Y, opacity:0, duration:EL, ease:EASE }, .66)
+      .from('.hero__caption', { opacity:0, duration:EL, ease:EASE }, .74);
     ready.then(() => tl.play());
 
     /* --- every other split heading ------------------------------------- */
     gsap.utils.toArray('[data-split]').forEach(h => {
       if(h.classList.contains('hero__h1')) return;
       const words = h.querySelectorAll('.w>i');
-      gsap.from(words, {
-        yPercent:110, duration:SEC, ease:E_OUT, stagger:SW,
-        onStart:()    => words.forEach(w => w.style.willChange = 'transform'),
-        onComplete:() => words.forEach(w => w.style.willChange = ''),
-        scrollTrigger:{ trigger:h, start:'top 86%', once:true }
-      });
+      gsap.set(words, { yPercent:110 });
+      revealOnce([h], () => {
+        words.forEach(w => w.style.willChange = 'transform');
+        gsap.to(words, {
+          yPercent:0, duration:SEC, ease:EASE, stagger:ST,
+          onComplete:() => words.forEach(w => w.style.willChange = '')
+        });
+      }, '0px 0px -14% 0px');
     });
 
     /* --- method + capabilities rows ------------------------------------
@@ -225,22 +295,17 @@ function motion(mm){
     const rows = gsap.utils.toArray('.row');
     const rowKids = rows.flatMap(r => [...r.children]);
     gsap.set(rows, { '--hair-x':0 });
-    gsap.set(rowKids, { opacity:0, y:16 });
-    ScrollTrigger.batch(rows, {
-      start:'top 88%', once:true,
-      onEnter: batch => {
-        gsap.to(batch, { '--hair-x':1, duration:EL, ease:E_OUT, stagger:SC });
-        gsap.to(batch.flatMap(r => [...r.children]),
-                { opacity:1, y:0, duration:EL, ease:E_OUT, stagger:SC });
-      }
+    gsap.set(rowKids, { opacity:0, y:Y });
+    revealOnce(rows, row => {
+      gsap.to(row, { '--hair-x':1, duration:EL, ease:EASE });
+      gsap.to([...row.children], { opacity:1, y:0, duration:EL, ease:EASE, stagger:ST });
     });
 
     /* --- receipts and contact furniture --------------------------------- */
-    gsap.utils.toArray('.fact, .cv, .tile').forEach(el => {
-      gsap.from(el, {
-        opacity:0, y:16, duration:EL, ease:E_OUT,
-        scrollTrigger:{ trigger:el, start:'top 92%', once:true }
-      });
-    });
+    const bits = gsap.utils.toArray('.fact, .cv, .tile');
+    gsap.set(bits, { opacity:0, y:Y });
+    revealOnce(bits, el => {
+      gsap.to(el, { opacity:1, y:0, duration:EL, ease:EASE });
+    }, '0px 0px -8% 0px');
   });
 }
