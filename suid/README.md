@@ -19,10 +19,10 @@ connected to Sui, Mysten Labs, or the Sui Foundation.
 Nothing to install.
 
 ```bash
-python3 -m http.server 8766 --directory /path/to/maqsudjon-site
+python3 -m http.server 8767 --directory /path/to/repo-root
 ```
 
-Then open `http://localhost:8766/suid/`. **Serve from the repository root, not
+Then open `http://localhost:8767/suid/`. **Serve from the repository root, not
 from inside `suid/`** — every asset reference is relative (`./`), never
 root-absolute (`/`), because a GitHub Pages project subpath breaks silently
 otherwise. Testing from a subpath is the only way to catch that.
@@ -123,8 +123,8 @@ and rows, and it is never randomised.
 | 8 | **Marquee** | one CSS keyframe, `translate3d(-50%,0,0)` on a belt of two tracks | `--t-mq` linear, paused on hover and off-screen |
 | 9 | **Manifesto highlight** | **one element, one property.** A `background-clip:text` gradient at `background-size:200%`, scrubbed from `background-position:100%` to `0%`. No per-word spans, no layout cost. | scrub, pinned for `120vh` |
 | 10 | **Rotator** | five lines in a vertical mask, one in, one out | `--d-rot` `--e-inout`, `--t-rot` dwell |
-| 11 | **Stack plates** | opacity `.26 ↔ 1`, body lifts 8px, top face strokes `--sea`. One ScrollTrigger per card, **no scrub** — scrubbing would recompute three properties on six plates every frame. | .45s / .5s / .35s |
-| 12 | **Stack cards** | `y:32 → 0`, opacity, once | .42s `power3.out`, stagger `--t-stagger-c` |
+| 11 | **Stack plates** | opacity `.26 ↔ 1`, body lifts 8px, top face strokes `--sea`. One IntersectionObserver band per card, **no scrub** — scrubbing would recompute three properties on six plates every frame. | .45s / .5s / .35s |
+| 12 | **Stack cards** | `y:32 → 0`, opacity, once, IntersectionObserver | .42s `power3.out`, stagger `--t-stagger-c` |
 | 13 | **Mobile rail** | `scaleX` on a pseudo-element | `--d-el` `--e-out`, CSS |
 | 14 | **Method / Capabilities rows** | hairline draws left-to-right, then the text fades up. The hairline is a pseudo-element, so the tween runs on a custom property it reads (`--hair-x`), default `1`. | `--d-el` `expo.out`, stagger `--t-stagger-c` |
 | 15 | **Receipts, facts, tiles** | `y:16 → 0`, opacity, once | `--d-el` `expo.out` |
@@ -221,9 +221,24 @@ The page is served complete and correct; JavaScript only adds motion.
   the footer sitemap. What is absent is duplicated *markup* — no block on this
   page is rendered twice to serve two layouts, which is what let sui.io drift
   into `OVerview`/`Overview` and `buy SUI`/`claim SUI`.
-* **Own JavaScript is 25.0 KB on disk** against a 20 KB budget: **16.0 KB of
-  code** and 9 KB of the engineering commentary this brief asks for, arriving as
-  **10.5 KB gzipped**. Stripping the explanations to satisfy an uncompressed
+* **The stack drives `setActive` from IntersectionObserver, not ScrollTrigger.**
+  §8c is otherwise used as written — `setActive`, the tween values, the
+  reduced-motion branch and the naming are untouched — but the six per-card
+  `ScrollTrigger.create` calls are gone. §7.5 pins the manifesto for `120vh`
+  immediately above this section, and every ScrollTrigger below that pin
+  resolves its `start` to a scroll position exactly `120vh` short of the real
+  one. Measured, and invariant under `refresh()`, `refreshPriority:1`, trigger
+  creation order and `normalizeScroll(false)`. The visible symptom was the
+  plates running two cards ahead of the card on screen — card 3 filling the
+  viewport with plate 6 lit — and the card reveals firing while still below the
+  fold. IntersectionObserver reports real geometry against the real viewport, so
+  a pin above it cannot skew it; it is also cheaper than six triggers, which is
+  the argument §8c already makes for not scrubbing. A zero-height band at 45% of
+  the viewport decides the owner; the gaps between cards keep the previous plate
+  lit. §8a and §8b are used exactly as written.
+* **Own JavaScript is 27.0 KB on disk** against a 20 KB budget: **16.3 KB of
+  code** and 11 KB of the engineering commentary this brief asks for, arriving as
+  **11.3 KB gzipped**. Stripping the explanations to satisfy an uncompressed
   byte count on files that ship compressed seemed the wrong trade; delete the
   comment blocks if you disagree.
 
@@ -283,7 +298,7 @@ suid/
 │   ├── marquee.js      belt + cloned track
 │   ├── counter.js      metric count-ups and the live repository count
 │   ├── rotator.js      height-locked line rotator
-│   └── stack.js        §8c, used as written
+│   └── stack.js        §8c; setActive verbatim, triggers via IntersectionObserver
 ├── assets/
 │   ├── Maqsudjon_Polatov_CV.pdf
 │   ├── maqsudjon-cv-preview.png / .avif
