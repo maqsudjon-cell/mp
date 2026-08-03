@@ -1,0 +1,160 @@
+/* ============================================================================
+   base.css — reset, type, layout primitives, utilities.
+   ========================================================================= */
+
+/* --- metric-matched fallbacks -------------------------------------------
+   Inter Tight: upm 2048, asc 1984 (96.9%), desc 494 (24.1%), x-height 1118
+   (54.6%). Arial: x-height 51.9% → size-adjust 105.2%, and the vertical
+   overrides are the Inter Tight ratios divided by that adjustment. Result:
+   the fallback occupies the same box, so a split heading does not reflow when
+   the webfont swaps in. This is the CLS budget for the whole page. */
+@font-face{
+  font-family:'Inter Tight Fallback';
+  src:local('Arial'),local('Helvetica Neue'),local('Liberation Sans');
+  size-adjust:105.2%; ascent-override:92.1%; descent-override:22.9%;
+  line-gap-override:0%;
+}
+@font-face{
+  font-family:'JetBrains Mono Fallback';
+  src:local('Menlo'),local('Consolas'),local('Courier New');
+  size-adjust:99.7%; ascent-override:102%; descent-override:30%;
+  line-gap-override:0%;
+}
+
+/* --- reset --------------------------------------------------------------- */
+*,*::before,*::after{box-sizing:border-box}
+*{margin:0}
+html{-webkit-text-size-adjust:100%}
+body{
+  background:var(--ink);
+  color:var(--text-mid);
+  font-family:var(--font-display);
+  font-size:var(--fs-body);
+  font-weight:400;
+  line-height:1.5;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+img,picture,svg{display:block;max-width:100%}
+img{height:auto}
+ul,ol{list-style:none;padding:0}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+/* clears the 64px sticky header plus a breath */
+:target,[id]{scroll-margin-top:calc(var(--s-8) + var(--s-2))}
+
+/* --- display type — the single most recognisable Sui trait --------------- */
+h1,h2,h3,.display{
+  font-family:var(--font-display);
+  font-weight:500;
+  letter-spacing:-.035em;
+  line-height:.94;
+  color:var(--text-hi);
+  text-wrap:balance;
+}
+h3{letter-spacing:-.02em;line-height:1.15}
+em,.accent{color:var(--sea);font-style:italic}
+
+/* --- mono voice: labels, eyebrows, numbers, column headers --------------- */
+.mono{
+  font-family:var(--font-mono);
+  font-size:var(--fs-label);
+  font-weight:400;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  line-height:1.4;
+}
+/* Trailing-slash motif. The slash is generated, never a text node, so it is
+   never selected, never translated and never read as a word. */
+.label{
+  font-family:var(--font-mono);
+  font-size:var(--fs-label);
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--text-low-aa);
+  display:block;
+}
+.label::after{content:'/';color:var(--sea);margin-left:.05em}
+.label b{color:var(--sea);font-weight:500;margin-right:.75em}
+.light .label{color:var(--text-ink-mid)}
+
+/* --- layout primitives --------------------------------------------------- */
+.shell{width:var(--shell);margin-inline:auto}
+.lede{color:var(--text-mid);max-width:56ch;font-size:var(--fs-body)}
+.hair{height:1px;background:var(--ink-3);border:0}
+
+/* --- utilities ----------------------------------------------------------- */
+.vh{
+  position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;
+  overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap;
+  border:0;
+}
+.tnum{font-variant-numeric:tabular-nums}
+
+/* --- focus: always visible, never removed -------------------------------- */
+:focus-visible{
+  outline:2px solid var(--sea);
+  outline-offset:2px;
+  border-radius:1px;
+}
+.light :focus-visible{outline-color:var(--text-ink)}
+
+.skip{
+  position:absolute;left:var(--s-2);top:var(--s-2);z-index:200;
+  transform:translateY(-200%);
+  background:var(--sea);color:var(--ink);
+  font-family:var(--font-mono);font-size:var(--fs-label);
+  letter-spacing:.08em;text-transform:uppercase;
+  padding:.9rem 1.25rem;border-radius:var(--radius);
+  transition:transform var(--d-micro) var(--e-out);
+}
+.skip:focus{transform:translateY(0)}
+
+/* --- buttons ------------------------------------------------------------- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.5rem;
+  min-height:44px;padding:.75rem 1.35rem;border-radius:var(--radius);
+  font-family:var(--font-mono);font-size:var(--fs-label);
+  letter-spacing:.08em;text-transform:uppercase;
+  border:1px solid var(--sea);
+  transition:background-color var(--d-micro) linear,color var(--d-micro) linear,
+             transform var(--d-micro) var(--e-out);
+}
+.btn--solid{background:var(--sea);color:var(--ink);font-weight:500}
+.btn--outline{color:var(--text-hi);background:transparent}
+@media (hover:hover){
+  .btn--solid:hover{background:var(--sea-bright);border-color:var(--sea-bright);transform:translateY(-2px)}
+  .btn--outline:hover{background:var(--sea);color:var(--ink)}
+}
+
+/* --- accessible word splitter -------------------------------------------
+   .w is the overflow mask, .w > i is the thing that moves. Each word carries
+   its own trailing space inside the mask, so a copy-paste of a split heading
+   returns real words with real spaces; the visual gutter comes from
+   margin-right, not from that space (trailing white space at the end of an
+   inline-block line box is dropped). */
+[data-split]{display:block}
+.w{
+  display:inline-block;overflow:hidden;vertical-align:top;
+  margin-right:.25em;padding-bottom:.06em;
+}
+.w>i{display:inline-block;font-style:inherit;color:inherit}
+.w>i.accent{font-style:italic;color:var(--sea)}
+/* the copy-paste separator: real space, zero advance, no layout role */
+.sp{font-size:0}
+
+/* --- global motion switch -----------------------------------------------
+   Nothing loops, nothing scrubs, nothing waits mid-animation. GSAP is turned
+   off from js/main.js through matchMedia; this covers the CSS side. */
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{
+    animation-duration:1ms!important;animation-iteration-count:1!important;
+    transition-duration:1ms!important;scroll-behavior:auto!important;
+  }
+}
+
+/* Lenis */
+html.lenis,html.lenis body{height:auto}
+.lenis.lenis-smooth{scroll-behavior:auto!important}
+.lenis.lenis-stopped{overflow:hidden}

@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Suid — a Sui-inspired design study by Maqsudjon Polatov</title>
+<meta name="description" content="A single-page design study: the visual and motion language of sui.io, rebuilt from scratch in plain HTML, CSS and JavaScript — no framework, no build step, and none of the fifteen defects found on the original.">
+<meta name="author" content="Maqsudjon Polatov">
+<meta name="theme-color" content="#011829">
+<link rel="canonical" href="https://maqsudjon.com/suid/">
+<link rel="icon" href="../favicon.ico">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://maqsudjon.com/suid/">
+<meta property="og:site_name" content="maqsudjon.com">
+<meta property="og:title" content="Suid — a Sui-inspired design study by Maqsudjon Polatov">
+<meta property="og:description" content="The visual and motion language of sui.io, rebuilt from scratch in plain HTML, CSS and JavaScript.">
+<meta property="og:image" content="https://maqsudjon.com/suid/assets/suid-og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Turning precise ideas into live products — an isometric stack of six plates on deep ocean blue.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Suid — a Sui-inspired design study by Maqsudjon Polatov">
+<meta name="twitter:description" content="The visual and motion language of sui.io, rebuilt from scratch in plain HTML, CSS and JavaScript.">
+<meta name="twitter:image" content="https://maqsudjon.com/suid/assets/suid-og.png">
+
+<!-- Three flips before first paint: no-js→js, the remembered banner state, and
+     the once-per-session preloader guard — so a returning visitor never sees
+     either of them appear and then vanish. -->
+<script>
+document.documentElement.classList.replace('no-js','js');
+try{
+  if(localStorage.getItem('suid_banner')==='off')document.documentElement.dataset.banner='off';
+  if(sessionStorage.getItem('suid_seen')==='1')document.documentElement.dataset.preload='done';
+}catch(e){}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,400;0,500;1,500&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="./css/tokens.css">
+<link rel="stylesheet" href="./css/base.css">
+<link rel="stylesheet" href="./css/sections.css">
+
+<!-- fix 13: sui.io still ships Webflow's jQuery (~87 KB) in 2026. Nothing
+     here needs it. Two pinned libraries, deferred, and 20 KB of own modules. -->
+<script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script type="module" src="./js/main.js"></script>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Person",
+  "name":"Maqsudjon Polatov",
+  "jobTitle":"AI-first builder",
+  "url":"https://maqsudjon.com/",
+  "email":"mailto:polatovmaqsudjon1@gmail.com",
+  "address":{"@type":"PostalAddress","addressLocality":"Tashkent","addressCountry":"UZ"},
+  "sameAs":[
+    "https://github.com/maqsudjon-cell",
+    "https://t.me/mrbmp13",
+    "https://www.instagram.com/ma1sumi",
+    "https://maqsudjon.com"
+  ]
+}
+</script>
+</head>
+
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- ==========================================================  7.1 PRELOADER
+     fix 11: sui.io's preloader delays LCP on every single visit and has no
+     session guard. This one is driven by real signals (fonts + window load),
+     hard-capped at 1200ms, shown once per session, and skipped outright under
+     reduced-motion. The CSS failsafe below guarantees it can never be the
+     thing that hides the page. -->
+<div class="pl" data-preloader aria-hidden="true">
+  <span class="pl__n mono tnum" data-pl-count>000</span>
+  <span class="pl__t mono">Suid — design study</span>
+</div>
+
+<!-- ==============================================  7.2 ANNOUNCEMENT + NAV
+     fix 15: sui.io stacks four attention-grabbers before the H1 is readable.
+     Two here, and the second one is dismissible for good. -->
+<aside class="banner" data-banner>
+  <a class="banner__link mono" href="#contact">Available for new projects — Tashkent / remote</a>
+  <button class="banner__x" type="button" data-banner-close aria-label="Dismiss announcement">
+    <svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true" focusable="false">
+      <path d="M1 1 L11 11 M11 1 L1 11" stroke="currentColor" stroke-width="1.5"/>
+    </svg>
+  </button>
+</aside>
+
+<!-- fix 5: sui.io ships desktop and mobile navigation as two separate copies
+     of the markup, and the copies have drifted (OVerview/Overview,
+     Buyback/Buybacks, buy SUI/claim SUI). This is one DOM. The mobile drawer
+     is the same <nav>, re-laid-out by CSS. -->
+<header class="header" data-header>
+  <div class="shell header__in">
+    <a class="wordmark mono" href="#top" aria-label="MP 2026 — back to top">
+      <span>MP</span><span>2026</span>
+    </a>
+
+    <button class="burger" type="button" data-nav-toggle aria-expanded="false" aria-controls="nav">
+      <span class="vh">Menu</span>
+      <span class="burger__b" aria-hidden="true"></span>
+      <span class="burger__b" aria-hidden="true"></span>
+    </button>
+
+    <nav class="nav" id="nav" aria-label="Primary">
+      <ul class="nav__list">
+        <li><a class="nav__link label" href="#work">Work</a></li>
+        <li><a class="nav__link label" href="#method">Method</a></li>
+        <li><a class="nav__link label" href="#capabilities">Capabilities</a></li>
+        <li><a class="nav__link label" href="#proof">Proof</a></li>
+      </ul>
+      <a class="btn btn--outline nav__cta" href="#contact">Get in touch</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ==============================================================  7.3 HERO
+     fix 10: sui.io's hero is a YouTube rip shipped as a raw MP4 with no
+     poster. There is no video here and no image either — the mesh is two
+     radial gradients and a dot grid, drawn by the compositor. -->
+<section class="hero" id="top">
+  <div class="hero__mesh" aria-hidden="true"><i class="hero__blob hero__blob--a"></i><i class="hero__blob hero__blob--b"></i></div>
+
+  <div class="shell hero__in">
+    <p class="label mono hero__eyebrow">Design study</p>
+
+    <!-- fix 1 + 3: exactly one H1 on the page, and the splitter keeps real
+         spaces so the heading copy-pastes as a sentence rather than as
+         Turningpreciseideasintoliveproducts. -->
+    <!-- the accent word is marked up, not only declared: with the module
+         blocked (file://) or JS off, <em> still carries it. -->
+    <h1 class="hero__h1" data-split data-accent="live"
+        aria-label="Turning precise ideas into live products.">Turning precise ideas into <em>live</em> products.</h1>
+
+    <p class="hero__sub">I am Maqsudjon Polatov, an AI-first builder who directs agents, tests like a real user, and keeps iterating until the product earns its place in the world.</p>
+
+    <div class="hero__cta">
+      <a class="btn btn--solid" href="#work">Explore selected work</a>
+      <a class="btn btn--outline" href="./assets/Maqsudjon_Polatov_CV.pdf">Download CV</a>
+    </div>
+
+    <!-- Numbers are rendered at their true value so the page is correct with
+         no JavaScript; counter.js resets them to zero and counts up. The
+         animated glyphs are hidden from assistive tech, the real value sits
+         next to them. -->
+    <ul class="metrics">
+      <li class="metric">
+        <span class="metric__n tnum" data-count="170" aria-hidden="true">170</span>
+        <span class="vh">170</span>
+        <span class="metric__l mono">public GitHub repositories</span>
+      </li>
+      <li class="metric">
+        <span class="metric__n tnum" data-count="6" aria-hidden="true">6</span>
+        <span class="vh">6</span>
+        <span class="metric__l mono">live products</span>
+      </li>
+      <li class="metric">
+        <span class="metric__n tnum" data-count="17" aria-hidden="true">17</span>
+        <span class="vh">17</span>
+        <span class="metric__l mono">months shipping</span>
+      </li>
+    </ul>
+
+    <p class="hero__caption mono">Human direction / agent execution / real users</p>
+    <div class="cue" aria-hidden="true"><i></i></div>
+  </div>
+</section>
+
+<!-- ==========================================================  7.4 MARQUEE
+     fix 9: sui.io's logo wall mixes SVG, PNG and WEBP at inconsistent optical
+     weight with no alt text. Mono wordmarks at one weight, one list, and the
+     second track is cloned by JS so the strings exist exactly once here. -->
+<section class="mq-sec" aria-labelledby="built-with">
+  <div class="shell"><p class="label mono" id="built-with">Built with</p></div>
+  <div class="mq" data-marquee>
+    <ul class="mq__track" role="list">
+      <li>Claude Code</li><li>GitHub Pages</li><li>Firebase</li><li>Supabase</li>
+      <li>Vercel</li><li>Python</li><li>GSAP</li><li>Firestore</li>
+      <li>MediaPipe</li><li>DistroKid</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ========================================================  7.5 MANIFESTO
+     One element, one property. The highlight is a background-position scrub
+     on a background-clip:text gradient — no per-word spans, no layout cost. -->
+<section class="manifesto" data-manifesto aria-labelledby="thesis">
+  <div class="shell manifesto__in">
+    <p class="label mono" id="thesis">The thesis</p>
+    <p class="manifesto__line" data-highlight>I direct the agents, test like a real user, and ship until the product earns its place — the judgment stays human, the execution scales.</p>
+  </div>
+</section>
+
+<!-- ==========================================================  7.6 ROTATOR
+     fix 8: sui.io rotates headings of unequal length and the container height
+     jumps on every change. rotator.js measures the tallest line and locks
+     min-height before the first tick. The list below is the real content: JS
+     lifts it into the mask and leaves it in the accessibility tree. -->
+<section class="rot" aria-labelledby="rot-h">
+  <h2 class="vh" id="rot-h">Roles</h2>
+  <div class="shell rot__in">
+    <span class="rot__mark mono" aria-hidden="true">[ &rarr; ]</span>
+    <p class="rot__lead">Maqsudjon is</p>
+    <ul class="rot__list" data-rotator>
+      <li>an AI-first builder</li>
+      <li>an IELTS instructor</li>
+      <li>a music producer</li>
+      <li>a welder by trade</li>
+      <li>still shipping daily</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ========================================================  7.7 THE STACK
+     fix 6: sui.io renders its stack section twice in the DOM to serve two
+     layouts. One DOM here: the SVG is display:none under 900px and the same
+     card list reflows, with a progress rail taking over from the plates. -->
+<section class="stack" id="work" data-stack aria-labelledby="work-h">
+  <div class="shell">
+    <div class="stack__head">
+      <p class="label mono"><b>01</b>Selected work</p>
+      <h2 id="work-h" data-split>Shipped, not theorised.</h2>
+      <p>A mix of education tools, consumer experiments, and practical utilities. Each began with a clear spec, then moved through build, test, and launch.</p>
+    </div>
+
+    <div class="rail" aria-hidden="true">
+      <i class="rail__dot"></i><i class="rail__dot"></i><i class="rail__dot"></i>
+      <i class="rail__dot"></i><i class="rail__dot"></i><i class="rail__dot"></i>
+    </div>
+
+    <div class="stack__grid">
+
+      <div class="stack__viz" aria-hidden="true">
+        <svg viewBox="0 0 520 600" fill="none" preserveAspectRatio="xMidYMid meet" role="presentation">
+
+          <!-- 01 — foundation, painted first -->
+          <g class="plate" data-layer="1">
+            <g class="plate__body">
+              <path class="plate__side" d="M50 500 L190 538 L190 550 L50 512 Z" fill="var(--layer-1)"/>
+              <path class="plate__side plate__side--right" d="M330 500 L190 538 L190 550 L330 512 Z" fill="var(--layer-1)"/>
+              <path class="plate__top"   d="M190 462 L330 500 L190 538 L50 500 Z" fill="var(--layer-1)"/>
+            </g>
+            <line class="plate__lead" x1="330" y1="500" x2="356" y2="500"/>
+            <text class="plate__num" x="364" y="504">01</text>
+          </g>
+
+          <g class="plate" data-layer="2">
+            <g class="plate__body">
+              <path class="plate__side" d="M50 420 L190 458 L190 470 L50 432 Z" fill="var(--layer-2)"/>
+              <path class="plate__side plate__side--right" d="M330 420 L190 458 L190 470 L330 432 Z" fill="var(--layer-2)"/>
+              <path class="plate__top"   d="M190 382 L330 420 L190 458 L50 420 Z" fill="var(--layer-2)"/>
+            </g>
+            <line class="plate__lead" x1="330" y1="420" x2="356" y2="420"/>
+            <text class="plate__num" x="364" y="424">02</text>
+          </g>
+
+          <g class="plate" data-layer="3">
+            <g class="plate__body">
+              <path class="plate__side" d="M50 340 L190 378 L190 390 L50 352 Z" fill="var(--layer-3)"/>
+              <path class="plate__side plate__side--right" d="M330 340 L190 378 L190 390 L330 352 Z" fill="var(--layer-3)"/>
+              <path class="plate__top"   d="M190 302 L330 340 L190 378 L50 340 Z" fill="var(--layer-3)"/>
+            </g>
+            <line class="plate__lead" x1="330" y1="340" x2="356" y2="340"/>
+            <text class="plate__num" x="364" y="344">03</text>
+          </g>
+
+          <g class="plate" data-layer="4">
+            <g class="plate__body">
+              <path class="plate__side" d="M50 260 L190 298 L190 310 L50 272 Z" fill="var(--layer-4)"/>
+              <path class="plate__side plate__side--right" d="M330 260 L190 298 L190 310 L330 272 Z" fill="var(--layer-4)"/>
+              <path class="plate__top"   d="M190 222 L330 260 L190 298 L50 260 Z" fill="var(--layer-4)"/>
+            </g>
+            <line class="plate__lead" x1="330" y1="260" x2="356" y2="260"/>
+            <text class="plate__num" x="364" y="264">04</text>
+          </g>
+
+          <g class="plate" data-layer="5">
+            <g class="plate__body">
+              <path class="plate__side" d="M50 180 L190 218 L190 230 L50 192 Z" fill="var(--layer-5)"/>
+              <path class="plate__side plate__side--right" d="M330 180 L190 218 L190 230 L330 192 Z" fill="var(--layer-5)"/>
+              <path class="plate__top"   d="M190 142 L330 180 L190 218 L50 180 Z" fill="var(--layer-5)"/>
+            </g>
+            <line class="plate__lead" x1="330" y1="180" x2="356" y2="180"/>
+            <text class="plate__num" x="364" y="184">05</text>
+          </g>
+
+          <!-- 06 — top of stack, painted last so it occludes 05 -->
+          <g class="plate" data-layer="6">
+            <g class="plate__body">
+              <path class="plate__side" d="M50 100 L190 138 L190 150 L50 112 Z" fill="var(--layer-6)"/>
+              <path class="plate__side plate__side--right" d="M330 100 L190 138 L190 150 L330 112 Z" fill="var(--layer-6)"/>
+              <path class="plate__top"   d="M190 62 L330 100 L190 138 L50 100 Z" fill="var(--layer-6)"/>
+            </g>
+            <line class="plate__lead" x1="330" y1="100" x2="356" y2="100"/>
+            <text class="plate__num" x="364" y="104">06</text>
+          </g>
+        </svg>
+      </div>
+
+      <!-- fix 4: sui.io repeats its newsletter form about eight times, which
+           duplicates every id in it and breaks every <label for>. There is no
+           repeated block here; the 24 ids on this page were checked for
+           collisions programmatically, not by eye. -->
+      <div class="stack__cards">
+
+        <article class="card card--featured" data-card="1" id="p01">
+          <div class="card__top mono"><b>01</b><span>Education ecosystem</span></div>
+          <div>
+            <p class="card__type mono">Flagship product</p>
+            <h3>Flare Stamina</h3>
+            <p>A free IELTS ecosystem used by students and teachers for weekly mock exams in
+               Tashkent. Pangeya Writing Lab lives inside it as an exam-day essay workflow.</p>
+          </div>
+          <ul class="card__stats">
+            <li><b>73</b>Listening tests</li><li><b>20</b>Reading tests</li>
+            <li><b>166</b>Speaking topics</li><li><b>40</b>Day challenge</li>
+          </ul>
+          <a class="card__link" href="https://flarestamina.com" target="_blank" rel="noreferrer">
+            Visit flarestamina.com <span aria-hidden="true">&rarr;</span></a>
+        </article>
+
+        <article class="card" data-card="2" id="p02">
+          <div class="card__top mono"><b>02</b><span>Language game</span></div>
+          <div>
+            <p class="card__type mono">Consumer</p>
+            <h3>Minnos</h3>
+            <p>Collectible English idioms with audio and Uzbek translations. Learn English, one
+               cat at a time.</p>
+          </div>
+          <p class="card__stat mono">26 idioms</p>
+          <a class="card__link" href="https://minnos.cc" target="_blank" rel="noreferrer">
+            Visit minnos.cc <span aria-hidden="true">&rarr;</span></a>
+        </article>
+
+        <!-- fix: projects with no external URL get a tag, never a disabled
+             anchor and never a link to nowhere. -->
+        <article class="card" data-card="3" id="p03">
+          <div class="card__top mono"><b>03</b><span>Utility</span></div>
+          <div>
+            <p class="card__type mono">Privacy-first</p>
+            <h3>ID Photo Maker</h3>
+            <p>Passport and visa photos with on-device AI background whitening. No uploads and
+               no server.</p>
+          </div>
+          <p class="card__stat mono">100% client-side</p>
+          <p class="card__tag mono">Built for the device</p>
+        </article>
+
+        <article class="card" data-card="4" id="p04">
+          <div class="card__top mono"><b>04</b><span>Automation</span></div>
+          <div>
+            <p class="card__type mono">Creative pipeline</p>
+            <h3>Explainer Engine</h3>
+            <p>A Python pipeline that turns a topic into a branded MP4 explainer with
+               synthesized music.</p>
+          </div>
+          <p class="card__stat mono">Topic in / video out</p>
+          <p class="card__tag mono">Built to automate</p>
+        </article>
+
+        <article class="card" data-card="5" id="p05">
+          <div class="card__top mono"><b>05</b><span>Vocabulary game</span></div>
+          <div>
+            <p class="card__type mono">Daily habit</p>
+            <h3>Pierics</h3>
+            <p>A Wordle-style word game that makes daily IELTS vocabulary practice feel
+               lighter.</p>
+          </div>
+          <p class="card__stat mono">One word per day</p>
+          <a class="card__link" href="https://pierics.com" target="_blank" rel="noreferrer">
+            Visit pierics.com <span aria-hidden="true">&rarr;</span></a>
+        </article>
+
+        <article class="card" data-card="6" id="p06">
+          <div class="card__top mono"><b>06</b><span>Paid product</span></div>
+          <div>
+            <p class="card__type mono">Creator tool</p>
+            <h3>Wedding Invitation Builder</h3>
+            <p>Three templates in three languages, with PNG, PDF, and live-link exports.</p>
+          </div>
+          <p class="card__stat mono">First paid product</p>
+          <a class="card__link" href="https://flarestamina.com/wedding" target="_blank" rel="noreferrer">
+            Visit flarestamina.com/wedding <span aria-hidden="true">&rarr;</span></a>
+        </article>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==========================  7.8 METHOD + CAPABILITIES — the light break -->
+<section class="light" data-duo>
+  <div class="shell duo">
+
+    <div class="duo__col" id="method">
+      <p class="label mono"><b>02</b>Method</p>
+      <h2 data-split>The direction stays human.</h2>
+      <p class="lede">I use AI as the production system. The product judgment, prompts, testing, and decisions stay with me.</p>
+      <ol class="rows">
+        <li class="row"><span class="row__n mono">01</span><div><h3>Specify</h3><p>Turn the idea into a concrete experience, a brief, and a testable path through it.</p></div></li>
+        <li class="row"><span class="row__n mono">02</span><div><h3>Direct</h3><p>Run AI agents through the build with clear plans, constraints, and feedback.</p></div></li>
+        <li class="row"><span class="row__n mono">03</span><div><h3>Test</h3><p>Use the product like a real person would. Catch the rough edges before launch does.</p></div></li>
+        <li class="row"><span class="row__n mono">04</span><div><h3>Ship</h3><p>Deploy, connect the domain, observe behavior, and improve the next version quickly.</p></div></li>
+      </ol>
+    </div>
+
+    <div class="duo__col" id="capabilities">
+      <p class="label mono"><b>03</b>Capabilities</p>
+      <h2 data-split>A builder&rsquo;s operating system.</h2>
+      <ul class="rows">
+        <li class="row"><div><h3>AI development</h3><p>Claude Code, agent workflows, prompt and specification writing, behavior review</p></div></li>
+        <li class="row"><div><h3>Build and deploy</h3><p>GitHub, Pages, Actions, staging-to-production flow, custom domains, DNS</p></div></li>
+        <li class="row"><div><h3>Data and auth</h3><p>Firebase Authentication, Firestore modeling, Supabase, and experimental Stripe</p></div></li>
+        <li class="row"><div><h3>Growth and polish</h3><p>SEO, Search Console, sitemaps, analytics, PWA basics, localization in UZ / EN / RU</p></div></li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<!-- ==========================================================  7.9 RECEIPTS
+     fix 7: sui.io prints a $380,000,000 TVL with no source and no date. This
+     number is fetched from the GitHub API at view time, labelled live or
+     cached, and falls back to the last verified figure offline. -->
+<section class="receipts" id="proof" aria-labelledby="proof-h">
+  <div class="shell">
+    <p class="label mono"><b>04</b>The receipts</p>
+    <h2 id="proof-h" data-split>Everything here is public, live, or both.</h2>
+    <p class="lede">Since February 2025, I have published 170 repositories across products, staging copies, experiments, and more than 70 individually built IELTS test pages.</p>
+
+    <div class="receipts__grid">
+      <div class="tally">
+        <span class="tally__n tnum" data-repo-count data-count="170" aria-hidden="true">170</span>
+        <span class="vh" data-repo-vh>170 public repositories</span>
+        <p class="tally__src mono" data-repo-src>Source: GitHub API &middot; cached</p>
+      </div>
+
+      <dl class="facts">
+        <div class="fact"><dt class="mono">Languages</dt><dd>Uzbek (native), English (C1), Korean (basic)</dd></div>
+        <div class="fact"><dt class="mono">Based in</dt><dd>Tashkent, Uzbekistan</dd></div>
+        <div class="fact"><dt class="mono">Repository trail</dt><dd><a class="ul" href="https://github.com/maqsudjon-cell" target="_blank" rel="noreferrer">github.com/maqsudjon-cell</a></dd></div>
+      </dl>
+
+      <!-- fix 12: sui.io ships Figma exports under their export names
+           (Frame 2147267312 (1).avif). Every asset here is named for what it
+           is, kebab-case, and the CV preview is generated from the CV itself. -->
+      <a class="cv" href="./assets/Maqsudjon_Polatov_CV.pdf">
+        <picture>
+          <source srcset="./assets/maqsudjon-cv-preview.avif" type="image/avif">
+          <img src="./assets/maqsudjon-cv-preview.png" width="660" height="934" loading="lazy" decoding="async"
+               alt="First page of the CV of Maqsudjon Polatov, listing profile, skills and live projects.">
+        </picture>
+        <span class="cv__label mono">Download CV <span aria-hidden="true">&rarr;</span></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===========================================================  7.10 CONTACT -->
+<section class="contact" id="contact" aria-labelledby="contact-h">
+  <div class="shell">
+    <p class="label mono"><b>05</b>Contact</p>
+    <h2 id="contact-h" data-split>Have a product that needs to become real?</h2>
+    <a class="contact__mail" href="mailto:polatovmaqsudjon1@gmail.com">polatovmaqsudjon1@gmail.com</a>
+
+    <ul class="tiles">
+      <li><a class="tile" href="mailto:polatovmaqsudjon1@gmail.com">
+        <span class="tile__l mono">Email</span>
+        <span class="tile__d">polatovmaqsudjon1@gmail.com</span>
+        <span class="tile__a" aria-hidden="true">&rarr;</span></a></li>
+      <li><a class="tile" href="https://t.me/mrbmp13" target="_blank" rel="noreferrer">
+        <span class="tile__l mono">Telegram</span>
+        <span class="tile__d">t.me/mrbmp13</span>
+        <span class="tile__a" aria-hidden="true">&rarr;</span></a></li>
+      <li><a class="tile" href="https://github.com/maqsudjon-cell" target="_blank" rel="noreferrer">
+        <span class="tile__l mono">GitHub</span>
+        <span class="tile__d">github.com/maqsudjon-cell</span>
+        <span class="tile__a" aria-hidden="true">&rarr;</span></a></li>
+      <li><a class="tile" href="./assets/Maqsudjon_Polatov_CV.pdf">
+        <span class="tile__l mono">Download CV</span>
+        <span class="tile__d">PDF &middot; one page</span>
+        <span class="tile__a" aria-hidden="true">&rarr;</span></a></li>
+    </ul>
+  </div>
+</section>
+
+</main>
+
+<!-- ============================================================  7.11 FOOTER -->
+<footer class="footer">
+  <div class="shell footer__grid">
+    <nav class="fcol" aria-labelledby="f-work">
+      <h2 class="label mono" id="f-work">Work</h2>
+      <ul>
+        <li><a class="ul" href="#p01">Flare Stamina</a></li>
+        <li><a class="ul" href="#p02">Minnos</a></li>
+        <li><a class="ul" href="#p03">ID Photo Maker</a></li>
+        <li><a class="ul" href="#p04">Explainer Engine</a></li>
+        <li><a class="ul" href="#p05">Pierics</a></li>
+        <li><a class="ul" href="#p06">Wedding Invitation Builder</a></li>
+      </ul>
+    </nav>
+
+    <nav class="fcol" aria-labelledby="f-else">
+      <h2 class="label mono" id="f-else">Elsewhere</h2>
+      <ul>
+        <li><a class="ul" href="https://github.com/maqsudjon-cell" target="_blank" rel="noreferrer">GitHub</a></li>
+        <li><a class="ul" href="https://t.me/mrbmp13" target="_blank" rel="noreferrer">Telegram</a></li>
+        <li><a class="ul" href="https://www.instagram.com/ma1sumi" target="_blank" rel="noreferrer">Instagram</a></li>
+        <li><a class="ul" href="https://maqsudjon.com">maqsudjon.com</a></li>
+      </ul>
+    </nav>
+
+    <nav class="fcol" aria-labelledby="f-about">
+      <h2 class="label mono" id="f-about">About</h2>
+      <ul>
+        <li><a class="ul" href="./assets/Maqsudjon_Polatov_CV.pdf">CV</a></li>
+        <li><a class="ul" href="#colophon">Colophon</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="shell footer__base" id="colophon">
+    <p class="mono">&copy; 2026 Maqsudjon Polatov &middot; Design study after sui.io &middot; Built with Claude Code</p>
+    <p class="footer__note">This page is an independent homage to the visual and motion language of sui.io. It is not affiliated with, endorsed by, or connected to Sui, Mysten Labs, or the Sui Foundation. The design language is theirs; the code and every word of content are mine.</p>
+  </div>
+</footer>
+
+</body>
+</html>

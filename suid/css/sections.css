@@ -1,0 +1,399 @@
+/* ============================================================================
+   sections.css — per-section styles, in the order the page is built.
+   ========================================================================= */
+
+/* ------------------------------------------------------------- 7.1 PRELOADER
+   Hidden outright with no JS, on a repeat visit in the same session, and under
+   reduced-motion. The failsafe animation is not a progress timer: it is the
+   guarantee that a broken module can never leave the page behind an overlay. */
+.pl{
+  position:fixed;inset:0;z-index:150;background:var(--ink);
+  display:flex;align-items:flex-end;justify-content:space-between;
+  gap:var(--s-4);padding:var(--s-6) 4vw;
+  clip-path:inset(0 0 0 0);
+  transition:clip-path var(--d-wipe) var(--e-inout);
+  animation:pl-failsafe 1ms linear 2400ms forwards;
+}
+.pl.is-out{clip-path:inset(0 0 100% 0)}
+.no-js .pl,
+html[data-preload="done"] .pl{display:none}
+@media (prefers-reduced-motion:reduce){.pl{display:none}}
+@keyframes pl-failsafe{to{opacity:0;visibility:hidden;pointer-events:none}}
+
+.pl__n{
+  font-size:clamp(3.5rem,14vw,9rem);line-height:.8;letter-spacing:-.035em;
+  color:var(--text-hi);text-transform:none;
+}
+.pl__t{color:var(--text-low-aa);align-self:flex-end;text-align:right}
+.pl__n,.pl__t{transition:opacity var(--d-micro) linear}
+.pl.is-out .pl__n,.pl.is-out .pl__t{opacity:0}
+
+/* --------------------------------------------------------------- 7.2 BANNER */
+.banner{
+  position:relative;z-index:60;background:var(--ink-2);
+  display:flex;align-items:center;justify-content:center;
+  padding:.25rem 3rem .25rem var(--s-2);
+  border-bottom:1px solid var(--ink-3);
+}
+html[data-banner="off"] .banner{display:none}
+.banner__link{
+  color:var(--sea);display:inline-flex;align-items:center;min-height:44px;
+  text-align:center;border-bottom:1px solid transparent;
+  transition:border-color var(--d-micro) linear;
+}
+@media (hover:hover){.banner__link:hover{border-bottom-color:var(--sea)}}
+.banner__x{
+  position:absolute;right:0;top:50%;transform:translateY(-50%);
+  width:44px;height:44px;display:grid;place-items:center;color:var(--text-mid);
+  transition:color var(--d-micro) linear;
+}
+@media (hover:hover){.banner__x:hover{color:var(--text-hi)}}
+
+/* ------------------------------------------------------------------ 7.2 NAV */
+.header{
+  position:sticky;top:0;z-index:50;
+  -webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);
+  background:transparent;border-bottom:1px solid transparent;
+  transition:background-color var(--d-el) linear,border-color var(--d-el) linear;
+}
+.header.is-stuck{background:var(--glass);border-bottom-color:var(--ink-3)}
+.header__in{display:flex;align-items:center;justify-content:space-between;gap:var(--s-3);min-height:64px}
+
+.wordmark{display:inline-flex;align-items:center;min-height:44px;color:var(--text-hi)}
+.wordmark span:first-child::after{content:'/';color:var(--sea);margin-inline:.2em}
+
+.burger{display:grid;gap:6px;width:44px;height:44px;flex:none;place-content:center;justify-items:end}
+.burger__b{display:block;width:22px;height:1.5px;background:var(--text-hi);
+  transition:transform var(--d-micro) var(--e-out),opacity var(--d-micro) linear}
+.header[data-open="true"] .burger__b:first-child{transform:translateY(3.75px) rotate(45deg)}
+.header[data-open="true"] .burger__b:last-child{transform:translateY(-3.75px) rotate(-45deg)}
+@media (min-width:900px){.burger{display:none}}
+
+.nav{display:flex;align-items:center;gap:var(--s-4)}
+.nav__list{display:flex;gap:var(--s-3)}
+.nav__link{
+  position:relative;display:inline-flex;align-items:center;min-height:44px;
+  color:var(--text-mid);transition:color var(--d-micro) linear;
+}
+.nav__link::before{
+  content:'';position:absolute;left:0;right:0;bottom:.7rem;height:1px;background:var(--sea);
+  transform:scaleX(0);transform-origin:left;transition:transform var(--d-micro) var(--e-out);
+}
+.nav__link:hover,.nav__link:focus-visible{color:var(--text-hi)}
+.nav__link:hover::before,.nav__link:focus-visible::before{transform:scaleX(1)}
+.nav__cta{min-height:44px;padding:.5rem 1rem}
+
+/* The drawer is the same <nav>, re-laid-out. Nothing is duplicated. */
+@media (max-width:899px){
+  .nav{
+    position:absolute;top:100%;left:0;right:0;
+    flex-direction:column;align-items:stretch;gap:var(--s-2);
+    padding:var(--s-3) 4vw var(--s-4);
+    background:var(--glass);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);
+    border-bottom:1px solid var(--ink-3);
+    opacity:0;visibility:hidden;transform:translateY(-6px);
+    transition:opacity var(--d-micro) linear,transform var(--d-micro) var(--e-out),
+               visibility 0s linear var(--d-micro);
+  }
+  .header[data-open="true"] .nav{opacity:1;visibility:visible;transform:none;transition-delay:0s}
+  .nav__list{flex-direction:column;gap:0}
+  .nav__link{font-size:1rem;letter-spacing:.06em}
+  .nav__cta{align-self:flex-start}
+  /* With no JS the drawer has no opener, so it is not a drawer: it is the nav,
+     laid out in the flow. Every link stays reachable. */
+  html:not([data-ready]) .nav{position:static;opacity:1;visibility:visible;transform:none;
+              background:none;-webkit-backdrop-filter:none;backdrop-filter:none;
+              border-bottom:0;padding:0 0 var(--s-3)}
+  html:not([data-ready]) .header__in{flex-wrap:wrap}
+  html:not([data-ready]) .burger{display:none}
+}
+
+/* ----------------------------------------------------------------- 7.3 HERO */
+.hero{position:relative;min-height:calc(100dvh - 64px);display:flex;align-items:flex-end;
+  padding-block:var(--s-12) var(--s-6);overflow:hidden}
+.hero__mesh{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.hero__mesh::after{
+  content:'';position:absolute;inset:0;
+  background-image:radial-gradient(var(--ink-3) 1px,transparent 1px);
+  background-size:32px 32px;opacity:.28;
+  -webkit-mask-image:linear-gradient(to bottom,#000,transparent 94%);
+  mask-image:linear-gradient(to bottom,#000,transparent 94%);
+}
+.hero__blob{position:absolute;display:block;border-radius:50%;aspect-ratio:1}
+.hero__blob--a{width:min(78vw,960px);left:-14vw;top:-26vh;
+  background:radial-gradient(circle,var(--mesh-a),transparent 68%)}
+.hero__blob--b{width:min(64vw,800px);right:-12vw;bottom:-30vh;
+  background:radial-gradient(circle,var(--mesh-b),transparent 70%)}
+@media (prefers-reduced-motion:no-preference){
+  .hero__blob{will-change:transform}
+  .hero__blob--a{animation:drift-a var(--t-drift) var(--e-inout) infinite alternate}
+  .hero__blob--b{animation:drift-b var(--t-drift) var(--e-inout) infinite alternate}
+}
+@keyframes drift-a{to{transform:translate3d(7vw,5vh,0)}}
+@keyframes drift-b{to{transform:translate3d(-6vw,-6vh,0)}}
+
+.hero__in{position:relative;display:grid;gap:var(--s-3);width:var(--shell)}
+.hero__eyebrow{margin-bottom:var(--s-2)}
+.hero__h1{font-size:var(--fs-hero);max-width:15ch}
+.hero__sub{max-width:58ch;color:var(--text-mid);font-size:var(--fs-body)}
+.hero__cta{display:flex;flex-wrap:wrap;gap:var(--s-2);margin-top:var(--s-1)}
+
+.metrics{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--ink-3);margin-top:var(--s-4)}
+.metric{padding:var(--s-3) var(--s-2) 0;border-left:1px solid var(--ink-3)}
+.metric:first-child{border-left:0;padding-left:0}
+.metric__n{display:block;font-family:var(--font-display);font-weight:500;
+  letter-spacing:-.035em;line-height:1;color:var(--text-hi);
+  font-size:clamp(1.75rem,4vw,3rem)}
+.metric__l{display:block;color:var(--text-low-aa);margin-top:.6rem}
+@media (max-width:559px){
+  .metrics{grid-template-columns:1fr}
+  .metric{border-left:0;border-top:1px solid var(--ink-3);padding:var(--s-2) 0 0}
+  .metric:first-child{border-top:0}
+}
+
+.hero__caption{color:var(--text-low-aa);margin-top:var(--s-3)}
+.cue{position:absolute;right:0;bottom:var(--s-1);width:1px;height:64px;background:var(--ink-3);overflow:hidden}
+.cue i{position:absolute;left:-1.5px;top:0;width:4px;height:4px;border-radius:50%;background:var(--sea)}
+@media (prefers-reduced-motion:no-preference){.cue i{animation:cue var(--t-cue) var(--e-inout) infinite}}
+@keyframes cue{
+  0%{transform:translateY(-8px);opacity:0}
+  18%{opacity:1}82%{opacity:1}
+  100%{transform:translateY(64px);opacity:0}
+}
+@media (max-width:899px){.cue{display:none}}
+
+/* -------------------------------------------------------------- 7.4 MARQUEE */
+.mq-sec{padding-block:var(--s-6);border-block:1px solid var(--ink-3)}
+.mq{overflow:hidden;margin-top:var(--s-3);
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);
+  mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+.mq__belt{display:flex;width:max-content}
+.mq.is-live .mq__belt{animation:mq var(--t-mq) linear infinite;will-change:transform}
+.mq.is-paused .mq__belt{animation-play-state:paused}
+.mq__track{display:flex;align-items:center;gap:var(--s-4);padding-right:var(--s-4);flex:none}
+/* no belt, no clipping: without JS the stack wraps and stays fully readable */
+html:not([data-ready]) .mq{overflow:visible;-webkit-mask-image:none;mask-image:none}
+html:not([data-ready]) .mq__track{flex-wrap:wrap;gap:var(--s-3) var(--s-4)}
+.mq__track li{
+  display:flex;align-items:center;gap:var(--s-4);white-space:nowrap;
+  font-family:var(--font-mono);text-transform:uppercase;letter-spacing:.08em;
+  font-size:clamp(.875rem,1.6vw,1.125rem);color:var(--text-mid);
+}
+.mq__track li::after{content:'\25C6';color:var(--sea);font-size:.55em}
+@keyframes mq{to{transform:translate3d(-50%,0,0)}}
+@media (prefers-reduced-motion:reduce){.mq.is-live .mq__belt{animation:none}}
+
+/* ------------------------------------------------------------ 7.5 MANIFESTO */
+.manifesto{min-height:100dvh;display:grid;align-items:center;padding-block:var(--s-16)}
+.manifesto__in{display:grid;gap:var(--s-4)}
+.manifesto__line{
+  font-family:var(--font-display);font-weight:500;letter-spacing:-.035em;line-height:1.08;
+  font-size:clamp(1.625rem,4.2vw,3.5rem);max-width:24ch;color:var(--text-hi);
+}
+/* One element, one animated property. The starting state is fully highlighted
+   so the sentence is readable with no JavaScript and under reduced-motion;
+   main.js sets it back to 100% only when it is going to scrub it. */
+@supports ((-webkit-background-clip:text) or (background-clip:text)){
+  .manifesto__line{
+    background-image:linear-gradient(90deg,var(--text-hi) 50%,var(--text-low) 50%);
+    background-size:200% 100%;background-position:0% 0;background-repeat:no-repeat;
+    -webkit-background-clip:text;background-clip:text;
+    color:transparent;-webkit-text-fill-color:transparent;
+  }
+}
+
+/* -------------------------------------------------------------- 7.6 ROTATOR */
+.rot{padding-block:var(--s-12);border-bottom:1px solid var(--ink-3)}
+.rot__in{display:flex;flex-wrap:wrap;align-items:baseline;gap:var(--s-2) var(--s-3)}
+.rot__mark{color:var(--sea);letter-spacing:.16em}
+.rot__lead,.rot__list{
+  font-family:var(--font-display);font-weight:500;letter-spacing:-.035em;
+  line-height:1.05;font-size:clamp(1.5rem,4vw,3rem);
+}
+.rot__lead{color:var(--text-hi)}
+.rot__list{color:var(--sea);display:grid;gap:.15em}
+/* JS-driven state: one line at a time inside a vertical mask. */
+.rot__list.is-mask{display:block;position:relative;overflow:hidden;flex:1 1 12ch}
+.rot__list.is-mask li{
+  position:absolute;left:0;top:0;width:100%;
+  transform:translateY(100%);opacity:0;
+  transition:transform var(--d-rot) var(--e-inout),opacity var(--d-rot) var(--e-inout);
+}
+.rot__list.is-mask li.is-in{transform:translateY(0);opacity:1}
+.rot__list.is-mask li.is-out{transform:translateY(-100%);opacity:0}
+
+/* ------------------------------------------------------------ 7.7 THE STACK
+   §8 reference implementation, used as written. Three declarations resolve
+   through tokens instead of literal rgba() so the palette flip reaches them:
+   .card background, the active-plate glow, and the rail transition duration
+   (which was a hardcoded 420ms — that is --d-el). Everything else is verbatim.
+   ------------------------------------------------------------------------ */
+.stack{padding-block:var(--s-16);position:relative}
+
+/* faint dot grid, pure CSS */
+.stack::before{
+  content:'';position:absolute;inset:0;pointer-events:none;
+  background-image:radial-gradient(var(--ink-3) 1px,transparent 1px);
+  background-size:32px 32px;opacity:.28;
+  mask-image:linear-gradient(to bottom,transparent,#000 18%,#000 82%,transparent);
+  -webkit-mask-image:linear-gradient(to bottom,transparent,#000 18%,#000 82%,transparent);
+}
+
+.stack__head{position:relative;margin-bottom:var(--s-12);max-width:62ch}
+.stack__head h2{font-size:var(--fs-h2);font-weight:500;letter-spacing:-.035em;
+                line-height:.94;margin:var(--s-3) 0 var(--s-4)}
+.stack__head p{color:var(--text-mid);line-height:1.5;margin:0;max-width:52ch}
+
+.stack__grid{position:relative;display:grid;gap:var(--s-8)}
+@media (min-width:900px){
+  .stack__grid{grid-template-columns:minmax(0,42%) minmax(0,1fr);
+               gap:var(--s-12);align-items:start}
+}
+
+.stack__viz{display:none}
+@media (min-width:900px){
+  .stack__viz{display:block;position:sticky;top:15dvh;height:70dvh}
+  .stack__viz svg{width:100%;height:100%;overflow:visible}
+}
+
+/* plates */
+.plate{opacity:.26}
+.plate__top{stroke:rgba(0,0,0,0);stroke-width:1.5;vector-effect:non-scaling-stroke}
+.plate__side{filter:brightness(.60)}                /* light comes from the left */
+.plate__side--right{filter:brightness(.80)}
+.plate__body{transform-box:fill-box;transform-origin:center}
+.plate.is-active .plate__body{filter:drop-shadow(0 0 26px var(--glow))}
+.plate__lead{stroke:var(--ink-3);stroke-width:1}
+.plate.is-active .plate__lead{stroke:var(--sea)}
+.plate__num{font-family:var(--font-mono);font-size:13px;fill:var(--text-low);letter-spacing:.08em}
+.plate.is-active .plate__num{fill:var(--sea)}
+.plate__lead,.plate__num{transition:stroke var(--d-micro) linear,fill var(--d-micro) linear}
+
+/* no-JS + reduced-motion: everything lit */
+.no-js .plate,.stack[data-motion="off"] .plate{opacity:1}
+html:not([data-ready]) .plate{opacity:1}
+
+/* mobile progress rail — same DOM, CSS-only reflow */
+.rail{display:flex;gap:10px;align-items:center;position:sticky;top:72px;z-index:2;
+      padding:12px 0;background:linear-gradient(var(--ink) 70%,transparent)}
+@media (min-width:900px){.rail{display:none}}
+.rail__dot{width:100%;height:2px;background:var(--ink-3);position:relative;overflow:hidden}
+.rail__dot::after{content:'';position:absolute;inset:0;background:var(--sea);
+                  transform:scaleX(0);transform-origin:left;
+                  transition:transform var(--d-el) var(--e-out)}
+.rail__dot.is-active::after{transform:scaleX(1)}
+
+/* cards */
+.stack__cards{display:grid;gap:var(--s-3);position:relative}
+.card{border:1px solid var(--ink-3);border-radius:var(--radius);padding:var(--s-4);
+      background:var(--card-bg);display:grid;gap:var(--s-3);
+      transition:border-color var(--d-micro) linear,transform var(--d-micro) var(--e-out)}
+@media (hover:hover){.card:hover{border-color:var(--sea);transform:translateY(-4px)}}
+.card--featured{border-color:var(--sea)}
+.card__top{display:flex;justify-content:space-between;gap:var(--s-2);color:var(--text-low-aa)}
+.card__top b{color:var(--sea);font-weight:500}
+.card h3{font-size:var(--fs-h3);font-weight:500;letter-spacing:-.02em;margin:0 0 .5rem}
+.card p{margin:0;color:var(--text-mid);line-height:1.5;font-size:.9375rem}
+.card__type{color:var(--text-low-aa);margin-bottom:.75rem}
+.card__stats{list-style:none;margin:0;padding:0;display:grid;
+             grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:1px;
+             background:var(--ink-3);border:1px solid var(--ink-3)}
+.card__stats li{background:var(--ink);padding:.875rem;font-family:var(--font-mono);
+                font-size:.75rem;color:var(--text-low-aa);letter-spacing:.04em}
+.card__stats b{display:block;font-size:1.375rem;color:var(--text-hi);font-weight:400;
+               font-variant-numeric:tabular-nums;margin-bottom:.25rem;letter-spacing:-.02em}
+.card__stat{font-family:var(--font-mono);font-size:var(--fs-label);letter-spacing:.08em;
+            text-transform:uppercase;color:var(--sea)}
+.card__link{font-family:var(--font-mono);font-size:var(--fs-label);letter-spacing:.08em;
+            text-transform:uppercase;color:var(--text-hi);text-decoration:none;
+            display:inline-flex;align-items:center;gap:.5rem;justify-self:start;
+            border-bottom:1px solid var(--ink-3);padding-bottom:.35rem;min-height:44px}
+.card__link span{transition:transform var(--d-micro) var(--e-out)}
+.card__link:hover{border-color:var(--sea);color:var(--sea)}
+.card__link:hover span{transform:translateX(4px)}
+/* projects with no external URL get a tag, NEVER a disabled anchor */
+.card__tag{font-family:var(--font-mono);font-size:var(--fs-label);letter-spacing:.08em;
+           text-transform:uppercase;color:var(--text-low-aa)}
+
+/* --------------------------------------- 7.8 METHOD + CAPABILITIES (light) */
+.light{background:var(--cloud);color:var(--text-ink);padding-block:var(--s-16)}
+.light h2,.light h3{color:var(--text-ink)}
+.light p,.light .lede{color:var(--text-ink-mid)}
+/* --sea on --cloud measures 2.47:1 and cannot carry 12px numerals. The
+   accent here is the deepest step of the same ramp — 8.3:1, still the brand
+   blue, and it flips with the theme like everything else. */
+.light .label b,.light .row__n{color:var(--layer-6)}
+.duo{display:grid;gap:var(--s-12)}
+@media (min-width:900px){.duo{grid-template-columns:1fr 1fr;gap:var(--s-8)}}
+.duo__col>h2{font-size:clamp(2rem,3.6vw,3.25rem);margin:var(--s-3) 0 var(--s-3)}
+.duo__col .lede{margin-bottom:var(--s-4)}
+.rows{display:grid}
+.row{position:relative;display:grid;grid-template-columns:auto 1fr;gap:var(--s-3);
+     padding-block:var(--s-3)}
+.rows>li:not(:has(.row__n)){grid-template-columns:1fr}
+.row::before{content:'';position:absolute;left:0;right:0;top:0;height:1px;
+             background:var(--hair-ink);transform:scaleX(1);transform-origin:left}
+.row__n{color:var(--sea);padding-top:.35rem}
+.row h3{font-size:var(--fs-h3);margin-bottom:.35rem}
+.row p{font-size:.9375rem;max-width:46ch}
+
+/* ------------------------------------------------------------- 7.9 RECEIPTS */
+.receipts{padding-block:var(--s-16)}
+.receipts h2{font-size:var(--fs-h2);margin:var(--s-3) 0 var(--s-3);max-width:20ch}
+.receipts__grid{display:grid;gap:var(--s-8);margin-top:var(--s-8);align-items:start}
+@media (min-width:900px){.receipts__grid{grid-template-columns:1fr 1fr minmax(0,.7fr);gap:var(--s-8)}}
+.tally__n{display:block;font-family:var(--font-display);font-weight:500;
+          letter-spacing:-.035em;line-height:.85;color:var(--text-hi);font-size:var(--fs-hero)}
+.tally__src{color:var(--text-low-aa);margin-top:var(--s-2)}
+.facts{display:grid}
+.fact{display:grid;gap:.35rem;padding-block:var(--s-2);border-top:1px solid var(--ink-3)}
+.fact dt{color:var(--text-low-aa)}
+.fact dd{margin:0;color:var(--text-mid);font-size:.9375rem}
+.cv{display:block;border:1px solid var(--ink-3);border-radius:var(--radius);
+    overflow:hidden;background:var(--card-bg);
+    transition:transform var(--d-micro) var(--e-out),border-color var(--d-micro) linear}
+@media (hover:hover){.cv:hover{transform:scale(1.02);border-color:var(--sea)}}
+.cv img{width:100%;height:auto}
+.cv__label{display:flex;justify-content:space-between;align-items:center;gap:var(--s-2);
+           padding:var(--s-2);color:var(--text-hi);border-top:1px solid var(--ink-3);min-height:44px}
+
+/* -------------------------------------------------------------- 7.10 CONTACT */
+.contact{padding-block:var(--s-16);border-top:1px solid var(--ink-3)}
+.contact h2{font-size:var(--fs-h2);margin:var(--s-3) 0 var(--s-4);max-width:18ch}
+.contact__mail{
+  display:inline-block;font-family:var(--font-display);font-weight:500;
+  letter-spacing:-.035em;line-height:1.05;font-size:var(--fs-h2);
+  color:var(--text-hi);overflow-wrap:anywhere;
+  transition:color var(--d-micro) linear;
+}
+@media (hover:hover){.contact__mail:hover{color:var(--sea)}}
+.tiles{display:grid;gap:var(--s-2);margin-top:var(--s-8)}
+@media (min-width:700px){.tiles{grid-template-columns:repeat(4,1fr)}}
+.tile{position:relative;display:grid;gap:.5rem;align-content:start;
+      padding:var(--s-3) var(--s-4) var(--s-3) var(--s-3);
+      border:1px solid var(--ink-3);border-radius:var(--radius);background:var(--card-bg);
+      transition:border-color var(--d-micro) linear}
+.tile__l{color:var(--sea)}
+.tile__d{color:var(--text-mid);font-size:.9375rem;overflow-wrap:anywhere}
+.tile__a{position:absolute;right:var(--s-2);top:var(--s-3);color:var(--text-low-aa);
+         transition:transform var(--d-micro) var(--e-out)}
+@media (hover:hover){
+  .tile:hover{border-color:var(--sea)}
+  .tile:hover .tile__a{transform:translateX(4px);color:var(--sea)}
+}
+
+/* --------------------------------------------------------------- 7.11 FOOTER */
+.footer{border-top:1px solid var(--ink-3);padding-block:var(--s-8) var(--s-6)}
+.footer__grid{display:grid;gap:var(--s-6)}
+@media (min-width:700px){.footer__grid{grid-template-columns:repeat(3,1fr)}}
+.fcol ul{display:grid;margin-top:var(--s-1)}
+/* min-width keeps a short link like "CV" a 44px target; the hover rule
+   underlines the glyphs rather than the box, so the target does not show. */
+.ul{display:inline-flex;align-items:center;min-height:44px;min-width:44px;
+    color:var(--text-mid);align-self:start;text-underline-offset:.3em;
+    transition:color var(--d-micro) linear}
+@media (hover:hover){.ul:hover{color:var(--sea);text-decoration:underline}}
+.footer__base{margin-top:var(--s-8);padding-top:var(--s-3);border-top:1px solid var(--ink-3);
+              display:grid;gap:var(--s-2)}
+.footer__base .mono{color:var(--text-low-aa)}
+.footer__note{color:var(--text-low-aa);font-size:.875rem;max-width:76ch}
