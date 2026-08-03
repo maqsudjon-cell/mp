@@ -25,7 +25,7 @@ self.addEventListener('fetch', e => {
     e.respondWith(
       fetch(e.request).then(r => {
         const cp = r.clone();
-        caches.open(CACHE).then(c => c.put('./index.html', cp));
+        if (url.pathname === '/') caches.open(CACHE).then(c => c.put('./index.html', cp));
         return r;
       }).catch(() => caches.match('./index.html'))
     );
