@@ -4,10 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>CV 2026 — Maqsudjon Polatov · AI-First Builder</title>
-<meta name="description" content="Current CV: 180 public repositories, 1,627 commits, 11 live sites on their own domains. Built solo by directing AI agents. Downloadable PDF, every claim verifiable.">
+<meta name="description" content="Current CV: 180 public repositories, 1,627 commits, 12 live sites on their own domains. Built solo by directing AI agents. Downloadable PDF, every claim verifiable.">
 <link rel="canonical" href="https://maqsudjon.com/cv/new/">
 <meta property="og:title" content="CV 2026 — Maqsudjon Polatov · AI-First Builder">
-<meta property="og:description" content="180 repositories, 1,627 commits, 11 live domains, real paying clients — built solo by directing AI agents.">
+<meta property="og:description" content="180 repositories, 1,627 commits, 12 live domains, real paying clients — built solo by directing AI agents.">
 <meta property="og:url" content="https://maqsudjon.com/cv/new/">
 <meta property="og:type" content="profile">
 <meta property="og:image" content="https://maqsudjon.com/og-image.png">
@@ -95,6 +95,18 @@ p.big{font-size:clamp(15.5px,2vw,18px);color:#ffffffc9;max-width:720px}
 .cl-tag{font-family:'Geist Mono',monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:#7ee2b8}
 .client p{margin-top:9px;font-size:14.2px;color:#ffffff9c}
 @media(max-width:700px){.clients{grid-template-columns:1fr}}
+/* domain table */
+.dtable{width:100%;border-collapse:collapse;margin-top:8px;font-size:14px}
+.dtable th{text-align:left;font-family:'Geist Mono',monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#ffffff70;font-weight:400;padding:0 12px 8px 0;border-bottom:1px solid #ffffff1f}
+.dtable td{padding:11px 12px 11px 0;border-bottom:1px solid #ffffff14;vertical-align:top;color:#ffffffab}
+.dtable tr:last-child td{border-bottom:0}
+.dtable td.d{white-space:nowrap;width:230px}
+.dtable td.d a{color:#7ee2b8;text-decoration:none;font-family:'Geist Mono',monospace;font-size:12.5px;border-bottom:1px solid #7ee2b840}
+.dtable td.d a:hover{border-color:#7ee2b8}
+.dtable td.d span{font-family:'Geist Mono',monospace;font-size:12.5px;color:#ffffff70}
+.dtable td b{color:#fff;font-weight:500}
+.dtable td i{font-style:normal;color:#ffffff6b;font-size:12px}
+@media(max-width:700px){.dtable td.d{width:auto;white-space:normal}.dtable td,.dtable th{display:block;padding-right:0}.dtable td.d{padding-bottom:3px;border-bottom:0}}
 /* skills */
 .skills{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#ffffff1f;border:1px solid #ffffff1f;margin-top:8px}
 .skill{background:#000;padding:24px}
@@ -164,7 +176,7 @@ footer a:hover{color:#fff}
   <div class="kicker">Current CV · updated August 2026</div>
   <h1>Maqsudjon Polatov</h1>
   <div class="role">AI-First Builder — Tashkent, Uzbekistan</div>
-  <p class="hook">I don't hand-write code — and I've shipped <b>eleven live products onto their own domains</b>,
+  <p class="hook">I don't hand-write code — and I've shipped <b>twelve products onto their own domains</b>,
     with real users and paying clients. This page is the proof, and every number on it is verifiable.</p>
   <div class="hero-btns">
     <a class="btn" href="Maqsudjon_Polatov_CV.pdf" download>Download CV · PDF</a>
@@ -176,14 +188,14 @@ footer a:hover{color:#fff}
     <a href="tel:+998959059493">+998 95 905 94 93</a> ·
     <a href="https://t.me/mrbmp13" target="_blank" rel="noopener">t.me/mrbmp13</a> ·
     <a href="https://github.com/maqsudjon-cell" target="_blank" rel="noopener">github.com/maqsudjon-cell</a><br>
-    Uzbek (native) · English — IELTS Academic 6.0, CEFR B2 · Korean (basic)
+    Uzbek (native) · English — IELTS Academic, Overall 6.0 (CEFR B2) · Korean (basic)
   </div>
 </div></header>
 
 <div class="wrap"><div class="numbers rv">
   <div class="num"><b data-n="180">0</b><span>public repos</span></div>
   <div class="num"><b data-n="1627">0</b><span>commits</span></div>
-  <div class="num"><b data-n="11">0</b><span>live domains</span></div>
+  <div class="num"><b data-n="12">0</b><span>live domains</span></div>
   <div class="num"><b data-n="167">0</b><span>deployments</span></div>
   <div class="num"><b data-n="113">0</b><span>IELTS tests live</span></div>
   <div class="num"><b data-n="18">0</b><span>months building</span></div>
@@ -348,7 +360,42 @@ footer a:hover{color:#fff}
 </div></section>
 
 <section><div class="wrap">
-  <div class="label rv">04 — How I build</div>
+  <div class="label rv">04 — Every domain</div>
+  <h2 class="rv">All 12 domains, in production.</h2>
+  <p class="big rv">Nothing here is a demo or a screenshot. Every row resolves to a live site over HTTPS.</p>
+  <table class="dtable rv">
+    <thead><tr><th>Domain</th><th>What it is — built with</th></tr></thead>
+    <tbody>
+      <tr><td class="d"><a href="https://flarestamina.com" target="_blank" rel="noopener">flarestamina.com</a></td>
+          <td>Free IELTS platform — 113 practice tests, AI essay feedback, speaking lab, 40-day tracker. Used by real students and teachers. <i>Firebase · Supabase · PWA · Actions</i></td></tr>
+      <tr><td class="d"><a href="https://maqsudjon.com" target="_blank" rel="noopener">maqsudjon.com</a></td>
+          <td>Portfolio, case studies and build log; real-time video→ASCII renderer and an in-page terminal. <i>Canvas 2D · vanilla JS · PWA · RSS</i></td></tr>
+      <tr><td class="d"><a href="https://chzq.uz" target="_blank" rel="noopener">chzq.uz</a></td>
+          <td>“chiziq” — my web studio: productised sites, Telegram bots and mini apps; live-iframe portfolio. <i>JSON-LD · theming</i></td></tr>
+      <tr><td class="d"><a href="https://then.uz" target="_blank" rel="noopener">then.uz</a></td>
+          <td>“then” — second studio brand, and home of the Explainer Engine video pipeline. <i>Static site · Python</i></td></tr>
+      <tr><td class="d"><a href="https://zedavlod.uz" target="_blank" rel="noopener">zedavlod.uz</a></td>
+          <td><b>Client</b> — ZED AVLOD School, Namangan: trilingual site for an English / IELTS / CEFR school. <i>UZ·RU·EN · Search Console</i></td></tr>
+      <tr><td class="d"><a href="https://ctnlc.uz" target="_blank" rel="noopener">ctnlc.uz</a></td>
+          <td><b>Client</b> — CTN Language Centre, Tashkent: marketing site plus hosted mock tests with audio. <i>UZ·RU·EN · dark mode</i></td></tr>
+      <tr><td class="d"><a href="https://payvandchi.maqsudjon.com" target="_blank" rel="noopener">payvandchi.maqsudjon.com</a></td>
+          <td><b>Client</b> — metalwork workshop catalogue: 132 photographed patterns, ordered by number. <i>Node build pipeline · WebP · image sitemap</i></td></tr>
+      <tr><td class="d"><a href="https://reshotkachi.maqsudjon.com" target="_blank" rel="noopener">reshotkachi.maqsudjon.com</a></td>
+          <td><b>Client</b> — second catalogue on the same pipeline, 3D gallery-wall front page. <i>Node pipeline · Canvas</i></td></tr>
+      <tr><td class="d"><a href="https://kvdrt.maqsudjon.com" target="_blank" rel="noopener">kvdrt.maqsudjon.com</a></td>
+          <td>KVADRAT — offline-first m² calculator for welding shops; free-text parser, live diagram, PDF export. <i>Vanilla JS · localStorage</i></td></tr>
+      <tr><td class="d"><a href="https://pierics.com" target="_blank" rel="noopener">pierics.com</a></td>
+          <td>Daily word game doubling as an IELTS vocabulary trainer; hand-curated answer list. <i>Vanilla JS · no backend</i></td></tr>
+      <tr><td class="d"><a href="https://minnos.cc" target="_blank" rel="noopener">minnos.cc</a></td>
+          <td>Minnos — English idioms taught one cat at a time, with audio and Uzbek translations. <i>Vanilla JS · single file</i></td></tr>
+      <tr><td class="d"><span>pangea8.com</span></td>
+          <td>Legacy brand, permanently redirected to flarestamina.com after a full rebrand with no URL loss. <i>301 strategy</i></td></tr>
+    </tbody>
+  </table>
+</div></section>
+
+<section><div class="wrap">
+  <div class="label rv">05 — How I build</div>
   <h2 class="rv">Skills, stated honestly.</h2>
   <div class="skills rv">
     <div class="skill">
@@ -394,14 +441,14 @@ footer a:hover{color:#fff}
 </div></section>
 
 <section><div class="wrap">
-  <div class="label rv">05 — Experience</div>
+  <div class="label rv">06 — Experience</div>
   <div class="rv">
     <div class="row">
       <div class="when">Feb 2025 — present<br>Tashkent</div>
       <div>
         <h3>Independent AI-First Builder <em>— solo</em></h3>
         <ul>
-          <li>Shipped 11 products onto their own domains from first spec to live DNS, working alone in evenings
+          <li>Shipped 12 products onto their own domains from first spec to live DNS, working alone in evenings
               and on days off while welding full-time.</li>
           <li>Built and maintain the platform real IELTS students use daily and teachers use for weekly mock
               exams; every platform I build ships with a teacher dashboard.</li>
@@ -425,7 +472,7 @@ footer a:hover{color:#fff}
 </div></section>
 
 <section><div class="wrap">
-  <div class="label rv">06 — Education &amp; certificates</div>
+  <div class="label rv">07 — Education &amp; certificates</div>
   <div class="rv">
     <div class="row">
       <div class="when">2026 — 2030</div>
@@ -454,24 +501,18 @@ footer a:hover{color:#fff}
 </div></section>
 
 <section><div class="wrap">
-  <div class="label rv">07 — Languages</div>
-  <h2 class="rv">English — IELTS Academic, CEFR B2</h2>
-  <p class="big rv">Tested 12 August 2026 · Test Report Form 26UZ533712POLM004A · verifiable by any organisation
-    at ielts.org/verify.</p>
-  <div class="bands rv">
-    <div class="bd"><b>6.0</b><span>Listening</span></div>
-    <div class="bd"><b>5.0</b><span>Reading</span></div>
-    <div class="bd"><b>5.5</b><span>Writing</span></div>
-    <div class="bd"><b>6.5</b><span>Speaking</span></div>
-    <div class="bd tot"><b>6.0</b><span>Overall</span></div>
-  </div>
-  <div class="callout rv">I build IELTS software and sit the exam myself, so I work daily with the material I
-    ship. Speaking 6.5 is my strongest skill — I am comfortable in an English interview.
-    <b style="color:#fff">Uzbek</b> native · <b style="color:#fff">Korean</b> basic.</div>
+  <div class="label rv">08 — Languages</div>
+  <h2 class="rv">English — IELTS Academic, Overall Band 6.0 (CEFR B2)</h2>
+  <p class="big rv">Tested 12 August 2026, Speaking 6.5. Test Report Form 26UZ533712POLM004A, verifiable by any
+    recognising organisation at ielts.org/verify. I write all documentation and product copy in English, and I
+    ship interfaces in Uzbek, Russian and English.</p>
+  <div class="callout rv"><b style="color:#fff">Uzbek</b> native &nbsp;·&nbsp;
+    <b style="color:#fff">English</b> professional working proficiency &nbsp;·&nbsp;
+    <b style="color:#fff">Korean</b> basic</div>
 </div></section>
 
 <section class="cta" style="border-bottom:0"><div class="wrap">
-  <div class="label rv">08 — Hire me</div>
+  <div class="label rv">09 — Hire me</div>
   <h2 class="rv">Hiring someone to build with AI?<br>You just found one who already does it.</h2>
   <p class="big rv">AI fluency isn't a skill I list — it's the only way I've ever built anything. And I'm all in:
     I still weld for a living today, but the day you hire me, the welding mask comes off for good. I learn fast,
@@ -485,7 +526,7 @@ footer a:hover{color:#fff}
   <div class="callout rv">
     Everything here is verifiable: 180 public repositories and 1,627 authored commits on
     <a href="https://github.com/maqsudjon-cell" target="_blank" rel="noopener">github.com/maqsudjon-cell</a>
-    (account opened February 2025), 11 domains resolving to live sites, test counts read from the public
+    (account opened February 2025), all 12 domains resolving to live sites over HTTPS, test counts read from the public
     Flarestamina catalogue, and IELTS bands from the official Test Report Form.<br><br>
     <span style="color:#ffffff70">Previous version of this CV, kept for comparison:
     <a href="../">maqsudjon.com/cv</a></span>
