@@ -6,6 +6,13 @@
   <description>A one-person lab for acting in code and steel — everything I ship, as I ship it.</description>
   <language>en</language>
   <item>
+    <title>I rebuilt the whole of Flarestamina in a weekend — and deleted the framework doing it</title>
+    <link>https://maqsudjon.com/log/log-2026-08-22-flarestamina-paper-redesign.html</link>
+    <guid>https://maqsudjon.com/log/log-2026-08-22-flarestamina-paper-redesign.html</guid>
+    <pubDate>Sat, 22 Aug 2026 12:00:00 +0500</pubDate>
+    <description>Flarestamina looked like three different products. The hub was black and orange with JetBrains Mono, the news section had its own palette, the account page</description>
+  </item>
+  <item>
     <title>Flarestamina News &amp; Community — deadlines, teacher articles, and a place to talk</title>
     <link>https://maqsudjon.com/log/log-2026-07-15-flarestamina-news-and-communit.html</link>
     <guid>https://maqsudjon.com/log/log-2026-07-15-flarestamina-news-and-communit.html</guid>
