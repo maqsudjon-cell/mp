@@ -35,7 +35,19 @@ SHELL = """<!DOCTYPE html>
 <meta property="og:description" content="{desc}">
 <meta property="og:type" content="article">
 <meta property="og:url" content="{url}">
+<meta property="og:site_name" content="Maqsudjon Polatov">
+<meta property="og:locale" content="{locale}">
 <meta property="og:image" content="{og}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="{title}">
+<meta property="article:published_time" content="{iso}">
+<meta property="article:author" content="https://maqsudjon.com/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{title}">
+<meta name="twitter:description" content="{desc}">
+<meta name="twitter:image" content="{og}">
+<meta name="author" content="Maqsudjon Polatov">
 <link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@500;600&family=Geist:wght@400;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
 <script type="application/ld+json">{ld}</script>
 <style>*{{margin:0;padding:0;box-sizing:border-box}}
@@ -99,7 +111,12 @@ def pair(a, b, caption, alt_a, alt_b):
 
 
 def build(slug, lang, title, desc, datestr, iso, cat, body,
-          other_slug, other_label, back, og="/og-image.png"):
+          other_slug, other_label, back, og=None):
+    # Har bir yozuvning o'z OG rasmi bor (tools/og/build_og.py yasaydi).
+    # Bo'lmasa saytning umumiy rasmiga tushadi.
+    if og is None:
+        og = f"/log/og/{slug}.png" if (ROOT / "log" / "og" / f"{slug}.png").exists() \
+             else "/og-image.png"
     url = f"{BASE}/log/{slug}.html"
     other_url = f"{BASE}/log/{other_slug}.html"
     ld = json.dumps({
@@ -114,7 +131,8 @@ def build(slug, lang, title, desc, datestr, iso, cat, body,
         lang=lang, other_lang="uz" if lang == "en" else "en",
         title=html.escape(title), desc=html.escape(desc),
         url=url, other_url=other_url, other_label=other_label,
-        og=BASE + og, ld=ld, datestr=datestr, cat=cat, body=body, back=back)
+        og=BASE + og, ld=ld, datestr=datestr, cat=cat, body=body, back=back,
+        locale="uz_UZ" if lang == "uz" else "en_US", iso=iso)
     p = ROOT / "log" / f"{slug}.html"
     p.write_text(out)
     return p
