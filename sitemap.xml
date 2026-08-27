@@ -1,9 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url><loc>https://maqsudjon.com/</loc><lastmod>2026-07-04</lastmod></url>
   <url><loc>https://maqsudjon.com/cv/new/</loc><lastmod>2026-08-17</lastmod></url>
   <url><loc>https://maqsudjon.com/cv/</loc><lastmod>2026-07-18</lastmod></url>
   <url><loc>https://maqsudjon.com/log/</loc></url>
+  <url><loc>https://maqsudjon.com/log/log-2026-08-27-seven-sites-six-weeks.html</loc><lastmod>2026-08-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://maqsudjon.com/log/log-2026-08-27-seven-sites-six-weeks.html"/>
+    <xhtml:link rel="alternate" hreflang="uz" href="https://maqsudjon.com/log/log-2026-08-27-seven-sites-six-weeks-uz.html"/></url>
+  <url><loc>https://maqsudjon.com/log/log-2026-08-27-seven-sites-six-weeks-uz.html</loc><lastmod>2026-08-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://maqsudjon.com/log/log-2026-08-27-seven-sites-six-weeks.html"/>
+    <xhtml:link rel="alternate" hreflang="uz" href="https://maqsudjon.com/log/log-2026-08-27-seven-sites-six-weeks-uz.html"/></url>
+  <url><loc>https://maqsudjon.com/log/log-2026-08-27-tadam-wedding-photo-album.html</loc><lastmod>2026-08-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://maqsudjon.com/log/log-2026-08-27-tadam-wedding-photo-album.html"/>
+    <xhtml:link rel="alternate" hreflang="uz" href="https://maqsudjon.com/log/log-2026-08-27-tadam-wedding-photo-album-uz.html"/></url>
+  <url><loc>https://maqsudjon.com/log/log-2026-08-27-tadam-wedding-photo-album-uz.html</loc><lastmod>2026-08-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://maqsudjon.com/log/log-2026-08-27-tadam-wedding-photo-album.html"/>
+    <xhtml:link rel="alternate" hreflang="uz" href="https://maqsudjon.com/log/log-2026-08-27-tadam-wedding-photo-album-uz.html"/></url>
   <url><loc>https://maqsudjon.com/log/log-2026-08-22-flarestamina-paper-redesign.html</loc><lastmod>2026-08-22</lastmod></url>
   <url><loc>https://maqsudjon.com/log/log-2026-07-06-pangea8-full-mock-the-full-ielts.html</loc><lastmod>2026-07-06</lastmod></url>
   <url><loc>https://maqsudjon.com/log/log-2026-07-04-pangea8-writing-lab-redesigned-t.html</loc><lastmod>2026-07-04</lastmod></url>

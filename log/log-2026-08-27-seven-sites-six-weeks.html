@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Seven sites in six weeks | Maqsudjon Polatov — build log</title>
+<meta name="description" content="Everything I shipped between 15 July and 27 August 2026: CTN, ZED AVLOD, Chiziq, Payvandchi, Reshotkachi, KVADRAT, the Flarestamina rebuild and Tadam — with screenshots and the real traffic numbers.">
+<link rel="canonical" href="https://maqsudjon.com/log/log-2026-08-27-seven-sites-six-weeks.html">
+<link rel="alternate" hreflang="en" href="https://maqsudjon.com/log/log-2026-08-27-seven-sites-six-weeks.html">
+<link rel="alternate" hreflang="uz" href="https://maqsudjon.com/log/log-2026-08-27-seven-sites-six-weeks-uz.html">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#000000">
+<meta property="og:title" content="Seven sites in six weeks">
+<meta property="og:description" content="Everything I shipped between 15 July and 27 August 2026: CTN, ZED AVLOD, Chiziq, Payvandchi, Reshotkachi, KVADRAT, the Flarestamina rebuild and Tadam — with screenshots and the real traffic numbers.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://maqsudjon.com/log/log-2026-08-27-seven-sites-six-weeks.html">
+<meta property="og:image" content="https://maqsudjon.com/og-image.png">
+<link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@500;600&family=Geist:wght@400;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Seven sites in six weeks", "description": "Everything I shipped between 15 July and 27 August 2026: CTN, ZED AVLOD, Chiziq, Payvandchi, Reshotkachi, KVADRAT, the Flarestamina rebuild and Tadam — with screenshots and the real traffic numbers.", "datePublished": "2026-08-27", "inLanguage": "en", "mainEntityOfPage": "https://maqsudjon.com/log/log-2026-08-27-seven-sites-six-weeks.html", "image": "https://maqsudjon.com/og-image.png", "author": {"@type": "Person", "name": "Maqsudjon Polatov", "url": "https://maqsudjon.com/"}}</script>
+<style>*{margin:0;padding:0;box-sizing:border-box}
+body{background:#000;color:#ffffffbb;font-family:'Geist',system-ui,sans-serif;line-height:1.7}
+.wrap{max-width:720px;margin:0 auto;padding:48px 24px 80px}
+a{color:#fff;font-weight:600;text-decoration:underline;text-decoration-color:#4d4d4d;text-underline-offset:4px}
+a:hover{text-decoration-color:#fff}
+.top{display:flex;justify-content:space-between;gap:14px;font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#888;margin-bottom:46px}
+.top a{color:#888;font-weight:400;text-decoration:none}
+.top a:hover{color:#fff}
+.meta{font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:.1em;color:#888;margin-bottom:14px}
+.meta b{color:#f2d8cd;font-weight:500;border:1px solid #4d4d4d;padding:2px 7px;margin-left:8px}
+.meta .alt{float:right;color:#888;font-weight:400;text-decoration:none;border:1px solid #4d4d4d;padding:2px 7px}
+.meta .alt:hover{color:#fff;border-color:#fff}
+h1{font-family:'Funnel Display',sans-serif;font-weight:600;font-size:clamp(24px,5vw,34px);line-height:1.2;color:#fff;margin-bottom:26px;letter-spacing:-.01em}
+h2{font-family:'Funnel Display',sans-serif;font-weight:600;font-size:19px;color:#fff;margin:40px 0 14px;letter-spacing:-.01em}
+.body{font-size:16px}
+.body p{margin-bottom:18px}
+.body ul{margin:0 0 18px 20px}
+.body li{margin-bottom:7px}
+.lede{color:#ffffffdd;font-size:17px}
+code{font-family:'Geist Mono',monospace;font-size:.86em;color:#f2d8cd;background:#141414;border:1px solid #262626;border-radius:4px;padding:1px 5px;overflow-wrap:anywhere}
+strong{color:#fff;font-weight:600}
+em{color:#ffffffdd}
+figure{margin:26px 0 30px}
+figure img{width:100%;height:auto;display:block;border:1px solid #2a2a2a;border-radius:6px;background:#111}
+figcaption{font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:.08em;color:#888;margin-top:10px;line-height:1.6}
+.pair{display:grid;gap:12px;grid-template-columns:1fr}
+@media(min-width:620px){.pair{grid-template-columns:1fr 1fr}}
+.pair img{border-radius:6px}
+.foot{margin-top:44px;border-top:1px solid #4d4d4d;padding-top:20px;font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#888}
+.foot a{color:#888;font-weight:400;text-decoration:none}
+::selection{background:#fff;color:#000}</style>
+</head>
+<body>
+<div class="wrap">
+  <nav class="top"><a href="/">✳ MAQSUDJON POLATOV</a><a href="/log/">BUILD LOG</a></nav>
+  <div class="meta">27 AUG 2026<b>ROUNDUP</b><a class="alt" href="https://maqsudjon.com/log/log-2026-08-27-seven-sites-six-weeks-uz.html">O'ZBEKCHA</a></div>
+  <h1>Seven sites in six weeks</h1>
+  <div class="body">
+
+<p class="lede">Between 15 July and 27 August 2026 I shipped seven new websites, rebuilt an eighth, and spent most of the last week arguing with myself about a domain name. This is the whole log: every project, what it does, what broke, and what the traffic numbers actually say once you stop rounding them up.</p>
+
+<p>Context, because it changes how you read the pace: I weld metal grilles in Tashkent for a living. All of this was built in the hours around that. Nothing here had a budget, a designer, or a second pair of eyes.</p>
+
+<h2>21 July — CTN Language Centre</h2>
+
+<p>An English school in Mirzo Ulug'bek district needed a site. I built one file: <code>index.html</code>, trilingual UZ/RU/EN with the language kept in <code>localStorage</code>, a light/dark toggle, scroll-reveal animations, and a lead form that copies the enquiry and opens Telegram. Courses, teachers, FAQ, a live Maps embed, and a mock-test teaser.</p>
+
+<p>The palette started as cyan and ended as a clean DeepSeek-style blue, <code>#4D6BFE</code>, on a light, airy hero — the direction came from looking hard at DeepSeek, x.ai and Anthropic and deciding that Uzbek education sites overuse gradients.</p>
+
+<figure><img src="/log/img/ctn.webp" alt="CTN Language Centre homepage" loading="lazy"><figcaption>ctnlc.uz — one HTML file, three languages, dark mode, live map.</figcaption></figure>
+
+<p>Two things I'd do the same way again. First, the favicon set and the 1200×630 OG image were <em>generated by code</em> (a small Python script with cairosvg), not drawn by hand or by an image model — which means regenerating them after a colour change is one command. Second, the repo already contained a listening test and about 40 MB of MP3s, so the deploy had to go through the GitHub contents API rather than a force-push. I nearly wiped the audio. I didn't, but only because I checked first.</p>
+
+<p>Search Console property verified the same day, sitemap submitted, and JSON-LD for <code>EducationalOrganization</code> + <code>LocalBusiness</code> — with no invented rating, because there isn't one yet. It lives at <a href="https://ctnlc.uz">ctnlc.uz</a>.</p>
+
+<h2>23 July — ZED AVLOD School</h2>
+
+<p>This one is family. A school in To'raqo'rg'on, Namangan region, running since 2020. Trilingual again, but the interesting part is the results table: thirteen real CEFR certificate scores, top result C1, several B2 — each one checkable against <code>sertifikat.uzbmb.uz</code>.</p>
+
+<figure><img src="/log/img/zedavlod.webp" alt="ZED AVLOD School homepage" loading="lazy"><figcaption>zedavlod.uz — real CEFR results, no invented statistics.</figcaption></figure>
+
+<p>What I left out matters more than what I put in: no certificate ID numbers, no photos of the students, and one official-looking portrait I found in the photo dump stayed out entirely because nobody had confirmed who it was. Captioning an unidentified person as "founder" would have been a lie with a face on it.</p>
+
+<p>Full SEO stack: FAQ section with <code>FAQPage</code> schema, <code>EducationalOrganization</code> + <code>WebSite</code> JSON-LD with real coordinates, hreflang, its own GoatCounter site, Search Console verified, sitemap submitted. Live at <a href="https://zedavlod.uz">zedavlod.uz</a>.</p>
+
+<h2>25 July — Chiziq</h2>
+
+<p>A web studio, aimed squarely at being the cheaper and better-looking alternative to the incumbent in this market. It started life as <code>then.uz</code> and got renamed to <strong>chzq.uz</strong> — "Chiziq", Uzbek for "line" — because a brand people can say out loud in their own language beats a clever English pun. (Remember this paragraph. It happens again in six weeks.)</p>
+
+<figure><img src="/log/img/chzq.webp" alt="Chiziq web studio homepage" loading="lazy"><figcaption>chzq.uz — dark studio palette, and a portfolio you can actually open.</figcaption></figure>
+
+<p>The one real weapon on that site is the portfolio. Every studio in the country shows client testimonials; anyone can type a testimonial. So instead each project opens in a modal containing a <em>live iframe</em> of the actual site — flarestamina.com, zedavlod.uz, ctnlc.uz, the wedding-invite builder, the full mock platform, and my own portfolio. They're all on GitHub Pages, so no <code>X-Frame-Options</code> blocks the embed. The pitch is one line: not reviews — sites you can open right now.</p>
+
+<p>Pricing is published, which is rarer here than it should be: landing 1.5 M, business site 3 M, catalogue/shop 6 M, Telegram bot 1.2 M, mini app 6 M so'm. Free prototype in 24 hours, pay after. Hosting 0 so'm, because static sites on GitHub Pages cost nothing to run and pretending otherwise is just markup.</p>
+
+<h2>26 July — IELTS Hub, five times over</h2>
+
+<p>No screenshot deserves its own figure here, because the visible result is a page that looks calmer. Five full redesign iterations of the Flarestamina hub, plus an audit that walked all 110 pages of the site and wrote down every broken thing. That audit is what set up the whole of August.</p>
+
+<h2>1 August — Payvandchi</h2>
+
+<p>My own workshop, finally with a site. Window grilles, balcony grilles, railings, canopies — and, importantly, <strong>no gates</strong>. We don't make them, so the word "darvoza" appears nowhere on the site, and I skipped every photo that showed a door grille rather than adding a service we can't deliver.</p>
+
+<figure><img src="/log/img/payvandchi.webp" alt="Payvandchi welding workshop homepage" loading="lazy"><figcaption>payvandchi.maqsudjon.com — real work, real photos, no stock imagery.</figcaption></figure>
+
+<p>Performance was the actual engineering here. The hero image landed at 521 KB, which on a Tashkent mobile connection is a visible wait. Re-encoded and resized to <strong>173 KB</strong> — a third of the weight, no visible difference. An English version followed on 5 August, and a fresh batch of workshop photos on 23 August. Adding a photo is two steps: a line in <code>categories.csv</code>, then <code>build-gallery.mjs</code>.</p>
+
+<h2>4 August — Reshotkachi</h2>
+
+<p>The same workshop and the same photographs, built a second time as a completely different site. Not laziness — a test. If the product is identical, how much does design alone change how it reads?</p>
+
+<figure><img src="/log/img/reshotkachi.webp" alt="Reshotkachi grille workshop homepage" loading="lazy"><figcaption>reshotkachi.maqsudjon.com — 123 photos, arranged as a 3D wall.</figcaption></figure>
+
+<p>Answer: a lot. This one arranges 123 photos into a three-dimensional gallery wall in UZ/RU/EN, and it feels like a different business to the one above. Same welder, same grilles.</p>
+
+<h2>7 August — KVADRAT</h2>
+
+<p>The least glamorous thing I built and possibly the most used. A square-metre calculator for grille jobs. You type three numbers — width, height, and how far the grille projects from the wall — and it computes the front face plus all four side faces.</p>
+
+<figure><img src="/log/img/kvdrt.webp" alt="KVADRAT square metre calculator" loading="lazy"><figcaption>kvdrt.maqsudjon.com — three numbers in, a price-able area out.</figcaption></figure>
+
+<p>The whole design problem was the input order. <code>120 130 30</code> has to mean width 120, height 130, projection 30, every time, for someone holding a tape measure with one hand. Getting that unambiguous took longer than the arithmetic.</p>
+
+<h2>22–24 August — Flarestamina: tearing down the walls</h2>
+
+<p>Flarestamina is my IELTS practice site: 113 test pages, each in its own repository. Traffic had been falling and I assumed it was an SEO problem. It wasn't. It was three login walls.</p>
+
+<p>The hub that every one of those 113 tests hangs off called <code>FSAuth.require()</code>. So every single person arriving from Google was bounced straight to an account page before seeing anything. The Writing Lab had <em>two</em> gates — a login and a hardcoded access code. The speaking section had a third. All three are gone; login is now optional and only buys you saved results.</p>
+
+<figure><img src="/log/img/flarestamina.webp" alt="Flarestamina IELTS practice homepage" loading="lazy"><figcaption>flarestamina.com after the August rebuild — black and white, no gate.</figcaption></figure>
+
+<p>Then the actual SEO, done across 113 separate repositories via the GitHub API:</p>
+
+<ul>
+<li>Missing meta descriptions: <strong>101 → 0</strong>. Every description was generated from the page's own real H2 headings — the reading passage titles, the listening section topics — not written from imagination.</li>
+<li>Missing canonical tags: <strong>107 → 1</strong>. Missing analytics: <strong>108 → 1</strong>. Duplicate titles: <strong>2 → 0</strong>.</li>
+<li>JSON-LD structured data: <strong>0 → 106</strong> test pages, each with <code>LearningResource</code> and <code>BreadcrumbList</code>.</li>
+<li>Titles rewritten to match what people actually search. <code>Mock Listening — Test 63 Listening</code> became <code>IELTS Listening Practice Test 63 with Answers</code>.</li>
+<li>Three new landing pages: <code>/ielts-listening-test/</code> (73 tests), <code>/ielts-reading-test/</code> (25 tests), and <code>/uz/</code> for Uzbek-language search.</li>
+<li>IndexNow key, hreflang, and a sitemap that stopped lying about <code>lastmod</code>.</li>
+</ul>
+
+<p>The audit also caught things that were quietly costing money and accuracy: a duplicated GoatCounter snippet that was <em>double-counting every pageview</em>, 65 pages still carrying a headline from a previous redesign, 522 MB of audio being served without any caching strategy, and nineteen reading pages that shared identical body text — which to a search engine reads as one page repeated nineteen times. Each got real, distinct content.</p>
+
+<p>I also built <a href="https://flarestamina.com/stats/">flarestamina.com/stats/</a>: all seven sites' visitor counts in a single table, no login, no token. Checking seven dashboards was the reason I checked none of them.</p>
+
+<h2>24–27 August — Tadam</h2>
+
+<p>The newest one, and it gets its own post because it's the first thing I've built that is genuinely a product rather than a website: guests at a wedding scan a QR code on the table, upload the photos already on their phones, and the couple downloads all of them as a ZIP.</p>
+
+<figure><img src="/log/img/tadam-home.webp" alt="Tadam wedding photo album homepage" loading="lazy"><figcaption>tadam.uz — the whole flow explained above the fold.</figcaption></figure>
+
+<p>Full write-up here: <a href="/log/log-2026-08-27-tadam-wedding-photo-album.html">Tadam: a wedding photo album with no app and no database</a>.</p>
+
+<h2>The rule underneath all of it</h2>
+
+<p>One constraint ran through every project above: nothing invented. No fabricated review counts, no "500+ happy clients", no made-up ratings in the structured data, no student names attached to faces I couldn't verify, no "first and only in Uzbekistan" — which I was tempted by and which I left out, because I can't prove it and a claim you can't prove is just a nicer-sounding lie.</p>
+
+<p>It costs something. A results table with thirteen honest CEFR scores looks smaller than one with a fake "98% success rate". But the thirteen are checkable on a government certificate database, and the 98% would have been checkable too — by anyone who wanted to embarrass me.</p>
+
+<h2>What the numbers say</h2>
+
+<p>Measured 23 August, and I'm quoting them exactly rather than rounding them into something impressive:</p>
+
+<ul>
+<li>Search Console, Flarestamina: <strong>911 impressions, 83 clicks, average position 11.1</strong>. Position 11 means page two. Page two is nowhere.</li>
+<li>GoatCounter: <strong>238 visits in a week</strong>, of which Google accounted for about <strong>8%</strong>. Almost all real traffic is people sharing links directly.</li>
+<li>Seven sites live, four on their own domains, all returning 200.</li>
+</ul>
+
+<p>The honest reading: the SEO work is a bet that hasn't paid out yet, and the sites that work are the ones somebody had a reason to send to a friend. That's worth knowing before I spend another six weeks on meta tags.</p>
+
+<h2>Next</h2>
+
+<p>Tadam needs real weddings on it, not test albums. The IELTS Hub redesign is built and waiting on a decision. Chiziq needs its first paying client. And I'd like the next six weeks to contain fewer new sites and more people actually using the existing ones.</p>
+
+  </div>
+  <div class="foot"><a href="/log/">← ALL ENTRIES</a> · <a href="/feed.xml">RSS</a> · © 2026 Maqsudjon Polatov</div>
+</div>
+<script data-goatcounter="https://maqsudjon.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

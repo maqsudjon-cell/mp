@@ -6,6 +6,20 @@
   <description>A one-person lab for acting in code and steel — everything I ship, as I ship it.</description>
   <language>en</language>
   <item>
+    <title>Tadam: a wedding album with no app and no database</title>
+    <link>https://maqsudjon.com/log/log-2026-08-27-tadam-wedding-photo-album.html</link>
+    <guid>https://maqsudjon.com/log/log-2026-08-27-tadam-wedding-photo-album.html</guid>
+    <pubDate>Thu, 27 Aug 2026 12:00:00 +0500</pubDate>
+    <description>Guests scan a QR code on the table, upload the photos already on their phones, and the couple downloads everything as a ZIP. Cloudflare Workers, R2 as the only datastore, and a QR code I measured instead of assuming.</description>
+  </item>
+  <item>
+    <title>Seven sites in six weeks — everything from 15 July to 27 August</title>
+    <link>https://maqsudjon.com/log/log-2026-08-27-seven-sites-six-weeks.html</link>
+    <guid>https://maqsudjon.com/log/log-2026-08-27-seven-sites-six-weeks.html</guid>
+    <pubDate>Thu, 27 Aug 2026 12:00:00 +0500</pubDate>
+    <description>CTN, ZED AVLOD, Chiziq, Payvandchi, Reshotkachi, KVADRAT, the Flarestamina rebuild and Tadam — with screenshots, what broke, and the real traffic numbers rather than the rounded-up ones.</description>
+  </item>
+  <item>
     <title>I rebuilt the whole of Flarestamina in a weekend — and deleted the framework doing it</title>
     <link>https://maqsudjon.com/log/log-2026-08-22-flarestamina-paper-redesign.html</link>
     <guid>https://maqsudjon.com/log/log-2026-08-22-flarestamina-paper-redesign.html</guid>
