@@ -120,9 +120,51 @@ figcaption{font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:.08e
 
 <p>Butun dizayn muammosi — kiritish tartibi edi. <code>120 130 30</code> har safar eni 120, bo'yi 130, vistup 30 degani bo'lishi kerak, ham bir qo'lida ruletka ushlab turgan odam uchun. Buni ikki xil o'qib bo'lmaydigan qilish arifmetikadan ko'proq vaqt oldi.</p>
 
-<h2>22–24-avgust — Flarestamina: devorlarni buzish</h2>
+<h2>22-avgust — Flarestamina "qog'oz" dizaynga o'tdi</h2>
 
-<p>Flarestamina — mening IELTS mashq saytim: 113 ta test sahifasi, har biri alohida repoda. Tashrif kamayib borayotgandi va men buni SEO muammosi deb o'ylagandim. Unday emas ekan. Sabab — uchta login devori.</p>
+<p>Flarestamina — mening IELTS mashq saytim: 113 ta test sahifasi, har biri alohida repoda yashaydi. U bitta nom ostida uchta boshqa-boshqa mahsulotga aylanib qolgan edi: hub qora-to'q sariq, news bo'limining o'z palitrasi, akkaunt sahifasi esa uchinchi saytdek ko'rinardi.</p>
+
+<p>Bir dam olish kunida hammasi oq-qora "qog'oz" dizaynga ko'chdi, sahifama-sahifa: bosh sahifa (JavaScript yig'adigan emas, statik HTML qilib qayta yozildi), tool sahifalari, news bo'limi, akkaunt va kontent sahifalari, 404. Brend fayllari qaytadan chizildi, favicon va OG rasm manzillariga versiya qo'yildi — aks holda brauzer bir oy davomida keshdagi eskisini ko'rsatib turardi.</p>
+
+<p>O'sha to'lqindagi jimjimasiz yutuqlar: shriftlar o'z serverimizga ko'chirilgach <strong>46 sahifa Google'ga murojaat qilishni to'xtatdi</strong> — keyin build skriptlarining har qayta qurishda Google Fonts havolasini "foydali" tarzda qaytadan qo'shishini to'xtatishga to'g'ri keldi. Qayta qurish ba'zi sahifalardan structured data'ni jimgina yo'qotgan ekan: tikladim va audit skriptiga aynan shu qaytalanishni tutishni o'rgatdim. Maxfiylik siyosati saytning hozirgi holatiga moslandi, analitikaga esa qurilma darajasida rad etish tugmasi qo'shildi.</p>
+
+<h2>Hub havolalar devori bo'lishdan to'xtadi</h2>
+
+<p>Mashq hub'i — hamma narsa boshlanadigan joy, va u ilgari shunchaki ro'yxat edi. Endi u bitta savol beradi — <em>qaysi ko'nikma?</em> — va beshta karta ko'rsatadi: Listening (73 ta variant), Reading (25 ta), Writing, Speaking va to'liq mock. Ularning tepasida <em>shu yerdan boshlang</em> deb belgilangan bitta karta: Cambridge 21 — butun kitob, to'rtta test, hamma ko'nikma, bepul. Saytni birinchi marta ochgan odam uchun endi aniq birinchi bosish bor.</p>
+
+<figure><img src="/log/img/fs-hub.webp" alt="Flarestamina mashq hub&#x27;i" loading="lazy"><figcaption>Qayta qurilgandan keyingi mashq hub'i: bitta savol, beshta karta va aniq boshlash nuqtasi.</figcaption></figure>
+
+<p>Audit topgan bitta tuzoq: hub o'z ro'yxatini JavaScript bilan yig'adi, ya'ni qidiruv roboti unga kelganda bo'sh sahifa ko'rardi va orqasidagi butun katalogni ko'rmasdi. Yechim — <code>/tests/</code>: saytdagi har bir mashq testining oddiy, statik, o'qish mumkin bo'lgan indeksi. U asosan Google odam allaqachon ko'rib turgan narsani o'qiy olsin deb bor.</p>
+
+<h2>News va men yozmagan maqolalar</h2>
+
+<p>News bo'limi o'zbek IELTS topshiruvchilari rostdan qidiradigan, lekin bir joyda kam topadigan narsani qamraydi: imtihondagi o'zgarishlar, narxlar va grant muddatlari. Hozir unda <strong>26 ta post</strong> bor — 12 tasi imtihon haqida, 9 tasi muddatlar, 2 tasi narx, 2 tasi qo'llanma — qidiruv maydoni, o'z sonini ko'tarib yuradigan kategoriya chiplari va tepada uchta jonli karta: eng yaqin muddat va unga qolgan kun, ball konvertatsiyasi, Telegram kanal.</p>
+
+<figure><img src="/log/img/fs-news.webp" alt="Flarestamina news bo&#x27;limi" loading="lazy"><figcaption>News bo'limi: 26 ta post, sonli kategoriya chiplari va tepada sanab turgan eng yaqin muddat.</figcaption></figure>
+
+<p><strong>Beshta post o'zbek tilida</strong>, va ular o'quvchini til tugmasini qidirishga majburlamay, to'g'ridan-to'g'ri o'zbekcha ochiladi — ayniqsa narx haqidagi post raqamlarni yoddan takrorlamay, rasmiy ro'yxatdan o'tish sahifasidan o'qib yozilgan. Har bir postga o'z muqova rasmi berildi, bo'limning o'z lentasi ham bor.</p>
+
+<p>Yana <code>/writearticle/</code> — o'qituvchilar uchun maqola yuborish oqimi — orqali yozilgan oltita uzunroq maqola bor. Bular saytdagi birinchi begona nom turgan sahifalar, va gap aynan shunda: faqat bitta odamning ovozi bo'lgan saytning shifti past.</p>
+
+<h2>Beshta kichik tool</h2>
+
+<p>Testlar yonida endi Tools menyusi bor va undagi har bir narsa bitta savolga tez javob beradigan bitta maqsadli sahifa:</p>
+
+<ul>
+<li><strong>Ball konvertori</strong> — IELTS ↔ CEFR ↔ Multilevel ↔ TOEFL, chunki O'zbekistonda har bir universitet va elchixona boshqa shkalani so'raydi.</li>
+<li><strong>Grant muddatlari</strong> — DAAD, Chevening, Erasmus Mundus, El-Yurt Umidi, CSC, GKS va boshqalar, qolgan kunlari bilan.</li>
+<li><strong>O'quv reja generatori</strong> — to'rtta savol (hozirgi ball, maqsad ball, qolgan hafta, eng zaif ko'nikma) va chiqishda haftama-hafta reja hamda halol hukm: muddat yetadimi yoki imtihonni surish kerakmi. "Imtihonni suring" deyish konversiyaga sozlangan sahifa qiladigan ish emas — va bu o'sha toolning eng foydali gapi.</li>
+<li><strong>Speaking mavzulari</strong> — joriy rotatsiya.</li>
+<li><strong>Barcha testlar</strong> — robot o'qiy oladigan katalog indeksi.</li>
+</ul>
+
+<figure><img src="/log/img/fs-tools.webp" alt="Flarestamina o&#x27;quv reja generatori" loading="lazy"><figcaption>O'quv reja generatori — to'rtta savol va sizga imtihonni surishni aytadigan hukm.</figcaption></figure>
+
+<p>Ular qo'lda yozilmaydi, generatsiya qilinadi: har bir tool = bitta JSON-LD fayl + bitta mantiq fayli, build skript ularni yig'adi. Shuning uchun oltinchisini qo'shish "sahifani nusxalab, structured data'ni yangilashni unutish" degani emas.</p>
+
+<h2>23–24-avgust — login devorlarini buzish</h2>
+
+<p>Tashrif kamayib borayotgandi va men buni SEO muammosi deb o'ylagandim. Unday emas ekan. Sabab — uchta login devori.</p>
 
 <p>O'sha 113 ta test osilib turgan hub sahifasi <code>FSAuth.require()</code> ni chaqirardi. Ya'ni Google'dan kelgan har bir odam hech narsa ko'rmasdan to'g'ri akkaunt sahifasiga uchib ketardi. Writing Lab'da <em>ikkita</em> to'siq bor edi — login va kodga yozib qo'yilgan parol. Speaking bo'limida uchinchisi. Uchalasi ham yo'q; kirish endi ixtiyoriy va faqat natijani saqlash uchun kerak.</p>
 

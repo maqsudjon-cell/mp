@@ -69,9 +69,51 @@ EN = """
 
 <p>The whole design problem was the input order. <code>120 130 30</code> has to mean width 120, height 130, projection 30, every time, for someone holding a tape measure with one hand. Getting that unambiguous took longer than the arithmetic.</p>
 
-<h2>22–24 August — Flarestamina: tearing down the walls</h2>
+<h2>22 August — Flarestamina gets a paper design</h2>
 
-<p>Flarestamina is my IELTS practice site: 113 test pages, each in its own repository. Traffic had been falling and I assumed it was an SEO problem. It wasn't. It was three login walls.</p>
+<p>Flarestamina is my IELTS practice site: 113 test pages, each living in its own repository. It had grown into three products wearing one name — the hub was black and orange, the news section had its own palette, the account page looked like a third site.</p>
+
+<p>Over one weekend the whole thing moved to a black-and-white "paper" design, page by page: the home page (rewritten as static HTML instead of being assembled by JavaScript), the tool pages, the news section, the account and content pages, the 404. Brand assets were redrawn, and the favicon and OG image URLs were versioned so browsers would actually pick up the new art instead of serving the old one from cache for a month.</p>
+
+<p>The unglamorous wins in that pass: <strong>46 pages stopped calling Google</strong> for webfonts once they were self-hosted — and then I had to stop the build scripts helpfully re-adding the Google Fonts link on every rebuild. A rebuild had silently dropped structured data from some pages, so I restored it and taught the audit script to catch that specific regression. The privacy policy was brought back in line with what the site actually does now, and analytics gained a per-device opt-out.</p>
+
+<h2>The hub stopped being a wall of links</h2>
+
+<p>The practice hub is where everything starts, and it used to be a list. Now it asks one question — <em>choose a skill</em> — and gives you five cards: Listening (73 papers), Reading (25), Writing, Speaking, and the full mock. Above them, one card marked <em>start here</em> pointing at Cambridge 21: the whole book, four tests, all skills, free. Someone who has never used the site now has an obvious first click.</p>
+
+""" + fig("fs-hub.webp", "The practice hub after the rebuild: one question, five cards, and an obvious place to start.", "Flarestamina practice hub") + """
+
+<p>One catch the audit found: the hub builds its list in JavaScript, so a search-engine crawler arriving at it saw an empty page and none of the catalogue behind it. The fix was <code>/tests/</code> — a plain, static, crawlable index of every practice test on the site, which exists mostly so Google can read what a human can already see.</p>
+
+<h2>News, and articles by people who aren't me</h2>
+
+<p>The news section covers the thing Uzbek IELTS candidates actually search for and rarely find in one place: exam changes, fees, and scholarship deadlines. It now holds <strong>26 posts</strong> — 12 on the exam, 9 deadlines, 2 on fees, 2 guides — with a search box, category chips that carry their own counts, and three live cards at the top: the next deadline with a countdown, a score conversion, and the Telegram channel.</p>
+
+""" + fig("fs-news.webp", "The news section: 26 posts, counted category chips, and the next deadline counting down at the top.", "Flarestamina news section") + """
+
+<p><strong>Five of the posts are in Uzbek</strong>, and they open in Uzbek rather than making the reader find a toggle — the fee post in particular quotes figures read straight off the official booking page rather than repeated from memory. Every post got its own cover image, and the section publishes its own feed.</p>
+
+<p>There are also six longer articles written through <code>/writearticle/</code>, the submission flow for teachers. Those are the first pages on the site with someone else's name on them, which is the point: a site that is only ever one person's voice has a ceiling.</p>
+
+<h2>Five small tools</h2>
+
+<p>Alongside the tests there's now a Tools menu, and everything in it is a single-purpose page that answers one question fast:</p>
+
+<ul>
+<li><strong>Score converter</strong> — IELTS ↔ CEFR ↔ Multilevel ↔ TOEFL, because every Uzbek university and embassy asks for a different scale.</li>
+<li><strong>Scholarship deadlines</strong> — DAAD, Chevening, Erasmus Mundus, El-Yurt Umidi, CSC, GKS and the rest, with days remaining.</li>
+<li><strong>Study plan generator</strong> — four questions (current band, target band, weeks left, weakest skill) and out comes a week-by-week plan plus an honest verdict on whether the timeline is enough or the exam should be moved. Telling someone to postpone is not what a conversion-optimised page does, and it's the most useful thing that tool says.</li>
+<li><strong>Speaking topics</strong> — the current rotation.</li>
+<li><strong>All tests</strong> — the crawlable catalogue index.</li>
+</ul>
+
+""" + fig("fs-tools.webp", "The study plan generator — four questions, and a verdict that will tell you to postpone the exam.", "Flarestamina study plan generator") + """
+
+<p>They're generated rather than hand-written: each tool is a JSON-LD file plus a logic file, assembled by a build script, so adding the sixth one doesn't mean copying a page and forgetting to update the structured data.</p>
+
+<h2>23–24 August — tearing down the login walls</h2>
+
+<p>Traffic had been falling and I assumed it was an SEO problem. It wasn't. It was three login walls.</p>
 
 <p>The hub that every one of those 113 tests hangs off called <code>FSAuth.require()</code>. So every single person arriving from Google was bounced straight to an account page before seeing anything. The Writing Lab had <em>two</em> gates — a login and a hardcoded access code. The speaking section had a third. All three are gone; login is now optional and only buys you saved results.</p>
 
@@ -188,9 +230,51 @@ UZ = """
 
 <p>Butun dizayn muammosi — kiritish tartibi edi. <code>120 130 30</code> har safar eni 120, bo'yi 130, vistup 30 degani bo'lishi kerak, ham bir qo'lida ruletka ushlab turgan odam uchun. Buni ikki xil o'qib bo'lmaydigan qilish arifmetikadan ko'proq vaqt oldi.</p>
 
-<h2>22–24-avgust — Flarestamina: devorlarni buzish</h2>
+<h2>22-avgust — Flarestamina "qog'oz" dizaynga o'tdi</h2>
 
-<p>Flarestamina — mening IELTS mashq saytim: 113 ta test sahifasi, har biri alohida repoda. Tashrif kamayib borayotgandi va men buni SEO muammosi deb o'ylagandim. Unday emas ekan. Sabab — uchta login devori.</p>
+<p>Flarestamina — mening IELTS mashq saytim: 113 ta test sahifasi, har biri alohida repoda yashaydi. U bitta nom ostida uchta boshqa-boshqa mahsulotga aylanib qolgan edi: hub qora-to'q sariq, news bo'limining o'z palitrasi, akkaunt sahifasi esa uchinchi saytdek ko'rinardi.</p>
+
+<p>Bir dam olish kunida hammasi oq-qora "qog'oz" dizaynga ko'chdi, sahifama-sahifa: bosh sahifa (JavaScript yig'adigan emas, statik HTML qilib qayta yozildi), tool sahifalari, news bo'limi, akkaunt va kontent sahifalari, 404. Brend fayllari qaytadan chizildi, favicon va OG rasm manzillariga versiya qo'yildi — aks holda brauzer bir oy davomida keshdagi eskisini ko'rsatib turardi.</p>
+
+<p>O'sha to'lqindagi jimjimasiz yutuqlar: shriftlar o'z serverimizga ko'chirilgach <strong>46 sahifa Google'ga murojaat qilishni to'xtatdi</strong> — keyin build skriptlarining har qayta qurishda Google Fonts havolasini "foydali" tarzda qaytadan qo'shishini to'xtatishga to'g'ri keldi. Qayta qurish ba'zi sahifalardan structured data'ni jimgina yo'qotgan ekan: tikladim va audit skriptiga aynan shu qaytalanishni tutishni o'rgatdim. Maxfiylik siyosati saytning hozirgi holatiga moslandi, analitikaga esa qurilma darajasida rad etish tugmasi qo'shildi.</p>
+
+<h2>Hub havolalar devori bo'lishdan to'xtadi</h2>
+
+<p>Mashq hub'i — hamma narsa boshlanadigan joy, va u ilgari shunchaki ro'yxat edi. Endi u bitta savol beradi — <em>qaysi ko'nikma?</em> — va beshta karta ko'rsatadi: Listening (73 ta variant), Reading (25 ta), Writing, Speaking va to'liq mock. Ularning tepasida <em>shu yerdan boshlang</em> deb belgilangan bitta karta: Cambridge 21 — butun kitob, to'rtta test, hamma ko'nikma, bepul. Saytni birinchi marta ochgan odam uchun endi aniq birinchi bosish bor.</p>
+
+""" + fig("fs-hub.webp", "Qayta qurilgandan keyingi mashq hub'i: bitta savol, beshta karta va aniq boshlash nuqtasi.", "Flarestamina mashq hub'i") + """
+
+<p>Audit topgan bitta tuzoq: hub o'z ro'yxatini JavaScript bilan yig'adi, ya'ni qidiruv roboti unga kelganda bo'sh sahifa ko'rardi va orqasidagi butun katalogni ko'rmasdi. Yechim — <code>/tests/</code>: saytdagi har bir mashq testining oddiy, statik, o'qish mumkin bo'lgan indeksi. U asosan Google odam allaqachon ko'rib turgan narsani o'qiy olsin deb bor.</p>
+
+<h2>News va men yozmagan maqolalar</h2>
+
+<p>News bo'limi o'zbek IELTS topshiruvchilari rostdan qidiradigan, lekin bir joyda kam topadigan narsani qamraydi: imtihondagi o'zgarishlar, narxlar va grant muddatlari. Hozir unda <strong>26 ta post</strong> bor — 12 tasi imtihon haqida, 9 tasi muddatlar, 2 tasi narx, 2 tasi qo'llanma — qidiruv maydoni, o'z sonini ko'tarib yuradigan kategoriya chiplari va tepada uchta jonli karta: eng yaqin muddat va unga qolgan kun, ball konvertatsiyasi, Telegram kanal.</p>
+
+""" + fig("fs-news.webp", "News bo'limi: 26 ta post, sonli kategoriya chiplari va tepada sanab turgan eng yaqin muddat.", "Flarestamina news bo'limi") + """
+
+<p><strong>Beshta post o'zbek tilida</strong>, va ular o'quvchini til tugmasini qidirishga majburlamay, to'g'ridan-to'g'ri o'zbekcha ochiladi — ayniqsa narx haqidagi post raqamlarni yoddan takrorlamay, rasmiy ro'yxatdan o'tish sahifasidan o'qib yozilgan. Har bir postga o'z muqova rasmi berildi, bo'limning o'z lentasi ham bor.</p>
+
+<p>Yana <code>/writearticle/</code> — o'qituvchilar uchun maqola yuborish oqimi — orqali yozilgan oltita uzunroq maqola bor. Bular saytdagi birinchi begona nom turgan sahifalar, va gap aynan shunda: faqat bitta odamning ovozi bo'lgan saytning shifti past.</p>
+
+<h2>Beshta kichik tool</h2>
+
+<p>Testlar yonida endi Tools menyusi bor va undagi har bir narsa bitta savolga tez javob beradigan bitta maqsadli sahifa:</p>
+
+<ul>
+<li><strong>Ball konvertori</strong> — IELTS ↔ CEFR ↔ Multilevel ↔ TOEFL, chunki O'zbekistonda har bir universitet va elchixona boshqa shkalani so'raydi.</li>
+<li><strong>Grant muddatlari</strong> — DAAD, Chevening, Erasmus Mundus, El-Yurt Umidi, CSC, GKS va boshqalar, qolgan kunlari bilan.</li>
+<li><strong>O'quv reja generatori</strong> — to'rtta savol (hozirgi ball, maqsad ball, qolgan hafta, eng zaif ko'nikma) va chiqishda haftama-hafta reja hamda halol hukm: muddat yetadimi yoki imtihonni surish kerakmi. "Imtihonni suring" deyish konversiyaga sozlangan sahifa qiladigan ish emas — va bu o'sha toolning eng foydali gapi.</li>
+<li><strong>Speaking mavzulari</strong> — joriy rotatsiya.</li>
+<li><strong>Barcha testlar</strong> — robot o'qiy oladigan katalog indeksi.</li>
+</ul>
+
+""" + fig("fs-tools.webp", "O'quv reja generatori — to'rtta savol va sizga imtihonni surishni aytadigan hukm.", "Flarestamina o'quv reja generatori") + """
+
+<p>Ular qo'lda yozilmaydi, generatsiya qilinadi: har bir tool = bitta JSON-LD fayl + bitta mantiq fayli, build skript ularni yig'adi. Shuning uchun oltinchisini qo'shish "sahifani nusxalab, structured data'ni yangilashni unutish" degani emas.</p>
+
+<h2>23–24-avgust — login devorlarini buzish</h2>
+
+<p>Tashrif kamayib borayotgandi va men buni SEO muammosi deb o'ylagandim. Unday emas ekan. Sabab — uchta login devori.</p>
 
 <p>O'sha 113 ta test osilib turgan hub sahifasi <code>FSAuth.require()</code> ni chaqirardi. Ya'ni Google'dan kelgan har bir odam hech narsa ko'rmasdan to'g'ri akkaunt sahifasiga uchib ketardi. Writing Lab'da <em>ikkita</em> to'siq bor edi — login va kodga yozib qo'yilgan parol. Speaking bo'limida uchinchisi. Uchalasi ham yo'q; kirish endi ixtiyoriy va faqat natijani saqlash uchun kerak.</p>
 

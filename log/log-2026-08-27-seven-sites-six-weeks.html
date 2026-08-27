@@ -120,9 +120,51 @@ figcaption{font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:.08e
 
 <p>The whole design problem was the input order. <code>120 130 30</code> has to mean width 120, height 130, projection 30, every time, for someone holding a tape measure with one hand. Getting that unambiguous took longer than the arithmetic.</p>
 
-<h2>22–24 August — Flarestamina: tearing down the walls</h2>
+<h2>22 August — Flarestamina gets a paper design</h2>
 
-<p>Flarestamina is my IELTS practice site: 113 test pages, each in its own repository. Traffic had been falling and I assumed it was an SEO problem. It wasn't. It was three login walls.</p>
+<p>Flarestamina is my IELTS practice site: 113 test pages, each living in its own repository. It had grown into three products wearing one name — the hub was black and orange, the news section had its own palette, the account page looked like a third site.</p>
+
+<p>Over one weekend the whole thing moved to a black-and-white "paper" design, page by page: the home page (rewritten as static HTML instead of being assembled by JavaScript), the tool pages, the news section, the account and content pages, the 404. Brand assets were redrawn, and the favicon and OG image URLs were versioned so browsers would actually pick up the new art instead of serving the old one from cache for a month.</p>
+
+<p>The unglamorous wins in that pass: <strong>46 pages stopped calling Google</strong> for webfonts once they were self-hosted — and then I had to stop the build scripts helpfully re-adding the Google Fonts link on every rebuild. A rebuild had silently dropped structured data from some pages, so I restored it and taught the audit script to catch that specific regression. The privacy policy was brought back in line with what the site actually does now, and analytics gained a per-device opt-out.</p>
+
+<h2>The hub stopped being a wall of links</h2>
+
+<p>The practice hub is where everything starts, and it used to be a list. Now it asks one question — <em>choose a skill</em> — and gives you five cards: Listening (73 papers), Reading (25), Writing, Speaking, and the full mock. Above them, one card marked <em>start here</em> pointing at Cambridge 21: the whole book, four tests, all skills, free. Someone who has never used the site now has an obvious first click.</p>
+
+<figure><img src="/log/img/fs-hub.webp" alt="Flarestamina practice hub" loading="lazy"><figcaption>The practice hub after the rebuild: one question, five cards, and an obvious place to start.</figcaption></figure>
+
+<p>One catch the audit found: the hub builds its list in JavaScript, so a search-engine crawler arriving at it saw an empty page and none of the catalogue behind it. The fix was <code>/tests/</code> — a plain, static, crawlable index of every practice test on the site, which exists mostly so Google can read what a human can already see.</p>
+
+<h2>News, and articles by people who aren't me</h2>
+
+<p>The news section covers the thing Uzbek IELTS candidates actually search for and rarely find in one place: exam changes, fees, and scholarship deadlines. It now holds <strong>26 posts</strong> — 12 on the exam, 9 deadlines, 2 on fees, 2 guides — with a search box, category chips that carry their own counts, and three live cards at the top: the next deadline with a countdown, a score conversion, and the Telegram channel.</p>
+
+<figure><img src="/log/img/fs-news.webp" alt="Flarestamina news section" loading="lazy"><figcaption>The news section: 26 posts, counted category chips, and the next deadline counting down at the top.</figcaption></figure>
+
+<p><strong>Five of the posts are in Uzbek</strong>, and they open in Uzbek rather than making the reader find a toggle — the fee post in particular quotes figures read straight off the official booking page rather than repeated from memory. Every post got its own cover image, and the section publishes its own feed.</p>
+
+<p>There are also six longer articles written through <code>/writearticle/</code>, the submission flow for teachers. Those are the first pages on the site with someone else's name on them, which is the point: a site that is only ever one person's voice has a ceiling.</p>
+
+<h2>Five small tools</h2>
+
+<p>Alongside the tests there's now a Tools menu, and everything in it is a single-purpose page that answers one question fast:</p>
+
+<ul>
+<li><strong>Score converter</strong> — IELTS ↔ CEFR ↔ Multilevel ↔ TOEFL, because every Uzbek university and embassy asks for a different scale.</li>
+<li><strong>Scholarship deadlines</strong> — DAAD, Chevening, Erasmus Mundus, El-Yurt Umidi, CSC, GKS and the rest, with days remaining.</li>
+<li><strong>Study plan generator</strong> — four questions (current band, target band, weeks left, weakest skill) and out comes a week-by-week plan plus an honest verdict on whether the timeline is enough or the exam should be moved. Telling someone to postpone is not what a conversion-optimised page does, and it's the most useful thing that tool says.</li>
+<li><strong>Speaking topics</strong> — the current rotation.</li>
+<li><strong>All tests</strong> — the crawlable catalogue index.</li>
+</ul>
+
+<figure><img src="/log/img/fs-tools.webp" alt="Flarestamina study plan generator" loading="lazy"><figcaption>The study plan generator — four questions, and a verdict that will tell you to postpone the exam.</figcaption></figure>
+
+<p>They're generated rather than hand-written: each tool is a JSON-LD file plus a logic file, assembled by a build script, so adding the sixth one doesn't mean copying a page and forgetting to update the structured data.</p>
+
+<h2>23–24 August — tearing down the login walls</h2>
+
+<p>Traffic had been falling and I assumed it was an SEO problem. It wasn't. It was three login walls.</p>
 
 <p>The hub that every one of those 113 tests hangs off called <code>FSAuth.require()</code>. So every single person arriving from Google was bounced straight to an account page before seeing anything. The Writing Lab had <em>two</em> gates — a login and a hardcoded access code. The speaking section had a third. All three are gone; login is now optional and only buys you saved results.</p>
 
