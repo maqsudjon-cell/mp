@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flarestamina — the login walls came down, and the hub stopped being a list | Maqsudjon Polatov — build log</title>
+<meta name="description" content="Traffic had been falling and I assumed it was an SEO problem. It was three login walls.">
+<link rel="canonical" href="https://maqsudjon.com/log/log-2026-08-24-flarestamina-walls-hub-news-tools.html">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#000000">
+<meta property="og:title" content="Flarestamina — the login walls came down, and the hub stopped being a list">
+<meta property="og:description" content="Traffic had been falling and I assumed it was an SEO problem. It was three login walls.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://maqsudjon.com/log/log-2026-08-24-flarestamina-walls-hub-news-tools.html">
+<meta property="og:site_name" content="Maqsudjon Polatov">
+<meta property="og:image" content="https://maqsudjon.com/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Flarestamina — the login walls came down, and the hub stopped being a list">
+<meta name="twitter:description" content="Traffic had been falling and I assumed it was an SEO problem. It was three login walls.">
+<meta name="twitter:image" content="https://maqsudjon.com/og-image.png">
+<meta name="author" content="Maqsudjon Polatov">
+<meta property="article:published_time" content="2026-08-24">
+<link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@500;600&family=Geist:wght@400;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Flarestamina — the login walls came down, and the hub stopped being a list", "description": "Traffic had been falling and I assumed it was an SEO problem. It was three login walls.", "datePublished": "2026-08-24", "inLanguage": "en", "mainEntityOfPage": "https://maqsudjon.com/log/log-2026-08-24-flarestamina-walls-hub-news-tools.html", "image": "https://maqsudjon.com/og-image.png", "author": {"@type": "Person", "name": "Maqsudjon Polatov", "url": "https://maqsudjon.com/"}}</script>
+<style>*{margin:0;padding:0;box-sizing:border-box}
+body{background:#000;color:#ffffffbb;font-family:'Geist',system-ui,sans-serif;line-height:1.7}
+.wrap{max-width:720px;margin:0 auto;padding:48px 24px 80px}
+a{color:#fff;font-weight:600;text-decoration:underline;text-decoration-color:#4d4d4d;text-underline-offset:4px}
+a:hover{text-decoration-color:#fff}
+.top{display:flex;justify-content:space-between;gap:14px;font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#888;margin-bottom:46px}
+.top a{color:#888;font-weight:400;text-decoration:none}
+.top a:hover{color:#fff}
+.meta{font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:.1em;color:#888;margin-bottom:14px}
+.meta b{color:#f2d8cd;font-weight:500;border:1px solid #4d4d4d;padding:2px 7px;margin-left:8px}
+h1{font-family:'Funnel Display',sans-serif;font-weight:600;font-size:clamp(24px,5vw,34px);line-height:1.2;color:#fff;margin-bottom:26px;letter-spacing:-.01em}
+.body{white-space:pre-wrap;font-size:16px}
+.foot{margin-top:44px;border-top:1px solid #4d4d4d;padding-top:20px;font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#888}
+.foot a{color:#888;font-weight:400;text-decoration:none}
+::selection{background:#fff;color:#000}</style>
+</head>
+<body>
+<div class="wrap">
+  <nav class="top"><a href="/">✳ MAQSUDJON POLATOV</a><a href="/log/">BUILD LOG</a></nav>
+  <div class="meta">24 AUG 2026<b>IELTS</b></div>
+  <h1>Flarestamina — the login walls came down, and the hub stopped being a list</h1>
+  <div class="body">Traffic had been falling and I assumed it was an SEO problem. It was three login walls.
+
+The hub that all 113 test pages hang off called an auth guard, so every single person arriving from Google was bounced to an account page before seeing anything at all. The Writing Lab had two gates — a login and a hardcoded access code. The speaking section had a third. All three are gone. Signing in is now optional and only buys you saved results.
+
+The hub itself stopped being a wall of links. It asks one question — choose a skill — and offers five cards: Listening with 73 papers, Reading with 25, Writing, Speaking, and the full mock, with a start-here card pointing at Cambridge 21. The audit also caught that the hub builds its list in JavaScript, so a crawler saw an empty page and none of the catalogue behind it. That is why flarestamina.com/tests now exists: a plain static index of every test, so Google can read what a person could already see.
+
+Then the actual SEO, across 113 separate repositories through the GitHub API. Missing meta descriptions 101 to 0, every one generated from the page&#x27;s own real headings rather than imagined. Missing canonical tags 107 to 1. Missing analytics 108 to 1. Duplicate titles 2 to 0. Structured data 0 to 106 test pages. Titles rewritten to match what people actually type. Three new landing pages for listening, reading and Uzbek-language search, plus an IndexNow key and a sitemap that stopped lying about its dates.
+
+The audit also found a duplicated analytics snippet double-counting every pageview, 65 pages still carrying a headline from a previous redesign, and nineteen reading pages sharing identical body text, which to a search engine reads as one page repeated nineteen times. All fixed.
+
+Last piece: <a href="https://flarestamina.com/stats/" rel="noopener">flarestamina.com/stats</a>, every site&#x27;s visitor count in one table with no login. Having to check seven dashboards was exactly why I checked none of them.</div>
+  <div class="foot"><a href="/#log-2026-08-24-flarestamina-the-login-walls-cam">Open in the live build log →</a> · <a href="/feed.xml">RSS</a> · © 2026 Maqsudjon Polatov</div>
+</div>
+<script data-goatcounter="https://maqsudjon.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

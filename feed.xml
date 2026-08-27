@@ -6,6 +6,55 @@
   <description>A one-person lab for acting in code and steel — everything I ship, as I ship it.</description>
   <language>en</language>
   <item>
+    <title>CTN Language Centre — ctnlc.uz, built as one file</title>
+    <link>https://maqsudjon.com/log/log-2026-07-21-ctn-language-centre.html</link>
+    <guid>https://maqsudjon.com/log/log-2026-07-21-ctn-language-centre.html</guid>
+    <pubDate>Tue, 21 Jul 2026 12:00:00 +0500</pubDate>
+    <description>An English school in Mirzo Ulug&#x27;bek district, Tashkent, needed a site. It is live at ctnlc.uz, and it is one self-contained index.html — trilingual UZ/RU/EN with the choice kept in localStorage, a light/dark toggle, scroll-reveal animations, courses, teachers, FAQ, a live Maps em</description>
+  </item>
+  <item>
+    <title>ZED AVLOD School — zedavlod.uz</title>
+    <link>https://maqsudjon.com/log/log-2026-07-23-zed-avlod-school.html</link>
+    <guid>https://maqsudjon.com/log/log-2026-07-23-zed-avlod-school.html</guid>
+    <pubDate>Thu, 23 Jul 2026 12:00:00 +0500</pubDate>
+    <description>A school in To&#x27;raqo&#x27;rg&#x27;on, Namangan region, running since 2020. This one is family, which raised the bar rather than lowering it. Live at zedavlod.uz, trilingual UZ/RU/EN.</description>
+  </item>
+  <item>
+    <title>Chiziq — a web studio whose portfolio you can actually open</title>
+    <link>https://maqsudjon.com/log/log-2026-07-25-chiziq-web-studio.html</link>
+    <guid>https://maqsudjon.com/log/log-2026-07-25-chiziq-web-studio.html</guid>
+    <pubDate>Sat, 25 Jul 2026 12:00:00 +0500</pubDate>
+    <description>A web studio aimed at being the cheaper and better-looking alternative to the incumbent in this market. It started as then.uz and became chzq.uz — Chiziq, Uzbek for line — because a brand people can say out loud in their own language beats a clever English pun.</description>
+  </item>
+  <item>
+    <title>payvandchi.maqsudjon.com — my own workshop, finally online</title>
+    <link>https://maqsudjon.com/log/log-2026-08-01-payvandchi-workshop.html</link>
+    <guid>https://maqsudjon.com/log/log-2026-08-01-payvandchi-workshop.html</guid>
+    <pubDate>Sat, 01 Aug 2026 12:00:00 +0500</pubDate>
+    <description>I weld metal grilles in Tashkent. The workshop now has a site at payvandchi.maqsudjon.com: window grilles, balcony grilles, railings and canopies, with real photographs of real jobs and no stock imagery anywhere.</description>
+  </item>
+  <item>
+    <title>reshotkachi — the same workshop, built a second time</title>
+    <link>https://maqsudjon.com/log/log-2026-08-04-reshotkachi-second-build.html</link>
+    <guid>https://maqsudjon.com/log/log-2026-08-04-reshotkachi-second-build.html</guid>
+    <pubDate>Tue, 04 Aug 2026 12:00:00 +0500</pubDate>
+    <description>Same workshop, same photographs, built again as a completely different site. Not laziness — a test. If the product is identical, how much does design alone change how it reads?</description>
+  </item>
+  <item>
+    <title>KVADRAT — a square-metre calculator for grille jobs</title>
+    <link>https://maqsudjon.com/log/log-2026-08-07-kvadrat-calculator.html</link>
+    <guid>https://maqsudjon.com/log/log-2026-08-07-kvadrat-calculator.html</guid>
+    <pubDate>Fri, 07 Aug 2026 12:00:00 +0500</pubDate>
+    <description>The least glamorous thing I have built and possibly the one I use most. Live at kvdrt.maqsudjon.com.</description>
+  </item>
+  <item>
+    <title>Flarestamina — the login walls came down, and the hub stopped being a list</title>
+    <link>https://maqsudjon.com/log/log-2026-08-24-flarestamina-walls-hub-news-tools.html</link>
+    <guid>https://maqsudjon.com/log/log-2026-08-24-flarestamina-walls-hub-news-tools.html</guid>
+    <pubDate>Mon, 24 Aug 2026 12:00:00 +0500</pubDate>
+    <description>Traffic had been falling and I assumed it was an SEO problem. It was three login walls.</description>
+  </item>
+  <item>
     <title>Tadam: a wedding album with no app and no database</title>
     <link>https://maqsudjon.com/log/log-2026-08-27-tadam-wedding-photo-album.html</link>
     <guid>https://maqsudjon.com/log/log-2026-08-27-tadam-wedding-photo-album.html</guid>
