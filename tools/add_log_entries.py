@@ -6,7 +6,8 @@ Sayt ikkita joyda bir xil ro'yxatni ko'rsatadi:
   · /log/ arxivi                — har bir yozuv alohida HTML sahifa
 
 Bu ikkisi ajralib ketmasligi kerak. Skript bitta manbadan ikkalasini ham
-yasaydi, ustiga /log/index.html, feed.xml va sitemap.xml ni yangilaydi.
+yasaydi, ustiga /log/index.html va sitemap.xml ni yangilaydi; feed.xml va
+feed-uz.xml ni tools/build_feed.py qayta yozadi.
 
     python3 tools/add_log_entries.py
 """
@@ -302,30 +303,6 @@ def arxiv(yozuvlar):
     return len(qatorlar)
 
 
-def lenta(yozuvlar):
-    """feed.xml ga item qo'shadi."""
-    p = ROOT / "feed.xml"
-    s = p.read_text()
-    yangi = []
-    for e in yozuvlar:
-        url = f'{BASE}/log/{e["slug"]}.html'
-        if url in s:
-            continue
-        desc = e["body"].split("\n\n")[0][:280]
-        yangi.append(f"""  <item>
-    <title>{html.escape(e["title"])}</title>
-    <link>{url}</link>
-    <guid>{url}</guid>
-    <pubDate>{rfc(e["date"])}</pubDate>
-    <description>{html.escape(desc)}</description>
-  </item>""")
-    if not yangi:
-        return 0
-    i = s.index("  <item>")
-    p.write_text(s[:i] + "\n".join(yangi) + "\n" + s[i:])
-    return len(yangi)
-
-
 def xarita(yozuvlar):
     """sitemap.xml ga manzil qo'shadi."""
     p = ROOT / "sitemap.xml"
@@ -347,5 +324,7 @@ if __name__ == "__main__":
 
     print(f"\n  bosh sahifa: +{bosh_sahifa(YOZUVLAR)} yozuv")
     print(f"  /log/ arxivi: {arxiv(yangi_sahifa)} ta jami")
-    print(f"  feed.xml: +{lenta(yangi_sahifa)}")
+    # RSS: butun lenta sahifalarning o'zidan, to'liq matn bilan qayta yoziladi
+    import build_feed
+    build_feed.main()
     print(f"  sitemap.xml: +{xarita(yangi_sahifa)}")

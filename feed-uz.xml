@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:media="http://search.yahoo.com/mrss/">
+<channel>
+  <title>Maqsudjon Polatov — build log (o&#x27;zbekcha)</title>
+  <link>https://maqsudjon.com/log/</link>
+  <atom:link href="https://maqsudjon.com/feed-uz.xml" rel="self" type="application/rss+xml"/>
+  <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
+  <description>Kod va temir bilan ishlaydigan bir kishilik laboratoriya: chiqargan hamma narsam, chiqargan kunim. To&#x27;liq yozuvlar.</description>
+  <language>uz</language>
+  <copyright>© 2026 Maqsudjon Polatov</copyright>
+  <lastBuildDate>Mon, 19 Oct 2026 12:00:00 +0500</lastBuildDate>
+  <ttl>720</ttl>
+  <image><url>https://maqsudjon.com/favicon-512x512.png</url><title>Maqsudjon Polatov — build log (o&#x27;zbekcha)</title><link>https://maqsudjon.com/log/</link></image>
+  <item>
+    <title>Zitou: xitoy tili o&#x27;zbek tilida, zitou.uz va zitou.app</title>
+    <link>https://maqsudjon.com/log/log-2026-10-19-zitou-chinese-in-uzbek-uz.html</link>
+    <guid isPermaLink="true">https://maqsudjon.com/log/log-2026-10-19-zitou-chinese-in-uzbek-uz.html</guid>
+    <pubDate>Mon, 19 Oct 2026 12:00:00 +0500</pubDate>
+    <dc:creator>Maqsudjon Polatov</dc:creator>
+    <category>MAHSULOT</category>
+    <description>Xitoy tilini o&#x27;zbek va yana to&#x27;qqiz tilda o&#x27;rganish uchun bepul ilova: 124 039 so&#x27;zli lug&#x27;at, HSK&#x27;ning hamma ro&#x27;yxatlari, sinf uchun olti darslik HSK 1 kursi, nega endi ikki manzilda, qanday qurilgan va raqamlar qanday bo&#x27;lsa, shunday.</description>
+    <content:encoded><![CDATA[<p class="lede">2026-yil 19-sentabrda xitoy tilini o'rganishni boshladim. O'zbek tilida o'rganish uchun deyarli hech narsa yo'q edi, shuning uchun to'rt kundan keyin Zitou'ning birinchi versiyasi chiqdi. Bir oy o'tib, u bepul ilova: 124 039 so'zli lug'at, HSK'ning hamma ro'yxatlari, 8 563 so'z ona tilida so'zlashuvchi ovozida, sinf uchun olti darslik HSK 1 kursi va bugundan boshlab ikki manzil: o'zbekcha <a href="https://zitou.uz">zitou.uz</a> va qolgan hamma narsa uchun <a href="https://zitou.app">zitou.app</a>.</p>
+
+<p>Bu uzun nusxasi: ichida nima bor, sinf undan qanday foydalanadi, nega endi ikki manzilda turadi, qanday qurilgan va nimani da'vo qilmayman.</p>
+
+<figure><div class="pair"><img src="https://maqsudjon.com/log/img/zitou-uz-home.webp" alt="zitou.uz&#x27;dagi o&#x27;zbekcha bosh sahifa" loading="lazy"><img src="https://maqsudjon.com/log/img/zitou-app-en.webp" alt="zitou.app/en&#x27;dagi inglizcha bosh sahifa" loading="lazy"></div><figcaption>Bitta mahsulot, ikki manzil: o'zbekcha zitou.uz va inglizcha zitou.app/en. Yana sakkiz til zitou.app'da.</figcaption></figure>
+
+<h2>Ichida nima bor</h2>
+
+<p>Asosi — lug'at va kurs. Lug'at CC-CEDICT'dan: 124 039 so'z, iyeroglif, pinyin (tonli yoki tonsiz) yoki o'zbekcha, ruscha, inglizcha ma'nosi bo'yicha qidiriladi. Ulardan 8 296 tasi, ya'ni HSK 1–6 ning hamma so'zi va hech qaysi ro'yxatda yo'q 472 ta kundalik so'z, o'zbekcha va ruscha ma'noga ega. Kurs HSK'ning uchala ro'yxati bo'yicha: 2025-yilgi yangi ro'yxat (10 057 so'z), HSK 3.0 va HSK 2.0, har bir daraja alohida kurs.</p>
+
+<ul>
+<li><strong>Xitoylik ovozi.</strong> 8 563 so'z — audio-cmn'dan (CC BY-SA) ona tilida so'zlashuvchilarning yozuvlari. Qolganlari qurilmaning xitoycha ovozida.</li>
+<li><strong>Chiziq tartibi.</strong> Har bir iyeroglif: avval ko'rasiz, keyin kulrang ustidan chizasiz, keyin barmoq bilan yoddan yozasiz. Chiziqlar ma'lumoti — Make Me a Hanzi.</li>
+<li><strong>Aqlli takrorlash.</strong> So'z aynan unutay deganingizda qaytadi, FSRS algoritmi bilan. Siz faqat "Boshlash"ni bosasiz.</li>
+<li><strong>Tonlar rangda.</strong> 1-ton qizil, 2-ton to'q sariq, 3-ton yashil, 4-ton ko'k — tonni quloq bilan ham, ko'z bilan ham eslab qolasiz.</li>
+<li><strong>Grammatika.</strong> HSK 1–4 uchun 103 mavzu: qolip, qisqa qoida, pinyinli misollar, ko'p uchraydigan xato va 2 daqiqalik mashq.</li>
+<li><strong>Sinov imtihonlari.</strong> HSK 1–4 haqiqiy HSK 2.0 formatida: tinglash imtihondagidek eshittiriladi, vaqt va o'tish bali bor. HSK 3.0 formatidagi birinchi 1-daraja varianti ham bor.</li>
+<li><strong>Kichik vositalar.</strong> Matn, ovoz yoki yozuv rasmini tarjima qiladigan tarjimon; Xitoyga safar uchun 80 dan ortiq ibora; ismingiz xitoycha, iyeroglifma-iyeroglif; Kunlik 5 — darajangizdagi hamma uchun bir xil besh savol, do'stga yuborish uchun; va o'zbek tilidagi Xitoy yangiliklari, har birida manbasi bilan.</li>
+</ul>
+
+<p>Hisobsiz, o'nta interfeys tilida, telefon, planshet yoki kompyuter brauzerida ishlaydi.</p>
+
+<figure><img src="https://maqsudjon.com/log/img/zitou-word.webp" alt="zitou.uz&#x27;dagi 你好 so&#x27;z sahifasi" loading="lazy"><figcaption>zitou.uz'dagi 7 823 ta o'zbekcha so'z sahifasidan biri: o'zbekcha va inglizcha ma'nosi, iyerogliflari, chiziq tartibi, ovozi va misol gaplar. Qidiruv tizimlari asosan shu sahifalarni topadi.</figcaption></figure>
+
+<h2>HSK 1 kursi — sinf uchun</h2>
+
+<p>Bizda ko'pchilik yolg'iz o'qimaydi: ustoz va kitob bilan sinfda o'tiradi. Shuning uchun Zitou'ning eng yangi qismi o'sha xona uchun. HSK 1 kursida olti dars bor. Ustoz katta ekranda <a href="https://zitou.app/dars/">zitou.app/dars</a> da darsni ochadi va olti xonali kod oladi. O'quvchilar uni telefonda, hisobsiz yozadi va har bir mashqqa birga javob beradi. Kim javob berdi, kim adashdi, kim "tushunmadim" dedi — ustoz shu zahoti ko'radi.</p>
+
+<figure><img src="https://maqsudjon.com/log/img/zitou-dars.webp" alt="Kod kiritish va darslar ro&#x27;yxati bilan jonli dars sahifasi" loading="lazy"><figcaption>zitou.app/dars: “Ustoz ekranda. Sinf telefonda.” O'quvchi kodni kiritadi, ustoz darsni tanlab jonli boshlaydi.</figcaption></figure>
+
+<p>Darslar orasida yana ikki sahifa bor. <a href="https://zitou.app/vocab/">/vocab</a> kursning 162 ta so'zini beshtadan o'rgatadi (tinglaysiz, ko'rasiz, topasiz), unda telefon so'zlarni o'zi aytib beradigan, siz faqat tinglaydigan rejim ham bor. <a href="https://zitou.app/daftar/">/daftar</a> — lug'at daftari: har bir so'zning iyeroglifi, pinyini, ma'nosi, yozilish tartibi va ovozi.</p>
+
+<figure><div class="pair"><img src="https://maqsudjon.com/log/img/zitou-d6.webp" alt="To&#x27;rtta yangi so&#x27;zli 6-dars slaydi" loading="lazy"><img src="https://maqsudjon.com/log/img/zitou-vocab.webp" alt="Olti darsli HSK 1 so&#x27;z mashqi" loading="lazy"></div><figcaption>Chapda: 6-dars, 19 slayddan 4-chisi, yangi so'zlar tonlari rangli pinyin bilan. O'ngda: /vocab, olti darsdagi 162 so'z, beshtadan.</figcaption></figure>
+
+<p>6-dars kecha qo'shildi: telefon, xarid, taom va taksi. Darslikning o'z audiolari bor, lekin ular mualliflik huquqi bilan himoyalangan, shuning uchun ularni ishlatmadim. audio-cmn'da bor har bir so'z — ona tilida so'zlashuvchining yozuvi. Unda bo'lmagan har bir gap, dialog va so'z Apache-2.0 litsenziyali ochiq nutq modeli <a href="https://huggingface.co/hexgrad/Kokoro-82M-v1.1-zh">Kokoro v1.1-zh</a> bilan, uchta doimiy ovozda yasalgan. Sahifalarda ikkalasi ham ko'rsatilgan.</p>
+
+<h2>Ikki manzil</h2>
+
+<p>Bugun Zitou <a href="https://zitou.uz">zitou.uz</a> manziliga ega bo'ldi. O'zbekcha sahifalar o'sha yerga ko'chdi: bosh sahifa, 7 823 ta so'z sahifasi, lug'at qo'llanmasi, HSK ro'yxatlari, grammatika, sinov testi, maqolalar va Xitoy yangiliklari. <a href="https://zitou.app">zitou.app</a>'da qolgan to'qqizta til va ilovaning o'zi qoldi.</p>
+
+<p>Bo'linish bitta qoidaga bo'ysunadi. Kirish yoki saqlangan natijani ushlab turadigan hamma narsa (ilova, kurs sahifalari, jonli o'yinlar) zitou.app'da qoladi, chunki brauzer bularni har bir manzil uchun alohida saqlaydi va ularni ko'chirish har bir o'quvchining natijasini ikkiga bo'lib yuborardi. O'qiladigan sahifalar bemalol ko'chdi. Har bir eski manzil 301 bilan yangi joyiga yo'naltiriladi, shuning uchun indekslangan yoki ulashilgan hech narsa buzilmaydi.</p>
+
+<p>zitou.app'ning o'zi ochilsa, endi tilni tanlaydi. Brauzeri o'zbekcha bo'lgan yoki O'zbekistonda turgan va brauzeri ruschaga sozlanmagan odam zitou.uz'ga o'tadi; qolganlar o'z tiliga yoki inglizchaga.</p>
+
+<p>Nega aynan .uz? Google mamlakat domenini o'sha mamlakat uchun belgi deb o'qiydi, Toshkentdagi ustoz esa darsda "zitou nuqta uz" deb hech narsani harflamasdan ayta oladi. Sinf kodi ham qisqa uy topdi: o'quvchi <code>zitou.uz/482915</code> ni yozadi va shu kodli jonli dars yoki o'yinga tushadi.</p>
+
+<p>Har bir manzilning o'z sitemap'lari va robots fayli, o'z Search Console va Bing Webmaster property'si va bitta to'liq RSS lentasi bor. <a href="https://zitou.uz/feed.xml">zitou.uz/feed.xml</a> yangilanishlar, maqolalar, qo'llanmalar va so'nggi Xitoy yangiliklarini bir joyda beradi. Savollar endi <a href="mailto:salom@zitou.uz">salom@zitou.uz</a> ga.</p>
+
+<figure><img src="https://maqsudjon.com/log/img/zitou-poster.webp" alt="QR kodli o&#x27;zbekcha Zitou plakati" loading="lazy"><figcaption>Sinflar uchun A4 plakat. QR kod zitou.uz'ni ochadi; sinf kodi darslar uchun ham, o'yinlar uchun ham ishlaydi.</figcaption></figure>
+
+<h2>Qanday qurilgan</h2>
+
+<p>Zitou — statik fayllari bilan bitta Cloudflare Worker. Lug'at ma'lumotlar bazasi emas: u CC-CEDICT va HSK ro'yxatlaridan yasalgan statik JSON, 124 ming so'zli lug'at bepul tarifda aynan shu tufayli ishlaydi. D1'da hisoblar, sinflar va yangiliklar; har bir jonli o'yin va jonli dars o'z Durable Object'ida, har bir kodga bitta xona.</p>
+
+<p>Bepul tarif — haqiqiy cheklov. Bir marta botlar kunlik so'rovlar limitini to'liq yeb qo'ygan edi, shuning uchun Worker endi o'z byudjetini yuritadi: ommaviy botlar limitdan oldin to'xtatiladi, Google, Bing va Yandex esa doim xizmat oladi.</p>
+
+<p>Ikki manzil — bitta deploy. Qaysi yo'l qaysi manzilga tegishli ekanini bitta fayl hal qiladi. Build har bir sahifadagi har bir havolani o'sha sahifani beradigan manzilga moslab qayta yozadi va har bir manzilning sitemap'i va robots faylini yaratadi; Worker yo'naltirishlarni bajaradi va o'zi chizadigan sahifalarni qayta yozadi. Domen ikki bosqichda ishga tushdi: avval eski kod bilan ulanib tekshirildi, faqat keyin yo'naltirishlar yoqildi, chunki .uz reyestri nameserver'larni topshirishiga taxminan ikki soat ketdi.</p>
+
+<h2>Telegram va ochiq ma'lumot</h2>
+
+<p><a href="https://t.me/zitougg">@zitougg</a> kanali har kuni bitta HSK so'zini ovozi va yozilish animatsiyasi bilan chiqaradi. <a href="https://t.me/zitouggbot">@zitouggbot</a> boti istalgan chatda so'z topadi, xitoycha tabrik yuboradi va guruhlarda kunlik so'z va test o'tkazadi.</p>
+
+<p>Ostidagi lug'at ochiq: Hugging Face'da CC BY 4.0 bilan <a href="https://huggingface.co/datasets/Maqsudjonpolatov/hsk-chinese-uzbek-russian">o'zbekcha va ruscha ma'noli 8 296 HSK so'zi</a>, yonida kichik lug'at Space'i ham bor.</p>
+
+<h2>Raqamlar qanday bo'lsa, shunday</h2>
+
+<p>12-oktabrda Search Console taxminan 5 950 ta indekslangan sahifa, 28 kunda 927 ko'rsatish va 19 klik ko'rsatdi. Bu kam, va ko'rsatishlarning ko'pi HSK 7–9 ro'yxati sahifalaridan keldi — O'zbekistonda hali hech kim bermayotgan savollarga javob beradigan sahifalar. zitou.uz aynan shu yerda muhim sahifalar raqamini o'zgartirish uchun. Nima bo'lganini yozib boraman.</p>
+
+<p>iPhone va Android versiyalari yo'lda. Ungacha Zitou brauzerda ishlaydi va zitou.app'dan bosh ekranga o'rnatiladi.</p>
+
+<h2>Nimani da'vo qilmayman</h2>
+
+<ul>
+<li>O'zbekcha va ruscha ma'nolar sun'iy intellekt yordamida yozilgan. Ular o'quvchilarning xabarlari asosida tuzatib boriladi, ilova ham, dataset ham buni ochiq aytadi.</li>
+<li>Men o'rgatayotgan tilda boshlovchiman. Bu boshlovchiga birinchi kuni nima kerakligi haqida meni halol tutadi, lekin xitoycha har qanday narsani mashqdan boshqa maqsadda ishlatishdan oldin ona tilida so'zlashuvchi tekshirishi kerak.</li>
+<li>Bu xitoy tilini o'zbek tilida o'rganishning birinchi yoki yagona yo'li emas. Bu bepul yo'llardan biri, va hali boshlanishi.</li>
+</ul>
+
+<p>Sinab ko'ring: o'zbekcha <a href="https://zitou.uz">zitou.uz</a>, boshqa tillarda <a href="https://zitou.app">zitou.app</a>. HSK 1 dan boshlang yoki o'z ismingizni yozing.</p>]]></content:encoded>
+    <media:content url="https://maqsudjon.com/log/og/log-2026-10-19-zitou-chinese-in-uzbek-uz.png" medium="image" type="image/png" width="1200" height="630"/>
+  </item>
+  <item>
+    <title>Tadam: ilovasiz va bazasiz to&#x27;y albomi</title>
+    <link>https://maqsudjon.com/log/log-2026-08-27-tadam-wedding-photo-album-uz.html</link>
+    <guid isPermaLink="true">https://maqsudjon.com/log/log-2026-08-27-tadam-wedding-photo-album-uz.html</guid>
+    <pubDate>Thu, 27 Aug 2026 12:00:00 +0500</pubDate>
+    <dc:creator>Maqsudjon Polatov</dc:creator>
+    <category>MAHSULOT</category>
+    <description>tadam.uz qanday ishlaydi: mehmonlar stoldagi QR kodni skanerlaydi, telefonidagi suratlarni yuklaydi, kelin-kuyov esa hammasini ZIP qilib oladi. Cloudflare Workers, faqat R2 va taxmin qilinmay o&#x27;lchangan QR kod.</description>
+    <content:encoded><![CDATA[<p class="lede">O'zbek to'yida uch yuz mehmon va uch yuzta telefon bo'ladi. Kechaning oxiriga borib, o'sha kechaning haqiqiy suratlari — stollar, raqs, kadr tashqarisidagi nimagadir kulib turgan buvi — faqat o'sha telefonlarda qoladi. Kelin-kuyov ulardan yigirmatachasini ko'radi: guruhga tashlangan, siqilib tanib bo'lmas holga kelgan. Tadam — shuni stoldagi QR kod bilan tuzatishga urinishim.</p>
+
+<p><a href="https://tadam.uz">tadam.uz</a> 2026-yil 27-avgustda ishga tushdi. Quyida u qanday ishlashi va ko'ringanidan qiyinroq chiqqan hamma narsa.</p>
+
+<h2>Jarayon</h2>
+
+<p>Kelin-kuyov albom yaratadi — nomi va sanasi, boshqa hech narsa, akkaunt ham yo'q. Javobiga uchta havola oladi: mehmon havolasi, boshqaruv havolasi va chop etiladigan QR varaqasi. QR varaqasi stollarga qo'yiladi.</p>
+
+<p>Mehmon uni skanerlaydi, galereyasi ochiladi, suratlarni tanlaydi, yuklaydi. Ilova yo'q, ro'yxatdan o'tish yo'q, parol yo'q. Keyin kelin-kuyov boshqaruv sahifasini ochib, hammasini bitta ZIP qilib yuklab oladi.</p>
+
+<figure><img src="https://maqsudjon.com/log/img/tadam-home.webp" alt="Tadam bosh sahifasi, to&#x27;rt qadamli jarayon" loading="lazy"><figcaption>Bosh sahifa. Butun jarayon skroll qilmasdan tushuntirilgan — chunki kelganlarning ko'pi Telegram havolasidan tushadi va o'qib o'tirmaydi.</figcaption></figure>
+
+<p>Birinchi ekranni belgilagan shart shu edi: odam to'y guruhida havolani ko'rib qoladi. Uning qiziqishi taxminan to'rt soniya. Agar sayt nima ekanini <em>o'ylab</em> topishi kerak bo'lsa, chiqib ketadi. Shuning uchun to'rt qadam darrov ko'rinadi, rasm bilan, oldida marketing muqaddimasisiz.</p>
+
+<h2>Ilova ham yo'q, ma'lumotlar bazasi ham yo'q</h2>
+
+<p>Ilovasizlik qarori ko'z oldingizga keltirsangiz o'z-o'zidan tushunarli: to'yda, qo'lida likopcha ushlab turgan odam hech qachon ilova o'rnatmaydi. Birinchi bosishdayoq ochiladigan veb-sahifa bo'lishi shart.</p>
+
+<p>Ma'lumotlar bazasisizlik qarori kamroq ko'rinib turardi va men undan hali ham mamnunman. Hammasi Cloudflare Worker sifatida ishlaydi, R2 esa <em>yagona</em> ma'lumot ombori. SQL yo'q, KV yo'q, Durable Object yo'q. Albom ma'lumotlari R2 obyekt metadatasida turadi; surat ro'yxati — R2 prefiks ro'yxati. To'y albomi bir marta yoziladi, bir necha marta o'qiladi va keyin umuman tegilmaydi — bunga baza kerak emas, qo'shmagan har bir baza esa shanba kuni kechqurun 11 da ishdan chiqolmaydigan bitta narsa demakdir.</p>
+
+<h2>Nom</h2>
+
+<p>Birinchi uch kun u Chaqnoq deb atalgan. Keyin uni ovoz chiqarib aytdim va odam menga qaytarib yoza olmaganini ko'rdim. To'y mahsuloti haqida yozishmaydi — gapirishadi, bir odam stolda ikkinchisiga aytadi. "Chaqnoq" dagi undoshlar to'plami na og'zaki nutqda, na yomon telefon dinamigida omon qoladi.</p>
+
+<p>Tadam — sehrgar fokusi chiqqanda chiqaradigan tovush. Ikki bo'g'in, o'zbekcha ham, ruscha ham, inglizcha ham qanday eshitilsa shunday yoziladi va uchalasida bir xil ma'no beradi.</p>
+
+<p>Ishlab turgan kod bazasining nomini o'zgartirish — brend nomi necha joyga yashiringanini bilib olish joyi. Men <em>kontekstni tushunadigan</em> qayta nomlash skripti yozdim: u ko'rinadigan matndagi brendni, CSS klassidagi brendni va o'zgarmasligi shart bo'lgan API yo'lidagi qatorni bir-biridan ajratardi, ustiga hech narsaga tegmasdan oldin har bir moslikni chop etadigan majburiy dry-run bor edi. Ko'r-ko'rona qidir-almashtir allaqachon yaratilgan har bir albomning havolasini jimgina buzib qo'yardi.</p>
+
+<h2>QR kod — taxmin qilinmadi, o'lchandi</h2>
+
+<p>QR varaqasi — jismoniy mahsulot. Agar u o'tirgan mehmonning qo'li yetadigan masofadan, to'yning xira yorug'ida, ustiga kimningdir palovi tomgan varaqadan skanerlanmasa, qolgan hamma narsaning ahamiyati yo'q.</p>
+
+<figure><img src="https://maqsudjon.com/log/img/tadam-qr.webp" alt="Tadam albomi uchun QR varaqasi" loading="lazy"><figcaption>Chop etiladigan QR varaqasi: A5 da 64 mm kod, Q darajali xato tuzatish, pastida qo'lda yozish uchun havola.</figcaption></figure>
+
+<p>Shuning uchun umid qilish o'rniga o'lchadim. QR'ni telefon kamerasi turli masofadan qanday piksel o'lchamda ko'rsa, o'shanday chiqarib, har biriga dekoder yurgizdim. U taxminan 15 sm dan 85 sm gacha ishonchli o'qiladi — varaqaga qo'li yetadigan hammani qamraydi. Kod Q darajasida yasaladi, bu esa standart bo'yicha kodning chorak qismi shikastlanganda ham ma'lumotni tiklaydi. Dog'ga chidamlilik shundan keladi.</p>
+
+<p>Keyin ostidagi havola. Ba'zi mehmonlar skanerlamaydi — ko'zini qisib, qo'lda yozadi. Havola <code>tadam.uz/e/?i=4se48ya9r</code> edi — 23 belgi, ichida savol belgisi va teng belgisi bor, ikkalasi ham telefon klaviaturasida azob. Endi u <code>tadam.uz/4se48ya9r</code>, 18 belgi, faqat kichik harf va raqam. Bitta bo'lakdan iborat manzil haqiqiy albom havolasiga 301 bilan yo'naltiriladi, ustiga band nomlar ro'yxati bor — kelajakdagi <code>/about</code> yoki <code>/qr</code> hech qachon albom ID'si deb o'qilmaydi.</p>
+
+<p>Mendan ID'ning o'zini to'qqiz belgidan yettitaga tushirish mumkinmi deb so'rashdi, men yo'q dedim. Bu mahsulotning maxfiylik modeli shundan iborat: havolaning o'zi — parol. Uni ushlagan odam suratlarni ko'radi. Ikkita belgini olib tashlash kalit maydonini taxminan ming barobar kichraytiradi. Beshta tejalgan bosish begona odamlarning to'y suratlari uchun ming barobar zaif himoyaga arzimaydi.</p>
+
+<h2>Rostdan qiyin bo'lgan joylar</h2>
+
+<p><strong>Yuklamaga umuman ishonmaslik.</strong> Faylning kengaytmasi ham, <code>Content-Type</code> sarlavhasi ham — mijoz aytgan da'vo, xolos. Har bir yuklama sehrli baytlar bo'yicha tekshiriladi: JPEG, PNG, WebP, GIF va HEIC. Oxirgisi ISO-BMFF <code>ftyp</code> blokining ichiga kirishni talab qiladi, chunki bu yerda asosiy kamera — iPhone. Haqiqiy rasm bo'lmagan hamma narsa rad etiladi, hajm esa tana o'qilgandan keyin emas, <code>Content-Length</code> dan oldin rad qilinadi.</p>
+
+<p><strong>Foydalanuvchi kontentini xavfsiz uzatish.</strong> Suratlar <code>default-src 'none'; sandbox</code> ostida beriladi. Kimdir bajariladigan narsa saqlash yo'lini topsa ham, brauzerda uni ishga tushirishga, tarmoqqa chiqishga yoki ota-sahifaga tegishga ruxsat yo'q. Saytning o'zida HSTS, <code>nosniff</code>, referrer va permissions siyosatlari bor.</p>
+
+<p><strong>Rostdan bir tekis tasodifiy ID.</strong> Tasodifiy belgi tanlashning ko'zga ko'rinadigan yo'li — <code>tasodifiy_bayt % alifbo_uzunligi</code>. Alifbo 256 ga butun bo'linmasa, bu qiyshiq chiqadi: boshidagi belgilar oxiridagilardan ko'proq tushadi. Ikki million namunada o'lchadim: <strong>12,65% qiyshiqlik</strong>. O'rniga rad etish namunasi (rejection sampling) qo'yildi — diapazondan tashqaridagi tortishlar tashlanadi va qayta tortiladi.</p>
+
+<p><strong>Akkauntsiz o'chirish.</strong> Har bir suratga albom va suratdan SHA-256 orqali chiqariladigan o'chirish kaliti beriladi. Shu tufayli mehmon endigina yuklab pushaymon bo'lgan suratini o'chira oladi, kelin-kuyov esa istaganini. Kalitlar solishtiruvi doimiy vaqtda bajariladi — vaqt sizdiradigan solishtiruv kalitni bir baytdan topib olish imkonini berardi.</p>
+
+<p><strong>Progress-barli ZIP.</strong> Worker'dan ZIP oqim bilan uzatilsa, <code>Content-Length</code> bo'lmaydi. Natijada brauzer noaniq spinner ko'rsatadi va kelin-kuyov 400 ta suratlik yuklama 10% dami yoki 90% dami — bilmaydi. Oqim bilan uzatiladigan Worker javobiga haqiqiy uzunlik qo'yishning yagona yo'li — <code>FixedLengthStream</code>. Uzunlikni oldindan hisoblash esa ZIP'ni yasashdan oldin uning aniq bayt hajmini chiqarishni talab qildi.</p>
+
+<figure><img src="https://maqsudjon.com/log/img/tadam-albom.webp" alt="Tadam mehmon albomi ko&#x27;rinishi" loading="lazy"><figcaption>Namuna albom. Bular sinov albomiga yuklangan Wikimedia Commons to'y suratlari — hech kimning haqiqiy albomini skrinshot qilmadim, chunki ular shaxsiy.</figcaption></figure>
+
+<h2>Kimdir ishlatganini bilish</h2>
+
+<p>Haqiqiy odam albom yaratgan lahzada bilishni istadim — lekin o'zimga uning suratlariga mo'ralash yo'lini bermasdan. Shuning uchun albomlar ro'yxatini ko'rsatadigan egalik sahifasi bor: nomlar, sanalar, surat soni va havolalar. U shifrlangan maxfiy kalit ortida, kalit sozlanmagan bo'lsa 403 emas, 404 qaytaradi — ya'ni mavjudligini oshkor qilmaydi. Albom yaratilganda Telegram bot menga xabar yozadi.</p>
+
+<figure><img src="https://maqsudjon.com/log/img/tadam-boshqarish.webp" alt="Tadam albomni boshqarish sahifasi" loading="lazy"><figcaption>Kelin-kuyovga tegadigan boshqaruv ko'rinishi: ulashish havolalari, QR varaqasi, ZIP yuklash va har bir suratni o'chirish.</figcaption></figure>
+
+<p>O'sha sahifa haqiqiy hajmdagi ma'lumot bilan birinchi uchrashuvda osilib qoldi. Ikki yuzga yaqin albomda u R2 chaqiruvlarini ketma-ket qilardi va shunchalik cho'zildiki, men uni ishdan chiqqan deb o'yladim. O'n ikkita parallel oqimli hovuz uni <strong>0,7 soniya</strong> ga tushirdi, surat soni esa faqat eng yangi qirqta albom uchun hisoblanadi.</p>
+
+<h2>Vaqt sarflaganimdan xursand bo'lgan tafsilotlar</h2>
+
+<ul>
+<li><strong>Suratlar 60 kundan keyin o'zini o'zi o'chiradi.</strong> Bu R2 lifecycle qoidasi va u saytda ko'mib emas, ochiq yozilgan. Begona odamlarning to'y suratlarini abadiy saqlash — imkoniyat emas, javobgarlik.</li>
+<li><strong>Shriftlar o'z serverimizda va qirqilgan.</strong> Google Fonts so'rovi yo'q, ya'ni kritik yo'ldan ham, kontent xavfsizlik siyosatidan ham butun boshli uchinchi tomon domeni chiqib ketdi.</li>
+<li><strong>Yozuv o'z nomini o'ynab ko'rsatadi.</strong> Sahifa ochilganda "Tadam" bir lahza sahifaning gradient chizig'i rangida "Ta-dam!" ga aylanadi, keyin o'z holiga qaytadi. Saytdagi yagona bezak animatsiyasi va u nomni tushuntirgani uchun o'z o'rnini oqlaydi.</li>
+<li><strong>113 ta test, test freymvorkisiz.</strong> Sof Node, tashqi paketsiz. Ular haqiqiy deploy'ga qarshi ishlaydi, so'rov cheklagichi bilan birga — shuning uchun albom yaratish yordamchisiga 429 kelganda kutishni o'rgatishga to'g'ri keldi.</li>
+</ul>
+
+<h2>Nima demayman</h2>
+
+<p>Bosh sahifaga "O'zbekistonda birinchi va yagona shunday xizmat" deb yozish ko'nglimga kelgan edi. Yozmadim, chunki mamlakatdagi har bir raqobatchini tekshirmaganman va buni isbotlay olmayman. Ehtimol, u yaxshiroq konversiya berardi. Shu bilan birga, kimdir raqobatchini topgan birinchi kuniyoq himoya qilishim kerak bo'lgan da'vo bo'lardi — o'z nomim ostida narsa qurishning butun ma'nosi esa ulardagi hamma gap tekshiruvga bardosh berishida.</p>
+
+<p>Halol holat shunday: tadam.uz jonli, himoyalangan, tez — va hali birorta ham haqiqiy to'yda ishlatilmagan. Keyingi tuzatiladigan narsa shu, va u kod muammosi emas.</p>]]></content:encoded>
+    <media:content url="https://maqsudjon.com/log/og/log-2026-08-27-tadam-wedding-photo-album-uz.png" medium="image" type="image/png" width="1200" height="630"/>
+  </item>
+  <item>
+    <title>Olti haftada yettita sayt</title>
+    <link>https://maqsudjon.com/log/log-2026-08-27-seven-sites-six-weeks-uz.html</link>
+    <guid isPermaLink="true">https://maqsudjon.com/log/log-2026-08-27-seven-sites-six-weeks-uz.html</guid>
+    <pubDate>Thu, 27 Aug 2026 12:00:00 +0500</pubDate>
+    <dc:creator>Maqsudjon Polatov</dc:creator>
+    <category>TO&#x27;PLAM</category>
+    <description>2026-yil 15-iyuldan 27-avgustgacha chiqarilgan hamma ish: CTN, ZED AVLOD, Chiziq, Payvandchi, Reshotkachi, KVADRAT, Flarestamina qayta qurilishi va Tadam — skrinshotlar va haqiqiy tashrif raqamlari bilan.</description>
+    <content:encoded><![CDATA[<p class="lede">2026-yilning 15-iyulidan 27-avgustigacha yettita yangi sayt chiqardim, sakkizinchisini qaytadan qurdim va oxirgi haftaning ko'p qismini domen nomi ustida o'zim bilan tortishib o'tkazdim. Bu — to'liq jurnal: har bir loyiha, u nima qiladi, nima buzildi va raqamlarni yaxlitlamay o'qiganda ular aslida nima deyapti.</p>
+
+<p>Sur'atni to'g'ri tushunish uchun kontekst: men Toshkentda panjara payvandlab kun ko'raman. Bularning hammasi shu ishning atrofidagi soatlarda qurilgan. Hech birining byudjeti, dizayneri yoki ikkinchi juft ko'zi bo'lmagan.</p>
+
+<h2>21-iyul — CTN Language Centre</h2>
+
+<p>Mirzo Ulug'bek tumanidagi ingliz tili markaziga sayt kerak edi. Bitta fayl qildim: <code>index.html</code> — UZ/RU/EN uch tilda (til <code>localStorage</code> da saqlanadi), yorug'/qorong'i rejim, skroll-animatsiyalar va so'rovni nusxalab Telegramni ochadigan lead-forma. Kurslar, o'qituvchilar, FAQ, jonli Google Maps va mock-testga ishora.</p>
+
+<p>Palitra siyoh-moviydan boshlanib, toza DeepSeek uslubidagi ko'k <code>#4D6BFE</code> bilan tugadi — yo'nalish DeepSeek, x.ai va Anthropic saytlarini diqqat bilan ko'rib, o'zbek ta'lim saytlari gradientni haddan tashqari ko'p ishlatadi degan xulosadan chiqdi.</p>
+
+<figure><img src="https://maqsudjon.com/log/img/ctn.webp" alt="CTN Language Centre bosh sahifasi" loading="lazy"><figcaption>ctnlc.uz — bitta HTML fayl, uch til, tungi rejim, jonli xarita.</figcaption></figure>
+
+<p>Ikkita narsani yana shunday qilardim. Birinchisi — favicon to'plami va 1200×630 OG rasm <em>kod bilan yaratilgan</em> (cairosvg ishlatadigan kichik Python skript), qo'lda ham, rasm modeli bilan ham emas. Ya'ni rang o'zgarsa, hammasini bitta buyruq bilan qayta chiqarasiz. Ikkinchisi — repoda allaqachon listening test va ~40 MB MP3 bor edi, shuning uchun deploy force-push emas, GitHub contents API orqali qilindi. Audio fayllarni deyarli o'chirib yuborayozdim. O'chmadi — faqat oldindan tekshirganim uchun.</p>
+
+<p>O'sha kuni Search Console tasdiqlandi, sitemap yuborildi, <code>EducationalOrganization</code> + <code>LocalBusiness</code> JSON-LD qo'shildi — soxta reytingsiz, chunki hali reyting yo'q. Manzil: <a href="https://ctnlc.uz">ctnlc.uz</a>.</p>
+
+<h2>23-iyul — ZED AVLOD maktabi</h2>
+
+<p>Bu — oilaviy ish. Namangan viloyati, To'raqo'rg'on tumanidagi maktab, 2020-yildan beri ishlaydi. Yana uch til, lekin eng qiziq joyi — natijalar jadvali: <strong>13 ta haqiqiy CEFR sertifikat bahosi</strong>, eng yuqorisi C1, bir nechtasi B2. Har birini <code>sertifikat.uzbmb.uz</code> dan tekshirsa bo'ladi.</p>
+
+<figure><img src="https://maqsudjon.com/log/img/zedavlod.webp" alt="ZED AVLOD maktabi bosh sahifasi" loading="lazy"><figcaption>zedavlod.uz — haqiqiy CEFR natijalari, to'qilgan statistikasiz.</figcaption></figure>
+
+<p>Nimani qo'shganimdan ko'ra nimani qo'shmaganim muhimroq: sertifikat raqamlari yo'q, o'quvchilar surati yo'q, va rasmlar orasidan chiqqan bitta rasmiy ko'rinishdagi portret butunlay tashqarida qoldi — chunki u kim ekanini hech kim tasdiqlamagan edi. Noma'lum odamni "asoschi" deb imzolash — yuzi bor yolg'on bo'lardi.</p>
+
+<p>To'liq SEO: <code>FAQPage</code> sxemali FAQ bo'limi, haqiqiy koordinatali <code>EducationalOrganization</code> + <code>WebSite</code> JSON-LD, hreflang, alohida GoatCounter sayti, tasdiqlangan Search Console, yuborilgan sitemap. Jonli: <a href="https://zedavlod.uz">zedavlod.uz</a>.</p>
+
+<h2>25-iyul — Chiziq</h2>
+
+<p>Veb-studiya. Maqsad aniq: bu bozordagi yetakchidan arzonroq va chiroyliroq muqobil bo'lish. Avval <code>then.uz</code> nomi bilan boshlangan, keyin <strong>chzq.uz</strong> — "Chiziq" ga o'zgartirildi, chunki odamlar o'z tilida ovoz chiqarib ayta oladigan brend chiroyli inglizcha so'z o'yinidan kuchliroq. (Shu xatboshini eslab qoling. Olti hafta o'tib yana takrorlanadi.)</p>
+
+<figure><img src="https://maqsudjon.com/log/img/chzq.webp" alt="Chiziq veb-studiya bosh sahifasi" loading="lazy"><figcaption>chzq.uz — qorong'i studiya palitrasi va rostdan ochsa bo'ladigan portfolio.</figcaption></figure>
+
+<p>O'sha saytdagi yagona haqiqiy qurol — portfolio. Mamlakatdagi har bir studiya mijoz sharhlarini ko'rsatadi; sharhni esa har kim yozib qo'ya oladi. Shuning uchun bu yerda har bir loyiha modal oynada ochiladi va ichida haqiqiy saytning <em>jonli iframe</em> i turadi: flarestamina.com, zedavlod.uz, ctnlc.uz, to'y taklifnomasi builderi, full-mock platformasi va o'z portfoliom. Hammasi GitHub Pages'da, ya'ni <code>X-Frame-Options</code> to'smaydi. Xabar bir qator: sharh emas — hozir ochib ko'rsangiz bo'ladigan saytlar.</p>
+
+<p>Narxlar ochiq yozilgan, bu bizda kerakligidan kamroq uchraydi: lending 1,5 mln · biznes sayt 3 mln · katalog/do'kon 6 mln · Telegram bot 1,2 mln · mini app 6 mln so'm. 24 soatda bepul prototip, to'lov keyin. Hosting 0 so'm — statik sayt GitHub Pages'da hech narsa turmaydi, boshqacha ko'rsatish shunchaki ustama bo'lardi.</p>
+
+<h2>26-iyul — IELTS Hub, besh marta</h2>
+
+<p>Bu yerda alohida skrinshot keraksiz, chunki ko'rinadigan natija — xotirjamroq sahifa. Flarestamina hub'ining beshta to'liq dizayn iteratsiyasi, ustiga saytning 110 sahifasini birma-bir aylanib chiqib, har bir buzuq joyni yozib chiqqan audit. O'sha audit butun avgust ishini belgilab berdi.</p>
+
+<h2>1-avgust — Payvandchi</h2>
+
+<p>O'z ustaxonam, nihoyat sayti bilan. Oyna panjarasi, balkon panjarasi, perila, kozirek — va, muhimi, <strong>darvoza yo'q</strong>. Biz darvoza yasamaymiz, shuning uchun bu so'z saytda umuman uchramaydi, eshik panjarasi ko'ringan har bir rasm ham chiqarib tashlandi. Qila olmaydigan xizmatni qo'shishdan ko'ra rasmni tashlagan yaxshi.</p>
+
+<figure><img src="https://maqsudjon.com/log/img/payvandchi.webp" alt="Payvandchi ustaxonasi bosh sahifasi" loading="lazy"><figcaption>payvandchi.maqsudjon.com — haqiqiy ish, haqiqiy rasmlar, stock rasmsiz.</figcaption></figure>
+
+<p>Bu yerdagi asosiy muhandislik ish — tezlik edi. Hero rasm 521 KB chiqdi, Toshkent mobil internetida bu ko'zga ko'rinadigan kutish. Qayta kodlab, o'lchamini kichraytirib <strong>173 KB</strong> ga tushirildi — vazn uchdan biriga, farq ko'rinmaydi. 5-avgustda inglizcha versiya, 23-avgustda ustaxonadan yangi rasmlar qo'shildi. Rasm qo'shish ikki qadam: <code>categories.csv</code> ga bir qator, keyin <code>build-gallery.mjs</code>.</p>
+
+<h2>4-avgust — Reshotkachi</h2>
+
+<p>O'sha ustaxona, o'sha rasmlar — butunlay boshqacha sayt sifatida ikkinchi marta qurildi. Bu dangasalik emas, sinov edi: mahsulot bir xil bo'lsa, faqat dizaynning o'zi uni qanchalik boshqacha ko'rsatadi?</p>
+
+<figure><img src="https://maqsudjon.com/log/img/reshotkachi.webp" alt="Reshotkachi panjara ustaxonasi bosh sahifasi" loading="lazy"><figcaption>reshotkachi.maqsudjon.com — 123 ta rasm, uch o'lchamli devor ko'rinishida.</figcaption></figure>
+
+<p>Javob: juda ko'p. Bu variant 123 ta rasmni UZ/RU/EN uch tilda uch o'lchamli galereya devoriga tizadi va yuqoridagidan butunlay boshqa biznesdek o'qiladi. Bir payvandchi, bir xil panjara.</p>
+
+<h2>7-avgust — KVADRAT</h2>
+
+<p>Eng jimjimasiz qurgan narsam va, ehtimol, eng ko'p ishlatiladigani. Panjara ishlari uchun kvadrat metr hisoblagich. Uchta raqam kiritasiz — eni, bo'yi va panjaraning devordan qancha chiqib turishi — u old yuza va to'rtta yon yuzani qo'shib hisoblaydi.</p>
+
+<figure><img src="https://maqsudjon.com/log/img/kvdrt.webp" alt="KVADRAT kvadrat metr hisoblagichi" loading="lazy"><figcaption>kvdrt.maqsudjon.com — uchta raqam kiradi, narxlasa bo'ladigan yuza chiqadi.</figcaption></figure>
+
+<p>Butun dizayn muammosi — kiritish tartibi edi. <code>120 130 30</code> har safar eni 120, bo'yi 130, vistup 30 degani bo'lishi kerak, ham bir qo'lida ruletka ushlab turgan odam uchun. Buni ikki xil o'qib bo'lmaydigan qilish arifmetikadan ko'proq vaqt oldi.</p>
+
+<h2>22-avgust — Flarestamina "qog'oz" dizaynga o'tdi</h2>
+
+<p>Flarestamina — mening IELTS mashq saytim: 113 ta test sahifasi, har biri alohida repoda yashaydi. U bitta nom ostida uchta boshqa-boshqa mahsulotga aylanib qolgan edi: hub qora-to'q sariq, news bo'limining o'z palitrasi, akkaunt sahifasi esa uchinchi saytdek ko'rinardi.</p>
+
+<p>Bir dam olish kunida hammasi oq-qora "qog'oz" dizaynga ko'chdi, sahifama-sahifa: bosh sahifa (JavaScript yig'adigan emas, statik HTML qilib qayta yozildi), tool sahifalari, news bo'limi, akkaunt va kontent sahifalari, 404. Brend fayllari qaytadan chizildi, favicon va OG rasm manzillariga versiya qo'yildi — aks holda brauzer bir oy davomida keshdagi eskisini ko'rsatib turardi.</p>
+
+<p>O'sha to'lqindagi jimjimasiz yutuqlar: shriftlar o'z serverimizga ko'chirilgach <strong>46 sahifa Google'ga murojaat qilishni to'xtatdi</strong> — keyin build skriptlarining har qayta qurishda Google Fonts havolasini "foydali" tarzda qaytadan qo'shishini to'xtatishga to'g'ri keldi. Qayta qurish ba'zi sahifalardan structured data'ni jimgina yo'qotgan ekan: tikladim va audit skriptiga aynan shu qaytalanishni tutishni o'rgatdim. Maxfiylik siyosati saytning hozirgi holatiga moslandi, analitikaga esa qurilma darajasida rad etish tugmasi qo'shildi.</p>
+
+<h2>Hub havolalar devori bo'lishdan to'xtadi</h2>
+
+<p>Mashq hub'i — hamma narsa boshlanadigan joy, va u ilgari shunchaki ro'yxat edi. Endi u bitta savol beradi — <em>qaysi ko'nikma?</em> — va beshta karta ko'rsatadi: Listening (73 ta variant), Reading (25 ta), Writing, Speaking va to'liq mock. Ularning tepasida <em>shu yerdan boshlang</em> deb belgilangan bitta karta: Cambridge 21 — butun kitob, to'rtta test, hamma ko'nikma, bepul. Saytni birinchi marta ochgan odam uchun endi aniq birinchi bosish bor.</p>
+
+<figure><img src="https://maqsudjon.com/log/img/fs-hub.webp" alt="Flarestamina mashq hub&#x27;i" loading="lazy"><figcaption>Qayta qurilgandan keyingi mashq hub'i: bitta savol, beshta karta va aniq boshlash nuqtasi.</figcaption></figure>
+
+<p>Audit topgan bitta tuzoq: hub o'z ro'yxatini JavaScript bilan yig'adi, ya'ni qidiruv roboti unga kelganda bo'sh sahifa ko'rardi va orqasidagi butun katalogni ko'rmasdi. Yechim — <code>/tests/</code>: saytdagi har bir mashq testining oddiy, statik, o'qish mumkin bo'lgan indeksi. U asosan Google odam allaqachon ko'rib turgan narsani o'qiy olsin deb bor.</p>
+
+<h2>News va men yozmagan maqolalar</h2>
+
+<p>News bo'limi o'zbek IELTS topshiruvchilari rostdan qidiradigan, lekin bir joyda kam topadigan narsani qamraydi: imtihondagi o'zgarishlar, narxlar va grant muddatlari. Hozir unda <strong>26 ta post</strong> bor — 12 tasi imtihon haqida, 9 tasi muddatlar, 2 tasi narx, 2 tasi qo'llanma — qidiruv maydoni, o'z sonini ko'tarib yuradigan kategoriya chiplari va tepada uchta jonli karta: eng yaqin muddat va unga qolgan kun, ball konvertatsiyasi, Telegram kanal.</p>
+
+<figure><img src="https://maqsudjon.com/log/img/fs-news.webp" alt="Flarestamina news bo&#x27;limi" loading="lazy"><figcaption>News bo'limi: 26 ta post, sonli kategoriya chiplari va tepada sanab turgan eng yaqin muddat.</figcaption></figure>
+
+<p><strong>Beshta post o'zbek tilida</strong>, va ular o'quvchini til tugmasini qidirishga majburlamay, to'g'ridan-to'g'ri o'zbekcha ochiladi — ayniqsa narx haqidagi post raqamlarni yoddan takrorlamay, rasmiy ro'yxatdan o'tish sahifasidan o'qib yozilgan. Har bir postga o'z muqova rasmi berildi, bo'limning o'z lentasi ham bor.</p>
+
+<p>Yana <code>/writearticle/</code> — o'qituvchilar uchun maqola yuborish oqimi — orqali yozilgan oltita uzunroq maqola bor. Bular saytdagi birinchi begona nom turgan sahifalar, va gap aynan shunda: faqat bitta odamning ovozi bo'lgan saytning shifti past.</p>
+
+<h2>Beshta kichik tool</h2>
+
+<p>Testlar yonida endi Tools menyusi bor va undagi har bir narsa bitta savolga tez javob beradigan bitta maqsadli sahifa:</p>
+
+<ul>
+<li><strong>Ball konvertori</strong> — IELTS ↔ CEFR ↔ Multilevel ↔ TOEFL, chunki O'zbekistonda har bir universitet va elchixona boshqa shkalani so'raydi.</li>
+<li><strong>Grant muddatlari</strong> — DAAD, Chevening, Erasmus Mundus, El-Yurt Umidi, CSC, GKS va boshqalar, qolgan kunlari bilan.</li>
+<li><strong>O'quv reja generatori</strong> — to'rtta savol (hozirgi ball, maqsad ball, qolgan hafta, eng zaif ko'nikma) va chiqishda haftama-hafta reja hamda halol hukm: muddat yetadimi yoki imtihonni surish kerakmi. "Imtihonni suring" deyish konversiyaga sozlangan sahifa qiladigan ish emas — va bu o'sha toolning eng foydali gapi.</li>
+<li><strong>Speaking mavzulari</strong> — joriy rotatsiya.</li>
+<li><strong>Barcha testlar</strong> — robot o'qiy oladigan katalog indeksi.</li>
+</ul>
+
+<figure><img src="https://maqsudjon.com/log/img/fs-tools.webp" alt="Flarestamina o&#x27;quv reja generatori" loading="lazy"><figcaption>O'quv reja generatori — to'rtta savol va sizga imtihonni surishni aytadigan hukm.</figcaption></figure>
+
+<p>Ular qo'lda yozilmaydi, generatsiya qilinadi: har bir tool = bitta JSON-LD fayl + bitta mantiq fayli, build skript ularni yig'adi. Shuning uchun oltinchisini qo'shish "sahifani nusxalab, structured data'ni yangilashni unutish" degani emas.</p>
+
+<h2>23–24-avgust — login devorlarini buzish</h2>
+
+<p>Tashrif kamayib borayotgandi va men buni SEO muammosi deb o'ylagandim. Unday emas ekan. Sabab — uchta login devori.</p>
+
+<p>O'sha 113 ta test osilib turgan hub sahifasi <code>FSAuth.require()</code> ni chaqirardi. Ya'ni Google'dan kelgan har bir odam hech narsa ko'rmasdan to'g'ri akkaunt sahifasiga uchib ketardi. Writing Lab'da <em>ikkita</em> to'siq bor edi — login va kodga yozib qo'yilgan parol. Speaking bo'limida uchinchisi. Uchalasi ham yo'q; kirish endi ixtiyoriy va faqat natijani saqlash uchun kerak.</p>
+
+<figure><img src="https://maqsudjon.com/log/img/flarestamina.webp" alt="Flarestamina IELTS mashq sayti bosh sahifasi" loading="lazy"><figcaption>avgust qayta qurilishidan keyingi flarestamina.com — oq-qora, to'siqsiz.</figcaption></figure>
+
+<p>Keyin haqiqiy SEO — 113 ta alohida repoda, GitHub API orqali:</p>
+
+<ul>
+<li>Yo'q meta description: <strong>101 → 0</strong>. Har bir tavsif sahifaning o'z haqiqiy H2 sarlavhalaridan yasaldi — Reading matn nomlari, Listening bo'lim mavzulari — xayoldan yozilmadi.</li>
+<li>Yo'q canonical: <strong>107 → 1</strong>. Yo'q analitika: <strong>108 → 1</strong>. Takroriy sarlavha: <strong>2 → 0</strong>.</li>
+<li>JSON-LD structured data: <strong>0 → 106</strong> test sahifasi, har birida <code>LearningResource</code> va <code>BreadcrumbList</code>.</li>
+<li>Sarlavhalar odamlar rostdan qidiradigan so'zlarga moslandi. <code>Mock Listening — Test 63 Listening</code> → <code>IELTS Listening Practice Test 63 with Answers</code>.</li>
+<li>Uchta yangi kirish sahifasi: <code>/ielts-listening-test/</code> (73 test), <code>/ielts-reading-test/</code> (25 test) va o'zbekcha qidiruv uchun <code>/uz/</code>.</li>
+<li>IndexNow kaliti, hreflang va <code>lastmod</code> bo'yicha yolg'on gapirishni bas qilgan sitemap.</li>
+</ul>
+
+<p>Audit jimgina pul va aniqlikni yeb turgan narsalarni ham topdi: dublikat GoatCounter kodi <em>har bir ko'rishni ikki marta sanayotgan edi</em>, 65 sahifada oldingi dizayndan qolgan sarlavha turardi, 522 MB audio hech qanday kesh siyosatisiz uzatilardi, va o'n to'qqizta Reading sahifasining matni bir xil edi — bu qidiruv tizimiga bitta sahifa o'n to'qqiz marta takrorlangandek ko'rinadi. Har biriga haqiqiy, alohida mazmun berildi.</p>
+
+<p>Yana <a href="https://flarestamina.com/stats/">flarestamina.com/stats/</a> ni qurdim: yettala saytning tashrifi bitta jadvalda, loginsiz, tokensiz. Yettita dashboardni tekshirish kerakligi — aynan hech birini tekshirmasligimning sababi edi.</p>
+
+<h2>24–27-avgust — Tadam</h2>
+
+<p>Eng yangisi, va unga alohida maqola tegishli — chunki bu men qurgan birinchi narsa, u sayt emas, mahsulot: to'ydagi mehmonlar stoldagi QR kodni skanerlaydi, telefonidagi suratlarni yuklaydi, kelin-kuyov esa hammasini bitta ZIP qilib yuklab oladi.</p>
+
+<figure><img src="https://maqsudjon.com/log/img/tadam-home.webp" alt="Tadam to&#x27;y foto albomi bosh sahifasi" loading="lazy"><figcaption>tadam.uz — butun jarayon birinchi ekranda tushuntirilgan.</figcaption></figure>
+
+<p>To'liq yozuv shu yerda: <a href="https://maqsudjon.com/log/log-2026-08-27-tadam-wedding-photo-album-uz.html">Tadam: ilovasiz va ma'lumotlar bazasiz to'y albomi</a>.</p>
+
+<h2>Hammasining ostidagi qoida</h2>
+
+<p>Yuqoridagi har bir loyihadan bitta shart o'tgan: hech narsa to'qilmaydi. To'qilgan sharh soni yo'q, "500+ mamnun mijoz" yo'q, structured data ichida o'ylab topilgan reyting yo'q, tekshirolmaydigan yuzga yopishtirilgan o'quvchi ismi yo'q, "O'zbekistonda birinchi va yagona" yo'q — bunisi ko'nglimga kelgan edi va yozmadim, chunki isbotlay olmayman, isbotlab bo'lmaydigan da'vo esa shunchaki chiroyliroq eshitiladigan yolg'on.</p>
+
+<p>Buning narxi bor. O'n uchta halol CEFR bahosi turgan jadval soxta "98% muvaffaqiyat" yozilganidan kichikroq ko'rinadi. Lekin o'sha o'n uchtasini davlat sertifikat bazasidan tekshirsa bo'ladi — 98% ni ham tekshirsa bo'lardi, meni uyaltirmoqchi bo'lgan har kim.</p>
+
+<h2>Raqamlar nima deyapti</h2>
+
+<p>23-avgustda o'lchandi. Ta'sirli ko'rinsin deb yaxlitlamay, borini yozaman:</p>
+
+<ul>
+<li>Search Console, Flarestamina: <strong>911 ko'rsatish, 83 klik, o'rtacha pozitsiya 11.1</strong>. 11-pozitsiya — ikkinchi sahifa. Ikkinchi sahifa esa hech qayer.</li>
+<li>GoatCounter: bir haftada <strong>238 tashrif</strong>, shundan Google ulushi taxminan <strong>8%</strong>. Haqiqiy tashrifning deyarli hammasi — odamlar bir-biriga to'g'ridan-to'g'ri havola tashlagani.</li>
+<li>Yettita sayt jonli, to'rttasi o'z domenida, hammasi 200 qaytaradi.</li>
+</ul>
+
+<p>Halol o'qilishi: SEO ishi — hali natija bermagan garov, ishlayotgan saytlar esa kimningdir do'stiga yuborishga sababi bo'lgan saytlar. Yana olti haftani meta teglarga sarflashdan oldin buni bilib qo'ygan yaxshi.</p>
+
+<h2>Keyingisi</h2>
+
+<p>Tadam'ga sinov albomlari emas, haqiqiy to'ylar kerak. IELTS Hub'ning yangi dizayni qurilgan va qaror kutyapti. Chiziq'ga birinchi pullik mijoz kerak. Va keyingi olti haftada yangi sayt kamroq, borlarini rostdan ishlatadigan odam ko'proq bo'lishini istardim.</p>]]></content:encoded>
+    <media:content url="https://maqsudjon.com/log/og/log-2026-08-27-seven-sites-six-weeks-uz.png" medium="image" type="image/png" width="1200" height="630"/>
+  </item>
+</channel>
+</rss>

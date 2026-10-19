@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zitou: Chinese in Uzbek, at zitou.uz and zitou.app | Maqsudjon Polatov — build log</title>
+<meta name="description" content="A free app for learning Chinese in Uzbek and nine other languages: a 124,039-word dictionary, every HSK list, a six-lesson HSK 1 course for classrooms, why it now lives at two addresses, how it is built and the numbers as they are.">
+<link rel="canonical" href="https://maqsudjon.com/log/log-2026-10-19-zitou-chinese-in-uzbek.html">
+<link rel="alternate" hreflang="en" href="https://maqsudjon.com/log/log-2026-10-19-zitou-chinese-in-uzbek.html">
+<link rel="alternate" hreflang="uz" href="https://maqsudjon.com/log/log-2026-10-19-zitou-chinese-in-uzbek-uz.html">
+<link rel="alternate" type="application/rss+xml" title="Maqsudjon Polatov — build log" href="https://maqsudjon.com/feed.xml">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#000000">
+<meta property="og:title" content="Zitou: Chinese in Uzbek, at zitou.uz and zitou.app">
+<meta property="og:description" content="A free app for learning Chinese in Uzbek and nine other languages: a 124,039-word dictionary, every HSK list, a six-lesson HSK 1 course for classrooms, why it now lives at two addresses, how it is built and the numbers as they are.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://maqsudjon.com/log/log-2026-10-19-zitou-chinese-in-uzbek.html">
+<meta property="og:site_name" content="Maqsudjon Polatov">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://maqsudjon.com/log/og/log-2026-10-19-zitou-chinese-in-uzbek.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Zitou: Chinese in Uzbek, at zitou.uz and zitou.app">
+<meta property="article:published_time" content="2026-10-19">
+<meta property="article:author" content="https://maqsudjon.com/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Zitou: Chinese in Uzbek, at zitou.uz and zitou.app">
+<meta name="twitter:description" content="A free app for learning Chinese in Uzbek and nine other languages: a 124,039-word dictionary, every HSK list, a six-lesson HSK 1 course for classrooms, why it now lives at two addresses, how it is built and the numbers as they are.">
+<meta name="twitter:image" content="https://maqsudjon.com/log/og/log-2026-10-19-zitou-chinese-in-uzbek.png">
+<meta name="author" content="Maqsudjon Polatov">
+<link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@500;600&family=Geist:wght@400;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Zitou: Chinese in Uzbek, at zitou.uz and zitou.app", "description": "A free app for learning Chinese in Uzbek and nine other languages: a 124,039-word dictionary, every HSK list, a six-lesson HSK 1 course for classrooms, why it now lives at two addresses, how it is built and the numbers as they are.", "datePublished": "2026-10-19", "inLanguage": "en", "mainEntityOfPage": "https://maqsudjon.com/log/log-2026-10-19-zitou-chinese-in-uzbek.html", "image": "https://maqsudjon.com/log/og/log-2026-10-19-zitou-chinese-in-uzbek.png", "author": {"@type": "Person", "name": "Maqsudjon Polatov", "url": "https://maqsudjon.com/"}}</script>
+<style>*{margin:0;padding:0;box-sizing:border-box}
+body{background:#000;color:#ffffffbb;font-family:'Geist',system-ui,sans-serif;line-height:1.7}
+.wrap{max-width:720px;margin:0 auto;padding:48px 24px 80px}
+a{color:#fff;font-weight:600;text-decoration:underline;text-decoration-color:#4d4d4d;text-underline-offset:4px}
+a:hover{text-decoration-color:#fff}
+.top{display:flex;justify-content:space-between;gap:14px;font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#888;margin-bottom:46px}
+.top a{color:#888;font-weight:400;text-decoration:none}
+.top a:hover{color:#fff}
+.meta{font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:.1em;color:#888;margin-bottom:14px}
+.meta b{color:#f2d8cd;font-weight:500;border:1px solid #4d4d4d;padding:2px 7px;margin-left:8px}
+.meta .alt{float:right;color:#888;font-weight:400;text-decoration:none;border:1px solid #4d4d4d;padding:2px 7px}
+.meta .alt:hover{color:#fff;border-color:#fff}
+h1{font-family:'Funnel Display',sans-serif;font-weight:600;font-size:clamp(24px,5vw,34px);line-height:1.2;color:#fff;margin-bottom:26px;letter-spacing:-.01em}
+h2{font-family:'Funnel Display',sans-serif;font-weight:600;font-size:19px;color:#fff;margin:40px 0 14px;letter-spacing:-.01em}
+.body{font-size:16px}
+.body p{margin-bottom:18px}
+.body ul{margin:0 0 18px 20px}
+.body li{margin-bottom:7px}
+.lede{color:#ffffffdd;font-size:17px}
+code{font-family:'Geist Mono',monospace;font-size:.86em;color:#f2d8cd;background:#141414;border:1px solid #262626;border-radius:4px;padding:1px 5px;overflow-wrap:anywhere}
+strong{color:#fff;font-weight:600}
+em{color:#ffffffdd}
+figure{margin:26px 0 30px}
+figure img{width:100%;height:auto;display:block;border:1px solid #2a2a2a;border-radius:6px;background:#111}
+figcaption{font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:.08em;color:#888;margin-top:10px;line-height:1.6}
+.pair{display:grid;gap:12px;grid-template-columns:1fr}
+@media(min-width:620px){.pair{grid-template-columns:1fr 1fr}}
+.pair img{border-radius:6px}
+.foot{margin-top:44px;border-top:1px solid #4d4d4d;padding-top:20px;font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#888}
+.foot a{color:#888;font-weight:400;text-decoration:none}
+::selection{background:#fff;color:#000}</style>
+</head>
+<body>
+<div class="wrap">
+  <nav class="top"><a href="/">✳ MAQSUDJON POLATOV</a><a href="/log/">BUILD LOG</a></nav>
+  <div class="meta">19 OCT 2026<b>PRODUCT</b><a class="alt" href="https://maqsudjon.com/log/log-2026-10-19-zitou-chinese-in-uzbek-uz.html">O'ZBEKCHA</a></div>
+  <h1>Zitou: Chinese in Uzbek, at zitou.uz and zitou.app</h1>
+  <div class="body">
+
+<p class="lede">On 19 September 2026 I started learning Chinese. There was very little to learn it with in Uzbek, so four days later the first version of Zitou went up. A month on, it is a free app with a 124,039-word dictionary, every HSK list, native audio for 8,563 words, a six-lesson HSK 1 course for classrooms and, since today, two addresses: <a href="https://zitou.uz">zitou.uz</a> in Uzbek and <a href="https://zitou.app">zitou.app</a> for everything else.</p>
+
+<p>This is the long version: what is in it, how a class uses it, why it now lives at two addresses, how it is built, and what I am not claiming.</p>
+
+<figure><div class="pair"><img src="/log/img/zitou-uz-home.webp" alt="Zitou home page at zitou.uz, in Uzbek" loading="lazy"><img src="/log/img/zitou-app-en.webp" alt="Zitou home page at zitou.app/en, in English" loading="lazy"></div><figcaption>The same product at its two addresses: zitou.uz in Uzbek, zitou.app/en in English. Eight more languages live on zitou.app.</figcaption></figure>
+
+<h2>What is in it</h2>
+
+<p>The core is a dictionary and a course. The dictionary comes from CC-CEDICT: 124,039 words, searchable by character, by pinyin with or without tones, or by the meaning in Uzbek, Russian or English. 8,296 of them, every word of HSK 1–6 plus 472 everyday words that are on no list, have an Uzbek and a Russian meaning. The course follows all three HSK lists: the 2025 revision (10,057 words), HSK 3.0 and HSK 2.0, each level its own course.</p>
+
+<ul>
+<li><strong>Native audio.</strong> 8,563 words are recordings of native speakers from audio-cmn (CC BY-SA). The rest use the device's Chinese voice.</li>
+<li><strong>Stroke order.</strong> Every character: watch it, trace it over grey, then write it from memory with a finger. The stroke data is Make Me a Hanzi.</li>
+<li><strong>Spaced repetition.</strong> Words come back just before you would forget them, scheduled with FSRS. You only press Start.</li>
+<li><strong>Tones in colour.</strong> First tone red, second orange, third green, fourth blue, so a tone is remembered by the eye as well as the ear.</li>
+<li><strong>Grammar.</strong> 103 topics for HSK 1–4, each with a pattern, a short rule, examples with pinyin, the common mistake and a two-minute exercise.</li>
+<li><strong>Mock exams.</strong> HSK 1–4 in the real HSK 2.0 format, with the listening played as in the exam, the timer and the pass mark, and a first HSK 3.0 level-1 paper.</li>
+<li><strong>Small tools.</strong> A translator for text, voice or the photo of a sign; a phrasebook of 80+ phrases for a trip to China; your name in Chinese, character by character; Daily 5, the same five questions for everyone at a level, to send to a friend; and China news in Uzbek, each item with its source.</li>
+</ul>
+
+<p>It works without an account, in ten interface languages, in the browser on a phone, a tablet or a computer.</p>
+
+<figure><img src="/log/img/zitou-word.webp" alt="The word page for 你好 on zitou.uz" loading="lazy"><figcaption>One of the 7,823 Uzbek word pages: the meaning in Uzbek and English, the characters, stroke order, audio and example sentences. These pages are most of what search engines find.</figcaption></figure>
+
+<h2>The HSK 1 course, built for a classroom</h2>
+
+<p>Most learners here do not study alone. They sit in a class with a teacher and a textbook, so the newest part of Zitou is for that room. The HSK 1 course has six lessons. A teacher opens a lesson on the big screen at <a href="https://zitou.app/dars/">zitou.app/dars</a> and gets a six-digit code. Students type it on their phones, with no account, and answer each exercise together. The teacher sees who answered, who got it wrong and who pressed "I don't understand", as it happens.</p>
+
+<figure><img src="/log/img/zitou-dars.webp" alt="The live lesson page with the code entry and the lesson list" loading="lazy"><figcaption>zitou.app/dars: “The teacher on the screen. The class on their phones.” A student enters the code; a teacher picks a lesson and starts it live.</figcaption></figure>
+
+<p>Between lessons there are two more pages. <a href="https://zitou.app/vocab/">/vocab</a> teaches the course's 162 words five at a time (listen, see, find) and has a mode where the phone says the words and you only listen. <a href="https://zitou.app/daftar/">/daftar</a> is the word notebook: each word's character, pinyin, meaning, stroke order and audio.</p>
+
+<figure><div class="pair"><img src="/log/img/zitou-d6.webp" alt="Lesson 6 slide with four new words" loading="lazy"><img src="/log/img/zitou-vocab.webp" alt="The HSK 1 word trainer with six lessons" loading="lazy"></div><figcaption>Left: lesson 6, slide 4 of 19, the new words with tone-coloured pinyin. Right: /vocab, 162 words in six lessons, five at a time.</figcaption></figure>
+
+<p>Lesson 6 went in yesterday: the telephone, shopping, food and the taxi. The textbook comes with its own recordings, and they are copyrighted, so I did not use them. Every word that audio-cmn has is a native recording. Every sentence, dialogue and word it lacks is generated with <a href="https://huggingface.co/hexgrad/Kokoro-82M-v1.1-zh">Kokoro v1.1-zh</a>, an open speech model under Apache-2.0, in three fixed voices. The pages credit both.</p>
+
+<h2>Two addresses</h2>
+
+<p>Today Zitou got <a href="https://zitou.uz">zitou.uz</a>. The Uzbek pages moved there: the home page, the 7,823 word pages, the dictionary guide, HSK lists, grammar, the mock test, articles and China news. <a href="https://zitou.app">zitou.app</a> keeps the other nine languages and the app.</p>
+
+<p>The split follows one rule. Anything that holds a sign-in or saved progress stays on zitou.app (the app, the course pages, the live games) because a browser keeps those per address, and moving them would have split every learner's progress in two. Pages people read moved freely. A 301 sends every old URL to its new home, so nothing that was indexed or shared breaks.</p>
+
+<p>Opening zitou.app on its own now picks a language. An Uzbek browser, or a visitor in Uzbekistan whose browser is not set to Russian, goes to zitou.uz; everyone else goes to their own language, or to English.</p>
+
+<p>Why .uz at all? Google reads a country domain as a signal for that country, and a teacher in Tashkent can say "zitou nuqta uz" in class without spelling anything. It also gave the class code a short home: a student types <code>zitou.uz/482915</code> and lands in whichever live lesson or game has that code.</p>
+
+<p>Each address has its own sitemaps and robots file, its own Search Console and Bing Webmaster property, and one full RSS feed. <a href="https://zitou.uz/feed.xml">zitou.uz/feed.xml</a> carries release notes, articles, guides and the latest China news together. Questions now go to <a href="mailto:salom@zitou.uz">salom@zitou.uz</a>.</p>
+
+<figure><img src="/log/img/zitou-poster.webp" alt="Zitou classroom poster in Uzbek with a QR code" loading="lazy"><figcaption>An A4 poster for classrooms. The QR code opens zitou.uz; the class code works for lessons and games alike.</figcaption></figure>
+
+<h2>How it is built</h2>
+
+<p>Zitou is one Cloudflare Worker with static assets. The dictionary is not a database: it is static JSON built from CC-CEDICT and the HSK lists, which is how a 124,000-word dictionary runs on the free plan. D1 holds accounts, classes and the news; a Durable Object holds each live game and each live lesson, one room per code.</p>
+
+<p>The free plan is a real constraint. Crawlers once used up the whole daily allowance of requests, so the Worker now keeps a budget: bulk crawlers are turned away before the limit, and Google, Bing and Yandex are always served.</p>
+
+<p>The two addresses are one deploy. A single file decides which host a path belongs to. The build rewrites every link in every page for the host that serves it and writes each host's sitemaps and robots file; the Worker does the redirects and rewrites the pages it renders itself. The domain went live in two steps, first attached and checked with the old code and only then the redirects, because the .uz registry took about two hours to hand over the nameservers.</p>
+
+<h2>Telegram and open data</h2>
+
+<p>The channel <a href="https://t.me/zitougg">@zitougg</a> posts one HSK word a day with its recording and its stroke animation. The bot <a href="https://t.me/zitouggbot">@zitouggbot</a> looks words up in any chat, sends greetings in Chinese, and runs a daily word and quiz in groups.</p>
+
+<p>The vocabulary underneath is public: <a href="https://huggingface.co/datasets/Maqsudjonpolatov/hsk-chinese-uzbek-russian">8,296 HSK words with Uzbek and Russian meanings</a> on Hugging Face under CC BY 4.0, with a small dictionary Space next to it.</p>
+
+<h2>The numbers as they are</h2>
+
+<p>On 12 October Search Console showed about 5,950 pages indexed, and 927 impressions and 19 clicks over 28 days. That is small, and most of the impressions came from the HSK 7–9 list pages, which answer questions nobody in Uzbekistan is asking yet. zitou.uz is there to move those numbers for the pages that matter here. I will write down what happens.</p>
+
+<p>The iPhone and Android versions are coming. Until then Zitou runs in the browser and installs to the home screen from zitou.app.</p>
+
+<h2>What I'm not claiming</h2>
+
+<ul>
+<li>The Uzbek and Russian meanings were written with AI help. They are corrected from learners' reports, and both the app and the dataset say so.</li>
+<li>I am a beginner in the language this teaches. That keeps me honest about what a beginner needs on day one, and it means anything Chinese should be checked by a native speaker before it is used for more than practice.</li>
+<li>It is not the first or the only way to learn Chinese in Uzbek. It is a free one, and it is still early.</li>
+</ul>
+
+<p>Try it at <a href="https://zitou.uz">zitou.uz</a> in Uzbek or <a href="https://zitou.app">zitou.app</a> in any other language. Start with HSK 1, or type your own name.</p>
+
+  </div>
+  <div class="foot"><a href="/log/">← ALL ENTRIES</a> · <a href="https://maqsudjon.com/feed.xml">RSS</a> · © 2026 Maqsudjon Polatov</div>
+</div>
+<script data-goatcounter="https://maqsudjon.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

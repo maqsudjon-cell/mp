@@ -1,317 +1,895 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:media="http://search.yahoo.com/mrss/">
 <channel>
   <title>Maqsudjon Polatov — build log</title>
-  <link>https://maqsudjon.com/</link>
-  <description>A one-person lab for acting in code and steel — everything I ship, as I ship it.</description>
+  <link>https://maqsudjon.com/log/</link>
+  <atom:link href="https://maqsudjon.com/feed.xml" rel="self" type="application/rss+xml"/>
+  <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
+  <description>A one-person lab for acting in code and steel — everything I ship, as I ship it. Full posts.</description>
   <language>en</language>
+  <copyright>© 2026 Maqsudjon Polatov</copyright>
+  <lastBuildDate>Mon, 19 Oct 2026 12:00:00 +0500</lastBuildDate>
+  <ttl>720</ttl>
+  <image><url>https://maqsudjon.com/favicon-512x512.png</url><title>Maqsudjon Polatov — build log</title><link>https://maqsudjon.com/log/</link></image>
   <item>
-    <title>CTN Language Centre — ctnlc.uz, built as one file</title>
-    <link>https://maqsudjon.com/log/log-2026-07-21-ctn-language-centre.html</link>
-    <guid>https://maqsudjon.com/log/log-2026-07-21-ctn-language-centre.html</guid>
-    <pubDate>Tue, 21 Jul 2026 12:00:00 +0500</pubDate>
-    <description>An English school in Mirzo Ulug&#x27;bek district, Tashkent, needed a site. It is live at ctnlc.uz, and it is one self-contained index.html — trilingual UZ/RU/EN with the choice kept in localStorage, a light/dark toggle, scroll-reveal animations, courses, teachers, FAQ, a live Maps em</description>
-  </item>
-  <item>
-    <title>ZED AVLOD School — zedavlod.uz</title>
-    <link>https://maqsudjon.com/log/log-2026-07-23-zed-avlod-school.html</link>
-    <guid>https://maqsudjon.com/log/log-2026-07-23-zed-avlod-school.html</guid>
-    <pubDate>Thu, 23 Jul 2026 12:00:00 +0500</pubDate>
-    <description>A school in To&#x27;raqo&#x27;rg&#x27;on, Namangan region, running since 2020. This one is family, which raised the bar rather than lowering it. Live at zedavlod.uz, trilingual UZ/RU/EN.</description>
-  </item>
-  <item>
-    <title>Chiziq — a web studio whose portfolio you can actually open</title>
-    <link>https://maqsudjon.com/log/log-2026-07-25-chiziq-web-studio.html</link>
-    <guid>https://maqsudjon.com/log/log-2026-07-25-chiziq-web-studio.html</guid>
-    <pubDate>Sat, 25 Jul 2026 12:00:00 +0500</pubDate>
-    <description>A web studio aimed at being the cheaper and better-looking alternative to the incumbent in this market. It started as then.uz and became chzq.uz — Chiziq, Uzbek for line — because a brand people can say out loud in their own language beats a clever English pun.</description>
-  </item>
-  <item>
-    <title>payvandchi.maqsudjon.com — my own workshop, finally online</title>
-    <link>https://maqsudjon.com/log/log-2026-08-01-payvandchi-workshop.html</link>
-    <guid>https://maqsudjon.com/log/log-2026-08-01-payvandchi-workshop.html</guid>
-    <pubDate>Sat, 01 Aug 2026 12:00:00 +0500</pubDate>
-    <description>I weld metal grilles in Tashkent. The workshop now has a site at payvandchi.maqsudjon.com: window grilles, balcony grilles, railings and canopies, with real photographs of real jobs and no stock imagery anywhere.</description>
-  </item>
-  <item>
-    <title>reshotkachi — the same workshop, built a second time</title>
-    <link>https://maqsudjon.com/log/log-2026-08-04-reshotkachi-second-build.html</link>
-    <guid>https://maqsudjon.com/log/log-2026-08-04-reshotkachi-second-build.html</guid>
-    <pubDate>Tue, 04 Aug 2026 12:00:00 +0500</pubDate>
-    <description>Same workshop, same photographs, built again as a completely different site. Not laziness — a test. If the product is identical, how much does design alone change how it reads?</description>
-  </item>
-  <item>
-    <title>KVADRAT — a square-metre calculator for grille jobs</title>
-    <link>https://maqsudjon.com/log/log-2026-08-07-kvadrat-calculator.html</link>
-    <guid>https://maqsudjon.com/log/log-2026-08-07-kvadrat-calculator.html</guid>
-    <pubDate>Fri, 07 Aug 2026 12:00:00 +0500</pubDate>
-    <description>The least glamorous thing I have built and possibly the one I use most. Live at kvdrt.maqsudjon.com.</description>
-  </item>
-  <item>
-    <title>Flarestamina — the login walls came down, and the hub stopped being a list</title>
-    <link>https://maqsudjon.com/log/log-2026-08-24-flarestamina-walls-hub-news-tools.html</link>
-    <guid>https://maqsudjon.com/log/log-2026-08-24-flarestamina-walls-hub-news-tools.html</guid>
-    <pubDate>Mon, 24 Aug 2026 12:00:00 +0500</pubDate>
-    <description>Traffic had been falling and I assumed it was an SEO problem. It was three login walls.</description>
+    <title>Zitou: Chinese in Uzbek, at zitou.uz and zitou.app</title>
+    <link>https://maqsudjon.com/log/log-2026-10-19-zitou-chinese-in-uzbek.html</link>
+    <guid isPermaLink="true">https://maqsudjon.com/log/log-2026-10-19-zitou-chinese-in-uzbek.html</guid>
+    <pubDate>Mon, 19 Oct 2026 12:00:00 +0500</pubDate>
+    <dc:creator>Maqsudjon Polatov</dc:creator>
+    <category>PRODUCT</category>
+    <description>A free app for learning Chinese in Uzbek and nine other languages: a 124,039-word dictionary, every HSK list, a six-lesson HSK 1 course for classrooms, why it now lives at two addresses, how it is built and the numbers as they are.</description>
+    <content:encoded><![CDATA[<p class="lede">On 19 September 2026 I started learning Chinese. There was very little to learn it with in Uzbek, so four days later the first version of Zitou went up. A month on, it is a free app with a 124,039-word dictionary, every HSK list, native audio for 8,563 words, a six-lesson HSK 1 course for classrooms and, since today, two addresses: <a href="https://zitou.uz">zitou.uz</a> in Uzbek and <a href="https://zitou.app">zitou.app</a> for everything else.</p>
+
+<p>This is the long version: what is in it, how a class uses it, why it now lives at two addresses, how it is built, and what I am not claiming.</p>
+
+<figure><div class="pair"><img src="https://maqsudjon.com/log/img/zitou-uz-home.webp" alt="Zitou home page at zitou.uz, in Uzbek" loading="lazy"><img src="https://maqsudjon.com/log/img/zitou-app-en.webp" alt="Zitou home page at zitou.app/en, in English" loading="lazy"></div><figcaption>The same product at its two addresses: zitou.uz in Uzbek, zitou.app/en in English. Eight more languages live on zitou.app.</figcaption></figure>
+
+<h2>What is in it</h2>
+
+<p>The core is a dictionary and a course. The dictionary comes from CC-CEDICT: 124,039 words, searchable by character, by pinyin with or without tones, or by the meaning in Uzbek, Russian or English. 8,296 of them, every word of HSK 1–6 plus 472 everyday words that are on no list, have an Uzbek and a Russian meaning. The course follows all three HSK lists: the 2025 revision (10,057 words), HSK 3.0 and HSK 2.0, each level its own course.</p>
+
+<ul>
+<li><strong>Native audio.</strong> 8,563 words are recordings of native speakers from audio-cmn (CC BY-SA). The rest use the device's Chinese voice.</li>
+<li><strong>Stroke order.</strong> Every character: watch it, trace it over grey, then write it from memory with a finger. The stroke data is Make Me a Hanzi.</li>
+<li><strong>Spaced repetition.</strong> Words come back just before you would forget them, scheduled with FSRS. You only press Start.</li>
+<li><strong>Tones in colour.</strong> First tone red, second orange, third green, fourth blue, so a tone is remembered by the eye as well as the ear.</li>
+<li><strong>Grammar.</strong> 103 topics for HSK 1–4, each with a pattern, a short rule, examples with pinyin, the common mistake and a two-minute exercise.</li>
+<li><strong>Mock exams.</strong> HSK 1–4 in the real HSK 2.0 format, with the listening played as in the exam, the timer and the pass mark, and a first HSK 3.0 level-1 paper.</li>
+<li><strong>Small tools.</strong> A translator for text, voice or the photo of a sign; a phrasebook of 80+ phrases for a trip to China; your name in Chinese, character by character; Daily 5, the same five questions for everyone at a level, to send to a friend; and China news in Uzbek, each item with its source.</li>
+</ul>
+
+<p>It works without an account, in ten interface languages, in the browser on a phone, a tablet or a computer.</p>
+
+<figure><img src="https://maqsudjon.com/log/img/zitou-word.webp" alt="The word page for 你好 on zitou.uz" loading="lazy"><figcaption>One of the 7,823 Uzbek word pages: the meaning in Uzbek and English, the characters, stroke order, audio and example sentences. These pages are most of what search engines find.</figcaption></figure>
+
+<h2>The HSK 1 course, built for a classroom</h2>
+
+<p>Most learners here do not study alone. They sit in a class with a teacher and a textbook, so the newest part of Zitou is for that room. The HSK 1 course has six lessons. A teacher opens a lesson on the big screen at <a href="https://zitou.app/dars/">zitou.app/dars</a> and gets a six-digit code. Students type it on their phones, with no account, and answer each exercise together. The teacher sees who answered, who got it wrong and who pressed "I don't understand", as it happens.</p>
+
+<figure><img src="https://maqsudjon.com/log/img/zitou-dars.webp" alt="The live lesson page with the code entry and the lesson list" loading="lazy"><figcaption>zitou.app/dars: “The teacher on the screen. The class on their phones.” A student enters the code; a teacher picks a lesson and starts it live.</figcaption></figure>
+
+<p>Between lessons there are two more pages. <a href="https://zitou.app/vocab/">/vocab</a> teaches the course's 162 words five at a time (listen, see, find) and has a mode where the phone says the words and you only listen. <a href="https://zitou.app/daftar/">/daftar</a> is the word notebook: each word's character, pinyin, meaning, stroke order and audio.</p>
+
+<figure><div class="pair"><img src="https://maqsudjon.com/log/img/zitou-d6.webp" alt="Lesson 6 slide with four new words" loading="lazy"><img src="https://maqsudjon.com/log/img/zitou-vocab.webp" alt="The HSK 1 word trainer with six lessons" loading="lazy"></div><figcaption>Left: lesson 6, slide 4 of 19, the new words with tone-coloured pinyin. Right: /vocab, 162 words in six lessons, five at a time.</figcaption></figure>
+
+<p>Lesson 6 went in yesterday: the telephone, shopping, food and the taxi. The textbook comes with its own recordings, and they are copyrighted, so I did not use them. Every word that audio-cmn has is a native recording. Every sentence, dialogue and word it lacks is generated with <a href="https://huggingface.co/hexgrad/Kokoro-82M-v1.1-zh">Kokoro v1.1-zh</a>, an open speech model under Apache-2.0, in three fixed voices. The pages credit both.</p>
+
+<h2>Two addresses</h2>
+
+<p>Today Zitou got <a href="https://zitou.uz">zitou.uz</a>. The Uzbek pages moved there: the home page, the 7,823 word pages, the dictionary guide, HSK lists, grammar, the mock test, articles and China news. <a href="https://zitou.app">zitou.app</a> keeps the other nine languages and the app.</p>
+
+<p>The split follows one rule. Anything that holds a sign-in or saved progress stays on zitou.app (the app, the course pages, the live games) because a browser keeps those per address, and moving them would have split every learner's progress in two. Pages people read moved freely. A 301 sends every old URL to its new home, so nothing that was indexed or shared breaks.</p>
+
+<p>Opening zitou.app on its own now picks a language. An Uzbek browser, or a visitor in Uzbekistan whose browser is not set to Russian, goes to zitou.uz; everyone else goes to their own language, or to English.</p>
+
+<p>Why .uz at all? Google reads a country domain as a signal for that country, and a teacher in Tashkent can say "zitou nuqta uz" in class without spelling anything. It also gave the class code a short home: a student types <code>zitou.uz/482915</code> and lands in whichever live lesson or game has that code.</p>
+
+<p>Each address has its own sitemaps and robots file, its own Search Console and Bing Webmaster property, and one full RSS feed. <a href="https://zitou.uz/feed.xml">zitou.uz/feed.xml</a> carries release notes, articles, guides and the latest China news together. Questions now go to <a href="mailto:salom@zitou.uz">salom@zitou.uz</a>.</p>
+
+<figure><img src="https://maqsudjon.com/log/img/zitou-poster.webp" alt="Zitou classroom poster in Uzbek with a QR code" loading="lazy"><figcaption>An A4 poster for classrooms. The QR code opens zitou.uz; the class code works for lessons and games alike.</figcaption></figure>
+
+<h2>How it is built</h2>
+
+<p>Zitou is one Cloudflare Worker with static assets. The dictionary is not a database: it is static JSON built from CC-CEDICT and the HSK lists, which is how a 124,000-word dictionary runs on the free plan. D1 holds accounts, classes and the news; a Durable Object holds each live game and each live lesson, one room per code.</p>
+
+<p>The free plan is a real constraint. Crawlers once used up the whole daily allowance of requests, so the Worker now keeps a budget: bulk crawlers are turned away before the limit, and Google, Bing and Yandex are always served.</p>
+
+<p>The two addresses are one deploy. A single file decides which host a path belongs to. The build rewrites every link in every page for the host that serves it and writes each host's sitemaps and robots file; the Worker does the redirects and rewrites the pages it renders itself. The domain went live in two steps, first attached and checked with the old code and only then the redirects, because the .uz registry took about two hours to hand over the nameservers.</p>
+
+<h2>Telegram and open data</h2>
+
+<p>The channel <a href="https://t.me/zitougg">@zitougg</a> posts one HSK word a day with its recording and its stroke animation. The bot <a href="https://t.me/zitouggbot">@zitouggbot</a> looks words up in any chat, sends greetings in Chinese, and runs a daily word and quiz in groups.</p>
+
+<p>The vocabulary underneath is public: <a href="https://huggingface.co/datasets/Maqsudjonpolatov/hsk-chinese-uzbek-russian">8,296 HSK words with Uzbek and Russian meanings</a> on Hugging Face under CC BY 4.0, with a small dictionary Space next to it.</p>
+
+<h2>The numbers as they are</h2>
+
+<p>On 12 October Search Console showed about 5,950 pages indexed, and 927 impressions and 19 clicks over 28 days. That is small, and most of the impressions came from the HSK 7–9 list pages, which answer questions nobody in Uzbekistan is asking yet. zitou.uz is there to move those numbers for the pages that matter here. I will write down what happens.</p>
+
+<p>The iPhone and Android versions are coming. Until then Zitou runs in the browser and installs to the home screen from zitou.app.</p>
+
+<h2>What I'm not claiming</h2>
+
+<ul>
+<li>The Uzbek and Russian meanings were written with AI help. They are corrected from learners' reports, and both the app and the dataset say so.</li>
+<li>I am a beginner in the language this teaches. That keeps me honest about what a beginner needs on day one, and it means anything Chinese should be checked by a native speaker before it is used for more than practice.</li>
+<li>It is not the first or the only way to learn Chinese in Uzbek. It is a free one, and it is still early.</li>
+</ul>
+
+<p>Try it at <a href="https://zitou.uz">zitou.uz</a> in Uzbek or <a href="https://zitou.app">zitou.app</a> in any other language. Start with HSK 1, or type your own name.</p>]]></content:encoded>
+    <media:content url="https://maqsudjon.com/log/og/log-2026-10-19-zitou-chinese-in-uzbek.png" medium="image" type="image/png" width="1200" height="630"/>
   </item>
   <item>
     <title>Tadam: a wedding album with no app and no database</title>
     <link>https://maqsudjon.com/log/log-2026-08-27-tadam-wedding-photo-album.html</link>
-    <guid>https://maqsudjon.com/log/log-2026-08-27-tadam-wedding-photo-album.html</guid>
+    <guid isPermaLink="true">https://maqsudjon.com/log/log-2026-08-27-tadam-wedding-photo-album.html</guid>
     <pubDate>Thu, 27 Aug 2026 12:00:00 +0500</pubDate>
-    <description>Guests scan a QR code on the table, upload the photos already on their phones, and the couple downloads everything as a ZIP. Cloudflare Workers, R2 as the only datastore, and a QR code I measured instead of assuming.</description>
+    <dc:creator>Maqsudjon Polatov</dc:creator>
+    <category>PRODUCT</category>
+    <description>How tadam.uz works: guests scan a QR code on the table, upload the photos already on their phones, and the couple downloads everything as a ZIP. Cloudflare Workers, R2 only, and a QR code I measured instead of assuming.</description>
+    <content:encoded><![CDATA[<p class="lede">At an Uzbek wedding there are three hundred guests and three hundred phones. By the end of the night those phones hold the only photographs of the evening that show anything real — the tables, the dancing, the grandmother laughing at something off-camera. The couple will see about twenty of them, forwarded into a group chat and compressed into mush. Tadam is my attempt to fix that with a QR code on the table.</p>
+
+<p>It went live at <a href="https://tadam.uz">tadam.uz</a> on 27 August 2026. This is how it works and everything that was harder than it looked.</p>
+
+<h2>The flow</h2>
+
+<p>The couple creates an album — a title and a date, nothing else, no account. They get back three links: a guest link, a management link, and a printable QR sheet. The QR sheet goes on the tables.</p>
+
+<p>A guest scans it, the camera roll opens, they pick photos, they upload. No app, no sign-up, no password. Then the couple opens the management page and downloads everything as a single ZIP.</p>
+
+<figure><img src="https://maqsudjon.com/log/img/tadam-home.webp" alt="Tadam homepage showing the four-step flow" loading="lazy"><figcaption>The homepage. The entire flow is explained before you scroll — because most visitors arrive from a Telegram link and will not read.</figcaption></figure>
+
+<p>The design constraint that drove everything above the fold: someone sees this link dropped in a wedding Telegram group. They have about four seconds of curiosity. If they have to <em>think</em> about what the site is, they leave. So the four steps are visible immediately, illustrated, with no marketing preamble in front of them.</p>
+
+<h2>No app, and no database either</h2>
+
+<p>The no-app decision is obvious once you picture it: nobody at a wedding, holding a plate, is going to install an app. It has to be a web page that works on the first tap.</p>
+
+<p>The no-database decision was less obvious and I'm still pleased with it. The whole thing runs as a Cloudflare Worker with R2 as the <em>only</em> datastore. There is no SQL, no KV namespace, no Durable Object. Album metadata lives in R2 object metadata; the photo list is an R2 prefix listing. A wedding album is written once, read a few times, and then never touched again — that's a workload that does not need a database, and every database I didn't add is a thing that can't go down at 11pm on a Saturday.</p>
+
+<h2>The name</h2>
+
+<p>It was called Chaqnoq for the first three days. Then I said it out loud to someone and watched them fail to spell it back to me. A wedding product is spoken about, not typed — one person tells another at a table. "Chaqnoq" has a consonant cluster that survives neither speech nor a bad phone speaker.</p>
+
+<p>Tadam is the sound a magician makes when the trick lands. It's two syllables, it's spelled how it sounds in Uzbek, Russian and English alike, and it means the same thing in all three.</p>
+
+<p>Renaming a live codebase is where you find out how many places a brand name hides. I wrote a rename script that was <em>context-aware</em> — it knew the difference between the brand in visible text, the brand in a CSS class name, and the string in an API path that must not change — with a mandatory dry run that printed every match before touching anything. A blind find-and-replace would have quietly broken the URLs of every album already created.</p>
+
+<h2>The QR code, measured rather than assumed</h2>
+
+<p>The QR sheet is the physical product. If it doesn't scan from a seated guest's arm's length, in dim wedding lighting, on a sheet that has had somebody's plov on it, nothing else matters.</p>
+
+<figure><img src="https://maqsudjon.com/log/img/tadam-qr.webp" alt="Printable QR sheet for a Tadam album" loading="lazy"><figcaption>The printable QR sheet: 64 mm code on A5, error-correction level Q, with the typed URL underneath as a fallback.</figcaption></figure>
+
+<p>So I measured it instead of hoping. I rendered the QR at the pixel sizes a phone camera actually sees it at from various distances and ran a decoder against each one. It reads reliably from about 15 cm out to 85 cm, which covers everyone who can reach the sheet. It's generated at error-correction level Q, which by specification reconstructs the payload with roughly a quarter of the code damaged — that's the stain tolerance.</p>
+
+<p>Then the link underneath it. Some guests won't scan; they'll squint and type. The URL was <code>tadam.uz/e/?i=4se48ya9r</code> — 23 characters including a question mark and an equals sign, both of which are a nuisance on a phone keyboard. It's now <code>tadam.uz/4se48ya9r</code>, 18 characters, all lowercase letters and digits. A single-segment path 301-redirects to the real album URL, with a reserved-name guard so that a future <code>/about</code> or <code>/qr</code> can never be mistaken for an album ID.</p>
+
+<p>I was asked whether the ID itself could go from nine characters to seven, and I said no. The privacy model of this product is that the link <em>is</em> the password — anyone holding it sees the photographs. Dropping two characters shrinks the keyspace by a factor of about a thousand. Five saved keystrokes is not worth a thousand-fold weaker guess resistance on other people's wedding photos.</p>
+
+<h2>The parts that were actually hard</h2>
+
+<p><strong>Trusting nothing about an upload.</strong> A file's extension and its <code>Content-Type</code> header are both just claims made by the client. Every upload is sniffed by magic bytes — JPEG, PNG, WebP, GIF and HEIC, the last one requiring a walk into the ISO-BMFF <code>ftyp</code> box because iPhones are the primary camera here. Anything that isn't a real image is refused, and the size is rejected from the <code>Content-Length</code> before the body is read rather than after.</p>
+
+<p><strong>Serving user content safely.</strong> Photos are served under <code>default-src 'none'; sandbox</code>. Even if someone found a way to store something executable, the browser has no permission to run it, reach the network, or touch the parent page. The site itself carries HSTS, <code>nosniff</code>, a referrer policy and a permissions policy.</p>
+
+<p><strong>Random IDs that are actually uniform.</strong> The obvious way to pick a random character is <code>random_byte % alphabet_length</code>. That is biased whenever the alphabet doesn't divide 256 evenly, and early characters come up more often than late ones. I measured it over two million samples: <strong>12.65% bias</strong>. Replaced with rejection sampling, which throws away the out-of-range draws and re-rolls.</p>
+
+<p><strong>Delete, without an account.</strong> Every photo gets a delete key derived by SHA-256 from the album and the photo, so a guest can remove a photo they just uploaded and regretted, and the couple can remove anything. The key comparison is constant-time — a timing-leaky comparison would let someone guess a key one byte at a time.</p>
+
+<p><strong>A ZIP with a progress bar.</strong> Streaming a ZIP out of a Worker gives you no <code>Content-Length</code>, so the browser shows an indeterminate spinner and the couple has no idea whether a 400-photo download is at 10% or 90%. <code>FixedLengthStream</code> is the only mechanism that gets a real length onto a streamed Worker response. Computing that length in advance meant working out the exact byte size of the ZIP before generating it.</p>
+
+<figure><img src="https://maqsudjon.com/log/img/tadam-albom.webp" alt="Tadam guest album view showing uploaded photos" loading="lazy"><figcaption>A demo album. These are Wikimedia Commons wedding photographs uploaded to a test album — I did not screenshot anyone's real album, because they are private.</figcaption></figure>
+
+<h2>Knowing when someone uses it</h2>
+
+<p>I wanted to know the moment a real person creates an album, without giving myself a way to snoop on their photos. So there's an owner page listing albums — titles, dates, photo counts, and links — gated behind an encrypted secret, which returns 404 rather than 403 when the secret isn't configured, so its existence isn't advertised. A Telegram bot messages me when an album is created.</p>
+
+<figure><img src="https://maqsudjon.com/log/img/tadam-boshqarish.webp" alt="Tadam album management page" loading="lazy"><figcaption>The management view the couple gets: share links, the QR sheet, the ZIP download, and per-photo delete.</figcaption></figure>
+
+<p>That page hung the first time it met a realistic amount of data. With around two hundred albums it was making R2 calls one after another and taking long enough that I assumed it had crashed. A concurrency pool of twelve brought it to <strong>0.7 seconds</strong>, and photo counts are only computed for the newest forty albums.</p>
+
+<h2>Details I'm glad I spent time on</h2>
+
+<ul>
+<li><strong>Photos delete themselves after 60 days.</strong> An R2 lifecycle rule, and it's stated plainly on the site rather than buried. Storing other people's wedding photographs forever is a liability, not a feature.</li>
+<li><strong>Fonts are self-hosted and subsetted.</strong> No Google Fonts request, which removes a whole third-party domain from the critical path and from the content-security policy.</li>
+<li><strong>The wordmark performs its own name.</strong> On load, "Tadam" briefly becomes "Ta-dam!" in the gradient of the page's accent rail, then settles back. It's the only decorative animation on the site and it earns its place by explaining the name.</li>
+<li><strong>113 tests, no test framework.</strong> Plain Node, no dependencies. They run against a real deployment, including the rate limiter, which meant teaching the album-creation helper to back off on a 429.</li>
+</ul>
+
+<h2>What I'm not claiming</h2>
+
+<p>I was tempted to put "the first and only service of its kind in Uzbekistan" on the homepage. I didn't, because I haven't checked every competitor in the country and I can't prove it. It would probably have converted better. It would also have been a claim I'd have to defend the first time somebody found a competitor, and the whole point of building things under my own name is that everything on them holds up.</p>
+
+<p>Here's the honest status: tadam.uz is live, hardened, fast, and has not yet been used at a single real wedding. That's the next thing to fix, and it isn't a code problem.</p>]]></content:encoded>
+    <media:content url="https://maqsudjon.com/log/og/log-2026-08-27-tadam-wedding-photo-album.png" medium="image" type="image/png" width="1200" height="630"/>
   </item>
   <item>
-    <title>Seven sites in six weeks — everything from 15 July to 27 August</title>
+    <title>Seven sites in six weeks</title>
     <link>https://maqsudjon.com/log/log-2026-08-27-seven-sites-six-weeks.html</link>
-    <guid>https://maqsudjon.com/log/log-2026-08-27-seven-sites-six-weeks.html</guid>
+    <guid isPermaLink="true">https://maqsudjon.com/log/log-2026-08-27-seven-sites-six-weeks.html</guid>
     <pubDate>Thu, 27 Aug 2026 12:00:00 +0500</pubDate>
-    <description>CTN, ZED AVLOD, Chiziq, Payvandchi, Reshotkachi, KVADRAT, the Flarestamina rebuild and Tadam — with screenshots, what broke, and the real traffic numbers rather than the rounded-up ones.</description>
+    <dc:creator>Maqsudjon Polatov</dc:creator>
+    <category>ROUNDUP</category>
+    <description>Everything I shipped between 15 July and 27 August 2026: CTN, ZED AVLOD, Chiziq, Payvandchi, Reshotkachi, KVADRAT, the Flarestamina rebuild and Tadam — with screenshots and the real traffic numbers.</description>
+    <content:encoded><![CDATA[<p class="lede">Between 15 July and 27 August 2026 I shipped seven new websites, rebuilt an eighth, and spent most of the last week arguing with myself about a domain name. This is the whole log: every project, what it does, what broke, and what the traffic numbers actually say once you stop rounding them up.</p>
+
+<p>Context, because it changes how you read the pace: I weld metal grilles in Tashkent for a living. All of this was built in the hours around that. Nothing here had a budget, a designer, or a second pair of eyes.</p>
+
+<h2>21 July — CTN Language Centre</h2>
+
+<p>An English school in Mirzo Ulug'bek district needed a site. I built one file: <code>index.html</code>, trilingual UZ/RU/EN with the language kept in <code>localStorage</code>, a light/dark toggle, scroll-reveal animations, and a lead form that copies the enquiry and opens Telegram. Courses, teachers, FAQ, a live Maps embed, and a mock-test teaser.</p>
+
+<p>The palette started as cyan and ended as a clean DeepSeek-style blue, <code>#4D6BFE</code>, on a light, airy hero — the direction came from looking hard at DeepSeek, x.ai and Anthropic and deciding that Uzbek education sites overuse gradients.</p>
+
+<figure><img src="https://maqsudjon.com/log/img/ctn.webp" alt="CTN Language Centre homepage" loading="lazy"><figcaption>ctnlc.uz — one HTML file, three languages, dark mode, live map.</figcaption></figure>
+
+<p>Two things I'd do the same way again. First, the favicon set and the 1200×630 OG image were <em>generated by code</em> (a small Python script with cairosvg), not drawn by hand or by an image model — which means regenerating them after a colour change is one command. Second, the repo already contained a listening test and about 40 MB of MP3s, so the deploy had to go through the GitHub contents API rather than a force-push. I nearly wiped the audio. I didn't, but only because I checked first.</p>
+
+<p>Search Console property verified the same day, sitemap submitted, and JSON-LD for <code>EducationalOrganization</code> + <code>LocalBusiness</code> — with no invented rating, because there isn't one yet. It lives at <a href="https://ctnlc.uz">ctnlc.uz</a>.</p>
+
+<h2>23 July — ZED AVLOD School</h2>
+
+<p>This one is family. A school in To'raqo'rg'on, Namangan region, running since 2020. Trilingual again, but the interesting part is the results table: thirteen real CEFR certificate scores, top result C1, several B2 — each one checkable against <code>sertifikat.uzbmb.uz</code>.</p>
+
+<figure><img src="https://maqsudjon.com/log/img/zedavlod.webp" alt="ZED AVLOD School homepage" loading="lazy"><figcaption>zedavlod.uz — real CEFR results, no invented statistics.</figcaption></figure>
+
+<p>What I left out matters more than what I put in: no certificate ID numbers, no photos of the students, and one official-looking portrait I found in the photo dump stayed out entirely because nobody had confirmed who it was. Captioning an unidentified person as "founder" would have been a lie with a face on it.</p>
+
+<p>Full SEO stack: FAQ section with <code>FAQPage</code> schema, <code>EducationalOrganization</code> + <code>WebSite</code> JSON-LD with real coordinates, hreflang, its own GoatCounter site, Search Console verified, sitemap submitted. Live at <a href="https://zedavlod.uz">zedavlod.uz</a>.</p>
+
+<h2>25 July — Chiziq</h2>
+
+<p>A web studio, aimed squarely at being the cheaper and better-looking alternative to the incumbent in this market. It started life as <code>then.uz</code> and got renamed to <strong>chzq.uz</strong> — "Chiziq", Uzbek for "line" — because a brand people can say out loud in their own language beats a clever English pun. (Remember this paragraph. It happens again in six weeks.)</p>
+
+<figure><img src="https://maqsudjon.com/log/img/chzq.webp" alt="Chiziq web studio homepage" loading="lazy"><figcaption>chzq.uz — dark studio palette, and a portfolio you can actually open.</figcaption></figure>
+
+<p>The one real weapon on that site is the portfolio. Every studio in the country shows client testimonials; anyone can type a testimonial. So instead each project opens in a modal containing a <em>live iframe</em> of the actual site — flarestamina.com, zedavlod.uz, ctnlc.uz, the wedding-invite builder, the full mock platform, and my own portfolio. They're all on GitHub Pages, so no <code>X-Frame-Options</code> blocks the embed. The pitch is one line: not reviews — sites you can open right now.</p>
+
+<p>Pricing is published, which is rarer here than it should be: landing 1.5 M, business site 3 M, catalogue/shop 6 M, Telegram bot 1.2 M, mini app 6 M so'm. Free prototype in 24 hours, pay after. Hosting 0 so'm, because static sites on GitHub Pages cost nothing to run and pretending otherwise is just markup.</p>
+
+<h2>26 July — IELTS Hub, five times over</h2>
+
+<p>No screenshot deserves its own figure here, because the visible result is a page that looks calmer. Five full redesign iterations of the Flarestamina hub, plus an audit that walked all 110 pages of the site and wrote down every broken thing. That audit is what set up the whole of August.</p>
+
+<h2>1 August — Payvandchi</h2>
+
+<p>My own workshop, finally with a site. Window grilles, balcony grilles, railings, canopies — and, importantly, <strong>no gates</strong>. We don't make them, so the word "darvoza" appears nowhere on the site, and I skipped every photo that showed a door grille rather than adding a service we can't deliver.</p>
+
+<figure><img src="https://maqsudjon.com/log/img/payvandchi.webp" alt="Payvandchi welding workshop homepage" loading="lazy"><figcaption>payvandchi.maqsudjon.com — real work, real photos, no stock imagery.</figcaption></figure>
+
+<p>Performance was the actual engineering here. The hero image landed at 521 KB, which on a Tashkent mobile connection is a visible wait. Re-encoded and resized to <strong>173 KB</strong> — a third of the weight, no visible difference. An English version followed on 5 August, and a fresh batch of workshop photos on 23 August. Adding a photo is two steps: a line in <code>categories.csv</code>, then <code>build-gallery.mjs</code>.</p>
+
+<h2>4 August — Reshotkachi</h2>
+
+<p>The same workshop and the same photographs, built a second time as a completely different site. Not laziness — a test. If the product is identical, how much does design alone change how it reads?</p>
+
+<figure><img src="https://maqsudjon.com/log/img/reshotkachi.webp" alt="Reshotkachi grille workshop homepage" loading="lazy"><figcaption>reshotkachi.maqsudjon.com — 123 photos, arranged as a 3D wall.</figcaption></figure>
+
+<p>Answer: a lot. This one arranges 123 photos into a three-dimensional gallery wall in UZ/RU/EN, and it feels like a different business to the one above. Same welder, same grilles.</p>
+
+<h2>7 August — KVADRAT</h2>
+
+<p>The least glamorous thing I built and possibly the most used. A square-metre calculator for grille jobs. You type three numbers — width, height, and how far the grille projects from the wall — and it computes the front face plus all four side faces.</p>
+
+<figure><img src="https://maqsudjon.com/log/img/kvdrt.webp" alt="KVADRAT square metre calculator" loading="lazy"><figcaption>kvdrt.maqsudjon.com — three numbers in, a price-able area out.</figcaption></figure>
+
+<p>The whole design problem was the input order. <code>120 130 30</code> has to mean width 120, height 130, projection 30, every time, for someone holding a tape measure with one hand. Getting that unambiguous took longer than the arithmetic.</p>
+
+<h2>22 August — Flarestamina gets a paper design</h2>
+
+<p>Flarestamina is my IELTS practice site: 113 test pages, each living in its own repository. It had grown into three products wearing one name — the hub was black and orange, the news section had its own palette, the account page looked like a third site.</p>
+
+<p>Over one weekend the whole thing moved to a black-and-white "paper" design, page by page: the home page (rewritten as static HTML instead of being assembled by JavaScript), the tool pages, the news section, the account and content pages, the 404. Brand assets were redrawn, and the favicon and OG image URLs were versioned so browsers would actually pick up the new art instead of serving the old one from cache for a month.</p>
+
+<p>The unglamorous wins in that pass: <strong>46 pages stopped calling Google</strong> for webfonts once they were self-hosted — and then I had to stop the build scripts helpfully re-adding the Google Fonts link on every rebuild. A rebuild had silently dropped structured data from some pages, so I restored it and taught the audit script to catch that specific regression. The privacy policy was brought back in line with what the site actually does now, and analytics gained a per-device opt-out.</p>
+
+<h2>The hub stopped being a wall of links</h2>
+
+<p>The practice hub is where everything starts, and it used to be a list. Now it asks one question — <em>choose a skill</em> — and gives you five cards: Listening (73 papers), Reading (25), Writing, Speaking, and the full mock. Above them, one card marked <em>start here</em> pointing at Cambridge 21: the whole book, four tests, all skills, free. Someone who has never used the site now has an obvious first click.</p>
+
+<figure><img src="https://maqsudjon.com/log/img/fs-hub.webp" alt="Flarestamina practice hub" loading="lazy"><figcaption>The practice hub after the rebuild: one question, five cards, and an obvious place to start.</figcaption></figure>
+
+<p>One catch the audit found: the hub builds its list in JavaScript, so a search-engine crawler arriving at it saw an empty page and none of the catalogue behind it. The fix was <code>/tests/</code> — a plain, static, crawlable index of every practice test on the site, which exists mostly so Google can read what a human can already see.</p>
+
+<h2>News, and articles by people who aren't me</h2>
+
+<p>The news section covers the thing Uzbek IELTS candidates actually search for and rarely find in one place: exam changes, fees, and scholarship deadlines. It now holds <strong>26 posts</strong> — 12 on the exam, 9 deadlines, 2 on fees, 2 guides — with a search box, category chips that carry their own counts, and three live cards at the top: the next deadline with a countdown, a score conversion, and the Telegram channel.</p>
+
+<figure><img src="https://maqsudjon.com/log/img/fs-news.webp" alt="Flarestamina news section" loading="lazy"><figcaption>The news section: 26 posts, counted category chips, and the next deadline counting down at the top.</figcaption></figure>
+
+<p><strong>Five of the posts are in Uzbek</strong>, and they open in Uzbek rather than making the reader find a toggle — the fee post in particular quotes figures read straight off the official booking page rather than repeated from memory. Every post got its own cover image, and the section publishes its own feed.</p>
+
+<p>There are also six longer articles written through <code>/writearticle/</code>, the submission flow for teachers. Those are the first pages on the site with someone else's name on them, which is the point: a site that is only ever one person's voice has a ceiling.</p>
+
+<h2>Five small tools</h2>
+
+<p>Alongside the tests there's now a Tools menu, and everything in it is a single-purpose page that answers one question fast:</p>
+
+<ul>
+<li><strong>Score converter</strong> — IELTS ↔ CEFR ↔ Multilevel ↔ TOEFL, because every Uzbek university and embassy asks for a different scale.</li>
+<li><strong>Scholarship deadlines</strong> — DAAD, Chevening, Erasmus Mundus, El-Yurt Umidi, CSC, GKS and the rest, with days remaining.</li>
+<li><strong>Study plan generator</strong> — four questions (current band, target band, weeks left, weakest skill) and out comes a week-by-week plan plus an honest verdict on whether the timeline is enough or the exam should be moved. Telling someone to postpone is not what a conversion-optimised page does, and it's the most useful thing that tool says.</li>
+<li><strong>Speaking topics</strong> — the current rotation.</li>
+<li><strong>All tests</strong> — the crawlable catalogue index.</li>
+</ul>
+
+<figure><img src="https://maqsudjon.com/log/img/fs-tools.webp" alt="Flarestamina study plan generator" loading="lazy"><figcaption>The study plan generator — four questions, and a verdict that will tell you to postpone the exam.</figcaption></figure>
+
+<p>They're generated rather than hand-written: each tool is a JSON-LD file plus a logic file, assembled by a build script, so adding the sixth one doesn't mean copying a page and forgetting to update the structured data.</p>
+
+<h2>23–24 August — tearing down the login walls</h2>
+
+<p>Traffic had been falling and I assumed it was an SEO problem. It wasn't. It was three login walls.</p>
+
+<p>The hub that every one of those 113 tests hangs off called <code>FSAuth.require()</code>. So every single person arriving from Google was bounced straight to an account page before seeing anything. The Writing Lab had <em>two</em> gates — a login and a hardcoded access code. The speaking section had a third. All three are gone; login is now optional and only buys you saved results.</p>
+
+<figure><img src="https://maqsudjon.com/log/img/flarestamina.webp" alt="Flarestamina IELTS practice homepage" loading="lazy"><figcaption>flarestamina.com after the August rebuild — black and white, no gate.</figcaption></figure>
+
+<p>Then the actual SEO, done across 113 separate repositories via the GitHub API:</p>
+
+<ul>
+<li>Missing meta descriptions: <strong>101 → 0</strong>. Every description was generated from the page's own real H2 headings — the reading passage titles, the listening section topics — not written from imagination.</li>
+<li>Missing canonical tags: <strong>107 → 1</strong>. Missing analytics: <strong>108 → 1</strong>. Duplicate titles: <strong>2 → 0</strong>.</li>
+<li>JSON-LD structured data: <strong>0 → 106</strong> test pages, each with <code>LearningResource</code> and <code>BreadcrumbList</code>.</li>
+<li>Titles rewritten to match what people actually search. <code>Mock Listening — Test 63 Listening</code> became <code>IELTS Listening Practice Test 63 with Answers</code>.</li>
+<li>Three new landing pages: <code>/ielts-listening-test/</code> (73 tests), <code>/ielts-reading-test/</code> (25 tests), and <code>/uz/</code> for Uzbek-language search.</li>
+<li>IndexNow key, hreflang, and a sitemap that stopped lying about <code>lastmod</code>.</li>
+</ul>
+
+<p>The audit also caught things that were quietly costing money and accuracy: a duplicated GoatCounter snippet that was <em>double-counting every pageview</em>, 65 pages still carrying a headline from a previous redesign, 522 MB of audio being served without any caching strategy, and nineteen reading pages that shared identical body text — which to a search engine reads as one page repeated nineteen times. Each got real, distinct content.</p>
+
+<p>I also built <a href="https://flarestamina.com/stats/">flarestamina.com/stats/</a>: all seven sites' visitor counts in a single table, no login, no token. Checking seven dashboards was the reason I checked none of them.</p>
+
+<h2>24–27 August — Tadam</h2>
+
+<p>The newest one, and it gets its own post because it's the first thing I've built that is genuinely a product rather than a website: guests at a wedding scan a QR code on the table, upload the photos already on their phones, and the couple downloads all of them as a ZIP.</p>
+
+<figure><img src="https://maqsudjon.com/log/img/tadam-home.webp" alt="Tadam wedding photo album homepage" loading="lazy"><figcaption>tadam.uz — the whole flow explained above the fold.</figcaption></figure>
+
+<p>Full write-up here: <a href="https://maqsudjon.com/log/log-2026-08-27-tadam-wedding-photo-album.html">Tadam: a wedding photo album with no app and no database</a>.</p>
+
+<h2>The rule underneath all of it</h2>
+
+<p>One constraint ran through every project above: nothing invented. No fabricated review counts, no "500+ happy clients", no made-up ratings in the structured data, no student names attached to faces I couldn't verify, no "first and only in Uzbekistan" — which I was tempted by and which I left out, because I can't prove it and a claim you can't prove is just a nicer-sounding lie.</p>
+
+<p>It costs something. A results table with thirteen honest CEFR scores looks smaller than one with a fake "98% success rate". But the thirteen are checkable on a government certificate database, and the 98% would have been checkable too — by anyone who wanted to embarrass me.</p>
+
+<h2>What the numbers say</h2>
+
+<p>Measured 23 August, and I'm quoting them exactly rather than rounding them into something impressive:</p>
+
+<ul>
+<li>Search Console, Flarestamina: <strong>911 impressions, 83 clicks, average position 11.1</strong>. Position 11 means page two. Page two is nowhere.</li>
+<li>GoatCounter: <strong>238 visits in a week</strong>, of which Google accounted for about <strong>8%</strong>. Almost all real traffic is people sharing links directly.</li>
+<li>Seven sites live, four on their own domains, all returning 200.</li>
+</ul>
+
+<p>The honest reading: the SEO work is a bet that hasn't paid out yet, and the sites that work are the ones somebody had a reason to send to a friend. That's worth knowing before I spend another six weeks on meta tags.</p>
+
+<h2>Next</h2>
+
+<p>Tadam needs real weddings on it, not test albums. The IELTS Hub redesign is built and waiting on a decision. Chiziq needs its first paying client. And I'd like the next six weeks to contain fewer new sites and more people actually using the existing ones.</p>]]></content:encoded>
+    <media:content url="https://maqsudjon.com/log/og/log-2026-08-27-seven-sites-six-weeks.png" medium="image" type="image/png" width="1200" height="630"/>
+  </item>
+  <item>
+    <title>Flarestamina — the login walls came down, and the hub stopped being a list</title>
+    <link>https://maqsudjon.com/log/log-2026-08-24-flarestamina-walls-hub-news-tools.html</link>
+    <guid isPermaLink="true">https://maqsudjon.com/log/log-2026-08-24-flarestamina-walls-hub-news-tools.html</guid>
+    <pubDate>Mon, 24 Aug 2026 12:00:00 +0500</pubDate>
+    <dc:creator>Maqsudjon Polatov</dc:creator>
+    <category>IELTS</category>
+    <description>Traffic had been falling and I assumed it was an SEO problem. It was three login walls.</description>
+    <content:encoded><![CDATA[<p>Traffic had been falling and I assumed it was an SEO problem. It was three login walls.</p>
+<p>The hub that all 113 test pages hang off called an auth guard, so every single person arriving from Google was bounced to an account page before seeing anything at all. The Writing Lab had two gates — a login and a hardcoded access code. The speaking section had a third. All three are gone. Signing in is now optional and only buys you saved results.</p>
+<p>The hub itself stopped being a wall of links. It asks one question — choose a skill — and offers five cards: Listening with 73 papers, Reading with 25, Writing, Speaking, and the full mock, with a start-here card pointing at Cambridge 21. The audit also caught that the hub builds its list in JavaScript, so a crawler saw an empty page and none of the catalogue behind it. That is why flarestamina.com/tests now exists: a plain static index of every test, so Google can read what a person could already see.</p>
+<p>Then the actual SEO, across 113 separate repositories through the GitHub API. Missing meta descriptions 101 to 0, every one generated from the page&#x27;s own real headings rather than imagined. Missing canonical tags 107 to 1. Missing analytics 108 to 1. Duplicate titles 2 to 0. Structured data 0 to 106 test pages. Titles rewritten to match what people actually type. Three new landing pages for listening, reading and Uzbek-language search, plus an IndexNow key and a sitemap that stopped lying about its dates.</p>
+<p>The audit also found a duplicated analytics snippet double-counting every pageview, 65 pages still carrying a headline from a previous redesign, and nineteen reading pages sharing identical body text, which to a search engine reads as one page repeated nineteen times. All fixed.</p>
+<p>Last piece: <a href="https://flarestamina.com/stats/" rel="noopener">flarestamina.com/stats</a>, every site&#x27;s visitor count in one table with no login. Having to check seven dashboards was exactly why I checked none of them.</p>]]></content:encoded>
+    <media:content url="https://maqsudjon.com/og-image.png" medium="image" type="image/png" width="1200" height="630"/>
   </item>
   <item>
     <title>I rebuilt the whole of Flarestamina in a weekend — and deleted the framework doing it</title>
     <link>https://maqsudjon.com/log/log-2026-08-22-flarestamina-paper-redesign.html</link>
-    <guid>https://maqsudjon.com/log/log-2026-08-22-flarestamina-paper-redesign.html</guid>
+    <guid isPermaLink="true">https://maqsudjon.com/log/log-2026-08-22-flarestamina-paper-redesign.html</guid>
     <pubDate>Sat, 22 Aug 2026 12:00:00 +0500</pubDate>
+    <dc:creator>Maqsudjon Polatov</dc:creator>
+    <category>Tech</category>
     <description>Flarestamina looked like three different products. The hub was black and orange with JetBrains Mono, the news section had its own palette, the account page</description>
+    <content:encoded><![CDATA[<p>Flarestamina looked like three different products. The hub was black and orange with JetBrains Mono, the news section had its own palette, the account page was a fourth thing, and the tools each had their own language toggle that forgot what the last page knew. It worked. It just did not look like one thing built by one person.</p>
+<p>This weekend it became one thing. Every page except the practice tests moved to a single design: white paper, Inter and IBM Plex Mono, a four-point spark, and a teal-to-fuchsia gradient rail as the only colour on the entire site.</p>
+<p>The interesting part is what I threw away.</p>
+<p>The design arrived as a compiled React bundle — 262 KB of JavaScript, 52 KB of CSS, and an index.html whose body was one empty div. No source in my workspace. Shipping that as the home page of a site that lives on search traffic would have meant two things: I could never edit the copy again without the original project, and Google would fetch a blank document and have to run a bundle to find out what the page says. So would a student on 3G in Namangan.</p>
+<p>I rewrote it as one static HTML file. Same design — the cycling headline, the animated product mock, the colour wash on the mark, EN/UZ, light/dark. 54 KB instead of 315 KB, and I can change a sentence in ten seconds. The JSON-LD graph, the FAQ entities and the search action that the old page carried are all still in the markup where a crawler can see them without executing anything.</p>
+<p>Then the other forty pages. Those share one stylesheet now — <a href="https://flarestamina.com/assets/paper.css" rel="noopener">/assets/paper.css</a>, about 14 KB of tokens and components — and get their header and footer from a small Python shell so the chrome cannot drift apart again. The home page and the hub stay self-contained on purpose: they take the most traffic and are better off without a second blocking request.</p>
+<p>Things I found while I was in there, which is really why you do this kind of pass:</p>
+<p>A GitHub Action rebuilds the community article pages from Firestore on a schedule. It has its own copy of the templates. Two hours after I finished the migration it woke up and put the old design back on nine pages. Every future publish would have done the same. That is the kind of bug you only find by watching the site after you think you are done.</p>
+<p>Three cited sources in the news section were 404. Every post there promises to link its official source, and three of those links had quietly moved. A promise you do not check is a promise you are not keeping.</p>
+<p>The lightest grey in the palette failed WCAG AA for small text — 3.45:1 in light mode, 2.82:1 on dark surfaces. It was carrying every date, caption and table header on the site. Both themes got a new value.</p>
+<p>The &quot;Writing Lab&quot; links across the site pointed at the form for submitting an article, not the Writing Lab. An old email sign-in page was still live, creating sessions the rest of the site did not recognise. The author pages had no heading element at all.</p>
+<p>And the favicons and link previews did not change even though the files did — browsers cache favicons by URL and Telegram caches a card per image URL, so replacing the file changes nothing that anyone can see. Everything is versioned now.</p>
+<p>None of this is glamorous. It is a weekend of reading your own site as if a stranger wrote it. But the version that exists now is the first one where every page agrees with every other page about what Flarestamina is.</p>]]></content:encoded>
+    <media:content url="https://maqsudjon.com/og-image.png" medium="image" type="image/png" width="1200" height="630"/>
+  </item>
+  <item>
+    <title>KVADRAT — a square-metre calculator for grille jobs</title>
+    <link>https://maqsudjon.com/log/log-2026-08-07-kvadrat-calculator.html</link>
+    <guid isPermaLink="true">https://maqsudjon.com/log/log-2026-08-07-kvadrat-calculator.html</guid>
+    <pubDate>Fri, 07 Aug 2026 12:00:00 +0500</pubDate>
+    <dc:creator>Maqsudjon Polatov</dc:creator>
+    <category>Tech</category>
+    <description>The least glamorous thing I have built and possibly the one I use most. Live at kvdrt.maqsudjon.com.</description>
+    <content:encoded><![CDATA[<p>The least glamorous thing I have built and possibly the one I use most. Live at <a href="https://kvdrt.maqsudjon.com" rel="noopener">kvdrt.maqsudjon.com</a>.</p>
+<p>You type three numbers — width, height, and how far the grille projects from the wall — and it returns the front face plus all four side faces, which is the area you actually price.</p>
+<p>The whole design problem was the input order. 120 130 30 has to mean width 120, height 130, projection 30, every single time, for someone holding a tape measure in one hand and a phone in the other. Making that impossible to misread took longer than the arithmetic did.</p>]]></content:encoded>
+    <media:content url="https://maqsudjon.com/og-image.png" medium="image" type="image/png" width="1200" height="630"/>
+  </item>
+  <item>
+    <title>reshotkachi — the same workshop, built a second time</title>
+    <link>https://maqsudjon.com/log/log-2026-08-04-reshotkachi-second-build.html</link>
+    <guid isPermaLink="true">https://maqsudjon.com/log/log-2026-08-04-reshotkachi-second-build.html</guid>
+    <pubDate>Tue, 04 Aug 2026 12:00:00 +0500</pubDate>
+    <dc:creator>Maqsudjon Polatov</dc:creator>
+    <category>Tech</category>
+    <description>Same workshop, same photographs, built again as a completely different site. Not laziness — a test. If the product is identical, how much does design alone</description>
+    <content:encoded><![CDATA[<p>Same workshop, same photographs, built again as a completely different site. Not laziness — a test. If the product is identical, how much does design alone change how it reads?</p>
+<p>A lot, is the answer. This version arranges 123 photographs into a three-dimensional gallery wall in UZ/RU/EN, and it feels like a different business to the one I shipped three days earlier. Same welder, same grilles, same prices.</p>
+<p>Live at <a href="https://reshotkachi.maqsudjon.com" rel="noopener">reshotkachi.maqsudjon.com</a>. Worth keeping both around: when a client says they want something that looks serious, I can now show two serious options instead of describing one.</p>]]></content:encoded>
+    <media:content url="https://maqsudjon.com/og-image.png" medium="image" type="image/png" width="1200" height="630"/>
+  </item>
+  <item>
+    <title>payvandchi.maqsudjon.com — my own workshop, finally online</title>
+    <link>https://maqsudjon.com/log/log-2026-08-01-payvandchi-workshop.html</link>
+    <guid isPermaLink="true">https://maqsudjon.com/log/log-2026-08-01-payvandchi-workshop.html</guid>
+    <pubDate>Sat, 01 Aug 2026 12:00:00 +0500</pubDate>
+    <dc:creator>Maqsudjon Polatov</dc:creator>
+    <category>Tech</category>
+    <description>I weld metal grilles in Tashkent. The workshop now has a site at payvandchi.maqsudjon.com: window grilles, balcony grilles, railings and canopies, with rea</description>
+    <content:encoded><![CDATA[<p>I weld metal grilles in Tashkent. The workshop now has a site at <a href="https://payvandchi.maqsudjon.com" rel="noopener">payvandchi.maqsudjon.com</a>: window grilles, balcony grilles, railings and canopies, with real photographs of real jobs and no stock imagery anywhere.</p>
+<p>And no gates. We do not make them, so the word does not appear on the site, and every photograph showing a door grille was left out rather than implying a service we cannot deliver. Dropping a photo is cheaper than an awkward phone call.</p>
+<p>The engineering here was weight. The hero image came in at 521 KB, which on a Tashkent mobile connection is a wait you can see. Re-encoded and resized it is 173 KB — a third of the bytes, no visible difference.</p>
+<p>Adding a photograph is two steps: a line in categories.csv, then run the gallery build script. An English version followed on 5 August, and a fresh batch of workshop photos on 23 August.</p>]]></content:encoded>
+    <media:content url="https://maqsudjon.com/og-image.png" medium="image" type="image/png" width="1200" height="630"/>
+  </item>
+  <item>
+    <title>Chiziq — a web studio whose portfolio you can actually open</title>
+    <link>https://maqsudjon.com/log/log-2026-07-25-chiziq-web-studio.html</link>
+    <guid isPermaLink="true">https://maqsudjon.com/log/log-2026-07-25-chiziq-web-studio.html</guid>
+    <pubDate>Sat, 25 Jul 2026 12:00:00 +0500</pubDate>
+    <dc:creator>Maqsudjon Polatov</dc:creator>
+    <category>Tech</category>
+    <description>A web studio aimed at being the cheaper and better-looking alternative to the incumbent in this market. It started as then.uz and became chzq.uz — Chiziq, </description>
+    <content:encoded><![CDATA[<p>A web studio aimed at being the cheaper and better-looking alternative to the incumbent in this market. It started as then.uz and became <a href="https://chzq.uz" rel="noopener">chzq.uz</a> — Chiziq, Uzbek for line — because a brand people can say out loud in their own language beats a clever English pun.</p>
+<p>The one real weapon on the site is the portfolio. Every studio in the country publishes client testimonials, and anyone can type a testimonial. So here each project opens in a modal containing a live iframe of the actual site: flarestamina.com, zedavlod.uz, ctnlc.uz, the wedding invite builder, the full mock platform and my own portfolio. They all sit on GitHub Pages, so nothing blocks the embed. The pitch is one line — not reviews, sites you can open right now.</p>
+<p>Prices are published, which is rarer here than it should be: landing 1.5 M, business site 3 M, catalogue or shop 6 M, Telegram bot 1.2 M, mini app 6 M so&#x27;m. Free prototype in 24 hours, pay after. Hosting 0 so&#x27;m, because a static site on GitHub Pages costs nothing to run and pretending otherwise is just markup.</p>
+<p>Dark studio palette, near-black and lime, UZ/RU/EN. The brand assets are rendered by code with headless Chrome, not drawn by an image model.</p>]]></content:encoded>
+    <media:content url="https://maqsudjon.com/og-image.png" medium="image" type="image/png" width="1200" height="630"/>
+  </item>
+  <item>
+    <title>ZED AVLOD School — zedavlod.uz</title>
+    <link>https://maqsudjon.com/log/log-2026-07-23-zed-avlod-school.html</link>
+    <guid isPermaLink="true">https://maqsudjon.com/log/log-2026-07-23-zed-avlod-school.html</guid>
+    <pubDate>Thu, 23 Jul 2026 12:00:00 +0500</pubDate>
+    <dc:creator>Maqsudjon Polatov</dc:creator>
+    <category>Tech</category>
+    <description>A school in To&#x27;raqo&#x27;rg&#x27;on, Namangan region, running since 2020. This one is family, which raised the bar rather than lowering it. Live at zedavlod.uz, tril</description>
+    <content:encoded><![CDATA[<p>A school in To&#x27;raqo&#x27;rg&#x27;on, Namangan region, running since 2020. This one is family, which raised the bar rather than lowering it. Live at <a href="https://zedavlod.uz" rel="noopener">zedavlod.uz</a>, trilingual UZ/RU/EN.</p>
+<p>The part I care about is the results table: thirteen real CEFR certificate scores, the top one C1 and several B2, every one of them checkable against the state certificate database at sertifikat.uzbmb.uz. No percentages, no round numbers, no invented success rate.</p>
+<p>What stayed out matters as much. No certificate ID numbers and no photographs of the students. One official-looking portrait turned up in the photo folder and stayed out entirely, because nobody had confirmed who it was — captioning an unidentified person as the founder would have been a lie with a face attached to it.</p>
+<p>The rest is the usual full stack for a new domain: FAQ schema, organisation and site structured data with real coordinates, hreflang, its own analytics site, Search Console verified and the sitemap submitted.</p>]]></content:encoded>
+    <media:content url="https://maqsudjon.com/og-image.png" medium="image" type="image/png" width="1200" height="630"/>
+  </item>
+  <item>
+    <title>CTN Language Centre — ctnlc.uz, built as one file</title>
+    <link>https://maqsudjon.com/log/log-2026-07-21-ctn-language-centre.html</link>
+    <guid isPermaLink="true">https://maqsudjon.com/log/log-2026-07-21-ctn-language-centre.html</guid>
+    <pubDate>Tue, 21 Jul 2026 12:00:00 +0500</pubDate>
+    <dc:creator>Maqsudjon Polatov</dc:creator>
+    <category>Tech</category>
+    <description>An English school in Mirzo Ulug&#x27;bek district, Tashkent, needed a site. It is live at ctnlc.uz, and it is one self-contained index.html — trilingual UZ/RU/E</description>
+    <content:encoded><![CDATA[<p>An English school in Mirzo Ulug&#x27;bek district, Tashkent, needed a site. It is live at <a href="https://ctnlc.uz" rel="noopener">ctnlc.uz</a>, and it is one self-contained index.html — trilingual UZ/RU/EN with the choice kept in localStorage, a light/dark toggle, scroll-reveal animations, courses, teachers, FAQ, a live Maps embed, and a lead form that copies the enquiry and opens Telegram.</p>
+<p>The palette started as cyan and ended as a clean blue, #4D6BFE, on a light hero. The direction came from looking hard at DeepSeek, x.ai and Anthropic and deciding that education sites here reach for gradients far too readily.</p>
+<p>The favicon set and the 1200x630 social card are generated by a small Python script rather than drawn by hand, so a colour change is one command away instead of an afternoon.</p>
+<p>One near-miss worth writing down: the repo already held a listening test and about 40 MB of MP3s. A force-push would have deleted the audio, so the deploy went through the GitHub contents API instead. I only knew because I looked first.</p>
+<p>Search Console verified the same day, sitemap submitted, and structured data for an educational organisation and a local business — with no rating, because there isn&#x27;t one yet.</p>]]></content:encoded>
+    <media:content url="https://maqsudjon.com/og-image.png" medium="image" type="image/png" width="1200" height="630"/>
   </item>
   <item>
     <title>Flarestamina News &amp; Community — deadlines, teacher articles, and a place to talk</title>
     <link>https://maqsudjon.com/log/log-2026-07-15-flarestamina-news-and-communit.html</link>
-    <guid>https://maqsudjon.com/log/log-2026-07-15-flarestamina-news-and-communit.html</guid>
+    <guid isPermaLink="true">https://maqsudjon.com/log/log-2026-07-15-flarestamina-news-and-communit.html</guid>
     <pubDate>Wed, 15 Jul 2026 12:00:00 +0500</pubDate>
+    <dc:creator>Maqsudjon Polatov</dc:creator>
+    <category>Tech</category>
     <description>Flarestamina had 100+ tests and no reason to come back between them. This week it got one: a whole content and community layer at flarestamina.com/news.</description>
+    <content:encoded><![CDATA[<p>Flarestamina had 100+ tests and no reason to come back between them. This week it got one: a whole content and community layer at <a href="https://flarestamina.com/news" rel="noopener">flarestamina.com/news</a>.</p>
+<p>The news half is IELTS updates and scholarship deadlines written for students in Uzbekistan — Chevening, GKS, El-Yurt Umidi, Stipendium Hungaricum, Türkiye Bursları, Erasmus Mundus, the current IELTS fee, One Skill Retake, and the DTM rule that a valid B2 certificate (IELTS 5.5+) is worth the maximum foreign-language score. Every post carries a key-facts box, a short Uzbek summary, and a link to the official source it came from — no rewriting rumours from Telegram.</p>
+<p>The community half is the part I care about more. Teachers can publish an article in three minutes at <a href="https://flarestamina.com/writearticle" rel="noopener">flarestamina.com/writearticle</a> — no sign-up, no account, just write and hit publish; it appears under their own name, with their centre and their social link. Students sign in with their FS Account and post ideas and advice, like each other&#x27;s posts, and comment. An article can carry both an English and an Uzbek version behind a toggle, so a foreign teacher and a local student read the same page in their own language.</p>
+<p>Under the hood there is still no server: static pages, Firestore over REST for the articles, advice and comments, and an admin panel behind a passcode where I can hide, edit or delete anything.</p>
+<p>Sourced, dated, no fluff. Now I have to keep it fed.</p>]]></content:encoded>
+    <media:content url="https://maqsudjon.com/og-image.png" medium="image" type="image/png" width="1200" height="630"/>
   </item>
   <item>
     <title>A founder page, and one panel to run the whole site</title>
     <link>https://maqsudjon.com/log/log-2026-07-15-a-founder-page-and-one-panel.html</link>
-    <guid>https://maqsudjon.com/log/log-2026-07-15-a-founder-page-and-one-panel.html</guid>
+    <guid isPermaLink="true">https://maqsudjon.com/log/log-2026-07-15-a-founder-page-and-one-panel.html</guid>
     <pubDate>Wed, 15 Jul 2026 12:00:00 +0500</pubDate>
+    <dc:creator>Maqsudjon Polatov</dc:creator>
+    <category>Tech</category>
     <description>Two smaller things shipped alongside the news section.</description>
+    <content:encoded><![CDATA[<p>Two smaller things shipped alongside the news section.</p>
+<p><a href="https://flarestamina.com/founder" rel="noopener">flarestamina.com/founder</a> is deliberately plain — black, mono type, my name, and a list of everything I have built, in the spirit of t3.gg. Someone deciding whether to trust a free IELTS platform should be able to see who made it in about four seconds. It links back to this build log.</p>
+<p>flarestamina.com/admin is the opposite of plain: one passcode-gated panel that runs the whole site. Every page and tool I own is one click away — Search Console, both GoatCounter dashboards, both Firebase projects, the repos, and the Full Mock coin approvals. Articles and community posts can be hidden, edited or deleted from there, comments included, and there is a tab of ready-to-post copy for Telegram and X so announcing a release does not mean rewriting it every time.</p>
+<p>The news pages also picked up the hub&#x27;s own theme — the same warm black and off-white, sharing one setting across the whole domain, so switching to light on the hub keeps it light everywhere.</p>]]></content:encoded>
+    <media:content url="https://maqsudjon.com/og-image.png" medium="image" type="image/png" width="1200" height="630"/>
   </item>
   <item>
     <title>pangea8 is now FLARESTAMINA</title>
     <link>https://maqsudjon.com/log/log-2026-07-10-pangea8-is-now-flarestamina.html</link>
-    <guid>https://maqsudjon.com/log/log-2026-07-10-pangea8-is-now-flarestamina.html</guid>
+    <guid isPermaLink="true">https://maqsudjon.com/log/log-2026-07-10-pangea8-is-now-flarestamina.html</guid>
     <pubDate>Fri, 10 Jul 2026 12:00:00 +0500</pubDate>
-    <description>pangea8 is now FLARESTAMINA — same free IELTS ecosystem, new name, new home at flarestamina.com. Everything moved with it: 90+ listening and reading tests, Cambridge 21, the Full Mock, the Speaking lab and the Writing lab. The big functional change is one FS Account for the whole ecosystem — register once with your phone number and every tool recognizes you, saving your results under one identity. Old pangea8.com links redirect automatically, path and all. New flare, same mission: free exam prep for every student.</description>
+    <dc:creator>Maqsudjon Polatov</dc:creator>
+    <category>News</category>
+    <description>pangea8 is now FLARESTAMINA — same free IELTS ecosystem, new name, new home at flarestamina.com, and one FS Account for every tool.</description>
+    <content:encoded><![CDATA[<p>pangea8 is now FLARESTAMINA — same free IELTS ecosystem, new name, new home at <a href="https://flarestamina.com" rel="noopener">flarestamina.com</a>. Everything moved with it: 90+ listening and reading tests, Cambridge 21, the Full Mock, the Speaking lab and the Writing lab. The big functional change is one FS Account for the whole ecosystem — register once with your phone number and every tool recognizes you, saving your results under one identity. Old pangea8.com links redirect automatically, path and all. New flare, same mission: free exam prep for every student.</p>]]></content:encoded>
+    <media:content url="https://maqsudjon.com/og-image.png" medium="image" type="image/png" width="1200" height="630"/>
   </item>
   <item>
     <title>pangea8 Full Mock — the full IELTS exam, online, at the cheapest price around</title>
     <link>https://maqsudjon.com/log/log-2026-07-06-pangea8-full-mock-the-full-ielts.html</link>
-    <guid>https://maqsudjon.com/log/log-2026-07-06-pangea8-full-mock-the-full-ielts.html</guid>
+    <guid isPermaLink="true">https://maqsudjon.com/log/log-2026-07-06-pangea8-full-mock-the-full-ielts.html</guid>
     <pubDate>Mon, 06 Jul 2026 12:00:00 +0500</pubDate>
-    <description>The biggest pangea8 release yet: a paid, computer-delivered IELTS Full Mock at flarestamina.com/full-mock. Five complete mocks, each running Listening, Reading and Writing back-to-back with real exam timers — audio that plays once, a 60-minute reading clock that survives page reloads, and two writing…</description>
+    <dc:creator>Maqsudjon Polatov</dc:creator>
+    <category>IELTS</category>
+    <description>The biggest pangea8 release yet: a paid, computer-delivered IELTS Full Mock at flarestamina.com/full-mock. Five complete mocks, each running Listening, Reading…</description>
+    <content:encoded><![CDATA[<p>The biggest pangea8 release yet: a paid, computer-delivered IELTS Full Mock at flarestamina.com/full-mock. Five complete mocks, each running Listening, Reading and Writing back-to-back with real exam timers — audio that plays once, a 60-minute reading clock that survives page reloads, and two writing tasks marked in minutes by an AI examiner working from the official band descriptors. At the end the student gets an instant IELTS-style result sheet: band and raw score for every skill, task-by-task writing feedback, and an overall band. Under the hood it is a whole little economy: a coin wallet on Firestore with spend-only security rules, manual card-transfer top-ups confirmed from a one-tap admin panel, and a polite cross-promo card that appears once a day after a free practice result. Priced at 10,000 UZS per mock — a third of what test centres charge for the same thing online.</p>]]></content:encoded>
+    <media:content url="https://maqsudjon.com/og-image.png" medium="image" type="image/png" width="1200" height="630"/>
   </item>
   <item>
     <title>pangea8 Writing Lab — redesigned to match the site, with a branded PDF</title>
     <link>https://maqsudjon.com/log/log-2026-07-04-pangea8-writing-lab-redesigned-t.html</link>
-    <guid>https://maqsudjon.com/log/log-2026-07-04-pangea8-writing-lab-redesigned-t.html</guid>
+    <guid isPermaLink="true">https://maqsudjon.com/log/log-2026-07-04-pangea8-writing-lab-redesigned-t.html</guid>
     <pubDate>Sat, 04 Jul 2026 12:00:00 +0500</pubDate>
-    <description>Brought the IELTS Writing Lab into the pangea8 look — the same calm stone-and-green theme as the rest of the site, Space Grotesk headings, softer cards, a film-grain texture, and a shared light/dark toggle that follows you across the whole domain. The biggest upgrade is the essay PDF export: it is…</description>
+    <dc:creator>Maqsudjon Polatov</dc:creator>
+    <category>Tech</category>
+    <description>Brought the IELTS Writing Lab into the pangea8 look — the same calm stone-and-green theme as the rest of the site, Space Grotesk headings, softer cards, a…</description>
+    <content:encoded><![CDATA[<p>Brought the IELTS Writing Lab into the pangea8 look — the same calm stone-and-green theme as the rest of the site, Space Grotesk headings, softer cards, a film-grain texture, and a shared light/dark toggle that follows you across the whole domain. The biggest upgrade is the essay PDF export: it is now a premium, branded report. A pangea8 wordmark header, a candidate / task / date / word-count strip, a green teacher-feedback callout, and a &#x27;Keep practising&#x27; card with a scan-to-open QR code that drops anyone straight into the hub — so every essay a student downloads and shares carries the brand. And I unified the naming at last: the old &#x27;Pangeya&#x27; is now &#x27;pangea8&#x27; everywhere, so the tool finally matches the domain.</p>]]></content:encoded>
+    <media:content url="https://maqsudjon.com/og-image.png" medium="image" type="image/png" width="1200" height="630"/>
   </item>
   <item>
     <title>IELTS Band Calculator, a progress dashboard, and six new reading tests</title>
     <link>https://maqsudjon.com/log/log-2026-07-04-ielts-band-calculator-a-progress.html</link>
-    <guid>https://maqsudjon.com/log/log-2026-07-04-ielts-band-calculator-a-progress.html</guid>
+    <guid isPermaLink="true">https://maqsudjon.com/log/log-2026-07-04-ielts-band-calculator-a-progress.html</guid>
     <pubDate>Sat, 04 Jul 2026 12:00:00 +0500</pubDate>
-    <description>A batch of student-facing upgrades to the hub. There is a new free IELTS Band Calculator — turn a raw Listening or Reading score into a band, and work out your overall band from all four skills, for both Academic and General Training, with the correct half-band rounding. I also rebuilt the &#x27;My…</description>
+    <dc:creator>Maqsudjon Polatov</dc:creator>
+    <category>IELTS</category>
+    <description>A batch of student-facing upgrades to the hub. There is a new free IELTS Band Calculator — turn a raw Listening or Reading score into a band, and work out…</description>
+    <content:encoded><![CDATA[<p>A batch of student-facing upgrades to the hub. There is a new free IELTS Band Calculator — turn a raw Listening or Reading score into a band, and work out your overall band from all four skills, for both Academic and General Training, with the correct half-band rounding. I also rebuilt the &#x27;My results&#x27; page into a real progress dashboard: a study streak, a this-week count, and a 30-day practice-activity chart, all built from your own history on the device. And I added six new real-exam Academic Reading tests. Small things, but they are the ones students ask for most.</p>]]></content:encoded>
+    <media:content url="https://maqsudjon.com/og-image.png" medium="image" type="image/png" width="1200" height="630"/>
   </item>
   <item>
     <title>maqsudjon.com — the ASCII is now interactive</title>
     <link>https://maqsudjon.com/log/log-2026-07-02-maqsudjon-com-the-ascii-is-now-i.html</link>
-    <guid>https://maqsudjon.com/log/log-2026-07-02-maqsudjon-com-the-ascii-is-now-i.html</guid>
+    <guid isPermaLink="true">https://maqsudjon.com/log/log-2026-07-02-maqsudjon-com-the-ascii-is-now-i.html</guid>
     <pubDate>Thu, 02 Jul 2026 12:00:00 +0500</pubDate>
-    <description>Quality pass on the new site. The ASCII engine now reacts to you: move the cursor over any ASCII field and the glyphs glow under it; click or tap and a ripple rolls through the characters — including across the F1 video header and the ASCII portrait. The header field drifts with a subtle parallax as you scroll, a hairline progress bar tracks where you are on the page, and every build-log entry now…</description>
-  </item>
-  <item>
-    <title>maqsudjon.com — rebuilt again, this time as a full General Intuition homage</title>
-    <link>https://maqsudjon.com/log/log-2026-07-02-maqsudjon-com-rebuilt-again-this.html</link>
-    <guid>https://maqsudjon.com/log/log-2026-07-02-maqsudjon-com-rebuilt-again-this.html</guid>
-    <pubDate>Thu, 02 Jul 2026 12:00:00 +0500</pubDate>
-    <description>Tore the site down and rebuilt it in the image of generalintuition.com — the frontier lab whose whole visual language is ASCII. Everything is here: the white 1px blueprint grid that frames every section, the giant video-to-ASCII header (my F1 lap footage sampled live into coloured glyphs and tiles), the ASCII Settings panel with working Cell size / Text opacity / Tile opacity sliders, quotes that …</description>
-  </item>
-  <item>
-    <title>maqsudjon.com — projects front and center, a scene switcher, and a secret</title>
-    <link>https://maqsudjon.com/log/log-2026-07-02-maqsudjon-com-projects-front-and.html</link>
-    <guid>https://maqsudjon.com/log/log-2026-07-02-maqsudjon-com-projects-front-and.html</guid>
-    <pubDate>Thu, 02 Jul 2026 12:00:00 +0500</pubDate>
-    <description>Feedback said the projects were blending into the log — fair. They now have their own full-width section: seven builds, numbered like a lab index, set in big display type, the whole row inverting to white on hover. The ASCII Settings panel gained a Scene control — switch the header between the F1 video, FLOW, TORUS, GLOBE, WAVE and RAIN. And there is now a secret: type a certain classic ten-key co…</description>
-  </item>
-  <item>
-    <title>maqsudjon.com — a terminal in the header, count-up stats, mini previews, and a secret you can tap</title>
-    <link>https://maqsudjon.com/log/log-2026-07-02-maqsudjon-com-a-terminal-in-the-.html</link>
-    <guid>https://maqsudjon.com/log/log-2026-07-02-maqsudjon-com-a-terminal-in-the-.html</guid>
-    <pubDate>Thu, 02 Jul 2026 12:00:00 +0500</pubDate>
-    <description>Four more additions in one pass. A tiny terminal now lives in the header — type help and it answers: jump to projects, switch the ASCII scene, open the settings, or fire the glyph storm from the command line. The projects section opens with count-up stats (90+ free tests, 166 speaking topics, 265 tracker tasks, 7 products) that animate the first time they scroll into view. Every project row got a …</description>
-  </item>
-  <item>
-    <title>maqsudjon.com — installable PWA, o&#x27;zbekcha, ASCII snake, and a 404 that rains</title>
-    <link>https://maqsudjon.com/log/log-2026-07-02-maqsudjon-com-installable-pwa-o-.html</link>
-    <guid>https://maqsudjon.com/log/log-2026-07-02-maqsudjon-com-installable-pwa-o-.html</guid>
-    <pubDate>Thu, 02 Jul 2026 12:00:00 +0500</pubDate>
-    <description>The everything pass. The site is now an installable PWA — a service worker caches the shell so it opens offline, and Add to Home Screen gives it the spark icon. There is a language toggle: the O&#x27;Z link in the header (or the uz / en terminal commands) flips all the main content into Uzbek — hero, projects, stats, quotes, contact — while the build log stays English. Type snake in the terminal and th…</description>
+    <dc:creator>Maqsudjon Polatov</dc:creator>
+    <category>Tech</category>
+    <description>Quality pass on the new site. The ASCII engine now reacts to you: move the cursor over any ASCII field and the glyphs glow under it; click or tap and a…</description>
+    <content:encoded><![CDATA[<p>Quality pass on the new site. The ASCII engine now reacts to you: move the cursor over any ASCII field and the glyphs glow under it; click or tap and a ripple rolls through the characters — including across the F1 video header and the ASCII portrait. The header field drifts with a subtle parallax as you scroll, a hairline progress bar tracks where you are on the page, and every build-log entry now has its own deep link, so an expanded post can be shared directly. Also new: a proper Open Graph preview image for shared links, a fresh ASCII weld-spark favicon, and structured data for search.</p>]]></content:encoded>
+    <media:content url="https://maqsudjon.com/og-image.png" medium="image" type="image/png" width="1200" height="630"/>
   </item>
   <item>
     <title>maqsudjon.com — the ASCII engine got 6× faster</title>
     <link>https://maqsudjon.com/log/log-2026-07-02-maqsudjon-com-the-ascii-engine-g.html</link>
-    <guid>https://maqsudjon.com/log/log-2026-07-02-maqsudjon-com-the-ascii-engine-g.html</guid>
+    <guid isPermaLink="true">https://maqsudjon.com/log/log-2026-07-02-maqsudjon-com-the-ascii-engine-g.html</guid>
     <pubDate>Thu, 02 Jul 2026 12:00:00 +0500</pubDate>
-    <description>The site had started to stutter — fair, since every frame was drawing up to thirteen thousand characters one fillText at a time, at double resolution. The engine got a proper performance pass: glyphs now come from a pre-rendered sprite atlas (one drawImage instead of one fillText per cell, with video colours quantised so they fit the atlas), the coloured tile layer is painted as a single pixelated…</description>
+    <dc:creator>Maqsudjon Polatov</dc:creator>
+    <category>Tech</category>
+    <description>The site had started to stutter — fair, since every frame was drawing up to thirteen thousand characters one fillText at a time, at double resolution. The…</description>
+    <content:encoded><![CDATA[<p>The site had started to stutter — fair, since every frame was drawing up to thirteen thousand characters one fillText at a time, at double resolution. The engine got a proper performance pass: glyphs now come from a pre-rendered sprite atlas (one drawImage instead of one fillText per cell, with video colours quantised so they fit the atlas), the coloured tile layer is painted as a single pixelated image instead of thousands of rectangles, resolution is capped where the chunky ASCII look hides it anyway, previews tick at half rate, and the pointer effects skip cells far from the cursor. Best of all, the engine now watches its own frame time — if a device can&#x27;t keep up, it quietly coarsens the grid until it can, and restores full detail when there&#x27;s headroom. Same look, a fraction of the work.</p>]]></content:encoded>
+    <media:content url="https://maqsudjon.com/og-image.png" medium="image" type="image/png" width="1200" height="630"/>
+  </item>
+  <item>
+    <title>maqsudjon.com — rebuilt again, this time as a full General Intuition homage</title>
+    <link>https://maqsudjon.com/log/log-2026-07-02-maqsudjon-com-rebuilt-again-this.html</link>
+    <guid isPermaLink="true">https://maqsudjon.com/log/log-2026-07-02-maqsudjon-com-rebuilt-again-this.html</guid>
+    <pubDate>Thu, 02 Jul 2026 12:00:00 +0500</pubDate>
+    <dc:creator>Maqsudjon Polatov</dc:creator>
+    <category>Tech</category>
+    <description>Tore the site down and rebuilt it in the image of generalintuition.com — the frontier lab whose whole visual language is ASCII. Everything is here: the…</description>
+    <content:encoded><![CDATA[<p>Tore the site down and rebuilt it in the image of generalintuition.com — the frontier lab whose whole visual language is ASCII. Everything is here: the white 1px blueprint grid that frames every section, the giant video-to-ASCII header (my F1 lap footage sampled live into coloured glyphs and tiles), the ASCII Settings panel with working Cell size / Text opacity / Tile opacity sliders, quotes that light up as you scroll, headings that de-scramble from glyph noise, invert-on-hover project tiles, a story modal (Why pangea8), and a white footer highlight card.</p>
+<p>My own touches: the wordmark is a two-line figlet MAQSUDJON rendered in block glyphs, my profile photo is re-rendered as a live ASCII portrait in the contact section, and the Music slider in the settings panel doesn&#x27;t play a hidden track — it plays a tiny ambient synth generated in the browser with the Web Audio API, a nod to Matsumi. Still one self-contained HTML file, vanilla JS, no build step.</p>]]></content:encoded>
+    <media:content url="https://maqsudjon.com/og-image.png" medium="image" type="image/png" width="1200" height="630"/>
+  </item>
+  <item>
+    <title>maqsudjon.com — projects front and center, a scene switcher, and a secret</title>
+    <link>https://maqsudjon.com/log/log-2026-07-02-maqsudjon-com-projects-front-and.html</link>
+    <guid isPermaLink="true">https://maqsudjon.com/log/log-2026-07-02-maqsudjon-com-projects-front-and.html</guid>
+    <pubDate>Thu, 02 Jul 2026 12:00:00 +0500</pubDate>
+    <dc:creator>Maqsudjon Polatov</dc:creator>
+    <category>Tech</category>
+    <description>Feedback said the projects were blending into the log — fair. They now have their own full-width section: seven builds, numbered like a lab index, set in…</description>
+    <content:encoded><![CDATA[<p>Feedback said the projects were blending into the log — fair. They now have their own full-width section: seven builds, numbered like a lab index, set in big display type, the whole row inverting to white on hover. The ASCII Settings panel gained a Scene control — switch the header between the F1 video, FLOW, TORUS, GLOBE, WAVE and RAIN. And there is now a secret: type a certain classic ten-key code anywhere on the page and every ASCII field erupts into a glyph storm, ripples firing everywhere, until you press Escape. A hint lives in the footer.</p>]]></content:encoded>
+    <media:content url="https://maqsudjon.com/og-image.png" medium="image" type="image/png" width="1200" height="630"/>
+  </item>
+  <item>
+    <title>maqsudjon.com — installable PWA, o&#x27;zbekcha, ASCII snake, and a 404 that rains</title>
+    <link>https://maqsudjon.com/log/log-2026-07-02-maqsudjon-com-installable-pwa-o-.html</link>
+    <guid isPermaLink="true">https://maqsudjon.com/log/log-2026-07-02-maqsudjon-com-installable-pwa-o-.html</guid>
+    <pubDate>Thu, 02 Jul 2026 12:00:00 +0500</pubDate>
+    <dc:creator>Maqsudjon Polatov</dc:creator>
+    <category>Tech</category>
+    <description>The everything pass. The site is now an installable PWA — a service worker caches the shell so it opens offline, and Add to Home Screen gives it the spark…</description>
+    <content:encoded><![CDATA[<p>The everything pass. The site is now an installable PWA — a service worker caches the shell so it opens offline, and Add to Home Screen gives it the spark icon. There is a language toggle: the O&#x27;Z link in the header (or the uz / en terminal commands) flips all the main content into Uzbek — hero, projects, stats, quotes, contact — while the build log stays English. Type snake in the terminal and the header canvas becomes a playable ASCII snake — arrow keys, wrap-around walls, score in the toast, Escape to quit. Broken links now land on an ASCII 404 page where matrix rain falls behind a SIGNAL LOST card. And for the search engines: richer Person schema (engineer and creator, with knowsAbout), a sitemap, and an accurate description — so Google learns I build platforms, not only tracks.</p>]]></content:encoded>
+    <media:content url="https://maqsudjon.com/og-image.png" medium="image" type="image/png" width="1200" height="630"/>
+  </item>
+  <item>
+    <title>maqsudjon.com — a terminal in the header, count-up stats, mini previews, and a secret you can tap</title>
+    <link>https://maqsudjon.com/log/log-2026-07-02-maqsudjon-com-a-terminal-in-the-.html</link>
+    <guid isPermaLink="true">https://maqsudjon.com/log/log-2026-07-02-maqsudjon-com-a-terminal-in-the-.html</guid>
+    <pubDate>Thu, 02 Jul 2026 12:00:00 +0500</pubDate>
+    <dc:creator>Maqsudjon Polatov</dc:creator>
+    <category>Tech</category>
+    <description>Four more additions in one pass. A tiny terminal now lives in the header — type help and it answers: jump to projects, switch the ASCII scene, open the…</description>
+    <content:encoded><![CDATA[<p>Four more additions in one pass. A tiny terminal now lives in the header — type help and it answers: jump to projects, switch the ASCII scene, open the settings, or fire the glyph storm from the command line. The projects section opens with count-up stats (90+ free tests, 166 speaking topics, 265 tracker tasks, 7 products) that animate the first time they scroll into view. Every project row got a live mini ASCII preview — a little globe for pangea8, a waveform for Speaking, my actual photo for the ID tool — which invert along with the row on hover. And the Konami secret is fixed and fairer: it now reads physical keys (so it works on any keyboard layout), and on the phone you can simply tap the ↑↑↓↓←→←→BA hint in the footer to unleash the storm.</p>]]></content:encoded>
+    <media:content url="https://maqsudjon.com/og-image.png" medium="image" type="image/png" width="1200" height="630"/>
   </item>
   <item>
     <title>maqsudjon.com — a real CV, case studies for every project, and a stack of polish</title>
     <link>https://maqsudjon.com/log/log-2026-07-02-maqsudjon-com-a-real-cv-case-stu.html</link>
-    <guid>https://maqsudjon.com/log/log-2026-07-02-maqsudjon-com-a-real-cv-case-stu.html</guid>
+    <guid isPermaLink="true">https://maqsudjon.com/log/log-2026-07-02-maqsudjon-com-a-real-cv-case-stu.html</guid>
     <pubDate>Thu, 02 Jul 2026 12:00:00 +0500</pubDate>
-    <description>The professional pass. There is now a proper one-page CV at /cv.pdf — generated from HTML in the site&#x27;s own type system, with the projects, the skills, the welding and electrician background, and the Trucking MBA logistics certificate (First Class Honours) that now also lives on the site. Every project row gained a CASE STUDY link that opens a full write-up in the modal, with a Visit live button. …</description>
+    <dc:creator>Maqsudjon Polatov</dc:creator>
+    <category>Tech</category>
+    <description>The professional pass. There is now a proper one-page CV at /cv.pdf — generated from HTML in the site&#x27;s own type system, with the projects, the skills,…</description>
+    <content:encoded><![CDATA[<p>The professional pass. There is now a proper one-page CV at /cv.pdf — generated from HTML in the site&#x27;s own type system, with the projects, the skills, the welding and electrician background, and the Trucking MBA logistics certificate (First Class Honours) that now also lives on the site. Every project row gained a CASE STUDY link that opens a full write-up in the modal, with a Visit live button. The terminal learned cv, cert and now, plus command history and tab completion. Log entries have a copy-link button, snake keeps your best score, and the F1 video now pauses when the header is offscreen and respects data-saver mode — kinder to batteries and data plans. Plus keyboard accessibility: visible focus rings and a skip-to-content link.</p>]]></content:encoded>
+    <media:content url="https://maqsudjon.com/og-image.png" medium="image" type="image/png" width="1200" height="630"/>
   </item>
   <item>
     <title>maqsudjon.com — rebuilt to match a frontier-lab look, with a full-screen colour ASCII engine</title>
     <link>https://maqsudjon.com/log/log-2026-06-29-maqsudjon-com-rebuilt-to-match-a.html</link>
-    <guid>https://maqsudjon.com/log/log-2026-06-29-maqsudjon-com-rebuilt-to-match-a.html</guid>
+    <guid isPermaLink="true">https://maqsudjon.com/log/log-2026-06-29-maqsudjon-com-rebuilt-to-match-a.html</guid>
     <pubDate>Mon, 29 Jun 2026 12:00:00 +0500</pubDate>
-    <description>Rebuilt the site to echo the look of a frontier research lab: pure black, clean Geist type, blueprint guide lines, and a hero statement set in a solid white card over a full-bleed, real-time colour ASCII engine. The ASCII fills the whole screen with a dense, flowing colour field and cycles through scenes on its own — FLOW, a rotating GLOBE, a spinning TORUS, a music WAVE, and matrix RAIN — every g…</description>
+    <dc:creator>Maqsudjon Polatov</dc:creator>
+    <category>Tech</category>
+    <description>Rebuilt the site to echo the look of a frontier research lab: pure black, clean Geist type, blueprint guide lines, and a hero statement set in a solid…</description>
+    <content:encoded><![CDATA[<p>Rebuilt the site to echo the look of a frontier research lab: pure black, clean Geist type, blueprint guide lines, and a hero statement set in a solid white card over a full-bleed, real-time colour ASCII engine. The ASCII fills the whole screen with a dense, flowing colour field and cycles through scenes on its own — FLOW, a rotating GLOBE, a spinning TORUS, a music WAVE, and matrix RAIN — every glyph tinted from a navy → teal → mint → peach → coral gradient, with scene tabs and a live Tashkent clock. New hexagon-mark logo, drawn from scratch. Same content, a far sharper identity.</p>]]></content:encoded>
+    <media:content url="https://maqsudjon.com/og-image.png" medium="image" type="image/png" width="1200" height="630"/>
   </item>
   <item>
     <title>pangea8 Speaking — a live IELTS Speaking lab, shipped</title>
     <link>https://maqsudjon.com/log/log-2026-06-22-pangea8-speaking-a-live-ielts-sp.html</link>
-    <guid>https://maqsudjon.com/log/log-2026-06-22-pangea8-speaking-a-live-ielts-sp.html</guid>
+    <guid isPermaLink="true">https://maqsudjon.com/log/log-2026-06-22-pangea8-speaking-a-live-ielts-sp.html</guid>
     <pubDate>Mon, 22 Jun 2026 12:00:00 +0500</pubDate>
-    <description>Built and shipped pangea8 Speaking — a full IELTS Speaking practice platform where students record their answers right in the browser and teachers listen back and leave feedback. It&#x27;s the speaking half of the pangea8 ecosystem, sitting alongside the essay platform and the test hub.  It opens with the whole official Jan–Apr 2026 question bank already loaded — 166 topics across Part 1, Part 2 and Pa…</description>
+    <dc:creator>Maqsudjon Polatov</dc:creator>
+    <category>Tech</category>
+    <description>Built and shipped pangea8 Speaking — a full IELTS Speaking practice platform where students record their answers right in the browser and teachers listen…</description>
+    <content:encoded><![CDATA[<p>Built and shipped pangea8 Speaking — a full IELTS Speaking practice platform where students record their answers right in the browser and teachers listen back and leave feedback. It&#x27;s the speaking half of the pangea8 ecosystem, sitting alongside the essay platform and the test hub.</p>
+<p>It opens with the whole official Jan–Apr 2026 question bank already loaded — 166 topics across Part 1, Part 2 and Part 3, every question numbered exactly like the real exam. A student picks a topic, taps record, and the audio uploads so I can review it later. Recordings are tiny, so a whole class can practise for months on the free tier.</p>
+<p>The small details are what make it usable. Before recording, a student chooses which of the topic&#x27;s questions they&#x27;re answering, so I always know exactly what they spoke about. There&#x27;s a live search across both questions and student names, a one-tap light/dark theme that&#x27;s remembered, and per-answer feedback — I can leave a band score and notes, and classmates can leave peer feedback too.</p>
+<p>Under the hood it&#x27;s one self-contained file: Firebase for the questions and feedback, Supabase Storage for the audio, vanilla JS, no build step. I made it fast with an in-memory cache and a cache-first first paint, debounced search, and an indexed answer lookup so it stays smooth as answers pile up. Deleting an answer now also frees its audio file automatically. Live, and already added to the hub.</p>]]></content:encoded>
+    <media:content url="https://maqsudjon.com/og-image.png" medium="image" type="image/png" width="1200" height="630"/>
   </item>
   <item>
     <title>pierics.com — a Wordle clone, shipped</title>
     <link>https://maqsudjon.com/log/log-2026-06-20-pierics-com-a-wordle-clone-shipp.html</link>
-    <guid>https://maqsudjon.com/log/log-2026-06-20-pierics-com-a-wordle-clone-shipp.html</guid>
+    <guid isPermaLink="true">https://maqsudjon.com/log/log-2026-06-20-pierics-com-a-wordle-clone-shipp.html</guid>
     <pubDate>Sat, 20 Jun 2026 12:00:00 +0500</pubDate>
-    <description>New side project is live: pierics.com, my own take on Wordle. Guess the hidden word in six tries — type a guess, and each tile flips to tell you what&#x27;s right: green for the correct letter in the correct spot, yellow for a letter that&#x27;s in the word but somewhere else, grey for one that isn&#x27;t there at all.  It&#x27;s the kind of build I love — a small, self-contained game with tight rules and instant fee…</description>
+    <dc:creator>Maqsudjon Polatov</dc:creator>
+    <category>Tech</category>
+    <description>New side project is live: pierics.com, my own take on Wordle. Guess the hidden word in six tries — type a guess, and each tile flips to tell you what&#x27;s…</description>
+    <content:encoded><![CDATA[<p>New side project is live: pierics.com, my own take on Wordle. Guess the hidden word in six tries — type a guess, and each tile flips to tell you what&#x27;s right: green for the correct letter in the correct spot, yellow for a letter that&#x27;s in the word but somewhere else, grey for one that isn&#x27;t there at all.</p>
+<p>It&#x27;s the kind of build I love — a small, self-contained game with tight rules and instant feedback, the whole thing running in the browser on its own domain. Quick to pick up, hard to put down. Go break your streak: pierics.com.</p>]]></content:encoded>
+    <media:content url="https://maqsudjon.com/og-image.png" medium="image" type="image/png" width="1200" height="630"/>
   </item>
   <item>
     <title>Pangeya Essay Platform — rebuilt from scratch in a Nothing style</title>
     <link>https://maqsudjon.com/log/log-2026-06-20-pangeya-essay-platform-rebuilt-f.html</link>
-    <guid>https://maqsudjon.com/log/log-2026-06-20-pangeya-essay-platform-rebuilt-f.html</guid>
+    <guid isPermaLink="true">https://maqsudjon.com/log/log-2026-06-20-pangeya-essay-platform-rebuilt-f.html</guid>
     <pubDate>Sat, 20 Jun 2026 12:00:00 +0500</pubDate>
-    <description>Took the IELTS essay platform apart and rebuilt the whole thing in a monochrome, dot-matrix style inspired by Nothing — pure black, a red accent, mono type, a live particle field, and a dot-matrix &quot;WRITING LAB&quot; wordmark with a blinking cursor. Same tool, a completely sharper identity.  Every feature survived the rebuild and a few got better. Pangeya AI now lives in a floating button you can open f…</description>
+    <dc:creator>Maqsudjon Polatov</dc:creator>
+    <category>Tech</category>
+    <description>Took the IELTS essay platform apart and rebuilt the whole thing in a monochrome, dot-matrix style inspired by Nothing — pure black, a red accent, mono…</description>
+    <content:encoded><![CDATA[<p>Took the IELTS essay platform apart and rebuilt the whole thing in a monochrome, dot-matrix style inspired by Nothing — pure black, a red accent, mono type, a live particle field, and a dot-matrix &quot;WRITING LAB&quot; wordmark with a blinking cursor. Same tool, a completely sharper identity.</p>
+<p>Every feature survived the rebuild and a few got better. Pangeya AI now lives in a floating button you can open from anywhere instead of being buried at the bottom of the page — it slides up as a panel on desktop and a bottom sheet on phones. AI band-score feedback on each essay stays collapsed until you ask for it, so long feedback no longer clutters the list.</p>
+<p>Under the hood I made submitting, deleting, and switching to teacher mode instant by rendering from an in-memory cache instead of re-reading the whole database every time. I also disabled spellcheck, autocorrect, and grammar underlines in the editor so students write a fair exam with no hints, and added a proper branded PDF export — every essay downloads with the Pangeya mark, the candidate&#x27;s details, word count, and any teacher feedback, designed to look clean in both colour and black-and-white.</p>
+<p>There&#x27;s a new favicon to match, and the whole thing ships as a single self-contained file.</p>]]></content:encoded>
+    <media:content url="https://maqsudjon.com/og-image.png" medium="image" type="image/png" width="1200" height="630"/>
   </item>
   <item>
     <title>Pangeya Essay Platform — faster, with a focus mode</title>
     <link>https://maqsudjon.com/log/log-2026-06-19-pangeya-essay-platform-faster-wi.html</link>
-    <guid>https://maqsudjon.com/log/log-2026-06-19-pangeya-essay-platform-faster-wi.html</guid>
+    <guid isPermaLink="true">https://maqsudjon.com/log/log-2026-06-19-pangeya-essay-platform-faster-wi.html</guid>
     <pubDate>Fri, 19 Jun 2026 12:00:00 +0500</pubDate>
-    <description>Gave the IELTS essay platform a speed and UX pass. Old essays were loading slowly because the app re-read the entire Firebase collection on every action — even on every keystroke in the search box. Now it loads once, caches in memory, and search filters instantly without touching the network.  On the writing side: the word count is now large and colour-coded — amber while you&#x27;re under the IELTS mi…</description>
+    <dc:creator>Maqsudjon Polatov</dc:creator>
+    <category>Tech</category>
+    <description>Gave the IELTS essay platform a speed and UX pass. Old essays were loading slowly because the app re-read the entire Firebase collection on every action —…</description>
+    <content:encoded><![CDATA[<p>Gave the IELTS essay platform a speed and UX pass. Old essays were loading slowly because the app re-read the entire Firebase collection on every action — even on every keystroke in the search box. Now it loads once, caches in memory, and search filters instantly without touching the network.</p>
+<p>On the writing side: the word count is now large and colour-coded — amber while you&#x27;re under the IELTS minimum, green once you hit it, with an &#x27;X words to go&#x27; hint. I added a Focus mode that hides everything but the editor, timer and word count, a timer that pulses and beeps in the final minute like a real exam, and cleaner essay cards that show a word-count badge, a feedback marker, and collapse long essays. Search now also tells you when nothing matches instead of going blank.</p>]]></content:encoded>
+    <media:content url="https://maqsudjon.com/og-image.png" medium="image" type="image/png" width="1200" height="630"/>
   </item>
   <item>
     <title>pierics.com — polishing the Wordle clone</title>
     <link>https://maqsudjon.com/log/log-2026-06-18-pierics-com-polishing-the-wordle.html</link>
-    <guid>https://maqsudjon.com/log/log-2026-06-18-pierics-com-polishing-the-wordle.html</guid>
+    <guid isPermaLink="true">https://maqsudjon.com/log/log-2026-06-18-pierics-com-polishing-the-wordle.html</guid>
     <pubDate>Thu, 18 Jun 2026 12:00:00 +0500</pubDate>
-    <description>Spent a session refining pierics.com, my Wordle clone. Rebranded it from its working name to Pierics, wired up the pierics.com custom domain, and made the keyboard keys much bigger and more tap-friendly on phones.  The word list got real attention too: I swapped out every word that wasn&#x27;t exactly five letters, added around 80 common five-letter words — plurals and verbs — to the list of allowed gu…</description>
+    <dc:creator>Maqsudjon Polatov</dc:creator>
+    <category>Tech</category>
+    <description>Spent a session refining pierics.com, my Wordle clone. Rebranded it from its working name to Pierics, wired up the pierics.com custom domain, and made the…</description>
+    <content:encoded><![CDATA[<p>Spent a session refining pierics.com, my Wordle clone. Rebranded it from its working name to Pierics, wired up the pierics.com custom domain, and made the keyboard keys much bigger and more tap-friendly on phones.</p>
+<p>The word list got real attention too: I swapped out every word that wasn&#x27;t exactly five letters, added around 80 common five-letter words — plurals and verbs — to the list of allowed guesses, and ended up with a clean set of 128 answer words. Small game, but the details are what make it feel right.</p>]]></content:encoded>
+    <media:content url="https://maqsudjon.com/og-image.png" medium="image" type="image/png" width="1200" height="630"/>
   </item>
   <item>
     <title>explainer-engine — a branded video generator, built from scratch</title>
     <link>https://maqsudjon.com/log/log-2026-06-17-explainer-engine-a-branded-video.html</link>
-    <guid>https://maqsudjon.com/log/log-2026-06-17-explainer-engine-a-branded-video.html</guid>
+    <guid isPermaLink="true">https://maqsudjon.com/log/log-2026-06-17-explainer-engine-a-branded-video.html</guid>
     <pubDate>Wed, 17 Jun 2026 12:00:00 +0500</pubDate>
-    <description>This week&#x27;s big build: explainer-engine, a tool that turns a topic into a fully branded, narration-free explainer video — kinetic text, data visualisations, glowing spheres, network graphs, all in the pangea8 neon-mint style, with its own generated soundtrack. No footage, no voiceover, no editing: it renders everything from code into an MP4.  It grew into a proper desktop app over a few days. You …</description>
+    <dc:creator>Maqsudjon Polatov</dc:creator>
+    <category>Tech</category>
+    <description>This week&#x27;s big build: explainer-engine, a tool that turns a topic into a fully branded, narration-free explainer video — kinetic text, data…</description>
+    <content:encoded><![CDATA[<p>This week&#x27;s big build: explainer-engine, a tool that turns a topic into a fully branded, narration-free explainer video — kinetic text, data visualisations, glowing spheres, network graphs, all in the pangea8 neon-mint style, with its own generated soundtrack. No footage, no voiceover, no editing: it renders everything from code into an MP4.</p>
+<p>It grew into a proper desktop app over a few days. You describe an idea in a chatbot-style interface and it writes a spec, then renders the video locally on your machine. I added a Templates mode so it runs without an API key, parallel multi-core rendering for speed, a Draft quality option, and a Full/Draft selector.</p>
+<p>The soundtrack engine was the most fun part. Instead of one repetitive loop, it now has six mood palettes — emotional, uplifting, cosmic, driving, tense, playful — each with its own chords and tempo, auto-picked from the topic, in a Fred again..-ish style. I also cleaned up the audio so there&#x27;s no hiss and no clipping.</p>
+<p>Then the real-world fixes: Uzbek text was overflowing the frame, so I made every text block auto-scale and wrap; added an EN/UZ language toggle so the whole video renders in the chosen language; fixed Safari downloads; and — after one render ran for a full day and filled the disk — capped video length and made the whole pipeline fail safely instead of crashing.</p>]]></content:encoded>
+    <media:content url="https://maqsudjon.com/og-image.png" medium="image" type="image/png" width="1200" height="630"/>
   </item>
   <item>
     <title>maqsudjon.com — rebuilt in a Nothing-inspired style</title>
     <link>https://maqsudjon.com/log/log-2026-06-16-maqsudjon-com-rebuilt-in-a-nothi.html</link>
-    <guid>https://maqsudjon.com/log/log-2026-06-16-maqsudjon-com-rebuilt-in-a-nothi.html</guid>
+    <guid isPermaLink="true">https://maqsudjon.com/log/log-2026-06-16-maqsudjon-com-rebuilt-in-a-nothi.html</guid>
     <pubDate>Tue, 16 Jun 2026 12:00:00 +0500</pubDate>
-    <description>Redesigned this site from the ground up in a monochrome, dot-matrix style inspired by Nothing — pure black, a dotted-LED texture, a signature red accent, and a mono type treatment throughout. The work and updates are laid out on a hairline grid, with a live Tashkent clock and an expandable log. Same content, a much sharper identity.…</description>
+    <dc:creator>Maqsudjon Polatov</dc:creator>
+    <category>Tech</category>
+    <description>Redesigned this site from the ground up in a monochrome, dot-matrix style inspired by Nothing — pure black, a dotted-LED texture, a signature red accent,…</description>
+    <content:encoded><![CDATA[<p>Redesigned this site from the ground up in a monochrome, dot-matrix style inspired by Nothing — pure black, a dotted-LED texture, a signature red accent, and a mono type treatment throughout. The work and updates are laid out on a hairline grid, with a live Tashkent clock and an expandable log. Same content, a much sharper identity.</p>]]></content:encoded>
+    <media:content url="https://maqsudjon.com/og-image.png" medium="image" type="image/png" width="1200" height="630"/>
   </item>
   <item>
     <title>flarestamina.com — all-new landing page, built end to end</title>
     <link>https://maqsudjon.com/log/log-2026-06-12-pangea8-com-all-new-landing-page.html</link>
-    <guid>https://maqsudjon.com/log/log-2026-06-12-pangea8-com-all-new-landing-page.html</guid>
+    <guid isPermaLink="true">https://maqsudjon.com/log/log-2026-06-12-pangea8-com-all-new-landing-page.html</guid>
     <pubDate>Fri, 12 Jun 2026 12:00:00 +0500</pubDate>
-    <description>flarestamina.com has a real face now. Until today the domain pointed straight at the test hub — functional, but it never told anyone what Pangea8 is. Today I shipped a full landing page and moved the hub to its own address (flarestamina.com/ielts-hub). The Start practicing button drops you straight into the tests.  The origin story is funny: I saw one of those viral &quot;can you believe Claude did …</description>
+    <dc:creator>Maqsudjon Polatov</dc:creator>
+    <category>Tech</category>
+    <description>flarestamina.com has a real face now. Until today the domain pointed straight at the test hub — functional, but it never told anyone what Pangea8 is. Today I…</description>
+    <content:encoded><![CDATA[<p>flarestamina.com has a real face now. Until today the domain pointed straight at the test hub — functional, but it never told anyone what Pangea8 is. Today I shipped a full landing page and moved the hub to its own address (flarestamina.com/ielts-hub). The Start practicing button drops you straight into the tests.</p>
+<p>The origin story is funny: I saw one of those viral &quot;can you believe Claude did this&quot; reels on Instagram and decided pangea8 deserved the same energy. The design went through three full iterations in one session with Claude. Version one was a cinematic renaissance museum — gold frames, Vermeer paintings, a rotating wax seal. Beautiful, but too luxury for an IELTS platform. Version two swung the other way: cream-and-coral minimalism. Clean, but boring and not our colors. Version three landed it: dark hi-tech in pangea8&#x27;s own emerald, Linear/Vercel energy.</p>
+<p>The hero is the heart of it. Aurora glow blobs drift behind an animated grid, the headline &quot;Band 7.5 &amp; beyond&quot; decodes with a matrix-style scramble, and the centerpiece is a glass mock of the actual hub — browser chrome, search bar, filter pills, and a 3-column grid of real test cards (Mock Listening 76, CDI Reading 4...).</p>
+<p>And the mock is alive. The search bar types by itself — &quot;listening&quot;, then &quot;reading&quot; — the filter pills switch on their own, and the test cards dim and highlight to match, like someone is using the product right in front of you. A green tracer light runs around the card border, and on desktop the whole thing tilts in 3D as your cursor moves.</p>
+<p>Then there&#x27;s the ambient layer, my favorite part. Meteors streak across the hero every twenty-something seconds — and if you tap anywhere on the hero, a meteor fires from exactly where you touched. There are 38 twinkling stars, random grid cells that pulse green, and embers rising through the final CTA. Light mode gets its own character instead of just recoloring: the stars become soft green sparkles, meteors turn into deep-green comets, and floating ring-and-plus shapes drift around that only exist in light mode.</p>
+<p>The theme system does both: it follows your device setting automatically, and a moon/sun toggle in the nav lets you override it — your choice is remembered, with zero flash on page load.</p>
+<p>Sign-in is live too. Google auth through Firebase, and once you&#x27;re signed in, Start practicing jumps you to the hub instantly — same tab, preconnected, prefetched. If the sign-in popup fails or you close it, you still go straight to the tests. Practice is never blocked. I also deferred the Firebase SDK so the page paints and animates instantly even on slow connections — the SDK loads in the background and attaches auth when it&#x27;s ready.</p>
+<p>Under the hood it&#x27;s one 58KB HTML file. No frameworks, no build step — vanilla CSS and JS, Google Fonts, and Firebase over CDN. Spotlight hover cards, magnetic buttons, count-up stats, an animated band-score gauge, a scroll progress bar, a real favicon set (Google Search needs actual files, not data URIs), and a proper OG image for link previews.</p>
+<p>The last piece was the domain migration. flarestamina.com moved from the hub repo to the landing repo — before flipping it I checked every one of the 92 test links to make sure nothing would break (they all point to their own github.io pages, so nothing did). The hub now lives at flarestamina.com/ielts-hub and the brand finally lives at flarestamina.com.</p>
+<p>Next up: pushing past 100 tests. The landing already says 100+ — now I have to catch up to my own marketing.</p>]]></content:encoded>
+    <media:content url="https://maqsudjon.com/og-image.png" medium="image" type="image/png" width="1200" height="630"/>
   </item>
   <item>
     <title>ID &amp; Passport Photo Maker — a free browser tool</title>
     <link>https://maqsudjon.com/log/log-2026-06-08-id-passport-photo-maker-a-free-b.html</link>
-    <guid>https://maqsudjon.com/log/log-2026-06-08-id-passport-photo-maker-a-free-b.html</guid>
+    <guid isPermaLink="true">https://maqsudjon.com/log/log-2026-06-08-id-passport-photo-maker-a-free-b.html</guid>
     <pubDate>Mon, 08 Jun 2026 12:00:00 +0500</pubDate>
-    <description>Shipped a small but genuinely useful tool: a free browser app that crops and resizes any photo to exact passport, visa, and ID dimensions without losing quality. Everything runs on-device — your photo never leaves your phone or laptop.  You drop in a picture, pick a size, and it gives you a print-ready photo. There&#x27;s also an on-device AI step that turns the background white, which is what most doc…</description>
+    <dc:creator>Maqsudjon Polatov</dc:creator>
+    <category>Tech</category>
+    <description>Shipped a small but genuinely useful tool: a free browser app that crops and resizes any photo to exact passport, visa, and ID dimensions without losing…</description>
+    <content:encoded><![CDATA[<p>Shipped a small but genuinely useful tool: a free browser app that crops and resizes any photo to exact passport, visa, and ID dimensions without losing quality. Everything runs on-device — your photo never leaves your phone or laptop.</p>
+<p>You drop in a picture, pick a size, and it gives you a print-ready photo. There&#x27;s also an on-device AI step that turns the background white, which is what most document photos require. No upload, no server, no sign-in — 100% client-side. Open it and go.</p>]]></content:encoded>
+    <media:content url="https://maqsudjon.com/og-image.png" medium="image" type="image/png" width="1200" height="630"/>
   </item>
   <item>
     <title>IELTS Hub — 10 CDI Reading tests now live</title>
     <link>https://maqsudjon.com/log/log-2026-06-07-ielts-hub-10-cdi-reading-tests-n.html</link>
-    <guid>https://maqsudjon.com/log/log-2026-06-07-ielts-hub-10-cdi-reading-tests-n.html</guid>
+    <guid isPermaLink="true">https://maqsudjon.com/log/log-2026-06-07-ielts-hub-10-cdi-reading-tests-n.html</guid>
     <pubDate>Sun, 07 Jun 2026 12:00:00 +0500</pubDate>
-    <description>Added 6 more full Academic reading tests to the IELTS Hub (flarestamina.com), bringing the total to 10 CDI Reading tests. CDI Reading 5 through CDI Reading 10 are now live alongside the earlier CDI 1 through 4.  Each test has 3 passages, 40 questions, and a 60-minute timer with instant scoring and answer checking. The hub now offers 16 reading tests total.  All built with vanilla HTML/CSS/JS, each runn…</description>
+    <dc:creator>Maqsudjon Polatov</dc:creator>
+    <category>IELTS</category>
+    <description>Added 6 more full Academic reading tests to the IELTS Hub (flarestamina.com), bringing the total to 10 CDI Reading tests. CDI Reading 5 through CDI Reading 10…</description>
+    <content:encoded><![CDATA[<p>Added 6 more full Academic reading tests to the IELTS Hub (flarestamina.com), bringing the total to 10 CDI Reading tests. CDI Reading 5 through CDI Reading 10 are now live alongside the earlier CDI 1 through 4.</p>
+<p>Each test has 3 passages, 40 questions, and a 60-minute timer with instant scoring and answer checking. The hub now offers 16 reading tests total.</p>
+<p>All built with vanilla HTML/CSS/JS, each running as its own standalone page.</p>]]></content:encoded>
+    <media:content url="https://maqsudjon.com/og-image.png" medium="image" type="image/png" width="1200" height="630"/>
   </item>
   <item>
     <title>Flarestamina — 40-Day IELTS Challenge tracker is live</title>
     <link>https://maqsudjon.com/log/log-2026-06-07-flarestamina-40-day-ielts-challe.html</link>
-    <guid>https://maqsudjon.com/log/log-2026-06-07-flarestamina-40-day-ielts-challe.html</guid>
+    <guid isPermaLink="true">https://maqsudjon.com/log/log-2026-06-07-flarestamina-40-day-ielts-challe.html</guid>
     <pubDate>Sun, 07 Jun 2026 12:00:00 +0500</pubDate>
-    <description>I launched Flarestamina (flarestamina.com) — a complete 40-Day IELTS Challenge tracker covering all four skills: Listening, Reading, Writing, and Speaking across 38 active days with 265 tasks. Users sign in with Google, check off tasks daily, and their progress auto-saves and syncs across devices in real time. The tracker includes a progress ring, a streak heatmap, and a class leaderboard.  I also…</description>
+    <dc:creator>Maqsudjon Polatov</dc:creator>
+    <category>Tech</category>
+    <description>I launched Flarestamina (flarestamina.com) — a complete 40-Day IELTS Challenge tracker covering all four skills: Listening, Reading, Writing, and Speaking…</description>
+    <content:encoded><![CDATA[<p>I launched Flarestamina (flarestamina.com) — a complete 40-Day IELTS Challenge tracker covering all four skills: Listening, Reading, Writing, and Speaking across 38 active days with 265 tasks. Users sign in with Google, check off tasks daily, and their progress auto-saves and syncs across devices in real time. The tracker includes a progress ring, a streak heatmap, and a class leaderboard.</p>
+<p>I also built a gated Teacher Dashboard that lets me add or remove days from the plan, view individual student progress, and track the leaderboard. The whole thing runs on vanilla HTML/CSS/JS with Firebase v10 (Auth + Firestore) loaded over CDN — no frameworks, no build step. Deployed to GitHub Pages with a custom domain at flarestamina.com.</p>
+<p>This is the first product I&#x27;ve shipped that other people can actually use to study. Building it taught me a lot about Firebase security rules, real-time sync, and shipping something that just works.</p>]]></content:encoded>
+    <media:content url="https://maqsudjon.com/og-image.png" medium="image" type="image/png" width="1200" height="630"/>
   </item>
   <item>
     <title>Pangeya Essay Platform — full overhaul</title>
     <link>https://maqsudjon.com/log/log-2026-06-03-pangeya-essay-platform-full-over.html</link>
-    <guid>https://maqsudjon.com/log/log-2026-06-03-pangeya-essay-platform-full-over.html</guid>
+    <guid isPermaLink="true">https://maqsudjon.com/log/log-2026-06-03-pangeya-essay-platform-full-over.html</guid>
     <pubDate>Wed, 03 Jun 2026 12:00:00 +0500</pubDate>
-    <description>Today I shipped a major update to the Pangeya Essay Platform. The goal was to make it faster, safer, and more solid all around.  The biggest change is a real-time onSnapshot listener. Essays now show up instantly after you submit, edit, or delete them — no more waiting around for a full Firestore re-query.  On the security side, I added XSS sanitization, so essay content is now cleaned before it&#x27;s…</description>
+    <dc:creator>Maqsudjon Polatov</dc:creator>
+    <category>Tech</category>
+    <description>Today I shipped a major update to the Pangeya Essay Platform. The goal was to make it faster, safer, and more solid all around. The biggest change is a…</description>
+    <content:encoded><![CDATA[<p>Today I shipped a major update to the Pangeya Essay Platform. The goal was to make it faster, safer, and more solid all around.</p>
+<p>The biggest change is a real-time onSnapshot listener. Essays now show up instantly after you submit, edit, or delete them — no more waiting around for a full Firestore re-query.</p>
+<p>On the security side, I added XSS sanitization, so essay content is now cleaned before it&#x27;s rendered to the screen.</p>
+<p>I also fixed a handful of bugs: duplicate submissions are now prevented, the negative credits issue is resolved, duplicate functions were removed, and stale renderEssays() calls got cleaned up.</p>
+<p>For accessibility, I added aria roles, the Escape key now closes modals, and Ctrl+Enter submits.</p>
+<p>And finally, some visual polish: a favicon was added, along with a few responsive refinements.</p>
+<p>Live at flarestamina.com/pangeya-essay-platform-/index-14.html and flarestamina.com</p>]]></content:encoded>
+    <media:content url="https://maqsudjon.com/og-image.png" medium="image" type="image/png" width="1200" height="630"/>
   </item>
   <item>
     <title>IELTS Hub — 73 listening tests</title>
     <link>https://maqsudjon.com/log/log-2026-05-29-ielts-hub-73-listening-tests.html</link>
-    <guid>https://maqsudjon.com/log/log-2026-05-29-ielts-hub-73-listening-tests.html</guid>
+    <guid isPermaLink="true">https://maqsudjon.com/log/log-2026-05-29-ielts-hub-73-listening-tests.html</guid>
     <pubDate>Fri, 29 May 2026 12:00:00 +0500</pubDate>
-    <description>Big update today! Added 35 new Diyorbek listening tests — Tests 41 through 76. That brings the total to 73 listening tests on the platform. Each test has 40 questions, full audio, and instant scoring. Check them out at flarestamina.com…</description>
+    <dc:creator>Maqsudjon Polatov</dc:creator>
+    <category>IELTS</category>
+    <description>Big update today! Added 35 new Diyorbek listening tests — Tests 41 through 76. That brings the total to 73 listening tests on the platform. Each test has…</description>
+    <content:encoded><![CDATA[<p>Big update today! Added 35 new Diyorbek listening tests — Tests 41 through 76. That brings the total to 73 listening tests on the platform. Each test has 40 questions, full audio, and instant scoring. Check them out at flarestamina.com</p>]]></content:encoded>
+    <media:content url="https://maqsudjon.com/og-image.png" medium="image" type="image/png" width="1200" height="630"/>
   </item>
   <item>
     <title>IELTS Hub — 59 listening tests</title>
     <link>https://maqsudjon.com/log/log-2026-05-29-ielts-hub-59-listening-tests.html</link>
-    <guid>https://maqsudjon.com/log/log-2026-05-29-ielts-hub-59-listening-tests.html</guid>
+    <guid isPermaLink="true">https://maqsudjon.com/log/log-2026-05-29-ielts-hub-59-listening-tests.html</guid>
     <pubDate>Fri, 29 May 2026 12:00:00 +0500</pubDate>
-    <description>Added 8 more Diyorbek listening tests — Tests 56 through 63. Fixed test ordering, added share buttons, and fixed Test 12 URL. Now at 59 total listening tests on the hub. Full audio, instant scoring, all on flarestamina.com.…</description>
+    <dc:creator>Maqsudjon Polatov</dc:creator>
+    <category>IELTS</category>
+    <description>Added 8 more Diyorbek listening tests — Tests 56 through 63. Fixed test ordering, added share buttons, and fixed Test 12 URL. Now at 59 total listening…</description>
+    <content:encoded><![CDATA[<p>Added 8 more Diyorbek listening tests — Tests 56 through 63. Fixed test ordering, added share buttons, and fixed Test 12 URL. Now at 59 total listening tests on the hub. Full audio, instant scoring, all on flarestamina.com.</p>]]></content:encoded>
+    <media:content url="https://maqsudjon.com/og-image.png" medium="image" type="image/png" width="1200" height="630"/>
   </item>
   <item>
     <title>IELTS Hub — 51 listening tests</title>
     <link>https://maqsudjon.com/log/log-2026-05-29-ielts-hub-51-listening-tests.html</link>
-    <guid>https://maqsudjon.com/log/log-2026-05-29-ielts-hub-51-listening-tests.html</guid>
+    <guid isPermaLink="true">https://maqsudjon.com/log/log-2026-05-29-ielts-hub-51-listening-tests.html</guid>
     <pubDate>Fri, 29 May 2026 12:00:00 +0500</pubDate>
-    <description>Added 9 more Diyorbek listening tests — Tests 46 through 55 (except 49). Now at 51 total listening tests on the platform. Full audio, instant scoring, all on flarestamina.com.…</description>
-  </item>
-  <item>
-    <title>IELTS Hub — 10 new tests (31–40)</title>
-    <link>https://maqsudjon.com/log/log-2026-05-28-ielts-hub-10-new-tests-31-40.html</link>
-    <guid>https://maqsudjon.com/log/log-2026-05-28-ielts-hub-10-new-tests-31-40.html</guid>
-    <pubDate>Thu, 28 May 2026 12:00:00 +0500</pubDate>
-    <description>Added 10 new Diyorbek listening tests to the hub today — Tests 31 through 40. That brings the total to 37 listening tests on the platform. Each test has 40 questions, full audio, and instant scoring.  Check them out at flarestamina.com…</description>
+    <dc:creator>Maqsudjon Polatov</dc:creator>
+    <category>IELTS</category>
+    <description>Added 9 more Diyorbek listening tests — Tests 46 through 55 (except 49). Now at 51 total listening tests on the platform. Full audio, instant scoring, all…</description>
+    <content:encoded><![CDATA[<p>Added 9 more Diyorbek listening tests — Tests 46 through 55 (except 49). Now at 51 total listening tests on the platform. Full audio, instant scoring, all on flarestamina.com.</p>]]></content:encoded>
+    <media:content url="https://maqsudjon.com/og-image.png" medium="image" type="image/png" width="1200" height="630"/>
   </item>
   <item>
     <title>IELTS Hub — 42 listening tests</title>
     <link>https://maqsudjon.com/log/log-2026-05-28-ielts-hub-42-listening-tests.html</link>
-    <guid>https://maqsudjon.com/log/log-2026-05-28-ielts-hub-42-listening-tests.html</guid>
+    <guid isPermaLink="true">https://maqsudjon.com/log/log-2026-05-28-ielts-hub-42-listening-tests.html</guid>
     <pubDate>Thu, 28 May 2026 12:00:00 +0500</pubDate>
-    <description>Added 5 more Diyorbek listening tests — Tests 41 through 45. Full audio, instant scoring, all on flarestamina.com.…</description>
+    <dc:creator>Maqsudjon Polatov</dc:creator>
+    <category>IELTS</category>
+    <description>Added 5 more Diyorbek listening tests — Tests 41 through 45. Full audio, instant scoring, all on…</description>
+    <content:encoded><![CDATA[<p>Added 5 more Diyorbek listening tests — Tests 41 through 45. Full audio, instant scoring, all on flarestamina.com.</p>]]></content:encoded>
+    <media:content url="https://maqsudjon.com/og-image.png" medium="image" type="image/png" width="1200" height="630"/>
+  </item>
+  <item>
+    <title>IELTS Hub — 10 new tests (31–40)</title>
+    <link>https://maqsudjon.com/log/log-2026-05-28-ielts-hub-10-new-tests-31-40.html</link>
+    <guid isPermaLink="true">https://maqsudjon.com/log/log-2026-05-28-ielts-hub-10-new-tests-31-40.html</guid>
+    <pubDate>Thu, 28 May 2026 12:00:00 +0500</pubDate>
+    <dc:creator>Maqsudjon Polatov</dc:creator>
+    <category>IELTS</category>
+    <description>Added 10 new Diyorbek listening tests to the hub today — Tests 31 through 40. That brings the total to 37 listening tests on the platform. Each test has…</description>
+    <content:encoded><![CDATA[<p>Added 10 new Diyorbek listening tests to the hub today — Tests 31 through 40. That brings the total to 37 listening tests on the platform. Each test has 40 questions, full audio, and instant scoring.</p>
+<p>Check them out at flarestamina.com</p>]]></content:encoded>
+    <media:content url="https://maqsudjon.com/og-image.png" medium="image" type="image/png" width="1200" height="630"/>
   </item>
   <item>
     <title>Launched flarestamina.com</title>
     <link>https://maqsudjon.com/log/log-2026-05-27-launched-pangea8-com.html</link>
-    <guid>https://maqsudjon.com/log/log-2026-05-27-launched-pangea8-com.html</guid>
+    <guid isPermaLink="true">https://maqsudjon.com/log/log-2026-05-27-launched-pangea8-com.html</guid>
     <pubDate>Wed, 27 May 2026 12:00:00 +0500</pubDate>
-    <description>Today I officially launched flarestamina.com — my IELTS practice hub. It hosts mock tests for Reading, Writing, Listening, and Speaking, plus the Pangeya Essay platform. Built with passion for students preparing for IELTS, but it&#x27;s open to anyone preparing for IELTS. Setting up the domain through Cloudflare and connecting it to GitHub Pages took an afternoon. The hardest part was choosing the name.…</description>
+    <dc:creator>Maqsudjon Polatov</dc:creator>
+    <category>Tech</category>
+    <description>Today I officially launched flarestamina.com — my IELTS practice hub. It hosts mock tests for Reading, Writing, Listening, and Speaking, plus the Pangeya Essay…</description>
+    <content:encoded><![CDATA[<p>Today I officially launched flarestamina.com — my IELTS practice hub. It hosts mock tests for Reading, Writing, Listening, and Speaking, plus the Pangeya Essay platform. Built with passion for students preparing for IELTS, but it&#x27;s open to anyone preparing for IELTS. Setting up the domain through Cloudflare and connecting it to GitHub Pages took an afternoon. The hardest part was choosing the name.</p>]]></content:encoded>
+    <media:content url="https://maqsudjon.com/og-image.png" medium="image" type="image/png" width="1200" height="630"/>
   </item>
   <item>
     <title>Why Pangea?</title>
     <link>https://maqsudjon.com/log/log-2026-05-20-why-pangea.html</link>
-    <guid>https://maqsudjon.com/log/log-2026-05-20-why-pangea.html</guid>
+    <guid isPermaLink="true">https://maqsudjon.com/log/log-2026-05-20-why-pangea.html</guid>
     <pubDate>Wed, 20 May 2026 12:00:00 +0500</pubDate>
-    <description>Pangea was the single supercontinent before everything drifted apart. I liked the metaphor — one world, one platform. The 8 in pangea8 stands for IELTS Band 8 — the goal most students aim for, and also looks like the infinity symbol when laid sideways. Pangea forever, Pangea eight. Brand names should mean something to the founder, even if nobody else gets it at first.…</description>
+    <dc:creator>Maqsudjon Polatov</dc:creator>
+    <category>Teaching</category>
+    <description>Pangea was the single supercontinent before everything drifted apart. I liked the metaphor — one world, one platform. The 8 in pangea8 stands for IELTS…</description>
+    <content:encoded><![CDATA[<p>Pangea was the single supercontinent before everything drifted apart. I liked the metaphor — one world, one platform. The 8 in pangea8 stands for IELTS Band 8 — the goal most students aim for, and also looks like the infinity symbol when laid sideways. Pangea forever, Pangea eight. Brand names should mean something to the founder, even if nobody else gets it at first.</p>]]></content:encoded>
+    <media:content url="https://maqsudjon.com/og-image.png" medium="image" type="image/png" width="1200" height="630"/>
   </item>
   <item>
     <title>Making music from Tashkent</title>
     <link>https://maqsudjon.com/log/log-2026-05-15-making-music-from-tashkent.html</link>
-    <guid>https://maqsudjon.com/log/log-2026-05-15-making-music-from-tashkent.html</guid>
+    <guid isPermaLink="true">https://maqsudjon.com/log/log-2026-05-15-making-music-from-tashkent.html</guid>
     <pubDate>Fri, 15 May 2026 12:00:00 +0500</pubDate>
-    <description>Releasing UK Garage tracks from Uzbekistan feels strange sometimes. I&#x27;m probably one of the only producers in Central Asia making this sound. My album HOME is out on Spotify under Matsumi. Most of my listeners are in the UK, which makes sense — that&#x27;s where the genre lives. But it also tells me something: location doesn&#x27;t matter anymore. The internet erased that.…</description>
+    <dc:creator>Maqsudjon Polatov</dc:creator>
+    <category>Music</category>
+    <description>Releasing UK Garage tracks from Uzbekistan feels strange sometimes. I&#x27;m probably one of the only producers in Central Asia making this sound. My album…</description>
+    <content:encoded><![CDATA[<p>Releasing UK Garage tracks from Uzbekistan feels strange sometimes. I&#x27;m probably one of the only producers in Central Asia making this sound. My album HOME is out on Spotify under Matsumi. Most of my listeners are in the UK, which makes sense — that&#x27;s where the genre lives. But it also tells me something: location doesn&#x27;t matter anymore. The internet erased that.</p>]]></content:encoded>
+    <media:content url="https://maqsudjon.com/og-image.png" medium="image" type="image/png" width="1200" height="630"/>
   </item>
 </channel>
 </rss>

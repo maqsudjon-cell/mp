@@ -29,6 +29,7 @@ SHELL = """<!DOCTYPE html>
 <link rel="canonical" href="{url}">
 <link rel="alternate" hreflang="{lang}" href="{url}">
 <link rel="alternate" hreflang="{other_lang}" href="{other_url}">
+<link rel="alternate" type="application/rss+xml" title="{feed_title}" href="{feed}">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <meta name="theme-color" content="#000000">
 <meta property="og:title" content="{title}">
@@ -90,7 +91,7 @@ figcaption{{font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:.08
   <div class="body">
 {body}
   </div>
-  <div class="foot"><a href="/log/">{back}</a> · <a href="/feed.xml">RSS</a> · © 2026 Maqsudjon Polatov</div>
+  <div class="foot"><a href="/log/">{back}</a> · <a href="{feed}">RSS</a> · © 2026 Maqsudjon Polatov</div>
 </div>
 <script data-goatcounter="https://maqsudjon.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
@@ -132,7 +133,10 @@ def build(slug, lang, title, desc, datestr, iso, cat, body,
         title=html.escape(title), desc=html.escape(desc),
         url=url, other_url=other_url, other_label=other_label,
         og=BASE + og, ld=ld, datestr=datestr, cat=cat, body=body, back=back,
-        locale="uz_UZ" if lang == "uz" else "en_US", iso=iso)
+        locale="uz_UZ" if lang == "uz" else "en_US", iso=iso,
+        # har bir til o'z lentasiga ishora qiladi (tools/build_feed.py)
+        feed=f"{BASE}/feed-uz.xml" if lang == "uz" else f"{BASE}/feed.xml",
+        feed_title="Maqsudjon Polatov — build log (o'zbekcha)" if lang == "uz" else "Maqsudjon Polatov — build log")
     p = ROOT / "log" / f"{slug}.html"
     p.write_text(out)
     return p
