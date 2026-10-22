@@ -130,7 +130,16 @@ let hide = false;
 let index = 0;
 
 function esc(s) {
-  return String(s).replace(/[&<>"]/g, c => ({ "&": "&", "<": "<", ">": ">", '"': """ }[c]));
+  var amp = String.fromCharCode(38) + "amp;";
+  var lt = String.fromCharCode(38) + "lt;";
+  var gt = String.fromCharCode(38) + "gt;";
+  var quot = String.fromCharCode(38) + "quot;";
+  return String(s).replace(/[&<>"]/g, function (c) {
+    if (c === "&") return amp;
+    if (c === "<") return lt;
+    if (c === ">") return gt;
+    return quot;
+  });
 }
 
 function deckOf(show) {
