@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#f6f4ef">
+<meta name="theme-color" content="#f2f2f7">
 <base href="/show/">
 <title>Show</title>
 <style>
@@ -13,23 +13,30 @@
   body {
     font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
     min-height: 100dvh;
-    background: #f6f4ef;
+    background: #f2f2f7;
     -webkit-font-smoothing: antialiased;
   }
   button, a { font: inherit; color: inherit; }
   button { cursor: pointer; }
-  .wrap { max-width: 640px; margin: 0 auto; padding: calc(22px + env(safe-area-inset-top)) 20px calc(40px + env(safe-area-inset-bottom)); }
-  .kicker { margin: 0; font-size: 12px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: #8a847c; }
-  h1 { margin: 10px 0 0; font-weight: 560; font-size: 56px; letter-spacing: -0.045em; line-height: .9; }
-  .list { list-style: none; margin: 36px 0 0; padding: 0; display: grid; gap: 40px; }
-  .piece { display: block; text-decoration: none; }
-  .piece:active img { opacity: .9; }
-  .row { display: flex; align-items: baseline; gap: 12px; margin: 0 0 10px; }
-  .num { font-variant-numeric: tabular-nums; font-size: 13px; color: #8a847c; }
-  .name { font-size: 22px; font-weight: 600; letter-spacing: -0.03em; }
-  .count { margin-left: auto; font-variant-numeric: tabular-nums; font-size: 13px; color: #8a847c; }
-  .piece img { width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block; border-radius: 14px; background: #e7e2d8; }
-  .meta { margin: 8px 2px 0; font-size: 13px; line-height: 1.35; color: #8a847c; }
+  .wrap { max-width: 560px; margin: 0 auto; padding: calc(18px + env(safe-area-inset-top)) 16px calc(32px + env(safe-area-inset-bottom)); }
+  .kicker { margin: 0; font-size: 13px; font-weight: 600; color: #8e8e93; }
+  h1 { margin: 2px 0 0; font-weight: 700; font-size: 34px; letter-spacing: -0.04em; line-height: 1.05; }
+  .cards { display: grid; gap: 14px; margin-top: 22px; }
+  .card {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    background: #fff;
+    border-radius: 22px;
+    overflow: hidden;
+    box-shadow: 0 1px 1px rgba(0,0,0,.04), 0 10px 28px rgba(0,0,0,.06);
+  }
+  .card:active { transform: scale(.985); }
+  .card img { width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block; background: #ececf1; }
+  .card .body { padding: 14px 16px 16px; }
+  .card .when { margin: 0; font-size: 12px; font-weight: 600; letter-spacing: .02em; color: #8e8e93; }
+  .card .title { margin: 3px 0 0; font-size: 20px; font-weight: 650; letter-spacing: -0.03em; line-height: 1.2; }
+  .card .sub { margin: 4px 0 0; font-size: 14px; line-height: 1.35; color: #636366; }
   .stage { min-height: 100dvh; background: #000; color: #fff; }
   body.stage { background: #000; }
   .bar, .script, .nav, .tools { max-width: 760px; margin-left: auto; margin-right: auto; }
@@ -265,19 +272,19 @@ function go(next, deck) {
 
 function home() {
   document.body.className = "";
-  document.querySelector('meta[name="theme-color"]').content = "#f6f4ef";
+  document.querySelector('meta[name="theme-color"]').content = "#f2f2f7";
   const items = [
-    { href: "#tech/1", img: "media/tech-01.jpg", n: "01", title: "Tech Tonight", n2: "14", meta: "20 oktabr · English · Hamidulla" },
-    { href: "#games/1", img: "media/games-01.jpg", n: "02", title: "Asian Games", n2: "10", meta: "20 oktabr · Mubina 1–5 · Jasmina 6–10" },
-    { href: "#greet/1", img: "media/greet-01.jpg", n: "03", title: "Salomlashish", n2: "07", meta: "22 oktabr · Rus tili · Manzura" }
+    { href: "#tech/1", img: "media/tech-01.jpg", when: "20 oktabr · English", title: "Tech Tonight", sub: "Hamidulla · 14 slayd" },
+    { href: "#games/1", img: "media/games-01.jpg", when: "20 oktabr · English", title: "Asian Games", sub: "Mubina 1–5 · Jasmina 6–10" },
+    { href: "#greet/1", img: "media/greet-01.jpg", when: "22 oktabr · Rus tili", title: "Salomlashish", sub: "Manzura · 7 slayd" }
   ];
   app.innerHTML = `
     <div class="wrap">
       <p class="kicker">Maqsudjon</p>
       <h1>Show</h1>
-      <ol class="list">
-        ${items.map((it) => `<li><a class="piece" href="${it.href}"><p class="row"><span class="num">${it.n}</span><span class="name">${esc(it.title)}</span><span class="count">${it.n2}</span></p><img src="${it.img}" alt=""><p class="meta">${esc(it.meta)}</p></a></li>`).join("")}
-      </ol>
+      <div class="cards">
+        ${items.map((it) => `<a class="card" href="${it.href}"><img src="${it.img}" alt=""><div class="body"><p class="when">${esc(it.when)}</p><p class="title">${esc(it.title)}</p><p class="sub">${esc(it.sub)}</p></div></a>`).join("")}
+      </div>
     </div>`;
 }
 
