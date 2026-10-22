@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#e7e8ee">
+<meta name="theme-color" content="#f6f4ef">
 <base href="/show/">
 <title>Show</title>
 <style>
@@ -13,39 +13,25 @@
   body {
     font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
     min-height: 100dvh;
-    background: #e7e8ee;
-  }
-  body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    z-index: -1;
-    background:
-      radial-gradient(ellipse 90% 50% at 0% -10%, rgba(130,170,255,.55), transparent 60%),
-      radial-gradient(ellipse 70% 40% at 110% 0%, rgba(255,176,196,.5), transparent 55%),
-      radial-gradient(ellipse 80% 40% at 50% 115%, rgba(186,220,255,.65), transparent 55%),
-      #e7e8ee;
+    background: #f6f4ef;
+    -webkit-font-smoothing: antialiased;
   }
   button, a { font: inherit; color: inherit; }
   button { cursor: pointer; }
-  .wrap { max-width: 720px; margin: 0 auto; padding: calc(16px + env(safe-area-inset-top)) 16px calc(28px + env(safe-area-inset-bottom)); }
-  .kicker { margin: 0; font-size: 13px; font-weight: 650; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
-  h1 { margin: 2px 0 0; font-weight: 700; font-size: 34px; letter-spacing: -0.04em; line-height: 1; }
-  .lead { margin: 6px 0 0; color: var(--muted); font-size: 15px; }
-  .stack { display: grid; gap: 14px; margin-top: 18px; }
-  .story {
-    display: block; text-decoration: none; color: inherit;
-    background: #fff; border-radius: 22px; overflow: hidden;
-    box-shadow: 0 1px 0 rgba(255,255,255,.8) inset, 0 10px 28px rgba(20,24,40,.08);
-  }
-  .story:active { transform: scale(.985); }
-  .story img { width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block; background: #eee; }
-  .cap { padding: 12px 14px 14px; }
-  .cap span { display: block; font-size: 12px; font-weight: 600; letter-spacing: .02em; color: var(--muted); }
-  .cap b { display: block; margin-top: 2px; font-size: 20px; letter-spacing: -0.03em; }
-  .cap em { display: block; margin-top: 2px; font-style: normal; font-size: 14px; color: var(--muted); }
+  .wrap { max-width: 640px; margin: 0 auto; padding: calc(22px + env(safe-area-inset-top)) 20px calc(40px + env(safe-area-inset-bottom)); }
+  .kicker { margin: 0; font-size: 12px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: #8a847c; }
+  h1 { margin: 10px 0 0; font-weight: 560; font-size: 56px; letter-spacing: -0.045em; line-height: .9; }
+  .list { list-style: none; margin: 36px 0 0; padding: 0; display: grid; gap: 40px; }
+  .piece { display: block; text-decoration: none; }
+  .piece:active img { opacity: .9; }
+  .row { display: flex; align-items: baseline; gap: 12px; margin: 0 0 10px; }
+  .num { font-variant-numeric: tabular-nums; font-size: 13px; color: #8a847c; }
+  .name { font-size: 22px; font-weight: 600; letter-spacing: -0.03em; }
+  .count { margin-left: auto; font-variant-numeric: tabular-nums; font-size: 13px; color: #8a847c; }
+  .piece img { width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block; border-radius: 14px; background: #e7e2d8; }
+  .meta { margin: 8px 2px 0; font-size: 13px; line-height: 1.35; color: #8a847c; }
   .stage { min-height: 100dvh; background: #000; color: #fff; }
-  body.stage::before { display: none; }
+  body.stage { background: #000; }
   .bar, .script, .nav, .tools { max-width: 760px; margin-left: auto; margin-right: auto; }
   .bar {
     display: flex; align-items: center; justify-content: space-between; gap: 8px;
@@ -89,9 +75,8 @@
     box-shadow: 0 10px 30px rgba(0,0,0,.35);
   }
   .vid.on .play { display: none; }
-  .dots { display: flex; gap: 5px; justify-content: center; padding: 12px 16px 0; }
-  .dots b { width: 6px; height: 6px; border-radius: 99px; background: rgba(255,255,255,.28); display: block; }
-  .dots b.on { background: #fff; }
+  .meter { height: 2px; margin: 14px 20px 0; background: rgba(255,255,255,.18); }
+  .meter i { display: block; height: 100%; background: #fff; }
   .script {
     margin: 12px 16px 0;
     padding: 18px 18px 16px;
@@ -230,7 +215,7 @@ function render() {
       <button id="hide" class="${hide ? "on" : ""}">${hide ? "Matnni och" : "Matnni yashir"}</button>
     </div>
     <div class="frame" id="frame">${media}</div>
-    <div class="dots">${deck.map((_, i) => `<b class="${i === index ? "on" : ""}"></b>`).join("")}</div>
+    <div class="meter"><i style="width:${Math.round(((index + 1) / deck.length) * 100)}%"></i></div>
     <div class="script ${hide ? "hidden" : ""}">
       ${who ? `<div class="who">${who}</div>` : ""}
       <p class="say">${esc(slide.say)}</p>
@@ -280,20 +265,19 @@ function go(next, deck) {
 
 function home() {
   document.body.className = "";
-  document.querySelector('meta[name="theme-color"]').content = "#e7e8ee";
+  document.querySelector('meta[name="theme-color"]').content = "#f6f4ef";
   const items = [
-    { href: "#tech/1", img: "media/tech-01.jpg", when: "20 oktabr · English · Hamidulla", title: "Tech Tonight", sub: "O‘zing gapirasan · 14 slayd" },
-    { href: "#games/1", img: "media/games-01.jpg", when: "20 oktabr · English · Hamidulla", title: "Asian Games", sub: "Mubina 1–5 · Jasmina 6–10" },
-    { href: "#greet/1", img: "media/greet-01.jpg", when: "22 oktabr · Rus tili · Manzura", title: "Salomlashish", sub: "Ruscha gapirasan · tarjima pastda · 7 slayd" }
+    { href: "#tech/1", img: "media/tech-01.jpg", n: "01", title: "Tech Tonight", n2: "14", meta: "20 oktabr · English · Hamidulla" },
+    { href: "#games/1", img: "media/games-01.jpg", n: "02", title: "Asian Games", n2: "10", meta: "20 oktabr · Mubina 1–5 · Jasmina 6–10" },
+    { href: "#greet/1", img: "media/greet-01.jpg", n: "03", title: "Salomlashish", n2: "07", meta: "22 oktabr · Rus tili · Manzura" }
   ];
   app.innerHTML = `
     <div class="wrap">
       <p class="kicker">Maqsudjon</p>
       <h1>Show</h1>
-      <p class="lead">Uchta chiqish.</p>
-      <div class="stack">
-        ${items.map((it) => `<a class="story" href="${it.href}"><img src="${it.img}" alt=""><div class="cap"><span>${esc(it.when)}</span><b>${esc(it.title)}</b><em>${esc(it.sub)}</em></div></a>`).join("")}
-      </div>
+      <ol class="list">
+        ${items.map((it) => `<li><a class="piece" href="${it.href}"><p class="row"><span class="num">${it.n}</span><span class="name">${esc(it.title)}</span><span class="count">${it.n2}</span></p><img src="${it.img}" alt=""><p class="meta">${esc(it.meta)}</p></a></li>`).join("")}
+      </ol>
     </div>`;
 }
 
