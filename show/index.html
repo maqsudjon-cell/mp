@@ -3,69 +3,128 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#f3efe6">
+<meta name="theme-color" content="#e7e8ee">
 <base href="/show/">
 <title>Show</title>
 <style>
-  :root {
-    --paper: #f3efe6;
-    --ink: #1a1714;
-    --muted: #6f675e;
-    --line: #e3dcd1;
-    --card: #faf7f2;
-    --cinnabar: #c2410c;
-    --stage: #110f0d;
-  }
+  :root { --ink: #1c1c1e; --muted: rgba(60,60,67,.72); }
   * { box-sizing: border-box; }
-  html, body { margin: 0; background: var(--paper); color: var(--ink); }
+  html, body { margin: 0; color: var(--ink); }
   body {
-    font-family: "Avenir Next", "Segoe UI", sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
     min-height: 100dvh;
+    background: #e7e8ee;
+  }
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background:
+      radial-gradient(ellipse 90% 50% at 0% -10%, rgba(130,170,255,.55), transparent 60%),
+      radial-gradient(ellipse 70% 40% at 110% 0%, rgba(255,176,196,.5), transparent 55%),
+      radial-gradient(ellipse 80% 40% at 50% 115%, rgba(186,220,255,.65), transparent 55%),
+      #e7e8ee;
   }
   button, a { font: inherit; color: inherit; }
   button { cursor: pointer; }
-  .wrap { max-width: 720px; margin: 0 auto; padding: 28px 20px 48px; }
-  .kicker { margin: 0; font-size: 12px; letter-spacing: .16em; text-transform: uppercase; color: var(--muted); }
-  h1 { margin: 8px 0 0; font-family: Georgia, "Iowan Old Style", serif; font-weight: 500; font-size: 64px; line-height: .9; letter-spacing: -0.03em; }
-  .lead { margin: 14px 0 0; max-width: 36ch; color: var(--muted); font-size: 15px; line-height: 1.45; }
-  .day { margin: 28px 0 8px; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+  .wrap { max-width: 720px; margin: 0 auto; padding: calc(18px + env(safe-area-inset-top)) 20px calc(36px + env(safe-area-inset-bottom)); }
+  .kicker { margin: 0; font-size: 13px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+  h1 { margin: 6px 0 0; font-weight: 700; font-size: 52px; line-height: 1; letter-spacing: -0.04em; }
+  .lead { margin: 10px 0 0; max-width: 34ch; color: var(--muted); font-size: 16px; line-height: 1.4; }
+  .day { margin: 28px 4px 8px; font-size: 13px; font-weight: 600; letter-spacing: .02em; color: var(--muted); }
   .card {
-    display: grid; grid-template-columns: 1fr auto; gap: 4px 12px;
-    width: 100%; text-align: left; text-decoration: none;
-    background: var(--card); border: 1px solid var(--line); border-radius: 18px;
-    padding: 16px 16px 14px; margin-top: 10px;
+    position: relative;
+    display: block;
+    width: 100%;
+    text-align: left;
+    text-decoration: none;
+    margin-top: 12px;
+    padding: 18px 44px 16px 18px;
+    border-radius: 28px;
+    background: rgba(255,255,255,.46);
+    -webkit-backdrop-filter: blur(28px) saturate(1.8);
+    backdrop-filter: blur(28px) saturate(1.8);
+    border: 1px solid rgba(255,255,255,.72);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.9), 0 12px 32px rgba(28,28,40,.08);
   }
-  .card b { font-size: 20px; font-family: Georgia, serif; font-weight: 500; }
-  .card span { grid-column: 1; color: var(--muted); font-size: 14px; }
-  .card i { grid-row: 1 / span 2; align-self: center; font-style: normal; color: var(--muted); }
-  .stage { min-height: 100dvh; background: var(--stage); color: #f6f1ea; }
-  .bar, .script, .nav { max-width: 720px; margin: 0 auto; }
-  .bar { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 10px 16px 0; }
-  .bar button, .ghost {
-    background: transparent; border: 0; color: #c8bfb4; min-height: 44px; padding: 0 4px;
+  .card b { display: block; font-size: 22px; font-weight: 650; letter-spacing: -0.03em; }
+  .card em { display: block; margin-top: 4px; font-style: normal; font-size: 15px; line-height: 1.35; color: var(--muted); }
+  .card::after {
+    content: "";
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    width: 9px;
+    height: 9px;
+    border-right: 2px solid rgba(60,60,67,.4);
+    border-top: 2px solid rgba(60,60,67,.4);
+    transform: translateY(-50%) rotate(45deg);
   }
-  .bar strong { font-family: Georgia, serif; font-weight: 500; font-size: 18px; }
-  .frame { margin: 8px 16px 0; border-radius: 14px; overflow: hidden; background: #000; aspect-ratio: 16/9; }
+  .stage { min-height: 100dvh; background: #000; color: #fff; }
+  body.stage::before { display: none; }
+  .bar, .script, .nav, .tools { max-width: 760px; margin-left: auto; margin-right: auto; }
+  .bar {
+    display: flex; align-items: center; justify-content: space-between; gap: 8px;
+    padding: calc(8px + env(safe-area-inset-top)) 16px 0;
+  }
+  .bar button {
+    background: rgba(255,255,255,.14);
+    -webkit-backdrop-filter: blur(20px) saturate(1.6);
+    backdrop-filter: blur(20px) saturate(1.6);
+    border: 1px solid rgba(255,255,255,.22);
+    color: #fff;
+    min-height: 40px;
+    padding: 0 14px;
+    border-radius: 999px;
+  }
+  .bar strong { font-weight: 650; font-size: 17px; letter-spacing: -0.02em; }
+  .bar span { min-width: 52px; text-align: right; font-variant-numeric: tabular-nums; color: rgba(255,255,255,.7); font-size: 14px; }
+  .tools { display: flex; gap: 8px; padding: 10px 16px 0; overflow-x: auto; }
+  .tools button {
+    flex: 0 0 auto;
+    min-height: 36px;
+    padding: 0 14px;
+    border-radius: 999px;
+    border: 1px solid rgba(255,255,255,.2);
+    background: rgba(255,255,255,.12);
+    -webkit-backdrop-filter: blur(18px) saturate(1.5);
+    backdrop-filter: blur(18px) saturate(1.5);
+    color: #fff;
+  }
+  .tools button.on { background: rgba(255,255,255,.92); color: #111; border-color: transparent; }
+  .frame { margin: 12px 16px 0; border-radius: 22px; overflow: hidden; background: #000; aspect-ratio: 16/9; box-shadow: 0 16px 40px rgba(0,0,0,.35); }
   .frame img, .frame video { width: 100%; height: 100%; object-fit: cover; display: block; background: #000; }
-  .script { padding: 16px 20px 8px; }
-  .who { display: inline-block; margin-bottom: 8px; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: #e8b8a4; }
-  .say { margin: 0; font-family: Georgia, serif; font-size: clamp(22px, 5vw, 32px); line-height: 1.25; font-weight: 500; }
-  .uz { margin: 10px 0 0; color: #b7aea3; font-size: 16px; line-height: 1.4; }
-  .note { margin: 12px 0 0; color: #e8b8a4; font-size: 14px; }
-  .nav { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; padding: 8px 16px 18px; }
-  .nav button, .tools button {
-    min-height: 48px; border-radius: 12px; border: 1px solid #3a342e; background: #1b1816; color: #f6f1ea;
+  .dots { display: flex; gap: 5px; justify-content: center; padding: 12px 16px 0; }
+  .dots b { width: 6px; height: 6px; border-radius: 99px; background: rgba(255,255,255,.28); display: block; }
+  .dots b.on { background: #fff; }
+  .script {
+    margin: 12px 16px 0;
+    padding: 18px 18px 16px;
+    border-radius: 28px;
+    background: rgba(28,28,30,.48);
+    -webkit-backdrop-filter: blur(32px) saturate(1.7);
+    backdrop-filter: blur(32px) saturate(1.7);
+    border: 1px solid rgba(255,255,255,.16);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.2);
   }
-  .nav button.primary { background: var(--cinnabar); border-color: var(--cinnabar); font-weight: 650; }
-  .tools { display: flex; gap: 8px; padding: 0 16px; max-width: 720px; margin: 10px auto 0; overflow-x: auto; }
-  .tools button.on { background: #f6f1ea; color: #1a1714; border-color: #f6f1ea; }
+  .who { margin-bottom: 8px; font-size: 12px; font-weight: 650; letter-spacing: .06em; text-transform: uppercase; color: rgba(255,255,255,.62); }
+  .say { margin: 0; font-size: clamp(22px, 5.2vw, 32px); line-height: 1.22; font-weight: 650; letter-spacing: -0.03em; }
+  .uz { margin: 10px 0 0; color: rgba(255,255,255,.72); font-size: 16px; line-height: 1.4; }
+  .note { margin: 12px 0 0; color: #ffd6c2; font-size: 14px; font-weight: 600; }
+  .nav { display: grid; grid-template-columns: 1fr 1.3fr; gap: 8px; padding: 12px 16px calc(16px + env(safe-area-inset-bottom)); }
+  .nav button {
+    min-height: 50px;
+    border-radius: 999px;
+    border: 1px solid rgba(255,255,255,.2);
+    background: rgba(255,255,255,.14);
+    -webkit-backdrop-filter: blur(20px) saturate(1.6);
+    backdrop-filter: blur(20px) saturate(1.6);
+    color: #fff;
+    font-weight: 600;
+  }
+  .nav button.primary { background: rgba(255,255,255,.94); color: #111; border-color: transparent; }
   .hidden { display: none !important; }
-  .dots { display: flex; gap: 5px; justify-content: center; padding: 10px 16px 0; }
-  .dots b { width: 7px; height: 7px; border-radius: 99px; background: #3a342e; display: block; }
-  .dots b.on { background: #f6f1ea; }
-  @media (min-width: 800px) {
-    .say { font-size: 34px; }
-  }
 </style>
 </head>
 <body>
@@ -158,7 +217,7 @@ function render() {
   const slide = deck[index];
   const who = slide.part === "m" ? "Mubina · 1–5" : slide.part === "j" ? "Jasmina · 6–10" : "";
   document.body.className = "stage";
-  document.querySelector('meta[name="theme-color"]').content = "#110f0d";
+  document.querySelector('meta[name="theme-color"]').content = "#000000";
   const media = slide.video
     ? `<video src="media/${slide.video}" poster="media/${slide.img}" controls playsinline></video>`
     : `<img src="media/${slide.img}" alt="">`;
@@ -216,17 +275,17 @@ function go(next, deck) {
 
 function home() {
   document.body.className = "";
-  document.querySelector('meta[name="theme-color"]').content = "#f3efe6";
+  document.querySelector('meta[name="theme-color"]').content = "#e7e8ee";
   app.innerHTML = `
     <div class="wrap">
       <p class="kicker">Maqsudjon</p>
       <h1>Show</h1>
       <p class="lead">Chiqishlar kundaligi. Slayd oldinda, aytadigan gap pastda.</p>
       <p class="day">20 oktabr · Seshanba · English · Hamidulla</p>
-      <a class="card" href="#tech/1"><b>Tech Tonight</b><i>→</i><span>O‘zing gapirasan · 14 slayd</span></a>
-      <a class="card" href="#games/1"><b>Asian Games</b><i>→</i><span>Mubina 1–5 · Jasmina 6–10</span></a>
+      <a class="card" href="#tech/1"><b>Tech Tonight</b><em>O‘zing gapirasan · 14 slayd</em></a>
+      <a class="card" href="#games/1"><b>Asian Games</b><em>Mubina 1–5 · Jasmina 6–10</em></a>
       <p class="day">22 oktabr · Payshanba · Rus tili · Manzura</p>
-      <a class="card" href="#greet/1"><b>Qanday salomlashishadi</b><i>→</i><span>Ruscha gapirasan · o‘zbekchasi pastda · 7 slayd</span></a>
+      <a class="card" href="#greet/1"><b>Qanday salomlashishadi</b><em>Ruscha gapirasan · o‘zbekchasi pastda · 7 slayd</em></a>
     </div>`;
 }
 
