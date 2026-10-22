@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1c1917">
+<title>Как здороваются народы мира</title>
+<style>
+  :root { color-scheme: light; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: #1c1917; color: #f4efe6; font-family: Georgia, "Times New Roman", serif; }
+  body { min-height: 100dvh; }
+  header, .bar, .notes, footer { padding: 12px 16px; }
+  header { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+  header p { margin: 0; font-family: system-ui, sans-serif; font-size: 13px; letter-spacing: .08em; text-transform: uppercase; color: #e7b5a4; }
+  header span { font-family: system-ui, sans-serif; font-size: 13px; color: #c8bfb4; }
+  #pic { display: block; width: 100%; height: auto; background: #f4efe6; }
+  .bar { display: grid; grid-template-columns: 1fr auto 1fr; gap: 8px; align-items: center; }
+  button, a.btn {
+    font-family: system-ui, sans-serif;
+    font-size: 16px;
+    min-height: 48px;
+    border-radius: 12px;
+    border: 1px solid #3a342e;
+    background: #2a2522;
+    color: #f4efe6;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 16px;
+  }
+  button { cursor: pointer; }
+  button.primary, a.primary { background: #c2410c; border-color: #c2410c; color: #fffdf8; font-weight: 650; }
+  #next { justify-self: end; }
+  #count { font-family: system-ui, sans-serif; font-size: 14px; color: #c8bfb4; }
+  .notes { display: none; font-family: system-ui, sans-serif; font-size: 16px; line-height: 1.45; }
+  .notes.on { display: block; }
+  .notes h2 { margin: 0 0 8px; font-family: Georgia, serif; font-size: 22px; font-weight: 500; }
+  .notes p { margin: 0 0 8px; }
+  .notes .uz { color: #e7d7c8; }
+  .warn { color: #e7b5a4; }
+  footer { display: flex; flex-wrap: wrap; gap: 8px; padding-bottom: calc(16px + env(safe-area-inset-bottom)); }
+  footer a { flex: 1; }
+</style>
+</head>
+<body>
+<header>
+  <p>Rus tili · salomlashish</p>
+  <span id="count">1 / 11</span>
+</header>
+<img id="pic" alt="Slayd" src="slides/slide-01.jpg">
+<div class="bar">
+  <button id="prev" type="button">Oldingi</button>
+  <button id="uz" type="button">O‘zbekcha</button>
+  <button id="next" class="primary" type="button">Keyingi</button>
+</div>
+<section class="notes" id="notes"></section>
+<footer>
+  <a class="btn primary" href="salomlashish.pdf">PDF</a>
+  <a class="btn" href="kak-zdorovayutsya.pptx">Keynote</a>
+</footer>
+<script>
+const NOTES = [
+  { ru: "Здравствуйте. Сегодня коротко: как здороваются разные народы. Схема — страна, жест и одно слово.", uz: "Salom. Bugun qisqa: turli xalqlar qanday salomlashadi. Davlat, ishora va bitta so‘z." },
+  { ru: "В Японии кланяются — это одзиги. Чем ниже поклон, тем больше уважение. Днём говорят «коннитива».", uz: "Yaponiya — ta’zim, odzigi. Qanchalik past bo‘lsa, hurmat shunchalik katta. Kunduzi konnichiwa." },
+  { ru: "Ладони у груди — намасте. Смысл: я тебя уважаю. И другу, и старшему.", uz: "Hindiston — namaste, kaftlar ko‘krakda. Ma’nosi: hurmat. Do‘stga ham, kattaga ham." },
+  { ru: "В Таиланде это вай. Чем выше руки, тем больше уважение. «Саватди». Младший — первым.", uz: "Tailand — vay. Qo‘l balandroq, hurmat ko‘proq. Savatdi. Avval kichik yoshli." },
+  { ru: "Друзья целуют воздух у щеки — ла биз. Чаще два раза. Незнакомым — «бонжур».", uz: "Fransiya — la bise, yonoq yonida havo. Ko‘pincha 2 marta. Notanishga bonjour." },
+  { ru: "Маори касаются лбом и носом — хонги. Это дыхание жизни. Каждый день — «киа ора».", uz: "Maori — hongi, peshona va burun. Ko‘cha salomi emas. Har kuni kia ora." },
+  { ru: "Младший касается лба рукой старшего. Мано по — просьба о благословении.", uz: "Filippin — mano po. Kattaning qo‘lini peshonaga. Baraka so‘rash. Tengdosh bilan emas." },
+  { ru: "Раньше показывали язык: «я не Ландарма». Сейчас «таши делек» и белый шарф.", uz: "Tibet — til faqat eski rivoyat. Hozir tashi delek va oq sharf, khata." },
+  { ru: "«Здравствуйте», друзьям — «привет». Рука и взгляд в глаза. Близкие иногда три раза в щёку.", uz: "Rossiya — zdravstvuyte, do‘stga privet. Qo‘l siqish, ko‘zga qarash. Ba’zan 3 marta yonoq." },
+  { ru: "Жесты разные, а смысл один: я тебя вижу и уважаю. Спасибо за внимание.", uz: "Ishoralar har xil, ma’nosi bitta: men seni ko‘ryapman va hurmat qilaman. Rahmat." },
+  { ru: "Шпаргалка. В классе не открывать.", uz: "Bu varaqni sinfda ochma. Yaponiya ta’zim, Hindiston namaste, Tailand vay, Fransiya la bise, Maori hongi, Filippin mano, Tibet tashi delek, Rossiya qo‘l." }
+];
+const pic = document.getElementById("pic");
+const count = document.getElementById("count");
+const notes = document.getElementById("notes");
+let i = 0;
+let showUz = false;
+function render() {
+  const n = NOTES[i];
+  pic.src = "slides/slide-" + String(i + 1).padStart(2, "0") + ".jpg";
+  count.textContent = (i + 1) + " / " + NOTES.length;
+  notes.className = "notes" + (showUz ? " on" : "");
+  notes.innerHTML = "<h2>" + (i === 10 ? "Sinfda ochma" : "Aytish") + "</h2><p>" + n.ru + "</p><p class='uz'>" + n.uz + "</p>";
+  document.getElementById("prev").disabled = i === 0;
+  document.getElementById("next").textContent = i === NOTES.length - 1 ? "Boshiga" : "Keyingi";
+}
+document.getElementById("next").onclick = () => { i = (i + 1) % NOTES.length; render(); };
+document.getElementById("prev").onclick = () => { if (i) { i--; render(); } };
+document.getElementById("uz").onclick = () => { showUz = !showUz; render(); };
+let x0 = null;
+pic.addEventListener("touchstart", e => { x0 = e.changedTouches[0].clientX; }, { passive: true });
+pic.addEventListener("touchend", e => {
+  if (x0 == null) return;
+  const dx = e.changedTouches[0].clientX - x0;
+  if (dx < -40) document.getElementById("next").click();
+  else if (dx > 40 && i) { i--; render(); }
+  x0 = null;
+}, { passive: true });
+document.addEventListener("keydown", e => {
+  if (e.key === "ArrowRight") document.getElementById("next").click();
+  if (e.key === "ArrowLeft" && i) { i--; render(); }
+});
+render();
+</script>
+</body>
+</html>
