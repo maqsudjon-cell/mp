@@ -30,31 +30,20 @@
   button { cursor: pointer; }
   .wrap { max-width: 720px; margin: 0 auto; padding: calc(16px + env(safe-area-inset-top)) 16px calc(28px + env(safe-area-inset-bottom)); }
   .kicker { margin: 0; font-size: 13px; font-weight: 650; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
-  h1 { margin: 2px 0 0; font-weight: 760; font-size: 40px; letter-spacing: -0.045em; line-height: 1; }
-  .lead { margin: 8px 0 0; color: var(--muted); font-size: 15px; line-height: 1.35; }
-  .hero { margin-top: 18px; overflow: hidden; border-radius: 28px; touch-action: pan-y; box-shadow: 0 16px 40px rgba(20,24,40,.16); }
-  .track { display: flex; transition: transform .38s cubic-bezier(.22,.8,.2,1); }
-  .cover { position: relative; min-width: 100%; display: block; aspect-ratio: 16/10; color: #fff; text-decoration: none; }
-  .cover img { width: 100%; height: 100%; object-fit: cover; display: block; }
-  .scrim { position: absolute; left: 0; right: 0; bottom: 0; padding: 48px 16px 16px; background: linear-gradient(transparent, rgba(0,0,0,.78)); }
-  .scrim span { display: block; font-size: 12px; font-weight: 650; letter-spacing: .04em; text-transform: uppercase; opacity: .85; }
-  .scrim b { display: block; margin-top: 4px; font-size: 28px; letter-spacing: -0.04em; line-height: 1.05; }
-  .scrim em { display: block; margin-top: 4px; font-style: normal; font-size: 14px; opacity: .9; }
-  .hdots { display: flex; gap: 6px; justify-content: center; padding: 12px 0 2px; }
-  .hdots button { width: 7px; height: 7px; padding: 0; border: 0; border-radius: 99px; background: rgba(60,60,67,.28); }
-  .hdots button.on { width: 18px; background: #1c1c1e; }
-  .sec { margin: 22px 2px 8px; font-size: 20px; font-weight: 750; letter-spacing: -0.03em; }
-  .tile {
-    display: flex; align-items: center; gap: 12px;
-    margin-top: 10px; padding: 8px; text-decoration: none;
-    background: rgba(255,255,255,.86); border-radius: 22px;
-    box-shadow: 0 8px 24px rgba(28,28,40,.06);
+  h1 { margin: 2px 0 0; font-weight: 700; font-size: 34px; letter-spacing: -0.04em; line-height: 1; }
+  .lead { margin: 6px 0 0; color: var(--muted); font-size: 15px; }
+  .stack { display: grid; gap: 14px; margin-top: 18px; }
+  .story {
+    display: block; text-decoration: none; color: inherit;
+    background: #fff; border-radius: 22px; overflow: hidden;
+    box-shadow: 0 1px 0 rgba(255,255,255,.8) inset, 0 10px 28px rgba(20,24,40,.08);
   }
-  .tile:active { transform: scale(.985); }
-  .tile img { width: 108px; height: 72px; object-fit: cover; border-radius: 16px; flex: 0 0 auto; }
-  .tile b { display: block; font-size: 16px; letter-spacing: -0.02em; }
-  .tile em { display: block; margin-top: 3px; font-style: normal; color: var(--muted); font-size: 13px; line-height: 1.3; }
-  .tile i { margin-left: auto; font-style: normal; color: rgba(60,60,67,.35); font-size: 22px; padding-right: 6px; }
+  .story:active { transform: scale(.985); }
+  .story img { width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block; background: #eee; }
+  .cap { padding: 12px 14px 14px; }
+  .cap span { display: block; font-size: 12px; font-weight: 600; letter-spacing: .02em; color: var(--muted); }
+  .cap b { display: block; margin-top: 2px; font-size: 20px; letter-spacing: -0.03em; }
+  .cap em { display: block; margin-top: 2px; font-style: normal; font-size: 14px; color: var(--muted); }
   .stage { min-height: 100dvh; background: #000; color: #fff; }
   body.stage::before { display: none; }
   .bar, .script, .nav, .tools { max-width: 760px; margin-left: auto; margin-right: auto; }
@@ -293,42 +282,19 @@ function home() {
   document.body.className = "";
   document.querySelector('meta[name="theme-color"]').content = "#e7e8ee";
   const items = [
-    { href: "#tech/1", img: "media/tech-01.jpg", kicker: "20 okt · English", title: "Tech Tonight", sub: "O‘zing gapirasan · 14 slayd" },
-    { href: "#games/1", img: "media/games-01.jpg", kicker: "20 okt · English", title: "Asian Games", sub: "Mubina 1–5 · Jasmina 6–10" },
-    { href: "#greet/1", img: "media/greet-01.jpg", kicker: "22 okt · Rus tili", title: "Salomlashish", sub: "Ruscha gap · o‘zbekcha pastda" }
+    { href: "#tech/1", img: "media/tech-01.jpg", when: "20 oktabr · English · Hamidulla", title: "Tech Tonight", sub: "O‘zing gapirasan · 14 slayd" },
+    { href: "#games/1", img: "media/games-01.jpg", when: "20 oktabr · English · Hamidulla", title: "Asian Games", sub: "Mubina 1–5 · Jasmina 6–10" },
+    { href: "#greet/1", img: "media/greet-01.jpg", when: "22 oktabr · Rus tili · Manzura", title: "Salomlashish", sub: "Ruscha gapirasan · tarjima pastda · 7 slayd" }
   ];
   app.innerHTML = `
     <div class="wrap">
       <p class="kicker">Maqsudjon</p>
       <h1>Show</h1>
-      <p class="lead">Uchta chiqish. Suratni surib och.</p>
-      <div class="hero" id="hero">
-        <div class="track" id="track">
-          ${items.map((it) => `<a class="cover" href="${it.href}"><img src="${it.img}" alt=""><div class="scrim"><span>${esc(it.kicker)}</span><b>${esc(it.title)}</b><em>${esc(it.sub)}</em></div></a>`).join("")}
-        </div>
+      <p class="lead">Uchta chiqish.</p>
+      <div class="stack">
+        ${items.map((it) => `<a class="story" href="${it.href}"><img src="${it.img}" alt=""><div class="cap"><span>${esc(it.when)}</span><b>${esc(it.title)}</b><em>${esc(it.sub)}</em></div></a>`).join("")}
       </div>
-      <div class="hdots" id="hdots">
-        ${items.map((_, i) => `<button type="button" data-i="${i}" class="${i === 0 ? "on" : ""}"></button>`).join("")}
-      </div>
-      <h2 class="sec">Kundalik</h2>
-      ${items.map((it) => `<a class="tile" href="${it.href}"><img src="${it.img}" alt=""><span><b>${esc(it.title)}</b><em>${esc(it.sub)}</em></span><i>›</i></a>`).join("")}
     </div>`;
-  const track = document.getElementById("track");
-  const dots = [...document.querySelectorAll("#hdots button")];
-  let i = 0;
-  let x0 = 0;
-  function show(n) {
-    i = (n + items.length) % items.length;
-    track.style.transform = `translateX(${-i * 100}%)`;
-    dots.forEach((d, k) => d.classList.toggle("on", k === i));
-  }
-  document.getElementById("hero").ontouchstart = (e) => { x0 = e.changedTouches[0].clientX; };
-  document.getElementById("hero").ontouchend = (e) => {
-    const dx = e.changedTouches[0].clientX - x0;
-    if (dx > 40) show(i - 1);
-    if (dx < -40) show(i + 1);
-  };
-  dots.forEach((d) => d.onclick = () => show(Number(d.dataset.i)));
 }
 
 window.addEventListener("hashchange", render);
