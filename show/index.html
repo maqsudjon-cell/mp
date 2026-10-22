@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f3efe6">
+<base href="/show/">
+<title>Show</title>
+<style>
+  :root {
+    --paper: #f3efe6;
+    --ink: #1a1714;
+    --muted: #6f675e;
+    --line: #e3dcd1;
+    --card: #faf7f2;
+    --cinnabar: #c2410c;
+    --stage: #110f0d;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: var(--paper); color: var(--ink); }
+  body {
+    font-family: "Avenir Next", "Segoe UI", sans-serif;
+    min-height: 100dvh;
+  }
+  button, a { font: inherit; color: inherit; }
+  button { cursor: pointer; }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 28px 20px 48px; }
+  .kicker { margin: 0; font-size: 12px; letter-spacing: .16em; text-transform: uppercase; color: var(--muted); }
+  h1 { margin: 8px 0 0; font-family: Georgia, "Iowan Old Style", serif; font-weight: 500; font-size: 64px; line-height: .9; letter-spacing: -0.03em; }
+  .lead { margin: 14px 0 0; max-width: 36ch; color: var(--muted); font-size: 15px; line-height: 1.45; }
+  .day { margin: 28px 0 8px; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+  .card {
+    display: grid; grid-template-columns: 1fr auto; gap: 4px 12px;
+    width: 100%; text-align: left; text-decoration: none;
+    background: var(--card); border: 1px solid var(--line); border-radius: 18px;
+    padding: 16px 16px 14px; margin-top: 10px;
+  }
+  .card b { font-size: 20px; font-family: Georgia, serif; font-weight: 500; }
+  .card span { grid-column: 1; color: var(--muted); font-size: 14px; }
+  .card i { grid-row: 1 / span 2; align-self: center; font-style: normal; color: var(--muted); }
+  .stage { min-height: 100dvh; background: var(--stage); color: #f6f1ea; }
+  .bar, .script, .nav { max-width: 720px; margin: 0 auto; }
+  .bar { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 10px 16px 0; }
+  .bar button, .ghost {
+    background: transparent; border: 0; color: #c8bfb4; min-height: 44px; padding: 0 4px;
+  }
+  .bar strong { font-family: Georgia, serif; font-weight: 500; font-size: 18px; }
+  .frame { margin: 8px 16px 0; border-radius: 14px; overflow: hidden; background: #000; aspect-ratio: 16/9; }
+  .frame img, .frame video { width: 100%; height: 100%; object-fit: cover; display: block; background: #000; }
+  .script { padding: 16px 20px 8px; }
+  .who { display: inline-block; margin-bottom: 8px; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: #e8b8a4; }
+  .say { margin: 0; font-family: Georgia, serif; font-size: clamp(22px, 5vw, 32px); line-height: 1.25; font-weight: 500; }
+  .uz { margin: 10px 0 0; color: #b7aea3; font-size: 16px; line-height: 1.4; }
+  .note { margin: 12px 0 0; color: #e8b8a4; font-size: 14px; }
+  .nav { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; padding: 8px 16px 18px; }
+  .nav button, .tools button {
+    min-height: 48px; border-radius: 12px; border: 1px solid #3a342e; background: #1b1816; color: #f6f1ea;
+  }
+  .nav button.primary { background: var(--cinnabar); border-color: var(--cinnabar); font-weight: 650; }
+  .tools { display: flex; gap: 8px; padding: 0 16px; max-width: 720px; margin: 10px auto 0; overflow-x: auto; }
+  .tools button.on { background: #f6f1ea; color: #1a1714; border-color: #f6f1ea; }
+  .hidden { display: none !important; }
+  .dots { display: flex; gap: 5px; justify-content: center; padding: 10px 16px 0; }
+  .dots b { width: 7px; height: 7px; border-radius: 99px; background: #3a342e; display: block; }
+  .dots b.on { background: #f6f1ea; }
+  @media (min-width: 800px) {
+    .say { font-size: 34px; }
+  }
+</style>
+</head>
+<body>
+<div id="app"></div>
+<script>
+const SHOWS = {
+  tech: {
+    title: "Tech Tonight",
+    who: "Maqsudjon",
+    slides: [
+      { img: "tech-01.jpg", say: "Good evening! Welcome to Tech Tonight. I’m Maqsudjon. Tonight: a car that flies, a taxi with no driver, and an AI that shops for you." },
+      { img: "tech-02.jpg", say: "On October 15th, Tesla showed its new Roadster. And this car can fly!" },
+      { img: "tech-03.jpg", say: "The internet reacted very fast.", note: "To‘xta. Kulishsin." },
+      { img: "tech-04.jpg", video: "tech-fly.mp4", say: "And this is the real video.", note: "Videoni o‘ynat." },
+      { img: "tech-05.jpg", say: "And the Uzbek internet was ready too.", note: "To‘xta. O‘qishsin." },
+      { img: "tech-06.jpg", say: "How does it fly? With air! Ten thrusters. Six hundred liters of air. Zero to sixty in under one second. And to reserve one: fifty thousand dollars!" },
+      { img: "tech-07.jpg", say: "But is it legal? Elon Musk says: “Depends on your street.”" },
+      { img: "tech-08.jpg", say: "So, new road signs are coming.", note: "To‘xta." },
+      { img: "tech-09.jpg", say: "And car insurance companies right now…", note: "To‘xta." },
+      { img: "tech-10.jpg", say: "Tesla also has a taxi with no driver. In Texas, people already ride in it." },
+      { img: "tech-11.jpg", say: "Story two. Meta made Muse: an AI that shops for you. It finds the product and pays for it." },
+      { img: "tech-12.jpg", say: "But Amazon said no and blocked it." },
+      { img: "tech-13.jpg", say: "A question for you. Raise your hand: who would let an AI spend your money? And who would ride in a car with no driver?", note: "Qo‘l ko‘tarsin." },
+      { img: "tech-14.jpg", say: "Cars are learning to fly, and AI is learning to shop. That’s all for Tech Tonight. Thank you for watching!" }
+    ]
+  },
+  games: {
+    title: "Asian Games",
+    who: "Mubina · Jasmina",
+    split: true,
+    slides: [
+      { img: "games-01.jpg", part: "m", say: "Hello everyone! Today I want to tell you about Uzbekistan at the Asian Games in Japan." },
+      { img: "games-02.jpg", part: "m", say: "Let’s start with a quick quiz! How many medals did Uzbekistan win? Thirty, fifty or seventy?", note: "Javobni kut." },
+      { img: "games-03.jpg", part: "m", say: "The answer is seventy! Twenty-one gold, twenty-five silver and twenty-four bronze. Uzbekistan finished fifth in Asia!" },
+      { img: "games-04.jpg", part: "m", say: "Only China, Japan, South Korea and India were ahead of us. India had the same number of gold medals: twenty-one!" },
+      { img: "games-05.jpg", part: "m", say: "It was our biggest team ever: almost four hundred athletes. And one hundred seventy-two of them were women!" },
+      { img: "games-06.jpg", part: "j", say: "The first gold came in karate. Abdulvakhob Rashidov beat a Japanese fighter, in Japan!" },
+      { img: "games-07.jpg", part: "j", say: "And our girls were amazing! Sharifa Davronova won gold in triple jump, and Pokizaxon Kamoliddinova won gold in wrestling." },
+      { img: "games-08.jpg", part: "j", say: "Fun fact: our first Asian Games were also in Japan, in 1994. Then we won forty-two medals. Now: seventy!" },
+      { img: "games-09.jpg", part: "j", say: "And right now, one hundred fifty-three Uzbek athletes are at the Asian Para Games in Japan. Good luck to them!" },
+      { img: "games-10.jpg", part: "j", say: "Thank you for listening! Do you have any questions?" }
+    ]
+  },
+  greet: {
+    title: "Salomlashish",
+    who: "Maqsudjon",
+    slides: [
+      { img: "greet-01.jpg", say: "Здра́вствуйте! Я расскажу́, как здоро́ваются в ра́зных стра́нах.", uz: "Assalomu alaykum! Turli mamlakatlarda qanday salomlashishlarini aytib beraman." },
+      { img: "greet-02.jpg", say: "В Тибе́те пока́зывают язы́к. Э́то знак уваже́ния!", uz: "Tibetda til ko‘rsatishadi. Bu hurmat belgisi!", note: "Rasmni ko‘rsat. Jur’at qilsang, tilingni ham." },
+      { img: "greet-03.jpg", say: "В Но́вой Зела́ндии здоро́ваются носа́ми. Э́то «хо́нги».", uz: "Yangi Zelandiyada burun bilan salomlashishadi. Bu «hongi».", note: "Rasmni ko‘rsat." },
+      { img: "greet-04.jpg", say: "В Япо́нии кла́няются. Чем ни́же покло́н, тем бо́льше уваже́ния. Да́же Оба́ма!", uz: "Yaponiyada ta’zim qilishadi. Ta’zim qancha past bo‘lsa, hurmat shuncha katta. Hatto Obama ham!", note: "Biroz ta’zim qil. Oxirida rasmni ko‘rsat." },
+      { img: "greet-05.jpg", say: "В Таила́нде говоря́т «Саватди» и скла́дывают ладо́ни. Э́то «вай».", uz: "Tailandda «Savatdi» deyishadi va kaftlarni birlashtirishadi. Bu «vay».", note: "Kaftlaringni birlashtir." },
+      { img: "greet-06.jpg", say: "А мы говори́м «Ассалому алайкум» и кладём ру́ку на се́рдце.", uz: "Biz esa «Assalomu alaykum» deymiz va qo‘lni yurakka qo‘yamiz.", note: "O‘ng qo‘lingni ko‘ksingga qo‘y." },
+      { img: "greet-07.jpg", say: "Спаси́бо за внима́ние!", uz: "E’tiboringiz uchun rahmat!", note: "Yaponlardek ta’zim qil." }
+    ]
+  }
+};
+
+const app = document.getElementById("app");
+let part = "all";
+let hide = false;
+let index = 0;
+
+function esc(s) {
+  return String(s).replace(/[&<>"]/g, c => ({ "&": "&", "<": "<", ">": ">", '"': """ }[c]));
+}
+
+function deckOf(show) {
+  if (!show.split || part === "all") return show.slides.map((s, i) => ({ ...s, n: i }));
+  const want = part === "m" ? "m" : "j";
+  return show.slides.map((s, i) => ({ ...s, n: i })).filter(s => s.part === want);
+}
+
+function render() {
+  const hash = location.hash.replace("#", "");
+  const [id, raw] = hash.split("/");
+  const show = SHOWS[id];
+  if (!show) return home();
+  const deck = deckOf(show);
+  index = Math.max(0, Math.min(deck.length - 1, (parseInt(raw, 10) || 1) - 1));
+  const slide = deck[index];
+  const who = slide.part === "m" ? "Mubina · 1–5" : slide.part === "j" ? "Jasmina · 6–10" : "";
+  document.body.className = "stage";
+  document.querySelector('meta[name="theme-color"]').content = "#110f0d";
+  const media = slide.video
+    ? `<video src="media/${slide.video}" poster="media/${slide.img}" controls playsinline></video>`
+    : `<img src="media/${slide.img}" alt="">`;
+  app.innerHTML = `
+    <div class="bar">
+      <button id="back">Kundalik</button>
+      <strong>${esc(show.title)}</strong>
+      <span>${index + 1}/${deck.length}</span>
+    </div>
+    <div class="tools">
+      ${show.split ? `
+        <button data-part="all" class="${part === "all" ? "on" : ""}">Ikkalasi</button>
+        <button data-part="m" class="${part === "m" ? "on" : ""}">Mubina</button>
+        <button data-part="j" class="${part === "j" ? "on" : ""}">Jasmina</button>
+      ` : ""}
+      <button id="hide" class="${hide ? "on" : ""}">${hide ? "Matnni och" : "Matnni yashir"}</button>
+    </div>
+    <div class="frame" id="frame">${media}</div>
+    <div class="dots">${deck.map((_, i) => `<b class="${i === index ? "on" : ""}"></b>`).join("")}</div>
+    <div class="script ${hide ? "hidden" : ""}">
+      ${who ? `<div class="who">${who}</div>` : ""}
+      <p class="say">${esc(slide.say)}</p>
+      ${slide.uz ? `<p class="uz">${esc(slide.uz)}</p>` : ""}
+      ${slide.note ? `<p class="note">${esc(slide.note)}</p>` : ""}
+    </div>
+    <div class="nav">
+      <button id="prev">Oldingi</button>
+      <button id="next" class="primary">${index + 1 === deck.length ? "Tugadi" : "Keyingi"}</button>
+    </div>`;
+  document.getElementById("back").onclick = () => { location.hash = ""; };
+  document.getElementById("prev").onclick = () => go(index - 1, deck);
+  document.getElementById("next").onclick = () => go(index + 1, deck);
+  document.getElementById("hide").onclick = () => { hide = !hide; render(); };
+  app.querySelectorAll("[data-part]").forEach(b => b.onclick = () => {
+    part = b.dataset.part;
+    location.hash = id + "/1";
+    render();
+  });
+  const frame = document.getElementById("frame");
+  let x0 = 0;
+  frame.ontouchstart = e => { x0 = e.changedTouches[0].clientX; };
+  frame.ontouchend = e => {
+    const dx = e.changedTouches[0].clientX - x0;
+    if (dx > 50) go(index - 1, deck);
+    if (dx < -50) go(index + 1, deck);
+  };
+}
+
+function go(next, deck) {
+  const id = location.hash.replace("#", "").split("/")[0];
+  if (next < 0) return;
+  if (next >= deck.length) { location.hash = ""; return; }
+  location.hash = id + "/" + (next + 1);
+}
+
+function home() {
+  document.body.className = "";
+  document.querySelector('meta[name="theme-color"]').content = "#f3efe6";
+  app.innerHTML = `
+    <div class="wrap">
+      <p class="kicker">Maqsudjon</p>
+      <h1>Show</h1>
+      <p class="lead">Chiqishlar kundaligi. Slayd oldinda, aytadigan gap pastda.</p>
+      <p class="day">20 oktabr · Seshanba · English · Hamidulla</p>
+      <a class="card" href="#tech/1"><b>Tech Tonight</b><i>→</i><span>O‘zing gapirasan · 14 slayd</span></a>
+      <a class="card" href="#games/1"><b>Asian Games</b><i>→</i><span>Mubina 1–5 · Jasmina 6–10</span></a>
+      <p class="day">22 oktabr · Payshanba · Rus tili · Manzura</p>
+      <a class="card" href="#greet/1"><b>Qanday salomlashishadi</b><i>→</i><span>Ruscha gapirasan · o‘zbekchasi pastda · 7 slayd</span></a>
+    </div>`;
+}
+
+window.addEventListener("hashchange", render);
+document.addEventListener("keydown", e => {
+  if (!location.hash) return;
+  const id = location.hash.replace("#", "").split("/")[0];
+  const deck = deckOf(SHOWS[id]);
+  if (e.key === "ArrowRight") go(index + 1, deck);
+  if (e.key === "ArrowLeft") go(index - 1, deck);
+});
+render();
+</script>
+</body>
+</html>
