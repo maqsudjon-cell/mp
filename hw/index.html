@@ -13,7 +13,8 @@
   header, .bar, .notes, footer { padding: 12px 16px; }
   header { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
   header p { margin: 0; font-family: system-ui, sans-serif; font-size: 13px; letter-spacing: .08em; text-transform: uppercase; color: #e7b5a4; }
-  header span { font-family: system-ui, sans-serif; font-size: 13px; color: #c8bfb4; }
+  header a, header span { font-family: system-ui, sans-serif; font-size: 13px; color: #c8bfb4; }
+  header a { color: #f4efe6; }
   #pic { display: block; width: 100%; height: auto; background: #f4efe6; }
   .bar { display: grid; grid-template-columns: 1fr auto 1fr; gap: 8px; align-items: center; }
   button, a.btn {
@@ -47,6 +48,7 @@
 <body>
 <header>
   <p>Rus tili · salomlashish</p>
+  <a href="/unit/">Unit 1–2</a>
   <span id="count">1 / 11</span>
 </header>
 <img id="pic" alt="Slayd" src="slides/slide-01.jpg">
