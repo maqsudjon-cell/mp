@@ -38,10 +38,13 @@
   .card .title { margin: 3px 0 0; font-size: 20px; font-weight: 650; letter-spacing: -0.03em; line-height: 1.2; }
   .card .sub { margin: 4px 0 0; font-size: 14px; line-height: 1.35; color: #636366; }
   .keyrow { display: flex; justify-content: flex-end; padding: 0 12px 12px; }
-  .keyrow button {
+  .keyrow a, a.key {
+    display: inline-flex; align-items: center; justify-content: center;
     border: 0; background: #1c1c1e; color: #fff; border-radius: 999px;
     min-height: 34px; padding: 0 14px; font-size: 13px; font-weight: 650;
+    text-decoration: none;
   }
+  a.key { background: #fff; color: #111; }
   .stage { min-height: 100dvh; background: #000; color: #fff; }
   body.stage { background: #000; }
   .deck { min-height: 100dvh; display: flex; flex-direction: column; max-width: 820px; margin: 0 auto; }
@@ -221,7 +224,7 @@ function render() {
         <button data-part="j" class="${part === "j" ? "on" : ""}">Jasmina</button>
       ` : ""}
       <button id="hide">${hide ? "Matn" : "Matnsiz"}</button>
-      <button id="key" class="key">Keynote</button>
+      <a class="key" href="${show.file}" target="_blank" rel="noopener">Keynote</a>
     </div>
     <div class="frame" id="frame">${media}</div>
     <div class="meter"><i style="width:${Math.round(((index + 1) / deck.length) * 100)}%"></i></div>
@@ -240,7 +243,6 @@ function render() {
   document.getElementById("prev").onclick = () => go(index - 1, deck);
   document.getElementById("next").onclick = () => go(index + 1, deck);
   document.getElementById("hide").onclick = () => { hide = !hide; render(); };
-  document.getElementById("key").onclick = () => openKeynote(show.file, show.fname);
   app.querySelectorAll("[data-part]").forEach(b => b.onclick = () => {
     part = b.dataset.part;
     location.hash = id + "/1";
@@ -274,20 +276,6 @@ function go(next, deck) {
   location.hash = id + "/" + (next + 1);
 }
 
-function openKeynote(file, name) {
-  fetch(file).then(r => r.blob()).then(blob => {
-    const f = new File([blob], name, { type: "application/vnd.openxmlformats-officedocument.presentationml.presentation" });
-    if (navigator.canShare && navigator.canShare({ files: [f] })) {
-      navigator.share({ files: [f], title: name }).catch(() => {});
-      return;
-    }
-    const a = document.createElement("a");
-    a.href = URL.createObjectURL(blob);
-    a.download = name;
-    a.click();
-  }).catch(() => { location.href = file; });
-}
-
 function home() {
   document.body.className = "";
   document.querySelector('meta[name="theme-color"]').content = "#f2f2f7";
@@ -302,12 +290,9 @@ function home() {
       <p class="kicker">Maqsudjon</p>
       <h1>Show</h1>
       <div class="cards">
-        ${items.map((it) => `<article class="card"><a href="${it.href}"><img src="${it.img}" alt=""><div class="body"><p class="when">${esc(it.when)}</p><p class="title">${esc(it.title)}</p><p class="sub">${esc(it.sub)}</p></div></a><div class="keyrow"><button type="button" data-file="${it.file}" data-name="${esc(it.fname)}">Keynote</button></div></article>`).join("")}
+        ${items.map((it) => `<article class="card"><a href="${it.href}"><img src="${it.img}" alt=""><div class="body"><p class="when">${esc(it.when)}</p><p class="title">${esc(it.title)}</p><p class="sub">${esc(it.sub)}</p></div></a><div class="keyrow"><a href="${it.file}" target="_blank" rel="noopener">Keynote</a></div></article>`).join("")}
       </div>
     </div>`;
-  app.querySelectorAll(".keyrow button").forEach(b => {
-    b.onclick = () => openKeynote(b.dataset.file, b.dataset.name);
-  });
 }
 
 window.addEventListener("hashchange", render);
