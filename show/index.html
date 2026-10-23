@@ -187,7 +187,6 @@ const app = document.getElementById("app");
 let part = "all";
 let hide = false;
 let index = 0;
-const files = {};
 
 function esc(s) {
   var amp = String.fromCharCode(38) + "amp;";
@@ -236,7 +235,7 @@ function render() {
         <button data-part="j" class="${part === "j" ? "on" : ""}">Jasmina</button>
       ` : ""}
       <button id="hide">${hide ? "Matn" : "Matnsiz"}</button>
-      <button type="button" class="key" id="key">Keynote</button>
+      <a class="key" href="${show.file}" download="${esc(show.fname)}">Keynote</a>
     </div>
     <div class="frame" id="frame">${media}</div>
     <div class="meter"><i style="width:${Math.round(((index + 1) / deck.length) * 100)}%"></i></div>
@@ -255,8 +254,6 @@ function render() {
   document.getElementById("prev").onclick = () => go(index - 1, deck);
   document.getElementById("next").onclick = () => go(index + 1, deck);
   document.getElementById("hide").onclick = () => { hide = !hide; render(); };
-  document.getElementById("key").onclick = () => shareNow(show.file, show.fname);
-  warm(show.file, show.fname);
   app.querySelectorAll("[data-part]").forEach(b => b.onclick = () => {
     part = b.dataset.part;
     location.hash = id + "/1";
@@ -290,56 +287,6 @@ function go(next, deck) {
   location.hash = id + "/" + (next + 1);
 }
 
-function warm(url, name) {
-  if (files[url]) return;
-  files[url] = { state: "loading", file: null, name: name };
-  fetch(url).then(function (r) {
-    if (!r.ok) throw new Error("no");
-    return r.blob();
-  }).then(function (blob) {
-    files[url].file = new File([blob], name, { type: "application/vnd.openxmlformats-officedocument.presentationml.presentation" });
-    files[url].state = "ready";
-    const btn = document.getElementById("sharego");
-    if (btn) { btn.disabled = false; btn.textContent = "Keynote'da ochish"; }
-  }).catch(function () { files[url].state = "error"; });
-}
-
-function tryShare(url) {
-  const item = files[url];
-  if (!item || !item.file || !navigator.share) return false;
-  const opts = { files: [item.file], title: item.name };
-  if (navigator.canShare && !navigator.canShare(opts)) return false;
-  navigator.share(opts).catch(function (err) {
-    if (err && err.name === "AbortError") return;
-  });
-  return true;
-}
-
-function shareNow(url, name) {
-  warm(url, name);
-  if (tryShare(url)) return;
-  const abs = new URL(url, location.href).href;
-  const item = files[url];
-  let sheet = document.getElementById("sheet");
-  if (!sheet) {
-    sheet = document.createElement("div");
-    sheet.id = "sheet";
-    sheet.className = "sheet";
-    document.body.appendChild(sheet);
-  }
-  const ready = item && item.file;
-  const msg = ready
-    ? "Ulashish oynasi chiqadi. Undan Keynote'ni tanlang."
-    : "Fayl yuklanyapti. Tayyor bo‘lgach tugma yonadi, yana bosing.";
-  sheet.innerHTML = '<div class="box"><h2>Keynote</h2><p>' + msg + '</p><div class="row">'
-    + '<button type="button" id="sharego"' + (ready ? "" : " disabled") + '>' + (ready ? "Keynote'da ochish" : "Yuklanyapti…") + '</button>'
-    + '<a class="go ghost" href="' + abs + '">Faylni ochish</a>'
-    + '<button type="button" class="ghost" id="sheetclose">Yopish</button></div></div>';
-  document.getElementById("sharego").onclick = function () { tryShare(url); };
-  document.getElementById("sheetclose").onclick = function () { sheet.remove(); };
-  sheet.onclick = function (e) { if (e.target === sheet) sheet.remove(); };
-}
-
 function home() {
   document.body.className = "";
   document.querySelector('meta[name="theme-color"]').content = "#f2f2f7";
@@ -354,12 +301,9 @@ function home() {
       <p class="kicker">Maqsudjon</p>
       <h1>Show</h1>
       <div class="cards">
-        ${items.map((it) => `<article class="card"><a href="${it.href}"><img src="${it.img}" alt=""><div class="body"><p class="when">${esc(it.when)}</p><p class="title">${esc(it.title)}</p><p class="sub">${esc(it.sub)}</p></div></a><div class="keyrow"><button type="button" data-file="${it.file}" data-name="${esc(it.fname)}">Keynote</button></div></article>`).join("")}
+        ${items.map((it) => `<article class="card"><a href="${it.href}"><img src="${it.img}" alt=""><div class="body"><p class="when">${esc(it.when)}</p><p class="title">${esc(it.title)}</p><p class="sub">${esc(it.sub)}</p></div></a><div class="keyrow"><a href="${it.file}" download="${esc(it.fname)}">Keynote</a></div></article>`).join("")}
       </div>
     </div>`;
-  app.querySelectorAll(".keyrow button").forEach(function (b) {
-    b.onclick = function () { shareNow(b.dataset.file, b.dataset.name); };
-  });
 }
 
 window.addEventListener("hashchange", render);
