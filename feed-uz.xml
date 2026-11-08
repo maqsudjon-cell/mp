@@ -8,9 +8,50 @@
   <description>Kod va temir bilan ishlaydigan bir kishilik laboratoriya: chiqargan hamma narsam, chiqargan kunim. To&#x27;liq yozuvlar.</description>
   <language>uz</language>
   <copyright>© 2026 Maqsudjon Polatov</copyright>
-  <lastBuildDate>Mon, 19 Oct 2026 12:00:00 +0500</lastBuildDate>
+  <lastBuildDate>Thu, 05 Nov 2026 12:00:00 +0500</lastBuildDate>
   <ttl>720</ttl>
   <image><url>https://maqsudjon.com/favicon-512x512.png</url><title>Maqsudjon Polatov — build log (o&#x27;zbekcha)</title><link>https://maqsudjon.com/log/</link></image>
+  <item>
+    <title>Zitou App Store&#x27;da</title>
+    <link>https://maqsudjon.com/log/log-2026-11-05-zitou-on-the-app-store-uz.html</link>
+    <guid isPermaLink="true">https://maqsudjon.com/log/log-2026-11-05-zitou-on-the-app-store-uz.html</guid>
+    <pubDate>Thu, 05 Nov 2026 12:00:00 +0500</pubDate>
+    <dc:creator>Maqsudjon Polatov</dc:creator>
+    <category>MAHSULOT</category>
+    <description>Zitou: Learn Chinese &amp; HSK 2026-yil 5-noyabrda App Store&#x27;da chiqdi. iPhone ilovasi saytga nima qo&#x27;shadi, nega u aslida o&#x27;sha ilova va Android foydalanuvchilari uni hozircha qayerdan topadi.</description>
+    <content:encoded><![CDATA[<p class="lede">2026-yil 5-noyabrda Zitou App Store'da <a href="https://apps.apple.com/app/id6818937091">Zitou: Learn Chinese &amp; HSK</a> nomi bilan chiqdi. Yuklab olish bepul, iOS 15 va undan yangi iPhone hamda iPad uchun.</p>
+
+<h2>O'sha ilova, yana bir eshik</h2>
+
+<p>iPhone ilovasi <a href="https://zitou.app">zitou.app</a> dagi o'sha Zitou: veb-ilova atrofidagi native qobiq. Bu yo'lni ataylab tanladim. Tuzatish yoki yangi HSK sinov varianti sayt, Telegram Mini App va iPhone ilovasiga bitta deploy bilan yetib boradi, tekshiruvni kutmasdan.</p>
+
+<p>Qobiq faqat telefon qila oladigan narsalarni qo'shadi:</p>
+
+<ul>
+<li><strong>Apple bilan kirish</strong>, Google va Telegram yonida. Hammasi bitta hisobga va bitta natijaga olib boradi.</li>
+<li><strong>Kunlik eslatmalar</strong> telefonning o'zida rejalashtiriladi, chunki web view'da web push yo'q.</li>
+<li><strong>App Store orqali Pro</strong>, oylik yoki yillik. Server Pro'ni yoqishdan oldin har bir tranzaksiyani Apple bilan tekshiradi.</li>
+<li><strong>Ulashish oynasi</strong>, va zitou.app havolalari brauzerda emas, ilovaning o'zida ochiladi.</li>
+</ul>
+
+<h2>Android</h2>
+
+<p>Google Play versiyasi hali yo'q. U chiqquncha Android foydalanuvchilari Telegram'da <a href="https://t.me/zitouggbot">@zitouggbot</a> ni ochadi, u yerda butun ilova Mini App bo'lib ishlaydi, yoki brauzerda foydalanadi. Endi saytdagi yuklab olish tugmalari ostida aynan shu yozilgan, hech qayerga olib bormaydigan tugma o'rniga.</p>
+
+<h2>Saytlarda nima o'zgardi</h2>
+
+<ul>
+<li>Har bir landing sahifadagi App Store tugmasi ishlaydi; shu haftagacha unda "tez kunda" yozuvi turardi.</li>
+<li>Safari har bir sahifada ilova uchun o'zining "Ochish / Yuklab olish" bannerini ko'rsatadi, sinf ekranidagi jonli dars bundan mustasno.</li>
+<li>iPhone brauzeri bosh ekranga belgi qo'shishni o'rgatish o'rniga App Store'ga yuboriladi.</li>
+<li>Telegram botining salomlashuv xabari App Store havolasi bilan tugaydi.</li>
+</ul>
+
+<h2>Nima demayman</h2>
+
+<p>Bu yozuvda yuklab olishlar soni yo'q. Ularni qayerdan olinganini ko'rsata olganimda e'lon qilaman.</p>]]></content:encoded>
+    <media:content url="https://maqsudjon.com/log/og/log-2026-11-05-zitou-on-the-app-store-uz.png" medium="image" type="image/png" width="1200" height="630"/>
+  </item>
   <item>
     <title>Zitou: xitoy tili o&#x27;zbek tilida, zitou.uz va zitou.app</title>
     <link>https://maqsudjon.com/log/log-2026-10-19-zitou-chinese-in-uzbek-uz.html</link>

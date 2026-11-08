@@ -8,9 +8,50 @@
   <description>A one-person lab for acting in code and steel — everything I ship, as I ship it. Full posts.</description>
   <language>en</language>
   <copyright>© 2026 Maqsudjon Polatov</copyright>
-  <lastBuildDate>Mon, 19 Oct 2026 12:00:00 +0500</lastBuildDate>
+  <lastBuildDate>Thu, 05 Nov 2026 12:00:00 +0500</lastBuildDate>
   <ttl>720</ttl>
   <image><url>https://maqsudjon.com/favicon-512x512.png</url><title>Maqsudjon Polatov — build log</title><link>https://maqsudjon.com/log/</link></image>
+  <item>
+    <title>Zitou is on the App Store</title>
+    <link>https://maqsudjon.com/log/log-2026-11-05-zitou-on-the-app-store.html</link>
+    <guid isPermaLink="true">https://maqsudjon.com/log/log-2026-11-05-zitou-on-the-app-store.html</guid>
+    <pubDate>Thu, 05 Nov 2026 12:00:00 +0500</pubDate>
+    <dc:creator>Maqsudjon Polatov</dc:creator>
+    <category>PRODUCT</category>
+    <description>Zitou: Learn Chinese &amp; HSK went live on the App Store on 5 November 2026. What the iPhone app adds to the website, why it is the same app underneath, and where Android users find it for now.</description>
+    <content:encoded><![CDATA[<p class="lede">On 5 November 2026 Zitou went live on the App Store as <a href="https://apps.apple.com/app/id6818937091">Zitou: Learn Chinese &amp; HSK</a>. It is free to download, for iPhone and iPad on iOS 15 or later.</p>
+
+<h2>The same app, one more door</h2>
+
+<p>The iPhone app is the same Zitou as <a href="https://zitou.app">zitou.app</a>: a native shell around the web app. That was a choice, not a shortcut. A fix or a new HSK mock paper reaches the website, the Telegram Mini App and the iPhone app in one deploy, without waiting for a review.</p>
+
+<p>What the shell adds is what only a phone can do:</p>
+
+<ul>
+<li><strong>Sign in with Apple</strong>, next to Google and Telegram, all leading to the same account and the same progress.</li>
+<li><strong>Daily reminders</strong>, planned on the phone itself, because a web view has no web push.</li>
+<li><strong>Pro through the App Store</strong>, monthly or yearly. The server checks every transaction with Apple before it switches Pro on.</li>
+<li><strong>The share sheet</strong>, and zitou.app links that open in the app instead of the browser.</li>
+</ul>
+
+<h2>Android</h2>
+
+<p>There is no Google Play version yet. Until there is, Android users open <a href="https://t.me/zitouggbot">@zitouggbot</a> in Telegram, where the whole app runs as a Mini App, or use it in the browser. The site now says exactly that under its download buttons, instead of a button that leads nowhere.</p>
+
+<h2>What changed on the sites</h2>
+
+<ul>
+<li>The App Store button on every landing page is live; it said "coming soon" until this week.</li>
+<li>Safari shows its own "Open / Get" banner for the app on every page, except over a live lesson on a classroom screen.</li>
+<li>An iPhone browser is sent to the App Store, instead of being taught to add an icon to the home screen.</li>
+<li>The Telegram bot's greeting ends with the App Store link.</li>
+</ul>
+
+<h2>What I am not claiming</h2>
+
+<p>No download numbers in this post. I will publish them when I can show where they come from.</p>]]></content:encoded>
+    <media:content url="https://maqsudjon.com/log/og/log-2026-11-05-zitou-on-the-app-store.png" medium="image" type="image/png" width="1200" height="630"/>
+  </item>
   <item>
     <title>Zitou: Chinese in Uzbek, at zitou.uz and zitou.app</title>
     <link>https://maqsudjon.com/log/log-2026-10-19-zitou-chinese-in-uzbek.html</link>
