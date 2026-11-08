@@ -15,7 +15,7 @@ from build_log_post import build, ROOT, BASE
 STORE = "https://apps.apple.com/app/id6818937091"
 
 EN = f"""
-<p class="lede">On 5 November 2026 Zitou went live on the App Store as <a href="{STORE}">Zitou: Learn Chinese &amp; HSK</a>. It is free to download, for iPhone and iPad on iOS 15 or later.</p>
+<p class="lede">On 5 November 2026 Zitou went live on the App Store as <a href="{STORE}">Zitou: Learn Chinese &amp; HSK</a>. It is free to download, for iPhone on iOS 15 or later.</p>
 
 <h2>The same app, one more door</h2>
 
@@ -49,7 +49,7 @@ EN = f"""
 """
 
 UZ = f"""
-<p class="lede">2026-yil 5-noyabrda Zitou App Store'da <a href="{STORE}">Zitou: Learn Chinese &amp; HSK</a> nomi bilan chiqdi. Yuklab olish bepul, iOS 15 va undan yangi iPhone hamda iPad uchun.</p>
+<p class="lede">2026-yil 5-noyabrda Zitou App Store'da <a href="{STORE}">Zitou: Learn Chinese &amp; HSK</a> nomi bilan chiqdi. Yuklab olish bepul, iOS 15 va undan yangi iPhone uchun.</p>
 
 <h2>O'sha ilova, yana bir eshik</h2>
 
@@ -94,9 +94,9 @@ UZ_DESC = ("Zitou: Learn Chinese & HSK 2026-yil 5-noyabrda App Store'da chiqdi. 
 # OG rasmlari avval: build() ularni o'zi topadi
 from build_og import make
 make(EN_SLUG, "Zitou is on the App Store",
-     "Zitou: Learn Chinese & HSK · iPhone and iPad · free", "05 NOV 2026", "PRODUCT", 76)
+     "Zitou: Learn Chinese & HSK · for iPhone · free", "05 NOV 2026", "PRODUCT", 76)
 make(UZ_SLUG, "Zitou App Store'da",
-     "Zitou: Learn Chinese & HSK · iPhone va iPad · bepul", "05 NOY 2026", "MAHSULOT", 76)
+     "Zitou: Learn Chinese & HSK · iPhone uchun · bepul", "05 NOY 2026", "MAHSULOT", 76)
 
 build(EN_SLUG, "en", EN_TITLE, EN_DESC, "05 NOV 2026", "2026-11-05", "PRODUCT", EN,
       UZ_SLUG, "O'ZBEKCHA", "← ALL ENTRIES")
@@ -107,7 +107,7 @@ build(UZ_SLUG, "uz", UZ_TITLE, UZ_DESC, "05 NOY 2026", "2026-11-05", "MAHSULOT",
 import add_log_entries as A
 entry = {
     "date": "2026-11-05", "tag": "Tech", "slug": EN_SLUG, "title": EN_TITLE,
-    "body": ("Zitou went live on the App Store on 5 November as Zitou: Learn Chinese & HSK, free for iPhone and iPad.\n\n"
+    "body": ("Zitou went live on the App Store on 5 November as Zitou: Learn Chinese & HSK, free for iPhone.\n\n"
              "It is the same app as zitou.app, in a native shell, so one deploy still reaches the website, the Telegram "
              "Mini App and the iPhone app. The shell adds Sign in with Apple, daily reminders planned on the phone, Pro "
              "through the App Store and the share sheet.\n\n"
