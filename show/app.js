@@ -149,7 +149,7 @@ function renderStage(show) {
             role: "tab",
             onclick: () => write({ id: show.id, n: 1, part: "all" }),
           },
-          ["Ikkalasi"],
+          [show.parts.length > 2 ? "Hammasi" : "Ikkalasi"],
         ),
         ...show.parts.map((part) =>
           h(
