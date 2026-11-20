@@ -17,25 +17,33 @@ function deckOf(show, part) {
   return deck.length ? deck : show.slides;
 }
 
+function pathId() {
+  const match = location.pathname.match(/\/s\/([a-z0-9-]+)\/?$/);
+  return match ? match[1] : "";
+}
+
 function read() {
   const q = new URLSearchParams(location.search);
   const raw = q.get("part") || "all";
   const n = Number(q.get("n"));
   return {
-    id: q.get("id") || "",
+    id: q.get("id") || pathId() || "",
     n: Number.isFinite(n) && n > 0 ? Math.floor(n) : 1,
-    part: raw === "all" || /^[a-z]{1,4}$/.test(raw) ? raw : "all",
+    part: raw === "all" || /^[a-z0-9-]{1,16}$/.test(raw) ? raw : "all",
   };
 }
 
 function write(next, replace) {
   const url = new URL(location.href);
   url.hash = "";
-  if (!next.id) url.search = "";
-  else {
-    url.searchParams.set("id", next.id);
-    url.searchParams.set("n", String(next.n));
-    url.searchParams.set("part", next.part);
+  if (!next.id) {
+    url.pathname = "/show/";
+    url.search = "";
+  } else {
+    url.pathname = `/show/s/${next.id}/`;
+    url.searchParams.set("n", String(next.n || 1));
+    url.searchParams.set("part", next.part || "all");
+    url.searchParams.delete("id");
   }
   history[replace ? "replaceState" : "pushState"]({}, "", url);
   playing = false;
@@ -84,7 +92,7 @@ function renderHome() {
               "a",
               {
                 class: "block text-inherit no-underline",
-                href: `?id=${show.id}&n=1&part=all`,
+                href: `s/${show.id}/`,
                 onclick: (event) => {
                   event.preventDefault();
                   write({ id: show.id, n: 1, part: "all" });
@@ -199,6 +207,32 @@ function renderStage(show) {
               },
             },
             [scriptOn ? "Matnsiz" : "Matn"],
+          ),
+          h(
+            "button",
+            {
+              type: "button",
+              class: "btn flex-1",
+              onclick: async (event) => {
+                const url = `https://maqsudjon.com/show/s/${show.id}/`;
+                const btn = event.currentTarget;
+                try {
+                  await navigator.clipboard.writeText(url);
+                } catch {
+                  const box = document.createElement("textarea");
+                  box.value = url;
+                  document.body.append(box);
+                  box.select();
+                  document.execCommand("copy");
+                  box.remove();
+                }
+                btn.textContent = "Olindi";
+                setTimeout(() => {
+                  btn.textContent = "Link";
+                }, 1200);
+              },
+            },
+            ["Link"],
           ),
           h("a", { class: "btn flex-1", href: rel(show.file), download: show.fname }, [
             h("span", { html: dlIcon }),
@@ -339,4 +373,14 @@ window.addEventListener("keydown", (event) => {
   if (event.key === "ArrowRight") window.__go(1);
   if (event.key === "ArrowLeft") window.__go(-1);
 });
+canon();
 render();
+
+function canon() {
+  const view = read();
+  if (!view.id || location.pathname.includes(`/s/${view.id}`)) return;
+  const url = new URL(`${location.origin}/show/s/${view.id}/`);
+  url.searchParams.set("n", String(view.n));
+  url.searchParams.set("part", view.part);
+  history.replaceState({}, "", url);
+}
