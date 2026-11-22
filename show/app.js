@@ -260,11 +260,14 @@ function renderStage(show) {
                 h("img", {
                   src: rel(slide.img),
                   alt: "",
-                  class: `rise aspect-video w-full object-contain ${playing ? "invisible" : ""}`,
+                  class: `rise aspect-video w-full object-contain ${playing && !slide.portrait ? "invisible" : ""}`,
                 }),
                 slide.video
                   ? h("video", {
-                      class: `absolute inset-0 h-full w-full bg-ink object-contain ${playing ? "" : "invisible"}`,
+                      class: slide.portrait
+                        ? `absolute object-contain ${playing ? "" : "invisible"}`
+                        : `absolute inset-0 h-full w-full bg-ink object-contain ${playing ? "" : "invisible"}`,
+                      style: slide.portrait ? "left:68.56%;top:6.67%;width:27.44%;height:86.67%" : null,
                       src: rel(slide.video),
                       playsinline: true,
                       controls: playing ? true : null,
@@ -280,6 +283,7 @@ function renderStage(show) {
                       {
                         type: "button",
                         class: "play",
+                        style: slide.portrait ? "left:82.28%;top:50%" : null,
                         "aria-label": "Videoni o‘ynat",
                         onclick: async (event) => {
                           const video = event.currentTarget.parentElement.querySelector("video");
