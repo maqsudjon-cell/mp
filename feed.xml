@@ -660,7 +660,7 @@
     <category>Tech</category>
     <description>Tore the site down and rebuilt it in the image of generalintuition.com — the frontier lab whose whole visual language is ASCII. Everything is here: the…</description>
     <content:encoded><![CDATA[<p>Tore the site down and rebuilt it in the image of generalintuition.com — the frontier lab whose whole visual language is ASCII. Everything is here: the white 1px blueprint grid that frames every section, the giant video-to-ASCII header (my F1 lap footage sampled live into coloured glyphs and tiles), the ASCII Settings panel with working Cell size / Text opacity / Tile opacity sliders, quotes that light up as you scroll, headings that de-scramble from glyph noise, invert-on-hover project tiles, a story modal (Why pangea8), and a white footer highlight card.</p>
-<p>My own touches: the wordmark is a two-line figlet MAQSUDJON rendered in block glyphs, my profile photo is re-rendered as a live ASCII portrait in the contact section, and the Music slider in the settings panel doesn&#x27;t play a hidden track — it plays a tiny ambient synth generated in the browser with the Web Audio API, a nod to Matsumi. Still one self-contained HTML file, vanilla JS, no build step.</p>]]></content:encoded>
+<p>My own touches: the wordmark is a two-line figlet MAQSUDJON rendered in block glyphs, my profile photo is re-rendered as a live ASCII portrait in the contact section, and the Music slider in the settings panel doesn&#x27;t play a hidden track — it plays a tiny ambient synth generated in the browser with the Web Audio API, a nod to ferrasium. Still one self-contained HTML file, vanilla JS, no build step.</p>]]></content:encoded>
     <media:content url="https://maqsudjon.com/og-image.png" medium="image" type="image/png" width="1200" height="630"/>
   </item>
   <item>
@@ -968,7 +968,7 @@
     <dc:creator>Maqsudjon Polatov</dc:creator>
     <category>Music</category>
     <description>Releasing UK Garage tracks from Uzbekistan feels strange sometimes. I&#x27;m probably one of the only producers in Central Asia making this sound. My album…</description>
-    <content:encoded><![CDATA[<p>Releasing UK Garage tracks from Uzbekistan feels strange sometimes. I&#x27;m probably one of the only producers in Central Asia making this sound. My album HOME is out on Spotify under Matsumi. Most of my listeners are in the UK, which makes sense — that&#x27;s where the genre lives. But it also tells me something: location doesn&#x27;t matter anymore. The internet erased that.</p>]]></content:encoded>
+    <content:encoded><![CDATA[<p>Releasing UK Garage tracks from Uzbekistan feels strange sometimes. I&#x27;m probably one of the only producers in Central Asia making this sound. My album HOME is out on Spotify under ferrasium. Most of my listeners are in the UK, which makes sense — that&#x27;s where the genre lives. But it also tells me something: location doesn&#x27;t matter anymore. The internet erased that.</p>]]></content:encoded>
     <media:content url="https://maqsudjon.com/og-image.png" medium="image" type="image/png" width="1200" height="630"/>
   </item>
 </channel>
