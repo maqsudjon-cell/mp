@@ -148,7 +148,7 @@
    ========================================================= */
 function sharePage(platform) {
   var url = encodeURIComponent(window.location.href);
-  var fullText = encodeURIComponent("Maqsudjon Polatov — IELTS Hub with 73 listening tests, music as Matsumi, and more. Check out maqsudjon.com and flarestamina.com");
+  var fullText = encodeURIComponent("Maqsudjon Polatov — IELTS Hub with 73 listening tests, music as ferrasium, and more. Check out maqsudjon.com and flarestamina.com");
 
   if (platform === 'telegram') {
     window.open("https://t.me/share/url?url=" + url + "&text=" + fullText, "_blank", "width=600,height=400");

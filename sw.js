@@ -1,5 +1,5 @@
 /* maqsudjon.com service worker — offline shell, cache-first assets */
-const CACHE = 'mp-v2';
+const CACHE = 'mp-v3';
 const SHELL = ['./', './index.html', './profile.jpg', './favicon.svg', './og-image.png'];
 
 self.addEventListener('install', e => {
