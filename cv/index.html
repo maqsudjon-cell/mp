@@ -1,571 +1,273 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CV 2026 — Maqsudjon Polatov · AI-First Builder</title>
-<meta name="description" content="Current CV: 180 public repositories, 1,627 commits, 12 live sites on their own domains. Built solo by directing AI agents. Downloadable PDF, every claim verifiable.">
-<link rel="canonical" href="https://maqsudjon.com/cv/new/">
-<meta property="og:title" content="CV 2026 — Maqsudjon Polatov · AI-First Builder">
-<meta property="og:description" content="180 repositories, 1,627 commits, 12 live domains, real paying clients — built solo by directing AI agents.">
-<meta property="og:url" content="https://maqsudjon.com/cv/new/">
-<meta property="og:type" content="profile">
-<meta property="og:image" content="https://maqsudjon.com/og-image.png">
-<meta name="twitter:card" content="summary_large_image">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>CV · Maqsudjon Polatov</title>
+<meta name="description" content="CV of Maqsudjon Polatov, product engineer in Tashkent: 19 live sites and 2 App Store apps in 20 months while welding full-time.">
+<link rel="canonical" href="https://maqsudjon.com/cv/">
+<meta name="author" content="Maqsudjon Polatov">
 <meta name="theme-color" content="#000000">
+<meta property="og:type" content="profile">
+<meta property="og:site_name" content="maqsudjon.com">
+<meta property="og:title" content="CV · Maqsudjon Polatov">
+<meta property="og:description" content="CV of Maqsudjon Polatov, product engineer in Tashkent: 19 live sites and 2 App Store apps in 20 months while welding full-time.">
+<meta property="og:url" content="https://maqsudjon.com/cv/">
+<meta property="og:image" content="https://maqsudjon.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@ferrasium">
+<link rel="icon" href="../favicon.ico" sizes="32x32">
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
-<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
 <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<link rel="manifest" href="../site.webmanifest">
+<link rel="alternate" type="application/rss+xml" title="Maqsudjon — build log" href="../feed.xml">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "ProfilePage", "@id": "https://maqsudjon.com/cv/#page", "url": "https://maqsudjon.com/cv/", "name": "CV · Maqsudjon Polatov", "mainEntity": {"@id": "https://maqsudjon.com/#person"}}, {"@type": "Person", "@id": "https://maqsudjon.com/#person", "name": "Maqsudjon Polatov", "url": "https://maqsudjon.com/", "jobTitle": "Product engineer", "email": "mailto:polatovmaqsudjon1@gmail.com", "address": {"@type": "PostalAddress", "addressLocality": "Tashkent", "addressCountry": "UZ"}, "sameAs": ["https://github.com/maqsudjon-cell", "https://huggingface.co/Maqsudjonpolatov", "https://t.me/ferrasium", "https://t.me/ferrasiums", "https://x.com/ferrasium", "https://www.instagram.com/ferrasiums", "https://youtube.com/@ferrasium", "https://open.spotify.com/artist/7gyBtPQMFaZbn0iHqtB9nW", "https://music.yandex.com/artist/26563617", "https://www.reddit.com/user/mrbmp13/", "https://medium.com/@polatovmaqsudjon1", "https://zitou.app/@ferrasium", "https://tou.gg/", "https://maqsudjon.com/"]}]}</script>
+<script data-goatcounter="https://maqsudjon.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300;400;500;600;700&family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@600&family=Onest:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap">
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-body,body *{font-variant-ligatures:none;font-feature-settings:"liga" 0,"clig" 0,"dlig" 0}
-html{background:#000;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased;scroll-behavior:smooth}
-body{background:#000;color:#ffffffbb;font-family:'Geist',system-ui,sans-serif;line-height:1.55;overflow-x:hidden}
-::selection{background:#fff;color:#000}
-a{color:inherit}
-.mono{font-family:'Geist Mono',ui-monospace,SFMono-Regular,monospace}
-.wrap{max-width:980px;margin:0 auto;padding:0 24px}
-/* nav */
-nav{position:sticky;top:0;z-index:50;background:linear-gradient(#000 60%,#000c);border-bottom:1px solid #ffffff14}
-.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 0}
-.nav-logo{font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:#fff;text-decoration:none;white-space:nowrap}
-.btn{display:inline-block;font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;background:#fff;color:#000;border:1px solid #fff;padding:12px 20px;cursor:pointer;text-decoration:none;transition:background .4s cubic-bezier(.16,1,.3,1),color .4s cubic-bezier(.16,1,.3,1);text-align:center}
-.btn:hover{background:transparent;color:#fff}
-.btn-ghost{background:transparent;color:#fff}
-.btn-ghost:hover{background:#fff;color:#000}
-/* hero */
-header{padding:66px 0 46px;border-bottom:1px solid #ffffff14}
-.kicker{font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#ffffff77}
-h1{font-family:'Funnel Display',sans-serif;font-weight:600;font-size:clamp(38px,7vw,72px);line-height:1.02;color:#fff;margin:14px 0 10px;letter-spacing:-.01em}
-.role{font-family:'Geist Mono',monospace;font-size:clamp(13px,2vw,16px);letter-spacing:.14em;text-transform:uppercase;color:#7ee2b8}
-.hook{font-size:clamp(17px,2.6vw,22px);color:#ffffffd9;max-width:660px;margin:26px 0 8px;line-height:1.45}
-.hook b{color:#fff}
-.hero-btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
-.contact-line{margin-top:22px;font-family:'Geist Mono',monospace;font-size:12.5px;color:#ffffff8a;letter-spacing:.03em;line-height:2}
-.contact-line a{color:#ffffffc4;text-decoration:none;border-bottom:1px solid #ffffff33}
-.contact-line a:hover{color:#fff;border-color:#fff}
-/* numbers */
-.numbers{display:grid;grid-template-columns:repeat(6,1fr);border-left:1px solid #ffffff1f}
-.num{border-right:1px solid #ffffff1f;padding:24px 14px}
-.num b{display:block;font-family:'Funnel Display',sans-serif;font-weight:600;font-size:clamp(22px,3.2vw,36px);color:#fff;line-height:1}
-.num span{display:block;margin-top:8px;font-family:'Geist Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#ffffff70}
-@media(max-width:860px){.numbers{grid-template-columns:repeat(3,1fr)}.num{border-bottom:1px solid #ffffff1f}}
-@media(max-width:520px){.numbers{grid-template-columns:repeat(2,1fr)}}
-/* sections */
-section{padding:56px 0;border-bottom:1px solid #ffffff14}
-.label{font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#7ee2b8;margin-bottom:24px}
-h2{font-family:'Funnel Display',sans-serif;font-weight:600;font-size:clamp(24px,3.6vw,34px);color:#fff;line-height:1.15;margin-bottom:18px;letter-spacing:-.01em}
-p.big{font-size:clamp(15.5px,2vw,18px);color:#ffffffc9;max-width:720px}
-/* honest split */
-.split{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid #ffffff1f;margin-top:30px}
-.split>div{padding:28px}
-.split>div:first-child{border-right:1px solid #ffffff1f;background:#ffffff08}
-.split h3{font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:.18em;text-transform:uppercase;margin-bottom:16px}
-.split .no h3{color:#ffffff66}
-.split .yes h3{color:#7ee2b8}
-.split ul{list-style:none}
-.split li{padding:7px 0;font-size:15px;color:#ffffffc4;border-bottom:1px solid #ffffff0f}
-.split li:last-child{border-bottom:0}
-.split .no li{color:#ffffff85}
-@media(max-width:700px){.split{grid-template-columns:1fr}.split>div:first-child{border-right:0;border-bottom:1px solid #ffffff1f}}
-/* work cards */
-.work{border:1px solid #ffffff1f;padding:28px;margin-top:-1px}
-.work-top{display:flex;align-items:baseline;justify-content:space-between;gap:14px;flex-wrap:wrap}
-.work h3{font-family:'Funnel Display',sans-serif;font-weight:600;font-size:22px;color:#fff}
-.work h3 em{font-style:normal;font-weight:400;color:#ffffff8a;font-size:16px}
-.work .tag{font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#7ee2b8;white-space:nowrap}
-.work ul{list-style:none;margin-top:14px}
-.work li{position:relative;padding-left:16px;margin-bottom:8px;font-size:14.8px;color:#ffffffab}
-.work li::before{content:"";position:absolute;left:0;top:9px;width:6px;height:1px;background:#7ee2b8}
-.work li b{color:#fff;font-weight:500}
-.stack{margin-top:14px;padding-top:12px;border-top:1px solid #ffffff14;font-family:'Geist Mono',monospace;font-size:11.5px;color:#ffffff6e;letter-spacing:.04em}
-.work-links{margin-top:14px;display:flex;flex-wrap:wrap;gap:8px}
-.chip{font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;border:1px solid #ffffff2b;padding:7px 12px;text-decoration:none;color:#ffffffc4;transition:background .35s,color .35s,border-color .35s}
-.chip:hover{background:#7ee2b8;border-color:#7ee2b8;color:#000}
-/* client grid */
-.clients{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#ffffff1f;border:1px solid #ffffff1f;margin-top:8px}
-.client{background:#000;padding:24px;text-decoration:none;display:block;transition:background .45s cubic-bezier(.16,1,.3,1)}
-.client:hover{background:#fff}
-.client:hover *{color:#000!important}
-.client:hover .cl-tag{color:#000!important}
-.cl-top{display:flex;align-items:baseline;justify-content:space-between;gap:10px;flex-wrap:wrap}
-.client h3{font-family:'Funnel Display',sans-serif;font-weight:600;font-size:19px;color:#fff}
-.cl-tag{font-family:'Geist Mono',monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:#7ee2b8}
-.client p{margin-top:9px;font-size:14.2px;color:#ffffff9c}
-@media(max-width:700px){.clients{grid-template-columns:1fr}}
-/* domain table */
-.dtable{width:100%;border-collapse:collapse;margin-top:8px;font-size:14px}
-.dtable th{text-align:left;font-family:'Geist Mono',monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#ffffff70;font-weight:400;padding:0 12px 8px 0;border-bottom:1px solid #ffffff1f}
-.dtable td{padding:11px 12px 11px 0;border-bottom:1px solid #ffffff14;vertical-align:top;color:#ffffffab}
-.dtable tr:last-child td{border-bottom:0}
-.dtable td.d{white-space:nowrap;width:230px}
-.dtable td.d a{color:#7ee2b8;text-decoration:none;font-family:'Geist Mono',monospace;font-size:12.5px;border-bottom:1px solid #7ee2b840}
-.dtable td.d a:hover{border-color:#7ee2b8}
-.dtable td.d span{font-family:'Geist Mono',monospace;font-size:12.5px;color:#ffffff70}
-.dtable td b{color:#fff;font-weight:500}
-.dtable td i{font-style:normal;color:#ffffff6b;font-size:12px}
-@media(max-width:700px){.dtable td.d{width:auto;white-space:normal}.dtable td,.dtable th{display:block;padding-right:0}.dtable td.d{padding-bottom:3px;border-bottom:0}}
-/* skills */
-.skills{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#ffffff1f;border:1px solid #ffffff1f;margin-top:8px}
-.skill{background:#000;padding:24px}
-.skill h3{font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#fff;margin-bottom:10px}
-.skill p{font-size:14.5px;color:#ffffff9c}
-.skill.limit{background:#ffffff08}
-.skill.limit h3{color:#7ee2b8}
-@media(max-width:700px){.skills{grid-template-columns:1fr}}
-/* timeline rows */
-.row{display:grid;grid-template-columns:170px 1fr;gap:20px;padding:22px 0;border-bottom:1px solid #ffffff14}
-.row:last-child{border-bottom:0}
-.row .when{font-family:'Geist Mono',monospace;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:#ffffff70;padding-top:4px}
-.row h3{font-family:'Funnel Display',sans-serif;font-weight:600;font-size:19px;color:#fff;margin-bottom:6px}
-.row h3 em{font-style:normal;font-weight:400;color:#ffffff8a;font-size:15px}
-.row ul{list-style:none;margin-top:6px}
-.row li{position:relative;padding-left:16px;margin-bottom:6px;font-size:14.6px;color:#ffffffab}
-.row li::before{content:"";position:absolute;left:0;top:9px;width:6px;height:1px;background:#ffffff44}
-.row p{font-size:14.6px;color:#ffffffab}
-@media(max-width:700px){.row{grid-template-columns:1fr;gap:8px}}
-/* ielts */
-.bands{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:#ffffff1f;border:1px solid #ffffff1f;margin-top:20px}
-.bd{background:#000;padding:20px 10px;text-align:center}
-.bd b{display:block;font-family:'Funnel Display',sans-serif;font-weight:600;font-size:clamp(22px,3.4vw,32px);color:#fff;line-height:1}
-.bd span{display:block;margin-top:7px;font-family:'Geist Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#ffffff70}
-.bd.tot{background:#7ee2b8}
-.bd.tot b,.bd.tot span{color:#000}
-@media(max-width:560px){.bands{grid-template-columns:repeat(3,1fr)}}
-/* callout */
-.callout{border:1px solid #ffffff1f;background:#ffffff08;padding:20px 24px;margin-top:26px;font-size:14.5px;color:#ffffffab}
-.callout a{color:#7ee2b8;text-decoration:none;border-bottom:1px solid #7ee2b855}
-.callout a:hover{border-color:#7ee2b8}
-/* footer cta */
-.cta{padding:70px 0}
-.cta .btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
-footer{padding:34px 0 44px;font-family:'Geist Mono',monospace;font-size:11.5px;letter-spacing:.08em;color:#ffffff55}
-footer a{color:#ffffff90;text-decoration:none;border-bottom:1px solid #ffffff33}
-footer a:hover{color:#fff}
-/* reveal */
-.rv{opacity:0;transform:translateY(14px);transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1)}
-.rv.on{opacity:1;transform:none}
-@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}}
-/* --- small screens: keep everything inside the viewport --- */
-@media(max-width:600px){
-  .wrap{padding:0 18px}
-  .nav-inner{gap:8px}
-  .nav-logo{font-size:10px;letter-spacing:.1em;white-space:normal;line-height:1.3}
-  .nav-inner .btn{padding:10px 12px;font-size:10px;letter-spacing:.06em}
-  .contact-line{font-size:11.5px;line-height:1.85;word-break:break-word;overflow-wrap:anywhere}
-  .work,.skill,.client,.split>div{padding:20px}
-  .work h3{font-size:19px}
-  .work h3 em{display:block;font-size:14px;margin-top:2px}
-  .work-top,.cl-top{gap:6px}
-  .stack{overflow-wrap:anywhere}
-  .hero-btns .btn{flex:1 1 100%}
+/* brand-icon links: each link carries its own app's icon */
+.soc-sprite{position:absolute;width:0;height:0;overflow:hidden}
+.soc{--soc-tile:#fff;--soc-edge:rgba(0,0,0,.14);--soc-ink:#111;display:inline-flex;align-items:center;gap:.7em;color:inherit;text-decoration:none;line-height:1.25;min-width:0;max-width:100%}
+.soc-dark .soc,.soc.soc-dark{--soc-tile:#1a1b1e;--soc-edge:rgba(255,255,255,.18);--soc-ink:#fff}
+.soc-ico{flex:none;width:2.1em;height:2.1em;border-radius:.6em;background:var(--soc-bg,var(--soc-tile));box-shadow:inset 0 0 0 1px var(--soc-ring,var(--soc-edge));display:grid;place-items:center;overflow:hidden;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.soc-ico svg{width:62%;height:62%;display:block;fill:var(--soc-fg,var(--soc-ink))}
+.soc-txt{display:flex;flex-direction:column;min-width:0}
+.soc-name{font-weight:600}
+.soc-handle{opacity:.66;font-size:.86em;overflow-wrap:anywhere}
+.soc:hover .soc-ico,.soc:focus-visible .soc-ico{transform:translateY(-1px);box-shadow:inset 0 0 0 1px var(--soc-ring,var(--soc-edge)),0 4px 12px rgba(0,0,0,.18)}
+.soc-ico{transition:transform .2s,box-shadow .2s}
+.soc-telegram{--soc-fg:#26A5E4}
+.soc-instagram .soc-ico svg{fill:url(#soc-ig)}
+.soc-x,.soc-github{--soc-fg:var(--soc-ink)}
+.soc-medium{--soc-bg:transparent;--soc-ring:transparent;--soc-fg:var(--soc-ink)}
+.soc-medium .soc-ico svg{width:100%;height:100%}
+.soc-youtube{--soc-fg:#F00}
+.soc-spotify{--soc-fg:#1ED760}
+.soc-reddit{--soc-fg:#FF4500}
+.soc-mail{--soc-fg:#EA4335}
+.soc-huggingface{--soc-fg:#FFB800}
+.soc-appstore{--soc-fg:#0D96F6}
+.soc-phone{--soc-fg:#2FA35B}
+.soc-yandex{--soc-bg:#FFCC00;--soc-ring:transparent;--soc-fg:#000}
+.soc-zitou{--soc-bg:transparent;--soc-ring:transparent}
+.soc-zitou .soc-ico svg{width:100%;height:100%}
+.soc-list{list-style:none;margin:0;padding:0;display:grid;gap:.7rem}
+.soc-list.soc-cols{grid-template-columns:repeat(auto-fill,minmax(13rem,1fr))}
+.soc-row{display:flex;flex-wrap:wrap;gap:.6rem}
+.soc-chip{padding:.3em .85em .3em .3em;border:1px solid var(--soc-edge);border-radius:999px}
+.soc-only{gap:0}
+.soc-only .soc-txt{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.soc-sm .soc-ico{width:1.7em;height:1.7em}
+@media (prefers-reduced-motion:reduce){.soc-ico{transition:none}.soc:hover .soc-ico{transform:none}}
+
+/* A one-page CV on white paper, same in every theme so it prints and reads the same. */
+:root {
+  --paper: #FFFFFF; --desk: #F1F2F4; --ink: #0E1014; --muted: #5D6470; --line: #E0E3E8; --accent: #2F49F5;
+  --f-display: "Unbounded", "Arial Black", system-ui, sans-serif;
+  --f-body: "Onest", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --f-mono: "Geist Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  color-scheme: light;
 }
-@media print{nav{position:static}.rv{opacity:1;transform:none}}
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; background: var(--desk); color: var(--ink); font-family: var(--f-body); font-size: 14px; line-height: 1.5; -webkit-font-smoothing: antialiased; padding: 24px 16px; }
+a { color: inherit; }
+.bar { max-width: 820px; margin: 0 auto 12px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: .5rem; font-size: 13px; }
+.bar a { text-decoration: none; padding: .45rem .9rem; border-radius: 999px; background: var(--paper); border: 1px solid var(--line); }
+.bar a.pdf { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+.page { max-width: 820px; margin: 0 auto; background: var(--paper); border: 1px solid var(--line); border-radius: 14px; padding: clamp(20px, 5vw, 48px); }
+header { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 1rem 2rem; align-items: end; padding-bottom: 18px; border-bottom: 2px solid var(--ink); }
+h1 { font-family: var(--f-display); font-weight: 600; font-size: clamp(22px, 4vw, 30px); letter-spacing: -.02em; line-height: 1.1; margin: 0 0 6px; }
+.role { margin: 0; color: var(--muted); font-size: 15px; }
+.contacts { display: flex; flex-direction: column; align-items: flex-end; gap: 5px; font-size: 12.5px; }
+.contacts .cline { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 4px 14px; }
+.contacts .soc { font-family: var(--f-body); font-size: 12.5px; gap: .5em; }
+.contacts .soc-ico, .soc-chip .soc-ico { width: 1.7em; height: 1.7em; }
+.contacts .soc-name { font-weight: 400; }
+.open { margin: 12px 0 0; font-size: 13px; }
+.open b { color: var(--accent); font-weight: 600; }
+.nums { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 8px; margin: 18px 0 4px; }
+.nums div { background: var(--desk); border-radius: 10px; padding: 8px 10px; }
+.nums b { display: block; font-family: var(--f-display); font-weight: 600; font-size: 18px; letter-spacing: -.02em; font-variant-numeric: tabular-nums; }
+.nums span { color: var(--muted); font-size: 11.5px; }
+h2 { font-family: var(--f-mono); font-weight: 500; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); margin: 22px 0 10px; }
+.summary { margin: 0; font-size: 14.5px; max-width: 70ch; }
+.job { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 0 1rem; margin-bottom: 14px; }
+.job h3 { margin: 0; font-size: 15px; font-weight: 600; }
+.job .where { color: var(--muted); font-size: 13px; }
+.job time { font-family: var(--f-mono); font-size: 12px; color: var(--muted); white-space: nowrap; text-align: right; }
+.job ul { grid-column: 1 / -1; margin: 6px 0 0; padding-left: 18px; display: grid; gap: 3px; }
+.work { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4px 24px; }
+.work div { display: grid; grid-template-columns: 7.5rem minmax(0, 1fr); gap: 8px; padding: 5px 0; border-bottom: 1px solid var(--line); font-size: 13px; }
+.work b { font-weight: 600; }
+.work span { color: var(--muted); }
+.cols { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 32px; }
+.list { display: grid; gap: 6px; }
+.row { display: flex; justify-content: space-between; gap: 1rem; font-size: 13px; padding-bottom: 6px; border-bottom: 1px solid var(--line); }
+.row b { font-weight: 600; }
+.row span { color: var(--muted); text-align: right; }
+.stack { display: flex; flex-wrap: wrap; gap: 5px; }
+.stack span { font-size: 12px; padding: 2px 9px; border-radius: 999px; border: 1px solid var(--line); }
+.else .soc-row { gap: 6px; }
+.else .soc-chip { font-family: var(--f-body); font-size: 12px; gap: .5em; padding: .25em .8em .25em .25em; }
+.else .soc-name { font-weight: 500; }
+footer { margin-top: 22px; padding-top: 12px; border-top: 1px solid var(--line); color: var(--muted); font-size: 11.5px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: .5rem; }
+@media (max-width: 640px) {
+  header { grid-template-columns: 1fr; }
+  .contacts, .contacts .cline { align-items: flex-start; justify-content: flex-start; }
+  .nums { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .work, .cols { grid-template-columns: 1fr; }
+  .work div { grid-template-columns: 6.5rem minmax(0, 1fr); }
+}
+@page { size: A4; margin: 9mm 11mm; }
+@media print {
+  body { background: #FFFFFF; padding: 0; font-size: 10.3px; line-height: 1.38; }
+  .bar { display: none; }
+  .page { border: 0; border-radius: 0; padding: 0; max-width: none; }
+  header { padding-bottom: 8px; }
+  h1 { font-size: 22px; }
+  .role { font-size: 12.5px; }
+  .contacts { gap: 2px; }
+  .contacts .soc { font-size: 10.5px; }
+  .contacts .soc-ico { width: 1.45em; height: 1.45em; }
+  .contacts .cline { gap: 2px 12px; flex-wrap: nowrap; }
+  .open { margin-top: 6px; font-size: 10.8px; }
+  h2 { margin: 9px 0 4px; font-size: 9.5px; }
+  .job { margin-bottom: 5px; break-inside: avoid; }
+  .job h3 { font-size: 12px; }
+  .job .where, .job time { font-size: 10.5px; }
+  .job ul { margin-top: 3px; gap: 1px; }
+  .summary { font-size: 11px; max-width: none; }
+  .work { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0 16px; }
+  .work div { grid-template-columns: 1fr; gap: 0; font-size: 10px; padding: 1px 0; }
+  .row { font-size: 10px; padding-bottom: 2px; }
+  .list { gap: 3px; }
+  .nums { margin: 8px 0 0; gap: 5px; }
+  .nums div { padding: 3px 8px; }
+  .nums b { font-size: 13px; }
+  .nums span { font-size: 9.5px; }
+  .stack span { font-size: 9.5px; padding: 0 7px; }
+  .else .soc-chip { font-size: 9.5px; padding: .2em .7em .2em .2em; }
+  .else .soc-row { gap: 4px; }
+  footer { margin-top: 8px; padding-top: 5px; font-size: 9.5px; }
+  .else { margin-top: 0; }
+}
 </style>
 </head>
 <body>
+<svg class="soc-sprite" width="0" height="0" aria-hidden="true" focusable="false"><defs><linearGradient id="soc-ig" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#FEDA75"/><stop offset=".25" stop-color="#FA7E1E"/><stop offset=".5" stop-color="#D62976"/><stop offset=".75" stop-color="#962FBF"/><stop offset="1" stop-color="#4F5BD5"/></linearGradient><linearGradient id="soc-zg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#19C27A"/><stop offset="1" stop-color="#0B8A5B"/></linearGradient></defs><symbol id="soc-i-telegram" viewBox="0 0 24 24"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></symbol><symbol id="soc-i-instagram" viewBox="0 0 24 24"><path d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></symbol><symbol id="soc-i-x" viewBox="0 0 24 24"><path d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z"/></symbol><symbol id="soc-i-youtube" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></symbol><symbol id="soc-i-spotify" viewBox="0 0 24 24"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></symbol><symbol id="soc-i-reddit" viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12c0 3.314 1.343 6.314 3.515 8.485l-2.286 2.286C.775 23.225 1.097 24 1.738 24H12c6.627 0 12-5.373 12-12S18.627 0 12 0Zm4.388 3.199c1.104 0 1.999.895 1.999 1.999 0 1.105-.895 2-1.999 2-.946 0-1.739-.657-1.947-1.539v.002c-1.147.162-2.032 1.15-2.032 2.341v.007c1.776.067 3.4.567 4.686 1.363.473-.363 1.064-.58 1.707-.58 1.547 0 2.802 1.254 2.802 2.802 0 1.117-.655 2.081-1.601 2.531-.088 3.256-3.637 5.876-7.997 5.876-4.361 0-7.905-2.617-7.998-5.87-.954-.447-1.614-1.415-1.614-2.538 0-1.548 1.255-2.802 2.803-2.802.645 0 1.239.218 1.712.585 1.275-.79 2.881-1.291 4.64-1.365v-.01c0-1.663 1.263-3.034 2.88-3.207.188-.911.993-1.595 1.959-1.595Zm-8.085 8.376c-.784 0-1.459.78-1.506 1.797-.047 1.016.64 1.429 1.426 1.429.786 0 1.371-.369 1.418-1.385.047-1.017-.553-1.841-1.338-1.841Zm7.406 0c-.786 0-1.385.824-1.338 1.841.047 1.017.634 1.385 1.418 1.385.785 0 1.473-.413 1.426-1.429-.046-1.017-.721-1.797-1.506-1.797Zm-3.703 4.013c-.974 0-1.907.048-2.77.135-.147.015-.241.168-.183.305.483 1.154 1.622 1.964 2.953 1.964 1.33 0 2.47-.81 2.953-1.964.057-.137-.037-.29-.184-.305-.863-.087-1.795-.135-2.769-.135Z"/></symbol><symbol id="soc-i-medium" viewBox="0 0 24 24"><path d="M4.21 0A4.201 4.201 0 0 0 0 4.21v15.58A4.201 4.201 0 0 0 4.21 24h15.58A4.201 4.201 0 0 0 24 19.79v-1.093c-.137.013-.278.02-.422.02-2.577 0-4.027-2.146-4.09-4.832a7.592 7.592 0 0 1 .022-.708c.093-1.186.475-2.241 1.105-3.022a3.885 3.885 0 0 1 1.395-1.1c.468-.237 1.127-.367 1.664-.367h.023c.101 0 .202.004.303.01V4.211A4.201 4.201 0 0 0 19.79 0Zm.198 5.583h4.165l3.588 8.435 3.59-8.435h3.864v.146l-.019.004c-.705.16-1.063.397-1.063 1.254h-.003l.003 10.274c.06.676.424.885 1.063 1.03l.02.004v.145h-4.923v-.145l.019-.005c.639-.144.994-.353 1.054-1.03V7.267l-4.745 11.15h-.261L6.15 7.569v9.445c0 .857.358 1.094 1.063 1.253l.02.004v.147H4.405v-.147l.019-.004c.705-.16 1.065-.397 1.065-1.253V6.987c0-.857-.358-1.094-1.064-1.254l-.018-.004zm19.25 3.668c-1.086.023-1.733 1.323-1.813 3.124H24V9.298a1.378 1.378 0 0 0-.342-.047Zm-1.862 3.632c-.1 1.756.86 3.239 2.204 3.634v-3.634z"/></symbol><symbol id="soc-i-github" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></symbol><symbol id="soc-i-mail" viewBox="0 0 24 24"><path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"/></symbol><symbol id="soc-i-huggingface" viewBox="0 0 24 24"><path d="M12.025 1.13c-5.77 0-10.449 4.647-10.449 10.378 0 1.112.178 2.181.503 3.185.064-.222.203-.444.416-.577a.96.96 0 0 1 .524-.15c.293 0 .584.124.84.284.278.173.48.408.71.694.226.282.458.611.684.951v-.014c.017-.324.106-.622.264-.874s.403-.487.762-.543c.3-.047.596.06.787.203s.31.313.4.467c.15.257.212.468.233.542.01.026.653 1.552 1.657 2.54.616.605 1.01 1.223 1.082 1.912.055.537-.096 1.059-.38 1.572.637.121 1.294.187 1.967.187.657 0 1.298-.063 1.921-.178-.287-.517-.44-1.041-.384-1.581.07-.69.465-1.307 1.081-1.913 1.004-.987 1.647-2.513 1.657-2.539.021-.074.083-.285.233-.542.09-.154.208-.323.4-.467a1.08 1.08 0 0 1 .787-.203c.359.056.604.29.762.543s.247.55.265.874v.015c.225-.34.457-.67.683-.952.23-.286.432-.52.71-.694.257-.16.547-.284.84-.285a.97.97 0 0 1 .524.151c.228.143.373.388.43.625l.006.04a10.3 10.3 0 0 0 .534-3.273c0-5.731-4.678-10.378-10.449-10.378M8.327 6.583a1.5 1.5 0 0 1 .713.174 1.487 1.487 0 0 1 .617 2.013c-.183.343-.762-.214-1.102-.094-.38.134-.532.914-.917.71a1.487 1.487 0 0 1 .69-2.803m7.486 0a1.487 1.487 0 0 1 .689 2.803c-.385.204-.536-.576-.916-.71-.34-.12-.92.437-1.103.094a1.487 1.487 0 0 1 .617-2.013 1.5 1.5 0 0 1 .713-.174m-10.68 1.55a.96.96 0 1 1 0 1.921.96.96 0 0 1 0-1.92m13.838 0a.96.96 0 1 1 0 1.92.96.96 0 0 1 0-1.92M8.489 11.458c.588.01 1.965 1.157 3.572 1.164 1.607-.007 2.984-1.155 3.572-1.164.196-.003.305.12.305.454 0 .886-.424 2.328-1.563 3.202-.22-.756-1.396-1.366-1.63-1.32q-.011.001-.02.006l-.044.026-.01.008-.03.024q-.018.017-.035.036l-.032.04a1 1 0 0 0-.058.09l-.014.025q-.049.088-.11.19a1 1 0 0 1-.083.116 1.2 1.2 0 0 1-.173.18q-.035.029-.075.058a1.3 1.3 0 0 1-.251-.243 1 1 0 0 1-.076-.107c-.124-.193-.177-.363-.337-.444-.034-.016-.104-.008-.2.022q-.094.03-.216.087-.06.028-.125.063l-.13.074q-.067.04-.136.086a3 3 0 0 0-.135.096 3 3 0 0 0-.26.219 2 2 0 0 0-.12.121 2 2 0 0 0-.106.128l-.002.002a2 2 0 0 0-.09.132l-.001.001a1.2 1.2 0 0 0-.105.212q-.013.036-.024.073c-1.139-.875-1.563-2.317-1.563-3.203 0-.334.109-.457.305-.454m.836 10.354c.824-1.19.766-2.082-.365-3.194-1.13-1.112-1.789-2.738-1.789-2.738s-.246-.945-.806-.858-.97 1.499.202 2.362c1.173.864-.233 1.45-.685.64-.45-.812-1.683-2.896-2.322-3.295s-1.089-.175-.938.647 2.822 2.813 2.562 3.244-1.176-.506-1.176-.506-2.866-2.567-3.49-1.898.473 1.23 2.037 2.16c1.564.932 1.686 1.178 1.464 1.53s-3.675-2.511-4-1.297c-.323 1.214 3.524 1.567 3.287 2.405-.238.839-2.71-1.587-3.216-.642-.506.946 3.49 2.056 3.522 2.064 1.29.33 4.568 1.028 5.713-.624m5.349 0c-.824-1.19-.766-2.082.365-3.194 1.13-1.112 1.789-2.738 1.789-2.738s.246-.945.806-.858.97 1.499-.202 2.362c-1.173.864.233 1.45.685.64.451-.812 1.683-2.896 2.322-3.295s1.089-.175.938.647-2.822 2.813-2.562 3.244 1.176-.506 1.176-.506 2.866-2.567 3.49-1.898-.473 1.23-2.037 2.16c-1.564.932-1.686 1.178-1.464 1.53s3.675-2.511 4-1.297c.323 1.214-3.524 1.567-3.287 2.405.238.839 2.71-1.587 3.216-.642.506.946-3.49 2.056-3.522 2.064-1.29.33-4.568 1.028-5.713-.624"/></symbol><symbol id="soc-i-appstore" viewBox="0 0 24 24"><path d="M8.8086 14.9194l6.1107-11.0368c.0837-.1513.1682-.302.2437-.4584.0685-.142.1267-.2854.1646-.4403.0803-.3259.0588-.6656-.066-.9767-.1238-.3095-.3417-.5678-.6201-.7355a1.4175 1.4175 0 0 0-.921-.1924c-.3207.043-.6135.1935-.8443.4288-.1094.1118-.1996.2361-.2832.369-.092.1463-.175.2979-.259.4492l-.3864.6979-.3865-.6979c-.0837-.1515-.1667-.303-.2587-.4492-.0837-.1329-.1739-.2572-.2835-.369-.2305-.2353-.5233-.3857-.844-.429a1.4181 1.4181 0 0 0-.921.1926c-.2784.1677-.4964.426-.6203.7355-.1246.311-.1461.6508-.066.9767.038.155.0962.2984.1648.4403.0753.1564.1598.307.2437.4584l1.248 2.2543-4.8625 8.7825H2.0295c-.1676 0-.3351-.0007-.5026.0092-.1522.009-.3004.0284-.448.0714-.3108.0906-.5822.2798-.7783.548-.195.2665-.3006.5929-.3006.9279 0 .3352.1057.6612.3006.9277.196.2683.4675.4575.7782.548.1477.043.296.0623.4481.0715.1675.01.335.009.5026.009h13.0974c.0171-.0357.059-.1294.1-.2697.415-1.4151-.6156-2.843-2.0347-2.843zM3.113 18.5418l-.7922 1.5008c-.0818.1553-.1644.31-.2384.4705-.067.1458-.124.293-.1611.452-.0785.3346-.0576.6834.0645 1.0029.1212.3175.3346.583.607.7549.2727.172.5891.2416.9013.1975.3139-.044.6005-.1986.8263-.4402.1072-.1148.1954-.2424.2772-.3787.0902-.1503.1714-.3059.2535-.4612L6 19.4636c-.0896-.149-.9473-1.4704-2.887-.9218m20.5861-3.0056a1.4707 1.4707 0 0 0-.779-.5407c-.1476-.0425-.2961-.0616-.4483-.0705-.1678-.0099-.3352-.0091-.503-.0091H18.648l-4.3891-7.817c-.6655.7005-.9632 1.485-1.0773 2.1976-.1655 1.0333.0367 2.0934.546 3.0004l5.2741 9.3933c.084.1494.167.299.2591.4435.0837.131.1739.2537.2836.364.231.2323.5238.3809.8449.4232.3192.0424.643-.0244.9217-.1899.2784-.1653.4968-.4204.621-.7257.1246-.3072.146-.6425.0658-.9641-.0381-.1529-.0962-.2945-.165-.4346-.0753-.1543-.1598-.303-.2438-.4524l-1.216-2.1662h1.596c.1677 0 .3351.0009.5029-.009.1522-.009.3007-.028.4483-.0705a1.4707 1.4707 0 0 0 .779-.5407A1.5386 1.5386 0 0 0 24 16.452a1.539 1.539 0 0 0-.3009-.9158Z"/></symbol><symbol id="soc-i-music" viewBox="0 0 24 24"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></symbol><symbol id="soc-i-phone" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></symbol><symbol id="soc-i-zitou" viewBox="0 0 1024 1024"><rect width="1024" height="1024" fill="url(#soc-zg)"/><g fill="none" stroke="#fff" stroke-linecap="round"><path d="M272 376L352 531" stroke-width="118"/><path d="M482 316L506 481" stroke-width="118"/><path d="M752 346L642 531" stroke-width="118"/><path d="M252 656Q502 806 752 656" stroke-width="70" stroke-opacity=".55"/></g></symbol></svg>
+<nav class="bar" aria-label="CV actions">
+  <a href="/">← maqsudjon.com</a>
+  <a class="pdf" href="/cv.pdf" download>Download PDF</a>
+</nav>
 
-<nav><div class="wrap nav-inner">
-  <a class="nav-logo" href="https://maqsudjon.com/">✳ maqsudjon.com <span style="color:#ffffff55">/ cv / new</span></a>
-  <a class="btn" href="Maqsudjon_Polatov_CV.pdf" download>Download CV · PDF</a>
-</div></nav>
-
-<header><div class="wrap">
-  <div class="kicker">Current CV · updated August 2026</div>
-  <h1>Maqsudjon Polatov</h1>
-  <div class="role">AI-First Builder — Tashkent, Uzbekistan</div>
-  <p class="hook">I don't hand-write code — and I've shipped <b>twelve products onto their own domains</b>,
-    with real users and paying clients. This page is the proof, and every number on it is verifiable.</p>
-  <div class="hero-btns">
-    <a class="btn" href="Maqsudjon_Polatov_CV.pdf" download>Download CV · PDF</a>
-    <a class="btn btn-ghost" href="https://t.me/mrbmp13" target="_blank" rel="noopener">Message on Telegram</a>
-    <a class="btn btn-ghost" href="https://github.com/maqsudjon-cell" target="_blank" rel="noopener">GitHub</a>
-  </div>
-  <div class="contact-line">
-    <a href="mailto:polatovmaqsudjon1@gmail.com">polatovmaqsudjon1@gmail.com</a> ·
-    <a href="tel:+998959059493">+998 95 905 94 93</a> ·
-    <a href="https://t.me/mrbmp13" target="_blank" rel="noopener">t.me/mrbmp13</a> ·
-    <a href="https://github.com/maqsudjon-cell" target="_blank" rel="noopener">github.com/maqsudjon-cell</a><br>
-    Uzbek (native) · English — IELTS Academic, Overall 6.0 (CEFR B2) · Korean (basic)
-  </div>
-</div></header>
-
-<div class="wrap"><div class="numbers rv">
-  <div class="num"><b data-n="180">0</b><span>public repos</span></div>
-  <div class="num"><b data-n="1627">0</b><span>commits</span></div>
-  <div class="num"><b data-n="12">0</b><span>live domains</span></div>
-  <div class="num"><b data-n="167">0</b><span>deployments</span></div>
-  <div class="num"><b data-n="113">0</b><span>IELTS tests live</span></div>
-  <div class="num"><b data-n="18">0</b><span>months building</span></div>
-</div></div>
-
-<section><div class="wrap">
-  <div class="label rv">01 — Who I am</div>
-  <h2 class="rv">Welder by day. Builder by night.</h2>
-  <p class="big rv">I was born in Namangan and moved to Tashkent to work as a welder — that is still my day job.
-    In my own hours I taught myself to build by directing AI agents, mainly <b>Claude Code</b>. Eighteen months
-    after opening my GitHub account it holds 180 public repositories and 1,627 commits, and the platform I built
-    is used by real IELTS students and by teachers running weekly mock exams. My skill is not typing syntax.
-    It is knowing exactly what to build, specifying it clearly, testing it like a real user, and owning everything
-    around the code — architecture, domains, DNS, SEO, analytics, pricing and the client conversation.</p>
-
-  <div class="split rv">
-    <div class="no">
-      <h3>What I don't do</h3>
-      <ul>
-        <li>Hand-write code from memory</li>
-        <li>Claim frameworks I've never shipped</li>
-        <li>Pretend to be a classical engineer</li>
-      </ul>
+<main class="page">
+  <header>
+    <div>
+      <h1>Maqsudjon Polatov</h1>
+      <p class="role">Product engineer · Tashkent, Uzbekistan</p>
     </div>
-    <div class="yes">
-      <h3>What I do instead</h3>
-      <ul>
-        <li>Direct AI agents end to end: plan → build → debug → deploy</li>
-        <li>Ship real products people use — solo, fast</li>
-        <li>Own the product, not just the code</li>
-      </ul>
-    </div>
+    <div class="contacts"><div class="cline"><a class="soc soc-mail" href="mailto:polatovmaqsudjon1@gmail.com" title="Email"><span class="soc-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#soc-i-mail"/></svg></span><span class="soc-txt"><span class="soc-name">polatovmaqsudjon1@gmail.com</span></span></a></div><div class="cline"><a class="soc soc-phone" href="tel:+998959059493" title="Phone"><span class="soc-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#soc-i-phone"/></svg></span><span class="soc-txt"><span class="soc-name">+998 95 905 94 93</span></span></a><a class="soc soc-telegram" href="https://t.me/ferrasium" target="_blank" rel="me noopener" title="Telegram"><span class="soc-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#soc-i-telegram"/></svg></span><span class="soc-txt"><span class="soc-name">@ferrasium</span></span></a></div><div class="cline"><a class="soc soc-github" href="https://github.com/maqsudjon-cell" target="_blank" rel="me noopener" title="GitHub"><span class="soc-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#soc-i-github"/></svg></span><span class="soc-txt"><span class="soc-name">github.com/maqsudjon-cell</span></span></a></div><div class="cline"><a class="soc soc-huggingface" href="https://huggingface.co/Maqsudjonpolatov" target="_blank" rel="me noopener" title="Hugging Face"><span class="soc-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#soc-i-huggingface"/></svg></span><span class="soc-txt"><span class="soc-name">huggingface.co/Maqsudjonpolatov</span></span></a></div></div>
+  </header>
+  <p class="open"><b>Open to</b> full-time remote (Europe / US / Gulf overlap) or on-site in Tashkent.</p>
+
+  <div class="nums">
+    <div><b>19</b><span>live sites</span></div>
+    <div><b>2</b><span>App Store apps</span></div>
+    <div><b>20</b><span>months solo</span></div>
+    <div><b>193</b><span>public repos</span></div>
+    <div><b>3,244</b><span>commits</span></div>
+    <div><b>15</b><span>domains</span></div>
   </div>
-</div></section>
 
-<section><div class="wrap">
-  <div class="label rv">02 — Selected work</div>
-  <h2 class="rv">Don't take my word for it. Click.</h2>
+  <h2>Summary</h2>
+  <p class="summary">Independent product engineer. I direct AI coding agents end to end: spec, architecture, build, DNS and TLS, App Store releases, operations. 19 live sites and 2 App Store apps in 20 months while welding full-time in Tashkent, running on 15 domains, Cloudflare Workers and GitHub Pages. Flagships: FlareStamina (144 free IELTS tests), Zitou (Chinese for Uzbek speakers, 124,000+ word dictionary) and Ferra (AI agents for iPhone, and slide decks from a single topic).</p>
 
-  <div class="work rv">
-    <div class="work-top">
-      <h3>Flarestamina <em>— free IELTS ecosystem · founder &amp; sole builder</em></h3>
-      <span class="tag">flarestamina.com · 2026</span>
-    </div>
+  <h2>Experience</h2>
+  <div class="job">
+    <div><h3>Independent product engineer</h3><span class="where">maqsudjon.com · Tashkent / remote</span></div>
+    <time>2025 — present</time>
     <ul>
-      <li><b>113 practice tests live</b> — 73 Listening, 25 Reading, a full mock, Cambridge and 10 tools, each an
-          individually deployed self-contained page with audio, instant band scoring and answer review.</li>
-      <li><b>Essay platform</b> — Firestore-backed AI band-score feedback, an exam-fair editor with spellcheck,
-          autocorrect and grammar hints disabled, focus mode, timer, colour-coded word count and branded
-          one-page PDF export.</li>
-      <li><b>Speaking lab</b> — the full official Jan–Apr 2026 question bank, 166 topics across Parts 1–3, with
-          in-browser recording, Supabase Storage audio, cache-first paint, debounced search, teacher band scores
-          and peer feedback.</li>
-      <li><b>40-day challenge tracker</b> (PWA) — 265 tasks, real-time cross-device sync, streak heatmap, class
-          leaderboard and a gated teacher dashboard.</li>
-      <li>Ran a full rebrand from <i>pangea8</i> without losing a single URL, with sitemaps auto-generated by
-          GitHub Actions.</li>
+      <li>FlareStamina: 144 IELTS tests in production (78 Listening, 53 Reading), AI Writing Lab, Speaking Lab, score converter. Free, no paywall.</li>
+      <li>Zitou: Chinese for Uzbek speakers on zitou.uz, zitou.app, the App Store (iPhone) and Telegram. 124,000+ word dictionary, 10,057 HSK words, HSK 3.0 mock exams for all six levels; a feed, chats, duels and weekly leagues; classes and live games for teachers.</li>
+      <li>Ferra: Ferra AI Agents for iPhone (App Store, 7 Nov 2026; Android through a Telegram Mini App), one job and one model per agent, nothing sent without approval. ferra.tou.gg turns a topic into a finished deck with real sources and images, as PPTX or PDF.</li>
+      <li>AI Lenta: unattended Uzbek AI news wire. 27 sources, a GitHub Actions pipeline with hourly updates; every number in a summary is checked against the source.</li>
+      <li>Open data on Hugging Face: uz-lexicon-skeleton (28,052,730 rows, CC BY 4.0, backs Chertma), an 8,296-word HSK Chinese–Uzbek–Russian vocabulary, and Nullsample Multitrack (20 synthetic tracks with stems, MIDI and exact annotations).</li>
+      <li>Also shipped: Davomat (Telegram attendance), Tadam (wedding photo album via QR), Nullsample (music from code), zh.tou.gg, Chertma, Pierics, Minnos.</li>
     </ul>
-    <div class="stack">Vanilla JS (no build step) · Firebase Auth + Firestore · Supabase Storage · PWA · GitHub Pages + Actions · Search Console · GoatCounter</div>
-    <div class="work-links">
-      <a class="chip" href="https://flarestamina.com" target="_blank" rel="noopener">Open flarestamina.com ↗</a>
-      <a class="chip" href="https://flarestamina.com/ielts-hub/" target="_blank" rel="noopener">Test hub ↗</a>
-    </div>
   </div>
-
-  <div class="work rv">
-    <div class="work-top">
-      <h3>Pierics <em>— payment, metering &amp; pricing for an AI API aggregator</em></h3>
-      <span class="tag">node · react · 2026</span>
-    </div>
+  <div class="job">
+    <div><h3>Metal fabricator</h3><span class="where">Workshop · Tashkent</span></div>
+    <time>2023 — present</time>
     <ul>
-      <li>Full-stack billing system: an Express API that also deploys as a Vercel serverless function, a
-          React/Vite frontend, a Supabase Postgres schema, Stripe integration, JWT auth and rate limiting.</li>
-      <li>Designed a <b>three-tier pricing model</b> — free allowance, pay-as-you-go at 1.3× markup, and
-          subscription — with the pricing engine written as a pure module and <b>13 tests proving the published
-          price tables</b> match what the code actually charges.</li>
-      <li>Idempotent SQL schema, single-source-of-truth plan config, and a public pricing page whose live cost
-          calculator works standalone without the backend.</li>
+      <li>Design, fabricate and install window grilles, balcony railings and canopies.</li>
+      <li>Built KVADRAT, an offline m² calculator used on real jobs, and the workshop catalogues Payvandchi and Reshotkachi.</li>
     </ul>
-    <div class="stack">Node/Express · React + Vite · Supabase (Postgres/PLpgSQL) · Stripe · JWT · Vercel</div>
-    <div class="work-links">
-      <a class="chip" href="https://github.com/maqsudjon-cell/pierics" target="_blank" rel="noopener">Source on GitHub ↗</a>
-    </div>
   </div>
 
-  <div class="work rv">
-    <div class="work-top">
-      <h3>Explainer Engine <em>— topic in, branded explainer video out</em></h3>
-      <span class="tag">python · 2026</span>
-    </div>
-    <ul>
-      <li>Python pipeline that turns a text topic into a finished MP4: kinetic type, data visualisations and an
-          original multi-section synthesised soundtrack — all generated from code, no stock footage.</li>
-      <li>Architected around a <b>JSON spec as the contract</b>, so a human, the Claude API, or the ideate module
-          can each author a video without touching engine code — decoupling creative direction from rendering.</li>
-      <li>Ships three ways — CLI, local server, and a native desktop chat app — with parallel multi-core rendering.</li>
-    </ul>
-    <div class="stack">Python · Anthropic Claude API · procedural audio synthesis · H.264 rendering · pywebview</div>
-    <div class="work-links">
-      <a class="chip" href="https://github.com/maqsudjon-cell/explainer-engine" target="_blank" rel="noopener">Source on GitHub ↗</a>
-    </div>
+  <h2>Live sites</h2>
+  <div class="work">
+    <div><b>FlareStamina</b><span>flarestamina.com · IELTS practice</span></div>
+    <div><b>Zitou</b><span>zitou.app · zitou.uz · Chinese in Uzbek</span></div>
+    <div><b>Ferra</b><span>ferra.tou.gg · AI slide decks</span></div>
+    <div><b>AI Lenta</b><span>ailenta.uz · AI news in Uzbek</span></div>
+    <div><b>zh.tou.gg</b><span>Chinese homework</span></div>
+    <div><b>Davomat</b><span>chzq.uz · attendance in Telegram</span></div>
+    <div><b>Tadam</b><span>tadam.uz · event photo album</span></div>
+    <div><b>Chertma</b><span>chertma.maqsudjon.com · Uzbek spelling</span></div>
+    <div><b>Nullsample</b><span>nullsample.maqsudjon.com · music</span></div>
+    <div><b>Pierics</b><span>pierics.com · vocabulary game</span></div>
+    <div><b>Minnos</b><span>minnos.cc · English idioms</span></div>
+    <div><b>Speaking Lab</b><span>ielts-speaking-lab.pages.dev</span></div>
+    <div><b>KVADRAT</b><span>kvdrt.maqsudjon.com · m² calculator</span></div>
+    <div><b>Payvandchi</b><span>payvandchi.maqsudjon.com · catalogue</span></div>
+    <div><b>Reshotkachi</b><span>reshotkachi.maqsudjon.com · catalogue</span></div>
+    <div><b>ZED AVLOD</b><span>zedavlod.uz · client</span></div>
+    <div><b>CTN</b><span>ctnlc.uz · client</span></div>
+    <div><b>maqsudjon.com</b><span>this CV's home · build log</span></div>
+    <div><b>tou.gg</b><span>main site · notes</span></div>
   </div>
 
-  <div class="work rv">
-    <div class="work-top">
-      <h3>Payvandchi &amp; Reshotkachi <em>— two catalogue sites + an image build pipeline</em></h3>
-      <span class="tag">2 domains · 2026</span>
-    </div>
-    <ul>
-      <li>Catalogue sites for the metalwork trade I actually work in — <b>132 photographed patterns</b> each,
-          ordered by number so a customer can call and say one number. Trilingual UZ/RU/EN, 8 pages per site.</li>
-      <li>Wrote an <b>idempotent Node build pipeline</b> (CSV in, site out): three responsive WebP sizes per photo,
-          EXIF rotation corrected, a dominant colour extracted as the pre-load background so <b>cumulative layout
-          shift is zero</b>, gallery JSON rewritten and an image sitemap regenerated — recompressing only what
-          changed.</li>
-    </ul>
-    <div class="stack">Node ESM build scripts · WebP pipeline · vanilla JS · structured data · image sitemaps</div>
-    <div class="work-links">
-      <a class="chip" href="https://payvandchi.maqsudjon.com" target="_blank" rel="noopener">payvandchi ↗</a>
-      <a class="chip" href="https://reshotkachi.maqsudjon.com" target="_blank" rel="noopener">reshotkachi ↗</a>
-    </div>
-  </div>
-</div></section>
-
-<section><div class="wrap">
-  <div class="label rv">03 — Commercial &amp; client work</div>
-  <h2 class="rv">Shipped for other people, for money.</h2>
-  <div class="clients rv">
-    <a class="client" href="https://chzq.uz" target="_blank" rel="noopener">
-      <div class="cl-top"><h3>chiziq / then</h3><span class="cl-tag">chzq.uz · then.uz</span></div>
-      <p>My own web studio. Productised offer — landing, business site, multilingual, catalogue — priced
-        1.5M–4M UZS with 1–3 day delivery, sold by shipping a free working prototype first. The portfolio embeds
-        client sites as live iframes, not screenshots.</p>
-    </a>
-    <a class="client" href="https://flarestamina.com/wedding/" target="_blank" rel="noopener">
-      <div class="cl-top"><h3>Wedding Invitation Builder</h3><span class="cl-tag">first paid product</span></div>
-      <p>10 templates × 3 languages, exporting to PNG, PDF, animated video, or a shareable live link with the
-        whole invitation encoded in the URL — no backend, no database. QR-coded venue map and countdown.</p>
-    </a>
-    <a class="client" href="https://zedavlod.uz" target="_blank" rel="noopener">
-      <div class="cl-top"><h3>ZED AVLOD School</h3><span class="cl-tag">zedavlod.uz</span></div>
-      <p>Trilingual site for a private English / IELTS / CEFR school in Namangan. Only verified results
-        published — state CEFR certificates and olympiad records, no invented numbers.</p>
-    </a>
-    <a class="client" href="https://ctnlc.uz" target="_blank" rel="noopener">
-      <div class="cl-top"><h3>CTN Language Centre</h3><span class="cl-tag">ctnlc.uz</span></div>
-      <p>Marketing site for a Tashkent language centre — trilingual, dark mode, course funnels and a trial-lesson
-        flow, plus a hosted mock-test platform serving full listening tests with audio.</p>
-    </a>
-    <a class="client" href="https://kvdrt.maqsudjon.com" target="_blank" rel="noopener">
-      <div class="cl-top"><h3>KVADRAT</h3><span class="cl-tag">kvdrt.maqsudjon.com</span></div>
-      <p>Offline-first m² calculator for welding shops, built from a real shop-floor need. A custom free-text
-        parser handles quantities, decimals and five separator styles; it computes projected-grille surface area,
-        renders a live diagram and exports PDF and Telegram text.</p>
-    </a>
-    <a class="client" href="https://flarestamina.com/id-passport-photo-maker/" target="_blank" rel="noopener">
-      <div class="cl-top"><h3>ID Photo Maker</h3><span class="cl-tag">on-device AI</span></div>
-      <p>Passport and visa photo tool where cropping, resizing and AI background whitening all run in the
-        browser. The photo never leaves the device — trustworthy by construction, not by promise.</p>
-    </a>
-  </div>
-</div></section>
-
-<section><div class="wrap">
-  <div class="label rv">04 — Every domain</div>
-  <h2 class="rv">All 12 domains, in production.</h2>
-  <p class="big rv">Nothing here is a demo or a screenshot. Every row resolves to a live site over HTTPS.</p>
-  <table class="dtable rv">
-    <thead><tr><th>Domain</th><th>What it is — built with</th></tr></thead>
-    <tbody>
-      <tr><td class="d"><a href="https://flarestamina.com" target="_blank" rel="noopener">flarestamina.com</a></td>
-          <td>Free IELTS platform — 113 practice tests, AI essay feedback, speaking lab, 40-day tracker. Used by real students and teachers. <i>Firebase · Supabase · PWA · Actions</i></td></tr>
-      <tr><td class="d"><a href="https://maqsudjon.com" target="_blank" rel="noopener">maqsudjon.com</a></td>
-          <td>Portfolio, case studies and build log; real-time video→ASCII renderer and an in-page terminal. <i>Canvas 2D · vanilla JS · PWA · RSS</i></td></tr>
-      <tr><td class="d"><a href="https://chzq.uz" target="_blank" rel="noopener">chzq.uz</a></td>
-          <td>“chiziq” — my web studio: productised sites, Telegram bots and mini apps; live-iframe portfolio. <i>JSON-LD · theming</i></td></tr>
-      <tr><td class="d"><a href="https://then.uz" target="_blank" rel="noopener">then.uz</a></td>
-          <td>“then” — second studio brand, and home of the Explainer Engine video pipeline. <i>Static site · Python</i></td></tr>
-      <tr><td class="d"><a href="https://zedavlod.uz" target="_blank" rel="noopener">zedavlod.uz</a></td>
-          <td><b>Client</b> — ZED AVLOD School, Namangan: trilingual site for an English / IELTS / CEFR school. <i>UZ·RU·EN · Search Console</i></td></tr>
-      <tr><td class="d"><a href="https://ctnlc.uz" target="_blank" rel="noopener">ctnlc.uz</a></td>
-          <td><b>Client</b> — CTN Language Centre, Tashkent: marketing site plus hosted mock tests with audio. <i>UZ·RU·EN · dark mode</i></td></tr>
-      <tr><td class="d"><a href="https://payvandchi.maqsudjon.com" target="_blank" rel="noopener">payvandchi.maqsudjon.com</a></td>
-          <td><b>Client</b> — metalwork workshop catalogue: 132 photographed patterns, ordered by number. <i>Node build pipeline · WebP · image sitemap</i></td></tr>
-      <tr><td class="d"><a href="https://reshotkachi.maqsudjon.com" target="_blank" rel="noopener">reshotkachi.maqsudjon.com</a></td>
-          <td><b>Client</b> — second catalogue on the same pipeline, 3D gallery-wall front page. <i>Node pipeline · Canvas</i></td></tr>
-      <tr><td class="d"><a href="https://kvdrt.maqsudjon.com" target="_blank" rel="noopener">kvdrt.maqsudjon.com</a></td>
-          <td>KVADRAT — offline-first m² calculator for welding shops; free-text parser, live diagram, PDF export. <i>Vanilla JS · localStorage</i></td></tr>
-      <tr><td class="d"><a href="https://pierics.com" target="_blank" rel="noopener">pierics.com</a></td>
-          <td>Daily word game doubling as an IELTS vocabulary trainer; hand-curated answer list. <i>Vanilla JS · no backend</i></td></tr>
-      <tr><td class="d"><a href="https://minnos.cc" target="_blank" rel="noopener">minnos.cc</a></td>
-          <td>Minnos — English idioms taught one cat at a time, with audio and Uzbek translations. <i>Vanilla JS · single file</i></td></tr>
-      <tr><td class="d"><span>pangea8.com</span></td>
-          <td>Legacy brand, permanently redirected to flarestamina.com after a full rebrand with no URL loss. <i>301 strategy</i></td></tr>
-    </tbody>
-  </table>
-</div></section>
-
-<section><div class="wrap">
-  <div class="label rv">05 — How I build</div>
-  <h2 class="rv">Skills, stated honestly.</h2>
-  <div class="skills rv">
-    <div class="skill">
-      <h3>AI development</h3>
-      <p>Claude Code daily (plan → build → debug → deploy) · agent and workflow design · specification and prompt
-        writing · Anthropic API integration · reviewing product behaviour instead of syntax</p>
-    </div>
-    <div class="skill">
-      <h3>Web</h3>
-      <p>JavaScript, HTML5, CSS3 · single-file apps with no build step · React + Vite · Canvas 2D · Web Audio ·
-        PWA · mobile-first · dark mode · UZ / RU / EN localisation</p>
-    </div>
-    <div class="skill">
-      <h3>Backend &amp; data</h3>
-      <p>Node / Express · Vercel serverless · Firebase Auth · Firestore modelling, security rules and real-time
-        sync · Supabase Postgres and Storage · Stripe billing · JWT auth · rate limiting</p>
-    </div>
-    <div class="skill">
-      <h3>Python</h3>
-      <p>Generative media pipelines · procedural audio synthesis · CLI and local-server tooling · parallel
-        multi-core rendering</p>
-    </div>
-    <div class="skill">
-      <h3>Ship &amp; operate</h3>
-      <p>Git &amp; GitHub · Pages · Actions (automated sitemaps) · Node build scripts and image pipelines ·
-        staging → production flow · custom domains, DNS and HTTPS · Vercel</p>
-    </div>
-    <div class="skill">
-      <h3>Growth &amp; product</h3>
-      <p>Google Search Console · SEO, XML and image sitemaps, structured data · GoatCounter · pricing and
-        packaging · brand naming and rebrand migration · client scoping and delivery</p>
-    </div>
-    <div class="skill limit">
-      <h3>Honest limit</h3>
-      <p>I read and adjust HTML / CSS / JS with AI help, but I am not a from-memory hand-coder. I am the director
-        in the loop, not the typist — which is exactly the role I am applying for.</p>
-    </div>
-    <div class="skill">
-      <h3>Hands-on trades</h3>
-      <p>Certified welding and electrical work · logistics operations: DAT, Samsara, Amazon Relay, RTS Pro, DataQ</p>
-    </div>
-  </div>
-</div></section>
-
-<section><div class="wrap">
-  <div class="label rv">06 — Experience</div>
-  <div class="rv">
-    <div class="row">
-      <div class="when">Feb 2025 — present<br>Tashkent</div>
-      <div>
-        <h3>Independent AI-First Builder <em>— solo</em></h3>
-        <ul>
-          <li>Shipped 12 products onto their own domains from first spec to live DNS, working alone in evenings
-              and on days off while welding full-time.</li>
-          <li>Built and maintain the platform real IELTS students use daily and teachers use for weekly mock
-              exams; every platform I build ships with a teacher dashboard.</li>
-          <li>Delivered paid client work end to end: scoping, free prototype, build, launch, handover, support.</li>
-        </ul>
+  <div class="cols">
+    <section>
+      <h2>Education &amp; certificates</h2>
+      <div class="list">
+        <div class="row"><b>BA English Philology</b><span>AIFU, Tashkent · 1st year, evening · 2026 —</span></div>
+        <div class="row"><b>IELTS Academic 6.0</b><span>12 Aug 2026 · L 6.0 · R 5.0 · W 5.5 · S 6.5</span></div>
+        <div class="row"><b>TOPIK 2</b><span>Korean · 2023</span></div>
+        <div class="row"><b>Electrician</b><span>Diploma with honours</span></div>
+        <div class="row"><b>Trucking</b><span>MBA certificate, First Class</span></div>
       </div>
-    </div>
-    <div class="row">
-      <div class="when">2023 — present<br>Tashkent</div>
-      <div>
-        <h3>Welder <em>— private workshop</em></h3>
-        <ul>
-          <li>Fabrication and on-site installation of window grilles, balcony railings and canopies, measured and
-              fitted to real-world tolerances.</li>
-          <li>The trade taught the discipline I apply to software: measure carefully, join cleanly, test the seam
-              under load before calling it done.</li>
-        </ul>
+    </section>
+    <section>
+      <h2>Languages</h2>
+      <div class="list">
+        <div class="row"><b>Uzbek · C2</b><span>Native</span></div>
+        <div class="row"><b>English · B2</b><span>IELTS 6.0</span></div>
+        <div class="row"><b>Korean · A2</b><span>TOPIK 2</span></div>
+        <div class="row"><b>Russian · A2</b><span>Workplace and reading</span></div>
+        <div class="row"><b>Chinese · A0</b><span>Learning since 19 Sep 2026</span></div>
       </div>
-    </div>
+    </section>
   </div>
-</div></section>
 
-<section><div class="wrap">
-  <div class="label rv">07 — Education &amp; certificates</div>
-  <div class="rv">
-    <div class="row">
-      <div class="when">2026 — 2030</div>
-      <div>
-        <h3>BA, Philology and Language Teaching: English <em>— full-time</em></h3>
-        <p>University of Exact and Social Sciences (AIFU), Tashkent — first year.</p>
-      </div>
-    </div>
-    <div class="row">
-      <div class="when">Jul 2026</div>
-      <div>
-        <h3>Trucking Experts Logistics Course <em>— Certificate with First Class Honours</em></h3>
-        <p>Trucking MBA School, Tashkent — dispatching, fleet management, FMCSA safety and compliance, driver
-          recruiting and screening, invoicing and payroll, RPM / CPM / MPG profitability analysis.
-          Certificate ID 1000300.</p>
-      </div>
-    </div>
-    <div class="row">
-      <div class="when">Namangan</div>
-      <div>
-        <h3>Electrician <em>— Red Diploma, with distinction</em></h3>
-        <p>Vocational School No. 1, Namangan.</p>
-      </div>
-    </div>
+  <h2>Stack</h2>
+  <div class="stack">
+    <span>JS / TS</span><span>Node</span><span>Python</span><span>Swift / SwiftUI</span><span>Capacitor</span><span>Cloudflare Workers</span><span>D1 / R2</span><span>Firebase</span><span>Supabase</span><span>Telegram Mini Apps</span><span>Claude API</span><span>OpenRouter</span><span>GitHub Actions</span><span>GitHub Pages</span><span>Web Audio</span><span>Canvas</span>
   </div>
-</div></section>
 
-<section><div class="wrap">
-  <div class="label rv">08 — Languages</div>
-  <h2 class="rv">English — IELTS Academic, Overall Band 6.0 (CEFR B2)</h2>
-  <p class="big rv">Tested 12 August 2026, Speaking 6.5. Test Report Form 26UZ533712POLM004A, verifiable by any
-    recognising organisation at ielts.org/verify. I write all documentation and product copy in English, and I
-    ship interfaces in Uzbek, Russian and English.</p>
-  <div class="callout rv"><b style="color:#fff">Uzbek</b> native &nbsp;·&nbsp;
-    <b style="color:#fff">English</b> professional working proficiency &nbsp;·&nbsp;
-    <b style="color:#fff">Korean</b> basic</div>
-</div></section>
-
-<section class="cta" style="border-bottom:0"><div class="wrap">
-  <div class="label rv">09 — Hire me</div>
-  <h2 class="rv">Hiring someone to build with AI?<br>You just found one who already does it.</h2>
-  <p class="big rv">AI fluency isn't a skill I list — it's the only way I've ever built anything. And I'm all in:
-    I still weld for a living today, but the day you hire me, the welding mask comes off for good. I learn fast,
-    I ship faster, and everything above is public and live. Message me and I'll demo any of it, or take a paid
-    trial task. Available full-time, immediately, remote or Tashkent.</p>
-  <div class="btns rv">
-    <a class="btn" href="Maqsudjon_Polatov_CV.pdf" download>Download CV · PDF</a>
-    <a class="btn btn-ghost" href="https://t.me/mrbmp13" target="_blank" rel="noopener">Message on Telegram</a>
-    <a class="btn btn-ghost" href="mailto:polatovmaqsudjon1@gmail.com">polatovmaqsudjon1@gmail.com</a>
+  <div class="else">
+    <h2>Elsewhere</h2>
+    <div class="soc-row"><a class="soc soc-telegram soc-chip soc-sm" href="https://t.me/ferrasium" target="_blank" rel="me noopener" title="Telegram"><span class="soc-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#soc-i-telegram"/></svg></span><span class="soc-txt"><span class="soc-name">@ferrasium</span></span></a><a class="soc soc-telegram soc-chip soc-sm" href="https://t.me/ferrasiums" target="_blank" rel="me noopener" title="Telegram channel"><span class="soc-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#soc-i-telegram"/></svg></span><span class="soc-txt"><span class="soc-name">@ferrasiums</span></span></a><a class="soc soc-instagram soc-chip soc-sm" href="https://www.instagram.com/ferrasiums" target="_blank" rel="me noopener" title="Instagram"><span class="soc-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#soc-i-instagram"/></svg></span><span class="soc-txt"><span class="soc-name">@ferrasiums</span></span></a><a class="soc soc-x soc-chip soc-sm" href="https://x.com/ferrasium" target="_blank" rel="me noopener" title="X"><span class="soc-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#soc-i-x"/></svg></span><span class="soc-txt"><span class="soc-name">@ferrasium</span></span></a><a class="soc soc-youtube soc-chip soc-sm" href="https://youtube.com/@ferrasium" target="_blank" rel="me noopener" title="YouTube"><span class="soc-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#soc-i-youtube"/></svg></span><span class="soc-txt"><span class="soc-name">@ferrasium</span></span></a><a class="soc soc-spotify soc-chip soc-sm" href="https://open.spotify.com/artist/7gyBtPQMFaZbn0iHqtB9nW" target="_blank" rel="me noopener"><span class="soc-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#soc-i-spotify"/></svg></span><span class="soc-txt"><span class="soc-name">Spotify</span></span></a><a class="soc soc-yandex soc-chip soc-sm" href="https://music.yandex.com/artist/26563617" target="_blank" rel="me noopener"><span class="soc-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#soc-i-music"/></svg></span><span class="soc-txt"><span class="soc-name">Yandex Music</span></span></a><a class="soc soc-reddit soc-chip soc-sm" href="https://www.reddit.com/user/mrbmp13/" target="_blank" rel="me noopener" title="Reddit"><span class="soc-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#soc-i-reddit"/></svg></span><span class="soc-txt"><span class="soc-name">u/mrbmp13</span></span></a><a class="soc soc-medium soc-chip soc-sm" href="https://medium.com/@polatovmaqsudjon1" target="_blank" rel="me noopener" title="Medium"><span class="soc-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#soc-i-medium"/></svg></span><span class="soc-txt"><span class="soc-name">@polatovmaqsudjon1</span></span></a><a class="soc soc-zitou soc-chip soc-sm" href="https://zitou.app/@ferrasium" target="_blank" rel="me noopener" title="Zitou"><span class="soc-ico"><svg viewBox="0 0 1024 1024" aria-hidden="true"><use href="#soc-i-zitou"/></svg></span><span class="soc-txt"><span class="soc-name">@ferrasium</span></span></a></div>
   </div>
-  <div class="callout rv">
-    Everything here is verifiable: 180 public repositories and 1,627 authored commits on
-    <a href="https://github.com/maqsudjon-cell" target="_blank" rel="noopener">github.com/maqsudjon-cell</a>
-    (account opened February 2025), all 12 domains resolving to live sites over HTTPS, test counts read from the public
-    Flarestamina catalogue, and IELTS bands from the official Test Report Form.<br><br>
-    <span style="color:#ffffff70">Previous version of this CV, kept for comparison:
-    <a href="../">maqsudjon.com/cv</a></span>
-  </div>
-</div></section>
 
-<footer><div class="wrap">
-  © <span id="y">2026</span> Maqsudjon Polatov · Tashkent — <a href="https://maqsudjon.com/">maqsudjon.com</a><br>
-  This page, like everything else here, was built by directing an AI agent. That's the whole point.
-</div></footer>
-
-<script>
-document.getElementById('y').textContent=new Date().getFullYear();
-const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
-function count(el){
-  const target=+el.dataset.n;
-  if(reduce){el.textContent=target.toLocaleString('en-US');return}
-  const t0=performance.now(),d=1100;
-  (function tick(t){const k=Math.min(1,(t-t0)/d),e=1-Math.pow(1-k,3);
-    el.textContent=Math.round(target*e).toLocaleString('en-US');
-    if(k<1)requestAnimationFrame(tick)})(t0);
-  setTimeout(()=>{el.textContent=target.toLocaleString('en-US')},d+300);
-}
-const rvs=[...document.querySelectorAll('.rv')];
-function reveal(){
-  const h=innerHeight*.96;
-  rvs.forEach(el=>{
-    if(el.classList.contains('on'))return;
-    if(el.getBoundingClientRect().top<h){
-      el.classList.add('on');
-      el.querySelectorAll('[data-n]').forEach(count);
-    }
-  });
-}
-reveal();
-addEventListener('scroll',reveal,{passive:true});
-addEventListener('resize',reveal,{passive:true});
-setInterval(reveal,400);
-</script>
+  <footer>
+    <span>Updated 22 Nov 2026 · commit count as of 16 Nov 2026</span>
+    <span>maqsudjon.com · the lab</span>
+  </footer>
+</main>
 </body>
 </html>

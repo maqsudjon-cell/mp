@@ -8,9 +8,48 @@
   <description>A one-person lab for acting in code and steel — everything I ship, as I ship it. Full posts.</description>
   <language>en</language>
   <copyright>© 2026 Maqsudjon Polatov</copyright>
-  <lastBuildDate>Thu, 05 Nov 2026 12:00:00 +0500</lastBuildDate>
+  <lastBuildDate>Sat, 07 Nov 2026 12:00:00 +0500</lastBuildDate>
   <ttl>720</ttl>
   <image><url>https://maqsudjon.com/favicon-512x512.png</url><title>Maqsudjon Polatov — build log</title><link>https://maqsudjon.com/log/</link></image>
+  <item>
+    <title>Ferra is on the App Store</title>
+    <link>https://maqsudjon.com/log/log-2026-11-07-ferra-on-the-app-store.html</link>
+    <guid isPermaLink="true">https://maqsudjon.com/log/log-2026-11-07-ferra-on-the-app-store.html</guid>
+    <pubDate>Sat, 07 Nov 2026 12:00:00 +0500</pubDate>
+    <dc:creator>Maqsudjon Polatov</dc:creator>
+    <category>PRODUCT</category>
+    <description>Ferra AI Agents, a personal AI-agent app for iPhone, is on the App Store: one name, one job and one model per agent, nothing sent without your approval, and a Telegram Mini App for Android.</description>
+    <content:encoded><![CDATA[<p class="lede">Ferra AI Agents is on the App Store. It is a free iPhone app (iOS 17 or later) where every agent has one job, its own model and its own chats. Android and other Telegram clients get the same app as a Telegram Mini App through <a href="https://t.me/Ferraaibot">@Ferraaibot</a>.</p>
+
+<h2>One name, one job, any model</h2>
+
+<p>You create an agent by giving it a name, one task and a model. The model comes from the live OpenRouter catalog, hundreds of models from many providers, and each agent keeps separate chat threads. Text works everywhere and selected images work when the chosen model accepts them. Three starter agents ship with the app: <strong>Researcher</strong>, <strong>Inbox Manager</strong> and <strong>Study Coach</strong>.</p>
+
+<h2>Free to start, your own key if you want it</h2>
+
+<ul>
+<li>The free start mode runs on my OpenRouter account with a limit enforced on the server: 20 free messages a day at the moment. There are no in-app purchases and no subscription.</li>
+<li>If you connect your own OpenRouter account (bring your own key), the key is validated and stored encrypted on the server. The plain key is not kept on the phone and is never sent back.</li>
+<li>Usage is visible by agent and by model: requests, tokens, the cost the model reports and what is left of the day's free allowance.</li>
+</ul>
+
+<h2>Nothing goes out without you</h2>
+
+<p>When an agent proposes an email or a message, you approve it in the app first. Then Apple Mail or Messages opens and you make the final decision there. An approval is not proof of delivery, and the app does not claim it is.</p>
+
+<h2>Android</h2>
+
+<p>There is no native Android app. The Telegram Mini App has been live since 9 November: starter and custom agents, model choice, text and image chat, your own key, usage, approvals and account deletion, all on the same backend as the iPhone app.</p>
+
+<h2>Decks from a single topic</h2>
+
+<p>The sibling site <a href="https://ferra.tou.gg">ferra.tou.gg</a> turns a topic into a finished slide deck with real sources and images, as PPTX or PDF.</p>
+
+<h2>What I am not claiming</h2>
+
+<p>No download numbers in this post. I will publish them when I can show where they come from. Product facts, pricing and the changelog live at <a href="https://tou.gg/ferra/">tou.gg/ferra</a>, and the app is here: <a href="https://apps.apple.com/app/id6831706335">Ferra AI Agents on the App Store</a>.</p>]]></content:encoded>
+    <media:content url="https://maqsudjon.com/log/og/log-2026-11-07-ferra-on-the-app-store.png" medium="image" type="image/png" width="1200" height="630"/>
+  </item>
   <item>
     <title>Zitou is on the App Store</title>
     <link>https://maqsudjon.com/log/log-2026-11-05-zitou-on-the-app-store.html</link>

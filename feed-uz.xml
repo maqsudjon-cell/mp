@@ -8,9 +8,48 @@
   <description>Kod va temir bilan ishlaydigan bir kishilik laboratoriya: chiqargan hamma narsam, chiqargan kunim. To&#x27;liq yozuvlar.</description>
   <language>uz</language>
   <copyright>© 2026 Maqsudjon Polatov</copyright>
-  <lastBuildDate>Thu, 05 Nov 2026 12:00:00 +0500</lastBuildDate>
+  <lastBuildDate>Sat, 07 Nov 2026 12:00:00 +0500</lastBuildDate>
   <ttl>720</ttl>
   <image><url>https://maqsudjon.com/favicon-512x512.png</url><title>Maqsudjon Polatov — build log (o&#x27;zbekcha)</title><link>https://maqsudjon.com/log/</link></image>
+  <item>
+    <title>Ferra App Store&#x27;da</title>
+    <link>https://maqsudjon.com/log/log-2026-11-07-ferra-on-the-app-store-uz.html</link>
+    <guid isPermaLink="true">https://maqsudjon.com/log/log-2026-11-07-ferra-on-the-app-store-uz.html</guid>
+    <pubDate>Sat, 07 Nov 2026 12:00:00 +0500</pubDate>
+    <dc:creator>Maqsudjon Polatov</dc:creator>
+    <category>MAHSULOT</category>
+    <description>Ferra AI Agents, iPhone uchun shaxsiy AI agentlar ilovasi, App Store&#x27;da: har bir agentga bitta nom, bitta vazifa va bitta model, tasdig&#x27;ingizsiz hech narsa yuborilmaydi, Android uchun esa Telegram Mini App.</description>
+    <content:encoded><![CDATA[<p class="lede">Ferra AI Agents App Store'da. Bu bepul iPhone ilovasi (iOS 17 va undan yangi): har bir agentning bitta vazifasi, o'z modeli va o'z suhbatlari bor. Android va boshqa Telegram klientlari xuddi shu ilovadan <a href="https://t.me/Ferraaibot">@Ferraaibot</a> orqali Telegram Mini App sifatida foydalanadi.</p>
+
+<h2>Bitta nom, bitta vazifa, istalgan model</h2>
+
+<p>Agent yaratish uchun unga nom, bitta vazifa va model berasiz. Model jonli OpenRouter katalogidan olinadi, ya'ni turli provayderlarning yuzlab modellari, har bir agentning suhbatlari esa alohida. Matn hamma joyda ishlaydi, tanlangan rasmlar esa model ularni qabul qilsagina. Ilova bilan uchta tayyor agent keladi: <strong>Researcher</strong>, <strong>Inbox Manager</strong> va <strong>Study Coach</strong>.</p>
+
+<h2>Bepul boshlash, xohlasangiz o'z kalitingiz</h2>
+
+<ul>
+<li>Bepul rejim mening OpenRouter hisobimda ishlaydi, chegarasi serverda tekshiriladi: hozircha kuniga 20 ta bepul xabar. Ilova ichida xaridlar ham, obuna ham yo'q.</li>
+<li>O'z OpenRouter hisobingizni ulasangiz (o'z kalitingiz bilan), kalit tekshiriladi va serverda shifrlangan holda saqlanadi. Ochiq kalit telefonda saqlanmaydi va qaytarib yuborilmaydi.</li>
+<li>Sarf agent va model bo'yicha ko'rinadi: so'rovlar, tokenlar, model aytgan narx va kunlik bepul limitdan qolgani.</li>
+</ul>
+
+<h2>Sizsiz hech narsa chiqib ketmaydi</h2>
+
+<p>Agent email yoki xabar taklif qilsa, avval uni ilovada tasdiqlaysiz. Keyin Apple Mail yoki Xabarlar ochiladi va yakuniy qarorni o'sha yerda qabul qilasiz. Tasdiqlash yetkazilganini bildirmaydi, ilova ham bunday da'vo qilmaydi.</p>
+
+<h2>Android</h2>
+
+<p>Native Android ilovasi yo'q. Telegram Mini App 9-noyabrdan ishlaydi: tayyor va o'zingiz yaratgan agentlar, model tanlash, matn va rasmli suhbat, o'z kalitingiz, sarf, tasdiqlash va hisobni o'chirish, hammasi iPhone ilovasi bilan bir xil serverda.</p>
+
+<h2>Bitta mavzudan tayyor slaydlar</h2>
+
+<p><a href="https://ferra.tou.gg">ferra.tou.gg</a> mavzuni haqiqiy manbalar va rasmlar bilan tayyor slayd taqdimotiga aylantiradi, PPTX yoki PDF ko'rinishida.</p>
+
+<h2>Nima demayman</h2>
+
+<p>Bu yozuvda yuklab olishlar soni yo'q. Ularni qayerdan olinganini ko'rsata olganimda e'lon qilaman. Mahsulot haqidagi faktlar, narx va o'zgarishlar tarixi <a href="https://tou.gg/ferra/">tou.gg/ferra</a> da, ilovaning o'zi esa bu yerda: <a href="https://apps.apple.com/app/id6831706335">Ferra AI Agents, App Store</a>.</p>]]></content:encoded>
+    <media:content url="https://maqsudjon.com/log/og/log-2026-11-07-ferra-on-the-app-store-uz.png" medium="image" type="image/png" width="1200" height="630"/>
+  </item>
   <item>
     <title>Zitou App Store&#x27;da</title>
     <link>https://maqsudjon.com/log/log-2026-11-05-zitou-on-the-app-store-uz.html</link>
