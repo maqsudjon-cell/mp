@@ -108,8 +108,8 @@ def page(show):
 <body>
 <div class="atmosphere" aria-hidden="true"><img src="wall.jpg" alt=""></div>
 <div id="app"></div>
-<script src="data.js?v=27"></script>
-<script src="app.js?v=27"></script>
+<script src="data.js?v=28"></script>
+<script src="app.js?v=28"></script>
 </body>
 </html>
 """
