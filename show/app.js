@@ -286,12 +286,18 @@ function renderStage(show) {
                         style: slide.portrait ? "left:82.28%;top:50%" : null,
                         "aria-label": "Videoni o‘ynat",
                         onclick: async (event) => {
-                          const video = event.currentTarget.parentElement.querySelector("video");
+                          const button = event.currentTarget;
+                          const video = button.parentElement.querySelector("video");
+                          const poster = button.parentElement.querySelector("img");
+                          video.playsInline = true;
+                          video.setAttribute("playsinline", "");
+                          video.controls = true;
+                          video.classList.remove("invisible");
+                          if (poster && !slide.portrait) poster.classList.add("invisible");
+                          button.remove();
                           playing = true;
-                          render();
-                          const next = document.querySelector("video");
                           try {
-                            await next.play();
+                            await video.play();
                           } catch {
                             playing = false;
                             render();
