@@ -51,7 +51,7 @@ def cover(src):
 
 
 def card(show):
-    src = os.path.join(ROOT, show["slides"][0]["img"].lstrip("/"))
+    src = os.path.join(ROOT, show["slides"][0]["img"].lstrip("/").split("?")[0])
     im = cover(src)
     out = os.path.join(OG, show["id"] + ".jpg")
     im.save(out, quality=86, optimize=True)
